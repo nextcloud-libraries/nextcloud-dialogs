@@ -101,3 +101,7 @@ export class FilePickerBuilder {
     }
 
 }
+
+export function getFilePickerBuilder(title: string): FilePickerBuilder {
+    return new FilePickerBuilder(title)
+}

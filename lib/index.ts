@@ -1,1 +1,1 @@
-export { FilePicker, FilePickerBuilder } from './filepicker'
+export { FilePicker, FilePickerBuilder, getFilePickerBuilder } from './filepicker'
