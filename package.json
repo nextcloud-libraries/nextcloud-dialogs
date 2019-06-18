@@ -1,5 +1,5 @@
 {
-  "name": "nextcloud-files",
+  "name": "nextcloud-dialogs",
   "version": "0.0.0",
   "description": "",
   "main": "dist/index.js",
@@ -23,8 +23,9 @@
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-typescript": "^7.3.3",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "browserslist-config-nextcloud": "0.0.1",
-    "nextcloud-typings": "0.0.4",
+    "nextcloud-typings": "0.0.5",
     "typescript": "^3.5.2"
   },
   "browserslist": [

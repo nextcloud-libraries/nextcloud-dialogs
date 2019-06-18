@@ -8,5 +8,8 @@ module.exports = {
                 corejs: "3.0.0",
             },
         ],
-    ]
+    ],
+    "plugins": [
+        "transform-class-properties",
+    ],
 };
