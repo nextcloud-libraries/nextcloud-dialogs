@@ -1,2 +1,3 @@
-# nextcloud-dialogs
+# @nextcloud/dialogs
+
 Nextcloud dialog helpers
