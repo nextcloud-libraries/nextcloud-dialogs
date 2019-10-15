@@ -21,7 +21,7 @@
     "url": "https://github.com/nextcloud/nextcloud-dialogs"
   },
   "dependencies": {
-    "core-js": "3.3.1"
+    "core-js": "3.3.2"
   },
   "devDependencies": {
     "@babel/cli": "7.6.4",
