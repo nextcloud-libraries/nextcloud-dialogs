@@ -1,7 +1,6 @@
 /// <reference types="@nextcloud/typings" />
 
-type OC16to17 = Nextcloud.v16.OC | Nextcloud.v17.OC
-declare var OC: OC16to17;
+declare var OC: Nextcloud.v16.OC | Nextcloud.v17.OC | Nextcloud.v18.OC;
 
 export enum FilePickerType {
     Choose = 1,
@@ -16,6 +15,7 @@ export class FilePicker {
     private mimeTypeFiler: string[]
     private modal: boolean
     private type: FilePickerType
+    private directoriesAllowed: boolean
     private path?: string
 
     public constructor(title: string,
@@ -23,12 +23,14 @@ export class FilePicker {
         mimeTypeFilter: string[],
         modal: boolean,
         type: FilePickerType,
+        directoriesAllowed: boolean,
         path?: string) {
         this.title = title
         this.multiSelect = multiSelect
         this.mimeTypeFiler = mimeTypeFilter
         this.modal = modal
         this.type = type
+        this.directoriesAllowed = directoriesAllowed
         this.path = path
     }
 
@@ -41,7 +43,10 @@ export class FilePicker {
                 this.mimeTypeFiler,
                 this.modal,
                 this.type,
-                this.path
+                this.path,
+                {
+                    allowDirectoryChooser: this.directoriesAllowed
+                }
             )
         })
     }
@@ -53,6 +58,7 @@ export class FilePickerBuilder {
     private mimeTypeFiler: string[] = []
     private modal: boolean = true
     private type: FilePickerType = FilePickerType.Choose
+    private directoriesAllowed: boolean = false
     private path?: string
 
     public constructor(title: string) {
@@ -84,6 +90,11 @@ export class FilePickerBuilder {
         return this
     }
 
+    public allowDirectories(allow: boolean = true): FilePickerBuilder {
+        this.directoriesAllowed = allow
+        return this
+    }
+
     public startAt(path: string): FilePickerBuilder {
         this.path = path
         return this
@@ -96,6 +107,7 @@ export class FilePickerBuilder {
             this.mimeTypeFiler,
             this.modal,
             this.type,
+            this.directoriesAllowed,
             this.path
         )
     }
