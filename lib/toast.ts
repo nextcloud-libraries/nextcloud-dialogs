@@ -17,28 +17,28 @@ export interface ToastOptions {
 	/**
 	 * Defines the timeout after which the toast is closed. Set to 0 to have a persistent toast.
 	 */
-	timeout: number;
+	timeout?: number;
 	/**
 	 * Set to true to allow HTML content inside of the toast text
 	 * @default false
 	 */
-	isHTML: Boolean;
+	isHTML?: Boolean;
 	/**
 	 * Set a type of {ToastType} to style the modal
 	 */
-	type: ToastType|undefined;
+	type?: ToastType|undefined;
 	/**
 	 * Provide a function that is called after the toast is shown
 	 */
-	callback: Function,
+	onShow?: Function,
 	/**
 	 * Provide a function that is called when the toast is clicked
 	 */
-	onClick: Function,
+	onClick?: Function,
 	/**
 	 * Make the toast closable
 	 */
-	close: Boolean;
+	close?: Boolean;
 }
 
 /**
@@ -47,13 +47,14 @@ export interface ToastOptions {
  * @param text Message to be shown in the toast, any HTML is removed by default
  * @param options
  */
-export function showMessage(text: string, options: ToastOptions): Toast {
+export function showMessage(text: string, options?: ToastOptions): Toast {
 	options = Object.assign({
 		timeout: 7,
 		isHTML: false,
 		type: undefined,
-		close: true,
-		callback: () => {},
+		onShow: () => {},
+		onClick: () => {},
+		close: true
 	}, options)
 	if (!options.isHTML) {
 		// fime mae sure that text is extracted
@@ -67,7 +68,7 @@ export function showMessage(text: string, options: ToastOptions): Toast {
 	const toast = Toastify({
 		text: text,
 		duration: options.timeout ? options.timeout * 1000 : null,
-		callback: options.callback,
+		callback: options.onShow,
 		onClick: options.onClick,
 		close: options.close,
 		gravity: 'top',
@@ -86,9 +87,8 @@ export function showMessage(text: string, options: ToastOptions): Toast {
  * @param text Message to be shown in the toast, any HTML is removed by default
  * @param options
  */
-export function showError(text: string, options: ToastOptions): Toast {
-	options.type = ToastType.ERROR
-	return showMessage(text, options)
+export function showError(text: string, options?: ToastOptions): Toast {
+	return showMessage(text, {...options, type: ToastType.ERROR})
 }
 
 /**
@@ -97,9 +97,8 @@ export function showError(text: string, options: ToastOptions): Toast {
  * @param text Message to be shown in the toast, any HTML is removed by default
  * @param options
  */
-export function showWarning(text: string, options: ToastOptions): Toast {
-	options.type = ToastType.WARNING
-	return showMessage(text, options)
+export function showWarning(text: string, options?: ToastOptions): Toast {
+	return showMessage(text, {...options, type: ToastType.WARNING})
 }
 
 /**
@@ -108,9 +107,8 @@ export function showWarning(text: string, options: ToastOptions): Toast {
  * @param text Message to be shown in the toast, any HTML is removed by default
  * @param options
  */
-export function showInfo(text: string, options: ToastOptions): Toast {
-	options.type = ToastType.INFO
-	return showMessage(text, options)
+export function showInfo(text: string, options?: ToastOptions): Toast {
+	return showMessage(text, {...options, type: ToastType.INFO})
 }
 
 /**
@@ -119,7 +117,6 @@ export function showInfo(text: string, options: ToastOptions): Toast {
  * @param text Message to be shown in the toast, any HTML is removed by default
  * @param options
  */
-export function showSuccess(text: string, options: ToastOptions): Toast {
-	options.type = ToastType.SUCCESS
-	return showMessage(text, options)
+export function showSuccess(text: string, options?: ToastOptions): Toast {
+	return showMessage(text, {...options, type: ToastType.SUCCESS})
 }
