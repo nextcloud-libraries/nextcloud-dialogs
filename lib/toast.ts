@@ -1,10 +1,5 @@
 import Toastify from 'toastify-js'
 
-declare interface Toast {
-	showToast(): void;
-	hideToast(): void;
-}
-
 class ToastType {
 	static readonly ERROR = 'toast-error';
 	static readonly WARNING = 'toast-warning';
