@@ -38,8 +38,6 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-externals" checked />
-							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 							<input type="checkbox" id="tsd-filter-only-exported" />
 							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
@@ -56,7 +54,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> @nextcloud/dialogs</h1>
+			<h1>@nextcloud/dialogs</h1>
 		</div>
 	</div>
 </header>
@@ -68,6 +66,26 @@
 					<h1>@nextcloud/dialogs</h1>
 				</a>
 				<p>Nextcloud dialog helpers</p>
+				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+					<h2>Installation</h2>
+				</a>
+				<pre><code><span class="hljs-built_in">npm</span> i -S @nextcloud/dialogs</code></pre>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h2>Usage</h2>
+				</a>
+				<a href="#toasts" id="toasts" style="color: inherit; text-decoration: none;">
+					<h3>Toasts</h3>
+				</a>
+				<pre><code class="language-js"><span class="hljs-keyword">import</span> { showMessage, showInfo, showSuccess, showWarning, showError } <span class="hljs-keyword">from</span> <span class="hljs-string">'@nextcloud/dialogs'</span>
+<span class="hljs-keyword">import</span> <span class="hljs-string">'@nextcloud/dialogs/styles/toast'</span></code></pre>
+				<p>Make sure that the  <code>@nextcloud/dialogs/styles/toast</code> file is included in your app to make sure that the toasts have a proper styling applied.</p>
+				<p>There are different toast styles available, that are exposed in separate functions:</p>
+				<pre><code><span class="hljs-function"><span class="hljs-title">showMessage</span><span class="hljs-params">(<span class="hljs-string">'Message without a specific styling'</span>)</span></span>
+<span class="hljs-function"><span class="hljs-title">showInfo</span><span class="hljs-params">(<span class="hljs-string">'Information'</span>)</span></span>
+<span class="hljs-function"><span class="hljs-title">showSuccess</span><span class="hljs-params">(<span class="hljs-string">'Success'</span>)</span></span>
+<span class="hljs-function"><span class="hljs-title">showWarning</span><span class="hljs-params">(<span class="hljs-string">'Warning'</span>)</span></span>
+<span class="hljs-function"><span class="hljs-title">showError</span><span class="hljs-params">(<span class="hljs-string">'Error'</span>)</span></span></code></pre><p>There are several options that can be passed in as a second parameter, like the timeout of a toast:</p>
+				<pre><code>show<span class="hljs-constructor">Error('This <span class="hljs-params">is</span> <span class="hljs-params">an</span> <span class="hljs-params">error</span> <span class="hljs-params">shown</span> <span class="hljs-params">without</span> <span class="hljs-params">a</span> <span class="hljs-params">timeout</span>', { <span class="hljs-params">timeout</span>: 0 })</span></code></pre><p>A full list of available options can be found in the documentation.</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -81,6 +99,12 @@
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_index_.html">&quot;index&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_toast_.html">&quot;toast&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_toastify_d_.html">&quot;toastify.d&quot;</a>
 					</li>
 				</ul>
 			</nav>
