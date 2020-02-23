@@ -10,7 +10,7 @@ class ToastType {
 
 export interface ToastOptions {
 	/**
-	 * Defines the timeout after which the toast is closed. Set to 0 to have a persistent toast.
+	 * Defines the timeout after which the toast is closed. Set to -1 to have a persistent toast.
 	 */
 	timeout?: number;
 	/**
@@ -23,9 +23,9 @@ export interface ToastOptions {
 	 */
 	type?: ToastType|undefined;
 	/**
-	 * Provide a function that is called after the toast is shown
+	 * Provide a function that is called after the toast is removed
 	 */
-	onShow?: Function,
+	onRemove?: Function,
 	/**
 	 * Provide a function that is called when the toast is clicked
 	 */
@@ -47,7 +47,7 @@ export function showMessage(text: string, options?: ToastOptions): Toast {
 		timeout: 7,
 		isHTML: false,
 		type: undefined,
-		onShow: () => {},
+		onRemove: () => {},
 		onClick: () => {},
 		close: true
 	}, options)
@@ -63,7 +63,7 @@ export function showMessage(text: string, options?: ToastOptions): Toast {
 	const toast = Toastify({
 		text: text,
 		duration: options.timeout ? options.timeout * 1000 : null,
-		callback: options.onShow,
+		callback: options.onRemove,
 		onClick: options.onClick,
 		close: options.close,
 		gravity: 'top',
