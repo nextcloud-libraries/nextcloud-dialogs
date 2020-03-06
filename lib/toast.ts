@@ -57,7 +57,8 @@ export function showMessage(text: string, options?: ToastOptions): Toast {
 		timeout: 7,
 		isHTML: false,
 		type: undefined,
-		selector: 'body-user',
+		// An undefined selector defaults to the body element
+		selector: undefined,
 		onRemove: () => { },
 		onClick: () => { },
 		close: true
