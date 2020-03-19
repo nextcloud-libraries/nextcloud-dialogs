@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "core-js": "3.6.4",
-    "toastify-js": "^1.6.2"
+    "toastify-js": "^1.7.0"
   },
   "devDependencies": {
     "@babel/cli": "7.8.4",

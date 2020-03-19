@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.2.2 - 2020-03-19
+### Changed
+- Dependency updates
+### Fixed
+- Update vulnerable packages
+
 ## 1.2.1 - 2020-03-06
 ### Fixed
 - Use `body` as selector by default, so guest pages work as well
