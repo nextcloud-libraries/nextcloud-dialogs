@@ -22,19 +22,19 @@
     "url": "https://github.com/nextcloud/nextcloud-dialogs"
   },
   "dependencies": {
-    "core-js": "3.6.4",
+    "core-js": "^3.6.4",
     "toastify-js": "^1.7.0"
   },
   "devDependencies": {
-    "@babel/cli": "7.8.4",
-    "@babel/core": "7.9.0",
-    "@babel/preset-env": "7.9.0",
-    "@babel/preset-typescript": "7.9.0",
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-typescript": "^7.9.0",
     "@nextcloud/browserslist-config": "^1.0.0",
     "@nextcloud/typings": "^0.1.4",
-    "babel-plugin-transform-class-properties": "6.24.1",
-    "typedoc": "^0.17.2",
-    "typescript": "3.8.3"
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "typedoc": "^0.17.3",
+    "typescript": "^3.8.3"
   },
   "browserslist": [
     "extends @nextcloud/browserslist-config"
