@@ -71,10 +71,18 @@ export function showMessage(text: string, options?: ToastOptions): Toast {
 	}
 	let classes = options.type ?? ''
 
+	let duration = null
+	if (options.timeout) {
+		if (options.timeout === -1) {
+			duration = -1
+		} else {
+			duration = options.timeout * 1000
+		}
+	}
 
 	const toast = Toastify({
 		text: text,
-		duration: options.timeout ? options.timeout * 1000 : null,
+		duration: duration,
 		callback: options.onRemove,
 		onClick: options.onClick,
 		close: options.close,
