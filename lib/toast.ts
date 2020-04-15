@@ -10,7 +10,7 @@ class ToastType {
 
 export interface ToastOptions {
 	/**
-	 * Defines the timeout after which the toast is closed. Set to -1 to have a persistent toast.
+	 * Defines the timeout after which the toast is closed. Set to 0 to have a persistent toast.
 	 */
 	timeout?: number
 
