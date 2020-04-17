@@ -71,10 +71,9 @@ export function showMessage(text: string, options?: ToastOptions): Toast {
 	}
 	let classes = options.type ?? ''
 
-
 	const toast = Toastify({
 		text: text,
-		duration: options.timeout ? options.timeout * 1000 : null,
+		duration: (options.timeout === null || options.timeout === undefined) ? null : options.timeout * 1000,
 		callback: options.onRemove,
 		onClick: options.onClick,
 		close: options.close,
