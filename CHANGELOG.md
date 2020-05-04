@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.3.0 - 2020-02-04
+### Changed
+- Dependency updates
+### Fixed
+- Persistent notifications
+- Broader version ranges for dependencies to prevent bloat
+
 ## 1.2.2 - 2020-03-19
 ### Changed
 - Dependency updates
