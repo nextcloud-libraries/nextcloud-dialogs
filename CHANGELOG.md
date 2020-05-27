@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.3.1 - 2020-05-27
+### Changed
+- Dependency updates
+### Fixed
+- Toasts not sticky
+
 ## 1.3.0 - 2020-02-04
 ### Changed
 - Dependency updates
