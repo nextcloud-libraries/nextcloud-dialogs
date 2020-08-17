@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## 2.0.0 - 2020-08-17
+### Added
+- Undo methods
+### Changed
+- Build process with rollup
+- Dependency updates
+
 ## 1.4.0 - 2020-06-05
 ### Added
 - Nextcloud 19 typings
