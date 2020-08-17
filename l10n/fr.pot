@@ -1,20 +1,15 @@
 # 
 # Translators:
-# Brendan Abolivier <transifex@brendanabolivier.com>, 2020
-# gud bes <gudbes@protonmail.com>, 2020
-# Greg Greg <grena@grenabox.fr>, 2020
-# Luclu7 <theluc7andcompagnie@gmail.com>, 2020
-# Julien Veyssier <eneiluj@gmx.fr>, 2020
+# John Molakvoæ <skjnldsv@protonmail.com>, 2020
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Julien Veyssier <eneiluj@gmx.fr>, 2020\n"
+"Last-Translator: John Molakvoæ <skjnldsv@protonmail.com>, 2020\n"
 "Language-Team: French (https://www.transifex.com/nextcloud/teams/64236/fr/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: src/components/MultiselectTags/MultiselectTags.vue:170
 #: lib/toast.ts:187
 msgid "Undo"
 msgstr "Annuler"
