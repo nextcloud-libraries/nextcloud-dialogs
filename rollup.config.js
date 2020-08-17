@@ -12,7 +12,21 @@ const extensions = [...DEFAULT_EXTENSIONS, '.ts', '.tsx']
 
 const packageJson = require("./package.json");
 
-const translations = []
+const translations = fs
+	.readdirSync('./l10n')	
+	.filter(name => name !== 'messages.pot' && name.endsWith('.pot'))
+	.map(file => {	
+		const path = './l10n/' + file	
+		const locale = file.substr(0, file.length - '.pot'.length)	
+
+
+		const po = fs.readFileSync(path)	
+		const json = gettextParser.po.parse(po)	
+		return {	
+			locale,	
+			json,	
+		}	
+	})
 
 export default {
 	input: 'lib/index.ts',
