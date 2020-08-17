@@ -11,7 +11,8 @@ declare interface ToastElement {
 declare module 'toastify-js' {
 
     interface ToastifyOptions {
-        text: string,
+        text?: string,
+        node?: Node,
         duration?: number|null,
         destination?: string|undefined,
         newWindow?: Boolean,
