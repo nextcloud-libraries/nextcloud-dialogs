@@ -6,6 +6,7 @@ import commonjs from '@rollup/plugin-commonjs'
 import injectProcessEnv from 'rollup-plugin-inject-process-env'
 import resolve from '@rollup/plugin-node-resolve'
 import typescript from 'rollup-plugin-typescript2'
+import BabelLoaderExcludeNodeModulesExcept from 'babel-loader-exclude-node-modules-except'
 
 import { DEFAULT_EXTENSIONS } from '@babel/core'
 const extensions = [...DEFAULT_EXTENSIONS, '.ts', '.tsx']
@@ -52,7 +53,7 @@ export default {
 		babel({
 			babelHelpers: 'bundled',
 			extensions,
-			exclude: /node_modules/,
+			exclude: BabelLoaderExcludeNodeModulesExcept(['toastify-js']),
 		}),
 	]
 }
