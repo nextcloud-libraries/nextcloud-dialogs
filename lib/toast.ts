@@ -102,9 +102,14 @@ export function showMessage(data: string|Node, options?: ToastOptions): Toast {
 
 	const isNode = data instanceof Node
 
+	let timeout = null
+	if (options.timeout) {
+		timeout = options.timeout === -1 ? -1 : options.timeout * 1000
+	}
+
 	const toast = Toastify({
 		[!isNode ? 'text' : 'node']: data,
-		duration: options.timeout ? options.timeout * 1000 : null,
+		duration: timeout,
 		callback: options.onRemove,
 		onClick: options.onClick,
 		close: options.close,
@@ -175,7 +180,7 @@ export function showUndo(text: string, onUndo: Function, options?: ToastOptions)
 
 	options = Object.assign(options || {}, {
 		// force 10 seconds of timeout
-		timeout: 1000,
+		timeout: 10000,
 		// remove close button
 		close: false
 	})
