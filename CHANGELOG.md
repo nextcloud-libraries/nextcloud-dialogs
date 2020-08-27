@@ -2,10 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## 2.0.1 - 2020-08-27
+### Fixed
+- Fix timeout of showUndo to 10 seconds
+
 ## 2.0.0 - 2020-08-17
 ### Added
 - Undo methods
 ### Changed
+- Timeout value for permanent must be -1 now instead of 0
 - Build process with rollup
 - Dependency updates
 
@@ -45,4 +50,3 @@ All notable changes to this project will be documented in this file.
 ## 1.1.0 - 2020-02-04
 ### Added
 - Toasts
-
