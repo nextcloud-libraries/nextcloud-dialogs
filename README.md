@@ -32,7 +32,7 @@ showError('Error')
 There are several options that can be passed in as a second parameter, like the timeout of a toast:
 
 ```
-showError('This is an error shown without a timeout', { timeout: 0 })
+showError('This is an error shown without a timeout', { timeout: -1 })
 ```
 
 A full list of available options can be found in the [documentation](https://nextcloud.github.io/nextcloud-dialogs/).
