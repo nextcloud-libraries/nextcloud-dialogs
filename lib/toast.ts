@@ -32,6 +32,8 @@ class ToastType {
 	static readonly UNDO = 'toast-undo';
 }
 
+export const TOAST_UNDO_TIMEOUT = 10000
+
 export interface ToastOptions {
 	/**
 	 * Defines the timeout after which the toast is closed. Set to -1 to have a persistent toast.
@@ -180,7 +182,7 @@ export function showUndo(text: string, onUndo: Function, options?: ToastOptions)
 
 	options = Object.assign(options || {}, {
 		// force 10 seconds of timeout
-		timeout: 10000,
+		timeout: TOAST_UNDO_TIMEOUT,
 		// remove close button
 		close: false
 	})
