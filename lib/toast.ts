@@ -33,6 +33,7 @@ class ToastType {
 }
 
 export const TOAST_UNDO_TIMEOUT = 10000
+export const TOAST_DEFAULT_TIMEOUT = 7000
 
 export interface ToastOptions {
 	/**
@@ -80,7 +81,7 @@ export interface ToastOptions {
  */
 export function showMessage(data: string|Node, options?: ToastOptions): Toast {
 	options = Object.assign({
-		timeout: 7000,
+		timeout: TOAST_DEFAULT_TIMEOUT,
 		isHTML: false,
 		type: undefined,
 		// An undefined selector defaults to the body element
