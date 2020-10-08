@@ -34,6 +34,7 @@ class ToastType {
 
 export const TOAST_UNDO_TIMEOUT = 10000
 export const TOAST_DEFAULT_TIMEOUT = 7000
+export const TOAST_PERMANENT_TIMEOUT = -1
 
 export interface ToastOptions {
 	/**
