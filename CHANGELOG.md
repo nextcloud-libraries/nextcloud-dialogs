@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## 3.0.0 - 2020-10-08
+### Breaking
+- Timeouts are now in milliseconds
+### Added
+- Now exports TOAST_UNDO_TIMEOUT, TOAST_DEFAULT_TIMEOUT and TOAST_PERMANENT_TIMEOUT
+### Fixed
+- Fix timeout of showUndo
+
 ## 2.0.1 - 2020-08-27
 ### Fixed
 - Fix timeout of showUndo to 10 seconds
