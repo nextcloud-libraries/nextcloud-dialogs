@@ -32,9 +32,13 @@ class ToastType {
 	static readonly UNDO = 'toast-undo';
 }
 
+export const TOAST_UNDO_TIMEOUT = 10000
+export const TOAST_DEFAULT_TIMEOUT = 7000
+export const TOAST_PERMANENT_TIMEOUT = -1
+
 export interface ToastOptions {
 	/**
-	 * Defines the timeout after which the toast is closed. Set to -1 to have a persistent toast.
+	 * Defines the timeout in milliseconds after which the toast is closed. Set to -1 to have a persistent toast.
 	 */
 	timeout?: number
 
@@ -78,7 +82,7 @@ export interface ToastOptions {
  */
 export function showMessage(data: string|Node, options?: ToastOptions): Toast {
 	options = Object.assign({
-		timeout: 7,
+		timeout: TOAST_DEFAULT_TIMEOUT,
 		isHTML: false,
 		type: undefined,
 		// An undefined selector defaults to the body element
@@ -102,14 +106,9 @@ export function showMessage(data: string|Node, options?: ToastOptions): Toast {
 
 	const isNode = data instanceof Node
 
-	let timeout = null
-	if (options.timeout) {
-		timeout = options.timeout === -1 ? -1 : options.timeout * 1000
-	}
-
 	const toast = Toastify({
 		[!isNode ? 'text' : 'node']: data,
-		duration: timeout,
+		duration: options.timeout,
 		callback: options.onRemove,
 		onClick: options.onClick,
 		close: options.close,
@@ -180,7 +179,7 @@ export function showUndo(text: string, onUndo: Function, options?: ToastOptions)
 
 	options = Object.assign(options || {}, {
 		// force 10 seconds of timeout
-		timeout: 10000,
+		timeout: TOAST_UNDO_TIMEOUT,
 		// remove close button
 		close: false
 	})
