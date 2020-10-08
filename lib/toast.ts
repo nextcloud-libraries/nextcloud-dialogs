@@ -36,7 +36,7 @@ export const TOAST_UNDO_TIMEOUT = 10000
 
 export interface ToastOptions {
 	/**
-	 * Defines the timeout after which the toast is closed. Set to -1 to have a persistent toast.
+	 * Defines the timeout in milliseconds after which the toast is closed. Set to -1 to have a persistent toast.
 	 */
 	timeout?: number
 
@@ -80,7 +80,7 @@ export interface ToastOptions {
  */
 export function showMessage(data: string|Node, options?: ToastOptions): Toast {
 	options = Object.assign({
-		timeout: 7,
+		timeout: 7000,
 		isHTML: false,
 		type: undefined,
 		// An undefined selector defaults to the body element
@@ -104,14 +104,9 @@ export function showMessage(data: string|Node, options?: ToastOptions): Toast {
 
 	const isNode = data instanceof Node
 
-	let timeout = null
-	if (options.timeout) {
-		timeout = options.timeout === -1 ? -1 : options.timeout * 1000
-	}
-
 	const toast = Toastify({
 		[!isNode ? 'text' : 'node']: data,
-		duration: timeout,
+		duration: options.timeout,
 		callback: options.onRemove,
 		onClick: options.onClick,
 		close: options.close,
