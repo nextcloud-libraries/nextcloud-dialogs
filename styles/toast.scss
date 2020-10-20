@@ -19,7 +19,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
- 
+
 // using a different class than server
 // remember to import this scss file into your app
 .toastify.dialogs {
@@ -98,5 +98,17 @@
 
 	&.toast-undo {
 		border-left: 3px solid var(--color-success);
+	}
+}
+
+/* dark theme overrides */
+.theme--dark {
+	.toastify.dialogs {
+		.toast-close {
+			/* close icon style */
+			&.toast-close {
+				background-image: url('./close-dark.svg');
+			}
+		}
 	}
 }
