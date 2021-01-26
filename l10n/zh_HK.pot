@@ -12,4 +12,4 @@ msgstr ""
 
 #: lib/toast.ts:191
 msgid "Undo"
-msgstr "復原"
+msgstr "還原"
