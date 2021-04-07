@@ -30,7 +30,7 @@ declare module 'toastify-js' {
         stopOnFocus?: Boolean,
         callback?: Function,
         onClick?: Function,
-
+        escapeMarkup?: boolean,
     }
 
     export default function Toastify(a: ToastifyOptions): Toast;

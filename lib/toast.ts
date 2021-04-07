@@ -117,6 +117,7 @@ export function showMessage(data: string|Node, options?: ToastOptions): Toast {
 		position: 'right',
 		backgroundColor: '',
 		className: 'dialogs ' + classes,
+		escapeMarkup: !options.isHTML,
 	})
 	toast.showToast()
 	return toast
