@@ -54,8 +54,11 @@ All notable changes to this project will be documented in this file.
 - Fix timeout of showUndo to 10 seconds
 
 ## 2.0.0 - 2020-08-17
+### Breaking
+- Now you must configure some svg loader for your bundler in project (webpack etc.)
 ### Added
 - Undo methods
+- SVG icons
 ### Changed
 - Timeout value for permanent must be -1 now instead of 0
 - Build process with rollup
