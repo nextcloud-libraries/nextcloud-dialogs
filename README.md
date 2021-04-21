@@ -19,6 +19,8 @@ import '@nextcloud/dialogs/styles/toast.scss'
 
 Make sure that the  `@nextcloud/dialogs/styles/toast.scss` file is included in your app to make sure that the toasts have a proper styling applied.
 
+If you using `@nextcloud/dialogs >= 2.0` you must configure svg loader in your project.
+
 There are different toast styles available, that are exposed in separate functions:
 
 ```
