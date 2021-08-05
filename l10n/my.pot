@@ -1,0 +1,15 @@
+# 
+# Translators:
+# Htike Aung Kyaw <htikeagkyaw@gmail.com>, 2021
+# 
+msgid ""
+msgstr ""
+"Last-Translator: Htike Aung Kyaw <htikeagkyaw@gmail.com>, 2021\n"
+"Language-Team: Burmese (https://www.transifex.com/nextcloud/teams/64236/my/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: my\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: lib/toast.ts:192
+msgid "Undo"
+msgstr "နဂိုအတိုင်းပြန်ထားရန်"
