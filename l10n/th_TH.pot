@@ -1,0 +1,15 @@
+# 
+# Translators:
+# Phongpanot Phairat <ppnplus@protonmail.com>, 2021
+# 
+msgid ""
+msgstr ""
+"Last-Translator: Phongpanot Phairat <ppnplus@protonmail.com>, 2021\n"
+"Language-Team: Thai (Thailand) (https://www.transifex.com/nextcloud/teams/64236/th_TH/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: th_TH\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: lib/toast.ts:192
+msgid "Undo"
+msgstr "เลิกทำ"
