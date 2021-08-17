@@ -32,7 +32,7 @@
 	padding-right: 34px;
 	margin-top: 45px;
 	position: fixed;
-	z-index: 10100;
+	z-index: 2000; // Needs to be below Nextcloud menu entries see https://github.com/nextcloud/server/issues/26518
 	border-radius: var(--border-radius);
 
 	.toast-undo-button,
