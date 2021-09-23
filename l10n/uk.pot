@@ -1,10 +1,10 @@
 # 
 # Translators:
-# Vlad Anisimov <uniss@ua.fm>, 2021
+# Oleksandr Panasyuk, 2021
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Vlad Anisimov <uniss@ua.fm>, 2021\n"
+"Last-Translator: Oleksandr Panasyuk, 2021\n"
 "Language-Team: Ukrainian (https://www.transifex.com/nextcloud/teams/64236/uk/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: uk\n"
@@ -12,4 +12,4 @@ msgstr ""
 
 #: lib/toast.ts:192
 msgid "Undo"
-msgstr "Скасувати"
+msgstr "Скасувати дію"
