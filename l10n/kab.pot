@@ -1,0 +1,15 @@
+# 
+# Translators:
+# ZiriSut, 2021
+# 
+msgid ""
+msgstr ""
+"Last-Translator: ZiriSut, 2021\n"
+"Language-Team: Kabyle (https://www.transifex.com/nextcloud/teams/64236/kab/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: kab\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: lib/toast.ts:192
+msgid "Undo"
+msgstr "Sefsex"
