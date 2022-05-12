@@ -2,6 +2,6 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 
-#: lib/toast.ts:192
+#: lib/toast.ts:193
 msgid "Undo"
 msgstr ""
