@@ -28,18 +28,22 @@
 	background-color: var(--color-main-background);
 	color: var(--color-main-text);
 	box-shadow: 0 0 6px 0 var(--color-box-shadow);
-	padding: 12px;
-	padding-right: 34px;
+	padding: 0px 12px;
 	margin-top: 45px;
 	position: fixed;
 	z-index: 10100;
 	border-radius: var(--border-radius);
+	display: flex;
+	align-items: center;
+
+	.toast-undo-container {
+		display: flex;
+		align-items: center;
+	}
 
 	.toast-undo-button,
 	.toast-close {
-		position: absolute;
-		top: 0;
-		right: 0;
+		position: static;
 		overflow: hidden;
 		box-sizing: border-box;
 		min-width: 44px;
@@ -62,6 +66,7 @@
 			$margin: 3px;
 			margin: $margin;
 			height: calc(100% - 2 * #{$margin});
+			margin-left: 12px;
 		}
 
 		&:hover, &:focus, &:active {

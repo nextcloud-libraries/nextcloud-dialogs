@@ -188,6 +188,7 @@ export function showUndo(text: string, onUndo: Function, options?: ToastOptions)
 	// Generate undo layout
 	const undoContent = document.createElement('span')
 	const undoButton = document.createElement('button')
+	undoContent.classList.add('toast-undo-container')
 	undoButton.classList.add('toast-undo-button')
 	undoButton.innerText = t('Undo')
 	undoContent.innerText = text
