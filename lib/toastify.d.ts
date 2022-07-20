@@ -27,6 +27,7 @@ declare module 'toastify-js' {
         callback?: Function,
         onClick?: Function,
         escapeMarkup?: boolean,
+        ariaLive?: String,
     }
 
     export default function Toastify(a: ToastifyOptions): Toast;

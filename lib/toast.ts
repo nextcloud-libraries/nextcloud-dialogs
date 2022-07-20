@@ -126,6 +126,13 @@ export function showMessage(data: string|Node, options?: ToastOptions): Toast {
 
 	const isNode = data instanceof Node
 
+	let ariaLive = ToastAriaLive.POLITE
+	if (options.ariaLive) {
+		ariaLive = options.ariaLive.toString()
+	} else if (options.type === ToastType.ERROR || options.type === ToastType.UNDO) {
+		ariaLive = ToastAriaLive.ASSERTIVE
+	}
+
 	const toast = Toastify({
 		[!isNode ? 'text' : 'node']: data,
 		duration: options.timeout,
@@ -138,17 +145,10 @@ export function showMessage(data: string|Node, options?: ToastOptions): Toast {
 		backgroundColor: '',
 		className: 'dialogs ' + classes,
 		escapeMarkup: !options.isHTML,
+		ariaLive,
 	})
 
 	toast.showToast()
-
-	if (options.ariaLive) {
-		toast.toastElement.setAttribute('aria-live', options.ariaLive.toString())
-	} else if (options.type === ToastType.ERROR || options.type === ToastType.UNDO) {
-		toast.toastElement.setAttribute('aria-live', ToastAriaLive.ASSERTIVE)
-	} else {
-		toast.toastElement.setAttribute('aria-live', ToastAriaLive.POLITE)
-	}
 
 	return toast
 }
