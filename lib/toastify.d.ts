@@ -1,11 +1,7 @@
 declare interface Toast {
-	toastElement: ToastElement;
+	toastElement: HTMLElement;
 	showToast(): void;
 	hideToast(): void;
-}
-
-declare interface ToastElement {
-	toastify: HTMLElement;
 }
 
 declare module 'toastify-js' {
