@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.1.4](https://github.com/nextcloud/nextcloud-dialogs/tree/v3.1.4) - 2022-07-21
+
+[Full Changelog](https://github.com/nextcloud/nextcloud-dialogs/compare/v3.1.4...v3.1.3)
+
+### Changed
+
+- Fixed dark mode with Nextcloud 25 - [\#630](https://github.com/nextcloud/nextcloud-dialogs/pull/630) ([nickvergessen](https://github.com/nickvergessen))
+
 ## [v3.1.3](https://github.com/nextcloud/nextcloud-dialogs/tree/v3.1.3) - 2022-07-21
 
 [Full Changelog](https://github.com/nextcloud/nextcloud-dialogs/compare/v3.1.3...v3.1.2)
