@@ -1,0 +1,15 @@
+# 
+# Translators:
+# Mădălin Vasiliu <contact@madalinvasiliu.com>, 2022
+# 
+msgid ""
+msgstr ""
+"Last-Translator: Mădălin Vasiliu <contact@madalinvasiliu.com>, 2022\n"
+"Language-Team: Romanian (https://www.transifex.com/nextcloud/teams/64236/ro/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: ro\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
+
+#: lib/toast.ts:193
+msgid "Undo"
+msgstr "Anulează"
