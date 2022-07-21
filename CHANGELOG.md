@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.1.3](https://github.com/nextcloud/nextcloud-dialogs/tree/v3.1.3) - 2022-07-21
+
+[Full Changelog](https://github.com/nextcloud/nextcloud-dialogs/compare/v3.1.3...v3.1.2)
+
+### Added
+
+- Export FilePickerType enum [\#556](https://github.com/nextcloud/nextcloud-dialogs/pull/556) [Pytal](https://github.com/Pytal)
+
+### Changed
+
+- Replace deprecated String.prototype.substr - [\#553](https://github.com/nextcloud/nextcloud-dialogs/pull/553) [CommanderRoot](https://github.com/CommanderRoot)
+- Fix undo toast rendering - [\#582](https://github.com/nextcloud/nextcloud-dialogs/pull/582) [artonge](https://github.com/artonge)
+- Bump toastify-js and set aria-live default and allow to overwrite it - [\#622](https://github.com/nextcloud/nextcloud-dialogs/pull/622) ([nickvergessen](https://github.com/nickvergessen))
+- Bumped dependencies
+- Translations updated
+
 ## [v3.1.2](https://github.com/nextcloud/nextcloud-dialogs/tree/v3.1.2) - 2021-04-12
 
 [Full Changelog](https://github.com/nextcloud/nextcloud-dialogs/compare/v3.1.2...v3.1.1)
