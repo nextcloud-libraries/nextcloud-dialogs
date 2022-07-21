@@ -28,7 +28,7 @@
 	background-color: var(--color-main-background);
 	color: var(--color-main-text);
 	box-shadow: 0 0 6px 0 var(--color-box-shadow);
-	padding: 0px 12px;
+	padding: 0 12px;
 	margin-top: 45px;
 	position: fixed;
 	z-index: 10100;
@@ -57,9 +57,23 @@
 
 		// icon styling
 		&.toast-close {
-			background-image: url('./close.svg');
-			text-indent: 200%;
+			text-indent: 0;
 			opacity: .4;
+			border: none;
+			min-height: 44px;
+			margin-left: 10px;
+			font-size: 0;
+
+			/* dark theme overrides for Nextcloud 25 and later */
+			&::before {
+				background-image: url('./close.svg');
+				content: ' ';
+				filter: var(--background-invert-if-dark);
+
+				display: inline-block;
+				width: 16px;
+				height: 16px;
+			}
 		}
 
 		&.toast-undo-button {
@@ -106,12 +120,12 @@
 	}
 }
 
-/* dark theme overrides */
+/* dark theme overrides for Nextcloud 24 and earlier */
 .theme--dark {
 	.toastify.dialogs {
 		.toast-close {
 			/* close icon style */
-			&.toast-close {
+			&.toast-close::before {
 				background-image: url('./close-dark.svg');
 			}
 		}
