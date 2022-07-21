@@ -32,6 +32,16 @@ class ToastType {
 	static readonly UNDO = 'toast-undo';
 }
 
+export const TOAST_ARIA_LIVE_OFF = 'off'
+export const TOAST_ARIA_LIVE_POLITE = 'polite'
+export const TOAST_ARIA_LIVE_ASSERTIVE = 'assertive'
+
+class ToastAriaLive {
+	static readonly OFF = TOAST_ARIA_LIVE_OFF;
+	static readonly POLITE = TOAST_ARIA_LIVE_POLITE;
+	static readonly ASSERTIVE = TOAST_ARIA_LIVE_ASSERTIVE;
+}
+
 export const TOAST_UNDO_TIMEOUT = 10000
 export const TOAST_DEFAULT_TIMEOUT = 7000
 export const TOAST_PERMANENT_TIMEOUT = -1
@@ -72,6 +82,16 @@ export interface ToastOptions {
 	 * Specify the element to attach the toast element to (for testing)
 	 */
 	selector?: string
+
+	/**
+	 * Whether the messages should be announced to screen readers.
+	 * See {ToastAriaLive} for types
+	 * See the following docs for an explanation when to use which:
+	 * https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions
+	 *
+	 * By default, errors are announced assertive and other messages "polite".
+	 */
+	ariaLive?: ToastAriaLive
 }
 
 /**
@@ -106,6 +126,13 @@ export function showMessage(data: string|Node, options?: ToastOptions): Toast {
 
 	const isNode = data instanceof Node
 
+	let ariaLive = ToastAriaLive.POLITE
+	if (options.ariaLive) {
+		ariaLive = options.ariaLive.toString()
+	} else if (options.type === ToastType.ERROR || options.type === ToastType.UNDO) {
+		ariaLive = ToastAriaLive.ASSERTIVE
+	}
+
 	const toast = Toastify({
 		[!isNode ? 'text' : 'node']: data,
 		duration: options.timeout,
@@ -118,8 +145,11 @@ export function showMessage(data: string|Node, options?: ToastOptions): Toast {
 		backgroundColor: '',
 		className: 'dialogs ' + classes,
 		escapeMarkup: !options.isHTML,
+		ariaLive,
 	})
+
 	toast.showToast()
+
 	return toast
 }
 

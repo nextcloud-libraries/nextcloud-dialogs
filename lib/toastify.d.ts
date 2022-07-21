@@ -1,11 +1,7 @@
 declare interface Toast {
-	toastElement: ToastElement;
+	toastElement: HTMLElement;
 	showToast(): void;
 	hideToast(): void;
-}
-
-declare interface ToastElement {
-	toastify: HTMLElement;
 }
 
 declare module 'toastify-js' {
@@ -31,6 +27,7 @@ declare module 'toastify-js' {
         callback?: Function,
         onClick?: Function,
         escapeMarkup?: boolean,
+        ariaLive?: String,
     }
 
     export default function Toastify(a: ToastifyOptions): Toast;
