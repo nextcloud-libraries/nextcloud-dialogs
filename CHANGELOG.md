@@ -12,8 +12,8 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
-- Replace deprecated String.prototype.substr - [\#553](https://github.com/nextcloud/nextcloud-dialogs/pull/553) [CommanderRoot](https://github.com/CommanderRoot)
-- Fix undo toast rendering - [\#582](https://github.com/nextcloud/nextcloud-dialogs/pull/582) [artonge](https://github.com/artonge)
+- Replace deprecated String.prototype.substr - [\#553](https://github.com/nextcloud/nextcloud-dialogs/pull/553) ([CommanderRoot](https://github.com/CommanderRoot))
+- Fix undo toast rendering - [\#582](https://github.com/nextcloud/nextcloud-dialogs/pull/582) ([artonge](https://github.com/artonge))
 - Bump toastify-js and set aria-live default and allow to overwrite it - [\#622](https://github.com/nextcloud/nextcloud-dialogs/pull/622) ([nickvergessen](https://github.com/nickvergessen))
 - Bumped dependencies
 - Translations updated
