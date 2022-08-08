@@ -1,0 +1,15 @@
+# 
+# Translators:
+# Matias Iglesias, 2022
+# 
+msgid ""
+msgstr ""
+"Last-Translator: Matias Iglesias, 2022\n"
+"Language-Team: Spanish (Argentina) (https://www.transifex.com/nextcloud/teams/64236/es_AR/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: es_AR\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+
+#: lib/toast.ts:223
+msgid "Undo"
+msgstr "Deshacer"
