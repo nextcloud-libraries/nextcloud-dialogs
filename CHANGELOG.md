@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.2.0](https://github.com/nextcloud/nextcloud-dialogs/tree/v3.2.0) - 2022-08-10
+
+[Full Changelog](https://github.com/nextcloud/nextcloud-dialogs/compare/v3.1.4...v3.2.0)
+
+### Changed
+
+- Update engines to Node 16 with Npm 7 or Npm 8
+- Translation updates
+- Dependency updates
+
 ## [v3.1.4](https://github.com/nextcloud/nextcloud-dialogs/tree/v3.1.4) - 2022-07-21
 
 [Full Changelog](https://github.com/nextcloud/nextcloud-dialogs/compare/v3.1.4...v3.1.3)
