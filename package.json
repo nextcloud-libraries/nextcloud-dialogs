@@ -38,7 +38,7 @@
     "@nextcloud/browserslist-config": "^2.1.0",
     "@rollup/plugin-babel": "^5.2.0",
     "@rollup/plugin-commonjs": "^22.0.0",
-    "@rollup/plugin-node-resolve": "^13.0.0",
+    "@rollup/plugin-node-resolve": "^14.0.1",
     "babel-loader-exclude-node-modules-except": "^1.0.3",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "gettext-extractor": "^3.5.2",
