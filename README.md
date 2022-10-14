@@ -1,5 +1,7 @@
 # @nextcloud/dialogs
 
+[![npm](https://img.shields.io/npm/v/@nextcloud/dialogs?style=for-the-badge)](https://www.npmjs.com/package/@nextcloud/dialogs)
+
 Nextcloud dialog helpers
 
 ## Installation
