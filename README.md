@@ -43,13 +43,12 @@ A full list of available options can be found in the [documentation](https://nex
 
 ## Releasing a new version
 
-- Checkout latest master (pull);
-- Edit CHANGELOG.md and add new entries there for the new version, then create a commit;
-- Run `npm version patch` (`npm version minor` if minor). This will return a new version name, make sure it matches what was added in the CHANGELOG.md;
-- Push the tag and the master branch `git push origin master [printed-version-name]`;
-- Make the tag a release on github and add the changelog (https://github.com/nextcloud/nextcloud-dialogs/releases);
-- Click edit on a previous release and copy the body of the changelog;
-- Go back, click on your release and paste the copied text;
-- Edit all the version numbers;
-- Click on preview and click on view full changelog, this will show you all the prs that have been; added since the previous version;
-- Copy them in the changelog with the same format as previous ones;
+- Pull the latest changes from `master` or `stableX`;
+- Checkout a new branch with the tag name (e.g `v4.0.1`): `git checkout -b v<version>`;
+- Run `npm version patch --no-git-tag-version` (`npm version minor --no-git-tag-version` if minor). This will return a new version name, make sure it matches what you expect;
+- Commit, push and create PR;
+- Add the change log content from the 'Changelog' action on Github to `CHANGELOG.md`;
+- Commit and push;
+- Get your PR reviewed and merged;
+- Create a release on github with the version as tag (e.g `v4.0.1`) and add the changelog content as description (https://github.com/nextcloud/nextcloud-dialogs/releases);
+  ![image](https://user-images.githubusercontent.com/14975046/124442568-2a952500-dd7d-11eb-82a2-402f9170231a.png)
