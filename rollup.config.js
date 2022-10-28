@@ -6,12 +6,16 @@ import commonjs from '@rollup/plugin-commonjs'
 import injectProcessEnv from 'rollup-plugin-inject-process-env'
 import resolve from '@rollup/plugin-node-resolve'
 import typescript from 'rollup-plugin-typescript2'
+
+import postcss from 'rollup-plugin-postcss'
+import postcssurl from 'postcss-url';
+
 import BabelLoaderExcludeNodeModulesExcept from 'babel-loader-exclude-node-modules-except'
 
 import { DEFAULT_EXTENSIONS } from '@babel/core'
 const extensions = [...DEFAULT_EXTENSIONS, '.ts', '.tsx']
 
-const packageJson = require("./package.json");
+const packageJson = require('./package.json');
 
 const translations = fs
 	.readdirSync('./l10n')	
@@ -29,31 +33,52 @@ const translations = fs
 		}
 	})
 
-export default {
-	input: 'lib/index.ts',
-	output: [
-		{
-			file: packageJson.main,
-			format: "cjs",
-			sourcemap: true
-		},
-		{
-			file: packageJson.module,
-			format: "esm",
-			sourcemap: true
-		}
-	],
-	plugins: [
-		resolve({ extensions }),
-		typescript(),
-		commonjs({ extensions }),
-		injectProcessEnv({
-			TRANSLATIONS: translations
-		}),
-		babel({
-			babelHelpers: 'bundled',
-			extensions,
-			exclude: BabelLoaderExcludeNodeModulesExcept(['toastify-js']),
-		}),
-	]
-}
+export default [
+	{
+		input: 'lib/index.ts',
+		output: [
+			{
+				file: 'dist/index.js',
+				format: 'cjs',
+				sourcemap: true
+			},
+			{
+				file: 'dist/index.es.js',
+				format: 'esm',
+				sourcemap: true
+			}
+		],
+		plugins: [
+			resolve({ extensions }),
+			typescript(),
+			commonjs({ extensions }),
+			injectProcessEnv({
+				TRANSLATIONS: translations
+			}),
+			babel({
+				babelHelpers: 'bundled',
+				extensions,
+				exclude: BabelLoaderExcludeNodeModulesExcept(['toastify-js']),
+			}),
+		]
+	},
+	{
+		input: 'styles/toast.scss',
+		output: {
+			file: 'dist/index.css',
+			format: 'esm',
+		},			
+		plugins: [
+			postcss({
+				modules: true,
+				extract: true,
+				plugins: [
+					postcssurl({
+						url: 'inline',
+						encodeType: 'base64',
+					}),
+				]
+			})
+		]
+	},
+]
