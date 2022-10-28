@@ -15,8 +15,6 @@ import BabelLoaderExcludeNodeModulesExcept from 'babel-loader-exclude-node-modul
 import { DEFAULT_EXTENSIONS } from '@babel/core'
 const extensions = [...DEFAULT_EXTENSIONS, '.ts', '.tsx']
 
-const packageJson = require('./package.json');
-
 const translations = fs
 	.readdirSync('./l10n')	
 	.filter(name => name !== 'messages.pot' && name.endsWith('.pot'))
@@ -65,13 +63,12 @@ export default [
 	{
 		input: 'styles/toast.scss',
 		output: {
-			file: 'dist/index.css',
-			format: 'esm',
+			file: 'dist/index.css'
 		},			
 		plugins: [
 			postcss({
-				modules: true,
 				extract: true,
+				sourceMap: true,
 				plugins: [
 					postcssurl({
 						url: 'inline',
