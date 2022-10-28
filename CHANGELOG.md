@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.0.0-beta.0](https://github.com/nextcloud/nextcloud-dialogs/tree/v4.0.0-beta.0) (2022-10-28)
+
+[Full Changelog](https://github.com/nextcloud/nextcloud-dialogs/compare/v3.2.0...v4.0.0-beta.0)
+
+### :bug: Fixed bugs
+
+- Url encode svg and ship it [\#691](https://github.com/nextcloud/nextcloud-dialogs/pull/691) ([skjnldsv](https://github.com/skjnldsv))
+
+### Changed
+
+- Translation updates
+- Dependency updates
+
 ## [v3.2.0](https://github.com/nextcloud/nextcloud-dialogs/tree/v3.2.0) - 2022-08-10
 
 [Full Changelog](https://github.com/nextcloud/nextcloud-dialogs/compare/v3.1.4...v3.2.0)
