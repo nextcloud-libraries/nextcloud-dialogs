@@ -16,12 +16,12 @@ npm i -S @nextcloud/dialogs
 
 ```js
 import { showMessage, showInfo, showSuccess, showWarning, showError } from '@nextcloud/dialogs'
-import '@nextcloud/dialogs/styles/toast.scss'
+import '@nextcloud/dialogs/dist/index.css'
 ```
 
-Make sure that the  `@nextcloud/dialogs/styles/toast.scss` file is included in your app to make sure that the toasts have a proper styling applied.
+Make sure that the  `@nextcloud/dialogs/dist/index.css` file is included in your app to make sure that the toasts have a proper styling applied.
 
-If you using `@nextcloud/dialogs >= 2.0` you must configure svg loader in your project.
+If you using `@nextcloud/dialogs >= 4.0` you don't need any svg or scss loader in you projects anymore.
 
 There are different toast styles available, that are exposed in separate functions:
 
