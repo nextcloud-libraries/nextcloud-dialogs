@@ -26,7 +26,6 @@
     "nextcloud"
   ],
   "homepage": "https://github.com/nextcloud/nextcloud-dialogs#readme",
-  "author": "Christoph Wurst",
   "license": "GPL-3.0-or-later",
   "repository": {
     "type": "git",
