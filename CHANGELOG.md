@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.0.0-beta.2](https://github.com/nextcloud/nextcloud-dialogs/tree/v4.0.0-beta.2) (2022-11-02)
+
+[Full Changelog](https://github.com/nextcloud/nextcloud-dialogs/compare/v4.0.0-beta.1...v4.0.0-beta.2)
+
+### :bug: Fixed bugs
+
+- Fix exports [\#699](https://github.com/nextcloud/nextcloud-dialogs/pull/699) ([skjnldsv](https://github.com/skjnldsv))
+
 ## [v4.0.0-beta.1](https://github.com/nextcloud/nextcloud-dialogs/tree/v4.0.0-beta.1) (2022-11-02)
 
 [Full Changelog](https://github.com/nextcloud/nextcloud-dialogs/compare/v4.0.0-beta.0...v4.0.0-beta.1)
