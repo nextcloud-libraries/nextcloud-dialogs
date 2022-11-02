@@ -1,6 +1,6 @@
 /// <reference types="@nextcloud/typings" />
 
-declare const OC: Nextcloud.v16.OC | Nextcloud.v17.OC | Nextcloud.v18.OC | Nextcloud.v19.OC | Nextcloud.v20.OC;
+declare const OC: Nextcloud.v23.OC | Nextcloud.v24.OC;
 
 export enum FilePickerType {
     Choose = 1,
@@ -17,6 +17,7 @@ export class FilePicker {
     private type: FilePickerType
     private directoriesAllowed: boolean
     private path?: string
+    private filter?: Nextcloud.v24.FilePickerFilter
 
     public constructor(title: string,
         multiSelect: boolean,
@@ -24,7 +25,8 @@ export class FilePicker {
         modal: boolean,
         type: FilePickerType,
         directoriesAllowed: boolean,
-        path?: string) {
+        path?: string,
+        filter?: Nextcloud.v24.FilePickerFilter) {
         this.title = title
         this.multiSelect = multiSelect
         this.mimeTypeFiler = mimeTypeFilter
@@ -32,6 +34,7 @@ export class FilePicker {
         this.type = type
         this.directoriesAllowed = directoriesAllowed
         this.path = path
+        this.filter = filter
     }
 
     public pick(): Promise<string> {
@@ -45,8 +48,9 @@ export class FilePicker {
                 this.type,
                 this.path,
                 {
-                    allowDirectoryChooser: this.directoriesAllowed
-                }
+                    allowDirectoryChooser: this.directoriesAllowed,
+                    filter: this.filter,
+                },
             )
         })
     }
@@ -60,6 +64,7 @@ export class FilePickerBuilder {
     private type: FilePickerType = FilePickerType.Choose
     private directoriesAllowed: boolean = false
     private path?: string
+    private filter?: Nextcloud.v24.FilePickerFilter
 
     public constructor(title: string) {
         this.title = title
@@ -100,6 +105,11 @@ export class FilePickerBuilder {
         return this
     }
 
+    public setFilter(filter: Nextcloud.v24.FilePickerFilter): FilePickerBuilder {
+        this.filter = filter
+        return this
+    }
+
     public build(): FilePicker {
         return new FilePicker(
             this.title,
@@ -108,7 +118,8 @@ export class FilePickerBuilder {
             this.modal,
             this.type,
             this.directoriesAllowed,
-            this.path
+            this.path,
+            this.filter,
         )
     }
 
