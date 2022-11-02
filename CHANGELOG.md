@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.0.0-beta.1](https://github.com/nextcloud/nextcloud-dialogs/tree/v4.0.0-beta.1) (2022-11-02)
+
+[Full Changelog](https://github.com/nextcloud/nextcloud-dialogs/compare/v4.0.0-beta.0...v4.0.0-beta.1)
+
+### :bug: Fixed bugs
+
+- Do not change css class names when building [\#694](https://github.com/nextcloud/nextcloud-dialogs/pull/694) ([skjnldsv](https://github.com/skjnldsv))
+
 ## [v4.0.0-beta.0](https://github.com/nextcloud/nextcloud-dialogs/tree/v4.0.0-beta.0) (2022-10-28)
 
 [Full Changelog](https://github.com/nextcloud/nextcloud-dialogs/compare/v3.2.0...v4.0.0-beta.0)
