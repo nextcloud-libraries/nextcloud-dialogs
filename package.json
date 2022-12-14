@@ -21,7 +21,7 @@
     "watch": "NODE_ENV=development rollup -c --watch",
     "stylelint": "stylelint src",
     "stylelint:fix": "stylelint src --fix",
-    "check-types": "tsc",
+    "check-types": "tsc --noEmit",
     "l10n:extract": "node build/extract-l10n.js"
   },
   "keywords": [
