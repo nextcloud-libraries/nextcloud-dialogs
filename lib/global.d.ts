@@ -1,0 +1,1 @@
+declare const __TRANSLATIONS__: {locale: string, json: any}[]
