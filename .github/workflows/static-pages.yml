@@ -31,9 +31,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Checkout
-        uses: actions/checkout@v3
-
       - name: Read package.json node and npm engines version
         uses: skjnldsv/read-package-engines-version-actions@v1.2
         id: versions
