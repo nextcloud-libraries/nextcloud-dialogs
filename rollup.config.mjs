@@ -1,11 +1,11 @@
-import fs from 'fs'
+import * as fs from 'fs'
 import gettextParser from 'gettext-parser'
 
 import babel from '@rollup/plugin-babel'
 import commonjs from '@rollup/plugin-commonjs'
-import injectProcessEnv from 'rollup-plugin-inject-process-env'
+import replace from '@rollup/plugin-replace'
 import resolve from '@rollup/plugin-node-resolve'
-import typescript from 'rollup-plugin-typescript2'
+import typescript from '@rollup/plugin-typescript'
 
 import postcss from 'rollup-plugin-postcss'
 import postcssurl from 'postcss-url';
@@ -50,8 +50,12 @@ export default [
 			resolve({ extensions }),
 			typescript(),
 			commonjs({ extensions }),
-			injectProcessEnv({
-				TRANSLATIONS: translations
+			replace({
+				preventAssignment: true,
+				delimiters: ['\\b', '\\b'],
+				values: {
+					__TRANSLATIONS__: JSON.stringify(translations)
+				}
 			}),
 			babel({
 				babelHelpers: 'bundled',
