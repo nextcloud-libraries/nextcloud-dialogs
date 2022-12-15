@@ -50,5 +50,6 @@ A full list of available options can be found in the [documentation](https://nex
 - Add the change log content from the 'Changelog' action on Github to `CHANGELOG.md`;
 - Commit and push;
 - Get your PR reviewed and merged;
-- Create a release on github with the version as tag (e.g `v4.0.1`) and add the changelog content as description (https://github.com/nextcloud/nextcloud-dialogs/releases);
-  ![image](https://user-images.githubusercontent.com/14975046/124442568-2a952500-dd7d-11eb-82a2-402f9170231a.png)
+- Create [a release on github](https://github.com/nextcloud/nextcloud-dialogs/releases) with the version as tag (e.g `v4.0.1`) and add the changelog content as description
+
+![image](https://user-images.githubusercontent.com/14975046/124442568-2a952500-dd7d-11eb-82a2-402f9170231a.png)
