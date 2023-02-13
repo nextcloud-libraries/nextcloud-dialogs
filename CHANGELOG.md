@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## v4.0.0 (2023-02-13)
+
+### :boom: Breaking changes
+
+Styles need to be imported differently compared to v3.2.0. Make sure to import them from `dist/index.css`:
+
+	import '@nextcloud/dialogs/dist/index.css'
+
+
+### :rocket: Enhancement
+* [#577](https://github.com/nextcloud/nextcloud-dialogs/pull/577) Add filepicker filter ([@Pytal](https://github.com/Pytal))
+
+### Committers: 2
+- Ferdinand Thiessen ([@susnux](https://github.com/susnux))
+- [@Pytal](https://github.com/Pytal)
+
+
 ## [v4.0.0-beta.2](https://github.com/nextcloud/nextcloud-dialogs/tree/v4.0.0-beta.2) (2022-11-02)
 
 [Full Changelog](https://github.com/nextcloud/nextcloud-dialogs/compare/v4.0.0-beta.1...v4.0.0-beta.2)
