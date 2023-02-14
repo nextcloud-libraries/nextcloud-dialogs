@@ -8,12 +8,22 @@ import resolve from '@rollup/plugin-node-resolve'
 import typescript from '@rollup/plugin-typescript'
 
 import postcss from 'rollup-plugin-postcss'
-import postcssurl from 'postcss-url';
+import postcssurl from 'postcss-url'
 
 import BabelLoaderExcludeNodeModulesExcept from 'babel-loader-exclude-node-modules-except'
 
 import { DEFAULT_EXTENSIONS } from '@babel/core'
+import { readFile } from 'fs/promises'
+
 const extensions = [...DEFAULT_EXTENSIONS, '.ts', '.tsx']
+
+const packageJson = JSON.parse(
+	await readFile(
+		new URL('./package.json', import.meta.url)
+	)
+)
+
+const externals = [...Object.keys(packageJson?.dependencies || {}), ...Object.keys(packageJson?.peerDependencies || {})]
 
 const translations = fs
 	.readdirSync('./l10n')	
@@ -46,6 +56,7 @@ export default [
 				sourcemap: true
 			}
 		],
+		external: externals,
 		plugins: [
 			resolve({ extensions }),
 			typescript(),
