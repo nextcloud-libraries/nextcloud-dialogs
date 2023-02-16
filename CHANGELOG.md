@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## v4.0.1 (2023-02-16)
+
+#### :rocket: Enhancement
+* [#760](https://github.com/nextcloud/nextcloud-dialogs/pull/760) feat: Make dependencies external ([@susnux](https://github.com/susnux))
+
+#### :bug: Bug Fix
+* [#761](https://github.com/nextcloud/nextcloud-dialogs/pull/761) Fix package resolving in webpack projects ([@susnux](https://github.com/susnux))
+
+#### Committers: 2
+- Ferdinand Thiessen ([@susnux](https://github.com/susnux))
+- Julius Härtl ([@juliushaertl](https://github.com/juliushaertl))
+
 ## v4.0.0 (2023-02-13)
 
 ### :boom: Breaking changes
