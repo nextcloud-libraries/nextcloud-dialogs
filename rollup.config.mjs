@@ -36,12 +36,12 @@ export default [
 		input: 'lib/index.ts',
 		output: [
 			{
-				file: 'dist/index.js',
+				file: 'dist/index.cjs',
 				format: 'cjs',
 				sourcemap: true
 			},
 			{
-				file: 'dist/index.es.js',
+				file: 'dist/index.mjs',
 				format: 'esm',
 				sourcemap: true
 			}
