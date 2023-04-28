@@ -94,10 +94,31 @@ export interface ToastOptions {
 	ariaLive?: ToastAriaLive
 }
 
+const globalToastOptions: ToastOptions = {}
+
+/**
+ * Set default options for toast messages globally
+ *
+ * @param options
+ */
+export function setGlobalToastOptions(options: ToastOptions): void {
+	Object.assign(globalToastOptions, options)
+}
+
+/**
+ * Reset default options for toast messages globally
+ *
+ */
+export function resetGlobalToastOptions(): void {
+	Object.keys(globalToastOptions).forEach(key => {
+		delete globalToastOptions[key];
+	});
+}
+
 /**
  * Show a toast message
  *
- * @param text Message to be shown in the toast, any HTML is removed by default
+ * @param data Message to be shown in the toast, any HTML is removed by default
  * @param options
  */
 export function showMessage(data: string|Node, options?: ToastOptions): Toast {
@@ -110,10 +131,9 @@ export function showMessage(data: string|Node, options?: ToastOptions): Toast {
 		onRemove: () => { },
 		onClick: undefined,
 		close: true
-	}, options)
+	}, globalToastOptions, options)
 
 	if (typeof data === 'string' && !options.isHTML) {
-		// fime mae sure that text is extracted
 		const element = document.createElement('div')
 		element.innerHTML = data
 		data = element.innerText
