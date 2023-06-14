@@ -53,7 +53,7 @@
     "@rollup/plugin-commonjs": "^25.0.0",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-replace": "^5.0.1",
-    "@rollup/plugin-typescript": "^10.0.1",
+    "@rollup/plugin-typescript": "^11.1.1",
     "babel-loader-exclude-node-modules-except": "^1.0.3",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "gettext-extractor": "^3.5.2",
