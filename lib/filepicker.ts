@@ -1,6 +1,6 @@
 /// <reference types="@nextcloud/typings" />
 
-declare const OC: Nextcloud.v23.OC | Nextcloud.v24.OC;
+declare const OC: Nextcloud.v25.OC | Nextcloud.v26.OC | Nextcloud.v27.OC;
 
 export enum FilePickerType {
     Choose = 1,
