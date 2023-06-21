@@ -1,13 +1,14 @@
 {
   "name": "@nextcloud/dialogs",
   "version": "4.0.1",
-  "description": "",
+  "description": "Nextcloud dialog helpers",
   "types": "dist/index.d.ts",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "type": "module",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     },
