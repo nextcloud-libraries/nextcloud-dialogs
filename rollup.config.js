@@ -23,7 +23,10 @@ const packageJson = JSON.parse(
 	)
 )
 
-const externals = [...Object.keys(packageJson?.dependencies || {}), ...Object.keys(packageJson?.peerDependencies || {})]
+const externals = [
+	...Object.keys(packageJson?.dependencies || {}),
+	...Object.keys(packageJson?.peerDependencies || {})
+].map(packageName => new RegExp(`^${packageName}`))
 
 const translations = fs
 	.readdirSync('./l10n')	
