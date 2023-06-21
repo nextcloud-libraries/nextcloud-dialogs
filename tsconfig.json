@@ -6,7 +6,7 @@
       "outDir": "./dist",
       "lib": ["ES5", "ES6", "dom"],
       "module": "ESNext",
-      "moduleResolution": "node",
+      "moduleResolution": "node16",
       "rootDir": "lib/",
       "sourceMap": true,
       "target": "ES2015"
