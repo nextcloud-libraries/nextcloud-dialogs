@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## v4.1.0 (2023-06-23)
+
+### :bug: Fixed bugs
+
+- Make sure Typescript projects with `node16` module resolution can import the package [\#845](https://github.com/nextcloud/nextcloud-dialogs/pull/845) ([@susnux](https://github.com/susnux))
+- Ensure all package dependencies are external [\#843](https://github.com/nextcloud/nextcloud-dialogs/pull/843) ([@susnux](https://github.com/susnux))
+
+### Changed
+
+- Update Node engines to next LTS (version 20)
+- Translation updates
+- Dependency updates
+
 ## v4.0.1 (2023-02-16)
 
 #### :rocket: Enhancement
