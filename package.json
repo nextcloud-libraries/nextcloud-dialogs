@@ -62,7 +62,7 @@
     "postcss-url": "^10.1.3",
     "rollup": "^3.25.1",
     "rollup-plugin-postcss": "^4.0.2",
-    "sass": "^1.63.5",
+    "sass": "^1.63.6",
     "tslib": "^2.5.3",
     "typedoc": "^0.24.8",
     "typescript": "^5.1.3"
