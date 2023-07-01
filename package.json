@@ -63,7 +63,7 @@
     "rollup": "^3.26.0",
     "rollup-plugin-postcss": "^4.0.2",
     "sass": "^1.63.6",
-    "tslib": "^2.5.3",
+    "tslib": "^2.6.0",
     "typedoc": "^0.24.8",
     "typescript": "^5.1.6"
   },
