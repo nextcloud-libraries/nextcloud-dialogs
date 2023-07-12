@@ -20,8 +20,12 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
+///<reference types="toastify-js" />
+
 import Toastify from 'toastify-js'
 import { t } from './l10n.js'
+
+import '../styles/toast.scss'
 
 class ToastType {
 	static readonly ERROR = 'toast-error';
@@ -36,15 +40,17 @@ export const TOAST_ARIA_LIVE_OFF = 'off'
 export const TOAST_ARIA_LIVE_POLITE = 'polite'
 export const TOAST_ARIA_LIVE_ASSERTIVE = 'assertive'
 
-class ToastAriaLive {
-	static readonly OFF = TOAST_ARIA_LIVE_OFF;
-	static readonly POLITE = TOAST_ARIA_LIVE_POLITE;
-	static readonly ASSERTIVE = TOAST_ARIA_LIVE_ASSERTIVE;
+enum ToastAriaLive {
+	OFF = TOAST_ARIA_LIVE_OFF,
+	POLITE = TOAST_ARIA_LIVE_POLITE,
+	ASSERTIVE = TOAST_ARIA_LIVE_ASSERTIVE,
 }
 
 export const TOAST_UNDO_TIMEOUT = 10000
 export const TOAST_DEFAULT_TIMEOUT = 7000
 export const TOAST_PERMANENT_TIMEOUT = -1
+
+type Toast = ReturnType<typeof Toastify>
 
 export interface ToastOptions {
 	/**
@@ -56,7 +62,7 @@ export interface ToastOptions {
 	 * Set to true to allow HTML content inside of the toast text
 	 * @default false
 	 */
-	isHTML?: Boolean
+	isHTML?: boolean
 
 	/**
 	 * Set a type of {ToastType} to style the modal
@@ -66,17 +72,17 @@ export interface ToastOptions {
 	/**
 	 * Provide a function that is called after the toast is removed
 	 */
-	onRemove?: Function
+	onRemove?: () => void
 
 	/**
 	 * Provide a function that is called when the toast is clicked
 	 */
-	onClick?: Function
+	onClick?: () => void
 
 	/**
 	 * Make the toast closable
 	 */
-	close?: Boolean
+	close?: boolean
 
 	/**
 	 * Specify the element to attach the toast element to (for testing)
@@ -85,7 +91,6 @@ export interface ToastOptions {
 
 	/**
 	 * Whether the messages should be announced to screen readers.
-	 * See {ToastAriaLive} for types
 	 * See the following docs for an explanation when to use which:
 	 * https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions
 	 *
@@ -126,9 +131,9 @@ export function showMessage(data: string|Node, options?: ToastOptions): Toast {
 
 	const isNode = data instanceof Node
 
-	let ariaLive = ToastAriaLive.POLITE
+	let ariaLive: ToastAriaLive = ToastAriaLive.POLITE
 	if (options.ariaLive) {
-		ariaLive = options.ariaLive.toString()
+		ariaLive = options.ariaLive
 	} else if (options.type === ToastType.ERROR || options.type === ToastType.UNDO) {
 		ariaLive = ToastAriaLive.ASSERTIVE
 	}

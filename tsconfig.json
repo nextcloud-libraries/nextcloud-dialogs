@@ -4,12 +4,12 @@
       "declaration": true,
       "esModuleInterop": true,
       "outDir": "./dist",
-      "lib": ["ES5", "ES6", "dom"],
+      "lib": [ "ES6", "dom"],
       "module": "ESNext",
-      "moduleResolution": "node16",
+      "moduleResolution": "Bundler",
       "rootDir": "lib/",
       "sourceMap": true,
-      "target": "ES2015"
+      "target": "ESNext"
     },
     "include": ["lib/*"],
     "exclude": [
