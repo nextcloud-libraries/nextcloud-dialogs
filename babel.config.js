@@ -4,8 +4,7 @@ export default {
         [
             "@babel/env",
             {
-                useBuiltIns: "usage",
-                corejs: "3",
+                useBuiltIns: false,
             },
         ],
     ],
