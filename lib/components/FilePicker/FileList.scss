@@ -1,0 +1,16 @@
+tr.file-picker__row {
+	height: var(--row-height, 50px);
+
+	td {
+		cursor: pointer;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		padding-inline: 14px 0;
+
+		// Make "size" and "modified" rows end aligned
+		&:not(:nth-of-type(2)) {
+			text-align: end;
+			padding-inline: 0 14px; // align with header
+		}
+	}
+}
