@@ -1,0 +1,15 @@
+# 
+# Translators:
+# Transifex Bot <>, 2023
+# 
+msgid ""
+msgstr ""
+"Last-Translator: Transifex Bot <>, 2023\n"
+"Language-Team: Kazakh (https://app.transifex.com/nextcloud/teams/64236/kk/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: kk\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: lib/toast.ts:223
+msgid "Undo"
+msgstr ""

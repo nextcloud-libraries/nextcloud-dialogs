@@ -1,15 +1,15 @@
 # 
 # Translators:
-# ByteGet, 2020
+# Joas Schilling, 2023
 # 
 msgid ""
 msgstr ""
-"Last-Translator: ByteGet, 2020\n"
-"Language-Team: Greek (https://www.transifex.com/nextcloud/teams/64236/el/)\n"
+"Last-Translator: Joas Schilling, 2023\n"
+"Language-Team: Greek (https://app.transifex.com/nextcloud/teams/64236/el/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: lib/toast.ts:187
+#: lib/toast.ts:223
 msgid "Undo"
 msgstr "Αναίρεση"

@@ -1,0 +1,15 @@
+# 
+# Translators:
+# Transifex Bot <>, 2023
+# 
+msgid ""
+msgstr ""
+"Last-Translator: Transifex Bot <>, 2023\n"
+"Language-Team: Malay (Malaysia) (https://app.transifex.com/nextcloud/teams/64236/ms_MY/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: ms_MY\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: lib/toast.ts:223
+msgid "Undo"
+msgstr ""

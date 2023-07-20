@@ -1,0 +1,15 @@
+# 
+# Translators:
+# Transifex Bot <>, 2023
+# 
+msgid ""
+msgstr ""
+"Last-Translator: Transifex Bot <>, 2023\n"
+"Language-Team: Spanish (Guatemala) (https://app.transifex.com/nextcloud/teams/64236/es_GT/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: es_GT\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+
+#: lib/toast.ts:223
+msgid "Undo"
+msgstr ""
