@@ -1,0 +1,15 @@
+# 
+# Translators:
+# Transifex Bot <>, 2023
+# 
+msgid ""
+msgstr ""
+"Last-Translator: Transifex Bot <>, 2023\n"
+"Language-Team: Welsh (United Kingdom) (https://app.transifex.com/nextcloud/teams/64236/cy_GB/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: cy_GB\n"
+"Plural-Forms: nplurals=4; plural=(n==1) ? 0 : (n==2) ? 1 : (n != 8 && n != 11) ? 2 : 3;\n"
+
+#: lib/toast.ts:223
+msgid "Undo"
+msgstr ""
