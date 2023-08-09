@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import type { AsyncComponent, Component } from 'vue'
-import NcButton from '@nextcloud/vue/dist/Components/NcButton.js'
+import { NcButton } from '@nextcloud/vue'
 
 export interface IDialogButton {
     label: string,

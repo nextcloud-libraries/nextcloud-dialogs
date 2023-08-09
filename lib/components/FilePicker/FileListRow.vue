@@ -23,10 +23,8 @@
 	</tr>
 </template>
 <script setup lang="ts">
-import NcCheckboxRadioSwitch from '@nextcloud/vue/dist/Components/NcCheckboxRadioSwitch.js'
-import NcDatetime from '@nextcloud/vue/dist/Components/NcDatetime.js'
-
 import { type Node, formatFileSize } from '@nextcloud/files'
+import { NcCheckboxRadioSwitch, NcDatetime } from '@nextcloud/vue'
 import { computed } from 'vue'
 import { t } from '../../l10n'
 

@@ -35,8 +35,7 @@
 </template>
 
 <script setup lang="ts">
-import NcModal from '@nextcloud/vue/dist/Components/NcModal.js'
-
+import { NcModal } from '@nextcloud/vue'
 import { computed, ref, useSlots } from 'vue'
 import DialogButton, { type IDialogButton } from './DialogButton.vue'
 import { Fragment } from 'vue-frag'

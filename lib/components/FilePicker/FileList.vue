@@ -64,12 +64,11 @@
 import type { Node } from '@nextcloud/files'
 
 import { getCanonicalLocale } from '@nextcloud/l10n'
-import { computed, ref, type Ref } from 'vue'
-import { t } from '../../l10n'
+import { NcButton, NcCheckboxRadioSwitch } from '@nextcloud/vue'
 import { join } from 'path'
+import { t } from '../../l10n'
+import { computed, ref, type Ref } from 'vue'
 
-import NcButton from '@nextcloud/vue/dist/Components/NcButton.js'
-import NcCheckboxRadioSwitch from '@nextcloud/vue/dist/Components/NcCheckboxRadioSwitch.js'
 import IconSortAscending from 'vue-material-design-icons/MenuDown.vue'
 import IconSortDescending from 'vue-material-design-icons/MenuUp.vue'
 import LoadingTableRow from './LoadingTableRow.vue'

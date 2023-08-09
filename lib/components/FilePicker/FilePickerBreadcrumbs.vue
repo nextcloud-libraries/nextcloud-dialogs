@@ -38,11 +38,8 @@
 <script setup lang="ts">
 import IconHome from 'vue-material-design-icons/Home.vue'
 import IconPlus from 'vue-material-design-icons/Plus.vue'
-import NcActions from '@nextcloud/vue/dist/Components/NcActions.js'
-import NcActionInput from '@nextcloud/vue/dist/Components/NcActionInput.js'
-import NcBreadcrumbs from '@nextcloud/vue/dist/Components/NcBreadcrumbs.js'
-import NcBreadcrumb from '@nextcloud/vue/dist/Components/NcBreadcrumb.js'
 
+import { NcActions, NcActionInput, NcBreadcrumbs, NcBreadcrumb } from '@nextcloud/vue'
 import { computed, ref } from 'vue'
 import { t } from '../../l10n'
 
