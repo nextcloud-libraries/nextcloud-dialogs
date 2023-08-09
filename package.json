@@ -23,6 +23,7 @@
     }
   },
   "scripts": {
+    "prepare": "npm run build",
     "build:doc": "typedoc --excludeExternals --out dist/doc lib && touch dist/doc/.nojekyll",
     "build": "vite --mode production build",
     "dev": "vite --mode development build",

@@ -64,7 +64,7 @@
 import type { Node } from '@nextcloud/files'
 
 import { getCanonicalLocale } from '@nextcloud/l10n'
-import { computed, ref, watch, type Ref } from 'vue'
+import { computed, ref, type Ref } from 'vue'
 import { t } from '../../l10n'
 import { join } from 'path'
 
@@ -114,8 +114,6 @@ const toggleSorting = (variable: Ref<ISortingOptions>) => {
 		variable.value = 'ascending'
 	}
 }
-
-watch(props.files, () => {console.warn('files changed')})
 
 const toggleSortByName = () => toggleSorting(sortByName)
 const toggleSortBySize = () => toggleSorting(sortBySize)

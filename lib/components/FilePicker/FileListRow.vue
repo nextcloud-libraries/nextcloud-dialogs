@@ -1,7 +1,6 @@
 <template>
 	<tr tabindex="0"
 		class="file-picker__row"
-		@click="handleClick"
 		@key-down="handleKeyDown">
 		<td class="row-checkbox">
 			<NcCheckboxRadioSwitch :disabled="!isPickable"
@@ -9,7 +8,7 @@
 				:aria-label="t('Select the row for {nodename}', { nodename: displayName })"
 				@update:checked="toggleSelected" />
 		</td>
-		<td class="row-name">
+		<td class="row-name" @click="handleClick">
 			<div class="file-picker__name-container">
 				<div class="file-picker__file-icon" :style="{ backgroundImage }" />
 				<div class="file-picker__file-name" v-text="displayName" />

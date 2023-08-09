@@ -19,7 +19,8 @@ const translations = readdirSync('./l10n')
 
 export default defineConfig((env) => {
 	return createLibConfig({
-		'index': 'lib/index.ts'
+		index: 'lib/index.ts',
+		legacy: 'lib/legacy.ts',
 	}, {
 		inlineCSS: false,
 		config: {

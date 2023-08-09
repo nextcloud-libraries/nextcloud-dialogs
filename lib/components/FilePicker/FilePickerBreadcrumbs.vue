@@ -27,7 +27,7 @@
 					:placeholder="t('New folder name')"
 					@submit="onSubmit">
 					<template #icon>
-						<IconFolder :size="20" />
+						<IconHome :size="20" />
 					</template>
 				</NcActionInput>
 			</NcActions>
@@ -36,7 +36,7 @@
 </template>
 
 <script setup lang="ts">
-import IconFolder from 'vue-material-design-icons/Folder.vue'
+import IconHome from 'vue-material-design-icons/Home.vue'
 import IconPlus from 'vue-material-design-icons/Plus.vue'
 import NcActions from '@nextcloud/vue/dist/Components/NcActions.js'
 import NcActionInput from '@nextcloud/vue/dist/Components/NcActionInput.js'

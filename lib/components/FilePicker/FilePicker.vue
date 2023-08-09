@@ -113,7 +113,10 @@ const dialogProps = computed(() => ({
  */
 const dialogButtons = computed(() => [...props.buttons].map(button => ({
 	...button,
-	callback: () => button.callback(selectedFiles.value as Node[]),
+	callback: async () => {
+		const nodes = selectedFiles.value.length === 0 && props.allowPickDirectory ? [await getFile(currentPath.value)] : selectedFiles.value as Node[]
+		return button.callback(nodes)
+	},
 })))
 
 /**
@@ -168,7 +171,7 @@ const filterString = ref('')
 
 const { isSupportedMimeType } = useMimeFilter(toRef(props, 'mimetypeFilter')) // vue 3.3 will allow cleaner syntax of toRef(() => props.mimetypeFilter)
 
-const { files, isLoading, loadFiles } = useDAVFiles(currentView, currentPath)
+const { files, isLoading, loadFiles, getFile } = useDAVFiles(currentView, currentPath)
 
 onMounted(() => loadFiles())
 
@@ -177,8 +180,10 @@ onMounted(() => loadFiles())
  */
 const filteredFiles = computed(() => {
 	let filtered = files.value
+
 	if (props.mimetypeFilter.length > 0) {
-		filtered = filtered.filter(file => file.mime && isSupportedMimeType(file.mime))
+		// filter by mime type but always include folders to navigate
+		filtered = filtered.filter(file => file.type === 'folder' || (file.mime && isSupportedMimeType(file.mime)))
 	}
 	if (filterString.value) {
 		filtered = filtered.filter((file) => file.basename.toLowerCase().includes(filterString.value.toLowerCase()))
@@ -205,7 +210,6 @@ export default {
 
 	&__view {
 		height: 50px; // align with breadcrumbs
-		margin-block-end: 6px;
 		display: flex;
 		justify-content: start;
 		align-items: center;
