@@ -7,6 +7,7 @@ export enum FilePickerType {
     Move = 2,
     Copy = 3,
     CopyMove = 4,
+    Custom = 5,
 }
 
 export class FilePicker {
