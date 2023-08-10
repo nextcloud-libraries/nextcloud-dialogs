@@ -5,7 +5,7 @@
 				:title="t('Home')"
 				@click="emit('update:path', '/')">
 				<template #icon>
-					<IconFolder :size="20" />
+					<IconHome :size="20" />
 				</template>
 			</NcBreadcrumb>
 			<NcBreadcrumb v-for="dir in pathElements"
@@ -22,12 +22,14 @@
 				<template #icon>
 					<IconPlus :size="20" />
 				</template>
-				<NcActionInput :value.sync="newNodeName"
+				<NcActionInput ref="nameInput"
+					:value.sync="newNodeName"
 					:label="t('New folder')"
 					:placeholder="t('New folder name')"
-					@submit="onSubmit">
+					@submit="onSubmit"
+					@input="validateInput">
 					<template #icon>
-						<IconHome :size="20" />
+						<IconFolder :size="20" />
 					</template>
 				</NcActionInput>
 			</NcActions>
@@ -36,6 +38,9 @@
 </template>
 
 <script setup lang="ts">
+import type Vue from 'vue'
+
+import IconFolder from 'vue-material-design-icons/Folder.vue'
 import IconHome from 'vue-material-design-icons/Home.vue'
 import IconPlus from 'vue-material-design-icons/Plus.vue'
 
@@ -66,12 +71,40 @@ const emit = defineEmits<{
  */
 const newNodeName = ref('')
 
+const nameInput = ref<Vue>()
+
+/**
+ * Validate user folder name input
+ */
+function validateInput() {
+	const name = newNodeName.value.trim()
+	const input = nameInput.value?.$el?.querySelector('input')
+
+	let validity = ''
+	if (name.length === 0) {
+		validity = t('File name cannot be empty.')
+	} else if (name.includes('/')) {
+		validity = t('"/" is not allowed inside a file name.')
+	} else if (['..', '.'].includes(name)) {
+		validity = t('"{name}" is an invalid file name.', { name })
+	} else if (name.match(window.OC.config.blacklist_files_regex)) {
+		validity = t('"{name}" is not an allowed filetype', { name })
+	}
+	if (input) {
+		input.setCustomValidity(validity)
+	}
+	return validity === ''
+}
 /**
  * Handle creating a new node
  */
 const onSubmit = function() {
-	emit('create-node', newNodeName.value)
-	newNodeName.value = ''
+	const name = newNodeName.value.trim()
+
+	if (validateInput()) {
+		emit('create-node', name)
+		newNodeName.value = ''
+	}
 }
 
 /**

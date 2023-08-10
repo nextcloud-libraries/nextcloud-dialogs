@@ -6,7 +6,10 @@
 
 		<div class="file-picker__main">
 			<!-- Header title / file list breadcrumbs -->
-			<FilePickerBreadcrumbs v-if="currentView === 'files'" :path.sync="currentPath" :show-menu="allowPickDirectory" />
+			<FilePickerBreadcrumbs v-if="currentView === 'files'"
+				:path.sync="currentPath"
+				:show-menu="allowPickDirectory"
+				@create-node="onCreateFolder"/>
 			<div v-else class="file-picker__view">
 				<h3>{{ viewHeadline }}</h3>
 			</div>
@@ -26,7 +29,7 @@
 
 <script setup lang="ts">
 import type { IDialogButton } from '../DialogButton.vue'
-import type { Node } from '@nextcloud/files'
+import { davRootPath, type Node } from '@nextcloud/files'
 
 import DialogBase from '../DialogBase.vue'
 import FileList from './FileList.vue'
@@ -34,9 +37,11 @@ import FilePickerBreadcrumbs from './FilePickerBreadcrumbs.vue'
 import FilePickerNavigation from './FilePickerNavigation.vue'
 
 import { t } from '../../l10n'
+import { join } from 'path'
 import { computed, onMounted, ref, toRef } from 'vue'
 import { useDAVFiles } from '../../usables/dav'
 import { useMimeFilter } from '../../usables/mime'
+import { showError } from '../../toast'
 
 export interface IFilePickerButton extends Omit<IDialogButton, 'callback'> {
 	callback: (nodes: Node[]) => void
@@ -171,7 +176,7 @@ const filterString = ref('')
 
 const { isSupportedMimeType } = useMimeFilter(toRef(props, 'mimetypeFilter')) // vue 3.3 will allow cleaner syntax of toRef(() => props.mimetypeFilter)
 
-const { files, isLoading, loadFiles, getFile } = useDAVFiles(currentView, currentPath)
+const { files, isLoading, loadFiles, getFile, client } = useDAVFiles(currentView, currentPath)
 
 onMounted(() => loadFiles())
 
@@ -193,6 +198,19 @@ const filteredFiles = computed(() => {
 	}
 	return filtered
 })
+
+/**
+ * Handle creating new folder (breadcrumb menu)
+ * @param name The new folder name
+ */
+const onCreateFolder = (name: string) => {
+	client
+		.createDirectory(join(davRootPath, currentPath.value, name))
+		// reload file list
+		.then(() => loadFiles())
+		// show error to user
+		.catch((e) => showError(t('Could not create the new folder')))
+}
 </script>
 
 <script lang="ts">

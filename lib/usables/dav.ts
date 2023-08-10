@@ -21,7 +21,7 @@
  */
 import type { Node } from '@nextcloud/files'
 import type { ComputedRef, Ref } from 'vue'
-import type { FileStat, ResponseDataDetailed } from 'webdav'
+import type { FileStat, ResponseDataDetailed, WebDAVClient } from 'webdav'
 
 import { davGetClient, davGetFavoritesReport, davGetRecentSearch, davResultToNode, davRootPath } from '@nextcloud/files'
 import { generateRemoteUrl } from '@nextcloud/router'
@@ -33,7 +33,7 @@ import { ref, watch } from 'vue'
  * @param currentView Reference to the current files view
  * @param currentPath Reference to the current files path
  */
-export const useDAVFiles = function(currentView: Ref<'files'|'recent'|'favorites'> | ComputedRef<'files'|'recent'|'favorites'>, currentPath: Ref<string> | ComputedRef<string>): { isLoading: Ref<boolean>, files: Ref<Node[]>, loadFiles: () => void, getFile: (path: string) => Promise<Node> } {
+export const useDAVFiles = function(currentView: Ref<'files'|'recent'|'favorites'> | ComputedRef<'files'|'recent'|'favorites'>, currentPath: Ref<string> | ComputedRef<string>): { isLoading: Ref<boolean>, client: WebDAVClient, files: Ref<Node[]>, loadFiles: () => void, getFile: (path: string) => Promise<Node> } {
 	/**
 	 * The WebDAV client
 	 */
@@ -107,5 +107,6 @@ export const useDAVFiles = function(currentView: Ref<'files'|'recent'|'favorites
 		files,
 		loadFiles: () => loadDAVFiles(),
 		getFile,
+		client,
 	}
 }
