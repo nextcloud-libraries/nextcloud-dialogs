@@ -186,7 +186,7 @@ function onChangeDirectory(dir: Node) {
 				width: 44px;
 			}
 			&.row-name {
-				width: 150px;
+				width: 230px;
 			}
 			&.row-size {
 				width: 100px;
@@ -198,7 +198,7 @@ function onChangeDirectory(dir: Node) {
 
 		// >> begin of hacks for table header sorting buttons
 		// TODO: Remove this hack after ... is available
-		th:nth-of-type(2) {
+		th:not(.row-size) {
 			:deep(.button-vue__wrapper) {
 				justify-content: start;
 				flex-direction: row-reverse;
@@ -207,7 +207,7 @@ function onChangeDirectory(dir: Node) {
 				padding-inline: 16px 4px;
 			}
 		}
-		th:not(:nth-of-type(2)) :deep(.button-vue__wrapper) {
+		th.row-size :deep(.button-vue__wrapper) {
 			justify-content: end;
 		}
 		th :deep(.button-vue__wrapper) {
