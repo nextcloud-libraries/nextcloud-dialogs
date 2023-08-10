@@ -1,20 +1,20 @@
 {
-    "compilerOptions": {
-      "allowSyntheticDefaultImports": true,
-      "declaration": true,
-      "esModuleInterop": true,
-      "outDir": "./dist",
-      "lib": ["ES5", "ES6", "dom"],
-      "module": "ESNext",
-      "moduleResolution": "node16",
-      "rootDir": "lib/",
-      "sourceMap": true,
-      "target": "ES2015"
-    },
-    "include": ["lib/*"],
-    "exclude": [
-      "node_modules",
-      "dist",
-      "build"
-    ]
+  "extends": "@vue/tsconfig",
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "lib": ["DOM", "ESNext"],
+    "outDir": "./dist",
+    "rootDir": "lib/",
+    "sourceMap": true,
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build"
+  ],
+  "vueCompilerOptions": {
+    "target": 2.7
   }
+}
