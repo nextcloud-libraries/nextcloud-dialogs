@@ -2,6 +2,68 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 
-#: lib/toast.ts:223
+#: lib/components/FilePicker/FilePickerBreadcrumbs.vue:89
+msgid "\"{name}\" is an invalid file name."
+msgstr ""
+
+#: lib/components/FilePicker/FilePickerBreadcrumbs.vue:91
+msgid "\"{name}\" is not an allowed filetype"
+msgstr ""
+
+#: lib/components/FilePicker/FilePickerBreadcrumbs.vue:87
+msgid "\"/\" is not allowed inside a file name."
+msgstr ""
+
+#: lib/components/FilePicker/FilePickerNavigation.vue:57
+msgid "All files"
+msgstr ""
+
+#: lib/legacy.ts:135
+msgid "Choose"
+msgstr ""
+
+#: lib/legacy.ts:141
+msgid "Copy"
+msgstr ""
+
+#: lib/components/FilePicker/FilePicker.vue:212
+msgid "Could not create the new folder"
+msgstr ""
+
+#: lib/components/FilePicker/FilePicker.vue:135
+#: lib/components/FilePicker/FilePickerNavigation.vue:65
+msgid "Favorites"
+msgstr ""
+
+#: lib/components/FilePicker/FilePickerBreadcrumbs.vue:85
+msgid "File name cannot be empty."
+msgstr ""
+
+#: lib/components/FilePicker/FileList.vue:39
+msgid "Modified"
+msgstr ""
+
+#: lib/legacy.ts:147
+msgid "Move"
+msgstr ""
+
+#: lib/components/FilePicker/FileList.vue:19
+msgid "Name"
+msgstr ""
+
+#: lib/components/FilePicker/FilePicker.vue:135
+#: lib/components/FilePicker/FilePickerNavigation.vue:61
+msgid "Recent"
+msgstr ""
+
+#: lib/components/FilePicker/FileList.vue:8
+msgid "Select entry"
+msgstr ""
+
+#: lib/components/FilePicker/FileList.vue:29
+msgid "Size"
+msgstr ""
+
+#: lib/toast.ts:228
 msgid "Undo"
 msgstr ""
