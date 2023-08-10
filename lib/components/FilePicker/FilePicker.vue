@@ -111,6 +111,7 @@ const dialogProps = computed(() => ({
 	name: props.name,
 	buttons: dialogButtons.value,
 	size: 'large',
+	navigationClasses: ['file-picker__navigation'],
 }))
 
 /**

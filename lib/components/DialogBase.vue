@@ -7,7 +7,7 @@
 					{{ props.name }}
 				</h2>
 				<!-- When the navigation is collapsed (too small dialog) it is displayed above the main content, otherwise on the inline start -->
-				<nav v-if="hasNavigation" class="dialog__navigation">
+				<nav v-if="hasNavigation" :class="['dialog__navigation', ...navigationClasses]">
 					<slot name="navigation" :is-collapsed="isNavigationCollapsed" />
 				</nav>
 				<!-- Man dialog content -->
@@ -61,11 +61,27 @@ const props = withDefaults(defineProps<{
 	 * @default []
 	 */
 	buttons?: readonly IDialogButton[]
+	/**
+	 * Optionally pass additionaly classes which will be set on the navigation for custom styling
+	 * @default []
+	 * @example
+	 * ```html
+	 * <DialogBase :navigation-classes="['mydialog-navigation']"><!-- --></DialogBase>
+	 * <!-- ... -->
+	 * <style lang="scss">
+	 * :deep(.mydialog-navigation) {
+	 *     flex-direction: row-reverse;
+	 * }
+	 * </style>
+	 * ```
+	 */
+	navigationClasses?: string[]
 }>(), {
 	size: 'normal',
 	container: 'body',
 	message: '',
 	buttons: () => [],
+	navigationClasses: () => [],
 })
 
 const emit = defineEmits<{
