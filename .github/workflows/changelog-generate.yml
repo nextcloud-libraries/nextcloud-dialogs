@@ -32,7 +32,7 @@ jobs:
         with:
           args: >
             -t ${{ secrets.GITHUB_TOKEN }}
-            --user nextcloud
+            --user nextcloud-libraries
             --project nextcloud-dialogs
             --no-issues
             --no-issues-wo-labels

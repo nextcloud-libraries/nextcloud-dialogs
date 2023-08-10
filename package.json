@@ -1,6 +1,6 @@
 {
   "name": "@nextcloud/dialogs",
-  "version": "4.1.0",
+  "version": "4.2.0-beta.1",
   "description": "Nextcloud dialog helpers",
   "types": "dist/index.d.ts",
   "main": "dist/index.cjs",
@@ -36,11 +36,11 @@
   "keywords": [
     "nextcloud"
   ],
-  "homepage": "https://github.com/nextcloud/nextcloud-dialogs#readme",
+  "homepage": "https://github.com/nextcloud-libraries/nextcloud-dialogs#readme",
   "license": "GPL-3.0-or-later",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nextcloud/nextcloud-dialogs"
+    "url": "https://github.com/nextcloud-libraries/nextcloud-dialogs"
   },
   "files": [
     "dist"
