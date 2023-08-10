@@ -122,9 +122,35 @@ const updateFilterValue = (value: string) => emit('update:filterString', value)
 
 		}
 	}
+}
+@media (max-width: 512px) {
+	.file-picker {
+		&__side {
+			flex-direction: row;
+			min-width: unset;
 
-	:deep(.dialog__navigation .v-select.select) {
-		min-width: 160px;
+		}
+		&__filter-input {
+			max-width: unset;
+		}
+	}
+}
+</style>
+
+<style>
+.file-picker__navigation .v-select.select {
+	min-width: 220px;
+}
+
+@media (min-width: 513px) and (max-width: 736px) {
+	.file-picker__navigation {
+		gap: 11px;
+	}
+}
+
+@media (max-width: 512px) {
+	.file-picker__navigation {
+		flex-direction: column-reverse!important;
 	}
 }
 </style>
