@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## v4.2.0-beta.2 (2023-08-11)
+### :bug: Fixed bugs
+
+- Fixed some design flaws in new FilePicker component
+  - Adjust color of placeholder skeletons [\#880](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/880) ([@susnux](https://github.com/susnux))
+  - Fix column alignment to be consistent with files app [\#881](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/881) ([@susnux](https://github.com/susnux))
+  - Navigation and filter should be on separate rows on mobile [\#882](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/882) ([@susnux](https://github.com/susnux))
+
 ## v4.2.0-beta.1 (2023-08-10)
 
 ### :rocket: Enhancement
