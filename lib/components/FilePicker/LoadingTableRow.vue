@@ -40,7 +40,7 @@
 		display: inline-block;
 		height: 24px;
 
-		background: linear-gradient(to right,var(--color-background-darker),var(--color-main-text),var(--color-background-darker));
+		background: linear-gradient(to right,var(--color-background-darker),var(--color-text-maxcontrast),var(--color-background-darker));
 		background-size: 600px 100%;
 		border-radius: var(--border-radius);
 		animation: gradient 12s ease infinite;
