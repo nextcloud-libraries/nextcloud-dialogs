@@ -11,7 +11,7 @@
 		<td class="row-name" @click="handleClick">
 			<div class="file-picker__name-container">
 				<div class="file-picker__file-icon" :style="{ backgroundImage }" />
-				<div class="file-picker__file-name" v-text="displayName" />
+				<div class="file-picker__file-name" :title="displayName" v-text="displayName" />
 			</div>
 		</td>
 		<td class="row-size">
@@ -112,6 +112,9 @@ function handleKeyDown(event: KeyboardEvent) {
 
 	&__file-name {
 		padding-inline-start: 6px;
+		min-width: 0;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 }
 </style>
