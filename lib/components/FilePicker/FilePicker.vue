@@ -1,13 +1,13 @@
 <template>
-	<NcDialog v-bind="dialogProps" :open.sync="isOpen" @update:open="handleClose">
+	<NcDialog v-bind="dialogProps" v-model:open="isOpen" @update:open="handleClose">
 		<template #navigation="{ isCollapsed }">
-			<FilePickerNavigation :is-collapsed="isCollapsed" :current-view.sync="currentView" :filter-string.sync="filterString" />
+			<FilePickerNavigation v-model:current-view="currentView" v-model:filter-string="filterString" :is-collapsed="isCollapsed" />
 		</template>
 
 		<div class="file-picker__main">
 			<!-- Header title / file list breadcrumbs -->
 			<FilePickerBreadcrumbs v-if="currentView === 'files'"
-				:path.sync="currentPath"
+				v-model:path="currentPath"
 				:show-menu="allowPickDirectory"
 				@create-node="onCreateFolder" />
 			<div v-else class="file-picker__view">
@@ -17,13 +17,13 @@
 			<!-- File list -->
 			<!-- If loading or files found show file list, otherwise show empty content-->
 			<FileList v-if="isLoading || filteredFiles.length > 0"
+				v-model:path="currentPath"
+				v-model:selected-files="selectedFiles"
 				:allow-pick-directory="allowPickDirectory"
 				:current-view="currentView"
 				:files="filteredFiles"
 				:multiselect="multiselect"
 				:loading="isLoading"
-				:path.sync="currentPath"
-				:selected-files.sync="selectedFiles"
 				:name="viewHeadline"
 				@update:path="currentView = 'files'" />
 			<NcEmptyContent v-else-if="filterString"
