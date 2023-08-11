@@ -6,7 +6,7 @@
 import type { Ref } from 'vue'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { shallowMount } from '@vue/test-utils'
-import { defineComponent, ref, toRef, nextTick } from 'vue'
+import { defineComponent, h, ref, toRef, nextTick } from 'vue'
 import { useDAVFiles } from './dav'
 
 const nextcloudFiles = vi.hoisted(() => ({
@@ -44,7 +44,7 @@ const TestComponent = defineComponent({
 			...dav,
 		}
 	},
-	render: (h) => h('div'),
+	render: () => h('div'),
 })
 
 describe('dav composable', () => {
@@ -57,7 +57,7 @@ describe('dav composable', () => {
 		nextcloudFiles.davGetClient.mockImplementationOnce(() => client)
 
 		const vue = shallowMount(TestComponent, {
-			propsData: {
+			props: {
 				currentView: 'files',
 				currentPath: '/',
 				isPublic: false,
@@ -83,7 +83,7 @@ describe('dav composable', () => {
 		nextcloudFiles.davResultToNode.mockImplementation((v) => `node ${v}`)
 
 		const vue = shallowMount(TestComponent, {
-			propsData: {
+			props: {
 				currentView: 'files',
 				currentPath: '/',
 				isPublic: false,
@@ -103,7 +103,7 @@ describe('dav composable', () => {
 		nextcloudFiles.davGetClient.mockImplementationOnce(() => client)
 
 		const vue = shallowMount(TestComponent, {
-			propsData: {
+			props: {
 				currentView: 'files',
 				currentPath: '/',
 				isPublic: false,
@@ -131,7 +131,7 @@ describe('dav composable', () => {
 		nextcloudFiles.davGetClient.mockImplementationOnce(() => client)
 
 		const vue = shallowMount(TestComponent, {
-			propsData: {
+			props: {
 				currentView: 'files',
 				currentPath: '/',
 				isPublic: false,
