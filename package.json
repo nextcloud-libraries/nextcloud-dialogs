@@ -69,7 +69,7 @@
     "@vue/tsconfig": "^0.4.0",
     "gettext-extractor": "^3.8.0",
     "gettext-parser": "^7.0.1",
-    "sass": "^1.64.2",
+    "sass": "^1.65.1",
     "tslib": "^2.6.1",
     "typedoc": "^0.24.8",
     "typescript": "^5.1.6",
