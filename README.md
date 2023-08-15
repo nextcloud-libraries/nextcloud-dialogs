@@ -10,6 +10,15 @@ Nextcloud dialog helpers
 npm i -S @nextcloud/dialogs
 ```
 
+### Version compatibility
+Since version 4.2 this package provides a Vue.js based file picker, so this package depends on `@nextcloud/vue`. So to not introduce style collisions stick with the supported versions:
+
+`@nextcloud/dialogs` | `@nextcloud/vue` | Nextcloud server version
+---|---|---
+4.1 | *any* | *any*
+4.2+ | 7.12 | Nextcloud 25, 26, 27, 27.1
+5.x | 8.x | Nextcloud 28 and newer
+
 ## Usage
 
 ### Toasts
