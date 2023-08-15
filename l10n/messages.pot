@@ -14,6 +14,10 @@ msgstr ""
 msgid "\"/\" is not allowed inside a file name."
 msgstr ""
 
+#: lib/components/FilePicker/NcDatetime.vue:34
+msgid "a few seconds ago"
+msgstr ""
+
 #: lib/components/FilePicker/FilePickerNavigation.vue:57
 msgid "All files"
 msgstr ""
@@ -56,6 +60,16 @@ msgstr ""
 msgid "Recent"
 msgstr ""
 
+#. FOR TRANSLATORS: If possible in your language an even shorter version of 'a few seconds ago'
+#: lib/components/FilePicker/NcDatetime.vue:36
+msgid "sec. ago"
+msgstr ""
+
+#. FOR TRANSLATORS: Shorter version of 'a few seconds ago'
+#: lib/components/FilePicker/NcDatetime.vue:35
+msgid "seconds ago"
+msgstr ""
+
 #: lib/components/FilePicker/FileList.vue:8
 msgid "Select entry"
 msgstr ""
@@ -66,4 +80,8 @@ msgstr ""
 
 #: lib/toast.ts:228
 msgid "Undo"
+msgstr ""
+
+#: lib/components/FilePicker/FileListRow.vue:22
+msgid "Unset"
 msgstr ""
