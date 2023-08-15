@@ -23,7 +23,7 @@ import type { Node } from '@nextcloud/files'
 import type { ComputedRef, Ref } from 'vue'
 import type { FileStat, ResponseDataDetailed, WebDAVClient } from 'webdav'
 
-import { davGetClient, davGetFavoritesReport, davGetRecentSearch, davResultToNode, davRootPath } from '@nextcloud/files'
+import { davGetClient, davGetDefaultPropfind, davGetFavoritesReport, davGetRecentSearch, davResultToNode, davRootPath } from '@nextcloud/files'
 import { generateRemoteUrl } from '@nextcloud/router'
 import { ref, watch } from 'vue'
 
@@ -90,7 +90,10 @@ export const useDAVFiles = function(currentView: Ref<'files'|'recent'|'favorites
 
 			files.value = results.data.map((r) => davResultToNode(r))
 		} else {
-			const results = await client.getDirectoryContents(`${davRootPath}${currentPath.value}`, { details: true }) as ResponseDataDetailed<FileStat[]>
+			const results = await client.getDirectoryContents(`${davRootPath}${currentPath.value}`, {
+				details: true,
+				data: davGetDefaultPropfind(),
+			}) as ResponseDataDetailed<FileStat[]>
 			files.value = results.data.map((r) => davResultToNode(r))
 		}
 
