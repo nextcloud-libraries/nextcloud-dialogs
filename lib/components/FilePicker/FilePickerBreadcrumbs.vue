@@ -17,7 +17,9 @@
 		<template v-if="showMenu" #actions>
 			<NcActions :aria-label="t('Create directory')"
 				:force-menu="true"
-				type="tertiary"
+				:force-name="true"
+				:menu-name="t('New')"
+				type="secondary"
 				@close="newNodeName = ''">
 				<template #icon>
 					<IconPlus :size="20" />
@@ -87,7 +89,7 @@ function validateInput() {
 		validity = t('"/" is not allowed inside a file name.')
 	} else if (['..', '.'].includes(name)) {
 		validity = t('"{name}" is an invalid file name.', { name })
-	} else if (name.match(window.OC.config.blacklist_files_regex)) {
+	} else if (window.OC.config?.blacklist_files_regex && name.match(window.OC.config?.blacklist_files_regex)) {
 		validity = t('"{name}" is not an allowed filetype', { name })
 	}
 	if (input) {

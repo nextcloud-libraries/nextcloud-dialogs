@@ -10,7 +10,7 @@
 				<nav v-if="hasNavigation" :class="['dialog__navigation', ...navigationClasses]">
 					<slot name="navigation" :is-collapsed="isNavigationCollapsed" />
 				</nav>
-				<!-- Man dialog content -->
+				<!-- Main dialog content -->
 				<div class="dialog__content">
 					<!-- If the navigation is shown on the side the header should be directly aligned with the content -->
 					<h2 v-if="!isNavigationCollapsed" class="dialog__name">
@@ -38,7 +38,7 @@
 import { NcModal } from '@nextcloud/vue'
 import { computed, ref, useSlots } from 'vue'
 import DialogButton, { type IDialogButton } from './DialogButton.vue'
-import { Fragment } from 'vue-frag'
+import { Fragment } from 'vue-frag' // can be dropped with vue3
 import { useElementSize } from '@vueuse/core'
 
 const props = withDefaults(defineProps<{
@@ -124,10 +124,15 @@ const handleClose = () => {
 	emit('close')
 }
 
+/**
+ * Properties to pass to the underlying NcModal
+ */
 const modalProps = computed(() => ({
 	container: props.container,
 	name: props.name,
 	size: props.size,
+	enableSlideshow: false,
+	enableSwipe: false,
 }))
 </script>
 
