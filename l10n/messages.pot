@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 
-#: lib/components/FilePicker/FilePickerBreadcrumbs.vue:89
+#: lib/components/FilePicker/FilePickerBreadcrumbs.vue:91
 msgid "\"{name}\" is an invalid file name."
 msgstr ""
 
-#: lib/components/FilePicker/FilePickerBreadcrumbs.vue:91
+#: lib/components/FilePicker/FilePickerBreadcrumbs.vue:93
 msgid "\"{name}\" is not an allowed filetype"
 msgstr ""
 
-#: lib/components/FilePicker/FilePickerBreadcrumbs.vue:87
+#: lib/components/FilePicker/FilePickerBreadcrumbs.vue:89
 msgid "\"/\" is not allowed inside a file name."
 msgstr ""
 
@@ -35,7 +35,7 @@ msgstr ""
 msgid "Favorites"
 msgstr ""
 
-#: lib/components/FilePicker/FilePickerBreadcrumbs.vue:85
+#: lib/components/FilePicker/FilePickerBreadcrumbs.vue:87
 msgid "File name cannot be empty."
 msgstr ""
 
