@@ -1,7 +1,5 @@
 /// <reference types="@nextcloud/typings" />
 
-declare const OC: Nextcloud.v25.OC | Nextcloud.v26.OC | Nextcloud.v27.OC
-
 export enum FilePickerType {
 	Choose = 1,
 	Move = 2,
@@ -49,7 +47,10 @@ export class FilePicker {
 		this.buttons = buttons
 	}
 
-	public pick(): Promise<string|string[]> {
+	public async pick(): Promise<string|string[]> {
+		// Async import for module splitting (treeshaking)
+		const filepicker = (await import('./legacy')).filepicker
+
 		return new Promise((resolve) => {
 			const buttons = this.buttons?.map(button => ({
 				defaultButton: button.type === 'primary',
@@ -57,7 +58,7 @@ export class FilePicker {
 				type: button.id,
 			}))
 
-			OC.dialogs.filepicker(
+			filepicker(
 				this.title,
 				resolve,
 				this.multiSelect,
