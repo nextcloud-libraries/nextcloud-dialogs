@@ -1,6 +1,6 @@
 <template>
-	<NcModal v-if="open" v-bind="modalProps" @close="handleClose">
-		<Fragment>
+	<NcModal v-if="open" v-bind="modalProps" class="dialog__modal" @close="handleClose">
+		<div class="dialog">
 			<div ref="wrapper" :class="['dialog__wrapper', { 'dialog__wrapper--collapsed': isNavigationCollapsed }]">
 				<!-- If the navigation is shown on top of the content, the header should be above the navigation -->
 				<h2 v-if="isNavigationCollapsed" class="dialog__name">
@@ -11,7 +11,7 @@
 					<slot name="navigation" :is-collapsed="isNavigationCollapsed" />
 				</nav>
 				<!-- Main dialog content -->
-				<div class="dialog__content">
+				<div :class="['dialog__content', ...contentClasses]">
 					<!-- If the navigation is shown on the side the header should be directly aligned with the content -->
 					<h2 v-if="!isNavigationCollapsed" class="dialog__name">
 						{{ props.name }}
@@ -30,7 +30,7 @@
 						@click="handleClose" />
 				</slot>
 			</div>
-		</Fragment>
+		</div>
 	</NcModal>
 </template>
 
@@ -38,7 +38,6 @@
 import { NcModal } from '@nextcloud/vue'
 import { computed, ref, useSlots } from 'vue'
 import DialogButton, { type IDialogButton } from './DialogButton.vue'
-import { Fragment } from 'vue-frag' // can be dropped with vue3
 import { useElementSize } from '@vueuse/core'
 
 const props = withDefaults(defineProps<{
@@ -46,14 +45,16 @@ const props = withDefaults(defineProps<{
 	name: string
 	/** Text of the dialog */
 	message?: string
+	/** Additional elements to add to the focus trap */
+	additionalTrapElements?: string[]
 	/**
-	 * The element here to mount the dialog
+	 * The element where to mount the dialog, if `null` is passed the dialog is mounted in place
 	 * @default 'body'
 	 */
-	container?: string
+	container?: string | null
 	/**
 	 * Size of the underlying NcModal
-	 * @default 'normal'
+	 * @default 'small'
 	 */
 	size?: 'small' | 'normal' | 'large' | 'full'
 	/**
@@ -76,12 +77,19 @@ const props = withDefaults(defineProps<{
 	 * ```
 	 */
 	navigationClasses?: string[]
+	/**
+	 * Optionally pass additionaly classes which will be set on the content wrapper for custom styling
+	 * @default []
+	 */
+	contentClasses?: string[]
 }>(), {
-	size: 'normal',
-	container: 'body',
-	message: '',
+	additionalTrapElements: () => [],
 	buttons: () => [],
+	container: undefined,
+	message: '',
+	contentClasses: () => [],
 	navigationClasses: () => [],
+	size: 'small',
 })
 
 const emit = defineEmits<{
@@ -128,7 +136,8 @@ const handleClose = () => {
  * Properties to pass to the underlying NcModal
  */
 const modalProps = computed(() => ({
-	container: props.container,
+	additionalTrapElements: props.additionalTrapElements,
+	container: props.container === undefined ? 'body' : props.container,
 	name: props.name,
 	size: props.size,
 	enableSlideshow: false,
@@ -138,11 +147,25 @@ const modalProps = computed(() => ({
 
 <style lang="scss" scoped>
 .dialog {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	&__modal {
+		:deep(.modal-container) {
+			display: flex !important;
+		}
+	}
+
 	&__wrapper {
 		margin-inline: 12px;
 		margin-block: 0 12px; // remove margin to align header with close button
 		display: flex;
 		flex-direction: row;
+		// Auto scale to fit
+		flex: 1;
+		min-height: 0;
 
 		&--collapsed {
 			flex-direction: column;
@@ -151,6 +174,7 @@ const modalProps = computed(() => ({
 
 	&__navigation {
 		display: flex;
+		flex-shrink: 0;
 	}
 
 	// Navigation styling when side-by-side with content
@@ -181,6 +205,12 @@ const modalProps = computed(() => ({
 		min-height: var(--default-clickable-area);
 		line-height: var(--default-clickable-area);
 		margin-block: 4px 12px; // start = 4px to align with close button
+	}
+
+	&__content {
+		// Auto fit
+		flex: 1;
+		min-height: 0;
 	}
 
 	&__actions {
