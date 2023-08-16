@@ -27,7 +27,7 @@
 
 <script lang="ts">
 import { getCanonicalLocale } from '@nextcloud/l10n'
-import { t } from '../../l10n.js'
+import { t } from '../../utils/l10n.js'
 import { defineComponent, type PropType } from 'vue'
 
 const FEW_SECONDS_AGO = {
