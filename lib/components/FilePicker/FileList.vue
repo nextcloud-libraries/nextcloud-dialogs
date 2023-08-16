@@ -182,6 +182,10 @@ function onChangeDirectory(dir: Node) {
 			table-layout: fixed;
 		}
 		th {
+			position: sticky;
+			top: 0;
+			background-color: var(--color-main-background);
+
 			&.row-checkbox {
 				width: 44px;
 			}

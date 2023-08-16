@@ -112,6 +112,7 @@ const dialogProps = computed(() => ({
 	buttons: dialogButtons.value,
 	size: 'large',
 	navigationClasses: ['file-picker__navigation'],
+	contentClasses: ['file-picker__content'],
 }))
 
 /**
@@ -242,6 +243,16 @@ export default {
 
 	&__main {
 		width: 100%;
+		display: flex;
+		flex-direction: column;
+		// Auto fit height
+		min-height: 0;
+		flex: 1;
 	}
+}
+
+:deep(.file-picker__content) {
+	display: flex;
+	flex-direction: column;
 }
 </style>
