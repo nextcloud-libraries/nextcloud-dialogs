@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## v4.2.0-beta.3 (2023-08-16)
+### :rocket: Enhancement
+- Allow to add custom buttons and use the shipped file picker when using the FilePickerBuilder [\#898](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/898) ([@susnux](https://github.com/susnux))
+
+### :bug: Fixed bugs
+- Revert `@nextcloud/vue` to version 7.12 to keep supporting Nextcloud 27 [\#889](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/889) ([@susnux](https://github.com/susnux))
+- Fix file size is always reported as `0B` in file picker [\#895](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/895) ([@susnux](https://github.com/susnux))
+
+### Changed
+- The file picker breadcrumbs button got a new design [\#894](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/894) ([@susnux](https://github.com/susnux))
+
 ## v4.2.0-beta.2 (2023-08-11)
 ### :bug: Fixed bugs
 
