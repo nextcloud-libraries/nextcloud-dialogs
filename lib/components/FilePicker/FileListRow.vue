@@ -26,7 +26,7 @@
 import { type Node, formatFileSize } from '@nextcloud/files'
 import { NcCheckboxRadioSwitch, NcDatetime } from '@nextcloud/vue'
 import { computed } from 'vue'
-import { t } from '../../l10n'
+import { t } from '../../utils/l10n'
 
 const props = defineProps<{
 	/** Can directories be picked */

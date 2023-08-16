@@ -8,17 +8,19 @@
 </template>
 
 <script setup lang="ts">
-import type { AsyncComponent, Component } from 'vue'
+import type { IDialogButton } from './types'
 import { NcButton } from '@nextcloud/vue'
 
-export interface IDialogButton {
-    label: string,
-    icon?: Component | AsyncComponent,
-    callback: () => void,
-    type?: 'primary' | 'secondary' | 'error' | 'warning' | 'success'
-}
+// with vue 3.3:
+// const props = defineProps<IDialogButton>()
 
-const props = defineProps<IDialogButton>()
+const props = defineProps<{
+	callback: IDialogButton['callback'],
+	label: IDialogButton['label'],
+	icon: IDialogButton['icon'],
+	type: IDialogButton['type'],
+}>()
+
 const emit = defineEmits<(e: 'click', event: MouseEvent) => void>()
 
 const handleClick = (e: MouseEvent) => {

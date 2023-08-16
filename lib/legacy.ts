@@ -29,7 +29,7 @@ import type { IFilePickerButton } from './components/FilePicker/FilePicker.vue'
 import type { Node } from '@nextcloud/files'
 import type { AsyncComponent, Component } from 'vue'
 
-import { t } from './l10n'
+import { t } from './utils/l10n'
 import { FilePickerVue, FilePickerType } from '.'
 import DialogBase from './components/DialogBase.vue'
 import Vue from 'vue'
