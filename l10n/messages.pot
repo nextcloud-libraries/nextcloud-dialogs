@@ -18,11 +18,11 @@ msgstr ""
 msgid "All files"
 msgstr ""
 
-#: lib/filepicker.ts:183
+#: lib/filepicker.ts:178
 msgid "Choose"
 msgstr ""
 
-#: lib/filepicker.ts:171
+#: lib/filepicker.ts:166
 msgid "Copy"
 msgstr ""
 
@@ -43,8 +43,8 @@ msgstr ""
 msgid "Modified"
 msgstr ""
 
-#: lib/filepicker.ts:177
-#: lib/filepicker.ts:191
+#: lib/filepicker.ts:172
+#: lib/filepicker.ts:186
 msgid "Move"
 msgstr ""
 
@@ -65,6 +65,6 @@ msgstr ""
 msgid "Size"
 msgstr ""
 
-#: lib/toast.ts:229
+#: lib/toast.ts:242
 msgid "Undo"
 msgstr ""

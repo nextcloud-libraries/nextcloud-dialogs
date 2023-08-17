@@ -23,13 +23,42 @@
 import type { Node } from '@nextcloud/files'
 import type { AsyncComponent, Component } from 'vue'
 
+/**
+ * Interface for defining buttons passed to the Dialog component
+ */
 export interface IDialogButton {
+	/** Label of the button */
 	label: string,
-	icon?: Component | AsyncComponent,
+
+	/** Callback on button click */
 	callback: () => void,
+	/**
+	 * Optional Icon for the button
+	 * Can be a Vue component or async component
+	 */
+	icon?: Component | AsyncComponent,
+
+	/**
+	 * Button type
+	 * @see https://nextcloud-vue-components.netlify.app/#/Components/NcButton
+	 */
 	type?: 'primary' | 'secondary' | 'error' | 'warning' | 'success'
 }
 
+/**
+ * Interface to define buttons of the FilePicker component
+ * The buttons are based on the Dialog buttons but the callback gets the array of selected nodes
+ */
 export interface IFilePickerButton extends Omit<IDialogButton, 'callback'> {
+	/**
+	 * Callback on button click
+	 *
+	 * @param nodes Array of `@nextcloud/files` Nodes that were selected
+	 */
 	callback: (nodes: Node[]) => void
 }
+
+/**
+* Type of filter functions to filter the FilePicker's file list
+*/
+export type IFilePickerFilter = (node: Node) => boolean

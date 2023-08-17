@@ -9,7 +9,7 @@
 			<FilePickerBreadcrumbs v-if="currentView === 'files'"
 				:path.sync="currentPath"
 				:show-menu="allowPickDirectory"
-				@create-node="onCreateFolder"/>
+				@create-node="onCreateFolder" />
 			<div v-else class="file-picker__view">
 				<h3>{{ viewHeadline }}</h3>
 			</div>
@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import type { IFilePickerButton } from '../types'
+import type { IFilePickerButton, IFilePickerFilter } from '../types'
 import { davRootPath, type Node } from '@nextcloud/files'
 
 import DialogBase from '../DialogBase.vue'
@@ -65,7 +65,7 @@ const props = withDefaults(defineProps<{
 	/**
 	 * Custom filter function used to filter pickable files
 	 */
-	filterFn?: (node: Node) => boolean
+	filterFn?: IFilePickerFilter
 
 	/**
 	 * List of allowed mime types
