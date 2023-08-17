@@ -26,11 +26,11 @@ msgstr ""
 msgid "Copy"
 msgstr ""
 
-#: lib/components/FilePicker/FilePicker.vue:214
+#: lib/components/FilePicker/FilePicker.vue:210
 msgid "Could not create the new folder"
 msgstr ""
 
-#: lib/components/FilePicker/FilePicker.vue:137
+#: lib/components/FilePicker/FilePicker.vue:133
 #: lib/components/FilePicker/FilePickerNavigation.vue:65
 msgid "Favorites"
 msgstr ""
@@ -51,7 +51,7 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: lib/components/FilePicker/FilePicker.vue:137
+#: lib/components/FilePicker/FilePicker.vue:133
 #: lib/components/FilePicker/FilePickerNavigation.vue:61
 msgid "Recent"
 msgstr ""
@@ -64,6 +64,6 @@ msgstr ""
 msgid "Size"
 msgstr ""
 
-#: lib/toast.ts:228
+#: lib/toast.ts:229
 msgid "Undo"
 msgstr ""

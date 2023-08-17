@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import type { IDialogButton } from '../DialogButton.vue'
+import type { IFilePickerButton } from '../types'
 import { davRootPath, type Node } from '@nextcloud/files'
 
 import DialogBase from '../DialogBase.vue'
@@ -36,16 +36,12 @@ import FileList from './FileList.vue'
 import FilePickerBreadcrumbs from './FilePickerBreadcrumbs.vue'
 import FilePickerNavigation from './FilePickerNavigation.vue'
 
-import { t } from '../../l10n'
+import { t } from '../../utils/l10n'
 import { join } from 'path'
 import { computed, onMounted, ref, toRef } from 'vue'
 import { useDAVFiles } from '../../usables/dav'
 import { useMimeFilter } from '../../usables/mime'
 import { showError } from '../../toast'
-
-export interface IFilePickerButton extends Omit<IDialogButton, 'callback'> {
-	callback: (nodes: Node[]) => void
-}
 
 const props = withDefaults(defineProps<{
 	/** Buttons to be displayed */
@@ -69,7 +65,7 @@ const props = withDefaults(defineProps<{
 	/**
 	 * Custom filter function used to filter pickable files
 	 */
-	 filterFn?: (node: Node) => boolean
+	filterFn?: (node: Node) => boolean
 
 	/**
 	 * List of allowed mime types

@@ -48,7 +48,7 @@ import IconPlus from 'vue-material-design-icons/Plus.vue'
 
 import { NcActions, NcActionInput, NcBreadcrumbs, NcBreadcrumb } from '@nextcloud/vue'
 import { computed, ref } from 'vue'
-import { t } from '../../l10n'
+import { t } from '../../utils/l10n'
 
 const props = defineProps<{
 	/** Current path to display */
