@@ -66,7 +66,7 @@ import type { Node } from '@nextcloud/files'
 import { getCanonicalLocale } from '@nextcloud/l10n'
 import { NcButton, NcCheckboxRadioSwitch } from '@nextcloud/vue'
 import { join } from 'path'
-import { t } from '../../l10n'
+import { t } from '../../utils/l10n'
 import { computed, ref, type Ref } from 'vue'
 
 import IconSortAscending from 'vue-material-design-icons/MenuDown.vue'

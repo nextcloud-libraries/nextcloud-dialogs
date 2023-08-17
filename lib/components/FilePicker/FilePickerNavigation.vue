@@ -48,7 +48,7 @@ import IconMagnify from 'vue-material-design-icons/Magnify.vue'
 import IconStar from 'vue-material-design-icons/Star.vue'
 
 import { NcButton, NcSelect, NcTextField } from '@nextcloud/vue'
-import { t } from '../../l10n'
+import { t } from '../../utils/l10n'
 import { computed } from 'vue'
 import { Fragment } from 'vue-frag'
 

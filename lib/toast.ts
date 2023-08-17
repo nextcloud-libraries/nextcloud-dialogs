@@ -23,11 +23,12 @@
 ///<reference types="toastify-js" />
 
 import Toastify from 'toastify-js'
-import { t } from './l10n.js'
+import { t } from './utils/l10n.js'
 
 import '../styles/toast.scss'
 
 class ToastType {
+
 	static readonly ERROR = 'toast-error';
 	static readonly WARNING = 'toast-warning';
 	static readonly INFO = 'toast-info';
