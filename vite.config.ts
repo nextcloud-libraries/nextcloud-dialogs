@@ -1,6 +1,6 @@
 import { createLibConfig } from '@nextcloud/vite-config'
 import { readdirSync, readFileSync } from 'fs'
-import gettextParser from 'gettext-parser'
+import { po as poParser } from 'gettext-parser'
 import { defineConfig } from 'vite'
 
 const translations = readdirSync('./l10n')
@@ -10,7 +10,7 @@ const translations = readdirSync('./l10n')
 		const locale = file.slice(0, -'.pot'.length)
 
 		const po = readFileSync(path)
-		const json = gettextParser.po.parse(po)
+		const json = poParser.parse(po)
 		return {
 			locale,
 			json,
@@ -20,7 +20,6 @@ const translations = readdirSync('./l10n')
 export default defineConfig((env) => {
 	return createLibConfig({
 		index: 'lib/index.ts',
-		legacy: 'lib/legacy.ts',
 	}, {
 		inlineCSS: false,
 		config: {
