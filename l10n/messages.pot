@@ -78,7 +78,7 @@ msgstr ""
 msgid "Size"
 msgstr ""
 
-#: lib/toast.ts:229
+#: lib/toast.ts:242
 msgid "Undo"
 msgstr ""
 

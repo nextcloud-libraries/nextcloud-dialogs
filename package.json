@@ -16,6 +16,10 @@
       "import": "./dist/style.css",
       "require": "./dist/style.css"
     },
+    "./style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    },
     "./legacy.js": {
       "types": "./dist/legacy.d.ts",
       "import": "./dist/legacy.mjs",
@@ -24,10 +28,11 @@
   },
   "scripts": {
     "prepare": "npm run build",
-    "build:doc": "typedoc --excludeExternals --out dist/doc lib && touch dist/doc/.nojekyll",
+    "build:doc": "npm run dev && npm run doc",
     "build": "vite --mode production build",
     "dev": "vite --mode development build",
     "dev:watch": "vite --mode development build --watch",
+    "doc": "typedoc --tsconfig tsconfig-typedoc.json --plugin @zamiell/typedoc-plugin-not-exported --out dist/doc dist/index.d.ts && touch dist/doc/.nojekyll",
     "stylelint": "stylelint src",
     "stylelint:fix": "stylelint src --fix",
     "check-types": "tsc --noEmit",
@@ -67,6 +72,7 @@
     "@nextcloud/vite-config": "^1.0.0-beta.18",
     "@types/gettext-parser": "^4.0.2",
     "@vue/tsconfig": "^0.4.0",
+    "@zamiell/typedoc-plugin-not-exported": "^0.2.0",
     "gettext-extractor": "^3.8.0",
     "gettext-parser": "^7.0.1",
     "sass": "^1.65.1",
