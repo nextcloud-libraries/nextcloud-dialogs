@@ -20,17 +20,12 @@
  *
  */
 
-import type { IFilePickerButton } from './components/types'
+import type { IFilePickerButton, IFilePickerFilter } from './components/types'
 import type { Node } from '@nextcloud/files'
 
 import { spawnDialog } from './utils/dialogs'
 import { FilePickerVue } from './components/FilePicker/index'
 import { t } from './utils/l10n'
-
-/**
- * Type of filter functions to filter the FilePicker's file list
- */
-export type FilePickerFilter = (node: Node) => boolean
 
 /**
  * @deprecated
@@ -51,7 +46,7 @@ export class FilePicker {
 	private directoriesAllowed: boolean
 	private buttons: IFilePickerButton[]
 	private path?: string
-	private filter?: FilePickerFilter
+	private filter?: IFilePickerFilter
 
 	public constructor(title: string,
 		multiSelect: boolean,
@@ -59,7 +54,7 @@ export class FilePicker {
 		directoriesAllowed: boolean,
 		buttons: IFilePickerButton[],
 		path?: string,
-		filter?: FilePickerFilter) {
+		filter?: IFilePickerFilter) {
 		this.title = title
 		this.multiSelect = multiSelect
 		this.mimeTypeFilter = mimeTypeFilter
@@ -105,7 +100,7 @@ export class FilePickerBuilder {
 	private mimeTypeFilter: string[] = []
 	private directoriesAllowed = false
 	private path?: string
-	private filter?: FilePickerFilter
+	private filter?: IFilePickerFilter
 	private buttons: IFilePickerButton[] = []
 
 	/**
@@ -221,7 +216,7 @@ export class FilePickerBuilder {
 	 *
 	 * @param filter Filter function to apply
 	 */
-	public setFilter(filter: FilePickerFilter): FilePickerBuilder {
+	public setFilter(filter: IFilePickerFilter): FilePickerBuilder {
 		this.filter = filter
 		return this
 	}
