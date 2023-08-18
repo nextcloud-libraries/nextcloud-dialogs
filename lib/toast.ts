@@ -27,30 +27,43 @@ import { t } from './utils/l10n.js'
 
 import '../styles/toast.scss'
 
-class ToastType {
-
-	static readonly ERROR = 'toast-error';
-	static readonly WARNING = 'toast-warning';
-	static readonly INFO = 'toast-info';
-	static readonly SUCCESS = 'toast-success';
-	static readonly PERMANENT = 'toast-error';
-	static readonly UNDO = 'toast-undo';
+/**
+ * Enum of available Toast types
+ */
+export enum ToastType {
+	ERROR = 'toast-error',
+	WARNING = 'toast-warning',
+	INFO = 'toast-info',
+	SUCCESS = 'toast-success',
+	PERMANENT = 'toast-error',
+	UNDO = 'toast-undo',
 }
 
+/** @deprecated Use ToastAriaLive.OFF */
 export const TOAST_ARIA_LIVE_OFF = 'off'
+/** @deprecated Use ToastAriaLive.POLITE */
 export const TOAST_ARIA_LIVE_POLITE = 'polite'
+/** @deprecated Use ToastAriaLive.ASSERTIVE */
 export const TOAST_ARIA_LIVE_ASSERTIVE = 'assertive'
 
-enum ToastAriaLive {
+export enum ToastAriaLive {
 	OFF = TOAST_ARIA_LIVE_OFF,
 	POLITE = TOAST_ARIA_LIVE_POLITE,
 	ASSERTIVE = TOAST_ARIA_LIVE_ASSERTIVE,
 }
 
+/** Timeout in ms of a undo toast */
 export const TOAST_UNDO_TIMEOUT = 10000
+/** Default timeout in ms of toasts */
 export const TOAST_DEFAULT_TIMEOUT = 7000
+/** Timeout value to show a toast permanently */
 export const TOAST_PERMANENT_TIMEOUT = -1
 
+/**
+ * Type of a toast
+ * @see https://apvarun.github.io/toastify-js/
+ * @notExported
+ */
 type Toast = ReturnType<typeof Toastify>
 
 export interface ToastOptions {
@@ -103,7 +116,7 @@ export interface ToastOptions {
 /**
  * Show a toast message
  *
- * @param text Message to be shown in the toast, any HTML is removed by default
+ * @param data Message to be shown in the toast, any HTML is removed by default
  * @param options
  */
 export function showMessage(data: string|Node, options?: ToastOptions): Toast {
@@ -206,13 +219,13 @@ export function showSuccess(text: string, options?: ToastOptions): Toast {
  * @param onUndo Function that is called when the undo button is clicked
  * @param options
  */
-export function showUndo(text: string, onUndo: Function, options?: ToastOptions): Toast {
+export function showUndo(text: string, onUndo: (e: MouseEvent) => void, options?: ToastOptions): Toast {
 	// onUndo callback is mandatory
 	if (!(onUndo instanceof Function)) {
 		throw new Error('Please provide a valid onUndo method')
 	}
 
-	let toast
+	let toast: Toast
 
 	options = Object.assign(options || {}, {
 		// force 10 seconds of timeout

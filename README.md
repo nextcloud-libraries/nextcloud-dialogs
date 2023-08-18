@@ -17,14 +17,20 @@ For `nextcloud/vue` version 8 (Nextcloud 28+) see version 5 of this package.
 
 ## Usage
 
+### General
+The styles for the components (Toasts and FilePicker) are provided in the `style.css` file.
+So make sure that the  `@nextcloud/dialogs/style.css` file is included in your app to make sure that the toasts or FilePicker have a proper styling applied.
+
+```js
+import '@nextcloud/dialogs/style.css'
+```
+
 ### Toasts
 
 ```js
 import { showMessage, showInfo, showSuccess, showWarning, showError } from '@nextcloud/dialogs'
-import '@nextcloud/dialogs/dist/index.css'
+import '@nextcloud/dialogs/style.css'
 ```
-
-Make sure that the  `@nextcloud/dialogs/dist/index.css` file is included in your app to make sure that the toasts have a proper styling applied.
 
 If you using `@nextcloud/dialogs >= 4.0` you don't need any svg or scss loader in you projects anymore.
 
@@ -44,7 +50,56 @@ There are several options that can be passed in as a second parameter, like the 
 showError('This is an error shown without a timeout', { timeout: -1 })
 ```
 
-A full list of available options can be found in the [documentation](https://nextcloud.github.io/nextcloud-dialogs/).
+A full list of available options can be found in the [documentation](https://nextcloud-libraries.github.io/nextcloud-dialogs/).
+
+### FilePicker
+There are two ways to spawn a FilePicker provided by the library:
+
+#### Use the FilePickerBuilder
+This way you do not need to use Vue, but can programatically spawn a FilePicker.
+
+```js
+import { getFilePickerBuilder } from '@nextcloud/dialogs'
+const filepicker = getFilePickerBuilder('Pick plain text files')
+    .addMimeTypeFilter('text/plain')
+    .addButton({
+        label: 'Pick',
+        callback: (nodes) => console.log('Picked', nodes),
+    })
+    .build()
+
+// You get the file nodes by the button callback, but also the pick yields the paths of the picked files
+const paths = await filepicker.pick()
+```
+
+#### Use the Vue component directly
+```vue
+<template>
+  <FilePicker name="Pick some files" :buttons="buttons" />
+</template>
+<script setup lang="ts">
+  import {
+    FilePickerVue as FilePicker,
+    type IFilePickerButton,
+  } from '@nextcloud/dialogs'
+  import type { Node } from '@nextcloud/files'
+  import IconShare from 'vue-material-design-icons/Share.vue'
+
+  const buttons: IFilePickerButton[] = [
+    {
+      label: 'Pick',
+      callback: (nodes: Node[]) => console.log('Picked', nodes),
+      type: 'primary'
+    },
+    {
+      label: 'Share',
+      callback: (nodes: Node[]) => console.log('Share picked files', nodes),
+      type: 'secondary',
+      icon: IconShare,
+    }
+  ]
+</script>
+```
 
 ## Releasing a new version
 
