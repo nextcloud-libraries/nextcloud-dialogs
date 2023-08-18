@@ -2,22 +2,37 @@
 
 All notable changes to this project will be documented in this file.
 
-## v4.2.0-beta.2 (2023-08-11)
-### :bug: Fixed bugs
+## v5.0.0-beta.1 (2023-08-18)
 
+### :boom: Breaking
+- A Vue based file picker is provided which uses `@nextcloud/vue` version 8, so this library will only work on Nextcloud 28+
+- Modernize FilePickerBuilder to directly make use of the Vue based file picker [\#904](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/904) \([@susnux](https://github.com/susnux)\)
+  - This slightly breaks the FilePickerBuilder API:
+    - `FilePicker.pick` now returns a Promise resolving to `string[]` containing the picked paths
+    - `FilePicker.constructor` parameter order was changed
+    - `FilePickerBuilder.setModal` was removed as it has no effect
+    - `FilePickerBuilder.setType` is deprecated in favor of `FilePickerBuilder.addButton`
+    - `FilePickerBuilder.addButton` was added which allows to add custom buttons with callbacks on click (so users can now distinguish which button was clicked)
+
+### :rocket: Enhancement
+- A Vue based FilePicker component was added, which can be used either as a component or using programmatically [\#878](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/878) ([@susnux](https://github.com/susnux))
+- FilePickerBuilder: Allow to add custom buttons [\#896](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/896) \([@susnux](https://github.com/susnux)\)
+
+### :bug: Fixed bugs
 - Fixed some design flaws in new FilePicker component
   - Adjust color of placeholder skeletons [\#880](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/880) ([@susnux](https://github.com/susnux))
   - Fix column alignment to be consistent with files app [\#881](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/881) ([@susnux](https://github.com/susnux))
   - Navigation and filter should be on separate rows on mobile [\#882](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/882) ([@susnux](https://github.com/susnux))
-
-## v4.2.0-beta.1 (2023-08-10)
-
-### :rocket: Enhancement
-- A Vue based FilePicker component was added, which can be used either as a component or using programmatically [\#878](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/878) ([@susnux](https://github.com/susnux))
+  - Adjust filepicker breadcrumbs button for design review [\#892](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/892) ([@susnux](https://github.com/susnux))
+  - Ensure only the file table is scrolled [\#899](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/899) \([@susnux](https://github.com/susnux)\)
+- FilePicker: Request `oc:size` property for showing the file size [\#893](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/893) ([@susnux](https://github.com/susnux))
+- FilePicker: Fix exported typings and cleanup file picker files [\#903](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/903) \([@susnux](https://github.com/susnux)\)
 
 ### Changed
 - The package does no longer contain core-js polyfills as Nextcloud core already provides polyfills [#863](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/863) ([@susnux](https://github.com/susnux))
 - The project was moved to a new Github organization (*nextcloud-libraries*)
+- Add version compatibility section to README [\#891](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/891) ([@susnux](https://github.com/susnux))
+- Improved developer documentation [\#906](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/906) \([@susnux](https://github.com/susnux)\)
 - Dependency updates
 
 ## v4.1.0 (2023-06-23)
