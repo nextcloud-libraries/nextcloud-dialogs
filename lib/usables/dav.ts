@@ -23,9 +23,8 @@ import type { Node } from '@nextcloud/files'
 import type { ComputedRef, Ref } from 'vue'
 import type { FileStat, ResponseDataDetailed, WebDAVClient } from 'webdav'
 
-import { davGetClient, davGetDefaultPropfind, davGetFavoritesReport, davGetRecentSearch, davResultToNode, davRootPath } from '@nextcloud/files'
-import { generateRemoteUrl } from '@nextcloud/router'
-import { ref, watch } from 'vue'
+import { davGetClient, davGetDefaultPropfind, davGetRecentSearch, davResultToNode, davRootPath, getFavoriteNodes } from '@nextcloud/files'
+import { onMounted, ref, watch } from 'vue'
 
 /**
  * Handle file loading using WebDAV
@@ -37,10 +36,10 @@ export const useDAVFiles = function(currentView: Ref<'files'|'recent'|'favorites
 	/**
 	 * The WebDAV client
 	 */
-	const client = davGetClient(generateRemoteUrl('dav'))
+	const client = davGetClient()
 
 	/**
-	 * All queried files
+	 * All files in current view and path
 	 */
 	const files = ref<Node[]>([] as Node[]) as Ref<Node[]>
 
@@ -51,30 +50,25 @@ export const useDAVFiles = function(currentView: Ref<'files'|'recent'|'favorites
 
 	/**
 	 * Get information for one file
+	 *
 	 * @param path The path of the file or folder
+	 * @param rootPath DAV root path, defaults to '/files/USERID'
 	 */
-	async function getFile(path: string) {
-		const result = await client.stat(`${davRootPath}${path}`, {
+	async function getFile(path: string, rootPath = davRootPath) {
+		const result = await client.stat(`${rootPath}${path}`, {
 			details: true,
 		}) as ResponseDataDetailed<FileStat>
 		return davResultToNode(result.data)
 	}
 
 	/**
-	 * Load files using the DAV client
+	 * Force reload files using the DAV client
 	 */
 	async function loadDAVFiles() {
 		isLoading.value = true
 
 		if (currentView.value === 'favorites') {
-			files.value = await client.getDirectoryContents(`${davRootPath}${currentPath.value}`, {
-				details: true,
-				data: davGetFavoritesReport(),
-				headers: {
-					method: 'REPORT',
-				},
-				includeSelf: false,
-			}).then((result) => (result as ResponseDataDetailed<FileStat[]>).data.map((data) => davResultToNode(data)))
+			files.value = await getFavoriteNodes(client, currentPath.value)
 		} else if (currentView.value === 'recent') {
 			// unix timestamp in seconds, two weeks ago
 			const lastTwoWeek = Math.round(Date.now() / 1000) - (60 * 60 * 24 * 14)
@@ -104,6 +98,11 @@ export const useDAVFiles = function(currentView: Ref<'files'|'recent'|'favorites
 	 * Watch for ref changes
 	 */
 	watch([currentView, currentPath], () => loadDAVFiles())
+
+	/**
+	 * Initial loading of nodes
+	 */
+	onMounted(() => loadDAVFiles())
 
 	return {
 		isLoading,
