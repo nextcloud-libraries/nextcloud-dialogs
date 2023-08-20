@@ -1,7 +1,7 @@
 import { createLibConfig } from '@nextcloud/vite-config'
 import { readdirSync, readFileSync } from 'fs'
 import { po as poParser } from 'gettext-parser'
-import { defineConfig } from 'vite'
+import { defineConfig, type UserConfigFn } from 'vite'
 
 const translations = readdirSync('./l10n')
 	.filter(name => name !== 'messages.pot' && name.endsWith('.pot'))
@@ -39,4 +39,4 @@ export default defineConfig((env) => {
 			rollupTypes: env.mode === 'production',
 		},
 	})(env)
-})
+}) as UserConfigFn
