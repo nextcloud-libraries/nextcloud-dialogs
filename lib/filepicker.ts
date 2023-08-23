@@ -38,10 +38,10 @@ export enum FilePickerType {
 	Custom = 5,
 }
 
-export class FilePicker {
+export class FilePicker<IsMultiSelect extends boolean> {
 
 	private title: string
-	private multiSelect: boolean
+	private multiSelect: IsMultiSelect
 	private mimeTypeFilter: string[]
 	private directoriesAllowed: boolean
 	private buttons: IFilePickerButton[]
@@ -49,7 +49,7 @@ export class FilePicker {
 	private filter?: IFilePickerFilter
 
 	public constructor(title: string,
-		multiSelect: boolean,
+		multiSelect: IsMultiSelect,
 		mimeTypeFilter: string[],
 		directoriesAllowed: boolean,
 		buttons: IFilePickerButton[],
@@ -69,13 +69,17 @@ export class FilePicker {
 	 *
 	 * @return Promise with array of picked files or rejected promise on close without picking
 	 */
-	public async pick(): Promise<string[]> {
+	public async pick(): Promise<IsMultiSelect extends true ? string[] : string> {
 		return new Promise((resolve, reject) => {
 			const buttons = this.buttons.map((button) => ({
 				...button,
 				callback: (nodes: Node[]) => {
 					button.callback(nodes)
-					resolve(nodes.map((node) => node.path))
+					if (this.multiSelect) {
+						resolve(nodes.map((node) => node.path) as (IsMultiSelect extends true ? string[] : string))
+					} else {
+						resolve((nodes[0]?.path || '/') as (IsMultiSelect extends true ? string[] : string))
+					}
 				},
 			}))
 
@@ -93,7 +97,7 @@ export class FilePicker {
 
 }
 
-export class FilePickerBuilder {
+export class FilePickerBuilder<IsMultiSelect extends boolean> {
 
 	private title: string
 	private multiSelect = false
@@ -117,9 +121,9 @@ export class FilePickerBuilder {
 	 *
 	 * @param ms True to enable picking multiple files, false otherwise
 	 */
-	public setMultiSelect(ms: boolean): FilePickerBuilder {
+	public setMultiSelect<T extends boolean>(ms: T) {
 		this.multiSelect = ms
-		return this
+		return this as unknown as FilePickerBuilder<T extends true ? true : false>
 	}
 
 	/**
@@ -127,7 +131,7 @@ export class FilePickerBuilder {
 	 *
 	 * @param filter MIME type to allow
 	 */
-	public addMimeTypeFilter(filter: string): FilePickerBuilder {
+	public addMimeTypeFilter(filter: string) {
 		this.mimeTypeFilter.push(filter)
 		return this
 	}
@@ -137,7 +141,7 @@ export class FilePickerBuilder {
 	 *
 	 * @param filter Array of allowed MIME types
 	 */
-	public setMimeTypeFilter(filter: string[]): FilePickerBuilder {
+	public setMimeTypeFilter(filter: string[]) {
 		this.mimeTypeFilter = filter
 		return this
 	}
@@ -147,7 +151,7 @@ export class FilePickerBuilder {
 	 *
 	 * @param button The button
 	 */
-	public addButton(button: IFilePickerButton): FilePickerBuilder {
+	public addButton(button: IFilePickerButton) {
 		this.buttons.push(button)
 		return this
 	}
@@ -157,7 +161,7 @@ export class FilePickerBuilder {
 	 * @param type The legacy filepicker type to emulate
 	 * @deprecated Use `addButton` instead as with setType you do not know which button was pressed
 	 */
-	public setType(type: FilePickerType): FilePickerBuilder {
+	public setType(type: FilePickerType) {
 		this.buttons = []
 
 		if (type === FilePickerType.CopyMove || type === FilePickerType.Copy) {
@@ -196,7 +200,7 @@ export class FilePickerBuilder {
 	 *
 	 * @param allow True to allow picking directories
 	 */
-	public allowDirectories(allow = true): FilePickerBuilder {
+	public allowDirectories(allow = true) {
 		this.directoriesAllowed = allow
 		return this
 	}
@@ -206,7 +210,7 @@ export class FilePickerBuilder {
 	 *
 	 * @param path Path to start from picking
 	 */
-	public startAt(path: string): FilePickerBuilder {
+	public startAt(path: string) {
 		this.path = path
 		return this
 	}
@@ -216,7 +220,7 @@ export class FilePickerBuilder {
 	 *
 	 * @param filter Filter function to apply
 	 */
-	public setFilter(filter: IFilePickerFilter): FilePickerBuilder {
+	public setFilter(filter: IFilePickerFilter) {
 		this.filter = filter
 		return this
 	}
@@ -224,10 +228,10 @@ export class FilePickerBuilder {
 	/**
 	 * Construct the configured FilePicker
 	 */
-	public build(): FilePicker {
-		return new FilePicker(
+	public build() {
+		return new FilePicker<IsMultiSelect>(
 			this.title,
-			this.multiSelect,
+			this.multiSelect as IsMultiSelect,
 			this.mimeTypeFilter,
 			this.directoriesAllowed,
 			this.buttons,
@@ -242,6 +246,6 @@ export class FilePickerBuilder {
  *
  * @param title Title of the file picker
  */
-export function getFilePickerBuilder(title: string): FilePickerBuilder {
+export function getFilePickerBuilder(title: string): FilePickerBuilder<boolean> {
 	return new FilePickerBuilder(title)
 }
