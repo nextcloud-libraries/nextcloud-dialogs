@@ -90,7 +90,7 @@ msgstr ""
 msgid "Undo"
 msgstr ""
 
-#: lib/components/FilePicker/FileListRow.vue:22
+#: lib/components/FilePicker/FileListRow.vue:23
 msgid "Unset"
 msgstr ""
 
