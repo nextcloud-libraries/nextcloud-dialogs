@@ -12,6 +12,7 @@
 			<div class="file-picker__name-container">
 				<div class="file-picker__file-icon" :style="{ backgroundImage }" />
 				<div class="file-picker__file-name" :title="displayName" v-text="displayName" />
+				<div class="file-picker__file-extension" v-text="fileExtension" />
 			</div>
 		</td>
 		<td class="row-size">
@@ -50,9 +51,14 @@ const emit = defineEmits<{
 }>()
 
 /**
- * The displayname of the current node
+ * The displayname of the current node (excluding file extension)
  */
-const displayName = computed(() => props.node.attributes?.displayname || props.node.basename)
+const displayName = computed(() => props.node.attributes?.displayName || props.node.basename.slice(0, props.node.extension ? -props.node.extension.length : undefined))
+
+/**
+ * The file extension of the file
+ */
+const fileExtension = computed(() => props.node.extension)
 
 /**
  * If this node can be picked, basically just check if picking a directory is allowed
@@ -118,6 +124,11 @@ function handleKeyDown(event: KeyboardEvent) {
 		min-width: 0;
 		overflow: hidden;
 		text-overflow: ellipsis;
+	}
+
+	&__file-extension {
+		color: var(--color-text-maxcontrast);
+		min-width: fit-content;
 	}
 }
 </style>
