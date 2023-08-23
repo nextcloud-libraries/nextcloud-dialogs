@@ -1,17 +1,23 @@
 <template>
-	<tr tabindex="0"
+	<tr :tabindex="showCheckbox && !isDirectory ? undefined : 0"
+		:aria-selected="!isPickable ? undefined : selected"
 		:class="['file-picker__row', {
 			'file-picker__row--selected': selected && !showCheckbox
 		}]"
 		:data-file="node.basename"
-		@key-down="handleKeyDown">
+		v-on="{
+			// same as tabindex -> if we hide the checkbox or this is a directory we need keyboard access to enter the directory or select the node
+			keydown: showCheckbox && !isDirectory ? null : handleKeyDown,
+			click: handleClick
+		}">
 		<td v-if="showCheckbox" class="row-checkbox">
 			<NcCheckboxRadioSwitch :disabled="!isPickable"
 				:checked="selected"
 				:aria-label="t('Select the row for {nodename}', { nodename: displayName })"
+				@click.stop="/* just stop the click event */"
 				@update:checked="toggleSelected" />
 		</td>
-		<td class="row-name" @click="handleClick">
+		<td class="row-name">
 			<div class="file-picker__name-container">
 				<div class="file-picker__file-icon" :style="{ backgroundImage }" />
 				<div class="file-picker__file-name" :title="displayName" v-text="displayName" />
@@ -66,9 +72,14 @@ const displayName = computed(() => props.node.attributes?.displayName || props.n
 const fileExtension = computed(() => props.node.extension)
 
 /**
+ * Check if the node is a directory
+ */
+const isDirectory = computed(() => props.node.type === FileType.Folder)
+
+/**
  * If this node can be picked, basically just check if picking a directory is allowed
  */
-const isPickable = computed(() => props.canPick && (props.allowPickDirectory || props.node.mime !== 'httpd/unix-directory'))
+const isPickable = computed(() => props.canPick && (props.allowPickDirectory || !isDirectory.value))
 
 /**
  * Background image url for the given nodes mime type
@@ -86,7 +97,7 @@ function toggleSelected() {
  * Handle clicking the table row, if it is a directory it is opened, else selected
  */
 function handleClick() {
-	if (props.node.mime === 'httpd/unix-directory') {
+	if (isDirectory.value) {
 		emit('enter-directory', props.node)
 	} else {
 		toggleSelected()
@@ -98,7 +109,7 @@ function handleClick() {
  * @param event The Keydown event
  */
 function handleKeyDown(event: KeyboardEvent) {
-	if (event.key === 'enter') {
+	if (event.key === 'Enter') {
 		handleClick()
 	}
 }
