@@ -17,8 +17,8 @@
 		<template v-if="showMenu" #actions>
 			<NcActions :aria-label="t('Create directory')"
 				:force-menu="true"
-				:force-name="true"
-				:menu-name="t('New')"
+				:force-title="true"
+				:menu-title="t('New')"
 				type="secondary"
 				@close="newNodeName = ''">
 				<template #icon>
