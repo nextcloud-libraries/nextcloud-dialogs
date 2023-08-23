@@ -14,12 +14,15 @@ import { NcButton } from '@nextcloud/vue'
 // with vue 3.3:
 // const props = defineProps<IDialogButton>()
 
-const props = defineProps<{
+const props = withDefaults(defineProps<{
 	callback: IDialogButton['callback'],
 	label: IDialogButton['label'],
-	icon: IDialogButton['icon'],
-	type: IDialogButton['type'],
-}>()
+	icon?: IDialogButton['icon'],
+	type?: IDialogButton['type'],
+}>(), {
+	icon: undefined,
+	type: 'secondary',
+})
 
 const emit = defineEmits<(e: 'click', event: MouseEvent) => void>()
 
