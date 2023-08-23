@@ -15,7 +15,8 @@
 			</div>
 
 			<!-- File list -->
-			<FileList :allow-pick-directory="allowPickDirectory"
+			<FileList v-if="filteredFiles.length > 0"
+				:allow-pick-directory="allowPickDirectory"
 				:files="filteredFiles"
 				:multiselect="multiselect"
 				:loading="isLoading"
@@ -23,25 +24,42 @@
 				:selected-files.sync="selectedFiles"
 				:name="viewHeadline"
 				@update:path="currentView = 'files'" />
+			<NcEmptyContent v-else-if="filterString"
+				:name="t('No matching files')"
+				:description="t('No files matching your filter were found.')">
+				<template #icon>
+					<IconFile />
+				</template>
+			</NcEmptyContent>
+			<NcEmptyContent v-else
+				:name="t('No files in here')"
+				:description="noFilesDescription">
+				<template #icon>
+					<IconFile />
+				</template>
+			</NcEmptyContent>
 		</div>
 	</DialogBase>
 </template>
 
 <script setup lang="ts">
 import type { IFilePickerButton } from '../types'
-import { davRootPath, type Node } from '@nextcloud/files'
+import type { Node } from '@nextcloud/files'
 
+import IconFile from 'vue-material-design-icons/File.vue'
 import DialogBase from '../DialogBase.vue'
 import FileList from './FileList.vue'
 import FilePickerBreadcrumbs from './FilePickerBreadcrumbs.vue'
 import FilePickerNavigation from './FilePickerNavigation.vue'
 
-import { t } from '../../utils/l10n'
+import { davRootPath } from '@nextcloud/files'
+import { NcEmptyContent } from '@nextcloud/vue'
 import { join } from 'path'
 import { computed, onMounted, ref, toRef } from 'vue'
+import { showError } from '../../toast'
 import { useDAVFiles } from '../../usables/dav'
 import { useMimeFilter } from '../../usables/mime'
-import { showError } from '../../toast'
+import { t } from '../../utils/l10n'
 
 const props = withDefaults(defineProps<{
 	/** Buttons to be displayed */
@@ -195,6 +213,19 @@ const filteredFiles = computed(() => {
 		filtered = filtered.filter((f) => props.filterFn(f as Node))
 	}
 	return filtered
+})
+
+/**
+ * If no files are found in the current view this message will be shown in the EmptyContent
+ */
+const noFilesDescription = computed(() => {
+	if (currentView.value === 'files') {
+		return t('Upload some content or sync with your devices!')
+	} else if (currentView.value === 'recent') {
+		return t('Files and folders you recently modified will show up here.')
+	} else {
+		return t('Files and folders you mark as favorite will show up here.')
+	}
 })
 
 /**
