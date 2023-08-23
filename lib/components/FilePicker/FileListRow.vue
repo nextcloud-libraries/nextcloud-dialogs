@@ -1,8 +1,10 @@
 <template>
 	<tr tabindex="0"
-		class="file-picker__row"
+		:class="['file-picker__row', {
+			'file-picker__row--selected': selected && !showCheckbox
+		}]"
 		@key-down="handleKeyDown">
-		<td class="row-checkbox">
+		<td v-if="showCheckbox" class="row-checkbox">
 			<NcCheckboxRadioSwitch :disabled="!isPickable"
 				:checked="selected"
 				:aria-label="t('Select the row for {nodename}', { nodename: displayName })"
@@ -37,6 +39,8 @@ const props = defineProps<{
 	allowPickDirectory: boolean
 	/** Is this node currently selected */
 	selected: boolean
+	/** Whether to show the checkbox in first column */
+	showCheckbox: boolean
 	/** Whether the node can be picked */
 	canPick: boolean
 	/** The current node */
@@ -103,6 +107,15 @@ function handleKeyDown(event: KeyboardEvent) {
 @use './FileList.scss';
 
 .file-picker {
+	&__row {
+		&--selected {
+			background-color: var(--color-background-dark);
+		}
+		&:hover {
+			background-color: var(--color-background-hover);
+		}
+	}
+
 	&__name-container {
 		display: flex;
 		justify-content: start;
