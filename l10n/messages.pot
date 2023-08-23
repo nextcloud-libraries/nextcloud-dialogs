@@ -18,11 +18,11 @@ msgstr ""
 msgid "All files"
 msgstr ""
 
-#: lib/filepicker.ts:178
+#: lib/filepicker.ts:182
 msgid "Choose"
 msgstr ""
 
-#: lib/filepicker.ts:166
+#: lib/filepicker.ts:170
 msgid "Copy"
 msgstr ""
 
@@ -43,8 +43,8 @@ msgstr ""
 msgid "Modified"
 msgstr ""
 
-#: lib/filepicker.ts:172
-#: lib/filepicker.ts:186
+#: lib/filepicker.ts:176
+#: lib/filepicker.ts:190
 msgid "Move"
 msgstr ""
 
