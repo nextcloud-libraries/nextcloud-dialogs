@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## v5.0.0-beta.2
+
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.0.0-beta.1...v5.0.0-beta.2)
+
+### :rocket: Enhancement
+- feat: Add icons for filepicker and allow reactive button based on current path and selection [\#938](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/938) ([susnux](https://github.com/susnux))
+- feat\(FilePicker\): Always show file extension as a trailing text part [\#931](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/931) ([susnux](https://github.com/susnux))
+- Add empty content when there are no files [\#930](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/930) ([susnux](https://github.com/susnux))
+
+### :bug: Fixed bugs
+- fix: The file list should be showed when files are loading [\#937](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/937) ([susnux](https://github.com/susnux))
+- fix\(FilePicker\): Ensure focus-visible outline is visible for all focusable elements [\#935](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/935) ([susnux](https://github.com/susnux))
+- fix\(FilePicker\): Do not show checkboxes on single select mode [\#929](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/929) ([susnux](https://github.com/susnux))
+- fix: Add missing defaults to DialogButton [\#927](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/927) ([susnux](https://github.com/susnux))
+- fix\(FilePickerBuilder\): Revert API change on `pick()` [\#925](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/925) ([susnux](https://github.com/susnux))
+- fix\(FilePicker\): The table height should be max. 100% [\#921](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/921) ([susnux](https://github.com/susnux))
+
+### Changed
+- Update `@nextcloud/files` and add unit tests [\#917](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/917) ([susnux](https://github.com/susnux))
+
 ## v5.0.0-beta.1 (2023-08-18)
 
 ### :boom: Breaking
