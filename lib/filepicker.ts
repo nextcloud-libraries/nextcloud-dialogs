@@ -20,12 +20,16 @@
  *
  */
 
-import type { IFilePickerButton, IFilePickerFilter } from './components/types'
+import type { IFilePickerButton, IFilePickerButtonFactory, IFilePickerFilter } from './components/types'
 import type { Node } from '@nextcloud/files'
 
+import { basename } from 'path'
 import { spawnDialog } from './utils/dialogs'
 import { FilePickerVue } from './components/FilePicker/index'
 import { t } from './utils/l10n'
+
+import IconMove from '@mdi/svg/svg/folder-move.svg?raw'
+import IconCopy from '@mdi/svg/svg/folder-multiple.svg?raw'
 
 /**
  * @deprecated
@@ -44,7 +48,7 @@ export class FilePicker<IsMultiSelect extends boolean> {
 	private multiSelect: IsMultiSelect
 	private mimeTypeFilter: string[]
 	private directoriesAllowed: boolean
-	private buttons: IFilePickerButton[]
+	private buttons: IFilePickerButton[] | IFilePickerButtonFactory
 	private path?: string
 	private filter?: IFilePickerFilter
 
@@ -52,7 +56,7 @@ export class FilePicker<IsMultiSelect extends boolean> {
 		multiSelect: IsMultiSelect,
 		mimeTypeFilter: string[],
 		directoriesAllowed: boolean,
-		buttons: IFilePickerButton[],
+		buttons: IFilePickerButton[] | IFilePickerButtonFactory,
 		path?: string,
 		filter?: IFilePickerFilter) {
 		this.title = title
@@ -105,7 +109,7 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 	private directoriesAllowed = false
 	private path?: string
 	private filter?: IFilePickerFilter
-	private buttons: IFilePickerButton[] = []
+	private buttons: IFilePickerButton[] | IFilePickerButtonFactory = []
 
 	/**
 	 * Construct a new FilePicker
@@ -148,48 +152,65 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 
 	/**
 	 * Add a button to the FilePicker
+	 * Note: This overrides any previous `setButtonFactory` call
 	 *
 	 * @param button The button
 	 */
 	public addButton(button: IFilePickerButton) {
+		if (typeof this.buttons === 'function') {
+			console.warn('FilePicker buttons were set to factory, now overwritten with button object.')
+			this.buttons = []
+		}
 		this.buttons.push(button)
+		return this
+	}
+
+	/**
+	 * Set the button factory which is used to generate buttons from current view, path and selected nodes
+	 * Note: This overrides any previous `addButton` call
+	 *
+	 * @param factory The button factory
+	 */
+	public setButtonFactory(factory: IFilePickerButtonFactory) {
+		this.buttons = factory
 		return this
 	}
 
 	/**
 	 * Set FilePicker type based on legacy file picker types
 	 * @param type The legacy filepicker type to emulate
-	 * @deprecated Use `addButton` instead as with setType you do not know which button was pressed
+	 * @deprecated Use `addButton` or `setButtonFactory` instead as with setType you do not know which button was pressed
 	 */
 	public setType(type: FilePickerType) {
-		this.buttons = []
+		this.buttons = (nodes, path) => {
+			const buttons: IFilePickerButton[] = []
+			const node = nodes?.[0]?.attributes?.displayName || nodes?.[0]?.basename
+			const target = node || basename(path)
 
-		if (type === FilePickerType.CopyMove || type === FilePickerType.Copy) {
-			this.buttons.push({
-				callback: () => {},
-				label: t('Copy'),
-				type: 'primary',
-			})
-		} else if (type === FilePickerType.Move) {
-			this.buttons.push({
-				callback: () => {},
-				label: t('Move'),
-				type: 'primary',
-			})
-		} else if (type === FilePickerType.Choose) {
-			this.buttons.push({
-				callback: () => {},
-				label: t('Choose'),
-				type: 'primary',
-			})
-		}
-
-		if (type === FilePickerType.CopyMove) {
-			this.buttons.push({
-				callback: () => {},
-				label: t('Move'),
-				type: 'secondary',
-			})
+			if (type === FilePickerType.Choose) {
+				buttons.push({
+					callback: () => {},
+					label: node && !this.multiSelect ? t('Choose {file}', { file: node }) : t('Choose'),
+					type: 'primary',
+				})
+			}
+			if (type === FilePickerType.CopyMove || type === FilePickerType.Copy) {
+				buttons.push({
+					callback: () => {},
+					label: target ? t('Copy to {target}', { target }) : t('Copy'),
+					type: 'primary',
+					icon: IconCopy,
+				})
+			}
+			if (type === FilePickerType.Move || type === FilePickerType.CopyMove) {
+				buttons.push({
+					callback: () => {},
+					label: target ? t('Move to {target}', { target }) : t('Move'),
+					type: type === FilePickerType.Move ? 'primary' : 'secondary',
+					icon: IconMove,
+				})
+			}
+			return buttons
 		}
 
 		return this
