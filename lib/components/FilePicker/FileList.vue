@@ -3,11 +3,11 @@
 		<table>
 			<thead>
 				<tr>
-					<th class="row-checkbox">
+					<th class="row-checkbox" v-if="multiselect">
 						<span class="hidden-visually">
 							{{ t('Select entry') }}
 						</span>
-						<NcCheckboxRadioSwitch v-if="props.multiselect" :aria-label="t('Select all entries')" :checked="allSelected" @update:checked="onSelectAll" />
+						<NcCheckboxRadioSwitch v-if="multiselect" :aria-label="t('Select all entries')" :checked="allSelected" @update:checked="onSelectAll" />
 					</th>
 					<th :aria-sort="sortByName" class="row-name">
 						<NcButton :wide="true" type="tertiary" @click="toggleSortByName">
@@ -49,6 +49,7 @@
 					<FileListRow v-for="file in sortedFiles"
 						:key="file.fileid || file.path"
 						:allow-pick-directory="allowPickDirectory"
+						:show-checkbox="multiselect"
 						:can-pick="multiselect || selectedFiles.length === 0 || selectedFiles.includes(file)"
 						:selected="selectedFiles.includes(file)"
 						:node="file"
@@ -156,11 +157,16 @@ function onSelectAll() {
 	}
 }
 
-function onNodeSelected(file: Node){
+function onNodeSelected(file: Node) {
 	if (props.selectedFiles.includes(file)) {
 		emit('update:selectedFiles', props.selectedFiles.filter((f) => f.path !== file.path))
 	} else {
-		emit('update:selectedFiles', [...props.selectedFiles, file])
+		if (props.multiselect) {
+			emit('update:selectedFiles', [...props.selectedFiles, file])
+		} else {
+			// no multi select so only this file is selected
+			emit('update:selectedFiles', [file])
+		}
 	}
 }
 
