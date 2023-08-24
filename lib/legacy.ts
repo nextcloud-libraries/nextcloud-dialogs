@@ -25,13 +25,17 @@
  */
 
 /// <reference types="@nextcloud/typings" />
-import type { IFilePickerButton } from './components/FilePicker/FilePicker.vue'
+import type { IFilePickerButton, IFilePickerButtonFactory } from './components/types'
 import type { Node } from '@nextcloud/files'
 import type { AsyncComponent, Component } from 'vue'
 
+import { basename } from 'path'
 import { t } from './utils/l10n'
 import { FilePickerVue, FilePickerType } from '.'
+
 import DialogBase from './components/DialogBase.vue'
+import IconCopy from '@mdi/svg/svg/folder-multiple.svg'
+import IconMove from '@mdi/svg/svg/folder-move.svg'
 import Vue from 'vue'
 
 /**
@@ -129,34 +133,48 @@ export async function filepicker(title: string, callback: (s: string | string[],
 		sharePermissions: null,
 	})
 
-	const buttons: IFilePickerButton[] = []
-	if (type === FilePickerType.Choose) {
-		buttons.push({
-			label: t('Choose'),
-			type: 'primary',
-			callback: legacyCallback(callback, FilePickerType.Choose),
-		})
-	} else if (type === FilePickerType.Copy || type === FilePickerType.CopyMove) {
-		buttons.push({
-			label: t('Copy'),
-			callback: legacyCallback(callback, FilePickerType.Copy),
-		})
-	}
-	if (type === FilePickerType.CopyMove || type === FilePickerType.Move) {
-		buttons.push({
-			label: t('Move'),
-			type: 'primary',
-			callback: legacyCallback(callback, FilePickerType.Move),
-		})
-	}
+	let buttonFn: IFilePickerButtonFactory|IFilePickerButton[]
 	if (type === FilePickerType.Custom) {
-		(options.buttons || []).forEach((button) => {
-			buttons.push({
+		buttonFn = [] as IFilePickerButton[]
+		(options.buttons || []).forEach((button: { text: string, defaultButton: boolean, type: FilePickerType }) => {
+			(buttonFn as IFilePickerButton[]).push({
 				callback: legacyCallback(callback, button.type),
 				label: button.text,
 				type: button.defaultButton ? 'primary' : 'secondary',
 			})
 		})
+	} else {
+		buttonFn = (nodes, path) => {
+			const buttons: IFilePickerButton[] = []
+			const node = nodes?.[0]?.attributes?.displayName || nodes?.[0]?.basename
+			const target = node || basename(path)
+
+			if (type === FilePickerType.Choose) {
+				buttons.push({
+					callback: legacyCallback(callback, FilePickerType.Choose),
+					label: node && !multiselect ? t('Choose {file}', { file: node }) : t('Choose'),
+					type: 'primary',
+				})
+			}
+
+			if (type === FilePickerType.CopyMove || type === FilePickerType.Copy) {
+				buttons.push({
+					callback: legacyCallback(callback, FilePickerType.Copy),
+					label: target ? t('Copy to {target}', { target }) : t('Copy'),
+					type: 'primary',
+					icon: IconCopy,
+				})
+			}
+			if (type === FilePickerType.Move || type === FilePickerType.CopyMove) {
+				buttons.push({
+					callback: legacyCallback(callback, FilePickerType.Move),
+					label: target ? t('Move to {target}', { target }) : t('Move'),
+					type: type === FilePickerType.Move ? 'primary' : 'secondary',
+					icon: IconMove,
+				})
+			}
+			return buttons
+		}
 	}
 
 	const filter = {} as any
@@ -170,7 +188,7 @@ export async function filepicker(title: string, callback: (s: string | string[],
 	spawnDialog(FilePickerVue, {
 		...filter,
 		name: title,
-		buttons,
+		buttons: buttonFn,
 		multiselect,
 		path,
 		mimetypeFilter,

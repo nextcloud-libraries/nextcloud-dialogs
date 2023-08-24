@@ -2,14 +2,15 @@
 	<NcButton :aria-label="props.label" :type="props.type" @click="handleClick">
 		{{ props.label }}
 		<template v-if="props.icon !== undefined" #icon>
-			<component :is="props.icon" :size="20" />
+			<NcIconSvgWrapper v-if="typeof props.icon === 'string'" :svg="props.icon" />
+			<component :is="props.icon" v-else :size="20" />
 		</template>
 	</NcButton>
 </template>
 
 <script setup lang="ts">
 import type { IDialogButton } from './types'
-import { NcButton } from '@nextcloud/vue'
+import { NcButton, NcIconSvgWrapper } from '@nextcloud/vue'
 
 // with vue 3.3:
 // const props = defineProps<IDialogButton>()

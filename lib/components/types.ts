@@ -25,11 +25,29 @@ import type { AsyncComponent, Component } from 'vue'
 
 export interface IDialogButton {
 	label: string,
-	icon?: Component | AsyncComponent,
+
+	/** Callback on button click */
 	callback: () => void,
+	/**
+	 * Optional Icon for the button
+	 * Can be a Vue component, async Vue component, or SVG
+	 */
+	icon?: Component | AsyncComponent | string,
+
+	/**
+	 * Button type
+	 * @see https://nextcloud-vue-components.netlify.app/#/Components/NcButton
+	 */
 	type?: 'primary' | 'secondary' | 'error' | 'warning' | 'success'
 }
 
 export interface IFilePickerButton extends Omit<IDialogButton, 'callback'> {
 	callback: (nodes: Node[]) => void
 }
+
+export type IFilePickerButtonFactory = (selectedNodes: Node[], currentPath: string, currentView: string) => IFilePickerButton[]
+
+/**
+* Type of filter functions to filter the FilePicker's file list
+*/
+export type IFilePickerFilter = (node: Node) => boolean
