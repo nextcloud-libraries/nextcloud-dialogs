@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## v4.2.0-beta.4 (2023-08-24)
+### :rocket: Enhancement
+- Add icons for filepicker and allow reactive button based on current path and selection [\#942](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/942) ([@susnux](https://github.com/susnux))
+- Always show file extension as a trailing text part [\#933](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/933) ([@susnux](https://github.com/susnux))
+- Show empty content when there are no files in folder [\#932](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/932) ([@susnux](https://github.com/susnux))
+
+### :bug: Fixed bugs
+- Fix properties of the new button in the breadcrumbs [\#928](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/928) ([@susnux](https://github.com/susnux))
+- Ensure focus-visible outline is visible for all focusable elements [\#936](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/936) ([@susnux](https://github.com/susnux))
+- The table height should be max. 100% [\#922](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/922) ([@susnux](https://github.com/susnux))
+- Fix exported typings and cleanup file picker files [\#907](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/907) ([@susnux](https://github.com/susnux))
+- Fix typedoc generation and improve documentation of exported member [\#909](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/909) ([@susnux](https://github.com/susnux))
+
 ## v4.2.0-beta.3 (2023-08-16)
 ### :rocket: Enhancement
 - Allow to add custom buttons and use the shipped file picker when using the FilePickerBuilder [\#898](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/898) ([@susnux](https://github.com/susnux))
