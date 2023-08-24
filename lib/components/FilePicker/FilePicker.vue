@@ -269,12 +269,17 @@ export default {
 	}
 
 	&__main {
+		box-sizing: border-box;
 		width: 100%;
 		display: flex;
 		flex-direction: column;
 		// Auto fit height
 		min-height: 0;
 		flex: 1;
+
+		* {
+			box-sizing: border-box;
+		}
 	}
 }
 

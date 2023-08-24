@@ -172,6 +172,8 @@ function onChangeDirectory(dir: Node) {
 <style scoped lang="scss">
 .file-picker {
 	&__files {
+		// ensure focus outlines are visible
+		padding: 2px;
 		padding-inline-start: 12px; // align with bread crumbs
 		min-height: calc(5 * var(--row-height, 50px)); // make file list not jumping when loading (1x header 4x loading placeholders)
 		overflow: scroll auto;
@@ -185,6 +187,8 @@ function onChangeDirectory(dir: Node) {
 			position: sticky;
 			top: 0;
 			background-color: var(--color-main-background);
+			// ensure focus outline of buttons is visible
+			padding: 2px;
 
 			&.row-checkbox {
 				width: 44px;
