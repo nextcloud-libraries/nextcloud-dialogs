@@ -15,7 +15,8 @@
 			</div>
 
 			<!-- File list -->
-			<FileList v-if="filteredFiles.length > 0"
+			<!-- If loading or files found show file list, otherwise show empty content-->
+			<FileList v-if="isLoading || filteredFiles.length > 0"
 				:allow-pick-directory="allowPickDirectory"
 				:files="filteredFiles"
 				:multiselect="multiselect"
