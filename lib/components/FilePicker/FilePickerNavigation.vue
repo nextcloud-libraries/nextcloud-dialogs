@@ -99,6 +99,8 @@ const updateFilterValue = (value: string) => emit('update:filterString', value)
 		align-items: start;
 		gap: 0.5rem;
 		min-width: 200px;
+		// ensure focus outline is visible
+		padding-block: 2px;
 
 		:deep(.button-vue__wrapper) {
 			justify-content: start;
@@ -137,9 +139,17 @@ const updateFilterValue = (value: string) => emit('update:filterString', value)
 }
 </style>
 
-<style>
-.file-picker__navigation .v-select.select {
-	min-width: 220px;
+<style lang="scss">
+/* Ensure focus outline is visible */
+.file-picker__navigation {
+	padding-inline: 2px;
+	&, * {
+		box-sizing: border-box;
+	}
+
+	.v-select.select {
+		min-width: 220px;
+	}
 }
 
 @media (min-width: 513px) and (max-width: 736px) {
