@@ -1,14 +1,14 @@
 <template>
-	<tr :tabindex="showCheckbox && !isDirectory ? undefined : 0"
+	<tr :tabindex="(showCheckbox && !isDirectory) ? undefined : 0"
 		:aria-selected="!isPickable ? undefined : selected"
 		:class="['file-picker__row', {
 			'file-picker__row--selected': selected && !showCheckbox
 		}]"
 		:data-file="node.basename"
+		@click="handleClick"
 		v-on="{
 			// same as tabindex -> if we hide the checkbox or this is a directory we need keyboard access to enter the directory or select the node
-			keydown: showCheckbox && !isDirectory ? null : handleKeyDown,
-			click: handleClick
+			keydown: (showCheckbox && !isDirectory) ? null : handleKeyDown
 		}">
 		<td v-if="showCheckbox" class="row-checkbox">
 			<NcCheckboxRadioSwitch :disabled="!isPickable"
