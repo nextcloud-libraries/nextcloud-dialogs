@@ -44,7 +44,7 @@
 </template>
 
 <script setup lang="ts">
-import type { IFilePickerButton } from '../types'
+import type { IFilePickerButton, IFilePickerButtonFactory, IFilePickerFilter } from '../types'
 import type { Node } from '@nextcloud/files'
 
 import IconFile from 'vue-material-design-icons/File.vue'
@@ -64,7 +64,7 @@ import { t } from '../../utils/l10n'
 
 const props = withDefaults(defineProps<{
 	/** Buttons to be displayed */
-	buttons: IFilePickerButton[]
+	buttons: IFilePickerButton[] | IFilePickerButtonFactory
 
 	/** The name of file picker dialog (heading) */
 	name: string
@@ -84,7 +84,7 @@ const props = withDefaults(defineProps<{
 	/**
 	 * Custom filter function used to filter pickable files
 	 */
-	filterFn?: (node: Node) => boolean
+	filterFn?: IFilePickerFilter
 
 	/**
 	 * List of allowed mime types
@@ -133,13 +133,19 @@ const dialogProps = computed(() => ({
 /**
  * Map buttons to Dialog buttons by wrapping the callback function to pass the selected files
  */
-const dialogButtons = computed(() => [...props.buttons].map(button => ({
-	...button,
-	callback: async () => {
-		const nodes = selectedFiles.value.length === 0 && props.allowPickDirectory ? [await getFile(currentPath.value)] : selectedFiles.value as Node[]
-		return button.callback(nodes)
-	},
-})))
+const dialogButtons = computed(() => {
+	const buttons = typeof props.buttons === 'function'
+		? props.buttons(selectedFiles.value as Node[], currentPath.value, currentView.value)
+		: props.buttons
+
+	return buttons.map((button) => ({
+		...button,
+		callback: async () => {
+			const nodes = selectedFiles.value.length === 0 && props.allowPickDirectory ? [await getFile(currentPath.value)] : selectedFiles.value as Node[]
+			button.callback(nodes)
+		},
+	} as IFilePickerButton))
+})
 
 /**
  * Name of the currently active view
