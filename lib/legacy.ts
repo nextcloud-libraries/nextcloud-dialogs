@@ -34,8 +34,8 @@ import { t } from './utils/l10n'
 import { FilePickerVue, FilePickerType } from '.'
 
 import DialogBase from './components/DialogBase.vue'
-import IconCopy from '@mdi/svg/svg/folder-multiple.svg'
-import IconMove from '@mdi/svg/svg/folder-move.svg'
+import IconCopy from '@mdi/svg/svg/folder-multiple.svg?raw'
+import IconMove from '@mdi/svg/svg/folder-move.svg?raw'
 import Vue from 'vue'
 
 /**
