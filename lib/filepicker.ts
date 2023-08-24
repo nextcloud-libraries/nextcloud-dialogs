@@ -75,27 +75,22 @@ export class FilePicker<IsMultiSelect extends boolean> {
 	 */
 	public async pick(): Promise<IsMultiSelect extends true ? string[] : string> {
 		return new Promise((resolve, reject) => {
-			const buttons = this.buttons.map((button) => ({
-				...button,
-				callback: (nodes: Node[]) => {
-					button.callback(nodes)
-					if (this.multiSelect) {
-						resolve(nodes.map((node) => node.path) as (IsMultiSelect extends true ? string[] : string))
-					} else {
-						resolve((nodes[0]?.path || '/') as (IsMultiSelect extends true ? string[] : string))
-					}
-				},
-			}))
-
 			spawnDialog(FilePickerVue, {
 				allowPickDirectory: this.directoriesAllowed,
-				buttons,
+				buttons: this.buttons,
 				name: this.title,
 				path: this.path,
 				mimetypeFilter: this.mimeTypeFilter,
 				multiselect: this.multiSelect,
 				filterFn: this.filter,
-			}, reject)
+			}, (...nodes: unknown[]) => {
+				if (!nodes) reject(new Error('Nothing selected'))
+				if (this.multiSelect) {
+					resolve((nodes as Node[]).map((node) => node.path) as (IsMultiSelect extends true ? string[] : string))
+				} else {
+					resolve(((nodes as Node[])[0]?.path || '/') as (IsMultiSelect extends true ? string[] : string))
+				}
+			})
 		})
 	}
 
