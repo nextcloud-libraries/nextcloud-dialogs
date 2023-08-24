@@ -34,9 +34,9 @@ export interface IDialogButton {
 	callback: () => void,
 	/**
 	 * Optional Icon for the button
-	 * Can be a Vue component or async component
+	 * Can be a Vue component, async Vue component, or SVG
 	 */
-	icon?: Component | AsyncComponent,
+	icon?: Component | AsyncComponent | string,
 
 	/**
 	 * Button type
