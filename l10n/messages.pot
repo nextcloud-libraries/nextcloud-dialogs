@@ -59,7 +59,7 @@ msgstr ""
 msgid "Files and folders you recently modified will show up here."
 msgstr ""
 
-#: lib/components/FilePicker/FileList.vue:39
+#: lib/components/FilePicker/FileList.vue:47
 msgid "Modified"
 msgstr ""
 
@@ -71,7 +71,7 @@ msgstr ""
 msgid "Move to {target}"
 msgstr ""
 
-#: lib/components/FilePicker/FileList.vue:19
+#: lib/components/FilePicker/FileList.vue:27
 msgid "Name"
 msgstr ""
 
@@ -94,7 +94,7 @@ msgstr ""
 msgid "Select entry"
 msgstr ""
 
-#: lib/components/FilePicker/FileList.vue:29
+#: lib/components/FilePicker/FileList.vue:37
 msgid "Size"
 msgstr ""
 
