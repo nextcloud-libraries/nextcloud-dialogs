@@ -29,7 +29,10 @@ export default defineConfig((env) => {
 			},
 		},
 		nodeExternalsOptions: {
-			include: [/^@nextcloud\//],
+			exclude: [
+				/^@mdi\/svg\//,
+				/^vue-material-design-icons\//,
+			]
 		},
 		libraryFormats: ['es', 'cjs'],
 		replace: {
