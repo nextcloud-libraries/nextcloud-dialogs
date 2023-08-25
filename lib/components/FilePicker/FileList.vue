@@ -10,7 +10,7 @@
 						<NcCheckboxRadioSwitch v-if="multiselect"
 							:aria-label="t('Select all entries')"
 							:checked="allSelected"
-							data-test="file-picker_select-all"
+							data-testid="select-all-checkbox"
 							@update:checked="onSelectAll" />
 					</th>
 					<th :aria-sort="sortByName" class="row-name">
