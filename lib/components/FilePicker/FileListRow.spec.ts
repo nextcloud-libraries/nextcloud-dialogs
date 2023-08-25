@@ -52,8 +52,9 @@ describe('FilePicker: FileListRow', () => {
 
 		const wrapper = mount(FileListRow, {
 			propsData: {
-				allowPickDirectory: false,
+				allowPickDirectory: true,
 				selected: false,
+				showCheckbox: true,
 				canPick: true,
 				node,
 			},
@@ -63,22 +64,73 @@ describe('FilePicker: FileListRow', () => {
 		expect(consoleWarn).not.toBeCalled()
 		expect(consoleError).not.toBeCalled()
 		// mounted
-		expect(wrapper.isEmpty()).toBe(false)
+		expect(wrapper.exists()).toBe(true)
 		expect(wrapper.element.tagName.toLowerCase()).toBe('tr')
-		expect(wrapper.element.classList.contains('file-picker__row')).toBe(true)
+		expect(wrapper.find('[data-testid="file-list-row"]').isEmpty()).toBe(false)
 	})
 
-	it('Click triggers select', async () => {
+	it('shows checkbox based on `showCheckbox` property', async () => {
 		const wrapper = mount(FileListRow, {
 			propsData: {
-				allowPickDirectory: false,
+				allowPickDirectory: true,
 				selected: false,
+				showCheckbox: true,
 				canPick: true,
 				node,
 			},
 		})
 
-		await wrapper.find('.row-checkbox *').trigger('click')
+		expect(wrapper.find('[data-testid="row-checkbox"]').exists()).toBe(true)
+		await wrapper.setProps({ showCheckbox: false })
+		expect(wrapper.find('[data-testid="row-checkbox"]').exists()).toBe(false)
+	})
+
+	it('Click checkbox triggers select', async () => {
+		const wrapper = mount(FileListRow, {
+			propsData: {
+				allowPickDirectory: false,
+				selected: false,
+				showCheckbox: true,
+				canPick: true,
+				node,
+			},
+		})
+
+		await wrapper.find('[data-testid="row-checkbox"]').trigger('click')
+
+		// one event with payload `true` is expected
+		expect(wrapper.emitted('update:selected')).toEqual([[true]])
+	})
+
+	it('Click element triggers select', async () => {
+		const wrapper = mount(FileListRow, {
+			propsData: {
+				allowPickDirectory: false,
+				selected: false,
+				showCheckbox: true,
+				canPick: true,
+				node,
+			},
+		})
+
+		await wrapper.find('[data-testid="row-name"]').trigger('click')
+
+		// one event with payload `true` is expected
+		expect(wrapper.emitted('update:selected')).toEqual([[true]])
+	})
+
+	it('Click element without checkbox triggers select', async () => {
+		const wrapper = mount(FileListRow, {
+			propsData: {
+				allowPickDirectory: false,
+				selected: false,
+				showCheckbox: false,
+				canPick: true,
+				node,
+			},
+		})
+
+		await wrapper.find('[data-testid="row-name"]').trigger('click')
 
 		// one event with payload `true` is expected
 		expect(wrapper.emitted('update:selected')).toEqual([[true]])
@@ -89,6 +141,7 @@ describe('FilePicker: FileListRow', () => {
 			propsData: {
 				allowPickDirectory: false,
 				selected: false,
+				showCheckbox: false,
 				canPick: true,
 				node,
 			},

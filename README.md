@@ -101,7 +101,19 @@ const paths = await filepicker.pick()
 </script>
 ```
 
-## Releasing a new version
+## Development
+### Testing
+For testing all components provide `data-testid` attributes as selectors, so the tests are independent from code or styling changes.
+
+### Test selectors
+`data-testid` | Intended purpose
+---|---
+`select-all-checkbox` | The select all checkbox of the file list
+`file-list-row`       | A row in the file list (`tr`), can be identified by `data-filename`
+`row-checkbox`        | Checkbox for selecting a row
+`row-name`            | Name of the row / file
+
+### Releasing a new version
 
 - Pull the latest changes from `master` or `stableX`;
 - Checkout a new branch with the tag name (e.g `v4.0.1`): `git checkout -b v<version>`;
