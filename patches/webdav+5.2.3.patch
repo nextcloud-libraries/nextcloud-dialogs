@@ -1,0 +1,13 @@
+diff --git a/node_modules/webdav/package.json b/node_modules/webdav/package.json
+index aeeb58f..5d0510d 100644
+--- a/node_modules/webdav/package.json
++++ b/node_modules/webdav/package.json
+@@ -8,7 +8,7 @@
+       "default": "./dist/node/index.js"
+     },
+     "./web": "./dist/web/index.js",
+-    "./dist/": "./dist/"
++    "./dist/*": "./dist/*"
+   },
+   "react-native": "./dist/web/index.js",
+   "type": "module",
