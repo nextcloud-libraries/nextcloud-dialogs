@@ -13,6 +13,11 @@ export default defineConfig(async (env) => {
 				include: ['lib/**/*.ts', 'lib/*.ts'],
 				exclude: ['lib/**/*.spec.ts'],
 			},
+			server: {
+				deps: {
+					inline: [/@nextcloud\/vue/],
+				},
+			},
 		},
 	}
 })

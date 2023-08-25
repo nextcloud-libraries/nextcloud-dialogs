@@ -3,6 +3,7 @@
 		:class="['file-picker__row', {
 			'file-picker__row--selected': selected && !showCheckbox
 		}]"
+		:data-file="node.basename"
 		@key-down="handleKeyDown">
 		<td v-if="showCheckbox" class="row-checkbox">
 			<NcCheckboxRadioSwitch :disabled="!isPickable"
