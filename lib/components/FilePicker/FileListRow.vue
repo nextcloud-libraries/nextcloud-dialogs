@@ -36,7 +36,7 @@
 	</tr>
 </template>
 <script setup lang="ts">
-import { type Node, formatFileSize } from '@nextcloud/files'
+import { type Node, formatFileSize, FileType } from '@nextcloud/files'
 import { NcCheckboxRadioSwitch } from '@nextcloud/vue'
 import { computed } from 'vue'
 import { t } from '../../utils/l10n'

@@ -104,9 +104,10 @@ const sortBySize = ref<ISortingOptions>(undefined)
 const sortByModified = ref<ISortingOptions>(undefined)
 
 const ordering = {
-	ascending: <T>(a: T, b: T, fn: (a: T, b: T) => number) => fn(a, b),
-	descending: <T>(a: T, b: T, fn: (a: T, b: T) => number) => fn(b, a),
-	none: <T>(a: T, b: T, fn: (a: T, b: T) => number) => 0,
+	ascending: <T, >(a: T, b: T, fn: (a: T, b: T) => number) => fn(a, b),
+	descending: <T, >(a: T, b: T, fn: (a: T, b: T) => number) => fn(b, a),
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	none: <T, >(a: T, b: T, fn: (a: T, b: T) => number) => 0,
 }
 
 const byName = (a: Node, b: Node) => (a.attributes?.displayName || a.basename).localeCompare(b.attributes?.displayName || b.basename, getCanonicalLocale())
@@ -133,17 +134,16 @@ const toggleSortByModified = () => toggleSorting(sortByModified)
  * Files sorted by columns
  */
 const sortedFiles = computed(() => [...props.files].sort(
-		(a, b) =>
-			// Folders always come above the files
-			(b.type === FileType.Folder ? 1 : 0) - (a.type === FileType.Folder ? 1 : 0) ||
-			// Favorites above other files
-			// (b.attributes?.favorite || false) - (a.attributes?.favorite || false) ||
-			// then sort by name / size / modified
-			ordering[sortByName.value || 'none'](a, b, byName) ||
-			ordering[sortBySize.value || 'none'](a, b, bySize) ||
-			ordering[sortByModified.value || 'none'](a, b, byDate)
-	)
-)
+	(a, b) =>
+		// Folders always come above the files
+		(b.type === FileType.Folder ? 1 : 0) - (a.type === FileType.Folder ? 1 : 0)
+		// Favorites above other files
+		// (b.attributes?.favorite || false) - (a.attributes?.favorite || false) ||
+		// then sort by name / size / modified
+		|| ordering[sortByName.value || 'none'](a, b, byName)
+		|| ordering[sortBySize.value || 'none'](a, b, bySize)
+		|| ordering[sortByModified.value || 'none'](a, b, byDate),
+))
 
 /**
  * Contains the selectable files, filtering out directories if `allowPickDirectory` is not set
