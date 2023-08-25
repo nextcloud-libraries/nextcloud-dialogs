@@ -120,11 +120,12 @@ describe('FilePicker FileList', () => {
 				path: '/',
 			},
 		})
-		expect(wrapper.find('th.row-checkbox').exists()).toBe(true)
+		const selectAll = wrapper.find('[data-testid="select-all-checkbox"]')
+		expect(selectAll.exists()).toBe(true)
 		// there is an aria label
-		expect(wrapper.find('[data-test="file-picker_select-all"]').attributes('aria-label')).toBeTruthy()
+		expect(selectAll.attributes('aria-label')).toBeTruthy()
 		// no checked
-		expect(wrapper.find('[data-test="file-picker_select-all"]').props('checked')).toBe(false)
+		expect(selectAll.props('checked')).toBe(false)
 	})
 
 	it('header checkbox is checked when all nodes are selected', async () => {
@@ -140,7 +141,7 @@ describe('FilePicker FileList', () => {
 			},
 		})
 
-		const selectAll = wrapper.find('[data-test="file-picker_select-all"]')
+		const selectAll = wrapper.find('[data-testid="select-all-checkbox"]')
 		expect(selectAll.props('checked')).toBe(true)
 	})
 
@@ -158,15 +159,15 @@ describe('FilePicker FileList', () => {
 				},
 			})
 
-			const rows = wrapper.findAll('.file-picker__row')
+			const rows = wrapper.findAll('[data-testid="file-list-row"]')
 			// all nodes are shown
 			expect(rows.length).toBe(nodes.length)
 			// folder are sorted first
-			expect(rows.at(0).attributes('data-file')).toBe('directory')
+			expect(rows.at(0).attributes('data-filename')).toBe('directory')
 			// other files are ascending
-			expect(rows.at(1).attributes('data-file')).toBe('a-file.txt')
-			expect(rows.at(2).attributes('data-file')).toBe('b-file.txt')
-			expect(rows.at(3).attributes('data-file')).toBe('favorite.txt')
+			expect(rows.at(1).attributes('data-filename')).toBe('a-file.txt')
+			expect(rows.at(2).attributes('data-filename')).toBe('b-file.txt')
+			expect(rows.at(3).attributes('data-filename')).toBe('favorite.txt')
 		})
 
 		it('can sort descending by name', async () => {
@@ -188,11 +189,11 @@ describe('FilePicker FileList', () => {
 			// all nodes are shown
 			expect(rows.length).toBe(nodes.length)
 			// folder are sorted first
-			expect(rows.at(0).attributes('data-file')).toBe('directory')
+			expect(rows.at(0).attributes('data-filename')).toBe('directory')
 			// other files are descending
-			expect(rows.at(1).attributes('data-file')).toBe('favorite.txt')
-			expect(rows.at(2).attributes('data-file')).toBe('b-file.txt')
-			expect(rows.at(3).attributes('data-file')).toBe('a-file.txt')
+			expect(rows.at(1).attributes('data-filename')).toBe('favorite.txt')
+			expect(rows.at(2).attributes('data-filename')).toBe('b-file.txt')
+			expect(rows.at(3).attributes('data-filename')).toBe('a-file.txt')
 		})
 	})
 })
