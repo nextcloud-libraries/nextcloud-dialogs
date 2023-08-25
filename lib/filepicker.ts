@@ -51,6 +51,7 @@ export class FilePicker<IsMultiSelect extends boolean> {
 	private buttons: IFilePickerButton[] | IFilePickerButtonFactory
 	private path?: string
 	private filter?: IFilePickerFilter
+	private container?: string
 
 	public constructor(title: string,
 		multiSelect: IsMultiSelect,
@@ -58,7 +59,8 @@ export class FilePicker<IsMultiSelect extends boolean> {
 		directoriesAllowed: boolean,
 		buttons: IFilePickerButton[] | IFilePickerButtonFactory,
 		path?: string,
-		filter?: IFilePickerFilter) {
+		filter?: IFilePickerFilter,
+		container?: string) {
 		this.title = title
 		this.multiSelect = multiSelect
 		this.mimeTypeFilter = mimeTypeFilter
@@ -66,6 +68,7 @@ export class FilePicker<IsMultiSelect extends boolean> {
 		this.path = path
 		this.filter = filter
 		this.buttons = buttons
+		this.container = container
 	}
 
 	/**
@@ -78,17 +81,21 @@ export class FilePicker<IsMultiSelect extends boolean> {
 			spawnDialog(FilePickerVue, {
 				allowPickDirectory: this.directoriesAllowed,
 				buttons: this.buttons,
+				container: this.container,
 				name: this.title,
 				path: this.path,
 				mimetypeFilter: this.mimeTypeFilter,
 				multiselect: this.multiSelect,
 				filterFn: this.filter,
 			}, (...nodes: unknown[]) => {
-				if (!nodes) reject(new Error('Nothing selected'))
-				if (this.multiSelect) {
-					resolve((nodes as Node[]).map((node) => node.path) as (IsMultiSelect extends true ? string[] : string))
+				if (!nodes) {
+					reject(new Error('Nothing selected'))
 				} else {
-					resolve(((nodes as Node[])[0]?.path || '/') as (IsMultiSelect extends true ? string[] : string))
+					if (this.multiSelect) {
+						resolve((nodes as Node[]).map((node) => node.path) as (IsMultiSelect extends true ? string[] : string))
+					} else {
+						resolve(((nodes as Node[])[0]?.path || '/') as (IsMultiSelect extends true ? string[] : string))
+					}
 				}
 			})
 		})
@@ -105,6 +112,7 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 	private path?: string
 	private filter?: IFilePickerFilter
 	private buttons: IFilePickerButton[] | IFilePickerButtonFactory = []
+	private container?: string
 
 	/**
 	 * Construct a new FilePicker
@@ -113,6 +121,17 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 	 */
 	public constructor(title: string) {
 		this.title = title
+	}
+
+	/**
+	 * Set the container where the FilePicker will be mounted
+	 * By default 'body' is used
+	 *
+	 * @param container The dialog container
+	 */
+	public setContainer(container: string) {
+		this.container = container
+		return this
 	}
 
 	/**
