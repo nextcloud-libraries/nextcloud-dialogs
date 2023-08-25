@@ -27,6 +27,7 @@
     }
   },
   "scripts": {
+    "postinstall": "patch-package",
     "prepare": "npm run build",
     "build:doc": "npm run dev && npm run doc",
     "build": "vite --mode production build",
@@ -76,8 +77,10 @@
     "@zamiell/typedoc-plugin-not-exported": "^0.2.0",
     "gettext-extractor": "^3.8.0",
     "gettext-parser": "^7.0.1",
-    "sass": "^1.65.1",
-    "tslib": "^2.6.1",
+    "happy-dom": "^10.10.4",
+    "patch-package": "^8.0.0",
+    "sass": "^1.66.1",
+    "tslib": "^2.6.2",
     "typedoc": "^0.24.8",
     "typescript": "^5.1.6",
     "vite": "^4.4.9"
