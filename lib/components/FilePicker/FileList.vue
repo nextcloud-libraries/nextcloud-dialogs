@@ -3,14 +3,22 @@
 		<table>
 			<thead>
 				<tr>
-					<th class="row-checkbox">
+					<th class="row-checkbox" v-if="multiselect">
 						<span class="hidden-visually">
 							{{ t('Select entry') }}
 						</span>
-						<NcCheckboxRadioSwitch v-if="props.multiselect" :aria-label="t('Select all entries')" :checked="allSelected" @update:checked="onSelectAll" />
+						<NcCheckboxRadioSwitch v-if="multiselect"
+							:aria-label="t('Select all entries')"
+							:checked="allSelected"
+							data-test="file-picker_select-all"
+							@update:checked="onSelectAll" />
 					</th>
 					<th :aria-sort="sortByName" class="row-name">
-						<NcButton :wide="true" type="tertiary" @click="toggleSortByName">
+						<NcButton
+							:wide="true"
+							type="tertiary"
+							data-test="file-picker_sort-name"
+							@click="toggleSortByName">
 							<template #icon>
 								<IconSortAscending v-if="sortByName === 'ascending'" :size="20" />
 								<IconSortDescending v-else-if="sortByName === 'descending'" :size="20" />
@@ -49,6 +57,7 @@
 					<FileListRow v-for="file in sortedFiles"
 						:key="file.fileid || file.path"
 						:allow-pick-directory="allowPickDirectory"
+						:show-checkbox="multiselect"
 						:can-pick="multiselect || selectedFiles.length === 0 || selectedFiles.includes(file)"
 						:selected="selectedFiles.includes(file)"
 						:node="file"
@@ -61,7 +70,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Node } from '@nextcloud/files'
+import { FileType, type Node } from '@nextcloud/files'
 
 import { getCanonicalLocale } from '@nextcloud/l10n'
 import { NcButton, NcCheckboxRadioSwitch } from '@nextcloud/vue'
@@ -90,7 +99,7 @@ const emit = defineEmits<{
 
 type ISortingOptions = 'ascending' | 'descending' | undefined
 
-const sortByName = ref<ISortingOptions>(undefined)
+const sortByName = ref<ISortingOptions>('ascending')
 const sortBySize = ref<ISortingOptions>(undefined)
 const sortByModified = ref<ISortingOptions>(undefined)
 
@@ -100,15 +109,17 @@ const ordering = {
 	none: <T>(a: T, b: T, fn: (a: T, b: T) => number) => 0,
 }
 
-const byName = (a: Node, b: Node) => b.basename.localeCompare(a.basename, getCanonicalLocale())
+const byName = (a: Node, b: Node) => (a.attributes?.displayName || a.basename).localeCompare(b.attributes?.displayName || b.basename, getCanonicalLocale())
 const bySize = (a: Node, b: Node) => (b.size || 0) - (a.size || 0)
 const byDate = (a: Node, b: Node) => (a.mtime?.getTime() || 0) - (b.mtime?.getTime() || 0)
 
 const toggleSorting = (variable: Ref<ISortingOptions>) => {
-	if (variable.value === 'ascending') {
+	const old = variable.value
+	// reset
+	sortByModified.value = sortBySize.value = sortByName.value = undefined
+
+	if (old === 'ascending') {
 		variable.value = 'descending'
-	} else if (variable.value === 'descending') {
-		variable.value = undefined
 	} else {
 		variable.value = 'ascending'
 	}
@@ -121,27 +132,28 @@ const toggleSortByModified = () => toggleSorting(sortByModified)
 /**
  * Files sorted by columns
  */
-const sortedFiles = computed(() => {
-	const s = props.files.sort(
+const sortedFiles = computed(() => [...props.files].sort(
 		(a, b) =>
+			// Folders always come above the files
+			(b.type === FileType.Folder ? 1 : 0) - (a.type === FileType.Folder ? 1 : 0) ||
+			// Favorites above other files
+			// (b.attributes?.favorite || false) - (a.attributes?.favorite || false) ||
+			// then sort by name / size / modified
 			ordering[sortByName.value || 'none'](a, b, byName) ||
 			ordering[sortBySize.value || 'none'](a, b, bySize) ||
 			ordering[sortByModified.value || 'none'](a, b, byDate)
 	)
-	console.warn('files sorted')
-	return s
-}
 )
 
 /**
  * Contains the selectable files, filtering out directories if `allowPickDirectory` is not set
  */
-const selectableFiles = computed(() => props.files.filter((file) => props.allowPickDirectory || file.mime !== 'https/unix-directory'))
+const selectableFiles = computed(() => props.files.filter((file) => props.allowPickDirectory || file.type !== FileType.Folder))
 
 /**
  * Whether all selectable files are currently selected
  */
-const allSelected = computed(() => !props.loading && props.selectedFiles.length >= selectableFiles.value.length)
+const allSelected = computed(() => !props.loading && props.selectedFiles.length > 0 && props.selectedFiles.length >= selectableFiles.value.length)
 
 /**
  * Handle the "select all" checkbox
@@ -156,11 +168,16 @@ function onSelectAll() {
 	}
 }
 
-function onNodeSelected(file: Node){
+function onNodeSelected(file: Node) {
 	if (props.selectedFiles.includes(file)) {
 		emit('update:selectedFiles', props.selectedFiles.filter((f) => f.path !== file.path))
 	} else {
-		emit('update:selectedFiles', [...props.selectedFiles, file])
+		if (props.multiselect) {
+			emit('update:selectedFiles', [...props.selectedFiles, file])
+		} else {
+			// no multi select so only this file is selected
+			emit('update:selectedFiles', [file])
+		}
 	}
 }
 
