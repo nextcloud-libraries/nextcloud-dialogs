@@ -62,7 +62,7 @@
     "@nextcloud/typings": "^1.7.0",
     "@nextcloud/vue": "^8.0.0-beta.3",
     "@types/toastify-js": "^1.12.0",
-    "@vueuse/core": "^10.3.0",
+    "@vueuse/core": "^10.4.0",
     "toastify-js": "^1.12.0",
     "vue-frag": "^1.4.3",
     "vue-material-design-icons": "^5.2.0",
