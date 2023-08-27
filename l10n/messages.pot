@@ -2,110 +2,121 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 
-#: lib/components/FilePicker/FilePickerBreadcrumbs.vue:91
 msgid "\"{name}\" is an invalid file name."
 msgstr ""
 
-#: lib/components/FilePicker/FilePickerBreadcrumbs.vue:93
 msgid "\"{name}\" is not an allowed filetype"
 msgstr ""
 
-#: lib/components/FilePicker/FilePickerBreadcrumbs.vue:89
 msgid "\"/\" is not allowed inside a file name."
 msgstr ""
 
-#: lib/components/FilePicker/NcDatetime.vue:34
 msgid "a few seconds ago"
 msgstr ""
 
-#: lib/components/FilePicker/FilePickerNavigation.vue:57
 msgid "All files"
 msgstr ""
 
-#: lib/legacy.ts:155
 msgid "Choose"
 msgstr ""
 
-#: lib/legacy.ts:155
 msgid "Choose {file}"
 msgstr ""
 
-#: lib/legacy.ts:163
 msgid "Copy"
 msgstr ""
 
-#: lib/legacy.ts:163
 msgid "Copy to {target}"
 msgstr ""
 
-#: lib/components/FilePicker/FilePicker.vue:252
 msgid "Could not create the new folder"
 msgstr ""
 
-#: lib/components/FilePicker/FilePicker.vue:160
-#: lib/components/FilePicker/FilePickerNavigation.vue:65
+msgid "Create directory"
+msgstr ""
+
+msgid "Current view selector"
+msgstr ""
+
 msgid "Favorites"
 msgstr ""
 
-#: lib/components/FilePicker/FilePickerBreadcrumbs.vue:87
 msgid "File name cannot be empty."
 msgstr ""
 
-#: lib/components/FilePicker/FilePicker.vue:238
+msgid "Filepicker sections"
+msgstr ""
+
 msgid "Files and folders you mark as favorite will show up here."
 msgstr ""
 
-#: lib/components/FilePicker/FilePicker.vue:236
 msgid "Files and folders you recently modified will show up here."
 msgstr ""
 
-#: lib/components/FilePicker/FileList.vue:47
+msgid "Filter file list"
+msgstr ""
+
+msgid "Home"
+msgstr ""
+
 msgid "Modified"
 msgstr ""
 
-#: lib/legacy.ts:171
 msgid "Move"
 msgstr ""
 
-#: lib/legacy.ts:171
 msgid "Move to {target}"
 msgstr ""
 
-#: lib/components/FilePicker/FileList.vue:27
 msgid "Name"
 msgstr ""
 
-#: lib/components/FilePicker/FilePicker.vue:160
-#: lib/components/FilePicker/FilePickerNavigation.vue:61
+msgid "New"
+msgstr ""
+
+msgid "New folder"
+msgstr ""
+
+msgid "New folder name"
+msgstr ""
+
+msgid "No files in here"
+msgstr ""
+
+msgid "No files matching your filter were found."
+msgstr ""
+
+msgid "No matching files"
+msgstr ""
+
 msgid "Recent"
 msgstr ""
 
 #. FOR TRANSLATORS: If possible in your language an even shorter version of 'a few seconds ago'
-#: lib/components/FilePicker/NcDatetime.vue:36
 msgid "sec. ago"
 msgstr ""
 
 #. FOR TRANSLATORS: Shorter version of 'a few seconds ago'
-#: lib/components/FilePicker/NcDatetime.vue:35
 msgid "seconds ago"
 msgstr ""
 
-#: lib/components/FilePicker/FileList.vue:8
+msgid "Select all entries"
+msgstr ""
+
 msgid "Select entry"
 msgstr ""
 
-#: lib/components/FilePicker/FileList.vue:37
+msgid "Select the row for {nodename}"
+msgstr ""
+
 msgid "Size"
 msgstr ""
 
-#: lib/toast.ts:242
 msgid "Undo"
 msgstr ""
 
-#: lib/components/FilePicker/FileListRow.vue:34
 msgid "Unset"
 msgstr ""
 
-#: lib/components/FilePicker/FilePicker.vue:234
 msgid "Upload some content or sync with your devices!"
 msgstr ""
