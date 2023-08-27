@@ -21,7 +21,7 @@
 		</td>
 		<td class="row-name">
 			<div class="file-picker__name-container" data-testid="row-name">
-				<div class="file-picker__file-icon" :style="{ backgroundImage }" />
+				<FilePreview :node="node" />
 				<div class="file-picker__file-name" :title="displayName" v-text="displayName" />
 				<div class="file-picker__file-extension" v-text="fileExtension" />
 			</div>
@@ -35,10 +35,14 @@
 	</tr>
 </template>
 <script setup lang="ts">
-import { type Node, formatFileSize, FileType } from '@nextcloud/files'
+import type { Node } from '@nextcloud/files'
+
+import { formatFileSize, FileType } from '@nextcloud/files'
 import { NcCheckboxRadioSwitch, NcDatetime } from '@nextcloud/vue'
 import { computed } from 'vue'
 import { t } from '../../utils/l10n'
+
+import FilePreview from './FilePreview.vue'
 
 const props = defineProps<{
 	/** Can directories be picked */
@@ -79,11 +83,6 @@ const isDirectory = computed(() => props.node.type === FileType.Folder)
  * If this node can be picked, basically just check if picking a directory is allowed
  */
 const isPickable = computed(() => props.canPick && (props.allowPickDirectory || !isDirectory.value))
-
-/**
- * Background image url for the given nodes mime type
- */
-const backgroundImage = computed(() => `url(${window.OC.MimeType.getIconUrl(props.node.mime)})`)
 
 /**
  * Toggle the selection state
@@ -132,15 +131,6 @@ function handleKeyDown(event: KeyboardEvent) {
 		justify-content: start;
 		align-items: center;
 		height: 100%;
-	}
-
-	&__file-icon {
-		width: 32px;
-		height: 32px;
-		min-width: 32px;
-		min-height: 32px;
-		background-repeat: no-repeat;
-		background-size: contain;
 	}
 
 	&__file-name {
