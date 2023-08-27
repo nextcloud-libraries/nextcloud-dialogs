@@ -21,7 +21,7 @@
  */
 import type { AsyncComponent, Component } from 'vue'
 
-import Vue from 'vue'
+import Vue, { toRaw } from 'vue'
 
 /**
  * Helper to spawn a Vue dialog without having to mount it from a component
@@ -44,7 +44,7 @@ export const spawnDialog = (dialog: Component | AsyncComponent, props: any, onCl
 				props,
 				on: {
 					close: (...rest: unknown[]) => {
-						onClose(rest)
+						onClose(...rest.map(v => toRaw(v)))
 						vue.$destroy()
 					},
 				},

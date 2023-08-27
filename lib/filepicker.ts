@@ -87,9 +87,10 @@ export class FilePicker<IsMultiSelect extends boolean> {
 				mimetypeFilter: this.mimeTypeFilter,
 				multiselect: this.multiSelect,
 				filterFn: this.filter,
-			}, (...nodes: unknown[]) => {
-				if (!nodes) {
-					reject(new Error('Nothing selected'))
+			}, (...rest: unknown[]) => {
+				const [nodes] = rest as [nodes: Node[]]
+				if (!Array.isArray(nodes) || nodes.length === 0) {
+					reject(new Error('FilePicker: No nodes selected'))
 				} else {
 					if (this.multiSelect) {
 						resolve((nodes as Node[]).map((node) => node.path) as (IsMultiSelect extends true ? string[] : string))
