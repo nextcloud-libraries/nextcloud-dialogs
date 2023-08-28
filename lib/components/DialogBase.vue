@@ -1,21 +1,18 @@
 <template>
-	<NcModal v-if="open" v-bind="modalProps" class="dialog__modal" @close="handleClose">
+	<NcModal v-if="open"
+		v-bind="modalProps"
+		class="dialog__modal"
+		@close="handleClose">
+		<!-- The dialog name / header -->
+		<h2 class="dialog__name" v-text="name" />
 		<div class="dialog">
 			<div ref="wrapper" :class="['dialog__wrapper', { 'dialog__wrapper--collapsed': isNavigationCollapsed }]">
-				<!-- If the navigation is shown on top of the content, the header should be above the navigation -->
-				<h2 v-if="isNavigationCollapsed" class="dialog__name">
-					{{ props.name }}
-				</h2>
 				<!-- When the navigation is collapsed (too small dialog) it is displayed above the main content, otherwise on the inline start -->
 				<nav v-if="hasNavigation" :class="['dialog__navigation', ...navigationClasses]">
 					<slot name="navigation" :is-collapsed="isNavigationCollapsed" />
 				</nav>
 				<!-- Main dialog content -->
 				<div :class="['dialog__content', ...contentClasses]">
-					<!-- If the navigation is shown on the side the header should be directly aligned with the content -->
-					<h2 v-if="!isNavigationCollapsed" class="dialog__name">
-						{{ props.name }}
-					</h2>
 					<slot>
 						<p>{{ props.message }}</p>
 					</slot>
@@ -147,6 +144,7 @@ const modalProps = computed(() => ({
 
 <style lang="scss" scoped>
 .dialog {
+	height: 100%;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -179,7 +177,6 @@ const modalProps = computed(() => ({
 
 	// Navigation styling when side-by-side with content
 	&__wrapper:not(&__wrapper--collapsed) &__navigation {
-		margin-block-start: calc(var(--default-clickable-area) + 16px); // align with __name (4px top & 12px bottom margin)
 		flex-direction: column;
 
 		overflow: hidden auto;
@@ -200,7 +197,7 @@ const modalProps = computed(() => ({
 
 	&__name {
 		// Same as the NcAppSettingsDialog
-		text-align: start;
+		text-align: center;
 		height: var(--default-clickable-area);
 		min-height: var(--default-clickable-area);
 		line-height: var(--default-clickable-area);
