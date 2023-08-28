@@ -26,13 +26,6 @@ import { File } from '@nextcloud/files'
 
 import FileListRow from './FileListRow.vue'
 
-// Mock OC.MimeType
-window.OC = {
-	MimeType: {
-		getIconUrl: (mime: string) => `/icon/${mime}`,
-	},
-} as never
-
 describe('FilePicker: FileListRow', () => {
 	const node = new File({
 		owner: null,

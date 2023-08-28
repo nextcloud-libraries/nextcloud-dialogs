@@ -1,9 +1,9 @@
 <template>
-	<div class="file-picker__files" ref="fileContainer">
+	<div ref="fileContainer" class="file-picker__files">
 		<table>
 			<thead>
 				<tr>
-					<th class="row-checkbox" v-if="multiselect">
+					<th v-if="multiselect" class="row-checkbox">
 						<span class="hidden-visually">
 							{{ t('Select entry') }}
 						</span>
@@ -16,11 +16,10 @@
 					<th :aria-sort="sortByName" class="row-name">
 						<div class="header-wrapper">
 							<span class="file-picker__header-preview" />
-							<NcButton
-								:wide="true"
+							<NcButton :wide="true"
 								type="tertiary"
 								data-test="file-picker_sort-name"
-								@click="toggleSortByName">
+								@click="toggleSorting('basename')">
 								<template #icon>
 									<IconSortAscending v-if="sortByName === 'ascending'" :size="20" />
 									<IconSortDescending v-else-if="sortByName === 'descending'" :size="20" />
@@ -31,7 +30,7 @@
 						</div>
 					</th>
 					<th :aria-sort="sortBySize" class="row-size">
-						<NcButton :wide="true" type="tertiary" @click="toggleSortBySize">
+						<NcButton :wide="true" type="tertiary" @click="toggleSorting('size')">
 							<template #icon>
 								<IconSortAscending v-if="sortBySize === 'ascending'" :size="20" />
 								<IconSortDescending v-else-if="sortBySize === 'descending'" :size="20" />
@@ -41,7 +40,7 @@
 						</NcButton>
 					</th>
 					<th :aria-sort="sortByModified" class="row-modified">
-						<NcButton :wide="true" type="tertiary" @click="toggleSortByModified">
+						<NcButton :wide="true" type="tertiary" @click="toggleSorting('mtime')">
 							<template #icon>
 								<IconSortAscending v-if="sortByModified === 'ascending'" :size="20" />
 								<IconSortDescending v-else-if="sortByModified === 'descending'" :size="20" />
@@ -54,7 +53,7 @@
 			</thead>
 			<tbody>
 				<template v-if="loading">
-					<LoadingTableRow v-for="index in skeletonNumber" :key="index" :show-checkbox="multiselect"/>
+					<LoadingTableRow v-for="index in skeletonNumber" :key="index" :show-checkbox="multiselect" />
 				</template>
 				<template v-else>
 					<FileListRow v-for="file in sortedFiles"
@@ -73,13 +72,16 @@
 </template>
 
 <script setup lang="ts">
-import { FileType, type Node } from '@nextcloud/files'
+import type { Node } from '@nextcloud/files'
+import type { FileListViews } from '../../composables/filesSettings'
 
+import { FileType } from '@nextcloud/files'
 import { getCanonicalLocale } from '@nextcloud/l10n'
 import { NcButton, NcCheckboxRadioSwitch } from '@nextcloud/vue'
 import { join } from 'path'
+import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
+import { useFilesSettings, useFilesViews } from '../../composables/filesSettings'
 import { t } from '../../utils/l10n'
-import { computed, nextTick, onMounted, onUnmounted, ref, type Ref } from 'vue'
 
 import IconSortAscending from 'vue-material-design-icons/MenuUp.vue'
 import IconSortDescending from 'vue-material-design-icons/MenuDown.vue'
@@ -87,6 +89,7 @@ import LoadingTableRow from './LoadingTableRow.vue'
 import FileListRow from './FileListRow.vue'
 
 const props = defineProps<{
+	currentView: FileListViews,
 	multiselect: boolean
 	allowPickDirectory: boolean
 	loading: boolean
@@ -100,52 +103,65 @@ const emit = defineEmits<{
 	(e: 'update:selectedFiles', nodes: Node[]): void
 }>()
 
-type ISortingOptions = 'ascending' | 'descending' | undefined
+/// sorting related stuff
 
-const sortByName = ref<ISortingOptions>('ascending')
-const sortBySize = ref<ISortingOptions>(undefined)
-const sortByModified = ref<ISortingOptions>(undefined)
+type ISortingAttributes = 'basename' | 'size' | 'mtime'
+type ISortingOrder = 'ascending' | 'descending' | 'none'
 
-const ordering = {
-	ascending: <T>(a: T, b: T, fn: (a: T, b: T) => number) => fn(a, b),
-	descending: <T>(a: T, b: T, fn: (a: T, b: T) => number) => fn(b, a),
-	none: <T>(a: T, b: T, fn: (a: T, b: T) => number) => 0,
-}
+/** Override files app sorting */
+const customSortingConfig = ref<{ sortBy: ISortingAttributes, order: ISortingOrder }>()
+/** The current sorting of the files app */
+const { currentConfig: filesAppSorting } = useFilesViews(props.currentView)
+/** Wrapper that uses custom sorting, but fallsback to the files app */
+const sortingConfig = computed(() => customSortingConfig.value ?? filesAppSorting.value)
 
-const byName = (a: Node, b: Node) => (a.attributes?.displayName || a.basename).localeCompare(b.attributes?.displayName || b.basename, getCanonicalLocale())
-const bySize = (a: Node, b: Node) => (b.size || 0) - (a.size || 0)
-const byDate = (a: Node, b: Node) => (a.mtime?.getTime() || 0) - (b.mtime?.getTime() || 0)
+// Some helpers for the template
+const sortByName = computed(() => sortingConfig.value.sortBy === 'basename' ? (sortingConfig.value.order === 'none' ? undefined : sortingConfig.value.order) : undefined)
+const sortBySize = computed(() => sortingConfig.value.sortBy === 'size' ? (sortingConfig.value.order === 'none' ? undefined : sortingConfig.value.order) : undefined)
+const sortByModified = computed(() => sortingConfig.value.sortBy === 'mtime' ? (sortingConfig.value.order === 'none' ? undefined : sortingConfig.value.order) : undefined)
 
-const toggleSorting = (variable: Ref<ISortingOptions>) => {
-	const old = variable.value
-	// reset
-	sortByModified.value = sortBySize.value = sortByName.value = undefined
-
-	if (old === 'ascending') {
-		variable.value = 'descending'
+const toggleSorting = (sortBy: ISortingAttributes) => {
+	if (sortingConfig.value.sortBy === sortBy) {
+		if (sortingConfig.value.order === 'ascending') {
+			customSortingConfig.value = { sortBy: sortingConfig.value.sortBy, order: 'descending' }
+		} else {
+			customSortingConfig.value = { sortBy: sortingConfig.value.sortBy, order: 'ascending' }
+		}
 	} else {
-		variable.value = 'ascending'
+		customSortingConfig.value = { sortBy, order: 'ascending' }
 	}
 }
 
-const toggleSortByName = () => toggleSorting(sortByName)
-const toggleSortBySize = () => toggleSorting(sortBySize)
-const toggleSortByModified = () => toggleSorting(sortByModified)
+const { sortFavoritesFirst } = useFilesSettings()
 
 /**
  * Files sorted by columns
  */
-const sortedFiles = computed(() => [...props.files].sort(
+const sortedFiles = computed(() => {
+	const ordering = {
+		ascending: <T, >(a: T, b: T, fn: (a: T, b: T) => number) => fn(a, b),
+		descending: <T, >(a: T, b: T, fn: (a: T, b: T) => number) => fn(b, a),
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
+		none: <T, >(_a: T, _b: T, _fn: (a: T, b: T) => number) => 0,
+	}
+
+	const sorting = {
+		basename: (a: Node, b: Node) => (a.attributes?.displayName || a.basename).localeCompare(b.attributes?.displayName || b.basename, getCanonicalLocale()),
+		size: (a: Node, b: Node) => (a.size || 0) - (b.size || 0),
+		// reverted because "young" is smaller than "old"
+		mtime: (a: Node, b: Node) => (b.mtime?.getTime?.() || 0) - (a.mtime?.getTime?.() || 0),
+	}
+
+	return [...props.files].sort(
 		(a, b) =>
-			// Folders always come above the files
-			(b.type === FileType.Folder ? 1 : 0) - (a.type === FileType.Folder ? 1 : 0) ||
-			// Favorites above other files
-			// (b.attributes?.favorite || false) - (a.attributes?.favorite || false) ||
-			// then sort by name / size / modified
-			ordering[sortByName.value || 'none'](a, b, byName) ||
-			ordering[sortBySize.value || 'none'](a, b, bySize) ||
-			ordering[sortByModified.value || 'none'](a, b, byDate)
+		// Folders always come above the files
+			(b.type === FileType.Folder ? 1 : 0) - (a.type === FileType.Folder ? 1 : 0)
+		// Favorites above other files
+		|| (sortFavoritesFirst ? ((b.attributes.favorite ? 1 : 0) - (a.attributes.favorite ? 1 : 0)) : 0)
+		// then sort by name / size / modified
+		|| ordering[sortingConfig.value.order](a, b, sorting[sortingConfig.value.sortBy]),
 	)
+},
 )
 
 /**
@@ -171,6 +187,10 @@ function onSelectAll() {
 	}
 }
 
+/**
+ * Handle selecting a node on the files list
+ * @param file the selected node
+ */
 function onNodeSelected(file: Node) {
 	if (props.selectedFiles.includes(file)) {
 		emit('update:selectedFiles', props.selectedFiles.filter((f) => f.path !== file.path))
@@ -184,6 +204,10 @@ function onNodeSelected(file: Node) {
 	}
 }
 
+/**
+ * Emit the new current path
+ * @param dir The directory that is entered
+ */
 function onChangeDirectory(dir: Node) {
 	emit('update:path', join(props.path, dir.basename))
 }
@@ -197,7 +221,7 @@ const fileContainer = ref<HTMLDivElement>()
 	const resize = () => nextTick(() => {
 		const nodes = fileContainer.value?.parentElement?.children || []
 		let height = fileContainer.value?.parentElement?.clientHeight || 450
-		for(let index = 0; index < nodes.length; index++) {
+		for (let index = 0; index < nodes.length; index++) {
 			if (!fileContainer.value?.isSameNode(nodes[index])) {
 				height -= nodes[index].clientHeight
 			}

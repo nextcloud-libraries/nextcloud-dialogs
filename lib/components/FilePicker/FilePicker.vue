@@ -18,6 +18,7 @@
 			<!-- If loading or files found show file list, otherwise show empty content-->
 			<FileList v-if="isLoading || filteredFiles.length > 0"
 				:allow-pick-directory="allowPickDirectory"
+				:current-view="currentView"
 				:files="filteredFiles"
 				:multiselect="multiselect"
 				:loading="isLoading"
@@ -61,6 +62,7 @@ import { showError } from '../../toast'
 import { useDAVFiles } from '../../composables/dav'
 import { useMimeFilter } from '../../composables/mime'
 import { t } from '../../utils/l10n'
+import { useFilesSettings } from '../../composables/filesSettings'
 
 const props = withDefaults(defineProps<{
 	/** Buttons to be displayed */
@@ -207,12 +209,18 @@ const { files, isLoading, loadFiles, getFile, client } = useDAVFiles(currentView
 
 onMounted(() => loadFiles())
 
+const { showHiddenFiles } = useFilesSettings()
+
 /**
  * The files list filtered by the current value of the filter input
  */
 const filteredFiles = computed(() => {
 	let filtered = files.value
 
+	if (!showHiddenFiles.value) {
+		// Hide hidden files if not configured otherwise
+		filtered = filtered.filter((file) => !file.basename.startsWith('.'))
+	}
 	if (props.mimetypeFilter.length > 0) {
 		// filter by mime type but always include folders to navigate
 		filtered = filtered.filter(file => file.type === 'folder' || (file.mime && isSupportedMimeType(file.mime)))

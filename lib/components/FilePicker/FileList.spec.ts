@@ -26,12 +26,10 @@ import { beforeAll, describe, expect, it, vi } from 'vitest'
 import FileList from './FileList.vue'
 import { File, Folder } from '@nextcloud/files'
 
-// mock OC.MimeType
-window.OC = {
-	MimeType: {
-		getIconUrl: (mime: string) => `icon/${mime}`,
-	},
-} as never
+const axios = vi.hoisted(() => ({
+	get: vi.fn(() => new Promise(() => {})),
+}))
+vi.mock('axios', () => axios)
 
 const exampleNodes = [
 	new File({
@@ -81,6 +79,7 @@ describe('FilePicker FileList', () => {
 
 		const wrapper = mount(FileList, {
 			propsData: {
+				currentView: 'files',
 				multiselect: false,
 				allowPickDirectory: false,
 				loading: false,
@@ -98,6 +97,7 @@ describe('FilePicker FileList', () => {
 	it('header checkbox is not shown if multiselect is `false`', () => {
 		const wrapper = mount(FileList, {
 			propsData: {
+				currentView: 'files',
 				multiselect: false,
 				allowPickDirectory: false,
 				loading: false,
@@ -112,6 +112,7 @@ describe('FilePicker FileList', () => {
 	it('header checkbox is shown if multiselect is `true`', () => {
 		const wrapper = mount(FileList, {
 			propsData: {
+				currentView: 'files',
 				multiselect: true,
 				allowPickDirectory: false,
 				loading: false,
@@ -132,6 +133,7 @@ describe('FilePicker FileList', () => {
 		const nodes = [...exampleNodes]
 		const wrapper = mount(FileList, {
 			propsData: {
+				currentView: 'files',
 				multiselect: true,
 				allowPickDirectory: false,
 				loading: false,
@@ -150,6 +152,7 @@ describe('FilePicker FileList', () => {
 			const nodes = [...exampleNodes]
 			const wrapper = mount(FileList, {
 				propsData: {
+					currentView: 'files',
 					multiselect: true,
 					allowPickDirectory: false,
 					loading: false,
@@ -164,16 +167,18 @@ describe('FilePicker FileList', () => {
 			expect(rows.length).toBe(nodes.length)
 			// folder are sorted first
 			expect(rows.at(0).attributes('data-filename')).toBe('directory')
+			// by default favorites are sorted before other files
+			expect(rows.at(1).attributes('data-filename')).toBe('favorite.txt')
 			// other files are ascending
-			expect(rows.at(1).attributes('data-filename')).toBe('a-file.txt')
-			expect(rows.at(2).attributes('data-filename')).toBe('b-file.txt')
-			expect(rows.at(3).attributes('data-filename')).toBe('favorite.txt')
+			expect(rows.at(2).attributes('data-filename')).toBe('a-file.txt')
+			expect(rows.at(3).attributes('data-filename')).toBe('b-file.txt')
 		})
 
 		it('can sort descending by name', async () => {
 			const nodes = [...exampleNodes]
 			const wrapper = mount(FileList, {
 				propsData: {
+					currentView: 'files',
 					multiselect: true,
 					allowPickDirectory: false,
 					loading: false,
@@ -190,8 +195,9 @@ describe('FilePicker FileList', () => {
 			expect(rows.length).toBe(nodes.length)
 			// folder are sorted first
 			expect(rows.at(0).attributes('data-filename')).toBe('directory')
-			// other files are descending
+			// by default favorites are sorted before other files
 			expect(rows.at(1).attributes('data-filename')).toBe('favorite.txt')
+			// other files are descending
 			expect(rows.at(2).attributes('data-filename')).toBe('b-file.txt')
 			expect(rows.at(3).attributes('data-filename')).toBe('a-file.txt')
 		})
