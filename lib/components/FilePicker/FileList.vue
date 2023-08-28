@@ -1,5 +1,5 @@
 <template>
-	<div class="file-picker__files">
+	<div class="file-picker__files" ref="fileContainer">
 		<table>
 			<thead>
 				<tr>
@@ -51,7 +51,7 @@
 			</thead>
 			<tbody>
 				<template v-if="loading">
-					<LoadingTableRow v-for="i in [1, 2, 3, 4]" :key="i" :show-checkbox="multiselect"/>
+					<LoadingTableRow v-for="index in skeletonNumber" :key="index" :show-checkbox="multiselect"/>
 				</template>
 				<template v-else>
 					<FileListRow v-for="file in sortedFiles"
@@ -76,7 +76,7 @@ import { getCanonicalLocale } from '@nextcloud/l10n'
 import { NcButton, NcCheckboxRadioSwitch } from '@nextcloud/vue'
 import { join } from 'path'
 import { t } from '../../utils/l10n'
-import { computed, ref, type Ref } from 'vue'
+import { computed, nextTick, onMounted, onUnmounted, ref, type Ref } from 'vue'
 
 import IconSortAscending from 'vue-material-design-icons/MenuDown.vue'
 import IconSortDescending from 'vue-material-design-icons/MenuUp.vue'
@@ -184,6 +184,32 @@ function onNodeSelected(file: Node) {
 function onChangeDirectory(dir: Node) {
 	emit('update:path', join(props.path, dir.basename))
 }
+
+/**
+ * Number of loading skeletons to use to fill the filepicker
+ */
+const skeletonNumber = ref(4)
+const fileContainer = ref<HTMLDivElement>()
+{
+	const resize = () => nextTick(() => {
+		const nodes = fileContainer.value?.parentElement?.children || []
+		let height = fileContainer.value?.parentElement?.clientHeight || 450
+		for(let index = 0; index < nodes.length; index++) {
+			if (!fileContainer.value?.isSameNode(nodes[index])) {
+				height -= nodes[index].clientHeight
+			}
+		}
+		// container height - 50px table header / row height of 50px
+		skeletonNumber.value = Math.floor((height - 50) / 50)
+	})
+	onMounted(() => {
+		window.addEventListener('resize', resize)
+		resize()
+	})
+	onUnmounted(() => {
+		window.removeEventListener('resize', resize)
+	})
+}
 </script>
 
 <style scoped lang="scss">
@@ -192,7 +218,6 @@ function onChangeDirectory(dir: Node) {
 		// ensure focus outlines are visible
 		margin: 2px;
 		margin-inline-start: 12px; // align with bread crumbs
-		min-height: calc(5 * var(--row-height, 50px)); // make file list not jumping when loading (1x header 4x loading placeholders)
 		overflow: scroll auto;
 
 		table {
