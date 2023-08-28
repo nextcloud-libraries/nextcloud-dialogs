@@ -51,7 +51,7 @@
 			</thead>
 			<tbody>
 				<template v-if="loading">
-					<LoadingTableRow v-for="i in [1, 2, 3, 4]" :key="i" />
+					<LoadingTableRow v-for="i in [1, 2, 3, 4]" :key="i" :show-checkbox="multiselect"/>
 				</template>
 				<template v-else>
 					<FileListRow v-for="file in sortedFiles"
