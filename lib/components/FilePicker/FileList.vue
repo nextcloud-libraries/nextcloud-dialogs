@@ -190,8 +190,8 @@ function onChangeDirectory(dir: Node) {
 .file-picker {
 	&__files {
 		// ensure focus outlines are visible
-		padding: 2px;
-		padding-inline-start: 12px; // align with bread crumbs
+		margin: 2px;
+		margin-inline-start: 12px; // align with bread crumbs
 		min-height: calc(5 * var(--row-height, 50px)); // make file list not jumping when loading (1x header 4x loading placeholders)
 		overflow: scroll auto;
 

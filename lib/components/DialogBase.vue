@@ -5,14 +5,14 @@
 		@close="handleClose">
 		<!-- The dialog name / header -->
 		<h2 class="dialog__name" v-text="name" />
-		<div class="dialog">
+		<div class="dialog" :class="dialogClasses">
 			<div ref="wrapper" :class="['dialog__wrapper', { 'dialog__wrapper--collapsed': isNavigationCollapsed }]">
 				<!-- When the navigation is collapsed (too small dialog) it is displayed above the main content, otherwise on the inline start -->
-				<nav v-if="hasNavigation" :class="['dialog__navigation', ...navigationClasses]">
+				<nav v-if="hasNavigation" class="dialog__navigation" :class="navigationClasses">
 					<slot name="navigation" :is-collapsed="isNavigationCollapsed" />
 				</nav>
 				<!-- Main dialog content -->
-				<div :class="['dialog__content', ...contentClasses]">
+				<div class="dialog__content" :class="contentClasses">
 					<slot>
 						<p>{{ props.message }}</p>
 					</slot>
@@ -32,10 +32,13 @@
 </template>
 
 <script setup lang="ts">
+import type { IDialogButton } from './types'
+
 import { NcModal } from '@nextcloud/vue'
-import { computed, ref, useSlots } from 'vue'
-import DialogButton, { type IDialogButton } from './DialogButton.vue'
 import { useElementSize } from '@vueuse/core'
+import { computed, ref, useSlots } from 'vue'
+
+import DialogButton from './DialogButton.vue'
 
 const props = withDefaults(defineProps<{
 	/** Name of the dialog (the heading) */
@@ -79,12 +82,18 @@ const props = withDefaults(defineProps<{
 	 * @default []
 	 */
 	contentClasses?: string[]
+	/**
+	 * Optionally pass additionaly classes which will be set on the dialog itself
+	 * (the default `class` attribute will be set on the modal wrapper)
+	 */
+	dialogClasses?: string|Record<string, boolean>|(string|Record<string, boolean>)[]
 }>(), {
 	additionalTrapElements: () => [],
 	buttons: () => [],
 	container: undefined,
 	message: '',
 	contentClasses: () => [],
+	dialogClasses: () => [],
 	navigationClasses: () => [],
 	size: 'small',
 })

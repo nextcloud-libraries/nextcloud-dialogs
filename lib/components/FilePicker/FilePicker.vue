@@ -126,8 +126,9 @@ const dialogProps = computed(() => ({
 	name: props.name,
 	buttons: dialogButtons.value,
 	size: 'large',
-	navigationClasses: ['file-picker__navigation'],
 	contentClasses: ['file-picker__content'],
+	dialogClasses: ['file-picker'],
+	navigationClasses: ['file-picker__navigation'],
 }))
 
 /**
@@ -258,10 +259,7 @@ export default {
 
 <style scoped lang="scss">
 .file-picker {
-	display: flex;
-	flex-direction: row;
-	min-height: 40vh;
-	gap: 22px;
+	height: min(80vh, 800px); // Dialog is max. 900px wide so the best looking height seems to be 800px
 
 	&__view {
 		height: 50px; // align with breadcrumbs
@@ -294,5 +292,6 @@ export default {
 :deep(.file-picker__content) {
 	display: flex;
 	flex-direction: column;
+	overflow: hidden;
 }
 </style>
