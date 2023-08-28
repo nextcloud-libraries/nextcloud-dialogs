@@ -58,8 +58,8 @@ import { NcEmptyContent } from '@nextcloud/vue'
 import { join } from 'path'
 import { computed, onMounted, ref, toRef } from 'vue'
 import { showError } from '../../toast'
-import { useDAVFiles } from '../../usables/dav'
-import { useMimeFilter } from '../../usables/mime'
+import { useDAVFiles } from '../../composables/dav'
+import { useMimeFilter } from '../../composables/mime'
 import { t } from '../../utils/l10n'
 
 const props = withDefaults(defineProps<{

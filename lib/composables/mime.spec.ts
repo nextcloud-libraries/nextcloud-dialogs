@@ -24,7 +24,7 @@ import { describe, expect, it } from 'vitest'
 import { useMimeFilter } from './mime'
 import { ref } from 'vue'
 
-describe('mime useable', () => {
+describe('mime composable', () => {
 	it('isSupportedMimeType returns true if supported', () => {
 		const supported = ref(['text/plain'])
 		const { isSupportedMimeType } = useMimeFilter(supported)
