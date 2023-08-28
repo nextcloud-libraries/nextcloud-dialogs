@@ -1,7 +1,7 @@
 <!-- Simple component to fake a loading table row with placeholders -->
 <template>
 	<tr aria-hidden="true" class="file-picker__row loading-row">
-		<td class="row-checkbox">
+		<td v-if="showCheckbox" class="row-checkbox">
 			<span />
 		</td>
 		<td class="row-name">
@@ -15,6 +15,15 @@
 		</td>
 	</tr>
 </template>
+
+<script setup lang="ts">
+defineProps<{
+	/**
+	 * Does the filelist use the checkbox column
+	 */
+	showCheckbox: boolean
+}>()
+</script>
 
 <style scoped lang="scss">
 @use './FileList.scss';
