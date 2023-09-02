@@ -79,7 +79,7 @@
     "@zamiell/typedoc-plugin-not-exported": "^0.2.0",
     "gettext-extractor": "^3.8.0",
     "gettext-parser": "^7.0.1",
-    "happy-dom": "^10.11.0",
+    "happy-dom": "^10.11.2",
     "patch-package": "^8.0.0",
     "sass": "^1.66.1",
     "tslib": "^2.6.2",
