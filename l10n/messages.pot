@@ -38,11 +38,11 @@ msgstr ""
 msgid "Copy to {target}"
 msgstr ""
 
-#: lib/components/FilePicker/FilePicker.vue:249
+#: lib/components/FilePicker/FilePicker.vue:250
 msgid "Could not create the new folder"
 msgstr ""
 
-#: lib/components/FilePicker/FilePicker.vue:159
+#: lib/components/FilePicker/FilePicker.vue:160
 #: lib/components/FilePicker/FilePickerNavigation.vue:65
 msgid "Favorites"
 msgstr ""
@@ -51,11 +51,11 @@ msgstr ""
 msgid "File name cannot be empty."
 msgstr ""
 
-#: lib/components/FilePicker/FilePicker.vue:235
+#: lib/components/FilePicker/FilePicker.vue:236
 msgid "Files and folders you mark as favorite will show up here."
 msgstr ""
 
-#: lib/components/FilePicker/FilePicker.vue:233
+#: lib/components/FilePicker/FilePicker.vue:234
 msgid "Files and folders you recently modified will show up here."
 msgstr ""
 
@@ -75,7 +75,7 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: lib/components/FilePicker/FilePicker.vue:159
+#: lib/components/FilePicker/FilePicker.vue:160
 #: lib/components/FilePicker/FilePickerNavigation.vue:61
 msgid "Recent"
 msgstr ""
@@ -106,6 +106,6 @@ msgstr ""
 msgid "Unset"
 msgstr ""
 
-#: lib/components/FilePicker/FilePicker.vue:231
+#: lib/components/FilePicker/FilePicker.vue:232
 msgid "Upload some content or sync with your devices!"
 msgstr ""
