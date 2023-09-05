@@ -191,6 +191,8 @@ const currentPath = computed({
 			window.sessionStorage.setItem('NC.FilePicker.LastPath', path)
 		}
 		navigatedPath.value = path
+		// Reset selected files
+		selectedFiles.value = []
 	},
 })
 
