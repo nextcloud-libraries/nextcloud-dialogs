@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## v4.2.0-beta.5 (2023-09-05)
+### :bug: Fixed bugs
+* [stable4] fix(FilePicker): Fix legacy entry point buttons when bundling with webpack by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/945
+* [stable4] Make file list only sortable by one property at the time by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/951
+* [stable4] Fix FilePicker keyboard handling by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/954
+* [stable4] fix: Make eslint happy by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/955
+* [stable4] Center heading of dialog by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/967
+* [stable4] fix(FilePicker): Only show checkbox skeletons if multiselect was enabled by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/970
+* [stable4] Fix styling issues and make the FilePicker height fixed by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/972
+* [stable4] fix(FilePicker): Reset selected files if the current directory is change by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/968
+* [stable4] fix(l10n): Extract translations also from vue SFC template attributes by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/966
+
 ## v4.2.0-beta.4 (2023-08-24)
 ### :rocket: Enhancement
 - Add icons for filepicker and allow reactive button based on current path and selection [\#942](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/942) ([@susnux](https://github.com/susnux))
