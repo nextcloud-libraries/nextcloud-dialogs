@@ -101,6 +101,8 @@ const updateFilterValue = (value: string) => emit('update:filterString', value)
 		min-width: 200px;
 		// ensure focus outline is visible
 		padding-block: 2px;
+		// make only the navigation scroll
+		overflow: auto;
 
 		:deep(.button-vue__wrapper) {
 			justify-content: start;
