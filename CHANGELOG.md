@@ -2,8 +2,28 @@
 
 All notable changes to this project will be documented in this file.
 
-## v5.0.0-beta.2
+## v5.0.0-beta.3
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.0.0-beta.2...v5.0.0-beta.3)
 
+### :bug: Fixed bugs
+* fix: Make file list only sortable by one property at the time by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/949
+* fix: styling issues and make the FilePicker height fixed by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/971
+* fix: Use core preview controller for loading file previews and fallback to MDI icons by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/962
+* fix(FilePicker): Fix selecting rows using the keyboard by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/934
+* fix(FilePicker): Only show checkbox skeletons if multiselect was enabled by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/969
+* fix(FilePickerBuilder): Fix paths returned in Promise by `pick` method by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/963
+* fix(NcDialog): Make the heading always center aligned on top by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/965
+
+### :rocket: Enhancement
+* feat(FilePickerBuilder): Allow to configure the dialog container element by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/950
+
+### :robot: Dependency updates
+* chore: Update `@nextcloud/files` version by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/952
+* chore(deps): Bump @nextcloud/files from 3.0.0-beta.19 to 3.0.0-beta.21
+* chore(deps): Bump @nextcloud/vue from 8.0.0-beta.3 to 8.0.0-beta.5
+* chore(deps): Bump webdav from 5.2.3 to 5.3.0
+
+## v5.0.0-beta.2
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.0.0-beta.1...v5.0.0-beta.2)
 
 ### :rocket: Enhancement
