@@ -1,23 +1,33 @@
-import { GettextExtractor, JsExtractors } from 'gettext-extractor'
+import { GettextExtractor, JsExtractors, HtmlExtractors } from 'gettext-extractor'
 
-let extractor = new GettextExtractor();
+const extractor = new GettextExtractor()
 
-extractor
-	.createJsParser([
-		JsExtractors.callExpression('t', {
-			arguments: {
-				text: 0,
-			}
-		}),
-		JsExtractors.callExpression('n', {
-			arguments: {
-				text: 1,
-				textPlural: 2,
-			}
-		}),
-	])
-	.parseFilesGlob('./lib/**/*.@(ts|js|vue)');
+const jsParser = extractor.createJsParser([
+	JsExtractors.callExpression('t', {
+		arguments: {
+			text: 0,
+		},
+	}),
+	JsExtractors.callExpression('n', {
+		arguments: {
+			text: 0,
+			textPlural: 1,
+		},
+	}),
+])
+	.parseFilesGlob('./lib/**/*.@(ts|js)')
 
-extractor.savePotFile('./l10n/messages.pot');
+extractor.createHtmlParser([
+	HtmlExtractors.embeddedJs('*', jsParser),
+	HtmlExtractors.embeddedAttributeJs(/:[a-z]+/, jsParser),
+])
+	.parseFilesGlob('./lib/**/*.vue')
 
-extractor.printStats();
+// remove references to avoid conflicts
+extractor.getMessages().forEach((msg) => {
+	msg.references = []
+})
+
+extractor.savePotFile('./l10n/messages.pot')
+
+extractor.printStats()
