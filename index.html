@@ -61,7 +61,32 @@ So make sure that the  <code>@nextcloud/dialogs/style.css</code> file is include
 </code><button>Copy</button></pre>
 <a id="md:use-the-vue-component-directly" class="tsd-anchor"></a><h4><a href="#md:use-the-vue-component-directly">Use the Vue component directly</a></h4><pre><code class="language-vue"><span class="hl-9">&lt;</span><span class="hl-10">template</span><span class="hl-9">&gt;</span><br/><span class="hl-1">  </span><span class="hl-9">&lt;</span><span class="hl-11">FilePicker</span><span class="hl-1"> </span><span class="hl-12">name</span><span class="hl-1">=</span><span class="hl-13">&quot;Pick some files&quot;</span><span class="hl-1"> </span><span class="hl-12">:buttons</span><span class="hl-1">=</span><span class="hl-13">&quot;buttons&quot;</span><span class="hl-9"> /&gt;</span><br/><span class="hl-9">&lt;/</span><span class="hl-10">template</span><span class="hl-9">&gt;</span><br/><span class="hl-9">&lt;</span><span class="hl-10">script</span><span class="hl-1"> </span><span class="hl-12">setup</span><span class="hl-1"> </span><span class="hl-12">lang</span><span class="hl-1">=</span><span class="hl-13">&quot;ts&quot;</span><span class="hl-9">&gt;</span><br/><span class="hl-1">  </span><span class="hl-3">import</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-0">FilePickerVue</span><span class="hl-1"> </span><span class="hl-3">as</span><span class="hl-1"> </span><span class="hl-0">FilePicker</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-3">type</span><span class="hl-1"> </span><span class="hl-0">IFilePickerButton</span><span class="hl-1">,</span><br/><span class="hl-1">  } </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-4">&#39;@nextcloud/dialogs&#39;</span><br/><span class="hl-1">  </span><span class="hl-3">import</span><span class="hl-1"> </span><span class="hl-3">type</span><span class="hl-1"> { </span><span class="hl-0">Node</span><span class="hl-1"> } </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-4">&#39;@nextcloud/files&#39;</span><br/><span class="hl-1">  </span><span class="hl-3">import</span><span class="hl-1"> </span><span class="hl-0">IconShare</span><span class="hl-1"> </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-4">&#39;vue-material-design-icons/Share.vue&#39;</span><br/><br/><span class="hl-1">  </span><span class="hl-7">const</span><span class="hl-1"> </span><span class="hl-2">buttons</span><span class="hl-1">: </span><span class="hl-14">IFilePickerButton</span><span class="hl-1">[] = [</span><br/><span class="hl-1">    {</span><br/><span class="hl-1">      </span><span class="hl-0">label:</span><span class="hl-1"> </span><span class="hl-4">&#39;Pick&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-5">callback</span><span class="hl-0">:</span><span class="hl-1"> (</span><span class="hl-0">nodes</span><span class="hl-1">: </span><span class="hl-14">Node</span><span class="hl-1">[]) </span><span class="hl-7">=&gt;</span><span class="hl-1"> </span><span class="hl-0">console</span><span class="hl-1">.</span><span class="hl-5">log</span><span class="hl-1">(</span><span class="hl-4">&#39;Picked&#39;</span><span class="hl-1">, </span><span class="hl-0">nodes</span><span class="hl-1">),</span><br/><span class="hl-1">      </span><span class="hl-0">type:</span><span class="hl-1"> </span><span class="hl-4">&#39;primary&#39;</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">    {</span><br/><span class="hl-1">      </span><span class="hl-0">label:</span><span class="hl-1"> </span><span class="hl-4">&#39;Share&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-5">callback</span><span class="hl-0">:</span><span class="hl-1"> (</span><span class="hl-0">nodes</span><span class="hl-1">: </span><span class="hl-14">Node</span><span class="hl-1">[]) </span><span class="hl-7">=&gt;</span><span class="hl-1"> </span><span class="hl-0">console</span><span class="hl-1">.</span><span class="hl-5">log</span><span class="hl-1">(</span><span class="hl-4">&#39;Share picked files&#39;</span><span class="hl-1">, </span><span class="hl-0">nodes</span><span class="hl-1">),</span><br/><span class="hl-1">      </span><span class="hl-0">type:</span><span class="hl-1"> </span><span class="hl-4">&#39;secondary&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-0">icon:</span><span class="hl-1"> </span><span class="hl-0">IconShare</span><span class="hl-1">,</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">  ]</span><br/><span class="hl-9">&lt;/</span><span class="hl-10">script</span><span class="hl-9">&gt;</span>
 </code><button>Copy</button></pre>
-<a id="md:releasing-a-new-version" class="tsd-anchor"></a><h2><a href="#md:releasing-a-new-version">Releasing a new version</a></h2><ul>
+<a id="md:development" class="tsd-anchor"></a><h2><a href="#md:development">Development</a></h2><a id="md:testing" class="tsd-anchor"></a><h3><a href="#md:testing">Testing</a></h3><p>For testing all components provide <code>data-testid</code> attributes as selectors, so the tests are independent from code or styling changes.</p>
+<a id="md:test-selectors" class="tsd-anchor"></a><h3><a href="#md:test-selectors">Test selectors</a></h3><table>
+<thead>
+<tr>
+<th><code>data-testid</code></th>
+<th>Intended purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>select-all-checkbox</code></td>
+<td>The select all checkbox of the file list</td>
+</tr>
+<tr>
+<td><code>file-list-row</code></td>
+<td>A row in the file list (<code>tr</code>), can be identified by <code>data-filename</code></td>
+</tr>
+<tr>
+<td><code>row-checkbox</code></td>
+<td>Checkbox for selecting a row</td>
+</tr>
+<tr>
+<td><code>row-name</code></td>
+<td>Name of the row / file</td>
+</tr>
+</tbody></table>
+<a id="md:releasing-a-new-version" class="tsd-anchor"></a><h3><a href="#md:releasing-a-new-version">Releasing a new version</a></h3><ul>
 <li>Pull the latest changes from <code>master</code> or <code>stableX</code>;</li>
 <li>Checkout a new branch with the tag name (e.g <code>v4.0.1</code>): <code>git checkout -b v&lt;version&gt;</code>;</li>
 <li>Run <code>npm version patch --no-git-tag-version</code> (<code>npm version minor --no-git-tag-version</code> if minor). This will return a new version name, make sure it matches what you expect;</li>
@@ -111,7 +136,12 @@ So make sure that the  <code>@nextcloud/dialogs/style.css</code> file is include
 <ul>
 <li><a href="#md:use-the-filepickerbuilder"><span>Use the <wbr/>File<wbr/>Picker<wbr/>Builder</span></a></li>
 <li><a href="#md:use-the-vue-component-directly"><span>Use the <wbr/>Vue component directly</span></a></li></ul></li></ul></li>
-<li><a href="#md:releasing-a-new-version"><span>Releasing a new version</span></a></li></ul></li></ul></li></ul></div></details></div>
+<li><a href="#md:development"><span>Development</span></a></li>
+<li>
+<ul>
+<li><a href="#md:testing"><span>Testing</span></a></li>
+<li><a href="#md:test-selectors"><span>Test selectors</span></a></li>
+<li><a href="#md:releasing-a-new-version"><span>Releasing a new version</span></a></li></ul></li></ul></li></ul></li></ul></div></details></div>
 <div class="site-menu">
 <nav class="tsd-navigation"><a href="modules.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-4"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-namespace)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M9.33 16V7.24H10.77L13.446 14.74C13.43 14.54 13.41 14.296 13.386 14.008C13.37 13.712 13.354 13.404 13.338 13.084C13.33 12.756 13.326 12.448 13.326 12.16V7.24H14.37V16H12.93L10.266 8.5C10.282 8.692 10.298 8.936 10.314 9.232C10.33 9.52 10.342 9.828 10.35 10.156C10.366 10.476 10.374 10.784 10.374 11.08V16H9.33Z" fill="var(--color-text)"></path></g></svg><span>@nextcloud/dialogs</span></a>
 <ul class="tsd-small-nested-navigation">
@@ -122,8 +152,8 @@ So make sure that the  <code>@nextcloud/dialogs/style.css</code> file is include
 <li><a href="classes/FilePickerBuilder.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>File<wbr/>Picker<wbr/>Builder</span></a></li>
 <li><a href="interfaces/IFilePickerButton.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-256"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-interface)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M9.51 16V15.016H11.298V8.224H9.51V7.24H14.19V8.224H12.402V15.016H14.19V16H9.51Z" fill="var(--color-text)"></path></g></svg><span>IFile<wbr/>Picker<wbr/>Button</span></a></li>
 <li><a href="interfaces/ToastOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Toast<wbr/>Options</span></a></li>
-<li><a href="types/IFilePickerFilter.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-4194304"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-type-alias)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M11.31 16V8.224H8.91V7.24H14.79V8.224H12.39V16H11.31Z" fill="var(--color-text)"></path></g></svg><span>IFile<wbr/>Picker<wbr/>Filter</span></a></li>
-<li><a href="types/Toast.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg><span>Toast</span></a></li>
+<li><a href="types/IFilePickerFilter.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-2097152"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-type-alias)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M11.31 16V8.224H8.91V7.24H14.79V8.224H12.39V16H11.31Z" fill="var(--color-text)"></path></g></svg><span>IFile<wbr/>Picker<wbr/>Filter</span></a></li>
+<li><a href="types/Toast.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg><span>Toast</span></a></li>
 <li><a href="variables/TOAST_ARIA_LIVE_ASSERTIVE.html" class="deprecated"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-32"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-variable)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M11.106 16L8.85 7.24H9.966L11.454 13.192C11.558 13.608 11.646 13.996 11.718 14.356C11.79 14.708 11.842 14.976 11.874 15.16C11.906 14.976 11.954 14.708 12.018 14.356C12.09 13.996 12.178 13.608 12.282 13.192L13.758 7.24H14.85L12.582 16H11.106Z" fill="var(--color-text)"></path></g></svg><span>TOAST_<wbr/>ARIA_<wbr/>LIVE_<wbr/>ASSERTIVE</span></a></li>
 <li><a href="variables/TOAST_ARIA_LIVE_OFF.html" class="deprecated"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-32"></use></svg><span>TOAST_<wbr/>ARIA_<wbr/>LIVE_<wbr/>OFF</span></a></li>
 <li><a href="variables/TOAST_ARIA_LIVE_POLITE.html" class="deprecated"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-32"></use></svg><span>TOAST_<wbr/>ARIA_<wbr/>LIVE_<wbr/>POLITE</span></a></li>
@@ -140,5 +170,5 @@ So make sure that the  <code>@nextcloud/dialogs/style.css</code> file is include
 <li><a href="functions/showWarning.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>show<wbr/>Warning</span></a></li>
 <li><a href="functions/spawnDialog.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg><span>spawn<wbr/>Dialog</span></a></li></ul></nav></div></div></div>
 <div class="tsd-generator">
-<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div>
+<p>Generated using <a href="https://typedoc.org/" rel="noopener" target="_blank">TypeDoc</a></p></div>
 <div class="overlay"></div></body></html>
