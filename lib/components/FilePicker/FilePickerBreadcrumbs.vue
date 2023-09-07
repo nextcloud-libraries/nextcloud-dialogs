@@ -125,7 +125,7 @@ const pathElements = computed(() => props.path.split('/')
 .file-picker {
 	&__breadcrumbs {
 		// ensure the breadcrumbs have a static height
-		flex-grow: 0;
+		flex-grow: 0 !important;
 	}
 }
 </style>
