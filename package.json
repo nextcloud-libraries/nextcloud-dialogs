@@ -27,7 +27,6 @@
     }
   },
   "scripts": {
-    "postinstall": "patch-package",
     "prepare": "npm run build",
     "build:doc": "npm run dev && npm run doc",
     "build": "vite --mode production build",
@@ -80,7 +79,6 @@
     "gettext-extractor": "^3.8.0",
     "gettext-parser": "^7.0.1",
     "happy-dom": "^10.11.2",
-    "patch-package": "^8.0.0",
     "sass": "^1.66.1",
     "tslib": "^2.6.2",
     "typedoc": "^0.25.0",
