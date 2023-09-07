@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## v5.0.0-beta.4
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.0.0-beta.3...v5.0.0-beta.4)
+
+### :bug: Fixed bugs
+* fix(FilePicker): Reset selected files if the current directory is changed by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/964
+* Revert "fix: Patch `webdav` dependency for invalid `exports` field un… by @skjnldsv in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/984
+
 ## v5.0.0-beta.3
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.0.0-beta.2...v5.0.0-beta.3)
 
