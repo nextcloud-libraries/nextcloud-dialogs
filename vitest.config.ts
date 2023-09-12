@@ -14,6 +14,11 @@ export default defineConfig(async (env) => {
 				include: ['lib/**/*.ts', 'lib/*.ts'],
 				exclude: ['lib/**/*.spec.ts'],
 			},
+			css: {
+				modules: {
+					classNameStrategy: 'non-scoped',
+				},
+			},
 			// Fix unresolvable .css extension for ssr
 			server: {
 				deps: {
