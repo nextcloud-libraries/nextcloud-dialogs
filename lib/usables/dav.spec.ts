@@ -130,6 +130,7 @@ describe('dav usable', () => {
 	it('reloads on view change', async () => {
 		const client = {
 			getDirectoryContents: vi.fn((str) => ({ data: [] })),
+			search: vi.fn((str) => ({ data: { results: [], truncated: false } })),
 		}
 		nextcloudFiles.davGetClient.mockImplementationOnce(() => client)
 
@@ -143,13 +144,16 @@ describe('dav usable', () => {
 		// wait until files are loaded
 		await waitLoaded(vue)
 
+		expect(client.search).not.toBeCalled()
 		expect(client.getDirectoryContents).toBeCalledTimes(1)
 		expect(client.getDirectoryContents.mock.calls[0][0]).toBe(`${nextcloudFiles.davRootPath}/`)
 
 		vue.setProps({ currentView: 'recent' })
 		await waitLoaded(vue)
 
-		expect(client.getDirectoryContents).toBeCalledTimes(2)
+		// Uses search instead of getDirectoryContents
+		expect(client.getDirectoryContents).toBeCalledTimes(1)
+		expect(client.search).toBeCalledTimes(1)
 	})
 
 	it('getFile works', async () => {
@@ -172,6 +176,7 @@ describe('dav usable', () => {
 		const client = {
 			stat: vi.fn((v) => ({ data: { path: v } })),
 			getDirectoryContents: vi.fn((p, o) => ({ data: [] })),
+			search: vi.fn((p, o) => ({ data: { results: [], truncated: false } })),
 		}
 		nextcloudFiles.davGetClient.mockImplementationOnce(() => client)
 		nextcloudFiles.davResultToNode.mockImplementationOnce((v) => v)
@@ -188,8 +193,7 @@ describe('dav usable', () => {
 		view.value = 'recent'
 		await loadFiles()
 		expect(isLoading.value).toBe(false)
-		expect(client.getDirectoryContents).toBeCalledWith(`${nextcloudFiles.davRootPath}/`, { details: true })
-		expect(client.getDirectoryContents.mock.calls.at(-1)?.[1]?.data).toMatch('recent')
+		expect(client.search).toBeCalled()
 
 		view.value = 'favorites'
 		await loadFiles()

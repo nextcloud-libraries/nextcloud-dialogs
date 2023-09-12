@@ -21,7 +21,7 @@
  */
 import type { Node } from '@nextcloud/files'
 import type { ComputedRef, Ref } from 'vue'
-import type { FileStat, ResponseDataDetailed, WebDAVClient } from 'webdav'
+import type { FileStat, ResponseDataDetailed, SearchResult, WebDAVClient } from 'webdav'
 
 import { davGetClient, davGetDefaultPropfind, davGetRecentSearch, davResultToNode, davRootPath, getFavoriteNodes } from '@nextcloud/files'
 import { onMounted, ref, watch } from 'vue'
@@ -32,7 +32,10 @@ import { onMounted, ref, watch } from 'vue'
  * @param currentView Reference to the current files view
  * @param currentPath Reference to the current files path
  */
-export const useDAVFiles = function(currentView: Ref<'files'|'recent'|'favorites'> | ComputedRef<'files'|'recent'|'favorites'>, currentPath: Ref<string> | ComputedRef<string>): { isLoading: Ref<boolean>, client: WebDAVClient, files: Ref<Node[]>, loadFiles: () => void, getFile: (path: string) => Promise<Node> } {
+export const useDAVFiles = function(
+	currentView: Ref<'files'|'recent'|'favorites'> | ComputedRef<'files'|'recent'|'favorites'>,
+	currentPath: Ref<string> | ComputedRef<string>,
+): { isLoading: Ref<boolean>, client: WebDAVClient, files: Ref<Node[]>, loadFiles: () => void, getFile: (path: string) => Promise<Node> } {
 	/**
 	 * The WebDAV client
 	 */
@@ -72,17 +75,11 @@ export const useDAVFiles = function(currentView: Ref<'files'|'recent'|'favorites
 		} else if (currentView.value === 'recent') {
 			// unix timestamp in seconds, two weeks ago
 			const lastTwoWeek = Math.round(Date.now() / 1000) - (60 * 60 * 24 * 14)
-			const results = await client.getDirectoryContents(currentPath.value, {
+			const { data } = await client.search('/', {
 				details: true,
 				data: davGetRecentSearch(lastTwoWeek),
-				headers: {
-					method: 'SEARCH',
-					'Content-Type': 'application/xml; charset=utf-8',
-				},
-				deep: true,
-			}) as ResponseDataDetailed<FileStat[]>
-
-			files.value = results.data.map((r) => davResultToNode(r))
+			}) as ResponseDataDetailed<SearchResult>
+			files.value = data.results.map((r) => davResultToNode(r))
 		} else {
 			const results = await client.getDirectoryContents(`${davRootPath}${currentPath.value}`, {
 				details: true,
