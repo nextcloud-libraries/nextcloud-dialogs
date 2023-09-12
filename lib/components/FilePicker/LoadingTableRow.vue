@@ -5,7 +5,10 @@
 			<span />
 		</td>
 		<td class="row-name">
-			<span />
+			<div class="row-wrapper">
+				<span :class="fileListIconStyles['file-picker__file-icon']" />
+				<span />
+			</div>
 		</td>
 		<td class="row-size">
 			<span />
@@ -17,6 +20,8 @@
 </template>
 
 <script setup lang="ts">
+import fileListIconStyles from './FileListIcon.module.scss'
+
 defineProps<{
 	/**
 	 * Does the filelist use the checkbox column
@@ -55,11 +60,17 @@ defineProps<{
 		animation: gradient 12s ease infinite;
 	}
 
+	.row-wrapper {
+		display: inline-flex;
+		align-items: center;
+	}
+
 	.row-checkbox span {
 		width: 24px;
 	}
 
-	.row-name span {
+	.row-name span:last-of-type {
+		margin-inline-start: 6px;
 		width: 130px;
 	}
 

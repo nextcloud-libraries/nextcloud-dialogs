@@ -14,18 +14,21 @@
 							@update:checked="onSelectAll" />
 					</th>
 					<th :aria-sort="sortByName" class="row-name">
-						<NcButton
-							:wide="true"
-							type="tertiary"
-							data-test="file-picker_sort-name"
-							@click="toggleSortByName">
-							<template #icon>
-								<IconSortAscending v-if="sortByName === 'ascending'" :size="20" />
-								<IconSortDescending v-else-if="sortByName === 'descending'" :size="20" />
-								<span v-else style="width: 44px" />
-							</template>
-							{{ t('Name') }}
-						</NcButton>
+						<div class="header-wrapper">
+							<span class="file-picker__header-preview" />
+							<NcButton
+								:wide="true"
+								type="tertiary"
+								data-test="file-picker_sort-name"
+								@click="toggleSortByName">
+								<template #icon>
+									<IconSortAscending v-if="sortByName === 'ascending'" :size="20" />
+									<IconSortDescending v-else-if="sortByName === 'descending'" :size="20" />
+									<span v-else style="width: 44px" />
+								</template>
+								{{ t('Name') }}
+							</NcButton>
+						</div>
 					</th>
 					<th :aria-sort="sortBySize" class="row-size">
 						<NcButton :wide="true" type="tertiary" @click="toggleSortBySize">
@@ -214,6 +217,12 @@ const fileContainer = ref<HTMLDivElement>()
 
 <style scoped lang="scss">
 .file-picker {
+	&__header-preview {
+		width: 22px; // 32px - 16px padding of button + 6px padding in file list rows
+		height: 32px;
+		flex: 0 0 auto; // do not shrink or grow
+	}
+
 	&__files {
 		// ensure focus outlines are visible
 		margin: 2px;
@@ -231,6 +240,10 @@ const fileContainer = ref<HTMLDivElement>()
 			background-color: var(--color-main-background);
 			// ensure focus outline of buttons is visible
 			padding: 2px;
+
+			.header-wrapper {
+				display: flex;
+			}
 
 			&.row-checkbox {
 				width: 44px;
