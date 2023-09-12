@@ -21,7 +21,7 @@
 		</td>
 		<td class="row-name">
 			<div class="file-picker__name-container" data-testid="row-name">
-				<div class="file-picker__file-icon" :style="{ backgroundImage }" />
+				<div :class="fileListIconStyles['file-picker__file-icon']" :style="{ backgroundImage }" />
 				<div class="file-picker__file-name" :title="displayName" v-text="displayName" />
 				<div class="file-picker__file-extension" v-text="fileExtension" />
 			</div>
@@ -42,6 +42,7 @@ import { computed } from 'vue'
 import { t } from '../../utils/l10n'
 
 import NcDatetime from './NcDatetime.vue'
+import fileListIconStyles from './FileListIcon.module.scss'
 
 const props = defineProps<{
 	/** Can directories be picked */
@@ -135,15 +136,6 @@ function handleKeyDown(event: KeyboardEvent) {
 		justify-content: start;
 		align-items: center;
 		height: 100%;
-	}
-
-	&__file-icon {
-		width: 32px;
-		height: 32px;
-		min-width: 32px;
-		min-height: 32px;
-		background-repeat: no-repeat;
-		background-size: contain;
 	}
 
 	&__file-name {
