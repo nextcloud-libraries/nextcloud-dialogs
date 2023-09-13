@@ -162,6 +162,7 @@ const modalProps = computed(() => ({
 	&__modal {
 		:deep(.modal-container) {
 			display: flex !important;
+			flex-direction: column;
 		}
 	}
 
