@@ -8,6 +8,9 @@
     "outDir": "./dist",
     "rootDir": "lib/",
     "sourceMap": true,
+    "plugins": [
+      { "name": "typescript-plugin-css-modules" }
+    ]
   },
   "exclude": [
     "node_modules",

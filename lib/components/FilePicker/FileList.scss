@@ -5,13 +5,21 @@ tr.file-picker__row {
 		cursor: pointer;
 		overflow: hidden;
 		text-overflow: ellipsis;
-		padding-inline: 14px 0;
 		border-bottom: none; // remove lines between elements
+
+		// checkbox is always fully left aligned
+		&:not(.row-checkbox) {
+			padding-inline: 14px 0;
+		}
 
 		// Make column "size" end aligned
 		&.row-size {
 			text-align: end;
 			padding-inline: 0 14px; // align with header
+		}
+		// column "name" already has the padding (the preview icon)
+		&.row-name {
+			padding-inline: 2px 0;
 		}
 	}
 }

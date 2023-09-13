@@ -282,6 +282,8 @@ export default {
 		// Auto fit height
 		min-height: 0;
 		flex: 1;
+		// align with navigation on smaller screens
+		padding-inline: 2px;
 
 		* {
 			box-sizing: border-box;

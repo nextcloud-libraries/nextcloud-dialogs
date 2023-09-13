@@ -1,0 +1,15 @@
+/**
+ * Icon styling of the file list row preview or fallback icon
+ * (leading icon on the name row and header)
+ */
+.file-picker__file-icon {
+	width: 32px;
+	height: 32px;
+	min-width: 32px;
+	min-height: 32px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	// for the fallback
+	display: flex;
+	justify-content: center;
+}
