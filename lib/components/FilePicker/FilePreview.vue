@@ -1,7 +1,7 @@
 <template>
 	<div :style="canLoadPreview ? { backgroundImage: `url(${previewURL})`} : undefined"
 		:aria-label="t('Mime type {mime}', { mime: node.mime || t('unknown') })"
-		class="file-picker__file-icon">
+		:class="fileListIconStyles['file-picker__file-icon']">
 		<template v-if="!canLoadPreview">
 			<IconFile v-if="isFile" :size="20" />
 			<IconFolder v-else :size="20" />
@@ -17,6 +17,11 @@ import { t } from '../../utils/l10n'
 
 import IconFile from 'vue-material-design-icons/File.vue'
 import IconFolder from 'vue-material-design-icons/Folder.vue'
+
+// CSS modules
+import fileListIconStylesModule from './FileListIcon.module.scss'
+// workaround for vue2.7 bug, can be removed with vue3
+const fileListIconStyles = ref(fileListIconStylesModule)
 
 const props = defineProps<{
 	node: Node
@@ -39,17 +44,3 @@ watch(previewURL, () => {
 	}
 }, { immediate: true })
 </script>
-
-<style scoped lang="scss">
-.file-picker__file-icon {
-	width: 32px;
-	height: 32px;
-	min-width: 32px;
-	min-height: 32px;
-	background-repeat: no-repeat;
-	background-size: contain;
-	// for the fallback
-	display: flex;
-	justify-content: center;
-}
-</style>
