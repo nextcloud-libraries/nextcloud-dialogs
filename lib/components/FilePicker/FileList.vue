@@ -236,6 +236,7 @@ const fileContainer = ref<HTMLDivElement>()
 		}
 		th {
 			position: sticky;
+			z-index: 1; // show on top of scrolled content rows
 			top: 0;
 			background-color: var(--color-main-background);
 			// ensure focus outline of buttons is visible
