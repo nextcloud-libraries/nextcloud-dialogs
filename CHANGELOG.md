@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.2.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v4.2.0) (2023-09-13)
+
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v4.2.0-beta.5...v4.2.0)
+
+### :bug: Fixed bugs
+
+- \[stable4\] fix\(FilePicker\): Ensure file list header is shown on top of scrolled content rows [\#998](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/998) ([susnux](https://github.com/susnux))
+- \[stable4\] fix: breadcrumbs grow [\#996](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/996) ([susnux](https://github.com/susnux))
+- \[stable4\] fix\(Dialog\): Make the dialog flex column to show headline on top of content [\#995](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/995) ([susnux](https://github.com/susnux))
+- \[stable4\] Fix table alignment [\#994](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/994) ([susnux](https://github.com/susnux))
+- \[stable4\] Revert "fix: Patch `webdav` dependency for invalid `exports` field un… [\#985](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/985) ([skjnldsv](https://github.com/skjnldsv))
+
 ## v4.2.0-beta.5 (2023-09-05)
 ### :bug: Fixed bugs
 * [stable4] fix(FilePicker): Fix legacy entry point buttons when bundling with webpack by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/945
