@@ -143,7 +143,7 @@ export class FilePickerBuilder {
 	}
 
 	public build(): FilePicker {
-		if (this.buttons && this.type !== FilePickerType.Custom) {
+		if (this.buttons?.length > 0 && this.type !== FilePickerType.Custom) {
 			console.error('FilePickerBuilder: When adding custom buttons the `type` must be set to `FilePickerType.Custom`.')
 		}
 
