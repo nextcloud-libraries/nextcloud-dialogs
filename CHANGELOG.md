@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.2.1]()
+
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v4.2.0...v4.2.1)
+
+### :bug: Fixed bugs
+* \[stable4\] Avoid error when not using any custom buttons by ([juliushaertl](https://github.com/juliushaertl)) in [\#1000](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1000)
+* \[stable4\] Bring back the default value for legacy file picker by ([susnux](https://github.com/susnux)) in [\#1007](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1007)
+
 ## [v4.2.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v4.2.0) (2023-09-13)
 
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v4.2.0-beta.5...v4.2.0)
