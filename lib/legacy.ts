@@ -89,7 +89,7 @@ const spawnDialog = (dialog: Component | AsyncComponent, props: any, onClose: ()
  * @param {Object} [options] additonal options that need to be set
  * @param {Function} [options.filter] filter function for advanced filtering
  */
-export async function filepicker(title: string, callback: (s: string | string[], type: FilePickerType) => void, multiselect = false, mimetype?: string | string[], _modal?: boolean, type?: FilePickerType, path?: string, options?: any) {
+export async function filepicker(title: string, callback: (s: string | string[], type: FilePickerType) => void, multiselect = false, mimetype?: string | string[], _modal?: boolean, type: FilePickerType = FilePickerType.Choose, path?: string, options?: any) {
 
 	/**
 	 * Create legacy callback wrapper to support old filepicker syntax
