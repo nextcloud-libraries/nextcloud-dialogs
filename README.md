@@ -119,7 +119,7 @@ For testing all components provide `data-testid` attributes as selectors, so the
 
 ### Releasing a new version
 
-- Pull the latest changes from `master` or `stableX`;
+- Pull the latest changes from `main` or `stableX`;
 - Checkout a new branch with the tag name (e.g `v4.0.1`): `git checkout -b v<version>`;
 - Run `npm version patch --no-git-tag-version` (`npm version minor --no-git-tag-version` if minor). This will return a new version name, make sure it matches what you expect;
 - Commit, push and create PR;
