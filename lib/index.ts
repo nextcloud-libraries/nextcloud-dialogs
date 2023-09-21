@@ -8,4 +8,3 @@ export { spawnDialog } from './utils/dialogs.js'
 
 export { FilePickerVue } from './components/FilePicker/index.js'
 export type { IFilePickerButton } from './components/types.js'
-

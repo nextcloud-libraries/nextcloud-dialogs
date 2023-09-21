@@ -70,6 +70,7 @@ export function getPreviewURL(node: Node, options: PreviewOptions = {}) {
 		url.searchParams.set('x', `${options.size}`)
 		url.searchParams.set('y', `${options.size}`)
 		url.searchParams.set('mimeFallback', `${options.mimeFallback}`)
+		url.searchParams.set('c', `${node.attributes.etag}`) // cache busting
 
 		// Handle cropping
 		url.searchParams.set('a', options.cropPreview === true ? '0' : '1')

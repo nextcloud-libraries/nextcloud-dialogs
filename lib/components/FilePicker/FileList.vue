@@ -1,9 +1,9 @@
 <template>
-	<div class="file-picker__files" ref="fileContainer">
+	<div ref="fileContainer" class="file-picker__files">
 		<table>
 			<thead>
 				<tr>
-					<th class="row-checkbox" v-if="multiselect">
+					<th v-if="multiselect" class="row-checkbox">
 						<span class="hidden-visually">
 							{{ t('Select entry') }}
 						</span>
@@ -16,8 +16,7 @@
 					<th :aria-sort="sortByName" class="row-name">
 						<div class="header-wrapper">
 							<span class="file-picker__header-preview" />
-							<NcButton
-								:wide="true"
+							<NcButton :wide="true"
 								type="tertiary"
 								data-test="file-picker_sort-name"
 								@click="toggleSortByName">
@@ -54,7 +53,7 @@
 			</thead>
 			<tbody>
 				<template v-if="loading">
-					<LoadingTableRow v-for="index in skeletonNumber" :key="index" :show-checkbox="multiselect"/>
+					<LoadingTableRow v-for="index in skeletonNumber" :key="index" :show-checkbox="multiselect" />
 				</template>
 				<template v-else>
 					<FileListRow v-for="file in sortedFiles"
@@ -197,7 +196,7 @@ const fileContainer = ref<HTMLDivElement>()
 	const resize = () => nextTick(() => {
 		const nodes = fileContainer.value?.parentElement?.children || []
 		let height = fileContainer.value?.parentElement?.clientHeight || 450
-		for(let index = 0; index < nodes.length; index++) {
+		for (let index = 0; index < nodes.length; index++) {
 			if (!fileContainer.value?.isSameNode(nodes[index])) {
 				height -= nodes[index].clientHeight
 			}
@@ -276,7 +275,7 @@ const fileContainer = ref<HTMLDivElement>()
 		}
 		th :deep(.button-vue__wrapper) {
 			color: var(--color-text-maxcontrast);
-	
+
 			.button-vue__text {
 				font-weight: normal;
 			}
