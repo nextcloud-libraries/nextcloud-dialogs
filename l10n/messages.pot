@@ -59,6 +59,9 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
+msgid "Mime type {mime}"
+msgstr ""
+
 msgid "Modified"
 msgstr ""
 
@@ -113,6 +116,9 @@ msgid "Size"
 msgstr ""
 
 msgid "Undo"
+msgstr ""
+
+msgid "unknown"
 msgstr ""
 
 msgid "Unset"
