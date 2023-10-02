@@ -30,7 +30,7 @@
 			{{ formatFileSize(node.size || 0) }}
 		</td>
 		<td class="row-modified">
-			<NcDatetime :timestamp="node.mtime" :ignore-seconds="true" />
+			<NcDateTime :timestamp="node.mtime" :ignore-seconds="true" />
 		</td>
 	</tr>
 </template>
@@ -38,7 +38,7 @@
 import type { Node } from '@nextcloud/files'
 
 import { formatFileSize, FileType } from '@nextcloud/files'
-import { NcCheckboxRadioSwitch, NcDatetime } from '@nextcloud/vue'
+import { NcCheckboxRadioSwitch, NcDateTime } from '@nextcloud/vue'
 import { computed } from 'vue'
 import { t } from '../../utils/l10n'
 
