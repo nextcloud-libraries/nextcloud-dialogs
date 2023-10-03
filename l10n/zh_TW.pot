@@ -1,15 +1,123 @@
 # 
 # Translators:
-# Joas Schilling, 2023
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# 黃柏諺 <s8321414@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
+"Last-Translator: 黃柏諺 <s8321414@gmail.com>, 2023\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/nextcloud/teams/64236/zh_TW/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: lib/toast.ts:223
+msgid "\"{name}\" is an invalid file name."
+msgstr "「{name}」是無效的檔案名稱。"
+
+msgid "\"{name}\" is not an allowed filetype"
+msgstr "「{name}」並非允許的檔案類型"
+
+msgid "\"/\" is not allowed inside a file name."
+msgstr "檔案名稱中不允許使用「/」。"
+
+msgid "All files"
+msgstr "所有檔案"
+
+msgid "Choose"
+msgstr "選擇"
+
+msgid "Choose {file}"
+msgstr "選擇 {file}"
+
+msgid "Copy"
+msgstr "複製"
+
+msgid "Copy to {target}"
+msgstr "複製到 {target}"
+
+msgid "Could not create the new folder"
+msgstr "無法建立新資料夾"
+
+msgid "Create directory"
+msgstr "建立目錄"
+
+msgid "Current view selector"
+msgstr "目前檢視選取器"
+
+msgid "Favorites"
+msgstr "最愛"
+
+msgid "File name cannot be empty."
+msgstr "檔案名稱不能為空。"
+
+msgid "Filepicker sections"
+msgstr "檔案挑選器選取"
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr "您標記為最愛的檔案與資料夾將會顯示在此處。"
+
+msgid "Files and folders you recently modified will show up here."
+msgstr "您最近修改的檔案與資料夾將會顯示在此處。"
+
+msgid "Filter file list"
+msgstr "過濾檔案清單"
+
+msgid "Home"
+msgstr "家"
+
+msgid "Mime type {mime}"
+msgstr "Mime type {mime}"
+
+msgid "Modified"
+msgstr "已修改"
+
+msgid "Move"
+msgstr "移動"
+
+msgid "Move to {target}"
+msgstr "移動至 {target}"
+
+msgid "Name"
+msgstr "名稱"
+
+msgid "New"
+msgstr "新"
+
+msgid "New folder"
+msgstr "新資料夾"
+
+msgid "New folder name"
+msgstr "新資料夾名稱"
+
+msgid "No files in here"
+msgstr "此處無檔案"
+
+msgid "No files matching your filter were found."
+msgstr "找不到符合您過濾條件的檔案。"
+
+msgid "No matching files"
+msgstr "無符合的檔案"
+
+msgid "Recent"
+msgstr "最近"
+
+msgid "Select all entries"
+msgstr "選取所有條目"
+
+msgid "Select entry"
+msgstr "選取條目"
+
+msgid "Select the row for {nodename}"
+msgstr "選取 {nodename} 的列"
+
+msgid "Size"
+msgstr "大小"
+
 msgid "Undo"
 msgstr "復原"
+
+msgid "unknown"
+msgstr "未知"
+
+msgid "Upload some content or sync with your devices!"
+msgstr "上傳一些內容或與您的裝置同步"
