@@ -1,15 +1,123 @@
 # 
 # Translators:
-# Joas Schilling, 2023
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# Magnus Höglund, 2023
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
+"Last-Translator: Magnus Höglund, 2023\n"
 "Language-Team: Swedish (https://app.transifex.com/nextcloud/teams/64236/sv/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: lib/toast.ts:223
+msgid "\"{name}\" is an invalid file name."
+msgstr "\"{name}\" är ett ogiltigt filnamn."
+
+msgid "\"{name}\" is not an allowed filetype"
+msgstr "\"{name}\" är inte en tillåten filtyp"
+
+msgid "\"/\" is not allowed inside a file name."
+msgstr "\"/\" är inte tillåtet i ett filnamn."
+
+msgid "All files"
+msgstr "Alla filer"
+
+msgid "Choose"
+msgstr "Välj"
+
+msgid "Choose {file}"
+msgstr "Välj {file}"
+
+msgid "Copy"
+msgstr "Kopiera"
+
+msgid "Copy to {target}"
+msgstr "Kopiera till {target}"
+
+msgid "Could not create the new folder"
+msgstr "Kunde inte skapa den nya mappen"
+
+msgid "Create directory"
+msgstr "Skapa katalog"
+
+msgid "Current view selector"
+msgstr "Aktuell vyväljare"
+
+msgid "Favorites"
+msgstr "Favoriter"
+
+msgid "File name cannot be empty."
+msgstr "Filnamnet får inte vara tomt."
+
+msgid "Filepicker sections"
+msgstr "Filepicker-sektioner"
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr "Filer och mappar som du markerar som favorit kommer att visas här."
+
+msgid "Files and folders you recently modified will show up here."
+msgstr "Filer och mappar som du nyligen ändrat kommer att visas här."
+
+msgid "Filter file list"
+msgstr "Filtrera fillistan"
+
+msgid "Home"
+msgstr "Hem"
+
+msgid "Mime type {mime}"
+msgstr "Mime typ {mime}"
+
+msgid "Modified"
+msgstr "Ändrad"
+
+msgid "Move"
+msgstr "Flytta"
+
+msgid "Move to {target}"
+msgstr "Flytta till {target}"
+
+msgid "Name"
+msgstr "Namn"
+
+msgid "New"
+msgstr "Ny"
+
+msgid "New folder"
+msgstr "Ny mapp"
+
+msgid "New folder name"
+msgstr "Nytt mappnamn"
+
+msgid "No files in here"
+msgstr "Inga filer här"
+
+msgid "No files matching your filter were found."
+msgstr "Inga filer som matchar ditt filter hittades."
+
+msgid "No matching files"
+msgstr "Inga matchande filer"
+
+msgid "Recent"
+msgstr "Nyligen"
+
+msgid "Select all entries"
+msgstr "Välj alla poster"
+
+msgid "Select entry"
+msgstr "Välj post"
+
+msgid "Select the row for {nodename}"
+msgstr "Välj raden för {nodename}"
+
+msgid "Size"
+msgstr "Storlek"
+
 msgid "Undo"
 msgstr "Ångra"
+
+msgid "unknown"
+msgstr "okänd"
+
+msgid "Upload some content or sync with your devices!"
+msgstr "Ladda upp lite innehåll eller synkronisera med dina enheter!"
