@@ -1,15 +1,123 @@
 # 
 # Translators:
-# Joas Schilling, 2023
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# Иван Пешић, 2023
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
+"Last-Translator: Иван Пешић, 2023\n"
 "Language-Team: Serbian (https://app.transifex.com/nextcloud/teams/64236/sr/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: sr\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: lib/toast.ts:223
+msgid "\"{name}\" is an invalid file name."
+msgstr "„{name}” није исправно име фајла."
+
+msgid "\"{name}\" is not an allowed filetype"
+msgstr "„{name}” није дозвољени тип фајла."
+
+msgid "\"/\" is not allowed inside a file name."
+msgstr "„/” није дозвољено унутар имена фајла."
+
+msgid "All files"
+msgstr "Сви фајлови"
+
+msgid "Choose"
+msgstr "Изаберите"
+
+msgid "Choose {file}"
+msgstr "Изаберите {file}"
+
+msgid "Copy"
+msgstr "Копирај"
+
+msgid "Copy to {target}"
+msgstr "Копирај у {target}"
+
+msgid "Could not create the new folder"
+msgstr "Није могао да се креира нови фолдер"
+
+msgid "Create directory"
+msgstr "Креирај директоријум"
+
+msgid "Current view selector"
+msgstr "Бирач тренутног приказа"
+
+msgid "Favorites"
+msgstr "Омиљено"
+
+msgid "File name cannot be empty."
+msgstr "Име фајла не може бити празно."
+
+msgid "Filepicker sections"
+msgstr "Одељци бирача фајлова"
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr "Овде ће се појавити фајлови и фолдери које сте означили као омиљене."
+
+msgid "Files and folders you recently modified will show up here."
+msgstr "Овде ће се појавити фајлови и фолдери који се се недавно изменили."
+
+msgid "Filter file list"
+msgstr "Фитрирање листе фајлова"
+
+msgid "Home"
+msgstr "Почетак"
+
+msgid "Mime type {mime}"
+msgstr "Mime тип {mime}"
+
+msgid "Modified"
+msgstr "Измењено"
+
+msgid "Move"
+msgstr "Премести"
+
+msgid "Move to {target}"
+msgstr "Премести у {target}"
+
+msgid "Name"
+msgstr "Име"
+
+msgid "New"
+msgstr "Ново"
+
+msgid "New folder"
+msgstr "Нови фолдер"
+
+msgid "New folder name"
+msgstr "Име новог фолдера"
+
+msgid "No files in here"
+msgstr "Овде нема фајлова"
+
+msgid "No files matching your filter were found."
+msgstr "Није пронађен ниједан фајл који задовољава ваш филтер."
+
+msgid "No matching files"
+msgstr "Нема таквих фајлова"
+
+msgid "Recent"
+msgstr "Скорашње"
+
+msgid "Select all entries"
+msgstr "Изаберите све ставке"
+
+msgid "Select entry"
+msgstr "Изаберите ставку"
+
+msgid "Select the row for {nodename}"
+msgstr "Изаберите ред за {nodename}"
+
+msgid "Size"
+msgstr "Величина"
+
 msgid "Undo"
 msgstr "Поништи"
+
+msgid "unknown"
+msgstr "непозната"
+
+msgid "Upload some content or sync with your devices!"
+msgstr "Отпремите нешто или синхронизујте са својим уређајима!"
