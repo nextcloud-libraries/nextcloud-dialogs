@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v5.0.0-beta.5](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.0.0-beta.5) (2023-10-03)
+
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.0.0-beta.4...v5.0.0-beta.5)
+
+### :bug: Fixed bugs
+* fix: breadcrumbs grow by @skjnldsv in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/987
+* Fix alignment of file list by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/993
+* fix(FilePicker): Use `search` function from `webdav` package instead of workaround by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/992
+* fix(FilePicker): Ensure file list header is shown on top of scrolled content rows by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/997
+
+### :robot: Dependency updates
+* chore(deps): Bump @types/toastify-js from 1.12.0 to 1.12.1 by @dependabot in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1002
+* chore(deps): Bump @nextcloud/vue from 8.0.0-beta.5 to 8.0.0-beta.6 by @dependabot in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1004
+* chore(deps): Bump @nextcloud/files from 3.0.0-beta.21 to 3.0.0-beta.22 by @dependabot in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1013
+* chore(deps): Bump @nextcloud/files from 3.0.0-beta.22 to 3.0.0-beta.24 by @dependabot in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1021
+* chore(deps): Bump @nextcloud/vue from 8.0.0-beta.6 to 8.0.0-beta.7 by @dependabot in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1022
+* chore: Bump @nextcloud/vue to v8-beta.7 by @Pytal in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1020
+
 ## v5.0.0-beta.4
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.0.0-beta.3...v5.0.0-beta.4)
 
