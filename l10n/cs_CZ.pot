@@ -1,15 +1,124 @@
 # 
 # Translators:
-# Joas Schilling, 2023
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# Pavel Borecki <pavel.borecki@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
+"Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>, 2023\n"
 "Language-Team: Czech (Czech Republic) (https://app.transifex.com/nextcloud/teams/64236/cs_CZ/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: cs_CZ\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
-#: lib/toast.ts:223
+msgid "\"{name}\" is an invalid file name."
+msgstr "„{name}“ není platný název souboru."
+
+msgid "\"{name}\" is not an allowed filetype"
+msgstr "\"{name}\" není platný typ souboru"
+
+msgid "\"/\" is not allowed inside a file name."
+msgstr "znak „/“ (dopředné lomítko) není možné použít v názvu souboru."
+
+msgid "All files"
+msgstr "Veškeré soubory"
+
+msgid "Choose"
+msgstr "Zvolit"
+
+msgid "Choose {file}"
+msgstr "Zvolit {file}"
+
+msgid "Copy"
+msgstr "Zkopírovat"
+
+msgid "Copy to {target}"
+msgstr "Zkopírovat do {target}"
+
+msgid "Could not create the new folder"
+msgstr "Novou složku se nepodařilo vytvořit"
+
+msgid "Create directory"
+msgstr "Vytvořit složku"
+
+msgid "Current view selector"
+msgstr "Výběr stávajícího zobrazení"
+
+msgid "Favorites"
+msgstr "Oblíbené"
+
+msgid "File name cannot be empty."
+msgstr "Soubor je třeba nějak nazvat."
+
+msgid "Filepicker sections"
+msgstr "Sekce dialogu pro výběr souboru"
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr "Zde se zobrazí soubory a složky, které označíte jako oblíbené."
+
+msgid "Files and folders you recently modified will show up here."
+msgstr "Zde se zobrazí soubory a složky, které jste nedávno pozměnili."
+
+msgid "Filter file list"
+msgstr "Filtrovat seznam souborů"
+
+msgid "Home"
+msgstr "Domů"
+
+msgid "Mime type {mime}"
+msgstr "MIME typ {mime}"
+
+msgid "Modified"
+msgstr "Změněno"
+
+msgid "Move"
+msgstr "Přesounout"
+
+msgid "Move to {target}"
+msgstr "Přesunout do {target}"
+
+msgid "Name"
+msgstr "Název"
+
+msgid "New"
+msgstr "Nové"
+
+msgid "New folder"
+msgstr "Nová složka"
+
+msgid "New folder name"
+msgstr "Název pro novou složku"
+
+msgid "No files in here"
+msgstr "Nejsou zde žádné soubory"
+
+msgid "No files matching your filter were found."
+msgstr "Nenalezeny žádné soubory odpovídající vašemu filtru"
+
+msgid "No matching files"
+msgstr "Žádné odpovídající soubory"
+
+msgid "Recent"
+msgstr "Nedávné"
+
+msgid "Select all entries"
+msgstr "Vybrat všechny položky"
+
+msgid "Select entry"
+msgstr "Vybrat položku"
+
+msgid "Select the row for {nodename}"
+msgstr "Vybrat řádek pro {nodename}"
+
+msgid "Size"
+msgstr "Velikost"
+
 msgid "Undo"
 msgstr "Zpět"
+
+msgid "unknown"
+msgstr "neznámé"
+
+msgid "Upload some content or sync with your devices!"
+msgstr ""
+"Nahrajte nějaký obsah nebo proveďte synchronizaci se svými zařízeními!"
