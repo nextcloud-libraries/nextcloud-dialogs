@@ -46,3 +46,9 @@ watch(previewURL, () => {
 	}
 }, { immediate: true })
 </script>
+
+<script lang="ts">
+export default {
+	name: 'FilePreview',
+}
+</script>

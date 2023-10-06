@@ -20,16 +20,17 @@
  *
  */
 
-import { mount } from '@vue/test-utils'
+import { mount, shallowMount } from '@vue/test-utils'
 import { beforeAll, describe, expect, it, vi } from 'vitest'
 
 import FileList from './FileList.vue'
 import { File, Folder } from '@nextcloud/files'
+import { nextTick } from 'vue'
 
 const axios = vi.hoisted(() => ({
 	get: vi.fn(() => new Promise(() => {})),
 }))
-vi.mock('axios', () => axios)
+vi.mock('@nextcloud/axios', () => ({ default: axios }))
 
 const exampleNodes = [
 	new File({
@@ -77,7 +78,7 @@ describe('FilePicker FileList', () => {
 		const consoleError = vi.spyOn(console, 'error')
 		const consoleWarning = vi.spyOn(console, 'warn')
 
-		const wrapper = mount(FileList, {
+		const wrapper = shallowMount(FileList, {
 			propsData: {
 				currentView: 'files',
 				multiselect: false,
@@ -95,7 +96,7 @@ describe('FilePicker FileList', () => {
 	})
 
 	it('header checkbox is not shown if multiselect is `false`', () => {
-		const wrapper = mount(FileList, {
+		const wrapper = shallowMount(FileList, {
 			propsData: {
 				currentView: 'files',
 				multiselect: false,
@@ -110,7 +111,7 @@ describe('FilePicker FileList', () => {
 	})
 
 	it('header checkbox is shown if multiselect is `true`', () => {
-		const wrapper = mount(FileList, {
+		const wrapper = shallowMount(FileList, {
 			propsData: {
 				currentView: 'files',
 				multiselect: true,
@@ -131,7 +132,7 @@ describe('FilePicker FileList', () => {
 
 	it('header checkbox is checked when all nodes are selected', async () => {
 		const nodes = [...exampleNodes]
-		const wrapper = mount(FileList, {
+		const wrapper = shallowMount(FileList, {
 			propsData: {
 				currentView: 'files',
 				multiselect: true,
@@ -160,7 +161,12 @@ describe('FilePicker FileList', () => {
 					selectedFiles: [],
 					path: '/',
 				},
+				stubs: {
+					FilePreview: true,
+				},
 			})
+
+			await nextTick()
 
 			const rows = wrapper.findAll('[data-testid="file-list-row"]')
 			// all nodes are shown
@@ -186,9 +192,16 @@ describe('FilePicker FileList', () => {
 					selectedFiles: [],
 					path: '/',
 				},
+				stubs: {
+					FilePreview: true,
+				},
 			})
 
-			await wrapper.find('[data-test="file-picker_sort-name"]').trigger('click')
+			await nextTick()
+
+			wrapper.find('[data-test="file-picker_sort-name"]').trigger('click')
+
+			await nextTick()
 
 			const rows = wrapper.findAll('.file-picker__row')
 			// all nodes are shown
