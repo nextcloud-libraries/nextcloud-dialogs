@@ -65,7 +65,7 @@ msgstr "فلترة قائمة الملفات"
 msgid "Home"
 msgstr "البداية"
 
-msgid "Mime type {mime}"
+msgid "MIME type {mime}"
 msgstr "نوع الملف {mime}"
 
 msgid "Modified"
