@@ -102,7 +102,7 @@ msgid "No matching files"
 msgstr "Keine passenden Dateien"
 
 msgid "Recent"
-msgstr "Jüngste"
+msgstr "Neueste"
 
 msgid "Select all entries"
 msgstr "Alle Einträge auswählen"
