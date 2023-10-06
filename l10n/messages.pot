@@ -56,7 +56,7 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-msgid "Mime type {mime}"
+msgid "MIME type {mime}"
 msgstr ""
 
 msgid "Modified"
