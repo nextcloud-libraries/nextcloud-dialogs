@@ -52,7 +52,7 @@ msgid "File name cannot be empty."
 msgstr "Der Dateiname darf nicht leer sein."
 
 msgid "Filepicker sections"
-msgstr "Filepicker-Auswahl"
+msgstr "Dateiauswahl-Bereiche"
 
 msgid "Files and folders you mark as favorite will show up here."
 msgstr ""
@@ -102,7 +102,7 @@ msgid "No matching files"
 msgstr "Keine passenden Dateien"
 
 msgid "Recent"
-msgstr "Jüngste"
+msgstr "Neueste"
 
 msgid "Select all entries"
 msgstr "Alle Einträge auswählen"
