@@ -16,7 +16,7 @@ msgid "\"{name}\" is an invalid file name."
 msgstr "\"{name}\" ist ein ungültiger Dateiname."
 
 msgid "\"{name}\" is not an allowed filetype"
-msgstr "\"{name}\" ist kein zulässiger Dateityp"
+msgstr "\"{name}\" ist kein zulässiger Dateityp."
 
 msgid "\"/\" is not allowed inside a file name."
 msgstr "\"/\" ist innerhalb eines Dateinamens nicht zulässig."
@@ -37,7 +37,7 @@ msgid "Copy to {target}"
 msgstr "Nach {target} kopieren"
 
 msgid "Could not create the new folder"
-msgstr "Der neue Ordner konnte nicht erstellt werden"
+msgstr "Der neue Ordner konnte nicht erstellt werden."
 
 msgid "Create directory"
 msgstr "Verzeichnis erstellen"
@@ -56,11 +56,11 @@ msgstr "Filepicker-Auswahl"
 
 msgid "Files and folders you mark as favorite will show up here."
 msgstr ""
-"Dateien und Ordner, die Sie als Favorit markieren, werden hier angezeigt."
+"Dateien und Ordner, die du als Favorit markierst, werden hier angezeigt."
 
 msgid "Files and folders you recently modified will show up here."
 msgstr ""
-"Dateien und Ordner, die Sie kürzlich geändert haben, werden hier angezeigt."
+"Dateien und Ordner, die du kürzlich geändert hast, werden hier angezeigt."
 
 msgid "Filter file list"
 msgstr "Dateiliste filtern"
@@ -96,7 +96,7 @@ msgid "No files in here"
 msgstr "Hier sind keine Dateien"
 
 msgid "No files matching your filter were found."
-msgstr "Es wurden keine Dateien gefunden, die Ihrem Filter entsprechen."
+msgstr "Es wurden keine Dateien gefunden, die deinem Filter entsprechen."
 
 msgid "No matching files"
 msgstr "Keine passenden Dateien"
@@ -123,5 +123,4 @@ msgid "unknown"
 msgstr "Unbekannt"
 
 msgid "Upload some content or sync with your devices!"
-msgstr ""
-"Laden Sie Inhalte hoch oder synchronisieren Sie diese mit Ihren Geräten!"
+msgstr "Lade Inhalte hoch oder synchronisieren diese mit deinen Geräten!"
