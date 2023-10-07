@@ -2,10 +2,11 @@
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Mario Siegmann <mario_siegmann@web.de>, 2023
+# Markus Eckstein, 2023
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Mario Siegmann <mario_siegmann@web.de>, 2023\n"
+"Last-Translator: Markus Eckstein, 2023\n"
 "Language-Team: German (https://app.transifex.com/nextcloud/teams/64236/de/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: de\n"
@@ -67,8 +68,8 @@ msgstr "Dateiliste filtern"
 msgid "Home"
 msgstr "Home"
 
-msgid "Mime type {mime}"
-msgstr "Mime-Typ {mime}"
+msgid "MIME type {mime}"
+msgstr "MIME-Typ {mime}"
 
 msgid "Modified"
 msgstr "Geändert"
