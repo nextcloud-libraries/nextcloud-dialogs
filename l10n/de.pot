@@ -16,7 +16,7 @@ msgid "\"{name}\" is an invalid file name."
 msgstr "\"{name}\" ist ein ungültiger Dateiname."
 
 msgid "\"{name}\" is not an allowed filetype"
-msgstr "\"{name}\" ist kein zulässiger Dateityp"
+msgstr "\"{name}\" ist kein zulässiger Dateityp."
 
 msgid "\"/\" is not allowed inside a file name."
 msgstr "\"/\" ist innerhalb eines Dateinamens nicht zulässig."
