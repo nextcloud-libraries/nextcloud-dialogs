@@ -60,7 +60,7 @@ msgstr ""
 
 msgid "Files and folders you recently modified will show up here."
 msgstr ""
-"Dateien und Ordner, die Sie kürzlich geändert haben, werden hier angezeigt."
+"Dateien und Ordner, die du kürzlich geändert hast, werden hier angezeigt."
 
 msgid "Filter file list"
 msgstr "Dateiliste filtern"
