@@ -37,7 +37,7 @@ msgid "Copy to {target}"
 msgstr "Nach {target} kopieren"
 
 msgid "Could not create the new folder"
-msgstr "Der neue Ordner konnte nicht erstellt werden"
+msgstr "Der neue Ordner konnte nicht erstellt werden."
 
 msgid "Create directory"
 msgstr "Verzeichnis erstellen"
