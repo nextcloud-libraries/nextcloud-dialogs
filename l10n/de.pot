@@ -56,7 +56,7 @@ msgstr "Filepicker-Auswahl"
 
 msgid "Files and folders you mark as favorite will show up here."
 msgstr ""
-"Dateien und Ordner, die Sie als Favorit markieren, werden hier angezeigt."
+"Dateien und Ordner, die du als Favorit markierst, werden hier angezeigt."
 
 msgid "Files and folders you recently modified will show up here."
 msgstr ""
