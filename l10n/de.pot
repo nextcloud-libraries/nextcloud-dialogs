@@ -123,5 +123,4 @@ msgid "unknown"
 msgstr "Unbekannt"
 
 msgid "Upload some content or sync with your devices!"
-msgstr ""
-"Laden Sie Inhalte hoch oder synchronisieren Sie diese mit Ihren Geräten!"
+msgstr "Lade Inhalte hoch oder synchronisieren diese mit deinen Geräten!"
