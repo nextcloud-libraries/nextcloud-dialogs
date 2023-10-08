@@ -65,8 +65,8 @@ msgstr "Filtrera fillistan"
 msgid "Home"
 msgstr "Hem"
 
-msgid "Mime type {mime}"
-msgstr "Mime typ {mime}"
+msgid "MIME type {mime}"
+msgstr "MIME typ {mime}"
 
 msgid "Modified"
 msgstr "Ändrad"
