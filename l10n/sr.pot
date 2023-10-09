@@ -65,8 +65,8 @@ msgstr "Фитрирање листе фајлова"
 msgid "Home"
 msgstr "Почетак"
 
-msgid "Mime type {mime}"
-msgstr "Mime тип {mime}"
+msgid "MIME type {mime}"
+msgstr "MIME тип {mime}"
 
 msgid "Modified"
 msgstr "Измењено"
