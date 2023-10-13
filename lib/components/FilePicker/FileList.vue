@@ -81,8 +81,8 @@ import { join } from 'path'
 import { t } from '../../utils/l10n'
 import { computed, nextTick, onMounted, onUnmounted, ref, type Ref } from 'vue'
 
-import IconSortAscending from 'vue-material-design-icons/MenuDown.vue'
-import IconSortDescending from 'vue-material-design-icons/MenuUp.vue'
+import IconSortAscending from 'vue-material-design-icons/MenuUp.vue'
+import IconSortDescending from 'vue-material-design-icons/MenuDown.vue'
 import LoadingTableRow from './LoadingTableRow.vue'
 import FileListRow from './FileListRow.vue'
 
@@ -276,7 +276,7 @@ const fileContainer = ref<HTMLDivElement>()
 		}
 		th :deep(.button-vue__wrapper) {
 			color: var(--color-text-maxcontrast);
-	
+
 			.button-vue__text {
 				font-weight: normal;
 			}
