@@ -65,8 +65,8 @@ msgstr "Filter file list"
 msgid "Home"
 msgstr "Home"
 
-msgid "Mime type {mime}"
-msgstr "Mime type {mime}"
+msgid "MIME type {mime}"
+msgstr "MIME type {mime}"
 
 msgid "Modified"
 msgstr "Modified"
