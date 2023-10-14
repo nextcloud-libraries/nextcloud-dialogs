@@ -67,7 +67,7 @@
     "webdav": "^5.3.0"
   },
   "devDependencies": {
-    "@mdi/svg": "^7.2.96",
+    "@mdi/svg": "^7.3.67",
     "@nextcloud/browserslist-config": "^3.0.0",
     "@nextcloud/eslint-config": "^8.3.0",
     "@nextcloud/vite-config": "^1.0.1",
