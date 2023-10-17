@@ -2,48 +2,90 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v5.0.0-beta.6](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.0.0-beta.6) (2023-10-17)
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.0.0-beta.5...v5.0.0-beta.6)
+
+### :boom: Breaking changes
+The FilePicker Vue component is no longer exported in the main entry point.
+Instead it is exported in a filepicker entrypoint, and the FilePicker builder is also now loading it async. This ensures that if a user does not use the filepicker, it gets treeshaken.
+
+### :rocket: Enhancement
+* Get files app config and use it for the file picker [\#973](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/973) ([@susnux](https://github.com/susnux))
+
+### :bug: Fixed bugs
+* fix(i18n): Fix spelling of MIME [\#1041](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1041) ([@rakekniven](https://github.com/rakekniven))
+* fix: Swap sort icons [\#1058](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1058) ([@Pytal](https://github.com/Pytal))
+* fix(FilePicker): Make the validity strings more specific [\#1072](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1072) ([@susnux](https://github.com/susnux))
+* fix: Ensure the dialog name can be wrapped if needed [\#1074](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1074) ([@susnux](https://github.com/susnux))
+
+### Changed
+* chore: Switch to v8 as code coverage provider, reduces the dependencies [\#1043](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1043) ([@susnux](https://github.com/susnux))
+* Combine vite and vitest config [\#1070](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1070) ([@susnux](https://github.com/susnux))
+* Remove non existing legacy entry point from package.json [\#1070](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1070) ([@susnux](https://github.com/susnux))
+
+### :robot: Dependency updates
+* Updated translations
+* chore(deps): Bump postcss from 8.4.27 to 8.4.31 [\#1038](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1038)
+* chore(deps-dev): Bump sass from 1.68.0 to 1.69.0 [\#1048](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1048)
+* chore(deps-dev): Bump vite from 4.4.9 to 4.4.11 [\#1046](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1046)
+* chore(deps): Bump @nextcloud/files from 3.0.0-beta.24 to 3.0.0-beta.25 [\#1047](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1047)
+* chore(deps-dev): Bump @nextcloud/vite-config from 1.0.0-beta.19 to 1.0.1 [\#1049](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1049)
+* chore(deps): Bump @nextcloud/vue from 8.0.0-beta.7 to 8.0.0-beta.8 [\#1050](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1050)
+* chore(deps-dev): Bump happy-dom from 12.2.1 to 12.9.0 [\#1051](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1051)
+* chore(deps): Bump @nextcloud/files from 3.0.0-beta.25 to 3.0.0-beta.26 [\#1061](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1061)
+* chore(deps): Bump @vueuse/core from 10.4.1 to 10.5.0 [\#1063](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1063)
+* chore(deps-dev): Bump typedoc from 0.25.1 to 0.25.2 [\#1062](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1062)
+* chore(deps-dev): Bump @mdi/svg from 7.2.96 to 7.3.67 [\#1065](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1065)
+* chore(deps-dev): Bump sass from 1.69.0 to 1.69.3 [\#1064](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1064)
+* chore(deps-dev): Bump happy-dom from 12.9.0 to 12.9.1 [\#1066](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1066)
+* chore(deps): Bump @babel/traverse from 7.23.0 to 7.23.2 [\#1069](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1069)
+
+## New Contributors
+* [@rakekniven](https://github.com/rakekniven) made their first contribution in [\#1041](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1041)
+
+
 ## [v5.0.0-beta.5](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.0.0-beta.5) (2023-10-03)
 
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.0.0-beta.4...v5.0.0-beta.5)
 
 ### :bug: Fixed bugs
-* fix: breadcrumbs grow by @skjnldsv in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/987
-* Fix alignment of file list by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/993
-* fix(FilePicker): Use `search` function from `webdav` package instead of workaround by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/992
-* fix(FilePicker): Ensure file list header is shown on top of scrolled content rows by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/997
+* fix: breadcrumbs grow [\#987](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/987) ([skjnldsv](https://github.com/skjnldsv))
+* Fix alignment of file list [\#993](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/993) ([susnux](https://github.com/susnux))
+* fix(FilePicker): Use `search` function from `webdav` package instead of workaround [\#992](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/992) ([susnux](https://github.com/susnux))
+* fix(FilePicker): Ensure file list header is shown on top of scrolled content rows [\#997](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/997) ([susnux](https://github.com/susnux))
 
 ### :robot: Dependency updates
-* chore(deps): Bump @types/toastify-js from 1.12.0 to 1.12.1 by @dependabot in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1002
-* chore(deps): Bump @nextcloud/vue from 8.0.0-beta.5 to 8.0.0-beta.6 by @dependabot in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1004
-* chore(deps): Bump @nextcloud/files from 3.0.0-beta.21 to 3.0.0-beta.22 by @dependabot in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1013
-* chore(deps): Bump @nextcloud/files from 3.0.0-beta.22 to 3.0.0-beta.24 by @dependabot in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1021
-* chore(deps): Bump @nextcloud/vue from 8.0.0-beta.6 to 8.0.0-beta.7 by @dependabot in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1022
-* chore: Bump @nextcloud/vue to v8-beta.7 by @Pytal in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1020
+* chore(deps): Bump @types/toastify-js from 1.12.0 to 1.12.1 [\#1002](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1002)
+* chore(deps): Bump @nextcloud/vue from 8.0.0-beta.5 to 8.0.0-beta.6 [\#1004](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1004)
+* chore(deps): Bump @nextcloud/files from 3.0.0-beta.21 to 3.0.0-beta.22 [\#1013](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1013)
+* chore(deps): Bump @nextcloud/files from 3.0.0-beta.22 to 3.0.0-beta.24 [\#1021](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1021)
+* chore(deps): Bump @nextcloud/vue from 8.0.0-beta.6 to 8.0.0-beta.7 [\#1022](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1022)
+* chore: Bump @nextcloud/vue to v8-beta.7 by @Pytal in [\#1020](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1020)
 
 ## v5.0.0-beta.4
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.0.0-beta.3...v5.0.0-beta.4)
 
 ### :bug: Fixed bugs
-* fix(FilePicker): Reset selected files if the current directory is changed by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/964
-* Revert "fix: Patch `webdav` dependency for invalid `exports` field un… by @skjnldsv in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/984
+* fix(FilePicker): Reset selected files if the current directory is changed [\#964](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/964) ([susnux](https://github.com/susnux))
+* Revert "fix: Patch `webdav` dependency for invalid `exports` field un… [\#984](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/984) ([skjnldsv](https://github.com/skjnldsv))
 
 ## v5.0.0-beta.3
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.0.0-beta.2...v5.0.0-beta.3)
 
 ### :bug: Fixed bugs
-* fix: Make file list only sortable by one property at the time by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/949
-* fix: styling issues and make the FilePicker height fixed by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/971
-* fix: Use core preview controller for loading file previews and fallback to MDI icons by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/962
-* fix(FilePicker): Fix selecting rows using the keyboard by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/934
-* fix(FilePicker): Only show checkbox skeletons if multiselect was enabled by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/969
-* fix(FilePickerBuilder): Fix paths returned in Promise by `pick` method by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/963
-* fix(NcDialog): Make the heading always center aligned on top by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/965
+* fix: Make file list only sortable by one property at the time [\#949](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/949) ([susnux](https://github.com/susnux))
+* fix: styling issues and make the FilePicker height fixed [\#971](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/971) ([susnux](https://github.com/susnux))
+* fix: Use core preview controller for loading file previews and fallback to MDI icons [\#962](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/962) ([susnux](https://github.com/susnux))
+* fix(FilePicker): Fix selecting rows using the keyboard [\#934](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/934) ([susnux](https://github.com/susnux))
+* fix(FilePicker): Only show checkbox skeletons if multiselect was enabled [\#969](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/969) ([susnux](https://github.com/susnux))
+* fix(FilePickerBuilder): Fix paths returned in Promise by `pick` method [\#963](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/963) ([susnux](https://github.com/susnux))
+* fix(NcDialog): Make the heading always center aligned on top [\#965](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/965) ([susnux](https://github.com/susnux)) ([susnux](https://github.com/susnux))
 
 ### :rocket: Enhancement
-* feat(FilePickerBuilder): Allow to configure the dialog container element by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/950
+* feat(FilePickerBuilder): Allow to configure the dialog container element [\#950](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/950) ([susnux](https://github.com/susnux))
 
 ### :robot: Dependency updates
-* chore: Update `@nextcloud/files` version by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/952
+* chore: Update `@nextcloud/files` version [\#952](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/952) ([susnux](https://github.com/susnux))
 * chore(deps): Bump @nextcloud/files from 3.0.0-beta.19 to 3.0.0-beta.21
 * chore(deps): Bump @nextcloud/vue from 8.0.0-beta.3 to 8.0.0-beta.5
 * chore(deps): Bump webdav from 5.2.3 to 5.3.0
