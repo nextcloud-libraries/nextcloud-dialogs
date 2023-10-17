@@ -11,14 +11,14 @@ msgstr ""
 "Language: cs_CZ\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
-msgid "\"{name}\" is an invalid file name."
-msgstr "„{name}“ není platný název souboru."
+msgid "\"{name}\" is an invalid folder name."
+msgstr "„{name}“ není platný název složky."
 
-msgid "\"{name}\" is not an allowed filetype"
-msgstr "\"{name}\" není platný typ souboru"
+msgid "\"{name}\" is not an allowed folder name"
+msgstr "„{name}“ není povolený název složky."
 
-msgid "\"/\" is not allowed inside a file name."
-msgstr "znak „/“ (dopředné lomítko) není možné použít v názvu souboru."
+msgid "\"/\" is not allowed inside a folder name."
+msgstr "znak „/“ (dopředné lomítko) není možné použít v názvu složky."
 
 msgid "All files"
 msgstr "Veškeré soubory"
@@ -47,9 +47,6 @@ msgstr "Výběr stávajícího zobrazení"
 msgid "Favorites"
 msgstr "Oblíbené"
 
-msgid "File name cannot be empty."
-msgstr "Soubor je třeba nějak nazvat."
-
 msgid "Filepicker sections"
 msgstr "Sekce dialogu pro výběr souboru"
 
@@ -61,6 +58,9 @@ msgstr "Zde se zobrazí soubory a složky, které jste nedávno pozměnili."
 
 msgid "Filter file list"
 msgstr "Filtrovat seznam souborů"
+
+msgid "Folder name cannot be empty."
+msgstr "Složku je třeba nějak nazvat."
 
 msgid "Home"
 msgstr "Domů"
