@@ -207,10 +207,12 @@ const modalProps = computed(() => ({
 	&__name {
 		// Same as the NcAppSettingsDialog
 		text-align: center;
-		height: var(--default-clickable-area);
+		// Should be the same height as the close button (but allow the heading to wrap in case of overflow)
 		min-height: var(--default-clickable-area);
 		line-height: var(--default-clickable-area);
 		margin-block: 4px 12px; // start = 4px to align with close button
+		// Make sure the close button does not overflow the title
+		margin-inline-end: calc(var(--default-clickable-area) + 4px);
 	}
 
 	&__content {
