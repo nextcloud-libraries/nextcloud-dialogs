@@ -61,6 +61,7 @@ There are two ways to spawn a FilePicker provided by the library:
 
 #### Use the FilePickerBuilder
 This way you do not need to use Vue, but can programatically spawn a FilePicker.
+The FilePickerBuilder is included in the main entry point of this library, so you can use it like this:
 
 ```js
 import { getFilePickerBuilder } from '@nextcloud/dialogs'
@@ -110,8 +111,8 @@ const paths = await filepicker.pick()
 For testing all components provide `data-testid` attributes as selectors, so the tests are independent from code or styling changes.
 
 ### Test selectors
-`data-testid` | Intended purpose
----|---
+`data-testid`         | Intended purpose
+----------------------|-----------------
 `select-all-checkbox` | The select all checkbox of the file list
 `file-list-row`       | A row in the file list (`tr`), can be identified by `data-filename`
 `row-checkbox`        | Checkbox for selecting a row
