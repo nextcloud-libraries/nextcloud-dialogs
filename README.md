@@ -14,10 +14,10 @@ npm i -S @nextcloud/dialogs
 Since version 4.2 this package provides a Vue.js based file picker, so this package depends on `@nextcloud/vue`. So to not introduce style collisions stick with the supported versions:
 
 `@nextcloud/dialogs` | `@nextcloud/vue` | Nextcloud server version
----|---|---
-4.1 | *any* | *any*
-4.2+ | 7.12 | Nextcloud 25, 26, 27, 27.1
-5.x | 8.x | Nextcloud 28 and newer
+-----|-------|-----------------------
+5.x  | 8.x   | Nextcloud 28 and newer
+4.2+ | 7.12  | Nextcloud 25, 26, 27, 27.1
+4.1  | *any* | *any*
 
 ## Usage
 
@@ -78,6 +78,8 @@ const paths = await filepicker.pick()
 ```
 
 #### Use the Vue component directly
+We also provide the `@nextcloud/dialogs/filepicker.js` entry point to allow using the Vue component directly:
+
 ```vue
 <template>
   <FilePicker name="Pick some files" :buttons="buttons" />
@@ -86,7 +88,7 @@ const paths = await filepicker.pick()
   import {
     FilePickerVue as FilePicker,
     type IFilePickerButton,
-  } from '@nextcloud/dialogs'
+  } from '@nextcloud/dialogs/filepicker.js'
   import type { Node } from '@nextcloud/files'
   import IconShare from 'vue-material-design-icons/Share.vue'
 

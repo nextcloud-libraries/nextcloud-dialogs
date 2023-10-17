@@ -20,6 +20,7 @@ const translations = readdirSync('./l10n')
 export default defineConfig((env) => {
 	return createLibConfig({
 		index: 'lib/index.ts',
+		filepicker: 'lib/filepicker.ts',
 	}, {
 		config: {
 			build: {

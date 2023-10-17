@@ -12,9 +12,10 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     },
-    "./dist/index.css": {
-      "import": "./dist/style.css",
-      "require": "./dist/style.css"
+    "./filepicker.js": {
+      "types": "./dist/filepicker.d.ts",
+      "import": "./dist/filepicker.mjs",
+      "require": "./dist/filepicker.cjs"
     },
     "./style.css": {
       "import": "./dist/style.css",
@@ -27,9 +28,11 @@
     "build": "vite --mode production build",
     "dev": "vite --mode development build",
     "dev:watch": "vite --mode development build --watch",
-    "doc": "typedoc --tsconfig tsconfig-typedoc.json --plugin @zamiell/typedoc-plugin-not-exported --out dist/doc dist/index.d.ts && touch dist/doc/.nojekyll",
+    "doc": "typedoc --tsconfig tsconfig-typedoc.json --plugin @zamiell/typedoc-plugin-not-exported --out dist/doc dist/index.d.ts dist/filepicker.d.ts && touch dist/doc/.nojekyll",
     "lint": "eslint lib/",
     "lint:fix": "eslint --fix lib/",
+    "stylelint": "stylelint lib/**/*.vue",
+    "stylelint:fix": "stylelint lib/**/*.vue --fix",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
     "l10n:extract": "node build/extract-l10n.js"
@@ -67,6 +70,7 @@
   "devDependencies": {
     "@nextcloud/browserslist-config": "^3.0.0",
     "@nextcloud/eslint-config": "^8.3.0",
+    "@nextcloud/stylelint-config": "^2.3.1",
     "@nextcloud/vite-config": "^1.0.1",
     "@types/gettext-parser": "^4.0.2",
     "@vitest/coverage-v8": "^0.34.6",
@@ -77,6 +81,7 @@
     "gettext-parser": "^7.0.1",
     "happy-dom": "^12.9.1",
     "sass": "^1.69.3",
+    "stylelint": "^15.11.0",
     "tslib": "^2.6.2",
     "typedoc": "^0.25.2",
     "typescript": "^5.2.2",
@@ -91,5 +96,8 @@
   },
   "browserslist": [
     "extends @nextcloud/browserslist-config"
-  ]
+  ],
+  "stylelint": {
+    "extends": "@nextcloud/stylelint-config"
+  }
 }
