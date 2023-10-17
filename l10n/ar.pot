@@ -11,14 +11,14 @@ msgstr ""
 "Language: ar\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-msgid "\"{name}\" is an invalid file name."
-msgstr "\"{name}\" لا يصلح اسماً لملف."
+msgid "\"{name}\" is an invalid folder name."
+msgstr "\"{name}\" لا يصلح كاسم مجلد."
 
-msgid "\"{name}\" is not an allowed filetype"
-msgstr "\"{name}\" لا يصلح نوعاً لملف."
+msgid "\"{name}\" is not an allowed folder name"
+msgstr "\"{name}\" غير مسموح به كاسم مجلد"
 
-msgid "\"/\" is not allowed inside a file name."
-msgstr "\"/\" غير مسموح بها في اسم الملف."
+msgid "\"/\" is not allowed inside a folder name."
+msgstr "\"/\" غير مسموح به داخل اسم مجلد."
 
 msgid "All files"
 msgstr "كل الملفات"
@@ -47,9 +47,6 @@ msgstr "مُنتقِي المنظور الحالي"
 msgid "Favorites"
 msgstr "المُفضَّلة"
 
-msgid "File name cannot be empty."
-msgstr "لا يمكن أن يكون اسم الملف فارغاً."
-
 msgid "Filepicker sections"
 msgstr "أقسام مُنتقِي الملفات"
 
@@ -61,6 +58,9 @@ msgstr "الملفات و المجلدات التي قمت مؤخراً بتعد
 
 msgid "Filter file list"
 msgstr "فلترة قائمة الملفات"
+
+msgid "Folder name cannot be empty."
+msgstr "اسم المجلد لا يمكن أن يكون فارغاً."
 
 msgid "Home"
 msgstr "البداية"
