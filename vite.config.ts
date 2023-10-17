@@ -21,23 +21,49 @@ export default defineConfig((env) => {
 	return createLibConfig({
 		index: 'lib/index.ts',
 	}, {
-		inlineCSS: false,
 		config: {
 			build: {
 				// Fix for vite config, TODO: remove with next release
 				cssCodeSplit: false,
 			},
+			// vitest configuration
+			test: {
+				environment: 'happy-dom',
+				coverage: {
+					all: true,
+					provider: 'v8',
+					include: ['lib/**/*.ts', 'lib/*.ts'],
+					exclude: ['lib/**/*.spec.ts'],
+				},
+				css: {
+					modules: {
+						classNameStrategy: 'non-scoped',
+					},
+				},
+				// Fix unresolvable .css extension for ssr
+				server: {
+					deps: {
+						inline: [/@nextcloud\/vue/],
+					},
+				},
+			},
 		},
+		// We build for ESM and legacy common js
+		libraryFormats: ['es', 'cjs'],
+		// We want one single output CSS file
+		inlineCSS: false,
+		// Packages that should be externalized or bundled
 		nodeExternalsOptions: {
 			// for subpath imports like '@nextcloud/l10n/gettext'
 			include: [/^@nextcloud\//],
 			// we should externalize vue SFC dependencies
 			exclude: [/^vue-material-design-icons\//, /\.vue(\?|$)/],
 		},
-		libraryFormats: ['es', 'cjs'],
+		// Inject our translations
 		replace: {
 			__TRANSLATIONS__: JSON.stringify(translations),
 		},
+		// Rollup our type definitions to only publish what it needed
 		DTSPluginOptions: {
 			rollupTypes: env.mode === 'production',
 		},
