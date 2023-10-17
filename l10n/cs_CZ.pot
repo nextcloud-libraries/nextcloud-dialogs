@@ -65,7 +65,7 @@ msgstr "Filtrovat seznam souborů"
 msgid "Home"
 msgstr "Domů"
 
-msgid "Mime type {mime}"
+msgid "MIME type {mime}"
 msgstr "MIME typ {mime}"
 
 msgid "Modified"
