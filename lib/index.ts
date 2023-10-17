@@ -3,7 +3,7 @@ export {
 	FilePickerType,
 	FilePickerBuilder,
 	getFilePickerBuilder,
-} from './filepicker.js'
+} from './filepicker-builder'
 
 export {
 	ToastAriaLive,
@@ -28,5 +28,4 @@ export type {
 
 export { spawnDialog } from './utils/dialogs.js'
 
-export { FilePickerVue } from './components/FilePicker/index.js'
 export type { IFilePickerButton, IFilePickerFilter } from './components/types.js'
