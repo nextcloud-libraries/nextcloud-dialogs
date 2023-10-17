@@ -73,6 +73,9 @@ export function getPreviewURL(node: Node, options: PreviewOptions = {}) {
 
 		// Handle cropping
 		url.searchParams.set('a', options.cropPreview === true ? '0' : '1')
+
+		// cache busting
+		url.searchParams.set('c', `${node.attributes.etag}`)
 		return url
 	} catch (e) {
 		return null

@@ -33,8 +33,8 @@
     "dev": "vite --mode development build",
     "dev:watch": "vite --mode development build --watch",
     "doc": "typedoc --tsconfig tsconfig-typedoc.json --plugin @zamiell/typedoc-plugin-not-exported --out dist/doc dist/index.d.ts && touch dist/doc/.nojekyll",
-    "stylelint": "stylelint src",
-    "stylelint:fix": "stylelint src --fix",
+    "lint": "eslint lib/",
+    "lint:fix": "eslint --fix lib/",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
     "l10n:extract": "node build/extract-l10n.js"
@@ -52,14 +52,16 @@
     "dist"
   ],
   "peerDependencies": {
+    "@nextcloud/vue": "^8.0.0-beta.8",
     "vue": "^2.7.14"
   },
   "dependencies": {
+    "@nextcloud/axios": "^2.4.0",
     "@nextcloud/files": "^3.0.0-beta.26",
+    "@nextcloud/initial-state": "^2.1.0",
     "@nextcloud/l10n": "^2.2.0",
     "@nextcloud/router": "^2.1.2",
     "@nextcloud/typings": "^1.7.0",
-    "@nextcloud/vue": "^8.0.0-beta.8",
     "@types/toastify-js": "^1.12.1",
     "@vueuse/core": "^10.5.0",
     "toastify-js": "^1.12.0",

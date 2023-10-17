@@ -21,17 +21,10 @@
  */
 
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { mount } from '@vue/test-utils'
+import { shallowMount } from '@vue/test-utils'
 import { File } from '@nextcloud/files'
 
 import FileListRow from './FileListRow.vue'
-
-// Mock OC.MimeType
-window.OC = {
-	MimeType: {
-		getIconUrl: (mime: string) => `/icon/${mime}`,
-	},
-} as never
 
 describe('FilePicker: FileListRow', () => {
 	const node = new File({
@@ -46,11 +39,11 @@ describe('FilePicker: FileListRow', () => {
 		vi.restoreAllMocks()
 	})
 
-	it('is mountable', () => {
+	it('is shallowMountable', () => {
 		const consoleWarn = vi.spyOn(console, 'warn')
 		const consoleError = vi.spyOn(console, 'error')
 
-		const wrapper = mount(FileListRow, {
+		const wrapper = shallowMount(FileListRow, {
 			propsData: {
 				allowPickDirectory: true,
 				selected: false,
@@ -63,14 +56,14 @@ describe('FilePicker: FileListRow', () => {
 		// No console errors
 		expect(consoleWarn).not.toBeCalled()
 		expect(consoleError).not.toBeCalled()
-		// mounted
+		// shallowMounted
 		expect(wrapper.exists()).toBe(true)
 		expect(wrapper.element.tagName.toLowerCase()).toBe('tr')
 		expect(wrapper.find('[data-testid="file-list-row"]').isEmpty()).toBe(false)
 	})
 
 	it('shows checkbox based on `showCheckbox` property', async () => {
-		const wrapper = mount(FileListRow, {
+		const wrapper = shallowMount(FileListRow, {
 			propsData: {
 				allowPickDirectory: true,
 				selected: false,
@@ -86,7 +79,7 @@ describe('FilePicker: FileListRow', () => {
 	})
 
 	it('Click checkbox triggers select', async () => {
-		const wrapper = mount(FileListRow, {
+		const wrapper = shallowMount(FileListRow, {
 			propsData: {
 				allowPickDirectory: false,
 				selected: false,
@@ -103,7 +96,7 @@ describe('FilePicker: FileListRow', () => {
 	})
 
 	it('Click element triggers select', async () => {
-		const wrapper = mount(FileListRow, {
+		const wrapper = shallowMount(FileListRow, {
 			propsData: {
 				allowPickDirectory: false,
 				selected: false,
@@ -120,7 +113,7 @@ describe('FilePicker: FileListRow', () => {
 	})
 
 	it('Click element without checkbox triggers select', async () => {
-		const wrapper = mount(FileListRow, {
+		const wrapper = shallowMount(FileListRow, {
 			propsData: {
 				allowPickDirectory: false,
 				selected: false,
@@ -137,7 +130,7 @@ describe('FilePicker: FileListRow', () => {
 	})
 
 	it('Enter triggers select', async () => {
-		const wrapper = mount(FileListRow, {
+		const wrapper = shallowMount(FileListRow, {
 			propsData: {
 				allowPickDirectory: false,
 				selected: false,

@@ -67,6 +67,18 @@ describe('preview composable', () => {
 			expect(wrapper.text()).toMatch('/core/preview?fileId=2')
 		})
 
+		it('uses etag for cache busting', () => {
+			const previewNode = new File({
+				...createData('tst.txt', 'text/plain'),
+				attributes: {
+					etag: 'the-etag',
+				},
+			})
+
+			const { previewURL } = usePreviewURL(previewNode)
+			expect(previewURL.value?.searchParams.get('c')).toBe('the-etag')
+		})
+
 		it('uses Nodes previewUrl if available', () => {
 			const previewNode = new File({
 				...createData('text.txt', 'text/plain'),

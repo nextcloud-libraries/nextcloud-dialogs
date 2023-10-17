@@ -54,7 +54,7 @@ const TestComponent = defineComponent({
 	render: (h) => h('div'),
 })
 
-describe('dav usable', () => {
+describe('dav composable', () => {
 	afterEach(() => { vi.resetAllMocks() })
 
 	it('Sets the inital state correctly', () => {
