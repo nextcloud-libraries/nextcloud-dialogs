@@ -84,13 +84,13 @@ function validateInput() {
 
 	let validity = ''
 	if (name.length === 0) {
-		validity = t('File name cannot be empty.')
+		validity = t('Folder name cannot be empty.')
 	} else if (name.includes('/')) {
-		validity = t('"/" is not allowed inside a file name.')
+		validity = t('"/" is not allowed inside a folder name.')
 	} else if (['..', '.'].includes(name)) {
-		validity = t('"{name}" is an invalid file name.', { name })
+		validity = t('"{name}" is an invalid folder name.', { name })
 	} else if (window.OC.config?.blacklist_files_regex && name.match(window.OC.config?.blacklist_files_regex)) {
-		validity = t('"{name}" is not an allowed filetype', { name })
+		validity = t('"{name}" is not an allowed folder name', { name })
 	}
 	if (input) {
 		input.setCustomValidity(validity)

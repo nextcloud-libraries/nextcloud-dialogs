@@ -2,13 +2,13 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 
-msgid "\"{name}\" is an invalid file name."
+msgid "\"{name}\" is an invalid folder name."
 msgstr ""
 
-msgid "\"{name}\" is not an allowed filetype"
+msgid "\"{name}\" is not an allowed folder name"
 msgstr ""
 
-msgid "\"/\" is not allowed inside a file name."
+msgid "\"/\" is not allowed inside a folder name."
 msgstr ""
 
 msgid "All files"
@@ -38,9 +38,6 @@ msgstr ""
 msgid "Favorites"
 msgstr ""
 
-msgid "File name cannot be empty."
-msgstr ""
-
 msgid "Filepicker sections"
 msgstr ""
 
@@ -51,6 +48,9 @@ msgid "Files and folders you recently modified will show up here."
 msgstr ""
 
 msgid "Filter file list"
+msgstr ""
+
+msgid "Folder name cannot be empty."
 msgstr ""
 
 msgid "Home"
