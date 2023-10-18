@@ -11,14 +11,14 @@ msgstr ""
 "Language: tr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-msgid "\"{name}\" is an invalid file name."
-msgstr "\"{name}\" adı geçersiz."
+msgid "\"{name}\" is an invalid folder name."
+msgstr "\"{name}\" geçersiz bir klasör adı."
 
-msgid "\"{name}\" is not an allowed filetype"
-msgstr "\"{name}\" izin verilen bir dosya türü değil"
+msgid "\"{name}\" is not an allowed folder name"
+msgstr "\"{name}\" izin verilen bir klasör adı değil"
 
-msgid "\"/\" is not allowed inside a file name."
-msgstr "\"/\" karakteri dosya adında kullanılamaz."
+msgid "\"/\" is not allowed inside a folder name."
+msgstr "\"/\" karakteri klasör adında kullanılamaz."
 
 msgid "All files"
 msgstr "Tüm dosyalar"
@@ -47,9 +47,6 @@ msgstr "Geçerli görünüm seçici"
 msgid "Favorites"
 msgstr "Sık kullanılanlar"
 
-msgid "File name cannot be empty."
-msgstr "Dosya adı boş olamaz."
-
 msgid "Filepicker sections"
 msgstr "Dosya seçici bölümleri"
 
@@ -62,6 +59,9 @@ msgstr ""
 
 msgid "Filter file list"
 msgstr "Dosya listesini süz"
+
+msgid "Folder name cannot be empty."
+msgstr "Klasör adı boş olamaz."
 
 msgid "Home"
 msgstr "Giriş"
