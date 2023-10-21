@@ -86,7 +86,7 @@
     "typedoc": "^0.25.2",
     "typescript": "^5.2.2",
     "typescript-plugin-css-modules": "^5.0.2",
-    "vite": "^4.4.11",
+    "vite": "^4.5.0",
     "vitest": "^0.34.6",
     "vue-material-design-icons": "^5.2.0"
   },
