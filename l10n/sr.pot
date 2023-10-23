@@ -11,14 +11,14 @@ msgstr ""
 "Language: sr\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-msgid "\"{name}\" is an invalid file name."
-msgstr "„{name}” није исправно име фајла."
+msgid "\"{name}\" is an invalid folder name."
+msgstr "„{name}” није исправно име фолдера."
 
-msgid "\"{name}\" is not an allowed filetype"
-msgstr "„{name}” није дозвољени тип фајла."
+msgid "\"{name}\" is not an allowed folder name"
+msgstr "„{name}” није дозвољено име за фолдер."
 
-msgid "\"/\" is not allowed inside a file name."
-msgstr "„/” није дозвољено унутар имена фајла."
+msgid "\"/\" is not allowed inside a folder name."
+msgstr "„/” није дозвољено унутар имена фолдера."
 
 msgid "All files"
 msgstr "Сви фајлови"
@@ -47,9 +47,6 @@ msgstr "Бирач тренутног приказа"
 msgid "Favorites"
 msgstr "Омиљено"
 
-msgid "File name cannot be empty."
-msgstr "Име фајла не може бити празно."
-
 msgid "Filepicker sections"
 msgstr "Одељци бирача фајлова"
 
@@ -61,6 +58,9 @@ msgstr "Овде ће се појавити фајлови и фолдери к�
 
 msgid "Filter file list"
 msgstr "Фитрирање листе фајлова"
+
+msgid "Folder name cannot be empty."
+msgstr "Име фолдера не може бити празно."
 
 msgid "Home"
 msgstr "Почетак"
