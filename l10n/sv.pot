@@ -11,14 +11,14 @@ msgstr ""
 "Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "\"{name}\" is an invalid file name."
-msgstr "\"{name}\" är ett ogiltigt filnamn."
+msgid "\"{name}\" is an invalid folder name."
+msgstr "\"{name}\" är ett ogiltigt mappnamn."
 
-msgid "\"{name}\" is not an allowed filetype"
-msgstr "\"{name}\" är inte en tillåten filtyp"
+msgid "\"{name}\" is not an allowed folder name"
+msgstr "\"{name}\" är inte ett tillåtet mappnamn"
 
-msgid "\"/\" is not allowed inside a file name."
-msgstr "\"/\" är inte tillåtet i ett filnamn."
+msgid "\"/\" is not allowed inside a folder name."
+msgstr "\"/\" är inte tillåtet i ett mappnamn."
 
 msgid "All files"
 msgstr "Alla filer"
@@ -47,9 +47,6 @@ msgstr "Aktuell vyväljare"
 msgid "Favorites"
 msgstr "Favoriter"
 
-msgid "File name cannot be empty."
-msgstr "Filnamnet får inte vara tomt."
-
 msgid "Filepicker sections"
 msgstr "Filepicker-sektioner"
 
@@ -61,6 +58,9 @@ msgstr "Filer och mappar som du nyligen ändrat kommer att visas här."
 
 msgid "Filter file list"
 msgstr "Filtrera fillistan"
+
+msgid "Folder name cannot be empty."
+msgstr "Mappnamnet får inte vara tomt."
 
 msgid "Home"
 msgstr "Hem"
