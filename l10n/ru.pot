@@ -1,15 +1,142 @@
-# 
+#
 # Translators:
-# Joas Schilling, 2023
-# 
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# Max Smith <sevinfolds@gmail.com>, 2023
+# ashed <craysy@gmail.com>, 2023
+#
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
-"Language-Team: Russian (https://app.transifex.com/nextcloud/teams/64236/ru/)\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Last-Translator: ashed <craysy@gmail.com>, 2023\n"
+"Language-Team: Russian (https://app.transifex.com/nextcloud/teams/64236/"
+"ru/)\n"
 "Language: ru\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: lib/toast.ts:223
+msgid "\"{name}\" is an invalid file name."
+msgstr ""
+
+msgid "\"{name}\" is not an allowed filetype"
+msgstr ""
+
+msgid "\"/\" is not allowed inside a file name."
+msgstr ""
+
+msgid "a few seconds ago"
+msgstr ""
+
+msgid "All files"
+msgstr "Все файлы"
+
+msgid "Choose"
+msgstr "Выбрать"
+
+msgid "Choose {file}"
+msgstr "Выбрать {file}"
+
+msgid "Copy"
+msgstr "Копировать"
+
+msgid "Copy to {target}"
+msgstr "Скопировать в {target}"
+
+msgid "Could not create the new folder"
+msgstr "Не удалось создать новую папку"
+
+msgid "Create directory"
+msgstr "Создать каталог"
+
+msgid "Current view selector"
+msgstr "Переключатель текущего вида"
+
+msgid "Favorites"
+msgstr "Избранное"
+
+msgid "File name cannot be empty."
+msgstr ""
+
+msgid "Filepicker sections"
+msgstr "Разделы для выбора файлов"
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr "Здесь появятся файлы и папки, которые вы пометили как избранные."
+
+msgid "Files and folders you recently modified will show up here."
+msgstr "Здесь будут отображаться файлы и папки, которые вы недавно изменили."
+
+msgid "Filter file list"
+msgstr "Фильтровать список файлов"
+
+msgid "Home"
+msgstr "Home"
+
+msgid "MIME type {mime}"
+msgstr "MIME тип {mime}"
+
+msgid "Modified"
+msgstr "Модифицированный"
+
+msgid "Move"
+msgstr "Переместить"
+
+msgid "Move to {target}"
+msgstr "Перейти к {target}"
+
+msgid "Name"
+msgstr "Имя"
+
+msgid "New"
+msgstr "Новый"
+
+msgid "New folder"
+msgstr "Новая папка"
+
+msgid "New folder name"
+msgstr "Новое имя папки"
+
+msgid "No files in here"
+msgstr "Здесь нет файлов"
+
+msgid "No files matching your filter were found."
+msgstr "Файлы, соответствующие вашему фильтру, не найдены."
+
+msgid "No matching files"
+msgstr "Нет подходящих файлов"
+
+msgid "Recent"
+msgstr "Недавний"
+
+#. FOR TRANSLATORS: If possible in your language an even shorter version of 'a few seconds ago'
+msgid "sec. ago"
+msgstr ""
+
+#. FOR TRANSLATORS: Shorter version of 'a few seconds ago'
+msgid "seconds ago"
+msgstr ""
+
+msgid "Select all entries"
+msgstr "Выбрать все записи"
+
+msgid "Select entry"
+msgstr "Выберите запись"
+
+msgid "Select the row for {nodename}"
+msgstr "Выберите строку для {nodename}"
+
+msgid "Size"
+msgstr "Размер"
+
 msgid "Undo"
 msgstr "Отменить"
+
+msgid "unknown"
+msgstr "неизвестный"
+
+msgid "Unset"
+msgstr ""
+
+msgid "Upload some content or sync with your devices!"
+msgstr "Загрузите контент или синхронизируйте его со своими устройствами!"
+

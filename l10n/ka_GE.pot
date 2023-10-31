@@ -1,15 +1,137 @@
-# 
+#
 # Translators:
 # Transifex Bot <>, 2023
-# 
+#
 msgid ""
 msgstr ""
 "Last-Translator: Transifex Bot <>, 2023\n"
-"Language-Team: Georgian (Georgia) (https://app.transifex.com/nextcloud/teams/64236/ka_GE/)\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: Georgian (Georgia) (https://app.transifex.com/nextcloud/"
+"teams/64236/ka_GE/)\n"
 "Language: ka_GE\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: lib/toast.ts:223
+msgid "\"{name}\" is an invalid file name."
+msgstr ""
+
+msgid "\"{name}\" is not an allowed filetype"
+msgstr ""
+
+msgid "\"/\" is not allowed inside a file name."
+msgstr ""
+
+msgid "a few seconds ago"
+msgstr ""
+
+msgid "All files"
+msgstr ""
+
+msgid "Choose"
+msgstr ""
+
+msgid "Choose {file}"
+msgstr ""
+
+msgid "Copy"
+msgstr ""
+
+msgid "Copy to {target}"
+msgstr ""
+
+msgid "Could not create the new folder"
+msgstr ""
+
+msgid "Create directory"
+msgstr ""
+
+msgid "Current view selector"
+msgstr ""
+
+msgid "Favorites"
+msgstr ""
+
+msgid "File name cannot be empty."
+msgstr ""
+
+msgid "Filepicker sections"
+msgstr ""
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr ""
+
+msgid "Files and folders you recently modified will show up here."
+msgstr ""
+
+msgid "Filter file list"
+msgstr ""
+
+msgid "Home"
+msgstr ""
+
+msgid "MIME type {mime}"
+msgstr ""
+
+msgid "Modified"
+msgstr ""
+
+msgid "Move"
+msgstr ""
+
+msgid "Move to {target}"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "New"
+msgstr ""
+
+msgid "New folder"
+msgstr ""
+
+msgid "New folder name"
+msgstr ""
+
+msgid "No files in here"
+msgstr ""
+
+msgid "No files matching your filter were found."
+msgstr ""
+
+msgid "No matching files"
+msgstr ""
+
+msgid "Recent"
+msgstr ""
+
+#. FOR TRANSLATORS: If possible in your language an even shorter version of 'a few seconds ago'
+msgid "sec. ago"
+msgstr ""
+
+#. FOR TRANSLATORS: Shorter version of 'a few seconds ago'
+msgid "seconds ago"
+msgstr ""
+
+msgid "Select all entries"
+msgstr ""
+
+msgid "Select entry"
+msgstr ""
+
+msgid "Select the row for {nodename}"
+msgstr ""
+
+msgid "Size"
+msgstr ""
+
 msgid "Undo"
+msgstr ""
+
+msgid "unknown"
+msgstr ""
+
+msgid "Unset"
+msgstr ""
+
+msgid "Upload some content or sync with your devices!"
 msgstr ""

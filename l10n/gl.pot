@@ -1,15 +1,139 @@
-# 
+#
 # Translators:
-# Joas Schilling, 2023
-# 
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# Miguel Anxo Bouzada <mbouzada@gmail.com>, 2023
+#
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
-"Language-Team: Galician (https://app.transifex.com/nextcloud/teams/64236/gl/)\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>, 2023\n"
+"Language-Team: Galician (https://app.transifex.com/nextcloud/teams/64236/"
+"gl/)\n"
 "Language: gl\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: lib/toast.ts:223
+msgid "\"{name}\" is an invalid file name."
+msgstr ""
+
+msgid "\"{name}\" is not an allowed filetype"
+msgstr ""
+
+msgid "\"/\" is not allowed inside a file name."
+msgstr ""
+
+msgid "a few seconds ago"
+msgstr ""
+
+msgid "All files"
+msgstr "Todos os ficheiros"
+
+msgid "Choose"
+msgstr "Escoller"
+
+msgid "Choose {file}"
+msgstr "Escoller {file}"
+
+msgid "Copy"
+msgstr "Copiar"
+
+msgid "Copy to {target}"
+msgstr "Copiar en  {target}"
+
+msgid "Could not create the new folder"
+msgstr "Non foi posíbel crear o novo cartafol"
+
+msgid "Create directory"
+msgstr "Crear un directorio"
+
+msgid "Current view selector"
+msgstr "Selector de vista actual"
+
+msgid "Favorites"
+msgstr "Favoritos"
+
+msgid "File name cannot be empty."
+msgstr ""
+
+msgid "Filepicker sections"
+msgstr "Seccións do selector de ficheiros"
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr "Os ficheiros e cartafoles que marque como favoritos aparecerán aquí."
+
+msgid "Files and folders you recently modified will show up here."
+msgstr "Os ficheiros e cartafoles que modificou recentemente aparecerán aquí."
+
+msgid "Filter file list"
+msgstr "Filtrar a lista de ficheiros"
+
+msgid "Home"
+msgstr "Inicio"
+
+msgid "MIME type {mime}"
+msgstr "Tipo MIME {mime}"
+
+msgid "Modified"
+msgstr "Modificado"
+
+msgid "Move"
+msgstr "Mover"
+
+msgid "Move to {target}"
+msgstr "Mover cara a {target}"
+
+msgid "Name"
+msgstr "Nome"
+
+msgid "New"
+msgstr "Novo"
+
+msgid "New folder"
+msgstr "Novo cartafol"
+
+msgid "New folder name"
+msgstr "Novo nome do cartafol"
+
+msgid "No files in here"
+msgstr "Aquí non hai ficheiros"
+
+msgid "No files matching your filter were found."
+msgstr "Non se atopou ningún ficheiro que coincida co filtro."
+
+msgid "No matching files"
+msgstr "Non hai ficheiros coincidentes"
+
+msgid "Recent"
+msgstr "Recente"
+
+#. FOR TRANSLATORS: If possible in your language an even shorter version of 'a few seconds ago'
+msgid "sec. ago"
+msgstr ""
+
+#. FOR TRANSLATORS: Shorter version of 'a few seconds ago'
+msgid "seconds ago"
+msgstr ""
+
+msgid "Select all entries"
+msgstr "Seleccionar todas as entradas"
+
+msgid "Select entry"
+msgstr "Seleccionar a entrada"
+
+msgid "Select the row for {nodename}"
+msgstr "Seleccionar a fila para {nodename}"
+
+msgid "Size"
+msgstr "Tamaño"
+
 msgid "Undo"
 msgstr "Desfacer"
+
+msgid "unknown"
+msgstr "descoñecido"
+
+msgid "Unset"
+msgstr ""
+
+msgid "Upload some content or sync with your devices!"
+msgstr "Enviar algún contido ou sincronizalo cos seus dispositivos!"
+
