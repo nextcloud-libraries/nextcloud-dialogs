@@ -35,7 +35,7 @@ import { onMounted, ref, watch } from 'vue'
 export const useDAVFiles = function(
 	currentView: Ref<'files'|'recent'|'favorites'> | ComputedRef<'files'|'recent'|'favorites'>,
 	currentPath: Ref<string> | ComputedRef<string>,
-): { isLoading: Ref<boolean>, client: WebDAVClient, files: Ref<Node[]>, loadFiles: () => void, getFile: (path: string) => Promise<Node> } {
+): { isLoading: Ref<boolean>, client: WebDAVClient, files: Ref<Node[]>, loadFiles: () => Promise<void>, getFile: (path: string) => Promise<Node> } {
 	/**
 	 * The WebDAV client
 	 */
@@ -104,7 +104,7 @@ export const useDAVFiles = function(
 	return {
 		isLoading,
 		files,
-		loadFiles: () => loadDAVFiles(),
+		loadFiles: loadDAVFiles,
 		getFile,
 		client,
 	}

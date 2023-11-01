@@ -54,6 +54,7 @@ import FileList from './FileList.vue'
 import FilePickerBreadcrumbs from './FilePickerBreadcrumbs.vue'
 import FilePickerNavigation from './FilePickerNavigation.vue'
 
+import { emit as emitOnEventBus } from '@nextcloud/event-bus'
 import { davRootPath } from '@nextcloud/files'
 import { NcEmptyContent } from '@nextcloud/vue'
 import { join } from 'path'
@@ -249,15 +250,22 @@ const noFilesDescription = computed(() => {
 
 /**
  * Handle creating new folder (breadcrumb menu)
+ * This will create the folder using WebDAV, reload the directory content and signal the directory creation to fhe files app
+ *
  * @param name The new folder name
  */
-const onCreateFolder = (name: string) => {
-	client
-		.createDirectory(join(davRootPath, currentPath.value, name))
+const onCreateFolder = async (name: string) => {
+	try {
+		await client.createDirectory(join(davRootPath, currentPath.value, name))
 		// reload file list
-		.then(() => loadFiles())
+		await loadFiles()
+		// emit event bus to force files app to reload that file if needed
+		emitOnEventBus('files:node:created', files.value.filter((file) => file.basename === name)[0])
+	} catch (error) {
+		console.warn('Could not create new folder', { name, error })
 		// show error to user
-		.catch((e) => showError(t('Could not create the new folder')))
+		showError(t('Could not create the new folder'))
+	}
 }
 </script>
 
