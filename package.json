@@ -50,8 +50,8 @@
     "dist"
   ],
   "peerDependencies": {
-    "@nextcloud/vue": "^8.0.0-beta.8",
-    "vue": "^2.7.14"
+    "@nextcloud/vue": "^8.0.0-beta.10",
+    "vue": "^2.7.15"
   },
   "dependencies": {
     "@mdi/svg": "^7.3.67",
@@ -89,7 +89,8 @@
     "typescript-plugin-css-modules": "^5.0.2",
     "vite": "^4.5.0",
     "vitest": "^0.34.6",
-    "vue-material-design-icons": "^5.2.0"
+    "vue-material-design-icons": "^5.2.0",
+    "vue-template-compiler": "^2.7.15"
   },
   "engines": {
     "node": "^20.0.0",

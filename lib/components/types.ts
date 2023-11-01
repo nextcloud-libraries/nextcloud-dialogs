@@ -25,6 +25,7 @@ import type { AsyncComponent, Component } from 'vue'
 
 /**
  * Interface for defining buttons passed to the Dialog component
+ * See NcDialogButton
  */
 export interface IDialogButton {
 	/** Label of the button */
