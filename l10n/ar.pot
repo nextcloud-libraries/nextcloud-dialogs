@@ -1,15 +1,139 @@
-# 
+#
 # Translators:
-# Joas Schilling, 2023
-# 
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# Ali <alimahwer@yahoo.com>, 2023
+#
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
+"Last-Translator: Ali <alimahwer@yahoo.com>, 2023\n"
 "Language-Team: Arabic (https://app.transifex.com/nextcloud/teams/64236/ar/)\n"
-"Content-Type: text/plain; charset=UTF-8\n"
 "Language: ar\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: lib/toast.ts:223
+msgid "\"{name}\" is an invalid file name."
+msgstr ""
+
+msgid "\"{name}\" is not an allowed filetype"
+msgstr ""
+
+msgid "\"/\" is not allowed inside a file name."
+msgstr ""
+
+msgid "a few seconds ago"
+msgstr ""
+
+msgid "All files"
+msgstr "كل الملفات"
+
+msgid "Choose"
+msgstr "إختَر"
+
+msgid "Choose {file}"
+msgstr "إختَر {file}"
+
+msgid "Copy"
+msgstr "نسخ"
+
+msgid "Copy to {target}"
+msgstr "نسخٌ إلى {target}"
+
+msgid "Could not create the new folder"
+msgstr "تعذّر إنشاء المجلد الجديد"
+
+msgid "Create directory"
+msgstr "أنشِيءْ مجلّداً"
+
+msgid "Current view selector"
+msgstr "مُنتقِي المنظور الحالي"
+
+msgid "Favorites"
+msgstr "المُفضَّلة"
+
+msgid "File name cannot be empty."
+msgstr ""
+
+msgid "Filepicker sections"
+msgstr "أقسام مُنتقِي الملفات"
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr "الملفات و المجلدات التي تُميِّزُها كمٌفضَّلة ستظهر هنا."
+
+msgid "Files and folders you recently modified will show up here."
+msgstr "الملفات و المجلدات التي قمت مؤخراً بتعديلها سوف تظهر هنا."
+
+msgid "Filter file list"
+msgstr "فلترة قائمة الملفات"
+
+msgid "Home"
+msgstr "البداية"
+
+msgid "MIME type {mime}"
+msgstr "نوع الملف {mime}"
+
+msgid "Modified"
+msgstr "مُعدَّل"
+
+msgid "Move"
+msgstr "أُنقُل"
+
+msgid "Move to {target}"
+msgstr "أُنقُل إلى {target}"
+
+msgid "Name"
+msgstr "الاسم"
+
+msgid "New"
+msgstr "جديد"
+
+msgid "New folder"
+msgstr "مٌجلّد جديد"
+
+msgid "New folder name"
+msgstr "اسم المجلد الجديد"
+
+msgid "No files in here"
+msgstr "لا توجد ملفات هنا"
+
+msgid "No files matching your filter were found."
+msgstr "لا توجد ملفات تتطابق مع الفلتر الذي وضعته"
+
+msgid "No matching files"
+msgstr "لا توجد ملفات مُطابِقة"
+
+msgid "Recent"
+msgstr "الحالي"
+
+#. FOR TRANSLATORS: If possible in your language an even shorter version of 'a few seconds ago'
+msgid "sec. ago"
+msgstr ""
+
+#. FOR TRANSLATORS: Shorter version of 'a few seconds ago'
+msgid "seconds ago"
+msgstr ""
+
+msgid "Select all entries"
+msgstr "حدِّد كل المداخل"
+
+msgid "Select entry"
+msgstr "إختَر المدخل"
+
+msgid "Select the row for {nodename}"
+msgstr "إختر سطر الـ {nodename}"
+
+msgid "Size"
+msgstr "الحجم"
+
 msgid "Undo"
 msgstr "تراجع"
+
+msgid "unknown"
+msgstr "غير محدد"
+
+msgid "Unset"
+msgstr ""
+
+msgid "Upload some content or sync with your devices!"
+msgstr "قُم برفع محتوىً أو قُم بمزامنة أجهزتك!"
+

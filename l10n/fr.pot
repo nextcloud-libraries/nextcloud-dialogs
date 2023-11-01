@@ -1,15 +1,140 @@
-# 
+#
 # Translators:
-# Ldm Public <ldmpub@gmail.com>, 2023
-# 
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# Rémi LEBLOND, 2023
+# Mordecai, 2023
+#
 msgid ""
 msgstr ""
-"Last-Translator: Ldm Public <ldmpub@gmail.com>, 2023\n"
+"Last-Translator: Mordecai, 2023\n"
 "Language-Team: French (https://app.transifex.com/nextcloud/teams/64236/fr/)\n"
-"Content-Type: text/plain; charset=UTF-8\n"
 "Language: fr\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
+"1000000 == 0 ? 1 : 2;\n"
 
-#: lib/toast.ts:223
+msgid "\"{name}\" is an invalid file name."
+msgstr ""
+
+msgid "\"{name}\" is not an allowed filetype"
+msgstr ""
+
+msgid "\"/\" is not allowed inside a file name."
+msgstr ""
+
+msgid "a few seconds ago"
+msgstr ""
+
+msgid "All files"
+msgstr "Tous les fichiers"
+
+msgid "Choose"
+msgstr "Choisir"
+
+msgid "Choose {file}"
+msgstr "Choisir {file}"
+
+msgid "Copy"
+msgstr "Copier"
+
+msgid "Copy to {target}"
+msgstr "Copier vers {target}"
+
+msgid "Could not create the new folder"
+msgstr "Impossible de créer le nouveau répertoire"
+
+msgid "Create directory"
+msgstr "Créer un répertoire"
+
+msgid "Current view selector"
+msgstr "Sélecteur de vue courante"
+
+msgid "Favorites"
+msgstr "Favoris"
+
+msgid "File name cannot be empty."
+msgstr ""
+
+msgid "Filepicker sections"
+msgstr "Sections du sélecteur de fichiers"
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr "Les fichiers et répertoires marqués en favoris apparaîtront ici."
+
+msgid "Files and folders you recently modified will show up here."
+msgstr "Les fichiers et répertoires modifiés récemment apparaîtront ici."
+
+msgid "Filter file list"
+msgstr "Liste de filtre de fichiers"
+
+msgid "Home"
+msgstr "Accueil"
+
+msgid "MIME type {mime}"
+msgstr "Type MIME {mime}"
+
+msgid "Modified"
+msgstr "Modifié"
+
+msgid "Move"
+msgstr "Déplacer"
+
+msgid "Move to {target}"
+msgstr "Déplacer vers {target}"
+
+msgid "Name"
+msgstr "Nom"
+
+msgid "New"
+msgstr "Nouveau"
+
+msgid "New folder"
+msgstr "Nouveau répertoire"
+
+msgid "New folder name"
+msgstr "Nom du nouveau répertoire"
+
+msgid "No files in here"
+msgstr "Aucun fichier ici"
+
+msgid "No files matching your filter were found."
+msgstr "Aucun fichier trouvé correspondant à votre filtre."
+
+msgid "No matching files"
+msgstr "Aucun fichier trouvé"
+
+msgid "Recent"
+msgstr "Récents"
+
+#. FOR TRANSLATORS: If possible in your language an even shorter version of 'a few seconds ago'
+msgid "sec. ago"
+msgstr ""
+
+#. FOR TRANSLATORS: Shorter version of 'a few seconds ago'
+msgid "seconds ago"
+msgstr ""
+
+msgid "Select all entries"
+msgstr "Tous sélectionner"
+
+msgid "Select entry"
+msgstr "Sélectionner une entrée"
+
+msgid "Select the row for {nodename}"
+msgstr "Sélectionner l'enregistrement pour {nodename}"
+
+msgid "Size"
+msgstr "Taille"
+
 msgid "Undo"
 msgstr "Rétablir"
+
+msgid "unknown"
+msgstr "inconnu"
+
+msgid "Unset"
+msgstr ""
+
+msgid "Upload some content or sync with your devices!"
+msgstr "Charger du contenu ou synchroniser avec vos équipements !"
+

@@ -1,15 +1,140 @@
-# 
+#
 # Translators:
-# Joas Schilling, 2023
-# 
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# FranciscoFJ <dev-ooo@satel-sa.com>, 2023
+# Julio C. Ortega, 2023
+#
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
-"Language-Team: Spanish (https://app.transifex.com/nextcloud/teams/64236/es/)\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Last-Translator: Julio C. Ortega, 2023\n"
+"Language-Team: Spanish (https://app.transifex.com/nextcloud/teams/64236/"
+"es/)\n"
 "Language: es\n"
-"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
 
-#: lib/toast.ts:223
+msgid "\"{name}\" is an invalid file name."
+msgstr "\"{name}\" es un nombre de archivo inválido."
+
+msgid "\"{name}\" is not an allowed filetype"
+msgstr "\"{name}\" es un tipo de archivo no permitido"
+
+msgid "\"/\" is not allowed inside a file name."
+msgstr "\"/\" no está permitido dentro del nombre de un archivo."
+
+msgid "a few seconds ago"
+msgstr ""
+
+msgid "All files"
+msgstr "Todos los archivos"
+
+msgid "Choose"
+msgstr "Escoger"
+
+msgid "Choose {file}"
+msgstr "Escoger {file}"
+
+msgid "Copy"
+msgstr "Copiar"
+
+msgid "Copy to {target}"
+msgstr "Copiar a {target}"
+
+msgid "Could not create the new folder"
+msgstr "No se pudo crear la carpeta nueva"
+
+msgid "Create directory"
+msgstr "Crear directorio"
+
+msgid "Current view selector"
+msgstr "Selector de vista actual"
+
+msgid "Favorites"
+msgstr "Favoritos"
+
+msgid "File name cannot be empty."
+msgstr "El nombre de archivo no puede estar vacío."
+
+msgid "Filepicker sections"
+msgstr "Secciones del selector de archivos"
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr "Los archivos y carpetas que marque como favoritos aparecerán aquí."
+
+msgid "Files and folders you recently modified will show up here."
+msgstr "Los archivos y carpetas que modificó recientemente aparecerán aquí."
+
+msgid "Filter file list"
+msgstr "Filtrar lista de archivos"
+
+msgid "Home"
+msgstr "Inicio"
+
+msgid "MIME type {mime}"
+msgstr "Tipo MIME {mime}"
+
+msgid "Modified"
+msgstr "Modificado"
+
+msgid "Move"
+msgstr "Mover"
+
+msgid "Move to {target}"
+msgstr "Mover a {target}"
+
+msgid "Name"
+msgstr "Nombre"
+
+msgid "New"
+msgstr "Nuevo"
+
+msgid "New folder"
+msgstr " Nueva carpeta"
+
+msgid "New folder name"
+msgstr "Nuevo nombre de carpeta"
+
+msgid "No files in here"
+msgstr "No hay archivos aquí"
+
+msgid "No files matching your filter were found."
+msgstr "No se encontraron archivos que coincidiesen con su filtro"
+
+msgid "No matching files"
+msgstr "No hay archivos coincidentes"
+
+msgid "Recent"
+msgstr "Reciente"
+
+#. FOR TRANSLATORS: If possible in your language an even shorter version of 'a few seconds ago'
+msgid "sec. ago"
+msgstr ""
+
+#. FOR TRANSLATORS: Shorter version of 'a few seconds ago'
+msgid "seconds ago"
+msgstr ""
+
+msgid "Select all entries"
+msgstr "Seleccionar todas las entradas"
+
+msgid "Select entry"
+msgstr "Seleccionar entrada"
+
+msgid "Select the row for {nodename}"
+msgstr "Seleccione la fila para {nodename}"
+
+msgid "Size"
+msgstr "Tamaño"
+
 msgid "Undo"
 msgstr "Deshacer"
+
+msgid "unknown"
+msgstr "Desconocido"
+
+msgid "Unset"
+msgstr ""
+
+msgid "Upload some content or sync with your devices!"
+msgstr "¡Cargue algún contenido o sincronice con sus dispositivos!"
