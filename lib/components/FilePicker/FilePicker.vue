@@ -291,13 +291,13 @@ export default {
 	}
 }
 
-:deep(.file-picker) {
+:deep(.dialog.file-picker) {
 	// Dialog is max. 900px wide so the best looking height seems to be 800px
 	height: min(80vh, 800px);
 }
 
 @media (max-width: 512px) {
-	:deep(.file-picker) {
+	:deep(.dialog.file-picker) {
 		// below 512px the modal is fullscreen so we use 100% height - margin of heading (4px + 12px) - height of heading (default-clickable-area)
 		height: calc(100% - 16px - var(--default-clickable-area));
 	}
