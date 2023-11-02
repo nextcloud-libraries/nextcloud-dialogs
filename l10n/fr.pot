@@ -3,20 +3,21 @@
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Rémi LEBLOND, 2023
 # Mordecai, 2023
+# fleopaul thp, 2023
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Mordecai, 2023\n"
+"Last-Translator: fleopaul thp, 2023\n"
 "Language-Team: French (https://app.transifex.com/nextcloud/teams/64236/fr/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 msgid "\"{name}\" is an invalid folder name."
-msgstr "« {name} » est un nom de dossier invalide."
+msgstr "« {name} » n'est pas un nom de dossier valide."
 
 msgid "\"{name}\" is not an allowed folder name"
-msgstr "« {name} » n'est pas un nom de dossier autorisé"
+msgstr "« {name} » n'est pas un nom de dossier autorisé."
 
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "Le caractère « / » n'est pas autorisé dans un nom de dossier."
@@ -37,7 +38,7 @@ msgid "Copy to {target}"
 msgstr "Copier vers {target}"
 
 msgid "Could not create the new folder"
-msgstr "Impossible de créer le nouveau répertoire"
+msgstr "Impossible de créer le nouveau dossier"
 
 msgid "Create directory"
 msgstr "Créer un répertoire"
