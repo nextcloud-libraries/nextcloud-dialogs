@@ -2,13 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
-## [v4.2.1]()
+## [v4.2.2](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v4.2.2) (2023-11-02)
+
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v4.2.1...v4.2.2)
+
+### :rocket: Enhancement
+* Bring back previews of images, this worked with FilePicker on Nextcloud 26 but was missing in this rewrite [\#1015](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1015) ([susnux](https://github.com/susnux))
+
+### :bug: Fixed bugs
+* fix(i18n): Fix spelling of MIME [\#1042](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1042) ([rakekniven](https://github.com/rakekniven))
+* fix: Swap sort icons [\#1058](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1058) ([Pytal](https://github.com/Pytal))
+* fix(l10n): Update translations [\#1094](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1094) ([susnux](https://github.com/susnux))
+
+## [v4.2.1](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v4.2.1) (2023-09-21)
 
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v4.2.0...v4.2.1)
 
 ### :bug: Fixed bugs
-* \[stable4\] Avoid error when not using any custom buttons by ([juliushaertl](https://github.com/juliushaertl)) in [\#1000](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1000)
-* \[stable4\] Bring back the default value for legacy file picker by ([susnux](https://github.com/susnux)) in [\#1007](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1007)
+* \[stable4\] Avoid error when not using any custom buttons [\#1000](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1000) ([juliushaertl](https://github.com/juliushaertl))
+* \[stable4\] Bring back the default value for legacy file picker [\#1007](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1007) ([susnux](https://github.com/susnux))
 
 ## [v4.2.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v4.2.0) (2023-09-13)
 
