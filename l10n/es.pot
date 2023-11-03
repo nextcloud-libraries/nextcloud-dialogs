@@ -1,25 +1,25 @@
 # 
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
-# FranciscoFJ <dev-ooo@satel-sa.com>, 2023
 # Julio C. Ortega, 2023
+# FranciscoFJ <dev-ooo@satel-sa.com>, 2023
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Julio C. Ortega, 2023\n"
+"Last-Translator: FranciscoFJ <dev-ooo@satel-sa.com>, 2023\n"
 "Language-Team: Spanish (https://app.transifex.com/nextcloud/teams/64236/es/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: es\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-msgid "\"{name}\" is an invalid file name."
-msgstr "\"{name}\" es un nombre de archivo inválido."
+msgid "\"{name}\" is an invalid folder name."
+msgstr "\"{nombre}\" es un nombre de carpeta no válido."
 
-msgid "\"{name}\" is not an allowed filetype"
-msgstr "\"{name}\" es un tipo de archivo no permitido"
+msgid "\"{name}\" is not an allowed folder name"
+msgstr "\"{nombre}\" no es un nombre de carpeta permitido"
 
-msgid "\"/\" is not allowed inside a file name."
-msgstr "\"/\" no está permitido dentro del nombre de un archivo."
+msgid "\"/\" is not allowed inside a folder name."
+msgstr "\"/\" no está permitido dentro del nombre de una carpeta."
 
 msgid "All files"
 msgstr "Todos los archivos"
@@ -48,9 +48,6 @@ msgstr "Selector de vista actual"
 msgid "Favorites"
 msgstr "Favoritos"
 
-msgid "File name cannot be empty."
-msgstr "El nombre de archivo no puede estar vacío."
-
 msgid "Filepicker sections"
 msgstr "Secciones del selector de archivos"
 
@@ -62,6 +59,9 @@ msgstr "Los archivos y carpetas que modificó recientemente aparecerán aquí."
 
 msgid "Filter file list"
 msgstr "Filtrar lista de archivos"
+
+msgid "Folder name cannot be empty."
+msgstr "El nombre de la carpeta no puede estar vacío."
 
 msgid "Home"
 msgstr "Inicio"
