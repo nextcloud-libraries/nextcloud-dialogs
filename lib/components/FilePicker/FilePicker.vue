@@ -1,5 +1,5 @@
 <template>
-	<DialogBase v-bind="dialogProps" @close="emit('close')">
+	<NcDialog v-bind="dialogProps" @close="emit('close')">
 		<template #navigation="{ isCollapsed }">
 			<FilePickerNavigation :is-collapsed="isCollapsed" :current-view.sync="currentView" :filter-string.sync="filterString" />
 		</template>
@@ -41,7 +41,7 @@
 				</template>
 			</NcEmptyContent>
 		</div>
-	</DialogBase>
+	</NcDialog>
 </template>
 
 <script setup lang="ts">
@@ -49,14 +49,13 @@ import type { IFilePickerButton, IFilePickerButtonFactory, IFilePickerFilter } f
 import type { Node } from '@nextcloud/files'
 
 import IconFile from 'vue-material-design-icons/File.vue'
-import DialogBase from '../DialogBase.vue'
 import FileList from './FileList.vue'
 import FilePickerBreadcrumbs from './FilePickerBreadcrumbs.vue'
 import FilePickerNavigation from './FilePickerNavigation.vue'
 
 import { emit as emitOnEventBus } from '@nextcloud/event-bus'
 import { davRootPath } from '@nextcloud/files'
-import { NcEmptyContent } from '@nextcloud/vue'
+import { NcDialog, NcEmptyContent } from '@nextcloud/vue'
 import { join } from 'path'
 import { computed, onMounted, ref, toRef } from 'vue'
 import { showError } from '../../toast'
