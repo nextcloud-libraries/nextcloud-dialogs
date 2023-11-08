@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v5.0.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.0.0) (2023-11-08)
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.0.0-beta.6...v5.0.0)
+
+### :rocket: Enhancement
+* FilePicker: Signal folder creation to files app [\#1095](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1095) ([@susnux](https://github.com/susnux))
+
+### :bug: Fixed bugs
+* fix: Use `NcDialog` instead of custom dialog component now that it is upstreamed [\#1101](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1101) ([@susnux](https://github.com/susnux))
+
+### Changed
+* Updated translations
+* Updated dependencies
+  * Now using stable `@nextcloud/vue` version 8.0.0
+  * Now using stable `@nextcloud/files` version 3.0.0
+
 ## [v5.0.0-beta.6](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.0.0-beta.6) (2023-10-17)
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.0.0-beta.5...v5.0.0-beta.6)
 
