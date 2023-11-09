@@ -1,15 +1,124 @@
 # 
 # Translators:
-# Joas Schilling, 2023
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# Daniel MD <dmihaidumitru@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
+"Last-Translator: Daniel MD <dmihaidumitru@gmail.com>, 2023\n"
 "Language-Team: Romanian (https://app.transifex.com/nextcloud/teams/64236/ro/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: ro\n"
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
-#: lib/toast.ts:223
+msgid "\"{name}\" is an invalid folder name."
+msgstr "\"{name}\" este un nume de director invalid."
+
+msgid "\"{name}\" is not an allowed folder name"
+msgstr "\"{name}\" nu este un nume de director permis"
+
+msgid "\"/\" is not allowed inside a folder name."
+msgstr "\"/\" nu este permis în numele unui director."
+
+msgid "All files"
+msgstr "Toate fișierele"
+
+msgid "Choose"
+msgstr "Alege"
+
+msgid "Choose {file}"
+msgstr "Alege {file}"
+
+msgid "Copy"
+msgstr "Copiază"
+
+msgid "Copy to {target}"
+msgstr "Copiază în {target}"
+
+msgid "Could not create the new folder"
+msgstr "Nu s-a putut crea noul director"
+
+msgid "Create directory"
+msgstr "Creează director"
+
+msgid "Current view selector"
+msgstr "Selectorul curent al vizualizării"
+
+msgid "Favorites"
+msgstr "Favorite"
+
+msgid "Filepicker sections"
+msgstr "Secțiuni ale selectorului de fișiere"
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr "Fișiere și directoare pe care le marcați ca favorite vor apărea aici."
+
+msgid "Files and folders you recently modified will show up here."
+msgstr ""
+"Fișiere și directoare pe care le-ați modificat recent vor apărea aici."
+
+msgid "Filter file list"
+msgstr "Filtrează lista de fișiere"
+
+msgid "Folder name cannot be empty."
+msgstr "Numele de director nu poate fi necompletat."
+
+msgid "Home"
+msgstr "Acasă"
+
+msgid "MIME type {mime}"
+msgstr "Tip MIME {mime}"
+
+msgid "Modified"
+msgstr "Modificat"
+
+msgid "Move"
+msgstr "Mută"
+
+msgid "Move to {target}"
+msgstr "Mută către {target}"
+
+msgid "Name"
+msgstr "Nume"
+
+msgid "New"
+msgstr "Nou"
+
+msgid "New folder"
+msgstr "Director nou"
+
+msgid "New folder name"
+msgstr "Numele noului director"
+
+msgid "No files in here"
+msgstr "Nu există fișiere"
+
+msgid "No files matching your filter were found."
+msgstr "Nu există fișiere potrivite pentru filtrul selectat"
+
+msgid "No matching files"
+msgstr "Nu există fișiere potrivite"
+
+msgid "Recent"
+msgstr "Recente"
+
+msgid "Select all entries"
+msgstr "Selectează toate înregistrările"
+
+msgid "Select entry"
+msgstr "Selectează înregistrarea"
+
+msgid "Select the row for {nodename}"
+msgstr "Selectează rândul pentru {nodename}"
+
+msgid "Size"
+msgstr "Mărime"
+
 msgid "Undo"
 msgstr "Anulează"
+
+msgid "unknown"
+msgstr "necunoscut"
+
+msgid "Upload some content or sync with your devices!"
+msgstr "Încărcați conținut sau sincronizați cu dispozitivele dumneavoastră!"
