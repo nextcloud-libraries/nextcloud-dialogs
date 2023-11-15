@@ -50,6 +50,7 @@ describe('FilePicker: FileListRow', () => {
 				showCheckbox: true,
 				canPick: true,
 				node,
+				cropImagePreviews: true,
 			},
 		})
 
@@ -70,6 +71,7 @@ describe('FilePicker: FileListRow', () => {
 				showCheckbox: true,
 				canPick: true,
 				node,
+				cropImagePreviews: true,
 			},
 		})
 
@@ -86,6 +88,7 @@ describe('FilePicker: FileListRow', () => {
 				showCheckbox: true,
 				canPick: true,
 				node,
+				cropImagePreviews: true,
 			},
 		})
 
@@ -103,6 +106,7 @@ describe('FilePicker: FileListRow', () => {
 				showCheckbox: true,
 				canPick: true,
 				node,
+				cropImagePreviews: true,
 			},
 		})
 
@@ -120,6 +124,7 @@ describe('FilePicker: FileListRow', () => {
 				showCheckbox: false,
 				canPick: true,
 				node,
+				cropImagePreviews: true,
 			},
 		})
 
@@ -137,6 +142,7 @@ describe('FilePicker: FileListRow', () => {
 				showCheckbox: false,
 				canPick: true,
 				node,
+				cropImagePreviews: true,
 			},
 		})
 

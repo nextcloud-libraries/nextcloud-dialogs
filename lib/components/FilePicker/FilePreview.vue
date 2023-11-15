@@ -13,7 +13,6 @@
 import { FileType, type Node } from '@nextcloud/files'
 import { computed, ref, watch } from 'vue'
 import { getPreviewURL } from '../../composables/preview'
-import { useFilesSettings } from '../../composables/filesSettings'
 import { t } from '../../utils/l10n'
 
 import IconFile from 'vue-material-design-icons/File.vue'
@@ -26,9 +25,9 @@ const fileListIconStyles = ref(fileListIconStylesModule)
 
 const props = defineProps<{
 	node: Node
+	cropImagePreviews: Boolean
 }>()
 
-const { cropImagePreviews } = useFilesSettings()
 const previewURL = computed(() => getPreviewURL(props.node, { cropPreview: cropImagePreviews.value }))
 
 const isFile = computed(() => props.node.type === FileType.File)

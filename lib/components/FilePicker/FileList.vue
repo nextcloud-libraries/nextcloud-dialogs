@@ -63,6 +63,7 @@
 						:can-pick="multiselect || selectedFiles.length === 0 || selectedFiles.includes(file)"
 						:selected="selectedFiles.includes(file)"
 						:node="file"
+						:crop-image-previews="cropImagePreviews"
 						@update:selected="onNodeSelected(file)"
 						@enter-directory="onChangeDirectory" />
 				</template>
@@ -132,7 +133,7 @@ const toggleSorting = (sortBy: ISortingAttributes) => {
 	}
 }
 
-const { sortFavoritesFirst } = useFilesSettings()
+const { sortFavoritesFirst, cropImagePreviews } = useFilesSettings()
 
 /**
  * Files sorted by columns
