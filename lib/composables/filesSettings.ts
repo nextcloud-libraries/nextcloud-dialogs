@@ -60,10 +60,10 @@ export const useFilesSettings = () => {
 	const cropImagePreviews = ref(filesUserState?.crop_image_previews ?? true)
 
 	onMounted(() => {
-		axios.get(generateUrl('/apps/files/api/v1/configs')).then((respose) => {
-			showHiddenFiles.value = respose.data?.data?.show_hidden ?? false
-			sortFavoritesFirst.value = respose.data?.data?.sort_favorites_first ?? true
-			cropImagePreviews.value = respose.data?.data?.crop_image_previews ?? true
+		axios.get(generateUrl('/apps/files/api/v1/configs')).then((response) => {
+			showHiddenFiles.value = response.data?.data?.show_hidden ?? false
+			sortFavoritesFirst.value = response.data?.data?.sort_favorites_first ?? true
+			cropImagePreviews.value = response.data?.data?.crop_image_previews ?? true
 		})
 	})
 

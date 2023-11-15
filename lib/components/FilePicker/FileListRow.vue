@@ -21,7 +21,7 @@
 		</td>
 		<td class="row-name">
 			<div class="file-picker__name-container" data-testid="row-name">
-				<FilePreview :node="node" />
+				<FilePreview :node="node" :crop-image-previews="cropImagePreviews" />
 				<div class="file-picker__file-name" :title="displayName" v-text="displayName" />
 				<div class="file-picker__file-extension" v-text="fileExtension" />
 			</div>
@@ -55,6 +55,8 @@ const props = defineProps<{
 	canPick: boolean
 	/** The current node */
 	node: Node
+	/** Whether the preview should be cropped */
+	cropImagePreviews: Boolean
 }>()
 
 const emit = defineEmits<{
