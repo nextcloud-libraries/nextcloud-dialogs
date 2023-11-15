@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v5.0.1](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.0.1) (2023-11-23)
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.0.0...v5.0.1)
+
+### :bug: Fixed bugs
+* Do not load user config for each previews [\#1108](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1108) ([artonge](https://github.com/artonge))
+
+### Changed
+* Updated translations
+* chore(deps-dev): Bump @types/gettext-parser from 4.0.3 to 4.0.4
+* chore(deps): Bump @vueuse/core from 10.5.0 to 10.6.0
+* chore(deps): Bump @types/toastify-js from 1.12.2 to 1.12.3
+* chore(deps): Bump axios from 1.4.0 to 1.6.1
+
 ## [v5.0.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.0.0) (2023-11-08)
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.0.0-beta.6...v5.0.0)
 
