@@ -1,15 +1,122 @@
 # 
 # Translators:
-# Joas Schilling, 2023
+# O St <oleksiy.stasevych@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
+"Last-Translator: O St <oleksiy.stasevych@gmail.com>, 2023\n"
 "Language-Team: Ukrainian (https://app.transifex.com/nextcloud/teams/64236/uk/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: uk\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: lib/toast.ts:223
+msgid "\"{name}\" is an invalid folder name."
+msgstr "\"{name}\" є недійсним назвою для каталогу."
+
+msgid "\"{name}\" is not an allowed folder name"
+msgstr "\"{name}\" не є дозволена назва для каталогу."
+
+msgid "\"/\" is not allowed inside a folder name."
+msgstr "\"/\" не дозволено у назві каталогу."
+
+msgid "All files"
+msgstr "Всі файли"
+
+msgid "Choose"
+msgstr "Вибрати"
+
+msgid "Choose {file}"
+msgstr "Вибрати {file}"
+
+msgid "Copy"
+msgstr "Копіювати"
+
+msgid "Copy to {target}"
+msgstr "Копіювати до {target}"
+
+msgid "Could not create the new folder"
+msgstr "Не вдалося створити новий каталог"
+
+msgid "Create directory"
+msgstr "Створити каталог"
+
+msgid "Current view selector"
+msgstr "Вибір подання"
+
+msgid "Favorites"
+msgstr "Із зірочкою"
+
+msgid "Filepicker sections"
+msgstr "Розділи вибору файлів"
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr "Тут показуватимуться файли та каталоги, які ви позначите зірочкою."
+
+msgid "Files and folders you recently modified will show up here."
+msgstr "Тут показуватимуться файли та каталоги, які було нещодавно змінено."
+
+msgid "Filter file list"
+msgstr "Фільтрувати список файлів"
+
+msgid "Folder name cannot be empty."
+msgstr "Ім'я каталогу не може бути порожнім."
+
+msgid "Home"
+msgstr "Домівка"
+
+msgid "MIME type {mime}"
+msgstr "Тип MIME {mime}"
+
+msgid "Modified"
+msgstr "Змінено"
+
+msgid "Move"
+msgstr "Перемістити"
+
+msgid "Move to {target}"
+msgstr "Перемістити до {target}"
+
+msgid "Name"
+msgstr "Ім'я"
+
+msgid "New"
+msgstr "Новий"
+
+msgid "New folder"
+msgstr "Новий каталог"
+
+msgid "New folder name"
+msgstr "Ім'я нового каталогу"
+
+msgid "No files in here"
+msgstr "Тут відсутні файли"
+
+msgid "No files matching your filter were found."
+msgstr "Відсутні збіги за фільтром."
+
+msgid "No matching files"
+msgstr "Відсутні збіги файлів."
+
+msgid "Recent"
+msgstr "Останні"
+
+msgid "Select all entries"
+msgstr "Вибрати всі записи"
+
+msgid "Select entry"
+msgstr "Вибрати запис"
+
+msgid "Select the row for {nodename}"
+msgstr "Вибрати рядок для {nodename}"
+
+msgid "Size"
+msgstr "Розмір"
+
 msgid "Undo"
-msgstr "Скасувати дію"
+msgstr "Повернути"
+
+msgid "unknown"
+msgstr "невідомо"
+
+msgid "Upload some content or sync with your devices!"
+msgstr "Завантажте вміст або синхронізуйте з вашим пристроєм!"
