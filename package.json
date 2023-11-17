@@ -50,7 +50,7 @@
     "dist"
   ],
   "peerDependencies": {
-    "@nextcloud/vue": "^8.0.0",
+    "@nextcloud/vue": "^8.1.0",
     "vue": "^2.7.15"
   },
   "dependencies": {
