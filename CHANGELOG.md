@@ -2,7 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
-## [v5.0.1](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.0.1) (2023-11-23)
+## [v5.0.2](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.0.2) (2023-11-17)
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.0.1...v5.0.2)
+
+### :bug: Fixed bugs
+* fix(FilePicker): Listen on `update:open` rather than `closed` event from `NcDialog` [\#1113](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1113) ([@susnux](https://github.com/susnux))
+
+### Changed
+* Updated translations
+* chore(deps): Bump `@nextcloud/vue` from 8.2.0
+
+## [v5.0.1](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.0.1) (2023-11-15)
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.0.0...v5.0.1)
 
 ### :bug: Fixed bugs
