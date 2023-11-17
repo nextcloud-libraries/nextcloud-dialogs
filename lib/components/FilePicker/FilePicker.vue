@@ -1,5 +1,5 @@
 <template>
-	<NcDialog v-bind="dialogProps" @close="emit('close')">
+	<NcDialog v-bind="dialogProps" @update:open="handleClose">
 		<template #navigation="{ isCollapsed }">
 			<FilePickerNavigation :is-collapsed="isCollapsed" :current-view.sync="currentView" :filter-string.sync="filterString" />
 		</template>
@@ -264,6 +264,16 @@ const onCreateFolder = async (name: string) => {
 		console.warn('Could not create new folder', { name, error })
 		// show error to user
 		showError(t('Could not create the new folder'))
+	}
+}
+
+/**
+ * Handle closing the file picker
+ * @param open If the dialog is open
+ */
+const handleClose = (open: boolean) => {
+	if (!open) {
+		emit('close')
 	}
 }
 </script>
