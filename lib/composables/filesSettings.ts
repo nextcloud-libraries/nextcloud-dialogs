@@ -19,12 +19,14 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
+import type { ComputedRef, Ref } from 'vue'
+
 import { loadState } from '@nextcloud/initial-state'
-import { computed, ref, type ComputedRef, type Ref } from 'vue'
-import axios from '@nextcloud/axios'
 import { generateUrl } from '@nextcloud/router'
 import { toValue } from '@vueuse/core'
-import { onMounted } from 'vue'
+import { computed, onMounted, ref } from 'vue'
+
+import axios from '@nextcloud/axios'
 
 interface OCAFilesUserConfig {
 	show_hidden: boolean
