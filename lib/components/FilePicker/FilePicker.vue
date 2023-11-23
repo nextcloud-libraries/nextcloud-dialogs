@@ -146,7 +146,7 @@ const dialogButtons = computed(() => {
 		callback: async () => {
 			const nodes = selectedFiles.value.length === 0 && props.allowPickDirectory ? [await getFile(currentPath.value)] : selectedFiles.value as Node[]
 			button.callback(nodes)
-			emit('close', selectedFiles.value as Node[])
+			emit('close', nodes)
 		},
 	} as IFilePickerButton))
 })
