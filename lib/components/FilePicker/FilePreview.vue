@@ -25,10 +25,10 @@ const fileListIconStyles = ref(fileListIconStylesModule)
 
 const props = defineProps<{
 	node: Node
-	cropImagePreviews: Boolean
+	cropImagePreviews: boolean
 }>()
 
-const previewURL = computed(() => getPreviewURL(props.node, { cropPreview: cropImagePreviews.value }))
+const previewURL = computed(() => getPreviewURL(props.node, { cropPreview: props.cropImagePreviews }))
 
 const isFile = computed(() => props.node.type === FileType.File)
 const canLoadPreview = ref(false)

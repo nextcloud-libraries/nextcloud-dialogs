@@ -56,7 +56,7 @@ const props = defineProps<{
 	/** The current node */
 	node: Node
 	/** Whether the preview should be cropped */
-	cropImagePreviews: Boolean
+	cropImagePreviews: boolean
 }>()
 
 const emit = defineEmits<{
