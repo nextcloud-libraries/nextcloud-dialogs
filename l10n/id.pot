@@ -1,15 +1,124 @@
 # 
 # Translators:
-# Joas Schilling, 2023
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# Linerly <linerly@proton.me>, 2023
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
+"Last-Translator: Linerly <linerly@proton.me>, 2023\n"
 "Language-Team: Indonesian (https://app.transifex.com/nextcloud/teams/64236/id/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: id\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: lib/toast.ts:223
+msgid "\"{name}\" is an invalid folder name."
+msgstr "\"{name}\" merupakan nama folder yang tidak valid."
+
+msgid "\"{name}\" is not an allowed folder name"
+msgstr "\"{name}\" merupakan nama folder yang tidak diperbolehkan"
+
+msgid "\"/\" is not allowed inside a folder name."
+msgstr "\"/\" tidak diperbolehkan di dalam nama folder."
+
+msgid "All files"
+msgstr "Semua berkas"
+
+msgid "Choose"
+msgstr "Pilih"
+
+msgid "Choose {file}"
+msgstr "Pilih {file}"
+
+msgid "Copy"
+msgstr "Salin"
+
+msgid "Copy to {target}"
+msgstr "Salin ke {target}"
+
+msgid "Could not create the new folder"
+msgstr "Tidak dapat membuat folder baru"
+
+msgid "Create directory"
+msgstr "Buat direktori"
+
+msgid "Current view selector"
+msgstr "Pemilih tampilan saat ini"
+
+msgid "Favorites"
+msgstr "Favorit"
+
+msgid "Filepicker sections"
+msgstr "Bagian pemilih berkas"
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr ""
+"Berkas dan folder yang Anda tandai sebagai favorit akan muncul di sini."
+
+msgid "Files and folders you recently modified will show up here."
+msgstr "Berkas dan folder yang Anda ubah baru-baru ini akan muncul di sini."
+
+msgid "Filter file list"
+msgstr "Saring daftar berkas"
+
+msgid "Folder name cannot be empty."
+msgstr "Name berkas tidak dapat kosong."
+
+msgid "Home"
+msgstr "Beranda"
+
+msgid "MIME type {mime}"
+msgstr "Jenis MIME {mime}"
+
+msgid "Modified"
+msgstr "Diubah"
+
+msgid "Move"
+msgstr "Pindahkan"
+
+msgid "Move to {target}"
+msgstr "Pindahkan ke {target}"
+
+msgid "Name"
+msgstr "Nama"
+
+msgid "New"
+msgstr "Baru"
+
+msgid "New folder"
+msgstr "Folder baru"
+
+msgid "New folder name"
+msgstr "Nama folder baru"
+
+msgid "No files in here"
+msgstr "Tidak ada berkas di sini"
+
+msgid "No files matching your filter were found."
+msgstr "Tidak ada berkas yang cocok dengan penyaringan Anda."
+
+msgid "No matching files"
+msgstr "Tidak ada berkas yang cocok"
+
+msgid "Recent"
+msgstr "Terkini"
+
+msgid "Select all entries"
+msgstr "Pilih semua entri"
+
+msgid "Select entry"
+msgstr "Pilih entri"
+
+msgid "Select the row for {nodename}"
+msgstr "Pilih baris untuk {nodename}"
+
+msgid "Size"
+msgstr "Ukuran"
+
 msgid "Undo"
 msgstr "Tidak jadi"
+
+msgid "unknown"
+msgstr "tidak diketahui"
+
+msgid "Upload some content or sync with your devices!"
+msgstr "Unggah beberapa konten atau sinkron dengan perangkat Anda!"
