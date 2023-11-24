@@ -1,15 +1,123 @@
 # 
 # Translators:
-# Joas Schilling, 2023
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# Sveinn í Felli <sv1@fellsnet.is>, 2023
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>, 2023\n"
 "Language-Team: Icelandic (https://app.transifex.com/nextcloud/teams/64236/is/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: is\n"
 "Plural-Forms: nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);\n"
 
-#: lib/toast.ts:223
+msgid "\"{name}\" is an invalid folder name."
+msgstr "\"{name}\" er ógilt möppuheiti."
+
+msgid "\"{name}\" is not an allowed folder name"
+msgstr "\"{name}\" er ekki leyfilegt möppuheiti"
+
+msgid "\"/\" is not allowed inside a folder name."
+msgstr "\"/\" er er ekki leyfilegt innan í skráarheiti."
+
+msgid "All files"
+msgstr "Allar skrár"
+
+msgid "Choose"
+msgstr "Veldu"
+
+msgid "Choose {file}"
+msgstr "Veldu {file}"
+
+msgid "Copy"
+msgstr "Afrita"
+
+msgid "Copy to {target}"
+msgstr "Afrita í {target}"
+
+msgid "Could not create the new folder"
+msgstr "Get ekki búið til nýju möppuna"
+
+msgid "Create directory"
+msgstr "Búa til möppu"
+
+msgid "Current view selector"
+msgstr "Núverandi val sýnar"
+
+msgid "Favorites"
+msgstr "Eftirlæti"
+
+msgid "Filepicker sections"
+msgstr "Hlutar skráaveljara"
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr "Skrár og möppur sem þú merkir sem eftirlæti birtast hér."
+
+msgid "Files and folders you recently modified will show up here."
+msgstr "Skrár og möppur sem þú breyttir nýlega birtast hér."
+
+msgid "Filter file list"
+msgstr "Sía skráalista"
+
+msgid "Folder name cannot be empty."
+msgstr "Möppuheiti má ekki vera tómt."
+
+msgid "Home"
+msgstr "Heim"
+
+msgid "MIME type {mime}"
+msgstr "MIME-tegund {mime}"
+
+msgid "Modified"
+msgstr "Breytt"
+
+msgid "Move"
+msgstr "Færa"
+
+msgid "Move to {target}"
+msgstr "Færa í {target}"
+
+msgid "Name"
+msgstr "Heiti"
+
+msgid "New"
+msgstr "Nýtt"
+
+msgid "New folder"
+msgstr "Ný mappa"
+
+msgid "New folder name"
+msgstr "Heiti nýrrar möppu"
+
+msgid "No files in here"
+msgstr "Engar skrár hér"
+
+msgid "No files matching your filter were found."
+msgstr "Engar skrár fundust sem passa við síuna."
+
+msgid "No matching files"
+msgstr "Engar samsvarandi skrár"
+
+msgid "Recent"
+msgstr "Nýlegt"
+
+msgid "Select all entries"
+msgstr "Velja allar færslur"
+
+msgid "Select entry"
+msgstr "Velja færslu"
+
+msgid "Select the row for {nodename}"
+msgstr "Veldu röðina fyrir {nodename}"
+
+msgid "Size"
+msgstr "Stærð"
+
 msgid "Undo"
 msgstr "Afturkalla"
+
+msgid "unknown"
+msgstr "óþekkt"
+
+msgid "Upload some content or sync with your devices!"
+msgstr "Sendu inn eitthvað efni eða samstilltu við tækin þín!"
