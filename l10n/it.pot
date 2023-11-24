@@ -1,15 +1,125 @@
 # 
 # Translators:
-# Joas Schilling, 2023
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# Claudio Scandella, 2023
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
+"Last-Translator: Claudio Scandella, 2023\n"
 "Language-Team: Italian (https://app.transifex.com/nextcloud/teams/64236/it/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: it\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: lib/toast.ts:223
+msgid "\"{name}\" is an invalid folder name."
+msgstr "\"{name}\" non è un nome di cartella valido."
+
+msgid "\"{name}\" is not an allowed folder name"
+msgstr "\"{name}\"  non è un nome di cartella ammesso"
+
+msgid "\"/\" is not allowed inside a folder name."
+msgstr "\"/\" non è ammesso all'interno del nome di una cartella."
+
+msgid "All files"
+msgstr "Tutti i file."
+
+msgid "Choose"
+msgstr "Scegli"
+
+msgid "Choose {file}"
+msgstr "Scegli {file}"
+
+msgid "Copy"
+msgstr "Copia"
+
+msgid "Copy to {target}"
+msgstr "Copia in {target}"
+
+msgid "Could not create the new folder"
+msgstr "Impossibile creare la nuova cartella"
+
+msgid "Create directory"
+msgstr "Crea directory"
+
+msgid "Current view selector"
+msgstr "Selettore della vista corrente"
+
+msgid "Favorites"
+msgstr "Preferiti"
+
+msgid "Filepicker sections"
+msgstr "Sezioni di prelievo del file"
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr ""
+"I file e le cartelle contrassegnate come preferite saranno mostrate qui."
+
+msgid "Files and folders you recently modified will show up here."
+msgstr ""
+"I file e le cartelle che hai modificato di recente saranno mostrate qui."
+
+msgid "Filter file list"
+msgstr "Lista di file del filtro"
+
+msgid "Folder name cannot be empty."
+msgstr "Il nome della cartella non può essere vuoto."
+
+msgid "Home"
+msgstr "Home"
+
+msgid "MIME type {mime}"
+msgstr "MIME type {mime}"
+
+msgid "Modified"
+msgstr "Modificato"
+
+msgid "Move"
+msgstr "Sposta"
+
+msgid "Move to {target}"
+msgstr "Sposta in {target}"
+
+msgid "Name"
+msgstr "Nome"
+
+msgid "New"
+msgstr "Nuovo"
+
+msgid "New folder"
+msgstr "Nuova cartella"
+
+msgid "New folder name"
+msgstr "Nuovo nome cartella"
+
+msgid "No files in here"
+msgstr "Nessun file qui all'interno"
+
+msgid "No files matching your filter were found."
+msgstr "Nessun file che corrisponde al tuo filtro è stato trovato."
+
+msgid "No matching files"
+msgstr "Nessun file corrispondente"
+
+msgid "Recent"
+msgstr "Recente"
+
+msgid "Select all entries"
+msgstr "Seleziona tutti gli elementi"
+
+msgid "Select entry"
+msgstr "Seleziona il valore immesso"
+
+msgid "Select the row for {nodename}"
+msgstr "Seleziona la riga per {nodename}"
+
+msgid "Size"
+msgstr "Taglia/dimensioni"
+
 msgid "Undo"
 msgstr "Annulla"
+
+msgid "unknown"
+msgstr "sconosciuto"
+
+msgid "Upload some content or sync with your devices!"
+msgstr "Carica qualche contenuto o sincronizza con i tuoi dispositivi!"
