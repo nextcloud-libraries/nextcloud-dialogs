@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v5.0.3](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.0.3) (2023-11-27)
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.0.2...v5.0.3)
+
+### :bug: Fixed bugs
+* fix(FilePicker): `cropImagePreviews` is now provided as a prop in FilePreview [\#1120](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1120) \([susnux](https://github.com/susnux)\)
+* fix(FilePicker): On button click also emit the current directory if `allowPickDirectory` is set to true [\#1121](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1121) \([susnux](https://github.com/susnux)\)
+* fix: Adjust types for IFilePickerButton to align icon with NcDialogButton [\#1122](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1122) \([susnux](https://github.com/susnux)\)
+* fix(build): include ?raw data to bundle [\#1128](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1128) \([ShGKme](https://github.com/ShGKme)\)
+
+### Changed
+* Updated translations
+* chore(deps): Bump @vueuse/core from 10.6.0 to 10.6.1
+* chore(deps-dev): Bump typescript from 5.2.2 to 5.3.2
+
 ## [v5.0.2](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.0.2) (2023-11-17)
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.0.1...v5.0.2)
 
