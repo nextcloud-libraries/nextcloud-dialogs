@@ -47,7 +47,7 @@ msgid "Favorites"
 msgstr "Із зірочкою"
 
 msgid "Filepicker sections"
-msgstr "Розділи вибору файлів"
+msgstr "Розділи для вибору файлів"
 
 msgid "Files and folders you mark as favorite will show up here."
 msgstr "Тут показуватимуться файли та каталоги, які ви позначите зірочкою."
