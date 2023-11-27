@@ -21,7 +21,6 @@
  */
 
 import type { Node } from '@nextcloud/files'
-import type { AsyncComponent, Component } from 'vue'
 
 /**
  * Interface for defining buttons passed to the Dialog component
@@ -33,11 +32,12 @@ export interface IDialogButton {
 
 	/** Callback on button click */
 	callback: () => void,
+
 	/**
 	 * Optional Icon for the button
-	 * Can be a Vue component, async Vue component, or SVG
+	 * Should be a SVG image as raw string
 	 */
-	icon?: Component | AsyncComponent | string,
+	icon?: string,
 
 	/**
 	 * Button type
