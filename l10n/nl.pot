@@ -1,15 +1,125 @@
 # 
 # Translators:
-# Joas Schilling, 2023
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# Joost <joho500@hotmail.com>, 2023
+# Jeroen Gui, 2023
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
+"Last-Translator: Jeroen Gui, 2023\n"
 "Language-Team: Dutch (https://app.transifex.com/nextcloud/teams/64236/nl/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: lib/toast.ts:223
+msgid "\"{name}\" is an invalid folder name."
+msgstr "\"{name}\" is een ongeldige mapnaam."
+
+msgid "\"{name}\" is not an allowed folder name"
+msgstr "\"{name}\" is geen toegestane mapnaam"
+
+msgid "\"/\" is not allowed inside a folder name."
+msgstr "\"/\" is niet toegestaan binnen een bestandsnaam"
+
+msgid "All files"
+msgstr "Alle bestanden"
+
+msgid "Choose"
+msgstr "Kies"
+
+msgid "Choose {file}"
+msgstr "Kies {file}"
+
+msgid "Copy"
+msgstr "Kopieer"
+
+msgid "Copy to {target}"
+msgstr "Kopieer naar {target}"
+
+msgid "Could not create the new folder"
+msgstr "Kon de nieuwe map niet maken"
+
+msgid "Create directory"
+msgstr "Maak map"
+
+msgid "Current view selector"
+msgstr "Huidige weergave keuze"
+
+msgid "Favorites"
+msgstr "Favorieten"
+
+msgid "Filepicker sections"
+msgstr "Bestandkiezer secties"
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr "Bestanden en mappen die je favoriet maakt, worden hier getoond."
+
+msgid "Files and folders you recently modified will show up here."
+msgstr ""
+"Bestanden en mappen die je recent hebt gewijzigd, worden hier getoond."
+
+msgid "Filter file list"
+msgstr "Filter bestandslijst"
+
+msgid "Folder name cannot be empty."
+msgstr "Mapnaam mag niet leeg zijn."
+
+msgid "Home"
+msgstr "Home"
+
+msgid "MIME type {mime}"
+msgstr "MIME type {mime}"
+
+msgid "Modified"
+msgstr "Gewijzigd"
+
+msgid "Move"
+msgstr "Verplaatsen"
+
+msgid "Move to {target}"
+msgstr "Verplaats naar {target}"
+
+msgid "Name"
+msgstr "Naam"
+
+msgid "New"
+msgstr "Nieuw"
+
+msgid "New folder"
+msgstr "Nieuwe map"
+
+msgid "New folder name"
+msgstr "Nieuwe mapnaam"
+
+msgid "No files in here"
+msgstr "Geen bestanden hier"
+
+msgid "No files matching your filter were found."
+msgstr "Geen bestanden gevonden die voldoen aan je filter."
+
+msgid "No matching files"
+msgstr "Geen gevonden bestanden"
+
+msgid "Recent"
+msgstr "Recent"
+
+msgid "Select all entries"
+msgstr "Selecteer alle invoer"
+
+msgid "Select entry"
+msgstr "Selecteer invoer"
+
+msgid "Select the row for {nodename}"
+msgstr "Selecteer de rij voor {nodename}"
+
+msgid "Size"
+msgstr "Grootte"
+
 msgid "Undo"
 msgstr "Ongedaan maken"
+
+msgid "unknown"
+msgstr "onbekend"
+
+msgid "Upload some content or sync with your devices!"
+msgstr "Upload inhoud of synchroniseer met je apparaten!"
