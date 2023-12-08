@@ -113,7 +113,7 @@ const props = withDefaults(defineProps<{
 	filterFn: undefined,
 	mimetypeFilter: () => [],
 	multiselect: true,
-	path: '/',
+	path: undefined,
 })
 
 const emit = defineEmits<{
