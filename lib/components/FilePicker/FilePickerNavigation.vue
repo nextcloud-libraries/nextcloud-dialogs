@@ -96,11 +96,11 @@ const updateFilterValue = (value: string) => emit('update:filterString', value)
 	&__side {
 		display: flex;
 		flex-direction: column;
-		align-items: start;
+		align-items: stretch;
 		gap: 0.5rem;
 		min-width: 200px;
 		// ensure focus outline is visible
-		padding-block: 2px;
+		padding: 2px;
 		// make only the navigation scroll
 		overflow: auto;
 
@@ -144,7 +144,7 @@ const updateFilterValue = (value: string) => emit('update:filterString', value)
 <style lang="scss">
 /* Ensure focus outline is visible */
 .file-picker__navigation {
-	padding-inline: 2px;
+	padding-inline: 8px 2px;
 	&, * {
 		box-sizing: border-box;
 	}
