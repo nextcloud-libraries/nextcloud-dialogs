@@ -3,23 +3,24 @@
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Mario Siegmann <mario_siegmann@web.de>, 2023
 # Markus Eckstein, 2023
+# Andy Scherzinger <info@andy-scherzinger.de>, 2023
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Markus Eckstein, 2023\n"
+"Last-Translator: Andy Scherzinger <info@andy-scherzinger.de>, 2023\n"
 "Language-Team: German (https://app.transifex.com/nextcloud/teams/64236/de/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "\"{name}\" is an invalid file name."
-msgstr "\"{name}\" ist ein ungültiger Dateiname."
+msgid "\"{name}\" is an invalid folder name."
+msgstr "\"{name}\" ist ein ungültiger Ordnername."
 
-msgid "\"{name}\" is not an allowed filetype"
-msgstr "\"{name}\" ist kein zulässiger Dateityp."
+msgid "\"{name}\" is not an allowed folder name"
+msgstr "\"{name}\" ist kein zulässiger Ordnername"
 
-msgid "\"/\" is not allowed inside a file name."
-msgstr "\"/\" ist innerhalb eines Dateinamens nicht zulässig."
+msgid "\"/\" is not allowed inside a folder name."
+msgstr "\"/\" ist innerhalb eines Ordnernamens nicht zulässig."
 
 msgid "All files"
 msgstr "Alle Dateien"
@@ -48,9 +49,6 @@ msgstr "Aktuelle Ansichtsauswahl"
 msgid "Favorites"
 msgstr "Favoriten"
 
-msgid "File name cannot be empty."
-msgstr "Der Dateiname darf nicht leer sein."
-
 msgid "Filepicker sections"
 msgstr "Filepicker-Auswahl"
 
@@ -64,6 +62,9 @@ msgstr ""
 
 msgid "Filter file list"
 msgstr "Dateiliste filtern"
+
+msgid "Folder name cannot be empty."
+msgstr "Der Ordnername darf nicht leer sein."
 
 msgid "Home"
 msgstr "Home"
