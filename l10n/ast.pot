@@ -1,15 +1,123 @@
 # 
 # Translators:
-# Joas Schilling, 2023
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# enolp <enolp@softastur.org>, 2023
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
+"Last-Translator: enolp <enolp@softastur.org>, 2023\n"
 "Language-Team: Asturian (https://app.transifex.com/nextcloud/teams/64236/ast/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: ast\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: lib/toast.ts:223
+msgid "\"{name}\" is an invalid folder name."
+msgstr "«{name}» ye un nome de carpeta inválidu."
+
+msgid "\"{name}\" is not an allowed folder name"
+msgstr "«{name}» ye un nome de carpeta inválidu"
+
+msgid "\"/\" is not allowed inside a folder name."
+msgstr "Nun se permite'l caráuter «/» dientro'l nome de les carpetes."
+
+msgid "All files"
+msgstr "Tolos ficheros"
+
+msgid "Choose"
+msgstr "Escoyer"
+
+msgid "Choose {file}"
+msgstr "Escoyer «{ficheru}»"
+
+msgid "Copy"
+msgstr "Copiar"
+
+msgid "Copy to {target}"
+msgstr "Copiar en: {target}"
+
+msgid "Could not create the new folder"
+msgstr "Nun se pudo crear la carpeta"
+
+msgid "Create directory"
+msgstr "Crear un direutoriu"
+
+msgid "Current view selector"
+msgstr "Selector de la vista actual"
+
+msgid "Favorites"
+msgstr "Favoritos"
+
+msgid "Filepicker sections"
+msgstr "Seleición del selector de ficheros"
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr "Equí apaecen los ficheros y les carpetes que metas en Favoritos."
+
+msgid "Files and folders you recently modified will show up here."
+msgstr "Equí apaecen los fichero y les carpetes que modificares apocayá."
+
+msgid "Filter file list"
+msgstr "Peñerar la llista de ficheros"
+
+msgid "Folder name cannot be empty."
+msgstr "El nome de la carpeta nun pue tar baleru."
+
+msgid "Home"
+msgstr "Aniciu"
+
+msgid "MIME type {mime}"
+msgstr "Tipu MIME {mime}"
+
+msgid "Modified"
+msgstr "Modificóse"
+
+msgid "Move"
+msgstr "Mover"
+
+msgid "Move to {target}"
+msgstr "Mover a {target}"
+
+msgid "Name"
+msgstr "Nome"
+
+msgid "New"
+msgstr "Nuevu"
+
+msgid "New folder"
+msgstr "Carpeta nueva"
+
+msgid "New folder name"
+msgstr "Nome de carpeta nuevu"
+
+msgid "No files in here"
+msgstr "Equí nun hai nengún ficheru"
+
+msgid "No files matching your filter were found."
+msgstr "Nun s'atopó nengún ficheru que concasare cola peñera."
+
+msgid "No matching files"
+msgstr "Nun hai nengún ficheru que concase"
+
+msgid "Recent"
+msgstr "De recién"
+
+msgid "Select all entries"
+msgstr "Seleicionar toles entraes"
+
+msgid "Select entry"
+msgstr "Seleicionar la entrada"
+
+msgid "Select the row for {nodename}"
+msgstr "Seleicionar la filera de: {nodename}"
+
+msgid "Size"
+msgstr "Tamañu"
+
 msgid "Undo"
 msgstr "Desfacer"
+
+msgid "unknown"
+msgstr "desconozse"
+
+msgid "Upload some content or sync with your devices!"
+msgstr "¡Xubi dalgún elementu o sincroniza colos tos preseos!"
