@@ -4,10 +4,11 @@
 # Mario Siegmann <mario_siegmann@web.de>, 2023
 # Markus Eckstein, 2023
 # Andy Scherzinger <info@andy-scherzinger.de>, 2023
+# Joachim Sokolowski, 2023
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Andy Scherzinger <info@andy-scherzinger.de>, 2023\n"
+"Last-Translator: Joachim Sokolowski, 2023\n"
 "Language-Team: German (https://app.transifex.com/nextcloud/teams/64236/de/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: de\n"
@@ -67,7 +68,7 @@ msgid "Folder name cannot be empty."
 msgstr "Der Ordnername darf nicht leer sein."
 
 msgid "Home"
-msgstr "Home"
+msgstr "Startseite"
 
 msgid "MIME type {mime}"
 msgstr "MIME-Typ {mime}"
