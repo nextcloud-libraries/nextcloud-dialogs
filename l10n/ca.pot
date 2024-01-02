@@ -1,15 +1,124 @@
 # 
 # Translators:
-# Joas Schilling, 2023
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# v v <e670006006@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
+"Last-Translator: v v <e670006006@gmail.com>, 2024\n"
 "Language-Team: Catalan (https://app.transifex.com/nextcloud/teams/64236/ca/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: ca\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: lib/toast.ts:223
+msgid "\"{name}\" is an invalid folder name."
+msgstr "\"{name}\" és un nom de carpeta no vàlid."
+
+msgid "\"{name}\" is not an allowed folder name"
+msgstr "\"{name}\" no és permès en el nom de carpeta"
+
+msgid "\"/\" is not allowed inside a folder name."
+msgstr "\"/\" no és permès en el nom de carpeta."
+
+msgid "All files"
+msgstr "Tots els arxius"
+
+msgid "Choose"
+msgstr "Triar"
+
+msgid "Choose {file}"
+msgstr "Triar {file}"
+
+msgid "Copy"
+msgstr "Copiar"
+
+msgid "Copy to {target}"
+msgstr "Copiar a {target}"
+
+msgid "Could not create the new folder"
+msgstr "No es pot crear la nova carpeta"
+
+msgid "Create directory"
+msgstr "Crear directori"
+
+msgid "Current view selector"
+msgstr "Selector de visualització actual"
+
+msgid "Favorites"
+msgstr "Favorits"
+
+msgid "Filepicker sections"
+msgstr "Seccions del selector de fitxers"
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr ""
+"Els fitxers i les carpetes que marqueu com a favorits es mostraran aquí."
+
+msgid "Files and folders you recently modified will show up here."
+msgstr "Els fitxers i les carpetes recentment modificats es mostraran aquí."
+
+msgid "Filter file list"
+msgstr "Filtrar llistat de fitxers"
+
+msgid "Folder name cannot be empty."
+msgstr "El nom de la carpeta no pot estar buit."
+
+msgid "Home"
+msgstr "Inici"
+
+msgid "MIME type {mime}"
+msgstr "Tipus MIME {mime}"
+
+msgid "Modified"
+msgstr "Modificat"
+
+msgid "Move"
+msgstr "Moure"
+
+msgid "Move to {target}"
+msgstr "More a {target}"
+
+msgid "Name"
+msgstr "Nom"
+
+msgid "New"
+msgstr "Nou"
+
+msgid "New folder"
+msgstr "Nova carpeta"
+
+msgid "New folder name"
+msgstr "Nom de nova carpeta"
+
+msgid "No files in here"
+msgstr "No hi ha arxius"
+
+msgid "No files matching your filter were found."
+msgstr "No s'han trobat fitxers coincidents amb el vostre filtre."
+
+msgid "No matching files"
+msgstr "Sense arxius coincidents"
+
+msgid "Recent"
+msgstr "Recent"
+
+msgid "Select all entries"
+msgstr "Seleccioneu totes les entrades"
+
+msgid "Select entry"
+msgstr "Seleccionar entrada"
+
+msgid "Select the row for {nodename}"
+msgstr "Seleccioneu la fila per a {nodename}"
+
+msgid "Size"
+msgstr "Mida"
+
 msgid "Undo"
 msgstr "Desfés"
+
+msgid "unknown"
+msgstr "Desconegut"
+
+msgid "Upload some content or sync with your devices!"
+msgstr "Pengeu contingut o sincronitzeu-vos amb els vostres dispositius!"
