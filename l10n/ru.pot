@@ -3,17 +3,18 @@
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Max Smith <sevinfolds@gmail.com>, 2023
 # ashed <craysy@gmail.com>, 2023
+# Alex <kekcuha@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
-"Last-Translator: ashed <craysy@gmail.com>, 2023\n"
+"Last-Translator: Alex <kekcuha@gmail.com>, 2024\n"
 "Language-Team: Russian (https://app.transifex.com/nextcloud/teams/64236/ru/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: ru\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 msgid "\"{name}\" is an invalid folder name."
-msgstr "\"{name}\" недопустимое имя папки."
+msgstr "«{name}» — недопустимое имя папки."
 
 msgid "\"{name}\" is not an allowed folder name"
 msgstr "\"{name}\" не является разрешенным именем папки"
