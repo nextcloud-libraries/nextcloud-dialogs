@@ -35,7 +35,7 @@ msgid "Copy"
 msgstr "Копировать"
 
 msgid "Copy to {target}"
-msgstr "Скопировать в {target}"
+msgstr "Копировать в «{target}»"
 
 msgid "Could not create the new folder"
 msgstr "Не удалось создать новую папку"
