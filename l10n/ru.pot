@@ -41,7 +41,7 @@ msgid "Could not create the new folder"
 msgstr "Не удалось создать новую папку"
 
 msgid "Create directory"
-msgstr "Создать каталог"
+msgstr "Создать папку"
 
 msgid "Current view selector"
 msgstr "Переключатель текущего вида"
