@@ -79,7 +79,6 @@ import type { FileListViews } from '../../composables/filesSettings'
 import { FileType } from '@nextcloud/files'
 import { getCanonicalLocale } from '@nextcloud/l10n'
 import { NcButton, NcCheckboxRadioSwitch } from '@nextcloud/vue'
-import { join } from 'path'
 import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
 import { useFilesSettings, useFilesViews } from '../../composables/filesSettings'
 import { t } from '../../utils/l10n'
@@ -210,7 +209,7 @@ function onNodeSelected(file: Node) {
  * @param dir The directory that is entered
  */
 function onChangeDirectory(dir: Node) {
-	emit('update:path', join(props.path, dir.basename))
+	emit('update:path', dir.path)
 }
 
 /**
