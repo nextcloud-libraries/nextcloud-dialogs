@@ -76,7 +76,6 @@ import { FileType, type Node } from '@nextcloud/files'
 
 import { getCanonicalLocale } from '@nextcloud/l10n'
 import { NcButton, NcCheckboxRadioSwitch } from '@nextcloud/vue'
-import { join } from 'path'
 import { t } from '../../utils/l10n'
 import { computed, nextTick, onMounted, onUnmounted, ref, type Ref } from 'vue'
 
@@ -184,7 +183,7 @@ function onNodeSelected(file: Node) {
 }
 
 function onChangeDirectory(dir: Node) {
-	emit('update:path', join(props.path, dir.basename))
+	emit('update:path', dir.path)
 }
 
 /**
