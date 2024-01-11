@@ -41,6 +41,11 @@ export enum FilePickerType {
 	Custom = 5,
 }
 
+/**
+ * Error that is thrown in the rejected promise when the FilePicker was closed
+ */
+export class FilePickerClosed extends Error {}
+
 export class FilePicker<IsMultiSelect extends boolean> {
 
 	private title: string
@@ -91,7 +96,7 @@ export class FilePicker<IsMultiSelect extends boolean> {
 			}, (...rest: unknown[]) => {
 				const [nodes] = rest as [nodes: Node[]]
 				if (!Array.isArray(nodes) || nodes.length === 0) {
-					reject(new Error('FilePicker: No nodes selected'))
+					reject(new FilePickerClosed('FilePicker: No nodes selected'))
 				} else {
 					if (this.multiSelect) {
 						resolve((nodes as Node[]).map((node) => node.path) as (IsMultiSelect extends true ? string[] : string))
