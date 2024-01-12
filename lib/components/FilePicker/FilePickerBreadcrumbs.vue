@@ -3,7 +3,8 @@
 		<template #default>
 			<NcBreadcrumb :name="t('Home')"
 				:title="t('Home')"
-				@click="emit('update:path', '/')">
+				:href="getPath"
+				@click.prevent="emit('update:path', '/')">
 				<template #icon>
 					<IconHome :size="20" />
 				</template>
@@ -12,7 +13,8 @@
 				:key="dir.path"
 				:name="dir.name"
 				:title="dir.path"
-				@click="emit('update:path', dir.path)" />
+				:href="getPath"
+				@click.prevent="emit('update:path', dir.path)" />
 		</template>
 		<template v-if="showMenu" #actions>
 			<NcActions :aria-label="t('Create directory')"
@@ -119,6 +121,11 @@ const pathElements = computed(() => props.path.split('/')
 		path: '/' + elements.slice(0, i + 1).join('/'),
 	})),
 )
+
+/**
+ * Gets the current url path
+ */
+const getPath = computed(() => window.location.pathname)
 </script>
 
 <style scoped lang="scss">
