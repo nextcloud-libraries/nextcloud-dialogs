@@ -2,10 +2,11 @@
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Claudio Scandella, 2023
+# Raffaele Silano <raffaelone@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Claudio Scandella, 2023\n"
+"Last-Translator: Raffaele Silano <raffaelone@gmail.com>, 2024\n"
 "Language-Team: Italian (https://app.transifex.com/nextcloud/teams/64236/it/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: it\n"
@@ -21,7 +22,7 @@ msgid "\"/\" is not allowed inside a folder name."
 msgstr "\"/\" non è ammesso all'interno del nome di una cartella."
 
 msgid "All files"
-msgstr "Tutti i file."
+msgstr "Tutti i file"
 
 msgid "Choose"
 msgstr "Scegli"
@@ -59,7 +60,7 @@ msgstr ""
 "I file e le cartelle che hai modificato di recente saranno mostrate qui."
 
 msgid "Filter file list"
-msgstr "Lista di file del filtro"
+msgstr "Filtra elenco file"
 
 msgid "Folder name cannot be empty."
 msgstr "Il nome della cartella non può essere vuoto."
@@ -92,7 +93,7 @@ msgid "New folder name"
 msgstr "Nuovo nome cartella"
 
 msgid "No files in here"
-msgstr "Nessun file qui all'interno"
+msgstr "Nessun file qui"
 
 msgid "No files matching your filter were found."
 msgstr "Nessun file che corrisponde al tuo filtro è stato trovato."
@@ -104,10 +105,10 @@ msgid "Recent"
 msgstr "Recente"
 
 msgid "Select all entries"
-msgstr "Seleziona tutti gli elementi"
+msgstr "Scegli tutte le voci"
 
 msgid "Select entry"
-msgstr "Seleziona il valore immesso"
+msgstr "Seleziona la voce"
 
 msgid "Select the row for {nodename}"
 msgstr "Seleziona la riga per {nodename}"
