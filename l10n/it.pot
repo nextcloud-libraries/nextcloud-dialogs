@@ -93,7 +93,7 @@ msgid "New folder name"
 msgstr "Nuovo nome cartella"
 
 msgid "No files in here"
-msgstr "Nessun file qui all'interno"
+msgstr "Nessun file qui"
 
 msgid "No files matching your filter were found."
 msgstr "Nessun file che corrisponde al tuo filtro è stato trovato."
