@@ -108,7 +108,7 @@ msgid "Select all entries"
 msgstr "Scegli tutte le voci"
 
 msgid "Select entry"
-msgstr "Seleziona il valore immesso"
+msgstr "Seleziona la voce"
 
 msgid "Select the row for {nodename}"
 msgstr "Seleziona la riga per {nodename}"
