@@ -2,10 +2,11 @@
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Claudio Scandella, 2023
+# Raffaele Silano <raffaelone@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Claudio Scandella, 2023\n"
+"Last-Translator: Raffaele Silano <raffaelone@gmail.com>, 2024\n"
 "Language-Team: Italian (https://app.transifex.com/nextcloud/teams/64236/it/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: it\n"
@@ -21,7 +22,7 @@ msgid "\"/\" is not allowed inside a folder name."
 msgstr "\"/\" non è ammesso all'interno del nome di una cartella."
 
 msgid "All files"
-msgstr "Tutti i file."
+msgstr "Tutti i file"
 
 msgid "Choose"
 msgstr "Scegli"
