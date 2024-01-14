@@ -60,7 +60,7 @@ msgstr ""
 "I file e le cartelle che hai modificato di recente saranno mostrate qui."
 
 msgid "Filter file list"
-msgstr "Lista di file del filtro"
+msgstr "Filtra elenco file"
 
 msgid "Folder name cannot be empty."
 msgstr "Il nome della cartella non può essere vuoto."
