@@ -1,15 +1,127 @@
 # 
 # Translators:
-# Joas Schilling, 2023
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# JUJER wtf, 2023
+# M H <haincu@o2.pl>, 2023
+# Valdnet, 2024
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
+"Last-Translator: Valdnet, 2024\n"
 "Language-Team: Polish (https://app.transifex.com/nextcloud/teams/64236/pl/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: pl\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
-#: lib/toast.ts:223
+msgid "\"{name}\" is an invalid folder name."
+msgstr "\"{name}\" jest nieprawidłową nazwą folderu"
+
+msgid "\"{name}\" is not an allowed folder name"
+msgstr "\"{name}\" nie jest dozwoloną nazwą folderu"
+
+msgid "\"/\" is not allowed inside a folder name."
+msgstr "Znak \"/\" nie jest dozwolony w nazwie folderu"
+
+msgid "All files"
+msgstr "Wszystkie pliki"
+
+msgid "Choose"
+msgstr "Wybierz"
+
+msgid "Choose {file}"
+msgstr "Wybierz {file}"
+
+msgid "Copy"
+msgstr "Kopiuj"
+
+msgid "Copy to {target}"
+msgstr "Skopiuj do {target}"
+
+msgid "Could not create the new folder"
+msgstr "Nie można utworzyć nowego folderu"
+
+msgid "Create directory"
+msgstr "Utwórz katalog"
+
+msgid "Current view selector"
+msgstr "Bieżący selektor widoku"
+
+msgid "Favorites"
+msgstr "Ulubione"
+
+msgid "Filepicker sections"
+msgstr "Sekcje Filepickera"
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr ""
+"Pliki i foldery które oznaczysz jako ulubione będą wyświetlały się tutaj"
+
+msgid "Files and folders you recently modified will show up here."
+msgstr ""
+"Pliki i foldery które ostatnio modyfikowałeś będą wyświetlały się tutaj"
+
+msgid "Filter file list"
+msgstr "Filtruj listę plików"
+
+msgid "Folder name cannot be empty."
+msgstr "Nazwa folderu nie może być pusta"
+
+msgid "Home"
+msgstr "Strona główna"
+
+msgid "MIME type {mime}"
+msgstr "Typ MIME {mime}"
+
+msgid "Modified"
+msgstr "Zmodyfikowano"
+
+msgid "Move"
+msgstr "Przenieś"
+
+msgid "Move to {target}"
+msgstr "Przejdź do {target}"
+
+msgid "Name"
+msgstr "Nazwa"
+
+msgid "New"
+msgstr "Nowy"
+
+msgid "New folder"
+msgstr "Nowy folder"
+
+msgid "New folder name"
+msgstr "Nowa nazwa folderu"
+
+msgid "No files in here"
+msgstr "Brak plików"
+
+msgid "No files matching your filter were found."
+msgstr "Nie znaleziono plików spełniających warunki filtru"
+
+msgid "No matching files"
+msgstr "Brak pasujących plików"
+
+msgid "Recent"
+msgstr "Ostatni"
+
+msgid "Select all entries"
+msgstr "Wybierz wszystkie wpisy"
+
+msgid "Select entry"
+msgstr "Wybierz wpis"
+
+msgid "Select the row for {nodename}"
+msgstr "Wybierz wiersz dla {nodename}"
+
+msgid "Size"
+msgstr "Rozmiar"
+
 msgid "Undo"
 msgstr "Cofnij"
+
+msgid "unknown"
+msgstr "nieznany"
+
+msgid "Upload some content or sync with your devices!"
+msgstr "Wyślij zawartość lub zsynchronizuj ze swoimi urządzeniami!"
