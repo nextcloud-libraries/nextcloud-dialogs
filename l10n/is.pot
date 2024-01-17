@@ -47,9 +47,6 @@ msgstr "Núverandi val sýnar"
 msgid "Favorites"
 msgstr "Eftirlæti"
 
-msgid "Filepicker sections"
-msgstr "Hlutar skráaveljara"
-
 msgid "Files and folders you mark as favorite will show up here."
 msgstr "Skrár og möppur sem þú merkir sem eftirlæti birtast hér."
 
@@ -64,9 +61,6 @@ msgstr "Möppuheiti má ekki vera tómt."
 
 msgid "Home"
 msgstr "Heim"
-
-msgid "MIME type {mime}"
-msgstr "MIME-tegund {mime}"
 
 msgid "Modified"
 msgstr "Breytt"
@@ -115,9 +109,6 @@ msgstr "Stærð"
 
 msgid "Undo"
 msgstr "Afturkalla"
-
-msgid "unknown"
-msgstr "óþekkt"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Sendu inn eitthvað efni eða samstilltu við tækin þín!"
