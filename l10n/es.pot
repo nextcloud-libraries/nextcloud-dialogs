@@ -48,9 +48,6 @@ msgstr "Selector de vista actual"
 msgid "Favorites"
 msgstr "Favoritos"
 
-msgid "Filepicker sections"
-msgstr "Secciones del selector de archivos"
-
 msgid "Files and folders you mark as favorite will show up here."
 msgstr "Los archivos y carpetas que marque como favoritos aparecerán aquí."
 
@@ -65,9 +62,6 @@ msgstr "El nombre de la carpeta no puede estar vacío."
 
 msgid "Home"
 msgstr "Inicio"
-
-msgid "MIME type {mime}"
-msgstr "Tipo MIME {mime}"
 
 msgid "Modified"
 msgstr "Modificado"
@@ -116,9 +110,6 @@ msgstr "Tamaño"
 
 msgid "Undo"
 msgstr "Deshacer"
-
-msgid "unknown"
-msgstr "desconocido"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "¡Cargue algún contenido o sincronice con sus dispositivos!"
