@@ -49,9 +49,6 @@ msgstr "Переключатель текущего вида"
 msgid "Favorites"
 msgstr "Избранное"
 
-msgid "Filepicker sections"
-msgstr "Разделы для выбора файлов"
-
 msgid "Files and folders you mark as favorite will show up here."
 msgstr "Здесь появятся файлы и папки, которые вы пометили как избранные."
 
@@ -66,9 +63,6 @@ msgstr "Имя папки не может быть пустым."
 
 msgid "Home"
 msgstr "Home"
-
-msgid "MIME type {mime}"
-msgstr "MIME тип {mime}"
 
 msgid "Modified"
 msgstr "Модифицированный"
@@ -117,9 +111,6 @@ msgstr "Размер"
 
 msgid "Undo"
 msgstr "Отменить"
-
-msgid "unknown"
-msgstr "неизвестный"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Загрузите контент или синхронизируйте его со своими устройствами!"
