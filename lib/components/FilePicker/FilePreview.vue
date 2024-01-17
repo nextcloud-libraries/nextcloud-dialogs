@@ -1,6 +1,5 @@
 <template>
 	<div :style="canLoadPreview ? { backgroundImage: `url(${previewURL})`} : undefined"
-		:aria-label="t('MIME type {mime}', { mime: node.mime || t('unknown') })"
 		:class="fileListIconStyles['file-picker__file-icon']">
 		<template v-if="!canLoadPreview">
 			<IconFile v-if="isFile" :size="20" />

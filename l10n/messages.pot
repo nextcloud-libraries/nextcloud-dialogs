@@ -53,9 +53,6 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-msgid "MIME type {mime}"
-msgstr ""
-
 msgid "Modified"
 msgstr ""
 
@@ -102,9 +99,6 @@ msgid "Size"
 msgstr ""
 
 msgid "Undo"
-msgstr ""
-
-msgid "unknown"
 msgstr ""
 
 msgid "Upload some content or sync with your devices!"
