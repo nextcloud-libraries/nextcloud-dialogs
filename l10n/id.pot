@@ -47,9 +47,6 @@ msgstr "Pemilih tampilan saat ini"
 msgid "Favorites"
 msgstr "Favorit"
 
-msgid "Filepicker sections"
-msgstr "Bagian pemilih berkas"
-
 msgid "Files and folders you mark as favorite will show up here."
 msgstr ""
 "Berkas dan folder yang Anda tandai sebagai favorit akan muncul di sini."
@@ -65,9 +62,6 @@ msgstr "Name berkas tidak dapat kosong."
 
 msgid "Home"
 msgstr "Beranda"
-
-msgid "MIME type {mime}"
-msgstr "Jenis MIME {mime}"
 
 msgid "Modified"
 msgstr "Diubah"
@@ -116,9 +110,6 @@ msgstr "Ukuran"
 
 msgid "Undo"
 msgstr "Tidak jadi"
-
-msgid "unknown"
-msgstr "tidak diketahui"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Unggah beberapa konten atau sinkron dengan perangkat Anda!"

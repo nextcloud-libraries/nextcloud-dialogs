@@ -47,9 +47,6 @@ msgstr "Selector de vista actual"
 msgid "Favorites"
 msgstr "Favoritos"
 
-msgid "Filepicker sections"
-msgstr "Seccións do selector de ficheiros"
-
 msgid "Files and folders you mark as favorite will show up here."
 msgstr "Os ficheiros e cartafoles que marque como favoritos aparecerán aquí."
 
@@ -64,9 +61,6 @@ msgstr "O nome do cartafol non pode estar baleiro."
 
 msgid "Home"
 msgstr "Inicio"
-
-msgid "MIME type {mime}"
-msgstr "Tipo MIME {mime}"
 
 msgid "Modified"
 msgstr "Modificado"
@@ -115,9 +109,6 @@ msgstr "Tamaño"
 
 msgid "Undo"
 msgstr "Desfacer"
-
-msgid "unknown"
-msgstr "descoñecido"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Enviar algún contido ou sincronizalo cos seus dispositivos!"
