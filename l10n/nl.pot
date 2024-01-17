@@ -48,9 +48,6 @@ msgstr "Huidige weergave keuze"
 msgid "Favorites"
 msgstr "Favorieten"
 
-msgid "Filepicker sections"
-msgstr "Bestandkiezer secties"
-
 msgid "Files and folders you mark as favorite will show up here."
 msgstr "Bestanden en mappen die je favoriet maakt, worden hier getoond."
 
@@ -66,9 +63,6 @@ msgstr "Mapnaam mag niet leeg zijn."
 
 msgid "Home"
 msgstr "Home"
-
-msgid "MIME type {mime}"
-msgstr "MIME type {mime}"
 
 msgid "Modified"
 msgstr "Gewijzigd"
@@ -117,9 +111,6 @@ msgstr "Grootte"
 
 msgid "Undo"
 msgstr "Ongedaan maken"
-
-msgid "unknown"
-msgstr "onbekend"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Upload inhoud of synchroniseer met je apparaten!"
