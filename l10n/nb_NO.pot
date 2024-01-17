@@ -47,9 +47,6 @@ msgstr "Nåværende visningsvelger"
 msgid "Favorites"
 msgstr "Favoritter"
 
-msgid "Filepicker sections"
-msgstr "Filvelger seksjoner"
-
 msgid "Files and folders you mark as favorite will show up here."
 msgstr "Filer og mapper du markerer som favoritter vil vises her."
 
@@ -64,9 +61,6 @@ msgstr "Mappenavn kan ikke være tomt."
 
 msgid "Home"
 msgstr "Hjem"
-
-msgid "MIME type {mime}"
-msgstr "MIME type {mime}"
 
 msgid "Modified"
 msgstr "Modifisert"
@@ -115,9 +109,6 @@ msgstr "Størrelse"
 
 msgid "Undo"
 msgstr "Angre"
-
-msgid "unknown"
-msgstr "ukjent"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Last opp innhold eller synkroniser med enhetene dine!"
