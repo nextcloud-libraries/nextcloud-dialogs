@@ -50,9 +50,6 @@ msgstr "Aktuelle Ansichtsauswahl"
 msgid "Favorites"
 msgstr "Favoriten"
 
-msgid "Filepicker sections"
-msgstr "Filepicker-Auswahl"
-
 msgid "Files and folders you mark as favorite will show up here."
 msgstr ""
 "Dateien und Ordner, die du als Favorit markierst, werden hier angezeigt."
@@ -69,9 +66,6 @@ msgstr "Der Ordnername darf nicht leer sein."
 
 msgid "Home"
 msgstr "Startseite"
-
-msgid "MIME type {mime}"
-msgstr "MIME-Typ {mime}"
 
 msgid "Modified"
 msgstr "Geändert"
@@ -120,9 +114,6 @@ msgstr "Größe"
 
 msgid "Undo"
 msgstr "Rückgängig"
-
-msgid "unknown"
-msgstr "Unbekannt"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Lade Inhalte hoch oder synchronisieren diese mit deinen Geräten!"
