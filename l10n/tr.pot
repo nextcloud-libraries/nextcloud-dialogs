@@ -47,9 +47,6 @@ msgstr "Geçerli görünüm seçici"
 msgid "Favorites"
 msgstr "Sık kullanılanlar"
 
-msgid "Filepicker sections"
-msgstr "Dosya seçici bölümleri"
-
 msgid "Files and folders you mark as favorite will show up here."
 msgstr "Sık kullanılan olarak seçtiğiniz dosyalar burada görüntülenir."
 
@@ -65,9 +62,6 @@ msgstr "Klasör adı boş olamaz."
 
 msgid "Home"
 msgstr "Giriş"
-
-msgid "MIME type {mime}"
-msgstr "MIME türü {mime}"
 
 msgid "Modified"
 msgstr "Değiştirilme"
@@ -116,9 +110,6 @@ msgstr "Boyut"
 
 msgid "Undo"
 msgstr "Geri al"
-
-msgid "unknown"
-msgstr "bilinmiyor"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Bazı içerikler yükleyin ya da aygıtlarınızla eşitleyin!"

@@ -47,9 +47,6 @@ msgstr "Selectorul curent al vizualizării"
 msgid "Favorites"
 msgstr "Favorite"
 
-msgid "Filepicker sections"
-msgstr "Secțiuni ale selectorului de fișiere"
-
 msgid "Files and folders you mark as favorite will show up here."
 msgstr "Fișiere și directoare pe care le marcați ca favorite vor apărea aici."
 
@@ -65,9 +62,6 @@ msgstr "Numele de director nu poate fi necompletat."
 
 msgid "Home"
 msgstr "Acasă"
-
-msgid "MIME type {mime}"
-msgstr "Tip MIME {mime}"
 
 msgid "Modified"
 msgstr "Modificat"
@@ -116,9 +110,6 @@ msgstr "Mărime"
 
 msgid "Undo"
 msgstr "Anulează"
-
-msgid "unknown"
-msgstr "necunoscut"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Încărcați conținut sau sincronizați cu dispozitivele dumneavoastră!"
