@@ -25,7 +25,7 @@ msgid "All files"
 msgstr "Todos los archivos"
 
 msgid "Choose"
-msgstr "Escoger"
+msgstr "Escoja"
 
 msgid "Choose {file}"
 msgstr "Escoger {file}"
