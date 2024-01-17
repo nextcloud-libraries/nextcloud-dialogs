@@ -47,9 +47,6 @@ msgstr "Výběr stávajícího zobrazení"
 msgid "Favorites"
 msgstr "Oblíbené"
 
-msgid "Filepicker sections"
-msgstr "Sekce dialogu pro výběr souboru"
-
 msgid "Files and folders you mark as favorite will show up here."
 msgstr "Zde se zobrazí soubory a složky, které označíte jako oblíbené."
 
@@ -64,9 +61,6 @@ msgstr "Složku je třeba nějak nazvat."
 
 msgid "Home"
 msgstr "Domů"
-
-msgid "MIME type {mime}"
-msgstr "MIME typ {mime}"
 
 msgid "Modified"
 msgstr "Změněno"
@@ -115,9 +109,6 @@ msgstr "Velikost"
 
 msgid "Undo"
 msgstr "Zpět"
-
-msgid "unknown"
-msgstr "neznámé"
 
 msgid "Upload some content or sync with your devices!"
 msgstr ""
