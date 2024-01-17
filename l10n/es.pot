@@ -118,7 +118,7 @@ msgid "Undo"
 msgstr "Deshacer"
 
 msgid "unknown"
-msgstr "Desconocido"
+msgstr "desconocido"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "¡Cargue algún contenido o sincronice con sus dispositivos!"
