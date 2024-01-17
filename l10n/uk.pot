@@ -46,9 +46,6 @@ msgstr "Вибір подання"
 msgid "Favorites"
 msgstr "Із зірочкою"
 
-msgid "Filepicker sections"
-msgstr "Розділи для вибору файлів"
-
 msgid "Files and folders you mark as favorite will show up here."
 msgstr "Тут показуватимуться файли та каталоги, які ви позначите зірочкою."
 
@@ -63,9 +60,6 @@ msgstr "Ім'я каталогу не може бути порожнім."
 
 msgid "Home"
 msgstr "Домівка"
-
-msgid "MIME type {mime}"
-msgstr "Тип MIME {mime}"
 
 msgid "Modified"
 msgstr "Змінено"
@@ -114,9 +108,6 @@ msgstr "Розмір"
 
 msgid "Undo"
 msgstr "Повернути"
-
-msgid "unknown"
-msgstr "невідомо"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Завантажте вміст або синхронізуйте з вашим пристроєм!"
