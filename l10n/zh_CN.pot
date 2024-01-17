@@ -48,9 +48,6 @@ msgstr "当前视图选择器"
 msgid "Favorites"
 msgstr "最爱"
 
-msgid "Filepicker sections"
-msgstr "文件选取器选择"
-
 msgid "Files and folders you mark as favorite will show up here."
 msgstr "您标记为最爱的文件与文件夹会显示在这里"
 
@@ -65,9 +62,6 @@ msgstr "文件夹名称不能为空。"
 
 msgid "Home"
 msgstr "主目录"
-
-msgid "MIME type {mime}"
-msgstr "MIME 类型 {mime}"
 
 msgid "Modified"
 msgstr "已修改"
@@ -116,9 +110,6 @@ msgstr "大小"
 
 msgid "Undo"
 msgstr " 撤消"
-
-msgid "unknown"
-msgstr "未知"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "上传一些项目或与您的设备同步！"
