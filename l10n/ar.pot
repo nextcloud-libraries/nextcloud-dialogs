@@ -47,9 +47,6 @@ msgstr "مُنتقِي المنظور الحالي"
 msgid "Favorites"
 msgstr "المُفضَّلة"
 
-msgid "Filepicker sections"
-msgstr "أقسام مُنتقِي الملفات"
-
 msgid "Files and folders you mark as favorite will show up here."
 msgstr "الملفات و المجلدات التي تُميِّزُها كمٌفضَّلة ستظهر هنا."
 
@@ -64,9 +61,6 @@ msgstr "اسم المجلد لا يمكن أن يكون فارغاً."
 
 msgid "Home"
 msgstr "البداية"
-
-msgid "MIME type {mime}"
-msgstr "نوع الملف {mime}"
 
 msgid "Modified"
 msgstr "مُعدَّل"
@@ -115,9 +109,6 @@ msgstr "الحجم"
 
 msgid "Undo"
 msgstr "تراجع"
-
-msgid "unknown"
-msgstr "غير محدد"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "قُم برفع محتوىً أو قُم بمزامنة أجهزتك!"
