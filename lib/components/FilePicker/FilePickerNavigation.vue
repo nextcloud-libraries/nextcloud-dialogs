@@ -14,14 +14,10 @@
 		</NcTextField>
 		<!-- On non collapsed dialogs show the tablist, otherwise a dropdown is shown -->
 		<ul v-if="!isCollapsed"
-			class="file-picker__side"
-			role="tablist"
-			:aria-label="t('Filepicker sections')">
+			class="file-picker__side">
 			<li v-for="view in allViews" :key="view.id">
-				<NcButton :aria-selected="currentView === view.id"
-					:type="currentView === view.id ? 'primary' : 'tertiary'"
+				<NcButton :type="currentView === view.id ? 'primary' : 'tertiary'"
 					:wide="true"
-					role="tab"
 					@click="$emit('update:currentView', view.id)">
 					<template #icon>
 						<component :is="view.icon" :size="20" />
