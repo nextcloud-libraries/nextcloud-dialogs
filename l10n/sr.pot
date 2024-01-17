@@ -47,9 +47,6 @@ msgstr "Бирач тренутног приказа"
 msgid "Favorites"
 msgstr "Омиљено"
 
-msgid "Filepicker sections"
-msgstr "Одељци бирача фајлова"
-
 msgid "Files and folders you mark as favorite will show up here."
 msgstr "Овде ће се појавити фајлови и фолдери које сте означили као омиљене."
 
@@ -64,9 +61,6 @@ msgstr "Име фолдера не може бити празно."
 
 msgid "Home"
 msgstr "Почетак"
-
-msgid "MIME type {mime}"
-msgstr "MIME тип {mime}"
 
 msgid "Modified"
 msgstr "Измењено"
@@ -115,9 +109,6 @@ msgstr "Величина"
 
 msgid "Undo"
 msgstr "Поништи"
-
-msgid "unknown"
-msgstr "непозната"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Отпремите нешто или синхронизујте са својим уређајима!"
