@@ -47,9 +47,6 @@ msgstr "Aktuell vyväljare"
 msgid "Favorites"
 msgstr "Favoriter"
 
-msgid "Filepicker sections"
-msgstr "Filepicker-sektioner"
-
 msgid "Files and folders you mark as favorite will show up here."
 msgstr "Filer och mappar som du markerar som favorit kommer att visas här."
 
@@ -64,9 +61,6 @@ msgstr "Mappnamnet får inte vara tomt."
 
 msgid "Home"
 msgstr "Hem"
-
-msgid "MIME type {mime}"
-msgstr "MIME typ {mime}"
 
 msgid "Modified"
 msgstr "Ändrad"
@@ -115,9 +109,6 @@ msgstr "Storlek"
 
 msgid "Undo"
 msgstr "Ångra"
-
-msgid "unknown"
-msgstr "okänd"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Ladda upp lite innehåll eller synkronisera med dina enheter!"
