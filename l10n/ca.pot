@@ -47,9 +47,6 @@ msgstr "Selector de visualització actual"
 msgid "Favorites"
 msgstr "Favorits"
 
-msgid "Filepicker sections"
-msgstr "Seccions del selector de fitxers"
-
 msgid "Files and folders you mark as favorite will show up here."
 msgstr ""
 "Els fitxers i les carpetes que marqueu com a favorits es mostraran aquí."
@@ -65,9 +62,6 @@ msgstr "El nom de la carpeta no pot estar buit."
 
 msgid "Home"
 msgstr "Inici"
-
-msgid "MIME type {mime}"
-msgstr "Tipus MIME {mime}"
 
 msgid "Modified"
 msgstr "Modificat"
@@ -116,9 +110,6 @@ msgstr "Mida"
 
 msgid "Undo"
 msgstr "Desfés"
-
-msgid "unknown"
-msgstr "Desconegut"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Pengeu contingut o sincronitzeu-vos amb els vostres dispositius!"
