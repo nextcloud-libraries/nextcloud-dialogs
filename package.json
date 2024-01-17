@@ -80,7 +80,7 @@
     "@zamiell/typedoc-plugin-not-exported": "^0.2.0",
     "gettext-extractor": "^3.8.0",
     "gettext-parser": "^7.0.1",
-    "happy-dom": "^13.0.4",
+    "happy-dom": "^13.1.4",
     "sass": "^1.69.7",
     "stylelint": "^15.11.0",
     "tslib": "^2.6.2",
@@ -88,7 +88,7 @@
     "typescript": "^5.3.3",
     "typescript-plugin-css-modules": "^5.0.2",
     "vite": "^5.0.11",
-    "vitest": "^1.2.0",
+    "vitest": "^1.2.1",
     "vue-material-design-icons": "^5.2.0",
     "vue-template-compiler": "^2.7.16"
   },

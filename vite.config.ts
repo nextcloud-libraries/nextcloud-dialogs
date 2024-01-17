@@ -58,11 +58,11 @@ export default defineConfig((env) => {
 			// for subpath imports like '@nextcloud/l10n/gettext'
 			include: [/^@nextcloud\//],
 			exclude: [
-				// we should externalize vue SFC dependencies 
-				/^vue-material-design-icons\//, 
-				/\.vue(\?|$)/, 
+				// we should not rely on external vue SFC dependencies thus bundle all .vue files
+				/^vue-material-design-icons\//,
+				/\.vue(\?|$)/,
 				// and bundle raw data, e.g., raw SVGs
-				/\?raw$/
+				/\?raw$/,
 			],
 		},
 		// Inject our translations
