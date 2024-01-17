@@ -47,9 +47,6 @@ msgstr "Selector de la vista actual"
 msgid "Favorites"
 msgstr "Favoritos"
 
-msgid "Filepicker sections"
-msgstr "Seleición del selector de ficheros"
-
 msgid "Files and folders you mark as favorite will show up here."
 msgstr "Equí apaecen los ficheros y les carpetes que metas en Favoritos."
 
@@ -64,9 +61,6 @@ msgstr "El nome de la carpeta nun pue tar baleru."
 
 msgid "Home"
 msgstr "Aniciu"
-
-msgid "MIME type {mime}"
-msgstr "Tipu MIME {mime}"
 
 msgid "Modified"
 msgstr "Modificóse"
@@ -115,9 +109,6 @@ msgstr "Tamañu"
 
 msgid "Undo"
 msgstr "Desfacer"
-
-msgid "unknown"
-msgstr "desconozse"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "¡Xubi dalgún elementu o sincroniza colos tos preseos!"
