@@ -6,17 +6,16 @@
 		}]"
 		:data-filename="node.basename"
 		data-testid="file-list-row"
-		@click="handleClick"
-		v-on="
+		v-on="{
+			click: handleClick,
 			/* same as tabindex -> if we hide the checkbox or this is a directory we need keyboard access to enter the directory or select the node */
-			(!showCheckbox || isDirectory) ? { keydown: handleKeyDown } : {}
-		">
-		<td v-if="showCheckbox" class="row-checkbox">
-			<NcCheckboxRadioSwitch :disabled="!isPickable"
+			...(!showCheckbox || isDirectory ? { keydown: handleKeyDown } : {}),
+		}">
+		<td v-if="showCheckbox" class="row-checkbox" @click.stop="() => {/* Stop the click event */}">
+			<NcCheckboxRadioSwitch :aria-label="t('Select the row for {nodename}', { nodename: displayName })"
 				:checked="selected"
-				:aria-label="t('Select the row for {nodename}', { nodename: displayName })"
+				:disabled="!isPickable"
 				data-testid="row-checkbox"
-				@click.stop="/* just stop the click event */"
 				@update:checked="toggleSelected" />
 		</td>
 		<td class="row-name">
