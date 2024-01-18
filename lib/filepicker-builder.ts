@@ -25,7 +25,7 @@ import type { Node } from '@nextcloud/files'
 
 import { basename } from 'path'
 import { spawnDialog } from './utils/dialogs'
-import { t } from './utils/l10n'
+import { n, t } from './utils/l10n'
 
 import IconMove from '@mdi/svg/svg/folder-move.svg?raw'
 import IconCopy from '@mdi/svg/svg/folder-multiple.svg?raw'
@@ -209,10 +209,16 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 			const target = node || basename(path)
 
 			if (type === FilePickerType.Choose) {
+				let label = t('Choose')
+				if (nodes.length === 1) {
+					label = t('Choose {file}', { file: node })
+				} else if (this.multiSelect) {
+					label = n('Choose %n file', 'Choose %n files', nodes.length)
+				}
 				buttons.push({
 					callback: () => {},
-					label: node && !this.multiSelect ? t('Choose {file}', { file: node }) : t('Choose'),
 					type: 'primary',
+					label,
 				})
 			}
 			if (type === FilePickerType.CopyMove || type === FilePickerType.Copy) {

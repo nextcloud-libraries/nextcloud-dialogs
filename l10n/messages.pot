@@ -20,6 +20,11 @@ msgstr ""
 msgid "Choose {file}"
 msgstr ""
 
+msgid "Choose %n file"
+msgid_plural "Choose %n files"
+msgstr[0] ""
+msgstr[1] ""
+
 msgid "Copy"
 msgstr ""
 
