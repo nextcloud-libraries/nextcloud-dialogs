@@ -21,8 +21,8 @@
  */
 
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { shallowMount } from '@vue/test-utils'
 import { File } from '@nextcloud/files'
+import { shallowMount } from '@vue/test-utils'
 
 import FileListRow from './FileListRow.vue'
 
@@ -33,6 +33,7 @@ describe('FilePicker: FileListRow', () => {
 		mime: 'text/plain',
 		source: 'https://example.com/dav/a.txt',
 		root: '/',
+		attributes: { displayName: 'test' },
 	})
 
 	afterEach(() => {
@@ -90,9 +91,14 @@ describe('FilePicker: FileListRow', () => {
 				node,
 				cropImagePreviews: true,
 			},
+			stubs: {
+				NcCheckboxRadioSwitch: {
+					template: '<label><input type="checkbox" @click="$emit(\'update:checked\', true)" ></label>',
+				},
+			},
 		})
 
-		await wrapper.find('[data-testid="row-checkbox"]').trigger('click')
+		await wrapper.find('input[type="checkbox"]').trigger('click')
 
 		// one event with payload `true` is expected
 		expect(wrapper.emitted('update:selected')).toEqual([[true]])
