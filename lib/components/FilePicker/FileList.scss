@@ -7,6 +7,10 @@ tr.file-picker__row {
 		text-overflow: ellipsis;
 		border-bottom: none; // remove lines between elements
 
+		&.row-checkbox {
+			padding: 0 2px;
+		}
+
 		// checkbox is always fully left aligned
 		&:not(.row-checkbox) {
 			padding-inline: 14px 0;
