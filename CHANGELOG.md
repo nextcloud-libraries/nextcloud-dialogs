@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.2.3](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v4.2.3) (2024-01-19)
+
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v4.2.2...v4.2.3)
+
+### :bug: Fixed bugs
+* fix(FilePicker): Use Node::path for current path fixing an clicking favorite folders [\#1167](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1167) ([susnux](https://github.com/susnux))
+
+### Changed
+* Updated dependencies
+
 ## [v4.2.2](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v4.2.2) (2023-11-02)
 
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v4.2.1...v4.2.2)
