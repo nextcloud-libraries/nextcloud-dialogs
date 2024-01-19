@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v5.1.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.0.3) (2024-01-19)
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.0.3...v5.1.0)
+
+### :rocket: Enhancement
+* enh(FilePickerBuilder): Change error thrown when FilePicker is closed [\#1166](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1166) \([susnux](https://github.com/susnux)\)
+
+### :bug: Fixed bugs
+* fix(FilePicker): Adjust stylings after migration to `NcDialog` [\#1138](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1138) \([susnux](https://github.com/susnux)\)
+* fix(FilePicker): Set default of `path` to undefined to allow using the saved path [\#1137](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1137) \([susnux](https://github.com/susnux)\)
+* fix(FilePicker): Use `Node::path` for current path fixing an clicking favorite folders [\#1165](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1165) \([susnux](https://github.com/susnux)\)
+* fix(FilePicker): Stop click event on checkbox column to allow multiselect [\#1192](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1192) \([susnux](https://github.com/susnux)\)
+* fix(FilePicker): Adjust checkbox position [\#1193](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1193) \([susnux](https://github.com/susnux)\)
+* fix(FilePicker): Improve choose button text when selecting multiple [\#1191](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1191) \([susnux](https://github.com/susnux)\)
+* Remove unneeded `tab`, `tablist` and `aria-selected` roles from navigation [\#1180](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1180) \([JuliaKirschenheuter](https://github.com/JuliaKirschenheuter)\)
+* Remove `aria-label` from `<div>` [\#1179](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1179) \([JuliaKirschenheuter](https://github.com/JuliaKirschenheuter)\)
+
+### Changed
+* Updated translations
+* Updated dependencies
+
 ## [v5.0.3](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.0.3) (2023-11-27)
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.0.2...v5.0.3)
 
