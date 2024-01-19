@@ -1,5 +1,6 @@
 export {
 	FilePicker,
+	FilePickerClosed,
 	FilePickerType,
 	FilePickerBuilder,
 	getFilePickerBuilder,
