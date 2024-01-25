@@ -1,5 +1,5 @@
 <template>
-	<NcDialog v-bind="dialogProps" @update:open="handleClose">
+	<NcDialog v-bind="dialogProps" :open.sync="isOpen" @update:open="handleClose">
 		<template #navigation="{ isCollapsed }">
 			<FilePickerNavigation :is-collapsed="isCollapsed" :current-view.sync="currentView" :filter-string.sync="filterString" />
 		</template>
@@ -120,6 +120,8 @@ const emit = defineEmits<{
 	(e: 'close', v?: Node[]): void
 }>()
 
+const isOpen = ref(true)
+
 /**
  * Props to be passed to the underlying Dialog component
  */
@@ -143,13 +145,27 @@ const dialogButtons = computed(() => {
 
 	return buttons.map((button) => ({
 		...button,
-		callback: async () => {
-			const nodes = selectedFiles.value.length === 0 && props.allowPickDirectory ? [await getFile(currentPath.value)] : selectedFiles.value as Node[]
-			button.callback(nodes)
-			emit('close', nodes)
+		callback: () => {
+			// lock default close handling
+			isHandlingCallback = true
+			handleButtonClick(button.callback)
 		},
 	} as IFilePickerButton))
 })
+
+/**
+ * Flag that is set when a button was clicked to prevent the default close event to be emitted
+ * This is needed as `handleButtonClick` is async and thus might execute after NcDialog already closed
+ */
+let isHandlingCallback = false
+
+const handleButtonClick = async (callback: IFilePickerButton['callback']) => {
+	const nodes = selectedFiles.value.length === 0 && props.allowPickDirectory ? [await getFile(currentPath.value)] : selectedFiles.value as Node[]
+	callback(nodes)
+	emit('close', nodes)
+	// Unlock close
+	isHandlingCallback = false
+}
 
 /**
  * Name of the currently active view
@@ -272,7 +288,7 @@ const onCreateFolder = async (name: string) => {
  * @param open If the dialog is open
  */
 const handleClose = (open: boolean) => {
-	if (!open) {
+	if (!open && !isHandlingCallback) {
 		emit('close')
 	}
 }
