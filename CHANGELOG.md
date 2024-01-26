@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v5.1.1](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.0.3) (2024-01-26)
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.1.0...v5.1.1)
+
+### :bug: Fixed bugs
+* fix(FilePicker): Stop default close event in case of button press [\#1207](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1207) \([susnux](https://github.com/susnux)\)
+* fix(FilePicker): Export `FilePickerClosed` error [\#1198](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1198) \([susnux](https://github.com/susnux)\)
+
+### Changed
+* Updated translations
+* Updated development dependencies
+
 ## [v5.1.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.0.3) (2024-01-19)
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.0.3...v5.1.0)
 
