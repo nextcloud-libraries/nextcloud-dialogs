@@ -1,11 +1,11 @@
 # 
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
-# Magnus Höglund, 2023
+# Magnus Höglund, 2024
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Magnus Höglund, 2023\n"
+"Last-Translator: Magnus Höglund, 2024\n"
 "Language-Team: Swedish (https://app.transifex.com/nextcloud/teams/64236/sv/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: sv\n"
@@ -28,6 +28,11 @@ msgstr "Välj"
 
 msgid "Choose {file}"
 msgstr "Välj {file}"
+
+msgid "Choose %n file"
+msgid_plural "Choose %n files"
+msgstr[0] "Välj %n fil"
+msgstr[1] "Välj %n filer"
 
 msgid "Copy"
 msgstr "Kopiera"
