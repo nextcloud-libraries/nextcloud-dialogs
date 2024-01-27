@@ -1,10 +1,11 @@
 #
 # Translators:
-# Joas Schilling, 2023
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# v v <e670006006@gmail.com>, 2024
 #
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
+"Last-Translator: v v <e670006006@gmail.com>, 2024\n"
 "Language-Team: Catalan (https://app.transifex.com/nextcloud/teams/64236/"
 "ca/)\n"
 "Language: ca\n"
@@ -24,31 +25,31 @@ msgid "a few seconds ago"
 msgstr ""
 
 msgid "All files"
-msgstr ""
+msgstr "Tots els arxius"
 
 msgid "Choose"
-msgstr ""
+msgstr "Triar"
 
 msgid "Choose {file}"
-msgstr ""
+msgstr "Triar {file}"
 
 msgid "Copy"
-msgstr ""
+msgstr "Copiar"
 
 msgid "Copy to {target}"
-msgstr ""
+msgstr "Copiar a {target}"
 
 msgid "Could not create the new folder"
-msgstr ""
+msgstr "No es pot crear la nova carpeta"
 
 msgid "Create directory"
-msgstr ""
+msgstr "Crear directori"
 
 msgid "Current view selector"
-msgstr ""
+msgstr "Selector de visualització actual"
 
 msgid "Favorites"
-msgstr ""
+msgstr "Favorits"
 
 msgid "File name cannot be empty."
 msgstr ""
@@ -58,51 +59,52 @@ msgstr ""
 
 msgid "Files and folders you mark as favorite will show up here."
 msgstr ""
+"Els fitxers i les carpetes que marqueu com a favorits es mostraran aquí."
 
 msgid "Files and folders you recently modified will show up here."
-msgstr ""
+msgstr "Els fitxers i les carpetes recentment modificats es mostraran aquí."
 
 msgid "Filter file list"
-msgstr ""
+msgstr "Filtrar llistat de fitxers"
 
 msgid "Home"
-msgstr ""
+msgstr "Inici"
 
 msgid "MIME type {mime}"
 msgstr ""
 
 msgid "Modified"
-msgstr ""
+msgstr "Modificat"
 
 msgid "Move"
-msgstr ""
+msgstr "Moure"
 
 msgid "Move to {target}"
-msgstr ""
+msgstr "More a {target}"
 
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 msgid "New"
-msgstr ""
+msgstr "Nou"
 
 msgid "New folder"
-msgstr ""
+msgstr "Nova carpeta"
 
 msgid "New folder name"
-msgstr ""
+msgstr "Nom de nova carpeta"
 
 msgid "No files in here"
-msgstr ""
+msgstr "No hi ha arxius"
 
 msgid "No files matching your filter were found."
-msgstr ""
+msgstr "No s'han trobat fitxers coincidents amb el vostre filtre."
 
 msgid "No matching files"
-msgstr ""
+msgstr "Sense arxius coincidents"
 
 msgid "Recent"
-msgstr ""
+msgstr "Recent"
 
 #. FOR TRANSLATORS: If possible in your language an even shorter version of 'a few seconds ago'
 msgid "sec. ago"
@@ -113,16 +115,16 @@ msgid "seconds ago"
 msgstr ""
 
 msgid "Select all entries"
-msgstr ""
+msgstr "Seleccioneu totes les entrades"
 
 msgid "Select entry"
-msgstr ""
+msgstr "Seleccionar entrada"
 
 msgid "Select the row for {nodename}"
-msgstr ""
+msgstr "Seleccioneu la fila per a {nodename}"
 
 msgid "Size"
-msgstr ""
+msgstr "Mida"
 
 msgid "Undo"
 msgstr "Desfés"
@@ -134,4 +136,5 @@ msgid "Unset"
 msgstr ""
 
 msgid "Upload some content or sync with your devices!"
-msgstr ""
+msgstr "Pengeu contingut o sincronitzeu-vos amb els vostres dispositius!"
+

@@ -1,10 +1,11 @@
 #
 # Translators:
-# Joas Schilling, 2023
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# D PE, 2023
 #
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
+"Last-Translator: D PE, 2023\n"
 "Language-Team: Norwegian Bokmål (Norway) (https://app.transifex.com/"
 "nextcloud/teams/64236/nb_NO/)\n"
 "Language: nb_NO\n"
@@ -24,31 +25,31 @@ msgid "a few seconds ago"
 msgstr ""
 
 msgid "All files"
-msgstr ""
+msgstr "Alle filer"
 
 msgid "Choose"
-msgstr ""
+msgstr "Velg"
 
 msgid "Choose {file}"
-msgstr ""
+msgstr "Velg {fil}"
 
 msgid "Copy"
-msgstr ""
+msgstr "Kopier"
 
 msgid "Copy to {target}"
-msgstr ""
+msgstr "Kopier til {destinasjon}"
 
 msgid "Could not create the new folder"
-msgstr ""
+msgstr "Kunne ikke opprette den nye mappen"
 
 msgid "Create directory"
-msgstr ""
+msgstr "Opprett mappe"
 
 msgid "Current view selector"
-msgstr ""
+msgstr "Nåværende visningsvelger"
 
 msgid "Favorites"
-msgstr ""
+msgstr "Favoritter"
 
 msgid "File name cannot be empty."
 msgstr ""
@@ -57,52 +58,52 @@ msgid "Filepicker sections"
 msgstr ""
 
 msgid "Files and folders you mark as favorite will show up here."
-msgstr ""
+msgstr "Filer og mapper du markerer som favoritter vil vises her."
 
 msgid "Files and folders you recently modified will show up here."
-msgstr ""
+msgstr "Filer og mapper du nylig har endret, vil vises her."
 
 msgid "Filter file list"
-msgstr ""
+msgstr "Filtrer filliste"
 
 msgid "Home"
-msgstr ""
+msgstr "Hjem"
 
 msgid "MIME type {mime}"
 msgstr ""
 
 msgid "Modified"
-msgstr ""
+msgstr "Modifisert"
 
 msgid "Move"
-msgstr ""
+msgstr "Flytt"
 
 msgid "Move to {target}"
-msgstr ""
+msgstr "Flytt til {destinasjon}"
 
 msgid "Name"
-msgstr ""
+msgstr "Navn"
 
 msgid "New"
-msgstr ""
+msgstr "Ny"
 
 msgid "New folder"
-msgstr ""
+msgstr "Ny mappe"
 
 msgid "New folder name"
-msgstr ""
+msgstr "Nytt mappenavn"
 
 msgid "No files in here"
-msgstr ""
+msgstr "Ingen filer her"
 
 msgid "No files matching your filter were found."
-msgstr ""
+msgstr "Ingen filer funnet med ditt filter."
 
 msgid "No matching files"
-msgstr ""
+msgstr "Ingen treffende filer"
 
 msgid "Recent"
-msgstr ""
+msgstr "Nylig"
 
 #. FOR TRANSLATORS: If possible in your language an even shorter version of 'a few seconds ago'
 msgid "sec. ago"
@@ -113,16 +114,16 @@ msgid "seconds ago"
 msgstr ""
 
 msgid "Select all entries"
-msgstr ""
+msgstr "Velg alle oppføringer"
 
 msgid "Select entry"
-msgstr ""
+msgstr "Velg oppføring"
 
 msgid "Select the row for {nodename}"
-msgstr ""
+msgstr "Velg raden for {nodenavn}"
 
 msgid "Size"
-msgstr ""
+msgstr "Størrelse"
 
 msgid "Undo"
 msgstr "Angre"
@@ -134,4 +135,5 @@ msgid "Unset"
 msgstr ""
 
 msgid "Upload some content or sync with your devices!"
-msgstr ""
+msgstr "Last opp innhold eller synkroniser med enhetene dine!"
+

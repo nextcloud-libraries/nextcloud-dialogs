@@ -1,10 +1,12 @@
 #
 # Translators:
-# Joas Schilling, 2023
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# Joost <joho500@hotmail.com>, 2023
+# Jeroen Gui, 2023
 #
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
+"Last-Translator: Jeroen Gui, 2023\n"
 "Language-Team: Dutch (https://app.transifex.com/nextcloud/teams/64236/nl/)\n"
 "Language: nl\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,31 +25,31 @@ msgid "a few seconds ago"
 msgstr ""
 
 msgid "All files"
-msgstr ""
+msgstr "Alle bestanden"
 
 msgid "Choose"
-msgstr ""
+msgstr "Kies"
 
 msgid "Choose {file}"
-msgstr ""
+msgstr "Kies {file}"
 
 msgid "Copy"
-msgstr ""
+msgstr "Kopieer"
 
 msgid "Copy to {target}"
-msgstr ""
+msgstr "Kopieer naar {target}"
 
 msgid "Could not create the new folder"
-msgstr ""
+msgstr "Kon de nieuwe map niet maken"
 
 msgid "Create directory"
-msgstr ""
+msgstr "Maak map"
 
 msgid "Current view selector"
-msgstr ""
+msgstr "Huidige weergave keuze"
 
 msgid "Favorites"
-msgstr ""
+msgstr "Favorieten"
 
 msgid "File name cannot be empty."
 msgstr ""
@@ -56,52 +58,52 @@ msgid "Filepicker sections"
 msgstr ""
 
 msgid "Files and folders you mark as favorite will show up here."
-msgstr ""
+msgstr "Bestanden en mappen die je favoriet maakt, worden hier getoond."
 
 msgid "Files and folders you recently modified will show up here."
-msgstr ""
+msgstr "Bestanden en mappen die je recent hebt gewijzigd, worden hier getoond."
 
 msgid "Filter file list"
-msgstr ""
+msgstr "Filter bestandslijst"
 
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 msgid "MIME type {mime}"
 msgstr ""
 
 msgid "Modified"
-msgstr ""
+msgstr "Gewijzigd"
 
 msgid "Move"
-msgstr ""
+msgstr "Verplaatsen"
 
 msgid "Move to {target}"
-msgstr ""
+msgstr "Verplaats naar {target}"
 
 msgid "Name"
-msgstr ""
+msgstr "Naam"
 
 msgid "New"
-msgstr ""
+msgstr "Nieuw"
 
 msgid "New folder"
-msgstr ""
+msgstr "Nieuwe map"
 
 msgid "New folder name"
-msgstr ""
+msgstr "Nieuwe mapnaam"
 
 msgid "No files in here"
-msgstr ""
+msgstr "Geen bestanden hier"
 
 msgid "No files matching your filter were found."
-msgstr ""
+msgstr "Geen bestanden gevonden die voldoen aan je filter."
 
 msgid "No matching files"
-msgstr ""
+msgstr "Geen gevonden bestanden"
 
 msgid "Recent"
-msgstr ""
+msgstr "Recent"
 
 #. FOR TRANSLATORS: If possible in your language an even shorter version of 'a few seconds ago'
 msgid "sec. ago"
@@ -112,16 +114,16 @@ msgid "seconds ago"
 msgstr ""
 
 msgid "Select all entries"
-msgstr ""
+msgstr "Selecteer alle invoer"
 
 msgid "Select entry"
-msgstr ""
+msgstr "Selecteer invoer"
 
 msgid "Select the row for {nodename}"
-msgstr ""
+msgstr "Selecteer de rij voor {nodename}"
 
 msgid "Size"
-msgstr ""
+msgstr "Grootte"
 
 msgid "Undo"
 msgstr "Ongedaan maken"
@@ -133,4 +135,5 @@ msgid "Unset"
 msgstr ""
 
 msgid "Upload some content or sync with your devices!"
-msgstr ""
+msgstr "Upload inhoud of synchroniseer met je apparaten!"
+

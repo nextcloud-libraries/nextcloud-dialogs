@@ -1,10 +1,11 @@
 #
 # Translators:
-# Joas Schilling, 2023
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# Linerly <linerly@proton.me>, 2023
 #
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
+"Last-Translator: Linerly <linerly@proton.me>, 2023\n"
 "Language-Team: Indonesian (https://app.transifex.com/nextcloud/teams/64236/"
 "id/)\n"
 "Language: id\n"
@@ -24,31 +25,31 @@ msgid "a few seconds ago"
 msgstr ""
 
 msgid "All files"
-msgstr ""
+msgstr "Semua berkas"
 
 msgid "Choose"
-msgstr ""
+msgstr "Pilih"
 
 msgid "Choose {file}"
-msgstr ""
+msgstr "Pilih {file}"
 
 msgid "Copy"
-msgstr ""
+msgstr "Salin"
 
 msgid "Copy to {target}"
-msgstr ""
+msgstr "Salin ke {target}"
 
 msgid "Could not create the new folder"
-msgstr ""
+msgstr "Tidak dapat membuat folder baru"
 
 msgid "Create directory"
-msgstr ""
+msgstr "Buat direktori"
 
 msgid "Current view selector"
-msgstr ""
+msgstr "Pemilih tampilan saat ini"
 
 msgid "Favorites"
-msgstr ""
+msgstr "Favorit"
 
 msgid "File name cannot be empty."
 msgstr ""
@@ -58,51 +59,52 @@ msgstr ""
 
 msgid "Files and folders you mark as favorite will show up here."
 msgstr ""
+"Berkas dan folder yang Anda tandai sebagai favorit akan muncul di sini."
 
 msgid "Files and folders you recently modified will show up here."
-msgstr ""
+msgstr "Berkas dan folder yang Anda ubah baru-baru ini akan muncul di sini."
 
 msgid "Filter file list"
-msgstr ""
+msgstr "Saring daftar berkas"
 
 msgid "Home"
-msgstr ""
+msgstr "Beranda"
 
 msgid "MIME type {mime}"
 msgstr ""
 
 msgid "Modified"
-msgstr ""
+msgstr "Diubah"
 
 msgid "Move"
-msgstr ""
+msgstr "Pindahkan"
 
 msgid "Move to {target}"
-msgstr ""
+msgstr "Pindahkan ke {target}"
 
 msgid "Name"
-msgstr ""
+msgstr "Nama"
 
 msgid "New"
-msgstr ""
+msgstr "Baru"
 
 msgid "New folder"
-msgstr ""
+msgstr "Folder baru"
 
 msgid "New folder name"
-msgstr ""
+msgstr "Nama folder baru"
 
 msgid "No files in here"
-msgstr ""
+msgstr "Tidak ada berkas di sini"
 
 msgid "No files matching your filter were found."
-msgstr ""
+msgstr "Tidak ada berkas yang cocok dengan penyaringan Anda."
 
 msgid "No matching files"
-msgstr ""
+msgstr "Tidak ada berkas yang cocok"
 
 msgid "Recent"
-msgstr ""
+msgstr "Terkini"
 
 #. FOR TRANSLATORS: If possible in your language an even shorter version of 'a few seconds ago'
 msgid "sec. ago"
@@ -113,16 +115,16 @@ msgid "seconds ago"
 msgstr ""
 
 msgid "Select all entries"
-msgstr ""
+msgstr "Pilih semua entri"
 
 msgid "Select entry"
-msgstr ""
+msgstr "Pilih entri"
 
 msgid "Select the row for {nodename}"
-msgstr ""
+msgstr "Pilih baris untuk {nodename}"
 
 msgid "Size"
-msgstr ""
+msgstr "Ukuran"
 
 msgid "Undo"
 msgstr "Tidak jadi"
@@ -134,4 +136,5 @@ msgid "Unset"
 msgstr ""
 
 msgid "Upload some content or sync with your devices!"
-msgstr ""
+msgstr "Unggah beberapa konten atau sinkron dengan perangkat Anda!"
+

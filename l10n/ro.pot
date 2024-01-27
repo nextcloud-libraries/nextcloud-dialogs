@@ -1,10 +1,11 @@
 #
 # Translators:
-# Joas Schilling, 2023
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# Daniel MD <dmihaidumitru@gmail.com>, 2023
 #
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
+"Last-Translator: Daniel MD <dmihaidumitru@gmail.com>, 2023\n"
 "Language-Team: Romanian (https://app.transifex.com/nextcloud/teams/64236/"
 "ro/)\n"
 "Language: ro\n"
@@ -25,31 +26,31 @@ msgid "a few seconds ago"
 msgstr ""
 
 msgid "All files"
-msgstr ""
+msgstr "Toate fișierele"
 
 msgid "Choose"
-msgstr ""
+msgstr "Alege"
 
 msgid "Choose {file}"
-msgstr ""
+msgstr "Alege {file}"
 
 msgid "Copy"
-msgstr ""
+msgstr "Copiază"
 
 msgid "Copy to {target}"
-msgstr ""
+msgstr "Copiază în {target}"
 
 msgid "Could not create the new folder"
-msgstr ""
+msgstr "Nu s-a putut crea noul director"
 
 msgid "Create directory"
-msgstr ""
+msgstr "Creează director"
 
 msgid "Current view selector"
-msgstr ""
+msgstr "Selectorul curent al vizualizării"
 
 msgid "Favorites"
-msgstr ""
+msgstr "Favorite"
 
 msgid "File name cannot be empty."
 msgstr ""
@@ -58,52 +59,52 @@ msgid "Filepicker sections"
 msgstr ""
 
 msgid "Files and folders you mark as favorite will show up here."
-msgstr ""
+msgstr "Fișiere și directoare pe care le marcați ca favorite vor apărea aici."
 
 msgid "Files and folders you recently modified will show up here."
-msgstr ""
+msgstr "Fișiere și directoare pe care le-ați modificat recent vor apărea aici."
 
 msgid "Filter file list"
-msgstr ""
+msgstr "Filtrează lista de fișiere"
 
 msgid "Home"
-msgstr ""
+msgstr "Acasă"
 
 msgid "MIME type {mime}"
 msgstr ""
 
 msgid "Modified"
-msgstr ""
+msgstr "Modificat"
 
 msgid "Move"
-msgstr ""
+msgstr "Mută"
 
 msgid "Move to {target}"
-msgstr ""
+msgstr "Mută către {target}"
 
 msgid "Name"
-msgstr ""
+msgstr "Nume"
 
 msgid "New"
-msgstr ""
+msgstr "Nou"
 
 msgid "New folder"
-msgstr ""
+msgstr "Director nou"
 
 msgid "New folder name"
-msgstr ""
+msgstr "Numele noului director"
 
 msgid "No files in here"
-msgstr ""
+msgstr "Nu există fișiere"
 
 msgid "No files matching your filter were found."
-msgstr ""
+msgstr "Nu există fișiere potrivite pentru filtrul selectat"
 
 msgid "No matching files"
-msgstr ""
+msgstr "Nu există fișiere potrivite"
 
 msgid "Recent"
-msgstr ""
+msgstr "Recente"
 
 #. FOR TRANSLATORS: If possible in your language an even shorter version of 'a few seconds ago'
 msgid "sec. ago"
@@ -114,16 +115,16 @@ msgid "seconds ago"
 msgstr ""
 
 msgid "Select all entries"
-msgstr ""
+msgstr "Selectează toate înregistrările"
 
 msgid "Select entry"
-msgstr ""
+msgstr "Selectează înregistrarea"
 
 msgid "Select the row for {nodename}"
-msgstr ""
+msgstr "Selectează rândul pentru {nodename}"
 
 msgid "Size"
-msgstr ""
+msgstr "Mărime"
 
 msgid "Undo"
 msgstr "Anulează"
@@ -135,4 +136,5 @@ msgid "Unset"
 msgstr ""
 
 msgid "Upload some content or sync with your devices!"
-msgstr ""
+msgstr "Încărcați conținut sau sincronizați cu dispozitivele dumneavoastră!"
+

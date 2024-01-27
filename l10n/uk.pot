@@ -1,10 +1,10 @@
 #
 # Translators:
-# Joas Schilling, 2023
+# O St <oleksiy.stasevych@gmail.com>, 2024
 #
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
+"Last-Translator: O St <oleksiy.stasevych@gmail.com>, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/nextcloud/teams/64236/"
 "uk/)\n"
 "Language: uk\n"
@@ -27,31 +27,31 @@ msgid "a few seconds ago"
 msgstr ""
 
 msgid "All files"
-msgstr ""
+msgstr "Всі файли"
 
 msgid "Choose"
-msgstr ""
+msgstr "Вибрати"
 
 msgid "Choose {file}"
-msgstr ""
+msgstr "Вибрати {file}"
 
 msgid "Copy"
-msgstr ""
+msgstr "Копіювати"
 
 msgid "Copy to {target}"
-msgstr ""
+msgstr "Копіювати до {target}"
 
 msgid "Could not create the new folder"
-msgstr ""
+msgstr "Не вдалося створити новий каталог"
 
 msgid "Create directory"
-msgstr ""
+msgstr "Створити каталог"
 
 msgid "Current view selector"
-msgstr ""
+msgstr "Вибір подання"
 
 msgid "Favorites"
-msgstr ""
+msgstr "Із зірочкою"
 
 msgid "File name cannot be empty."
 msgstr ""
@@ -60,52 +60,52 @@ msgid "Filepicker sections"
 msgstr ""
 
 msgid "Files and folders you mark as favorite will show up here."
-msgstr ""
+msgstr "Тут показуватимуться файли та каталоги, які ви позначите зірочкою."
 
 msgid "Files and folders you recently modified will show up here."
-msgstr ""
+msgstr "Тут показуватимуться файли та каталоги, які було нещодавно змінено."
 
 msgid "Filter file list"
-msgstr ""
+msgstr "Фільтрувати список файлів"
 
 msgid "Home"
-msgstr ""
+msgstr "Домівка"
 
 msgid "MIME type {mime}"
 msgstr ""
 
 msgid "Modified"
-msgstr ""
+msgstr "Змінено"
 
 msgid "Move"
-msgstr ""
+msgstr "Перемістити"
 
 msgid "Move to {target}"
-msgstr ""
+msgstr "Перемістити до {target}"
 
 msgid "Name"
-msgstr ""
+msgstr "Ім'я"
 
 msgid "New"
-msgstr ""
+msgstr "Новий"
 
 msgid "New folder"
-msgstr ""
+msgstr "Новий каталог"
 
 msgid "New folder name"
-msgstr ""
+msgstr "Ім'я нового каталогу"
 
 msgid "No files in here"
-msgstr ""
+msgstr "Тут відсутні файли"
 
 msgid "No files matching your filter were found."
-msgstr ""
+msgstr "Відсутні збіги за фільтром."
 
 msgid "No matching files"
-msgstr ""
+msgstr "Відсутні збіги файлів."
 
 msgid "Recent"
-msgstr ""
+msgstr "Останні"
 
 #. FOR TRANSLATORS: If possible in your language an even shorter version of 'a few seconds ago'
 msgid "sec. ago"
@@ -116,19 +116,19 @@ msgid "seconds ago"
 msgstr ""
 
 msgid "Select all entries"
-msgstr ""
+msgstr "Вибрати всі записи"
 
 msgid "Select entry"
-msgstr ""
+msgstr "Вибрати запис"
 
 msgid "Select the row for {nodename}"
-msgstr ""
+msgstr "Вибрати рядок для {nodename}"
 
 msgid "Size"
-msgstr ""
+msgstr "Розмір"
 
 msgid "Undo"
-msgstr "Скасувати дію"
+msgstr "Повернути"
 
 msgid "unknown"
 msgstr ""
@@ -137,4 +137,5 @@ msgid "Unset"
 msgstr ""
 
 msgid "Upload some content or sync with your devices!"
-msgstr ""
+msgstr "Завантажте вміст або синхронізуйте з вашим пристроєм!"
+
