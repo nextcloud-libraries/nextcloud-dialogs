@@ -1,11 +1,11 @@
 # 
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
-# Miguel Anxo Bouzada <mbouzada@gmail.com>, 2023
+# Miguel Anxo Bouzada <mbouzada@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>, 2023\n"
+"Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>, 2024\n"
 "Language-Team: Galician (https://app.transifex.com/nextcloud/teams/64236/gl/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: gl\n"
@@ -28,6 +28,11 @@ msgstr "Escoller"
 
 msgid "Choose {file}"
 msgstr "Escoller {file}"
+
+msgid "Choose %n file"
+msgid_plural "Choose %n files"
+msgstr[0] "Escoller %n ficheiro"
+msgstr[1] "Escoller %n ficheiros"
 
 msgid "Copy"
 msgstr "Copiar"
