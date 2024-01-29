@@ -1,11 +1,11 @@
 #
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
-# Pavel Borecki <pavel.borecki@gmail.com>, 2023
+# Pavel Borecki <pavel.borecki@gmail.com>, 2024
 #
 msgid ""
 msgstr ""
-"Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>, 2023\n"
+"Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>, 2024\n"
 "Language-Team: Czech (Czech Republic) (https://app.transifex.com/nextcloud/"
 "teams/64236/cs_CZ/)\n"
 "Language: cs_CZ\n"

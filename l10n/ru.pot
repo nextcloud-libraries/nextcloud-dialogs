@@ -3,10 +3,11 @@
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Max Smith <sevinfolds@gmail.com>, 2023
 # ashed <craysy@gmail.com>, 2023
+# Alex <kekcuha@gmail.com>, 2024
 #
 msgid ""
 msgstr ""
-"Last-Translator: ashed <craysy@gmail.com>, 2023\n"
+"Last-Translator: Alex <kekcuha@gmail.com>, 2024\n"
 "Language-Team: Russian (https://app.transifex.com/nextcloud/teams/64236/"
 "ru/)\n"
 "Language: ru\n"
@@ -40,13 +41,13 @@ msgid "Copy"
 msgstr "Копировать"
 
 msgid "Copy to {target}"
-msgstr "Скопировать в {target}"
+msgstr "Копировать в «{target}»"
 
 msgid "Could not create the new folder"
 msgstr "Не удалось создать новую папку"
 
 msgid "Create directory"
-msgstr "Создать каталог"
+msgstr "Создать папку"
 
 msgid "Current view selector"
 msgstr "Переключатель текущего вида"

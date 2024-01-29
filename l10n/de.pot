@@ -3,10 +3,12 @@
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Mario Siegmann <mario_siegmann@web.de>, 2023
 # Markus Eckstein, 2023
+# Andy Scherzinger <info@andy-scherzinger.de>, 2023
+# Joachim Sokolowski, 2023
 #
 msgid ""
 msgstr ""
-"Last-Translator: Markus Eckstein, 2023\n"
+"Last-Translator: Joachim Sokolowski, 2023\n"
 "Language-Team: German (https://app.transifex.com/nextcloud/teams/64236/de/)\n"
 "Language: de\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -69,7 +71,7 @@ msgid "Filter file list"
 msgstr "Dateiliste filtern"
 
 msgid "Home"
-msgstr "Home"
+msgstr "Startseite"
 
 msgid "MIME type {mime}"
 msgstr "MIME-Typ {mime}"
@@ -96,7 +98,7 @@ msgid "New folder name"
 msgstr "Neuer Ordnername"
 
 msgid "No files in here"
-msgstr "Hier sind keine Dateien"
+msgstr "Keine Dateien vorhanden"
 
 msgid "No files matching your filter were found."
 msgstr "Es wurden keine Dateien gefunden, die deinem Filter entsprechen."
@@ -138,3 +140,4 @@ msgstr ""
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Lade Inhalte hoch oder synchronisieren diese mit deinen Geräten!"
+

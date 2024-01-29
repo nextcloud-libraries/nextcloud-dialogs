@@ -1,10 +1,12 @@
 #
 # Translators:
-# Joas Schilling, 2023
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# Claudio Scandella, 2023
+# Raffaele Silano <raffaelone@gmail.com>, 2024
 #
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
+"Last-Translator: Raffaele Silano <raffaelone@gmail.com>, 2024\n"
 "Language-Team: Italian (https://app.transifex.com/nextcloud/teams/64236/"
 "it/)\n"
 "Language: it\n"
@@ -25,31 +27,31 @@ msgid "a few seconds ago"
 msgstr ""
 
 msgid "All files"
-msgstr ""
+msgstr "Tutti i file"
 
 msgid "Choose"
-msgstr ""
+msgstr "Scegli"
 
 msgid "Choose {file}"
-msgstr ""
+msgstr "Scegli {file}"
 
 msgid "Copy"
-msgstr ""
+msgstr "Copia"
 
 msgid "Copy to {target}"
-msgstr ""
+msgstr "Copia in {target}"
 
 msgid "Could not create the new folder"
-msgstr ""
+msgstr "Impossibile creare la nuova cartella"
 
 msgid "Create directory"
-msgstr ""
+msgstr "Crea directory"
 
 msgid "Current view selector"
-msgstr ""
+msgstr "Selettore della vista corrente"
 
 msgid "Favorites"
-msgstr ""
+msgstr "Preferiti"
 
 msgid "File name cannot be empty."
 msgstr ""
@@ -59,51 +61,53 @@ msgstr ""
 
 msgid "Files and folders you mark as favorite will show up here."
 msgstr ""
+"I file e le cartelle contrassegnate come preferite saranno mostrate qui."
 
 msgid "Files and folders you recently modified will show up here."
 msgstr ""
+"I file e le cartelle che hai modificato di recente saranno mostrate qui."
 
 msgid "Filter file list"
-msgstr ""
+msgstr "Filtra elenco file"
 
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 msgid "MIME type {mime}"
 msgstr ""
 
 msgid "Modified"
-msgstr ""
+msgstr "Modificato"
 
 msgid "Move"
-msgstr ""
+msgstr "Sposta"
 
 msgid "Move to {target}"
-msgstr ""
+msgstr "Sposta in {target}"
 
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 msgid "New"
-msgstr ""
+msgstr "Nuovo"
 
 msgid "New folder"
-msgstr ""
+msgstr "Nuova cartella"
 
 msgid "New folder name"
-msgstr ""
+msgstr "Nuovo nome cartella"
 
 msgid "No files in here"
-msgstr ""
+msgstr "Nessun file qui"
 
 msgid "No files matching your filter were found."
-msgstr ""
+msgstr "Nessun file che corrisponde al tuo filtro è stato trovato."
 
 msgid "No matching files"
-msgstr ""
+msgstr "Nessun file corrispondente"
 
 msgid "Recent"
-msgstr ""
+msgstr "Recente"
 
 #. FOR TRANSLATORS: If possible in your language an even shorter version of 'a few seconds ago'
 msgid "sec. ago"
@@ -114,16 +118,16 @@ msgid "seconds ago"
 msgstr ""
 
 msgid "Select all entries"
-msgstr ""
+msgstr "Scegli tutte le voci"
 
 msgid "Select entry"
-msgstr ""
+msgstr "Seleziona la voce"
 
 msgid "Select the row for {nodename}"
-msgstr ""
+msgstr "Seleziona la riga per {nodename}"
 
 msgid "Size"
-msgstr ""
+msgstr "Taglia/dimensioni"
 
 msgid "Undo"
 msgstr "Annulla"
@@ -135,4 +139,5 @@ msgid "Unset"
 msgstr ""
 
 msgid "Upload some content or sync with your devices!"
-msgstr ""
+msgstr "Carica qualche contenuto o sincronizza con i tuoi dispositivi!"
+

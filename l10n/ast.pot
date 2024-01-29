@@ -1,10 +1,11 @@
 #
 # Translators:
-# Joas Schilling, 2023
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# enolp <enolp@softastur.org>, 2023
 #
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
+"Last-Translator: enolp <enolp@softastur.org>, 2023\n"
 "Language-Team: Asturian (https://app.transifex.com/nextcloud/teams/64236/"
 "ast/)\n"
 "Language: ast\n"
@@ -24,31 +25,31 @@ msgid "a few seconds ago"
 msgstr ""
 
 msgid "All files"
-msgstr ""
+msgstr "Tolos ficheros"
 
 msgid "Choose"
-msgstr ""
+msgstr "Escoyer"
 
 msgid "Choose {file}"
-msgstr ""
+msgstr "Escoyer «{ficheru}»"
 
 msgid "Copy"
-msgstr ""
+msgstr "Copiar"
 
 msgid "Copy to {target}"
-msgstr ""
+msgstr "Copiar en: {target}"
 
 msgid "Could not create the new folder"
-msgstr ""
+msgstr "Nun se pudo crear la carpeta"
 
 msgid "Create directory"
-msgstr ""
+msgstr "Crear un direutoriu"
 
 msgid "Current view selector"
-msgstr ""
+msgstr "Selector de la vista actual"
 
 msgid "Favorites"
-msgstr ""
+msgstr "Favoritos"
 
 msgid "File name cannot be empty."
 msgstr ""
@@ -57,52 +58,52 @@ msgid "Filepicker sections"
 msgstr ""
 
 msgid "Files and folders you mark as favorite will show up here."
-msgstr ""
+msgstr "Equí apaecen los ficheros y les carpetes que metas en Favoritos."
 
 msgid "Files and folders you recently modified will show up here."
-msgstr ""
+msgstr "Equí apaecen los fichero y les carpetes que modificares apocayá."
 
 msgid "Filter file list"
-msgstr ""
+msgstr "Peñerar la llista de ficheros"
 
 msgid "Home"
-msgstr ""
+msgstr "Aniciu"
 
 msgid "MIME type {mime}"
 msgstr ""
 
 msgid "Modified"
-msgstr ""
+msgstr "Modificóse"
 
 msgid "Move"
-msgstr ""
+msgstr "Mover"
 
 msgid "Move to {target}"
-msgstr ""
+msgstr "Mover a {target}"
 
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 msgid "New"
-msgstr ""
+msgstr "Nuevu"
 
 msgid "New folder"
-msgstr ""
+msgstr "Carpeta nueva"
 
 msgid "New folder name"
-msgstr ""
+msgstr "Nome de carpeta nuevu"
 
 msgid "No files in here"
-msgstr ""
+msgstr "Equí nun hai nengún ficheru"
 
 msgid "No files matching your filter were found."
-msgstr ""
+msgstr "Nun s'atopó nengún ficheru que concasare cola peñera."
 
 msgid "No matching files"
-msgstr ""
+msgstr "Nun hai nengún ficheru que concase"
 
 msgid "Recent"
-msgstr ""
+msgstr "De recién"
 
 #. FOR TRANSLATORS: If possible in your language an even shorter version of 'a few seconds ago'
 msgid "sec. ago"
@@ -113,16 +114,16 @@ msgid "seconds ago"
 msgstr ""
 
 msgid "Select all entries"
-msgstr ""
+msgstr "Seleicionar toles entraes"
 
 msgid "Select entry"
-msgstr ""
+msgstr "Seleicionar la entrada"
 
 msgid "Select the row for {nodename}"
-msgstr ""
+msgstr "Seleicionar la filera de: {nodename}"
 
 msgid "Size"
-msgstr ""
+msgstr "Tamañu"
 
 msgid "Undo"
 msgstr "Desfacer"
@@ -134,4 +135,5 @@ msgid "Unset"
 msgstr ""
 
 msgid "Upload some content or sync with your devices!"
-msgstr ""
+msgstr "¡Xubi dalgún elementu o sincroniza colos tos preseos!"
+

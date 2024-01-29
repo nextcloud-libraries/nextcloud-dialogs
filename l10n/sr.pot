@@ -1,11 +1,11 @@
 #
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
-# Иван Пешић, 2023
+# Иван Пешић, 2024
 #
 msgid ""
 msgstr ""
-"Last-Translator: Иван Пешић, 2023\n"
+"Last-Translator: Иван Пешић, 2024\n"
 "Language-Team: Serbian (https://app.transifex.com/nextcloud/teams/64236/"
 "sr/)\n"
 "Language: sr\n"

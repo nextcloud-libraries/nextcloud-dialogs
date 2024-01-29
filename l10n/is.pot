@@ -1,10 +1,11 @@
 #
 # Translators:
-# Joas Schilling, 2023
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# Sveinn í Felli <sv1@fellsnet.is>, 2023
 #
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>, 2023\n"
 "Language-Team: Icelandic (https://app.transifex.com/nextcloud/teams/64236/"
 "is/)\n"
 "Language: is\n"
@@ -24,31 +25,31 @@ msgid "a few seconds ago"
 msgstr ""
 
 msgid "All files"
-msgstr ""
+msgstr "Allar skrár"
 
 msgid "Choose"
-msgstr ""
+msgstr "Veldu"
 
 msgid "Choose {file}"
-msgstr ""
+msgstr "Veldu {file}"
 
 msgid "Copy"
-msgstr ""
+msgstr "Afrita"
 
 msgid "Copy to {target}"
-msgstr ""
+msgstr "Afrita í {target}"
 
 msgid "Could not create the new folder"
-msgstr ""
+msgstr "Get ekki búið til nýju möppuna"
 
 msgid "Create directory"
-msgstr ""
+msgstr "Búa til möppu"
 
 msgid "Current view selector"
-msgstr ""
+msgstr "Núverandi val sýnar"
 
 msgid "Favorites"
-msgstr ""
+msgstr "Eftirlæti"
 
 msgid "File name cannot be empty."
 msgstr ""
@@ -57,52 +58,52 @@ msgid "Filepicker sections"
 msgstr ""
 
 msgid "Files and folders you mark as favorite will show up here."
-msgstr ""
+msgstr "Skrár og möppur sem þú merkir sem eftirlæti birtast hér."
 
 msgid "Files and folders you recently modified will show up here."
-msgstr ""
+msgstr "Skrár og möppur sem þú breyttir nýlega birtast hér."
 
 msgid "Filter file list"
-msgstr ""
+msgstr "Sía skráalista"
 
 msgid "Home"
-msgstr ""
+msgstr "Heim"
 
 msgid "MIME type {mime}"
 msgstr ""
 
 msgid "Modified"
-msgstr ""
+msgstr "Breytt"
 
 msgid "Move"
-msgstr ""
+msgstr "Færa"
 
 msgid "Move to {target}"
-msgstr ""
+msgstr "Færa í {target}"
 
 msgid "Name"
-msgstr ""
+msgstr "Heiti"
 
 msgid "New"
-msgstr ""
+msgstr "Nýtt"
 
 msgid "New folder"
-msgstr ""
+msgstr "Ný mappa"
 
 msgid "New folder name"
-msgstr ""
+msgstr "Heiti nýrrar möppu"
 
 msgid "No files in here"
-msgstr ""
+msgstr "Engar skrár hér"
 
 msgid "No files matching your filter were found."
-msgstr ""
+msgstr "Engar skrár fundust sem passa við síuna."
 
 msgid "No matching files"
-msgstr ""
+msgstr "Engar samsvarandi skrár"
 
 msgid "Recent"
-msgstr ""
+msgstr "Nýlegt"
 
 #. FOR TRANSLATORS: If possible in your language an even shorter version of 'a few seconds ago'
 msgid "sec. ago"
@@ -113,16 +114,16 @@ msgid "seconds ago"
 msgstr ""
 
 msgid "Select all entries"
-msgstr ""
+msgstr "Velja allar færslur"
 
 msgid "Select entry"
-msgstr ""
+msgstr "Velja færslu"
 
 msgid "Select the row for {nodename}"
-msgstr ""
+msgstr "Veldu röðina fyrir {nodename}"
 
 msgid "Size"
-msgstr ""
+msgstr "Stærð"
 
 msgid "Undo"
 msgstr "Afturkalla"
@@ -134,4 +135,5 @@ msgid "Unset"
 msgstr ""
 
 msgid "Upload some content or sync with your devices!"
-msgstr ""
+msgstr "Sendu inn eitthvað efni eða samstilltu við tækin þín!"
+

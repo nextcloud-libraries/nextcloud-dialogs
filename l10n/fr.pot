@@ -3,10 +3,11 @@
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Rémi LEBLOND, 2023
 # Mordecai, 2023
+# fleopaul thp, 2023
 #
 msgid ""
 msgstr ""
-"Last-Translator: Mordecai, 2023\n"
+"Last-Translator: fleopaul thp, 2023\n"
 "Language-Team: French (https://app.transifex.com/nextcloud/teams/64236/fr/)\n"
 "Language: fr\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -41,7 +42,7 @@ msgid "Copy to {target}"
 msgstr "Copier vers {target}"
 
 msgid "Could not create the new folder"
-msgstr "Impossible de créer le nouveau répertoire"
+msgstr "Impossible de créer le nouveau dossier"
 
 msgid "Create directory"
 msgstr "Créer un répertoire"
