@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.2.4](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v4.2.4) (2024-01-30)
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v4.2.3...v4.2.4)
+
+### :bug: Fixed bugs
+* fix(l10n): Update translations from main branch [\#1217](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1217) ([susnux](https://github.com/susnux))
+
 ## [v4.2.3](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v4.2.3) (2024-01-19)
 
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v4.2.2...v4.2.3)
