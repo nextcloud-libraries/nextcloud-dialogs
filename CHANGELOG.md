@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.2.5](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v4.2.5) (2024-02-06)
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v4.2.4...v4.2.5)
+
+### :bug: Fixed bugs
+* fix: Pin nextcloud/files to last resolved version [\#1226](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1226) ([Pytal](https://github.com/Pytal))
+
 ## [v4.2.4](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v4.2.4) (2024-01-30)
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v4.2.3...v4.2.4)
 
