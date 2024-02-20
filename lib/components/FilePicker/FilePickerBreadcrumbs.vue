@@ -1,7 +1,7 @@
 <template>
 	<NcBreadcrumbs class="file-picker__breadcrumbs">
 		<template #default>
-			<NcBreadcrumb :name="t('Home')"
+			<NcBreadcrumb :name="t('All files')"
 				:title="t('Home')"
 				@click="emit('update:path', '/')">
 				<template #icon>
