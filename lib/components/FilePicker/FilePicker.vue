@@ -45,8 +45,9 @@
 </template>
 
 <script setup lang="ts">
-import type { IFilePickerButton, IFilePickerButtonFactory, IFilePickerFilter } from '../types'
 import type { Node } from '@nextcloud/files'
+import type { IFilePickerButton, IFilePickerButtonFactory, IFilePickerFilter } from '../types.ts'
+import type { IFilesViewId } from '../../composables/views.ts'
 
 import IconFile from 'vue-material-design-icons/File.vue'
 import FileList from './FileList.vue'
@@ -176,7 +177,7 @@ const handleButtonClick = async (callback: IFilePickerButton['callback']) => {
 /**
  * Name of the currently active view
  */
-const currentView = ref<'files' | 'favorites' | 'recent'>('files')
+const currentView = ref<IFilesViewId>('files')
 
 /**
  * Headline to be used on the current view

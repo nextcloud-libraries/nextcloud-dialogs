@@ -28,6 +28,10 @@ import { computed, onMounted, ref } from 'vue'
 
 import axios from '@nextcloud/axios'
 
+import { t } from '../utils/l10n'
+import { showError } from '../toast'
+import { useIsPublic } from './isPublic'
+
 interface OCAFilesUserConfig {
 	show_hidden: boolean
 	crop_image_previews: boolean
@@ -57,16 +61,27 @@ export type FileListViews = 'files'|'recent'|'favorites'
 export const useFilesSettings = () => {
 	const filesUserState = loadState<OCAFilesUserConfig|null>('files', 'config', null)
 
-	const showHiddenFiles = ref(filesUserState?.show_hidden ?? false)
+	const showHiddenFiles = ref(filesUserState?.show_hidden ?? true)
 	const sortFavoritesFirst = ref(filesUserState?.sort_favorites_first ?? true)
 	const cropImagePreviews = ref(filesUserState?.crop_image_previews ?? true)
 
-	onMounted(() => {
-		axios.get(generateUrl('/apps/files/api/v1/configs')).then((response) => {
-			showHiddenFiles.value = response.data?.data?.show_hidden ?? false
-			sortFavoritesFirst.value = response.data?.data?.sort_favorites_first ?? true
-			cropImagePreviews.value = response.data?.data?.crop_image_previews ?? true
-		})
+	const { isPublic } = useIsPublic()
+
+	onMounted(async () => {
+		if (!isPublic.value) {
+			try {
+				const { data } = await axios.get(generateUrl('/apps/files/api/v1/configs'))
+
+				showHiddenFiles.value = data?.data?.show_hidden ?? false
+				sortFavoritesFirst.value = data?.data?.sort_favorites_first ?? true
+				cropImagePreviews.value = data?.data?.crop_image_previews ?? true
+			} catch (error) {
+				console.error('Could not load files settings', error)
+				showError(t('Could not load files settings'))
+			}
+		} else {
+			console.debug('Skip loading files settings - currently on public share')
+		}
 	})
 
 	return {
@@ -98,21 +113,31 @@ export const useFilesViews = (currentView?: FileListViews|Ref<FileListViews>|Com
 		order: convertOrder(filesViewsState?.favorites?.sorting_direction ?? 'asc'),
 	})
 
-	onMounted(() => {
-		axios.get(generateUrl('/apps/files/api/v1/views')).then((response) => {
-			filesViewConfig.value = {
-				sortBy: response.data?.data?.files?.sorting_mode ?? 'basename',
-				order: convertOrder(response.data?.data?.files?.sorting_direction),
+	const { isPublic } = useIsPublic()
+
+	onMounted(async () => {
+		if (!isPublic.value) {
+			try {
+				const { data } = await axios.get(generateUrl('/apps/files/api/v1/views'))
+				filesViewConfig.value = {
+					sortBy: data?.data?.files?.sorting_mode ?? 'basename',
+					order: convertOrder(data?.data?.files?.sorting_direction),
+				}
+				favoritesViewConfig.value = {
+					sortBy: data?.data?.favorites?.sorting_mode ?? 'basename',
+					order: convertOrder(data?.data?.favorites?.sorting_direction),
+				}
+				recentViewConfig.value = {
+					sortBy: data?.data?.recent?.sorting_mode ?? 'basename',
+					order: convertOrder(data?.data?.recent?.sorting_direction),
+				}
+			} catch (error) {
+				console.error('Could not load files views', error)
+				showError(t('Could not load files views'))
 			}
-			favoritesViewConfig.value = {
-				sortBy: response.data?.data?.favorites?.sorting_mode ?? 'basename',
-				order: convertOrder(response.data?.data?.favorites?.sorting_direction),
-			}
-			recentViewConfig.value = {
-				sortBy: response.data?.data?.recent?.sorting_mode ?? 'basename',
-				order: convertOrder(response.data?.data?.recent?.sorting_direction),
-			}
-		})
+		} else {
+			console.debug('Skip loading files views - currently on public share')
+		}
 	})
 
 	const currentConfig = computed(() => toValue(currentView || 'files') === 'files' ? filesViewConfig.value : (toValue(currentView) === 'recent' ? recentViewConfig.value : favoritesViewConfig.value))
