@@ -1,7 +1,17 @@
 <template>
-	<NcDialog v-bind="dialogProps" :open.sync="isOpen" @update:open="handleClose">
+	<NcDialog :container="container"
+		:buttons="dialogButtons"
+		:name="name"
+		size="large"
+		content-classes="file-picker__content"
+		dialog-classes="file-picker"
+		navigation-classes="file-picker__navigation"
+		:open.sync="isOpen"
+		@update:open="handleClose">
 		<template #navigation="{ isCollapsed }">
-			<FilePickerNavigation :is-collapsed="isCollapsed" :current-view.sync="currentView" :filter-string.sync="filterString" />
+			<FilePickerNavigation :is-collapsed="isCollapsed"
+				:current-view.sync="currentView"
+				:filter-string.sync="filterString" />
 		</template>
 
 		<div class="file-picker__main">
@@ -128,19 +138,6 @@ const emit = defineEmits<{
 const { isPublic } = useIsPublic()
 
 const isOpen = ref(true)
-
-/**
- * Props to be passed to the underlying Dialog component
- */
-const dialogProps = computed(() => ({
-	container: props.container,
-	name: props.name,
-	buttons: dialogButtons.value,
-	size: 'large',
-	contentClasses: ['file-picker__content'],
-	dialogClasses: ['file-picker'],
-	navigationClasses: ['file-picker__navigation'],
-}))
 
 /**
  * Map buttons to Dialog buttons by wrapping the callback function to pass the selected files
