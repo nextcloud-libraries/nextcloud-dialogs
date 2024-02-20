@@ -9,7 +9,7 @@
 			<FilePickerBreadcrumbs v-if="currentView === 'files'"
 				:path.sync="currentPath"
 				:show-menu="allowPickDirectory"
-				@create-node="onCreateFolder"/>
+				@create-node="onCreateFolder" />
 			<div v-else class="file-picker__view">
 				<h3>{{ viewHeadline }}</h3>
 			</div>
@@ -53,13 +53,12 @@ import FileList from './FileList.vue'
 import FilePickerBreadcrumbs from './FilePickerBreadcrumbs.vue'
 import FilePickerNavigation from './FilePickerNavigation.vue'
 
-import { davRootPath } from '@nextcloud/files'
 import { NcEmptyContent } from '@nextcloud/vue'
-import { join } from 'path'
 import { computed, onMounted, ref, toRef } from 'vue'
 import { showError } from '../../toast'
 import { useDAVFiles } from '../../usables/dav'
 import { useMimeFilter } from '../../usables/mime'
+import { useIsPublic } from '../../usables/isPublic'
 import { t } from '../../utils/l10n'
 
 const props = withDefaults(defineProps<{
@@ -117,6 +116,11 @@ const props = withDefaults(defineProps<{
 const emit = defineEmits<{
 	(e: 'close', v?: Node[]): void
 }>()
+
+/**
+ * Whether we are on a public endpoint (e.g. public share)
+ */
+const { isPublic } = useIsPublic()
 
 /**
  * Props to be passed to the underlying Dialog component
@@ -203,7 +207,7 @@ const filterString = ref('')
 
 const { isSupportedMimeType } = useMimeFilter(toRef(props, 'mimetypeFilter')) // vue 3.3 will allow cleaner syntax of toRef(() => props.mimetypeFilter)
 
-const { files, isLoading, loadFiles, getFile, client } = useDAVFiles(currentView, currentPath)
+const { files, isLoading, loadFiles, getFile, createDirectory } = useDAVFiles(currentView, currentPath, isPublic)
 
 onMounted(() => loadFiles())
 
@@ -243,13 +247,14 @@ const noFilesDescription = computed(() => {
  * Handle creating new folder (breadcrumb menu)
  * @param name The new folder name
  */
-const onCreateFolder = (name: string) => {
-	client
-		.createDirectory(join(davRootPath, currentPath.value, name))
-		// reload file list
-		.then(() => loadFiles())
+const onCreateFolder = async (name: string) => {
+	try {
+		await createDirectory(name)
+	} catch (error) {
+		console.warn('Could not create new folder', { name, error })
 		// show error to user
-		.catch((e) => showError(t('Could not create the new folder')))
+		showError(t('Could not create the new folder'))
+	}
 }
 </script>
 
