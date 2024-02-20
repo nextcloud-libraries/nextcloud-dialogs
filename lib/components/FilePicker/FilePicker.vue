@@ -61,8 +61,9 @@ import { computed, onMounted, ref, toRef } from 'vue'
 import { showError } from '../../toast'
 import { useDAVFiles } from '../../composables/dav'
 import { useMimeFilter } from '../../composables/mime'
-import { t } from '../../utils/l10n'
 import { useFilesSettings } from '../../composables/filesSettings'
+import { useIsPublic } from '../../composables/isPublic'
+import { t } from '../../utils/l10n'
 
 const props = withDefaults(defineProps<{
 	/** Buttons to be displayed */
@@ -119,6 +120,11 @@ const props = withDefaults(defineProps<{
 const emit = defineEmits<{
 	(e: 'close', v?: Node[]): void
 }>()
+
+/**
+ * Whether we are on a public endpoint (e.g. public share)
+ */
+const { isPublic } = useIsPublic()
 
 const isOpen = ref(true)
 
@@ -221,7 +227,7 @@ const filterString = ref('')
 
 const { isSupportedMimeType } = useMimeFilter(toRef(props, 'mimetypeFilter')) // vue 3.3 will allow cleaner syntax of toRef(() => props.mimetypeFilter)
 
-const { files, isLoading, loadFiles, getFile, client } = useDAVFiles(currentView, currentPath)
+const { files, isLoading, loadFiles, getFile, createDirectory } = useDAVFiles(currentView, currentPath, isPublic)
 
 onMounted(() => loadFiles())
 
@@ -271,9 +277,7 @@ const noFilesDescription = computed(() => {
  */
 const onCreateFolder = async (name: string) => {
 	try {
-		await client.createDirectory(join(davRootPath, currentPath.value, name))
-		// reload file list
-		await loadFiles()
+		await createDirectory(name)
 		// emit event bus to force files app to reload that file if needed
 		emitOnEventBus('files:node:created', files.value.filter((file) => file.basename === name)[0])
 	} catch (error) {
