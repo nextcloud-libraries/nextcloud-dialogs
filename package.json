@@ -79,7 +79,7 @@
     "@vue/tsconfig": "^0.5.1",
     "@zamiell/typedoc-plugin-not-exported": "^0.2.0",
     "gettext-extractor": "^3.8.0",
-    "gettext-parser": "^7.0.1",
+    "gettext-parser": "^8.0.0",
     "happy-dom": "^13.3.8",
     "sass": "^1.71.0",
     "stylelint": "^15.11.0",
