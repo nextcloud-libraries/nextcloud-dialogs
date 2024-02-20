@@ -1,7 +1,9 @@
 <template>
 	<DialogBase v-bind="dialogProps" @close="emit('close')">
 		<template #navigation="{ isCollapsed }">
-			<FilePickerNavigation :is-collapsed="isCollapsed" :current-view.sync="currentView" :filter-string.sync="filterString" />
+			<FilePickerNavigation :is-collapsed="isCollapsed"
+				:current-view.sync="currentView"
+				:filter-string.sync="filterString" />
 		</template>
 
 		<div class="file-picker__main">
