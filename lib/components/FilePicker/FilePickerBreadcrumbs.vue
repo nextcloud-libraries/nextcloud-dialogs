@@ -25,7 +25,7 @@
 					<IconPlus :size="20" />
 				</template>
 				<NcActionInput ref="nameInput"
-					:value.sync="newNodeName"
+					v-model="newNodeName"
 					:label="t('New folder')"
 					:placeholder="t('New folder name')"
 					@submit="onSubmit"
