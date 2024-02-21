@@ -12,55 +12,42 @@
 				<IconClose :size="16" />
 			</template>
 		</NcTextField>
-		<!-- On non collapsed dialogs show the tablist, otherwise a dropdown is shown -->
-		<ul v-if="!isCollapsed"
-			class="file-picker__side">
-			<li v-for="view in allViews" :key="view.id">
-				<NcButton :type="currentView === view.id ? 'primary' : 'tertiary'"
-					:wide="true"
-					@click="$emit('update:currentView', view.id)">
-					<template #icon>
-						<component :is="view.icon" :size="20" />
-					</template>
-					{{ view.label }}
-				</NcButton>
-			</li>
-		</ul>
-		<NcSelect v-else
-			:aria-label="t('Current view selector')"
-			:clearable="false"
-			:searchable="false"
-			:options="allViews"
-			:value="currentViewObject"
-			@input="v => emit('update:currentView', v.id)" />
+		<template v-if="availableViews.length > 1">
+			<!-- On non collapsed dialogs show the tablist, otherwise a dropdown is shown -->
+			<ul v-if="!isCollapsed"
+				class="file-picker__side">
+				<li v-for="view in availableViews" :key="view.id">
+					<NcButton :type="currentView === view.id ? 'primary' : 'tertiary'"
+						:wide="true"
+						@click="$emit('update:currentView', view.id)">
+						<template #icon>
+							<NcIconSvgWrapper :path="view.icon" :size="20" />
+						</template>
+						{{ view.label }}
+					</NcButton>
+				</li>
+			</ul>
+			<NcSelect v-else
+				:aria-label="t('Current view selector')"
+				:clearable="false"
+				:searchable="false"
+				:options="availableViews"
+				:value="currentViewObject"
+				@input="(v) => emit('update:currentView', v.id)" />
+		</template>
 	</Fragment>
 </template>
 
 <script setup lang="ts">
-import IconFolder from 'vue-material-design-icons/Folder.vue'
-import IconClock from 'vue-material-design-icons/Clock.vue'
 import IconClose from 'vue-material-design-icons/Close.vue'
 import IconMagnify from 'vue-material-design-icons/Magnify.vue'
-import IconStar from 'vue-material-design-icons/Star.vue'
 
-import { NcButton, NcSelect, NcTextField } from '@nextcloud/vue'
-import { t } from '../../utils/l10n'
-import { computed } from 'vue'
+import { getCurrentUser } from '@nextcloud/auth'
+import { NcButton, NcIconSvgWrapper, NcSelect, NcTextField } from '@nextcloud/vue'
+import { computed, ref } from 'vue'
 import { Fragment } from 'vue-frag'
-
-const allViews = [{
-	id: 'files',
-	label: t('All files'),
-	icon: IconFolder,
-}, {
-	id: 'recent',
-	label: t('Recent'),
-	icon: IconClock,
-}, {
-	id: 'favorites',
-	label: t('Favorites'),
-	icon: IconStar,
-}]
+import { t } from '../../utils/l10n'
+import { useViews } from '../../composables/views'
 
 const props = defineProps<{
 	currentView: 'files' | 'recent' | 'favorites',
@@ -74,10 +61,12 @@ interface INavigationEvents {
 }
 const emit = defineEmits<INavigationEvents>()
 
+const { availableViews } = useViews(ref(getCurrentUser() === null))
+
 /**
  * The currently active view object
  */
-const currentViewObject = computed(() => allViews.filter(v => v.id === props.currentView)[0])
+const currentViewObject = computed(() => availableViews.filter(v => v.id === props.currentView)[0] ?? availableViews[0])
 
 /**
  * Propagate current filter value to paren

@@ -28,6 +28,7 @@ import { useDAVFiles } from './dav'
 const nextcloudFiles = vi.hoisted(() => ({
 	davGetClient: vi.fn(),
 	davRootPath: '/root/uid',
+	davRemoteURL: 'https://localhost/remote.php/dav',
 	davResultToNode: vi.fn(),
 	davGetDefaultPropfind: vi.fn(),
 	davGetRecentSearch: (time: number) => `recent ${time}`,
@@ -44,9 +45,9 @@ const waitLoaded = (vue: ReturnType<typeof shallowMount>) => new Promise((resolv
 })
 
 const TestComponent = defineComponent({
-	props: ['currentView', 'currentPath'],
+	props: ['currentView', 'currentPath', 'isPublic'],
 	setup(props) {
-		const dav = useDAVFiles(toRef(props, 'currentView'), toRef(props, 'currentPath'))
+		const dav = useDAVFiles(toRef(props, 'currentView'), toRef(props, 'currentPath'), toRef(props, 'isPublic'))
 		return {
 			...dav,
 		}
@@ -67,6 +68,7 @@ describe('dav composable', () => {
 			propsData: {
 				currentView: 'files',
 				currentPath: '/',
+				isPublic: false,
 			},
 		})
 		// Loading is set to true
@@ -92,6 +94,7 @@ describe('dav composable', () => {
 			propsData: {
 				currentView: 'files',
 				currentPath: '/',
+				isPublic: false,
 			},
 		})
 
@@ -111,6 +114,7 @@ describe('dav composable', () => {
 			propsData: {
 				currentView: 'files',
 				currentPath: '/',
+				isPublic: false,
 			},
 		})
 
@@ -138,6 +142,7 @@ describe('dav composable', () => {
 			propsData: {
 				currentView: 'files',
 				currentPath: '/',
+				isPublic: false,
 			},
 		})
 
@@ -164,12 +169,28 @@ describe('dav composable', () => {
 		nextcloudFiles.davGetClient.mockImplementationOnce(() => client)
 		nextcloudFiles.davResultToNode.mockImplementationOnce((v) => v)
 
-		const { getFile } = useDAVFiles(ref('files'), ref('/'))
+		const { getFile } = useDAVFiles(ref('files'), ref('/'), ref(false))
 
 		const node = await getFile('/some/path')
 		expect(node).toEqual({ path: `${nextcloudFiles.davRootPath}/some/path` })
 		expect(client.stat).toBeCalledWith(`${nextcloudFiles.davRootPath}/some/path`, { details: true })
-		expect(nextcloudFiles.davResultToNode).toBeCalledWith({ path: `${nextcloudFiles.davRootPath}/some/path` })
+		expect(nextcloudFiles.davResultToNode).toBeCalledWith({ path: `${nextcloudFiles.davRootPath}/some/path` }, nextcloudFiles.davRootPath, nextcloudFiles.davRemoteURL)
+	})
+
+	it('createDirectory works', async () => {
+		const client = {
+			stat: vi.fn((v) => ({ data: { path: v } })),
+			createDirectory: vi.fn(() => {}),
+		}
+		nextcloudFiles.davGetClient.mockImplementationOnce(() => client)
+		nextcloudFiles.davResultToNode.mockImplementationOnce((v) => v)
+
+		const { createDirectory } = useDAVFiles(ref('files'), ref('/foo/'), ref(false))
+
+		const node = await createDirectory('my-name')
+		expect(node).toEqual({ path: `${nextcloudFiles.davRootPath}/foo/my-name` })
+		expect(client.stat).toBeCalledWith(`${nextcloudFiles.davRootPath}/foo/my-name`, { details: true })
+		expect(client.createDirectory).toBeCalledWith(`${nextcloudFiles.davRootPath}/foo/my-name`)
 	})
 
 	it('loadFiles work', async () => {
@@ -183,7 +204,7 @@ describe('dav composable', () => {
 
 		const view = ref<'files' | 'recent' | 'favorites'>('files')
 		const path = ref('/')
-		const { loadFiles, isLoading } = useDAVFiles(view, path)
+		const { loadFiles, isLoading } = useDAVFiles(view, path, ref(false))
 
 		expect(isLoading.value).toBe(true)
 		await loadFiles()

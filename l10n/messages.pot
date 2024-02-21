@@ -34,6 +34,12 @@ msgstr ""
 msgid "Could not create the new folder"
 msgstr ""
 
+msgid "Could not load files settings"
+msgstr ""
+
+msgid "Could not load files views"
+msgstr ""
+
 msgid "Create directory"
 msgstr ""
 

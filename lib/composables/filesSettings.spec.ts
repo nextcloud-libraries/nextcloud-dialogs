@@ -22,13 +22,16 @@
 
 import { describe, it, expect, vi, afterEach, beforeAll, afterAll } from 'vitest'
 import { shallowMount } from '@vue/test-utils'
-import { defineComponent } from 'vue'
+import { defineComponent, nextTick } from 'vue'
 import { useFilesSettings } from './filesSettings'
 
 const axios = vi.hoisted(() => ({
 	get: vi.fn(),
 }))
+const isPublic = vi.hoisted(() => ({ value: false }))
+
 vi.mock('@nextcloud/axios', () => ({ default: axios }))
+vi.mock('./isPublic', () => ({ useIsPublic: () => ({ isPublic }) }))
 
 const TestComponent = defineComponent({
 	setup() {
@@ -49,8 +52,10 @@ describe('files app settings composable', () => {
 		axios.get.mockImplementation(() => {
 			return new Promise(() => {})
 		})
-		const vue = await shallowMount(TestComponent)
-		expect(vue.vm.showHiddenFiles).toBe(false)
+		const vue = shallowMount(TestComponent)
+		await nextTick()
+
+		expect(vue.vm.showHiddenFiles).toBe(true)
 		expect(vue.vm.sortFavoritesFirst).toBe(true)
 		expect(vue.vm.cropImagePreviews).toBe(true)
 		expect(axios.get).toBeCalled()
@@ -58,11 +63,14 @@ describe('files app settings composable', () => {
 
 	it('is reactive when loading values', async () => {
 		axios.get.mockImplementation(() => {
-			return new Promise((resolve) => window.setTimeout(() => resolve({ data: { data: { show_hidden: true } } }), 400))
+			return new Promise((resolve) => window.setTimeout(() => resolve({ data: { data: { show_hidden: false } } }), 400))
 		})
-		const vue = await shallowMount(TestComponent)
-		expect(vue.vm.showHiddenFiles).toBe(false)
-		await vi.advanceTimersByTimeAsync(500)
+		const vue = shallowMount(TestComponent)
+		await nextTick()
+
 		expect(vue.vm.showHiddenFiles).toBe(true)
+		await vi.advanceTimersByTimeAsync(500)
+		await nextTick()
+		expect(vue.vm.showHiddenFiles).toBe(false)
 	})
 })

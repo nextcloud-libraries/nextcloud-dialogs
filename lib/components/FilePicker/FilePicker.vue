@@ -1,7 +1,17 @@
 <template>
-	<NcDialog v-bind="dialogProps" :open.sync="isOpen" @update:open="handleClose">
+	<NcDialog :container="container"
+		:buttons="dialogButtons"
+		:name="name"
+		size="large"
+		content-classes="file-picker__content"
+		dialog-classes="file-picker"
+		navigation-classes="file-picker__navigation"
+		:open.sync="isOpen"
+		@update:open="handleClose">
 		<template #navigation="{ isCollapsed }">
-			<FilePickerNavigation :is-collapsed="isCollapsed" :current-view.sync="currentView" :filter-string.sync="filterString" />
+			<FilePickerNavigation :is-collapsed="isCollapsed"
+				:current-view.sync="currentView"
+				:filter-string.sync="filterString" />
 		</template>
 
 		<div class="file-picker__main">
@@ -45,8 +55,9 @@
 </template>
 
 <script setup lang="ts">
-import type { IFilePickerButton, IFilePickerButtonFactory, IFilePickerFilter } from '../types'
 import type { Node } from '@nextcloud/files'
+import type { IFilePickerButton, IFilePickerButtonFactory, IFilePickerFilter } from '../types.ts'
+import type { IFilesViewId } from '../../composables/views.ts'
 
 import IconFile from 'vue-material-design-icons/File.vue'
 import FileList from './FileList.vue'
@@ -61,8 +72,9 @@ import { computed, onMounted, ref, toRef } from 'vue'
 import { showError } from '../../toast'
 import { useDAVFiles } from '../../composables/dav'
 import { useMimeFilter } from '../../composables/mime'
-import { t } from '../../utils/l10n'
 import { useFilesSettings } from '../../composables/filesSettings'
+import { useIsPublic } from '../../composables/isPublic'
+import { t } from '../../utils/l10n'
 
 const props = withDefaults(defineProps<{
 	/** Buttons to be displayed */
@@ -120,20 +132,12 @@ const emit = defineEmits<{
 	(e: 'close', v?: Node[]): void
 }>()
 
-const isOpen = ref(true)
-
 /**
- * Props to be passed to the underlying Dialog component
+ * Whether we are on a public endpoint (e.g. public share)
  */
-const dialogProps = computed(() => ({
-	container: props.container,
-	name: props.name,
-	buttons: dialogButtons.value,
-	size: 'large',
-	contentClasses: ['file-picker__content'],
-	dialogClasses: ['file-picker'],
-	navigationClasses: ['file-picker__navigation'],
-}))
+const { isPublic } = useIsPublic()
+
+const isOpen = ref(true)
 
 /**
  * Map buttons to Dialog buttons by wrapping the callback function to pass the selected files
@@ -170,7 +174,7 @@ const handleButtonClick = async (callback: IFilePickerButton['callback']) => {
 /**
  * Name of the currently active view
  */
-const currentView = ref<'files' | 'favorites' | 'recent'>('files')
+const currentView = ref<IFilesViewId>('files')
 
 /**
  * Headline to be used on the current view
@@ -221,7 +225,7 @@ const filterString = ref('')
 
 const { isSupportedMimeType } = useMimeFilter(toRef(props, 'mimetypeFilter')) // vue 3.3 will allow cleaner syntax of toRef(() => props.mimetypeFilter)
 
-const { files, isLoading, loadFiles, getFile, client } = useDAVFiles(currentView, currentPath)
+const { files, isLoading, loadFiles, getFile, createDirectory } = useDAVFiles(currentView, currentPath, isPublic)
 
 onMounted(() => loadFiles())
 
@@ -271,9 +275,7 @@ const noFilesDescription = computed(() => {
  */
 const onCreateFolder = async (name: string) => {
 	try {
-		await client.createDirectory(join(davRootPath, currentPath.value, name))
-		// reload file list
-		await loadFiles()
+		await createDirectory(name)
 		// emit event bus to force files app to reload that file if needed
 		emitOnEventBus('files:node:created', files.value.filter((file) => file.basename === name)[0])
 	} catch (error) {
