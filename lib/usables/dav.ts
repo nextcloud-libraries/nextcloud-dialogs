@@ -25,7 +25,7 @@ import type { FileStat, ResponseDataDetailed, SearchResult } from 'webdav'
 
 import { davGetClient, davGetDefaultPropfind, davGetRecentSearch, davRemoteURL, davResultToNode, davRootPath, getFavoriteNodes } from '@nextcloud/files'
 import { generateRemoteUrl } from '@nextcloud/router'
-import { join } from 'path'
+import { dirname, join } from 'path'
 import { computed, ref, watch } from 'vue'
 
 /**
@@ -58,15 +58,37 @@ export const useDAVFiles = function(
 			const token = (document.getElementById('sharingToken')! as HTMLInputElement).value
 			const autorization = btoa(`${token}:null`)
 
-			return davGetClient(defaultRemoteUrl.value, {
-				Authorization: `Basic ${autorization}`,
-			})
+			const client = davGetClient(defaultRemoteUrl.value)
+			client.setHeaders({ Authorization: `Basic ${autorization}` })
+			return client
 		}
 
 		return davGetClient()
 	})
 
-	const resultToNode = (result: FileStat) => davResultToNode(result, defaultRootPath.value, defaultRemoteUrl.value)
+	const resultToNode = (result: FileStat) => {
+		const node = davResultToNode(result, defaultRootPath.value, defaultRemoteUrl.value)
+		// Fixed for @nextcloud/files 3.1.0 but not supported on Nextcloud 27 so patching it
+		if (isPublicEndpoint.value) {
+			return new Proxy(node, {
+				get(node, prop) {
+					if (prop === 'dirname' || prop === 'path') {
+						const source = node.source
+						let path = source.slice(defaultRemoteUrl.value.length)
+						if (path[0] !== '/') {
+							path = `/${path}`
+						}
+						if (prop === 'dirname') {
+							return dirname(path)
+						}
+						return path
+					}
+					return (node as never)[prop]
+				},
+			})
+		}
+		return node
+	}
 
 	/**
 	 * All queried files
