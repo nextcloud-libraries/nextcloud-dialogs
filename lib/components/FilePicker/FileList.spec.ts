@@ -110,7 +110,7 @@ describe('FilePicker FileList', () => {
 		expect(wrapper.find('th.row-checkbox').exists()).toBe(false)
 	})
 
-	it('header checkbox is shown if multiselect is `true`', () => {
+	it('header checkbox is shown if multiselect is `true`', async () => {
 		const wrapper = shallowMount(FileList, {
 			propsData: {
 				currentView: 'files',
@@ -122,10 +122,13 @@ describe('FilePicker FileList', () => {
 				path: '/',
 			},
 		})
+
+		await nextTick()
+
 		const selectAll = wrapper.find('[data-testid="select-all-checkbox"]')
 		expect(selectAll.exists()).toBe(true)
 		// there is an aria label
-		expect(selectAll.attributes('aria-label')).toBeTruthy()
+		expect(selectAll.props('ariaLabel')).toBeTruthy()
 		// no checked
 		expect(selectAll.props('checked')).toBe(false)
 	})
