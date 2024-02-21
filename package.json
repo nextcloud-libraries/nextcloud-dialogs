@@ -60,7 +60,7 @@
     "@nextcloud/files": "^3.1.0",
     "@nextcloud/initial-state": "^2.1.0",
     "@nextcloud/l10n": "^2.2.0",
-    "@nextcloud/router": "^2.2.1",
+    "@nextcloud/router": "^3.0.0",
     "@nextcloud/typings": "^1.7.0",
     "@types/toastify-js": "^1.12.3",
     "@vueuse/core": "^10.7.2",
@@ -95,7 +95,7 @@
   },
   "engines": {
     "node": "^20.0.0",
-    "npm": "^9.0.0"
+    "npm": "^10.0.0"
   },
   "browserslist": [
     "extends @nextcloud/browserslist-config"
