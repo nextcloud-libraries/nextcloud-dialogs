@@ -12,31 +12,33 @@
 				<IconClose :size="16" />
 			</template>
 		</NcTextField>
-		<!-- On non collapsed dialogs show the tablist, otherwise a dropdown is shown -->
-		<ul v-if="!isCollapsed"
-			class="file-picker__side"
-			role="tablist"
-			:aria-label="t('Filepicker sections')">
-			<li v-for="view in allViews" :key="view.id">
-				<NcButton :aria-selected="currentView === view.id"
-					:type="currentView === view.id ? 'primary' : 'tertiary'"
-					:wide="true"
-					role="tab"
-					@click="$emit('update:currentView', view.id)">
-					<template #icon>
-						<component :is="view.icon" :size="20" />
-					</template>
-					{{ view.label }}
-				</NcButton>
-			</li>
-		</ul>
-		<NcSelect v-else
-			:aria-label="t('Current view selector')"
-			:clearable="false"
-			:searchable="false"
-			:options="allViews"
-			:value="currentViewObject"
-			@input="v => emit('update:currentView', v.id)" />
+		<template v-if="!isPublic">
+			<!-- On non collapsed dialogs show the tablist, otherwise a dropdown is shown -->
+			<ul v-if="!isCollapsed"
+				class="file-picker__side"
+				role="tablist"
+				:aria-label="t('Filepicker sections')">
+				<li v-for="view in allViews" :key="view.id">
+					<NcButton :aria-selected="currentView === view.id"
+						:type="currentView === view.id ? 'primary' : 'tertiary'"
+						:wide="true"
+						role="tab"
+						@click="$emit('update:currentView', view.id)">
+						<template #icon>
+							<component :is="view.icon" :size="20" />
+						</template>
+						{{ view.label }}
+					</NcButton>
+				</li>
+			</ul>
+			<NcSelect v-else
+				:aria-label="t('Current view selector')"
+				:clearable="false"
+				:searchable="false"
+				:options="allViews"
+				:value="currentViewObject"
+				@input="v => emit('update:currentView', v.id)" />
+		</template>
 	</Fragment>
 </template>
 
@@ -48,9 +50,12 @@ import IconMagnify from 'vue-material-design-icons/Magnify.vue'
 import IconStar from 'vue-material-design-icons/Star.vue'
 
 import { NcButton, NcSelect, NcTextField } from '@nextcloud/vue'
-import { t } from '../../utils/l10n'
 import { computed } from 'vue'
 import { Fragment } from 'vue-frag'
+import { t } from '../../utils/l10n'
+import { useIsPublic } from '../../usables/isPublic'
+
+const { isPublic } = useIsPublic()
 
 const allViews = [{
 	id: 'files',
