@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.2.6](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v4.2.6) (2024-02-22)
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v4.2.5...v4.2.6)
+
+### :bug: Fixed bugs
+* [stable4] Fix FilePicker on public shares [\#1243](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1243) ([susnux](https://github.com/susnux))
+
 ## [v4.2.5](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v4.2.5) (2024-02-06)
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v4.2.4...v4.2.5)
 
