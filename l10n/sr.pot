@@ -44,6 +44,12 @@ msgstr "Копирај у {target}"
 msgid "Could not create the new folder"
 msgstr "Није могао да се креира нови фолдер"
 
+msgid "Could not load files settings"
+msgstr "Не могу да се учитају подешавања фајлова"
+
+msgid "Could not load files views"
+msgstr "Не могу да се учитају прикази фајлова"
+
 msgid "Create directory"
 msgstr "Креирај директоријум"
 
