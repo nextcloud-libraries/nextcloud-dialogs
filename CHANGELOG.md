@@ -2,7 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
-## [v5.1.1](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.0.3) (2024-01-26)
+## [v5.1.2](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.1.2) (2024-02-25)
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.1.1...v5.1.2)
+
+### :bug: Fixed bugs
+* fix(FilePicker): Allow using on public shares [\#1241](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1241) \([susnux](https://github.com/susnux)\)
+* enh: breadcrumbs are now consistant across server [\#1234](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1234) \([emoral435](https://github.com/emoral435)\)
+
+### Changed
+* Updated translations
+* Updated dependencies `@nextcloud/router` and `webdav`
+* Updated development dependencies
+
+## [v5.1.1](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.1.1) (2024-01-26)
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.1.0...v5.1.1)
 
 ### :bug: Fixed bugs
@@ -13,7 +25,7 @@ All notable changes to this project will be documented in this file.
 * Updated translations
 * Updated development dependencies
 
-## [v5.1.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.0.3) (2024-01-19)
+## [v5.1.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.1.0) (2024-01-19)
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.0.3...v5.1.0)
 
 ### :rocket: Enhancement
