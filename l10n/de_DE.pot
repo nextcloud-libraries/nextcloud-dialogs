@@ -44,6 +44,12 @@ msgstr "Nach {target} kopieren"
 msgid "Could not create the new folder"
 msgstr "Der neue Ordner konnte nicht erstellt werden"
 
+msgid "Could not load files settings"
+msgstr "Dateieinstellungen konnten nicht geladen werden"
+
+msgid "Could not load files views"
+msgstr "Dateiansichten konnten nicht geladen werden"
+
 msgid "Create directory"
 msgstr "Verzeichnis erstellen"
 
