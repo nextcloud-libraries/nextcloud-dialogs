@@ -61,7 +61,7 @@
     "@nextcloud/initial-state": "^2.1.0",
     "@nextcloud/l10n": "^2.2.0",
     "@nextcloud/router": "^3.0.0",
-    "@nextcloud/typings": "^1.7.0",
+    "@nextcloud/typings": "^1.8.0",
     "@types/toastify-js": "^1.12.3",
     "@vueuse/core": "^10.8.0",
     "toastify-js": "^1.12.0",
