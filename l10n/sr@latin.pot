@@ -1,15 +1,125 @@
 # 
 # Translators:
-# Transifex Bot <>, 2023
+# Bogdan Vuković, 2024
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Transifex Bot <>, 2023\n"
+"Last-Translator: Bogdan Vuković, 2024\n"
 "Language-Team: Serbian (Latin) (https://app.transifex.com/nextcloud/teams/64236/sr@latin/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: sr@latin\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: lib/toast.ts:223
+msgid "\"{name}\" is an invalid folder name."
+msgstr "„{name}” je neispravno ime foldera."
+
+msgid "\"{name}\" is not an allowed folder name"
+msgstr "„{name}” je nedozvoljeno ime za folder."
+
+msgid "\"/\" is not allowed inside a folder name."
+msgstr "„/” se ne može koristiti unutar imena foldera."
+
+msgid "All files"
+msgstr "Svi fajlovi"
+
+msgid "Choose"
+msgstr "Izaberite"
+
+msgid "Choose {file}"
+msgstr "Izaberite {file}"
+
+msgid "Choose %n file"
+msgid_plural "Choose %n files"
+msgstr[0] "Izaberite %n fajl"
+msgstr[1] "Izaberite %n fajla"
+msgstr[2] "Izaberite %n fajlova"
+
+msgid "Copy"
+msgstr "Kopiraj"
+
+msgid "Copy to {target}"
+msgstr "Kopiraj u {target}"
+
+msgid "Could not create the new folder"
+msgstr "Neuspešno kreiranje novog foldera"
+
+msgid "Could not load files settings"
+msgstr "Neuspešno učitavanje podešavanja fajlova"
+
+msgid "Could not load files views"
+msgstr "Neuspešno učitavanje prikaza fajlova"
+
+msgid "Create directory"
+msgstr "Kreiraj direktorijum"
+
+msgid "Current view selector"
+msgstr "Birač trenutnog prikaza"
+
+msgid "Favorites"
+msgstr "Omiljeno"
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr "Lista omiljenih fajlova i foldera."
+
+msgid "Files and folders you recently modified will show up here."
+msgstr "Lista fajlova i foldera sa skorašnjim izmenama."
+
+msgid "Filter file list"
+msgstr "Fitriranje liste fajlova"
+
+msgid "Folder name cannot be empty."
+msgstr "Ime foldera ne može biti prazno."
+
+msgid "Home"
+msgstr "Početak"
+
+msgid "Modified"
+msgstr "Izmenjeno"
+
+msgid "Move"
+msgstr "Premesti"
+
+msgid "Move to {target}"
+msgstr "Premesti u {target}"
+
+msgid "Name"
+msgstr "Ime"
+
+msgid "New"
+msgstr "Novo"
+
+msgid "New folder"
+msgstr "Novi folder"
+
+msgid "New folder name"
+msgstr "Ime novog foldera"
+
+msgid "No files in here"
+msgstr "Bez fajlova"
+
+msgid "No files matching your filter were found."
+msgstr "Nema fajlova koji zadovoljavaju uslove filtera."
+
+msgid "No matching files"
+msgstr "Nema takvih fajlova"
+
+msgid "Recent"
+msgstr "Skorašnje"
+
+msgid "Select all entries"
+msgstr "Izaberite sve stavke"
+
+msgid "Select entry"
+msgstr "Izaberite stavku"
+
+msgid "Select the row for {nodename}"
+msgstr "Izaberite red za {nodename}"
+
+msgid "Size"
+msgstr "Veličina"
+
 msgid "Undo"
-msgstr ""
+msgstr "Vrati"
+
+msgid "Upload some content or sync with your devices!"
+msgstr "Otpremite sadržaj ili sinhronizujte sa svojim uređajima!"
