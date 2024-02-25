@@ -83,7 +83,7 @@ msgid "Move to {target}"
 msgstr "Premesti u {target}"
 
 msgid "Name"
-msgstr "Ime"
+msgstr "Naziv"
 
 msgid "New"
 msgstr "Novo"
