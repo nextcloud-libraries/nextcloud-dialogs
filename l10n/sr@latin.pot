@@ -11,13 +11,13 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 msgid "\"{name}\" is an invalid folder name."
-msgstr "„{name}” je neispravno ime foldera."
+msgstr "„{name}” je neispravan naziv foldera."
 
 msgid "\"{name}\" is not an allowed folder name"
-msgstr "„{name}” je nedozvoljeno ime za folder."
+msgstr "„{name}” je nedozvoljen naziv foldera."
 
 msgid "\"/\" is not allowed inside a folder name."
-msgstr "„/” se ne može koristiti unutar imena foldera."
+msgstr "„/” se ne može koristiti unutar naziva foldera."
 
 msgid "All files"
 msgstr "Svi fajlovi"
@@ -68,7 +68,7 @@ msgid "Filter file list"
 msgstr "Fitriranje liste fajlova"
 
 msgid "Folder name cannot be empty."
-msgstr "Ime foldera ne može biti prazno."
+msgstr "Naziv foldera ne može biti prazan."
 
 msgid "Home"
 msgstr "Početak"
@@ -83,7 +83,7 @@ msgid "Move to {target}"
 msgstr "Premesti u {target}"
 
 msgid "Name"
-msgstr "Ime"
+msgstr "Naziv"
 
 msgid "New"
 msgstr "Novo"
@@ -92,7 +92,7 @@ msgid "New folder"
 msgstr "Novi folder"
 
 msgid "New folder name"
-msgstr "Ime novog foldera"
+msgstr "Naziv novog foldera"
 
 msgid "No files in here"
 msgstr "Bez fajlova"
