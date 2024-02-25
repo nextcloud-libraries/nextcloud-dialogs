@@ -92,7 +92,7 @@ msgid "New folder"
 msgstr "Novi folder"
 
 msgid "New folder name"
-msgstr "Ime novog foldera"
+msgstr "Naziv novog foldera"
 
 msgid "No files in here"
 msgstr "Bez fajlova"
