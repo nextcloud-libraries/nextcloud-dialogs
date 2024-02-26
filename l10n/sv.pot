@@ -47,7 +47,7 @@ msgid "Could not load files settings"
 msgstr "Kunde inte ladda filinställningar"
 
 msgid "Could not load files views"
-msgstr "Det gick inte att läsa in filvyer"
+msgstr "Kunde inte ladda läsa in filvyer"
 
 msgid "Create directory"
 msgstr "Skapa katalog"
