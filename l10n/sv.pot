@@ -43,6 +43,12 @@ msgstr "Kopiera till {target}"
 msgid "Could not create the new folder"
 msgstr "Kunde inte skapa den nya mappen"
 
+msgid "Could not load files settings"
+msgstr "Kunde inte ladda filinställningar"
+
+msgid "Could not load files views"
+msgstr "Kunde inte ladda läsa in filvyer"
+
 msgid "Create directory"
 msgstr "Skapa katalog"
 
