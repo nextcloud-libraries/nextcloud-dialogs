@@ -1,11 +1,11 @@
 # 
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
-# enolp <enolp@softastur.org>, 2023
+# enolp <enolp@softastur.org>, 2024
 # 
 msgid ""
 msgstr ""
-"Last-Translator: enolp <enolp@softastur.org>, 2023\n"
+"Last-Translator: enolp <enolp@softastur.org>, 2024\n"
 "Language-Team: Asturian (https://app.transifex.com/nextcloud/teams/64236/ast/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: ast\n"
@@ -29,6 +29,11 @@ msgstr "Escoyer"
 msgid "Choose {file}"
 msgstr "Escoyer «{ficheru}»"
 
+msgid "Choose %n file"
+msgid_plural "Choose %n files"
+msgstr[0] "Escoyer %n ficheru"
+msgstr[1] "Escoyer %n ficheros"
+
 msgid "Copy"
 msgstr "Copiar"
 
@@ -37,6 +42,12 @@ msgstr "Copiar en: {target}"
 
 msgid "Could not create the new folder"
 msgstr "Nun se pudo crear la carpeta"
+
+msgid "Could not load files settings"
+msgstr "Nun se pudo cargar la configuración de los ficheros"
+
+msgid "Could not load files views"
+msgstr "Nun se pudieron cargar les vistes de los ficheros"
 
 msgid "Create directory"
 msgstr "Crear un direutoriu"
