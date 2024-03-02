@@ -69,7 +69,7 @@ msgid "Filter file list"
 msgstr "Saring daftar berkas"
 
 msgid "Folder name cannot be empty."
-msgstr "Name berkas tidak dapat kosong."
+msgstr "Name berkas tidak boleh kosong."
 
 msgid "Home"
 msgstr "Beranda"
