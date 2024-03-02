@@ -123,4 +123,4 @@ msgid "Undo"
 msgstr "Tidak jadi"
 
 msgid "Upload some content or sync with your devices!"
-msgstr "Unggah beberapa konten atau sinkron dengan perangkat Anda!"
+msgstr "Unggah beberapa konten atau sinkronkan dengan perangkat Anda!"
