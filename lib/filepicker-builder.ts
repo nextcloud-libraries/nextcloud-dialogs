@@ -56,6 +56,7 @@ export class FilePicker<IsMultiSelect extends boolean> {
 	private path?: string
 	private filter?: IFilePickerFilter
 	private container?: string
+	private disabledNavigation: boolean
 
 	public constructor(title: string,
 		multiSelect: IsMultiSelect,
@@ -64,7 +65,9 @@ export class FilePicker<IsMultiSelect extends boolean> {
 		buttons: IFilePickerButton[] | IFilePickerButtonFactory,
 		path?: string,
 		filter?: IFilePickerFilter,
-		container?: string) {
+		container?: string,
+		disabledNavigation = false,
+	) {
 		this.title = title
 		this.multiSelect = multiSelect
 		this.mimeTypeFilter = mimeTypeFilter
@@ -73,6 +76,7 @@ export class FilePicker<IsMultiSelect extends boolean> {
 		this.filter = filter
 		this.buttons = buttons
 		this.container = container
+		this.disabledNavigation = disabledNavigation
 	}
 
 	/**
@@ -93,6 +97,7 @@ export class FilePicker<IsMultiSelect extends boolean> {
 				mimetypeFilter: this.mimeTypeFilter,
 				multiselect: this.multiSelect,
 				filterFn: this.filter,
+				disabledNavigation: this.disabledNavigation,
 			}, (...rest: unknown[]) => {
 				const [nodes] = rest as [nodes: Node[]]
 				if (!Array.isArray(nodes) || nodes.length === 0) {
@@ -120,6 +125,7 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 	private filter?: IFilePickerFilter
 	private buttons: IFilePickerButton[] | IFilePickerButtonFactory = []
 	private container?: string
+	private disabledNavigation = false
 
 	/**
 	 * Construct a new FilePicker
@@ -274,6 +280,16 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 	}
 
 	/**
+	 * Allow to pick directories besides files
+	 *
+	 * @param allow True to allow picking directories
+	 */
+	public disableNavigation() {
+		this.disabledNavigation = true
+		return this
+	}
+
+	/**
 	 * Construct the configured FilePicker
 	 */
 	public build() {
@@ -285,6 +301,8 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 			this.buttons,
 			this.path,
 			this.filter,
+			this.container,
+			this.disabledNavigation,
 		)
 	}
 
