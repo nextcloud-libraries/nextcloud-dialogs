@@ -11,7 +11,8 @@
 		<template #navigation="{ isCollapsed }">
 			<FilePickerNavigation :is-collapsed="isCollapsed"
 				:current-view.sync="currentView"
-				:filter-string.sync="filterString" />
+				:filter-string.sync="filterString"
+				:disabled-navigation="disabledNavigation" />
 		</template>
 
 		<div class="file-picker__main">
@@ -90,6 +91,11 @@ const props = withDefaults(defineProps<{
 	allowPickDirectory?: boolean
 
 	/**
+	 * Is the navigation disabled
+	 */
+	 disabledNavigation?: boolean
+
+	/**
 	 * Where to mount the dialog
 	 * @default 'body'
 	 */
@@ -121,6 +127,7 @@ const props = withDefaults(defineProps<{
 	 path?: string
 }>(), {
 	allowPickDirectory: false,
+	disabledNavigation: false,
 	container: 'body',
 	filterFn: undefined,
 	mimetypeFilter: () => [],

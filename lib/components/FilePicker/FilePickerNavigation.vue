@@ -12,7 +12,7 @@
 				<IconClose :size="16" />
 			</template>
 		</NcTextField>
-		<template v-if="availableViews.length > 1">
+		<template v-if="availableViews.length > 1 && !disabledNavigation">
 			<!-- On non collapsed dialogs show the tablist, otherwise a dropdown is shown -->
 			<ul v-if="!isCollapsed"
 				class="file-picker__side">
@@ -52,7 +52,8 @@ import { useViews } from '../../composables/views'
 const props = defineProps<{
 	currentView: 'files' | 'recent' | 'favorites',
 	filterString: string,
-	isCollapsed: boolean
+	isCollapsed: boolean,
+	disabledNavigation: boolean,
 }>()
 
 interface INavigationEvents {
