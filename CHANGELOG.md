@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v5.2.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.2.0) (2024-03-06)
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.1.2...v5.2.0)
+
+### Enhancements
+* feat: allow to disable file picker navigation by @skjnldsv in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1261
+
+### Fixed bug
+* fix(FilePicker): Adjust margin of view-selector to be consistent with filter input
+
+### Changed
+* chore(deps-dev): Bump @vitest/coverage-v8 from 1.3.0 to 1.3.1 by @dependabot
+* chore(deps-dev): Bump happy-dom from 13.3.8 to 13.6.2 by @dependabot
+* chore(deps-dev): Bump sass from 1.71.0 to 1.71.1 by @dependabot
+* chore(deps-dev): Bump typedoc from 0.25.8 to 0.25.9 by @dependabot
+* chore(deps-dev): Bump vite from 5.1.3 to 5.1.4 by @dependabot
+* chore(deps): Bump @nextcloud/typings from 1.7.0 to 1.8.0 by @dependabot
+* chore(deps): Bump @vueuse/core from 10.7.2 to 10.9.0 by @dependabot
+* chore(deps): Bump webdav from 5.3.2 to 5.4.0 by @dependabot
+* Updates for project Nextcloud dialogs library by @transifex-integration
+
 ## [v5.1.2](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.1.2) (2024-02-25)
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.1.1...v5.1.2)
 
