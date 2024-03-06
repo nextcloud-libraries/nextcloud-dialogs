@@ -63,7 +63,7 @@
     "@nextcloud/router": "^3.0.0",
     "@nextcloud/typings": "^1.8.0",
     "@types/toastify-js": "^1.12.3",
-    "@vueuse/core": "^10.8.0",
+    "@vueuse/core": "^10.9.0",
     "toastify-js": "^1.12.0",
     "vue-frag": "^1.4.3",
     "webdav": "^5.4.0"
