@@ -87,6 +87,8 @@ const updateFilterValue = (value: string) => emit('update:filterString', value)
 		min-width: 200px;
 		// ensure focus outline is visible
 		padding: 2px;
+		// align with input
+		margin-block-start: 7px;
 		// make only the navigation scroll
 		overflow: auto;
 
@@ -109,7 +111,6 @@ const updateFilterValue = (value: string) => emit('update:filterString', value)
 		&__side {
 			flex-direction: row;
 			min-width: unset;
-
 		}
 	}
 }
