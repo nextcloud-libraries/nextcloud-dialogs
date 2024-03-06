@@ -1,25 +1,25 @@
 # 
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
-# Andi Chandler <andi@gowling.com>, 2023
 # Café Tango, 2023
+# Andi Chandler <andi@gowling.com>, 2024
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Café Tango, 2023\n"
+"Last-Translator: Andi Chandler <andi@gowling.com>, 2024\n"
 "Language-Team: English (United Kingdom) (https://app.transifex.com/nextcloud/teams/64236/en_GB/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: en_GB\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "\"{name}\" is an invalid file name."
-msgstr "\"{name}\" is an invalid file name."
+msgid "\"{name}\" is an invalid folder name."
+msgstr "\"{name}\" is an invalid folder name."
 
-msgid "\"{name}\" is not an allowed filetype"
-msgstr "\"{name}\" is not an allowed filetype"
+msgid "\"{name}\" is not an allowed folder name"
+msgstr "\"{name}\" is not an allowed folder name"
 
-msgid "\"/\" is not allowed inside a file name."
-msgstr "\"/\" is not allowed inside a file name."
+msgid "\"/\" is not allowed inside a folder name."
+msgstr "\"/\" is not allowed inside a folder name."
 
 msgid "All files"
 msgstr "All files"
@@ -30,6 +30,11 @@ msgstr "Choose"
 msgid "Choose {file}"
 msgstr "Choose {file}"
 
+msgid "Choose %n file"
+msgid_plural "Choose %n files"
+msgstr[0] "Choose %n file"
+msgstr[1] "Choose %n files"
+
 msgid "Copy"
 msgstr "Copy"
 
@@ -38,6 +43,12 @@ msgstr "Copy to {target}"
 
 msgid "Could not create the new folder"
 msgstr "Could not create the new folder"
+
+msgid "Could not load files settings"
+msgstr "Could not load files settings"
+
+msgid "Could not load files views"
+msgstr "Could not load files views"
 
 msgid "Create directory"
 msgstr "Create directory"
@@ -48,12 +59,6 @@ msgstr "Current view selector"
 msgid "Favorites"
 msgstr "Favourites"
 
-msgid "File name cannot be empty."
-msgstr "File name cannot be empty."
-
-msgid "Filepicker sections"
-msgstr "Filepicker sections"
-
 msgid "Files and folders you mark as favorite will show up here."
 msgstr "Files and folders you mark as favourite will show up here."
 
@@ -63,11 +68,11 @@ msgstr "Files and folders you recently modified will show up here."
 msgid "Filter file list"
 msgstr "Filter file list"
 
+msgid "Folder name cannot be empty."
+msgstr "Folder name cannot be empty."
+
 msgid "Home"
 msgstr "Home"
-
-msgid "MIME type {mime}"
-msgstr "MIME type {mime}"
 
 msgid "Modified"
 msgstr "Modified"
@@ -116,9 +121,6 @@ msgstr "Size"
 
 msgid "Undo"
 msgstr "Undo"
-
-msgid "unknown"
-msgstr "unknown"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Upload some content or sync with your devices!"

@@ -1,15 +1,128 @@
 # 
 # Translators:
-# Joas Schilling, 2023
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# Stanislav Prekop <prekop3@gmail.com>, 2024
+# Tomas Rusnak <linkermail@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
+"Last-Translator: Tomas Rusnak <linkermail@gmail.com>, 2024\n"
 "Language-Team: Slovak (Slovakia) (https://app.transifex.com/nextcloud/teams/64236/sk_SK/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: sk_SK\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n == 1 ? 0 : n % 1 == 0 && n >= 2 && n <= 4 ? 1 : n % 1 != 0 ? 2: 3);\n"
 
-#: lib/toast.ts:223
+msgid "\"{name}\" is an invalid folder name."
+msgstr "\"{name}\" je neplatný názov pričinka."
+
+msgid "\"{name}\" is not an allowed folder name"
+msgstr "\"{name}\" nie je povolený názov priečinka."
+
+msgid "\"/\" is not allowed inside a folder name."
+msgstr "\"/\" nie je povolené v názve priečinka."
+
+msgid "All files"
+msgstr "Všetky súbory"
+
+msgid "Choose"
+msgstr "Vybrať"
+
+msgid "Choose {file}"
+msgstr "Vybrať {súbor}"
+
+msgid "Choose %n file"
+msgid_plural "Choose %n files"
+msgstr[0] "Vybraný %n súbor"
+msgstr[1] "Vybrané %n súbory"
+msgstr[2] "Vybraných %n súborov"
+msgstr[3] "Vybraných %n súborov"
+
+msgid "Copy"
+msgstr "Kopírovať"
+
+msgid "Copy to {target}"
+msgstr "Kopírovať do {umiestnenia}"
+
+msgid "Could not create the new folder"
+msgstr "Nepodarilo sa vytvoriť nový priečinok"
+
+msgid "Could not load files settings"
+msgstr "Nepodarilo sa načítať nastavenia súborov"
+
+msgid "Could not load files views"
+msgstr "Nepodarilo sa načítať pohľady súborov"
+
+msgid "Create directory"
+msgstr "Vytvoriť adresár"
+
+msgid "Current view selector"
+msgstr "Výber aktuálneho zobrazenia"
+
+msgid "Favorites"
+msgstr "Obľúbené"
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr "Tu sa zobrazia súbory a priečinky, ktoré označíte ako obľúbené."
+
+msgid "Files and folders you recently modified will show up here."
+msgstr "Tu sa zobrazia súbory a priečinky, ktoré ste nedávno upravili."
+
+msgid "Filter file list"
+msgstr "Filtrovať zoznam súborov"
+
+msgid "Folder name cannot be empty."
+msgstr "Názov priečinka nemôže byť prázdny."
+
+msgid "Home"
+msgstr "Domov"
+
+msgid "Modified"
+msgstr "Upravené"
+
+msgid "Move"
+msgstr "Prejsť"
+
+msgid "Move to {target}"
+msgstr "Prejsť na {umiestnenie}"
+
+msgid "Name"
+msgstr "Názov"
+
+msgid "New"
+msgstr "Pridať"
+
+msgid "New folder"
+msgstr "Pridať priečinok"
+
+msgid "New folder name"
+msgstr "Pridať názov priečinka"
+
+msgid "No files in here"
+msgstr "Nie sú tu žiadne súbory"
+
+msgid "No files matching your filter were found."
+msgstr "Nenašli sa žiadne súbory zodpovedajúce vášmu filtru."
+
+msgid "No matching files"
+msgstr "Žiadne zodpovedajúce súbory"
+
+msgid "Recent"
+msgstr "Nedávne"
+
+msgid "Select all entries"
+msgstr "Vybrať všetky položky"
+
+msgid "Select entry"
+msgstr "Vybrať položku"
+
+msgid "Select the row for {nodename}"
+msgstr "Vyberte riadok pre {názov uzla}"
+
+msgid "Size"
+msgstr "Veľkosť"
+
 msgid "Undo"
 msgstr "Späť"
+
+msgid "Upload some content or sync with your devices!"
+msgstr "Nahrajte nejaký obsah alebo synchronizujte so svojimi zariadeniami!"

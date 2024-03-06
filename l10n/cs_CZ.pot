@@ -45,6 +45,12 @@ msgstr "Zkopírovat do {target}"
 msgid "Could not create the new folder"
 msgstr "Novou složku se nepodařilo vytvořit"
 
+msgid "Could not load files settings"
+msgstr "Nepodařilo se načíst nastavení pro soubory"
+
+msgid "Could not load files views"
+msgstr "Nepodařilo se načíst pohledy souborů"
+
 msgid "Create directory"
 msgstr "Vytvořit složku"
 

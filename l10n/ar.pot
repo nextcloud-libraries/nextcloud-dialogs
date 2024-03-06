@@ -47,6 +47,12 @@ msgstr "نسخٌ إلى {target}"
 msgid "Could not create the new folder"
 msgstr "تعذّر إنشاء المجلد الجديد"
 
+msgid "Could not load files settings"
+msgstr "يتعذّر تحميل إعدادات الملفات"
+
+msgid "Could not load files views"
+msgstr "يتعذّر تحميل مناظير views الملفات"
+
 msgid "Create directory"
 msgstr "أنشِيءْ مجلّداً"
 
