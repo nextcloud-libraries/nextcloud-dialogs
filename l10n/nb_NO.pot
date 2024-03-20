@@ -49,7 +49,7 @@ msgid "Could not load files settings"
 msgstr "Kunne ikke laste filinnstillinger"
 
 msgid "Could not load files views"
-msgstr "Kunne ikke laste filvisningere"
+msgstr "Kunne ikke laste filvisninger"
 
 msgid "Create directory"
 msgstr "Opprett mappe"
