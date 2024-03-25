@@ -43,6 +43,12 @@ msgstr "{target} üzerine kopyala"
 msgid "Could not create the new folder"
 msgstr "Yeni klasör oluşturulamadı"
 
+msgid "Could not load files settings"
+msgstr "Dosyalar ayarları yüklenemedi"
+
+msgid "Could not load files views"
+msgstr "Dosyalar görünümleri yüklenemedi"
+
 msgid "Create directory"
 msgstr "Klasör oluştur"
 
