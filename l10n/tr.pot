@@ -44,10 +44,10 @@ msgid "Could not create the new folder"
 msgstr "Yeni klasör oluşturulamadı"
 
 msgid "Could not load files settings"
-msgstr "Dosyalar ayarları yüklenemedi"
+msgstr "Dosyalar uygulamasının ayarları yüklenemedi"
 
 msgid "Could not load files views"
-msgstr "Dosyalar görünümleri yüklenemedi"
+msgstr "Dosyalar uygulamasının görünümleri yüklenemedi"
 
 msgid "Create directory"
 msgstr "Klasör oluştur"
