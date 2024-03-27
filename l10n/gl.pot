@@ -43,6 +43,12 @@ msgstr "Copiar en  {target}"
 msgid "Could not create the new folder"
 msgstr "Non foi posíbel crear o novo cartafol"
 
+msgid "Could not load files settings"
+msgstr "Non foi posíbel cargar os axustes dos ficheiros"
+
+msgid "Could not load files views"
+msgstr "Non foi posíbel cargar as vistas dos ficheiros"
+
 msgid "Create directory"
 msgstr "Crear un directorio"
 
