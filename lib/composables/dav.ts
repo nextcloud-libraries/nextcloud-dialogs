@@ -19,7 +19,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
  */
-import { Folder, type Node } from '@nextcloud/files'
+import { Folder, Permission, type Node } from '@nextcloud/files'
 import type { ComputedRef, Ref } from 'vue'
 import type { FileStat, ResponseDataDetailed, SearchResult } from 'webdav'
 
@@ -99,7 +99,7 @@ export const useDAVFiles = function(
 			crtime: stat.mtime,
 			mime: stat.mime,
 			size: stat.size,
-			permissions: stat.permissions,
+			permissions: Permission.ALL,
 			owner: stat.owner,
 			attributes: stat.attributes,
 			root: stat.root ? stat.root : undefined,
