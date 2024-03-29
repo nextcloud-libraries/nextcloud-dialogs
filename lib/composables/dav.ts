@@ -19,7 +19,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
  */
-import type { Folder, Node } from '@nextcloud/files'
+import { Folder, type Node } from '@nextcloud/files'
 import type { ComputedRef, Ref } from 'vue'
 import type { FileStat, ResponseDataDetailed, SearchResult } from 'webdav'
 
@@ -85,8 +85,26 @@ export const useDAVFiles = function(
 	async function createDirectory(name: string): Promise<Folder> {
 		const path = join(currentPath.value, name)
 
-		await client.value.createDirectory(join(defaultRootPath.value, path))
-		const directory = await getFile(path) as Folder
+		const { headers } = await client.value.customRequest(
+			join(defaultRootPath.value, path),
+			{
+				method: 'MKCOL',
+			},
+		)
+		const stat = await getFile(path)
+		const directory = new Folder({
+			id: parseInt(headers.get('oc-fileid') ?? '0'),
+			source: stat.source,
+			mtime: stat.mtime,
+			crtime: stat.mtime,
+			mime: stat.mime,
+			size: stat.size,
+			permissions: stat.permissions,
+			owner: stat.owner,
+			attributes: stat.attributes,
+			root: stat.root ? stat.root : undefined,
+			status: stat.status,
+		})
 		files.value.push(directory)
 		return directory
 	}
