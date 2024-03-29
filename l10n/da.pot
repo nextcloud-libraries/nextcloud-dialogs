@@ -1,15 +1,125 @@
 # 
 # Translators:
-# Joas Schilling, 2023
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# Martin Bonde <Martin@maboni.dk>, 2024
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
+"Last-Translator: Martin Bonde <Martin@maboni.dk>, 2024\n"
 "Language-Team: Danish (https://app.transifex.com/nextcloud/teams/64236/da/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: da\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: lib/toast.ts:223
+msgid "\"{name}\" is an invalid folder name."
+msgstr "\"{name}\" er et ugyldigt mappenavn."
+
+msgid "\"{name}\" is not an allowed folder name"
+msgstr "\"{name}\" er ikke et tilladt mappenavn"
+
+msgid "\"/\" is not allowed inside a folder name."
+msgstr "\"/\" er ikke tilladt i et mappenavn."
+
+msgid "All files"
+msgstr "Alle filer"
+
+msgid "Choose"
+msgstr "Vælg"
+
+msgid "Choose {file}"
+msgstr "Vælg {file}"
+
+msgid "Choose %n file"
+msgid_plural "Choose %n files"
+msgstr[0] "Vælg %n fil"
+msgstr[1] "Vælg %n filer"
+
+msgid "Copy"
+msgstr "Kopier"
+
+msgid "Copy to {target}"
+msgstr "Kopier til {target}"
+
+msgid "Could not create the new folder"
+msgstr "Kunne ikke oprette den nye mappe"
+
+msgid "Could not load files settings"
+msgstr "Filindstillingerne kunne ikke indlæses"
+
+msgid "Could not load files views"
+msgstr "Kunne ikke indlæse filvisninger"
+
+msgid "Create directory"
+msgstr "Opret mappe"
+
+msgid "Current view selector"
+msgstr "Aktuel visningsvælger"
+
+msgid "Favorites"
+msgstr "Favoritter"
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr "Filer og mapper, du markerer som foretrukne, vises her."
+
+msgid "Files and folders you recently modified will show up here."
+msgstr "Filer og mapper, du for nylig har ændret, vises her."
+
+msgid "Filter file list"
+msgstr "Filtrer fil liste"
+
+msgid "Folder name cannot be empty."
+msgstr "Mappenavnet må ikke være tomt."
+
+msgid "Home"
+msgstr "Hjem"
+
+msgid "Modified"
+msgstr "Ændret"
+
+msgid "Move"
+msgstr "Flyt"
+
+msgid "Move to {target}"
+msgstr "Flyt til {target}"
+
+msgid "Name"
+msgstr "Navn"
+
+msgid "New"
+msgstr "Ny"
+
+msgid "New folder"
+msgstr "Ny mappe"
+
+msgid "New folder name"
+msgstr "Ny mappe navn"
+
+msgid "No files in here"
+msgstr "Ingen filer here"
+
+msgid "No files matching your filter were found."
+msgstr "Der blev ikke fundet nogen filer, der matcher dit filter."
+
+msgid "No matching files"
+msgstr "Ingen matchende filer"
+
+msgid "Recent"
+msgstr "Seneste"
+
+msgid "Select all entries"
+msgstr "Vælg alle poster"
+
+msgid "Select entry"
+msgstr "Vælg post"
+
+msgid "Select the row for {nodename}"
+msgstr "Vælg rækken for {nodenavn}"
+
+msgid "Size"
+msgstr "Størelse"
+
 msgid "Undo"
 msgstr "Fortryd"
+
+msgid "Upload some content or sync with your devices!"
+msgstr "Upload noget indhold eller synkroniser med dine enheder!"
