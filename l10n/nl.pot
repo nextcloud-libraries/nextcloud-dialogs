@@ -3,10 +3,11 @@
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Joost <joho500@hotmail.com>, 2023
 # Jeroen Gui, 2023
+# Casper <casper@vrije-mens.org>, 2024
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Jeroen Gui, 2023\n"
+"Last-Translator: Casper <casper@vrije-mens.org>, 2024\n"
 "Language-Team: Dutch (https://app.transifex.com/nextcloud/teams/64236/nl/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: nl\n"
@@ -30,6 +31,11 @@ msgstr "Kies"
 msgid "Choose {file}"
 msgstr "Kies {file}"
 
+msgid "Choose %n file"
+msgid_plural "Choose %n files"
+msgstr[0] "Kies %n bestand"
+msgstr[1] "Kies %n bestanden"
+
 msgid "Copy"
 msgstr "Kopieer"
 
@@ -38,6 +44,12 @@ msgstr "Kopieer naar {target}"
 
 msgid "Could not create the new folder"
 msgstr "Kon de nieuwe map niet maken"
+
+msgid "Could not load files settings"
+msgstr "Kon de bestandsinstellingen niet laden"
+
+msgid "Could not load files views"
+msgstr "Kon de bestandsweergaves niet laden"
 
 msgid "Create directory"
 msgstr "Maak map"
