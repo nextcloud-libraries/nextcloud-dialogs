@@ -33,6 +33,7 @@ import { computed, onMounted, ref, watch } from 'vue'
  *
  * @param currentView Reference to the current files view
  * @param currentPath Reference to the current files path
+ * @param isPublicEndpoint True if the public `public.php` WebDAV endpoint should be used instead of `remote.php`
  */
 export const useDAVFiles = function(
 	currentView: Ref<'files'|'recent'|'favorites'> | ComputedRef<'files'|'recent'|'favorites'>,
@@ -102,6 +103,7 @@ export const useDAVFiles = function(
 
 		const { data } = await client.value.stat(`${rootPath}${path}`, {
 			details: true,
+			data: davGetDefaultPropfind(),
 		}) as ResponseDataDetailed<FileStat>
 		return resultToNode(data)
 	}
