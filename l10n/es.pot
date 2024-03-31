@@ -2,13 +2,13 @@
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # FranciscoFJ <dev-ooo@satel-sa.com>, 2023
-# Julio C. Ortega, 2024
 # Frenzel Alejandro Avalos Montes de Oca, 2024
 # Mark Ziegler <mark.ziegler@rakekniven.de>, 2024
+# Julio C. Ortega, 2024
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Mark Ziegler <mark.ziegler@rakekniven.de>, 2024\n"
+"Last-Translator: Julio C. Ortega, 2024\n"
 "Language-Team: Spanish (https://app.transifex.com/nextcloud/teams/64236/es/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: es\n"
@@ -27,16 +27,16 @@ msgid "All files"
 msgstr "Todos los archivos"
 
 msgid "Choose"
-msgstr "Escoger"
+msgstr "Seleccionar"
 
 msgid "Choose {file}"
-msgstr "Escoger {file}"
+msgstr "Seleccionar {file}"
 
 msgid "Choose %n file"
 msgid_plural "Choose %n files"
 msgstr[0] "Elige %n archivo"
 msgstr[1] "Elige %n archivos"
-msgstr[2] "Elige %n archivos"
+msgstr[2] "Seleccione %n archivos"
 
 msgid "Copy"
 msgstr "Copiar"
@@ -45,7 +45,7 @@ msgid "Copy to {target}"
 msgstr "Copiar a {target}"
 
 msgid "Could not create the new folder"
-msgstr "No se pudo crear la carpeta nueva"
+msgstr "No se pudo crear la nueva carpeta"
 
 msgid "Could not load files settings"
 msgstr "No se pudieron cargar las preferencias de archivos"
