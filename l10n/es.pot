@@ -36,7 +36,7 @@ msgid "Choose %n file"
 msgid_plural "Choose %n files"
 msgstr[0] "Elige %n archivo"
 msgstr[1] "Elige %n archivos"
-msgstr[2] "Elige %n archivos"
+msgstr[2] "Seleccione %n archivos"
 
 msgid "Copy"
 msgstr "Copiar"
