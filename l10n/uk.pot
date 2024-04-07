@@ -44,6 +44,12 @@ msgstr "Копіювати до {target}"
 msgid "Could not create the new folder"
 msgstr "Не вдалося створити новий каталог"
 
+msgid "Could not load files settings"
+msgstr "Не вдалося завантажити налаштування файлів"
+
+msgid "Could not load files views"
+msgstr "Не вдалося завантажити види файлів"
+
 msgid "Create directory"
 msgstr "Створити каталог"
 
