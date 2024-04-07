@@ -48,7 +48,7 @@ msgid "Could not load files settings"
 msgstr "Не вдалося завантажити налаштування файлів"
 
 msgid "Could not load files views"
-msgstr "Не вдалося завантажити види файлів"
+msgstr "Не вдалося завантажити подання файлів"
 
 msgid "Create directory"
 msgstr "Створити каталог"
