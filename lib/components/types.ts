@@ -22,6 +22,8 @@
 
 import type { Node } from '@nextcloud/files'
 
+export type ISeverity = 'info' | 'warning' | 'error'
+
 /**
  * Interface for defining buttons passed to the Dialog component
  * See NcDialogButton
