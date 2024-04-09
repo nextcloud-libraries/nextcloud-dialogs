@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v5.2.1](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.2.1) (2024-04-09)
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.2.0...v5.2.1)
+
+### Fixed bug
+* fix(FilePicker): Request all default file props (incl. file id) [\#1287](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1287) \([susnux](https://github.com/susnux)\)
+
+### Changed
+* Updated translations
+* Updated development dependencies
+* chore(deps): Bump @nextcloud/files from 3.1.0 to 3.1.1
+* chore(deps): Bump webdav from 5.4.0 to 5.5.0
+
 ## [v5.2.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.2.0) (2024-03-06)
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.1.2...v5.2.0)
 
