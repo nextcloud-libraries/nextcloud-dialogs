@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v5.3.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.3.0) (2024-04-10)
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.2.1...v5.3.0)
+
+### Enhancements
+* feat: Provide generic dialogs previously provided by OC.dialogs [\#1297](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1297) \([susnux](https://github.com/susnux)\)
+
+### Changed
+* Updated development dependencies
+
 ## [v5.2.1](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.2.1) (2024-04-09)
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.2.0...v5.2.1)
 
