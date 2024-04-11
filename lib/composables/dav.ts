@@ -27,6 +27,7 @@ import { davGetClient, davGetDefaultPropfind, davGetRecentSearch, davRemoteURL, 
 import { generateRemoteUrl } from '@nextcloud/router'
 import { join } from 'path'
 import { computed, onMounted, ref, watch } from 'vue'
+import { CancelablePromise } from 'cancelable-promise'
 
 /**
  * Handle file loading using WebDAV
@@ -68,6 +69,48 @@ export const useDAVFiles = function(
 
 	const resultToNode = (result: FileStat) => davResultToNode(result, defaultRootPath.value, defaultRemoteUrl.value)
 
+	const getRecentNodes = (): CancelablePromise<Node[]> => {
+		const controller = new AbortController()
+		// unix timestamp in seconds, two weeks ago
+		const lastTwoWeek = Math.round(Date.now() / 1000) - (60 * 60 * 24 * 14)
+		return new CancelablePromise(async (resolve, reject, onCancel) => {
+			onCancel(() => controller.abort())
+			try {
+				const { data } = await client.value.search('/', {
+					signal: controller.signal,
+					details: true,
+					data: davGetRecentSearch(lastTwoWeek),
+				}) as ResponseDataDetailed<SearchResult>
+				const nodes = data.results.map(resultToNode)
+				resolve(nodes)
+			} catch (error) {
+				reject(error)
+			}
+		})
+	}
+
+	const getNodes = (): CancelablePromise<Node[]> => {
+		const controller = new AbortController()
+		return new CancelablePromise(async (resolve, reject, onCancel) => {
+			onCancel(() => controller.abort())
+			try {
+				const results = await client.value.getDirectoryContents(`${defaultRootPath.value}${currentPath.value}`, {
+					signal: controller.signal,
+					details: true,
+					data: davGetDefaultPropfind(),
+				}) as ResponseDataDetailed<FileStat[]>
+				let nodes = results.data.map(resultToNode)
+				// Hack for the public endpoint which always returns folder itself
+				if (isPublicEndpoint.value) {
+					nodes = nodes.filter((file) => file.path !== currentPath.value)
+				}
+				resolve(nodes)
+			} catch (error) {
+				reject(error)
+			}
+		})
+	}
+
 	/**
 	 * All files in current view and path
 	 */
@@ -77,6 +120,11 @@ export const useDAVFiles = function(
 	 * Loading state of the files
 	 */
 	const isLoading = ref(true)
+
+	/**
+	 * The cancelable promise
+	 */
+	const promise = ref<null | CancelablePromise<unknown>>(null)
 
 	/**
 	 * Create a new directory in the current path
@@ -112,31 +160,21 @@ export const useDAVFiles = function(
 	 * Force reload files using the DAV client
 	 */
 	async function loadDAVFiles() {
+		if (promise.value) {
+			promise.value.cancel()
+		}
 		isLoading.value = true
 
 		if (currentView.value === 'favorites') {
-			files.value = await getFavoriteNodes(client.value, currentPath.value, defaultRootPath.value)
+			promise.value = getFavoriteNodes(client.value, currentPath.value, defaultRootPath.value)
 		} else if (currentView.value === 'recent') {
-			// unix timestamp in seconds, two weeks ago
-			const lastTwoWeek = Math.round(Date.now() / 1000) - (60 * 60 * 24 * 14)
-			const { data } = await client.value.search('/', {
-				details: true,
-				data: davGetRecentSearch(lastTwoWeek),
-			}) as ResponseDataDetailed<SearchResult>
-			files.value = data.results.map(resultToNode)
+			promise.value = getRecentNodes()
 		} else {
-			const results = await client.value.getDirectoryContents(`${defaultRootPath.value}${currentPath.value}`, {
-				details: true,
-				data: davGetDefaultPropfind(),
-			}) as ResponseDataDetailed<FileStat[]>
-			files.value = results.data.map(resultToNode)
-
-			// Hack for the public endpoint which always returns folder itself
-			if (isPublicEndpoint.value) {
-				files.value = files.value.filter((file) => file.path !== currentPath.value)
-			}
+			promise.value = getNodes()
 		}
+		files.value = await promise.value as Node[]
 
+		promise.value = null
 		isLoading.value = false
 	}
 
