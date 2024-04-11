@@ -1,15 +1,124 @@
 # 
 # Translators:
-# Transifex Bot <>, 2023
+# VoXaN24ch, 2024
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Transifex Bot <>, 2023\n"
+"Last-Translator: VoXaN24ch, 2024\n"
 "Language-Team: Luxembourgish (https://app.transifex.com/nextcloud/teams/64236/lb/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: lb\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: lib/toast.ts:223
+msgid "\"{name}\" is an invalid folder name."
+msgstr "{name} ass en ongëlteg Dossier"
+
+msgid "\"{name}\" is not an allowed folder name"
+msgstr "{name} ass net en erlaabten Dossiernumm"
+
+msgid "\"/\" is not allowed inside a folder name."
+msgstr "\"/\" ass net an engem Dossier Numm erlaabt"
+
+msgid "All files"
+msgstr "All Dateien"
+
+msgid "Choose"
+msgstr "Wielt"
+
+msgid "Choose {file}"
+msgstr "Wielt {file}"
+
+msgid "Choose %n file"
+msgid_plural "Choose %n files"
+msgstr[0] "Wielt %n Fichieren"
+msgstr[1] "Wielt %n Fichier"
+
+msgid "Copy"
+msgstr "Kopie"
+
+msgid "Copy to {target}"
+msgstr "Kopie op {target}"
+
+msgid "Could not create the new folder"
+msgstr "Konnt den neien Dossier net erstellen"
+
+msgid "Could not load files settings"
+msgstr "Konnt d'Dateienastellungen net lueden"
+
+msgid "Could not load files views"
+msgstr "Konnt d'Dateien net lueden"
+
+msgid "Create directory"
+msgstr "Erstellt Verzeechnes"
+
+msgid "Current view selector"
+msgstr "Aktuell Vue selector"
+
+msgid "Favorites"
+msgstr "Favoritten"
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr "Dateien an Ordner, déi Dir als Favorit markéiert, ginn hei gewisen"
+
+msgid "Files and folders you recently modified will show up here."
+msgstr "Dateien an Ordner déi Dir viru kuerzem geännert hutt ginn hei op"
+
+msgid "Filter file list"
+msgstr "Filter Datei Lëscht"
+
+msgid "Folder name cannot be empty."
+msgstr "Dossier Numm kann net eidel sinn"
+
+msgid "Home"
+msgstr "Wëllkomm"
+
+msgid "Modified"
+msgstr "Geännert"
+
+msgid "Move"
+msgstr "Plënne"
+
+msgid "Move to {target}"
+msgstr "Plënneren {target}"
+
+msgid "Name"
+msgstr "Numm"
+
+msgid "New"
+msgstr "Nei"
+
+msgid "New folder"
+msgstr "Neien dossier"
+
+msgid "New folder name"
+msgstr "Neien dossier numm"
+
+msgid "No files in here"
+msgstr "Kee fichier hei"
+
+msgid "No files matching your filter were found."
+msgstr "Kee fichier deen äre filter passt gouf fonnt"
+
+msgid "No matching files"
+msgstr "Keng passende dateien"
+
+msgid "Recent"
+msgstr "Rezent"
+
+msgid "Select all entries"
+msgstr "Wielt all entréen"
+
+msgid "Select entry"
+msgstr "Wielt entrée"
+
+msgid "Select the row for {nodename}"
+msgstr "Wielt d'zeil fir {nodename}"
+
+msgid "Size"
+msgstr "Gréisst"
+
 msgid "Undo"
-msgstr ""
+msgstr "Undoen"
+
+msgid "Upload some content or sync with your devices!"
+msgstr "Luet en inhalt erop oder synchroniséiert mat ären apparater"
