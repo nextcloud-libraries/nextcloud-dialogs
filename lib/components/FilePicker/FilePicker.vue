@@ -66,9 +66,7 @@ import FilePickerBreadcrumbs from './FilePickerBreadcrumbs.vue'
 import FilePickerNavigation from './FilePickerNavigation.vue'
 
 import { emit as emitOnEventBus } from '@nextcloud/event-bus'
-import { davRootPath } from '@nextcloud/files'
 import { NcDialog, NcEmptyContent } from '@nextcloud/vue'
-import { join } from 'path'
 import { computed, onMounted, ref, toRef } from 'vue'
 import { showError } from '../../toast'
 import { useDAVFiles } from '../../composables/dav'
@@ -282,7 +280,8 @@ const noFilesDescription = computed(() => {
  */
 const onCreateFolder = async (name: string) => {
 	try {
-		await createDirectory(name)
+		const folder = await createDirectory(name)
+		currentPath.value = folder.path
 		// emit event bus to force files app to reload that file if needed
 		emitOnEventBus('files:node:created', files.value.filter((file) => file.basename === name)[0])
 	} catch (error) {

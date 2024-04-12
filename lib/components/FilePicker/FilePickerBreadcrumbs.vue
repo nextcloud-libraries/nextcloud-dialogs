@@ -19,6 +19,7 @@
 				:force-menu="true"
 				:force-name="true"
 				:menu-name="t('New')"
+				:open.sync="actionsOpen"
 				type="secondary"
 				@close="newNodeName = ''">
 				<template #icon>
@@ -68,6 +69,8 @@ const emit = defineEmits<{
 	(e: 'create-node', name: string): void
 }>()
 
+const actionsOpen = ref(false)
+
 /**
  * Input on the "new node" menu
  */
@@ -104,6 +107,7 @@ const onSubmit = function() {
 	const name = newNodeName.value.trim()
 
 	if (validateInput()) {
+		actionsOpen.value = false
 		emit('create-node', name)
 		newNodeName.value = ''
 	}
