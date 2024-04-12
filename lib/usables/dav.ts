@@ -124,6 +124,7 @@ export const useDAVFiles = function(
 
 		const { data } = await client.value.stat(`${rootPath}${path}`, {
 			details: true,
+			data: davGetDefaultPropfind(),
 		}) as ResponseDataDetailed<FileStat>
 		return resultToNode(data)
 	}
