@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v4.2.7](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v4.2.7) (2024-04-15)
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v4.2.6...v4.2.7)
+
+### :bug: Fixed bugs
+* fix(FilePicker): Stop default close event in case of button press [\#1301](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1301) ([susnux](https://github.com/susnux))
+
 ## [v4.2.6](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v4.2.6) (2024-02-22)
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v4.2.5...v4.2.6)
 
