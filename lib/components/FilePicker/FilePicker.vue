@@ -1,5 +1,12 @@
 <template>
-	<DialogBase v-bind="dialogProps" @close="emit('close')">
+	<DialogBase :container="container"
+		:name="name"
+		:buttons="dialogButtons"
+		size="large"
+		content-classes="file-picker__content"
+		dialog-classes="file-picker"
+		navigation-classes="file-picker__navigation"
+		@close="handleClose">
 		<template #navigation="{ isCollapsed }">
 			<FilePickerNavigation :is-collapsed="isCollapsed" :current-view.sync="currentView" :filter-string.sync="filterString" />
 		</template>
@@ -44,7 +51,7 @@
 </template>
 
 <script setup lang="ts">
-import type { IFilePickerButton, IFilePickerButtonFactory, IFilePickerFilter } from '../types'
+import type { IDialogButton, IFilePickerButton, IFilePickerButtonFactory, IFilePickerFilter } from '../types'
 import type { Node } from '@nextcloud/files'
 
 import IconFile from 'vue-material-design-icons/File.vue'
@@ -123,19 +130,6 @@ const emit = defineEmits<{
 const { isPublic } = useIsPublic()
 
 /**
- * Props to be passed to the underlying Dialog component
- */
-const dialogProps = computed(() => ({
-	container: props.container,
-	name: props.name,
-	buttons: dialogButtons.value,
-	size: 'large',
-	contentClasses: ['file-picker__content'],
-	dialogClasses: ['file-picker'],
-	navigationClasses: ['file-picker__navigation'],
-}))
-
-/**
  * Map buttons to Dialog buttons by wrapping the callback function to pass the selected files
  */
 const dialogButtons = computed(() => {
@@ -146,12 +140,35 @@ const dialogButtons = computed(() => {
 	return buttons.map((button) => ({
 		...button,
 		callback: async () => {
-			const nodes = selectedFiles.value.length === 0 && props.allowPickDirectory ? [await getFile(currentPath.value)] : selectedFiles.value as Node[]
-			button.callback(nodes)
-			emit('close', selectedFiles.value as Node[])
+			isHandlingCallback = true
+			handleButtonClick(button.callback)
 		},
-	} as IFilePickerButton))
+	} as IDialogButton))
 })
+
+/**
+ * Flag that is set when a button was clicked to prevent the default close event to be emitted
+ * This is needed as `handleButtonClick` is async and thus might execute after NcDialog already closed
+ */
+let isHandlingCallback = false
+
+const handleButtonClick = async (callback: IFilePickerButton['callback']) => {
+	const nodes = selectedFiles.value.length === 0 && props.allowPickDirectory ? [await getFile(currentPath.value)] : selectedFiles.value as Node[]
+	callback(nodes)
+	emit('close', nodes)
+	// Unlock close
+	isHandlingCallback = false
+}
+
+/**
+ * Handle closing of the dialog
+ * Do not emit close event on button press as this is handled by `handleButtonClick`
+ */
+const handleClose = () => {
+	if (!isHandlingCallback) {
+		emit('close')
+	}
+}
 
 /**
  * Name of the currently active view
@@ -225,7 +242,7 @@ const filteredFiles = computed(() => {
 		filtered = filtered.filter((file) => file.basename.toLowerCase().includes(filterString.value.toLowerCase()))
 	}
 	if (props.filterFn) {
-		filtered = filtered.filter((f) => props.filterFn(f as Node))
+		filtered = filtered.filter((f) => props.filterFn!(f as Node))
 	}
 	return filtered
 })

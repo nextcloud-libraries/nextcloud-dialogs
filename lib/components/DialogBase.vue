@@ -76,12 +76,12 @@ const props = withDefaults(defineProps<{
 	 * </style>
 	 * ```
 	 */
-	navigationClasses?: string[]
+	navigationClasses?: string|Record<string, boolean>|(string|Record<string, boolean>)[]
 	/**
 	 * Optionally pass additionaly classes which will be set on the content wrapper for custom styling
 	 * @default []
 	 */
-	contentClasses?: string[]
+	contentClasses?: string|Record<string, boolean>|(string|Record<string, boolean>)[]
 	/**
 	 * Optionally pass additionaly classes which will be set on the dialog itself
 	 * (the default `class` attribute will be set on the modal wrapper)
