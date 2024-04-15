@@ -20,6 +20,7 @@
  *
  */
 
+import type { Ref } from 'vue'
 import { describe, it, expect, vi, afterEach } from 'vitest'
 import { shallowMount } from '@vue/test-utils'
 import { defineComponent, ref, toRef } from 'vue'
@@ -39,6 +40,14 @@ vi.mock('@nextcloud/files', () => nextcloudFiles)
 const waitLoaded = (vue: ReturnType<typeof shallowMount>) => new Promise((resolve) => {
 	const w = () => {
 		if (vue.vm.isLoading) window.setTimeout(w, 50)
+		else resolve(true)
+	}
+	w()
+})
+
+const waitRefLoaded = (isLoading: Ref<boolean>) => new Promise((resolve) => {
+	const w = () => {
+		if (isLoading.value) window.setTimeout(w, 50)
 		else resolve(true)
 	}
 	w()
@@ -209,16 +218,14 @@ describe('dav composable', () => {
 		expect(isLoading.value).toBe(true)
 		await loadFiles()
 		expect(isLoading.value).toBe(false)
-		expect(client.getDirectoryContents).toBeCalledWith(`${nextcloudFiles.davRootPath}/`, { details: true })
+		expect(client.getDirectoryContents).toBeCalledWith(`${nextcloudFiles.davRootPath}/`, expect.objectContaining({ details: true }))
 
 		view.value = 'recent'
-		await loadFiles()
-		expect(isLoading.value).toBe(false)
-		expect(client.search).toBeCalled()
+		await waitRefLoaded(isLoading)
+		expect(client.search).toBeCalledWith('/', expect.objectContaining({ details: true }))
 
 		view.value = 'favorites'
-		await loadFiles()
-		expect(isLoading.value).toBe(false)
+		await waitRefLoaded(isLoading)
 		expect(nextcloudFiles.getFavoriteNodes).toBeCalled()
 	})
 })
