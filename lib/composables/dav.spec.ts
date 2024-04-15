@@ -23,7 +23,7 @@
 import type { Ref } from 'vue'
 import { describe, it, expect, vi, afterEach } from 'vitest'
 import { shallowMount } from '@vue/test-utils'
-import { defineComponent, ref, toRef } from 'vue'
+import { defineComponent, ref, toRef, nextTick } from 'vue'
 import { useDAVFiles } from './dav'
 
 const nextcloudFiles = vi.hoisted(() => ({
@@ -227,5 +227,34 @@ describe('dav composable', () => {
 		view.value = 'favorites'
 		await waitRefLoaded(isLoading)
 		expect(nextcloudFiles.getFavoriteNodes).toBeCalled()
+	})
+
+	it('request cancelation works', async () => {
+		const client = {
+			stat: vi.fn((v) => ({ data: { path: v } })),
+			getDirectoryContents: vi.fn((p, o) => ({ data: [] })),
+			search: vi.fn((p, o) => ({ data: { results: [], truncated: false } })),
+		}
+		nextcloudFiles.davGetClient.mockImplementationOnce(() => client)
+		nextcloudFiles.davResultToNode.mockImplementationOnce((v) => v)
+
+		const view = ref<'files' | 'recent' | 'favorites'>('files')
+		const path = ref('/')
+		const { loadFiles, isLoading } = useDAVFiles(view, path, ref(false))
+
+		const abort = vi.spyOn(AbortController.prototype, 'abort')
+
+		loadFiles()
+		view.value = 'recent'
+		await waitRefLoaded(isLoading)
+		expect(abort).toBeCalledTimes(1)
+
+		view.value = 'files'
+		await nextTick()
+		view.value = 'recent'
+		await nextTick()
+		view.value = 'favorites'
+		await waitRefLoaded(isLoading)
+		expect(abort).toBeCalledTimes(2)
 	})
 })
