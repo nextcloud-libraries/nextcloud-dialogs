@@ -41,10 +41,12 @@ export default defineConfig((env) => {
 						classNameStrategy: 'non-scoped',
 					},
 				},
-				// Fix unresolvable .css extension for ssr
 				server: {
 					deps: {
-						inline: [/@nextcloud\/vue/],
+						inline: [
+							/@nextcloud\/vue/, // Fix unresolvable .css extension for ssr
+							/@nextcloud\/files/, // Fix CommonJS cancelable-promise not supporting named exports
+						],
 					},
 				},
 			},
