@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v5.3.1](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.3.1) (2024-04-16)
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.3.0...v5.3.1)
+
+### Fixes
+* fix: Close actions after creating directory and enter it automatically [\#1302](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1302) \([susnux](https://github.com/susnux)\)
+* fix: Fix incorrect directory contents when navigating quickly [\#1299](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1299) \([Pytal](https://github.com/Pytal)\)
+
+### Changed
+* Dependency updates
+
 ## [v5.3.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.3.0) (2024-04-10)
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.2.1...v5.3.0)
 
