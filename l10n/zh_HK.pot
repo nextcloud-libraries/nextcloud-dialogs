@@ -1,24 +1,24 @@
 # 
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
-# Café Tango, 2023
+# Café Tango, 2024
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Café Tango, 2023\n"
+"Last-Translator: Café Tango, 2024\n"
 "Language-Team: Chinese (Hong Kong) (https://app.transifex.com/nextcloud/teams/64236/zh_HK/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: zh_HK\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-msgid "\"{name}\" is an invalid file name."
-msgstr "「{name}」是無效的檔案名稱。"
+msgid "\"{name}\" is an invalid folder name."
+msgstr "「{name}」是無效的資料夾名稱。"
 
-msgid "\"{name}\" is not an allowed filetype"
-msgstr "「{name}」並非允許的檔案類型"
+msgid "\"{name}\" is not an allowed folder name"
+msgstr "「{name}」是無效的資料夾名稱。"
 
-msgid "\"/\" is not allowed inside a file name."
-msgstr "檔案名稱中不允許使用 \"/\"。"
+msgid "\"/\" is not allowed inside a folder name."
+msgstr "資料夾名稱中不允許使用 \"/\"。"
 
 msgid "All files"
 msgstr "所有檔案"
@@ -29,6 +29,10 @@ msgstr "選擇"
 msgid "Choose {file}"
 msgstr "選擇 {file}"
 
+msgid "Choose %n file"
+msgid_plural "Choose %n files"
+msgstr[0] "選擇 %n 個檔案"
+
 msgid "Copy"
 msgstr "複製"
 
@@ -37,6 +41,12 @@ msgstr "複製到 {target}"
 
 msgid "Could not create the new folder"
 msgstr "無法建立新資料夾"
+
+msgid "Could not load files settings"
+msgstr "無法載入檔案設定"
+
+msgid "Could not load files views"
+msgstr "無法載入文件視圖"
 
 msgid "Create directory"
 msgstr "建立目錄"
@@ -47,12 +57,6 @@ msgstr "目前檢視選取器"
 msgid "Favorites"
 msgstr "最愛"
 
-msgid "File name cannot be empty."
-msgstr "檔案名稱不能為空。"
-
-msgid "Filepicker sections"
-msgstr "檔案挑選器部分"
-
 msgid "Files and folders you mark as favorite will show up here."
 msgstr "您標記為最愛的檔案與資料夾將會顯示在此處。"
 
@@ -62,11 +66,11 @@ msgstr "您最近修改的檔案與資料夾將會顯示在此處。"
 msgid "Filter file list"
 msgstr "過濾檔案清單"
 
+msgid "Folder name cannot be empty."
+msgstr "資料夾名稱不能為空。"
+
 msgid "Home"
 msgstr "首頁"
-
-msgid "MIME type {mime}"
-msgstr "MIME 類型 {mime}"
 
 msgid "Modified"
 msgstr "已修改"
@@ -115,9 +119,6 @@ msgstr "大小"
 
 msgid "Undo"
 msgstr "還原"
-
-msgid "unknown"
-msgstr "不詳"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "上傳一些內容或與您的裝置同步"
