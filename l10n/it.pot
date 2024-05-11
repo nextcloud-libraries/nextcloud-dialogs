@@ -3,10 +3,11 @@
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Claudio Scandella, 2023
 # Raffaele Silano <raffaelone@gmail.com>, 2024
+# Sebastiano Furlan, 2024
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Raffaele Silano <raffaelone@gmail.com>, 2024\n"
+"Last-Translator: Sebastiano Furlan, 2024\n"
 "Language-Team: Italian (https://app.transifex.com/nextcloud/teams/64236/it/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: it\n"
@@ -30,6 +31,12 @@ msgstr "Scegli"
 msgid "Choose {file}"
 msgstr "Scegli {file}"
 
+msgid "Choose %n file"
+msgid_plural "Choose %n files"
+msgstr[0] "Seleziona %n file"
+msgstr[1] "Seleziona %n file"
+msgstr[2] "Seleziona %n file"
+
 msgid "Copy"
 msgstr "Copia"
 
@@ -38,6 +45,12 @@ msgstr "Copia in {target}"
 
 msgid "Could not create the new folder"
 msgstr "Impossibile creare la nuova cartella"
+
+msgid "Could not load files settings"
+msgstr "Impossibile caricare le impostazioni dei file"
+
+msgid "Could not load files views"
+msgstr "Impossibile caricare le visualizzazioni dei file"
 
 msgid "Create directory"
 msgstr "Crea directory"
