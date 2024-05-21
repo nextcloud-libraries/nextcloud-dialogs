@@ -5,10 +5,11 @@
 # ashed <craysy@gmail.com>, 2023
 # Alex <kekcuha@gmail.com>, 2024
 # R4SAS, 2024
+# Влад, 2024
 # 
 msgid ""
 msgstr ""
-"Last-Translator: R4SAS, 2024\n"
+"Last-Translator: Влад, 2024\n"
 "Language-Team: Russian (https://app.transifex.com/nextcloud/teams/64236/ru/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: ru\n"
@@ -47,6 +48,12 @@ msgstr "Копировать в «{target}»"
 
 msgid "Could not create the new folder"
 msgstr "Не удалось создать новую папку"
+
+msgid "Could not load files settings"
+msgstr "Не удалось загрузить настройки файлов"
+
+msgid "Could not load files views"
+msgstr "Не удалось загрузить файлы просмотров"
 
 msgid "Create directory"
 msgstr "Создать папку"
