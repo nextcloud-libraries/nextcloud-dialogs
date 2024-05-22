@@ -48,7 +48,7 @@ msgid "Could not create the new folder"
 msgstr "No se pudo crear la nueva carpeta"
 
 msgid "Could not load files settings"
-msgstr "No se pudieron cargar las preferencias de archivos"
+msgstr "No se pudieron cargar los ajustes de archivos"
 
 msgid "Could not load files views"
 msgstr "No se pudieron cargar las vistas previas de los archivos"
