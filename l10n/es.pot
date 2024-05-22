@@ -2,7 +2,6 @@
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # FranciscoFJ <dev-ooo@satel-sa.com>, 2023
-# Frenzel Alejandro Avalos Montes de Oca, 2024
 # Mark Ziegler <mark.ziegler@rakekniven.de>, 2024
 # Julio C. Ortega, 2024
 # 
@@ -51,7 +50,7 @@ msgid "Could not load files settings"
 msgstr "No se pudieron cargar los ajustes de archivos"
 
 msgid "Could not load files views"
-msgstr "No se pudieron cargar las vistas previas de los archivos"
+msgstr "No se pudieron cargar las vistas de los archivos"
 
 msgid "Create directory"
 msgstr "Crear directorio"
