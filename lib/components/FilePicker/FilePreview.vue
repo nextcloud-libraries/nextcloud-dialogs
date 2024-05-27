@@ -10,9 +10,8 @@
 
 <script setup lang="ts">
 import { FileType, type Node } from '@nextcloud/files'
-import { computed, ref, watch } from 'vue'
+import { computed, ref, watchEffect } from 'vue'
 import { getPreviewURL } from '../../composables/preview'
-import { t } from '../../utils/l10n'
 
 import IconFile from 'vue-material-design-icons/File.vue'
 import IconFolder from 'vue-material-design-icons/Folder.vue'
@@ -32,17 +31,16 @@ const previewURL = computed(() => getPreviewURL(props.node, { cropPreview: props
 const isFile = computed(() => props.node.type === FileType.File)
 const canLoadPreview = ref(false)
 
-watch(previewURL, () => {
+watchEffect(() => {
 	canLoadPreview.value = false
 
 	if (previewURL.value) {
-		const loader = document.createElement('img')
+		const loader = new Image()
 		loader.src = previewURL.value.href
 		loader.onerror = () => loader.remove()
 		loader.onload = () => { canLoadPreview.value = true; loader.remove() }
-		document.body.appendChild(loader)
 	}
-}, { immediate: true })
+})
 </script>
 
 <script lang="ts">
