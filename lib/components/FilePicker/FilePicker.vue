@@ -256,7 +256,7 @@ const filteredFiles = computed(() => {
 		filtered = filtered.filter((file) => file.basename.toLowerCase().includes(filterString.value.toLowerCase()))
 	}
 	if (props.filterFn) {
-		filtered = filtered.filter((f) => props.filterFn(f as Node))
+		filtered = filtered.filter((f) => props.filterFn!(f as Node))
 	}
 	return filtered
 })
