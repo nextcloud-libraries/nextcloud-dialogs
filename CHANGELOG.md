@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v5.3.2](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.3.2) (2024-06-10)
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.3.1...v5.3.2)
+
+### Fixed
+* fix: Also add current folder to button factory [\#1351](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1351) \([susnux](https://github.com/susnux)\)
+* fix(FilePicker): Do not append image preloader to DOM [\#1340](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1340) \([susnux](https://github.com/susnux)\)
+
+### Changed
+* Updated translations
+* chore(deps): Bump webdav to 5.6.0
+* chore(deps): Bump @nextcloud/router to 3.0.1
+* chore(deps): Bump @nextcloud/auth to 2.3.0
+* chore(deps): Bump @nextcloud/axios to 2.5.0
+* chore(deps): Bump @nextcloud/initial-state to 2.2.0
+* chore(deps): Bump @nextcloud/l10n to 3.1.0
+* chore(deps): Bump @nextcloud/event-bus to 3.3.1
+* chore(deps): Bump @vueuse/core to 10.10.0
+* chore(deps): Bump @nextcloud/files to 3.4.1
+
 ## [v5.3.1](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.3.1) (2024-04-16)
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.3.0...v5.3.1)
 
