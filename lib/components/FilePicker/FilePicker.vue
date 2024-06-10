@@ -18,9 +18,10 @@
 		<div class="file-picker__main">
 			<!-- Header title / file list breadcrumbs -->
 			<FilePickerBreadcrumbs v-if="currentView === 'files'"
-				:path.sync="currentPath"
+				:path="currentPath"
 				:show-menu="allowPickDirectory"
-				@create-node="onCreateFolder" />
+				@create-node="onCreateFolder"
+				@update:path="navigatedPath = $event" />
 			<div v-else class="file-picker__view">
 				<h3>{{ viewHeadline }}</h3>
 			</div>
@@ -67,7 +68,7 @@ import FilePickerNavigation from './FilePickerNavigation.vue'
 
 import { emit as emitOnEventBus } from '@nextcloud/event-bus'
 import { NcDialog, NcEmptyContent } from '@nextcloud/vue'
-import { computed, onMounted, ref, toRef } from 'vue'
+import { computed, onMounted, ref, shallowReactive, toRef, watch } from 'vue'
 import { showError } from '../../toast'
 import { useDAVFiles } from '../../composables/dav'
 import { useMimeFilter } from '../../composables/mime'
@@ -148,8 +149,9 @@ const isOpen = ref(true)
  * Map buttons to Dialog buttons by wrapping the callback function to pass the selected files
  */
 const dialogButtons = computed(() => {
+	const nodes = selectedFiles.length === 0 && props.allowPickDirectory && currentFolder.value ? [currentFolder.value] : selectedFiles
 	const buttons = typeof props.buttons === 'function'
-		? props.buttons(selectedFiles.value as Node[], currentPath.value, currentView.value)
+		? props.buttons(nodes, currentPath.value, currentView.value)
 		: props.buttons
 
 	return buttons.map((button) => ({
@@ -157,7 +159,7 @@ const dialogButtons = computed(() => {
 		callback: () => {
 			// lock default close handling
 			isHandlingCallback = true
-			handleButtonClick(button.callback)
+			handleButtonClick(button.callback, nodes)
 		},
 	} as IFilePickerButton))
 })
@@ -168,8 +170,7 @@ const dialogButtons = computed(() => {
  */
 let isHandlingCallback = false
 
-const handleButtonClick = async (callback: IFilePickerButton['callback']) => {
-	const nodes = selectedFiles.value.length === 0 && props.allowPickDirectory ? [await getFile(currentPath.value)] : selectedFiles.value as Node[]
+const handleButtonClick = async (callback: IFilePickerButton['callback'], nodes: Node[]) => {
 	callback(nodes)
 	emit('close', nodes)
 	// Unlock close
@@ -189,7 +190,7 @@ const viewHeadline = computed(() => currentView.value === 'favorites' ? t('Favor
 /**
  * All currently selected files
  */
-const selectedFiles = ref<Node[]>([])
+const selectedFiles = shallowReactive<Node[]>([])
 
 /**
  * Last path navigated to using the file picker
@@ -200,28 +201,23 @@ const savedPath = ref(window?.sessionStorage.getItem('NC.FilePicker.LastPath') |
 /**
  * The path the user manually navigated to using this filepicker instance
  */
-const navigatedPath = ref<string>()
+const navigatedPath = ref('')
+// Save the navigated path to the session storage on change
+watch([navigatedPath], () => {
+	if (props.path === undefined && navigatedPath.value) {
+		window.sessionStorage.setItem('NC.FilePicker.LastPath', navigatedPath.value)
+		// Reset selected files
+		selectedFiles.splice(0, selectedFiles.length)
+	}
+})
 
 /**
  * The current path that should be picked from
  */
-const currentPath = computed({
+const currentPath = computed(() => 
 	// Only use the path for the files view as favorites and recent only works on the root
-	get: () => currentView.value === 'files' ? navigatedPath.value || props.path || savedPath.value : '/',
-	/**
-	 * Navigate to the new path and save it to the session storage
-	 *
-	 * @param path The new path
-	 */
-	set: (path: string) => {
-		if (props.path === undefined) {
-			window.sessionStorage.setItem('NC.FilePicker.LastPath', path)
-		}
-		navigatedPath.value = path
-		// Reset selected files
-		selectedFiles.value = []
-	},
-})
+	currentView.value === 'files' ? navigatedPath.value || props.path || savedPath.value : '/',
+)
 
 /**
  * A string used to filter files in current view
@@ -230,7 +226,13 @@ const filterString = ref('')
 
 const { isSupportedMimeType } = useMimeFilter(toRef(props, 'mimetypeFilter')) // vue 3.3 will allow cleaner syntax of toRef(() => props.mimetypeFilter)
 
-const { files, isLoading, loadFiles, getFile, createDirectory } = useDAVFiles(currentView, currentPath, isPublic)
+const {
+	files,
+	folder: currentFolder,
+	isLoading,
+	loadFiles,
+	createDirectory,
+} = useDAVFiles(currentView, currentPath, isPublic)
 
 onMounted(() => loadFiles())
 
@@ -254,7 +256,7 @@ const filteredFiles = computed(() => {
 		filtered = filtered.filter((file) => file.basename.toLowerCase().includes(filterString.value.toLowerCase()))
 	}
 	if (props.filterFn) {
-		filtered = filtered.filter((f) => props.filterFn(f as Node))
+		filtered = filtered.filter((f) => props.filterFn!(f as Node))
 	}
 	return filtered
 })
@@ -281,7 +283,7 @@ const noFilesDescription = computed(() => {
 const onCreateFolder = async (name: string) => {
 	try {
 		const folder = await createDirectory(name)
-		currentPath.value = folder.path
+		navigatedPath.value = folder.path
 		// emit event bus to force files app to reload that file if needed
 		emitOnEventBus('files:node:created', files.value.filter((file) => file.basename === name)[0])
 	} catch (error) {

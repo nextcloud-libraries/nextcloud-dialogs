@@ -26,7 +26,7 @@ import type { FileStat, ResponseDataDetailed, SearchResult } from 'webdav'
 import { davGetClient, davGetDefaultPropfind, davGetRecentSearch, davRemoteURL, davResultToNode, davRootPath, getFavoriteNodes } from '@nextcloud/files'
 import { generateRemoteUrl } from '@nextcloud/router'
 import { join } from 'path'
-import { computed, onMounted, ref, watch } from 'vue'
+import { computed, onMounted, ref, shallowRef, watch } from 'vue'
 import { CancelablePromise } from 'cancelable-promise'
 
 /**
@@ -39,8 +39,8 @@ import { CancelablePromise } from 'cancelable-promise'
 export const useDAVFiles = function(
 	currentView: Ref<'files'|'recent'|'favorites'> | ComputedRef<'files'|'recent'|'favorites'>,
 	currentPath: Ref<string> | ComputedRef<string>,
-	isPublicEndpoint: Ref<boolean> | ComputedRef<boolean>
-): { isLoading: Ref<boolean>, createDirectory: (name: string) => Promise<Folder>, files: Ref<Node[]>, loadFiles: () => Promise<void>, getFile: (path: string) => Promise<Node> } {
+	isPublicEndpoint: Ref<boolean> | ComputedRef<boolean>,
+) {
 
 	const defaultRootPath = computed(() => isPublicEndpoint.value ? '/' : davRootPath)
 
@@ -114,7 +114,15 @@ export const useDAVFiles = function(
 	/**
 	 * All files in current view and path
 	 */
-	const files = ref<Node[]>([] as Node[]) as Ref<Node[]>
+	const files = shallowRef<Node[]>([] as Node[]) as Ref<Node[]>
+
+	/**
+	 * The current folder
+	 */
+	const folder = shallowRef<Folder>()
+	watch([currentPath], async () => {
+		folder.value = (files.value.find(({ path }) => path === currentPath.value) ?? await getFile(currentPath.value)) as Folder
+	}, { immediate: true })
 
 	/**
 	 * Loading state of the files
@@ -136,7 +144,7 @@ export const useDAVFiles = function(
 
 		await client.value.createDirectory(join(defaultRootPath.value, path))
 		const directory = await getFile(path) as Folder
-		files.value.push(directory)
+		files.value = [...files.value, directory]
 		return directory
 	}
 
@@ -191,6 +199,7 @@ export const useDAVFiles = function(
 	return {
 		isLoading,
 		files,
+		folder,
 		loadFiles: loadDAVFiles,
 		getFile,
 		createDirectory,

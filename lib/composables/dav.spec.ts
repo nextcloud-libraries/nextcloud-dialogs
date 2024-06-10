@@ -21,7 +21,7 @@
  */
 
 import type { Ref } from 'vue'
-import { describe, it, expect, vi, afterEach } from 'vitest'
+import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { shallowMount } from '@vue/test-utils'
 import { defineComponent, ref, toRef, nextTick } from 'vue'
 import { useDAVFiles } from './dav'
@@ -65,7 +65,7 @@ const TestComponent = defineComponent({
 })
 
 describe('dav composable', () => {
-	afterEach(() => { vi.resetAllMocks() })
+	beforeEach(() => { vi.resetAllMocks() })
 
 	it('Sets the inital state correctly', () => {
 		const client = {
@@ -175,15 +175,16 @@ describe('dav composable', () => {
 			stat: vi.fn((v) => ({ data: { path: v } })),
 			getDirectoryContents: vi.fn(() => ({ data: [] })),
 		}
-		nextcloudFiles.davGetClient.mockImplementationOnce(() => client)
-		nextcloudFiles.davResultToNode.mockImplementationOnce((v) => v)
+		nextcloudFiles.davGetClient.mockImplementation(() => client)
+		nextcloudFiles.davResultToNode.mockImplementation((v) => v)
 
 		const { getFile } = useDAVFiles(ref('files'), ref('/'), ref(false))
 
-		const node = await getFile('/some/path')
-		expect(node).toEqual({ path: `${nextcloudFiles.davRootPath}/some/path` })
-		expect(client.stat).toBeCalledWith(`${nextcloudFiles.davRootPath}/some/path`, { details: true })
-		expect(nextcloudFiles.davResultToNode).toBeCalledWith({ path: `${nextcloudFiles.davRootPath}/some/path` }, nextcloudFiles.davRootPath, nextcloudFiles.davRemoteURL)
+		const node = await getFile('/some/path/file.ext')
+		expect(node).toEqual({ path: `${nextcloudFiles.davRootPath}/some/path/file.ext` })
+		// Check mock usage
+		expect(client.stat).toBeCalledWith(`${nextcloudFiles.davRootPath}/some/path/file.ext`, { details: true })
+		expect(nextcloudFiles.davResultToNode).toBeCalledWith({ path: `${nextcloudFiles.davRootPath}/some/path/file.ext` }, nextcloudFiles.davRootPath, nextcloudFiles.davRemoteURL)
 	})
 
 	it('createDirectory works', async () => {
@@ -191,8 +192,8 @@ describe('dav composable', () => {
 			stat: vi.fn((v) => ({ data: { path: v } })),
 			createDirectory: vi.fn(() => {}),
 		}
-		nextcloudFiles.davGetClient.mockImplementationOnce(() => client)
-		nextcloudFiles.davResultToNode.mockImplementationOnce((v) => v)
+		nextcloudFiles.davGetClient.mockImplementation(() => client)
+		nextcloudFiles.davResultToNode.mockImplementation((v) => v)
 
 		const { createDirectory } = useDAVFiles(ref('files'), ref('/foo/'), ref(false))
 
