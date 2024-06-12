@@ -1,0 +1,20 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: nextcloud-dialogs
+Upstream-Contact: Nextcloud <info@nextcloud.com>
+Source: https://github.com/nextcloud-libraries/nextcloud-dialogs
+
+Files: package-lock.json package.json tsconfig-typedoc.json tsconfig.json
+Copyright: 2019-2024 Nextcloud GmbH and Nextcloud contributors
+License: AGPL-3.0-or-later
+
+Files: l10n/*.pot
+Copyright: 2020-2024 Nextcloud GmbH and Nextcloud contributors
+License: AGPL-3.0-or-later
+
+Files: .eslintrc.json
+Copyright: 2023 Nextcloud GmbH and Nextcloud contributors
+License: AGPL-3.0-or-later
+
+Files: styles/close-dark.svg styles/close.svg
+Copyright: 2018-2024 Google LLC
+License: Apache-2.0
