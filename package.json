@@ -41,7 +41,7 @@
     "nextcloud"
   ],
   "homepage": "https://github.com/nextcloud-libraries/nextcloud-dialogs#readme",
-  "license": "GPL-3.0-or-later",
+  "license": "AGPL-3.0-or-later",
   "repository": {
     "type": "git",
     "url": "https://github.com/nextcloud-libraries/nextcloud-dialogs"
