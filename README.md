@@ -1,6 +1,10 @@
+<!--
+  - SPDX-FileCopyrightText: 2019-2024 Nextcloud GmbH and Nextcloud contributors
+  - SPDX-License-Identifier: AGPL-3.0-or-later
+-->
 # @nextcloud/dialogs
 
-[![npm](https://img.shields.io/npm/v/@nextcloud/dialogs?style=for-the-badge)](https://www.npmjs.com/package/@nextcloud/dialogs)
+[![REUSE status](https://api.reuse.software/badge/github.com/nextcloud-libraries/nextcloud-dialogs)](https://api.reuse.software/info/github.com/nextcloud-libraries/nextcloud-dialogs) [![npm](https://img.shields.io/npm/v/@nextcloud/dialogs?style=for-the-badge)](https://www.npmjs.com/package/@nextcloud/dialogs)
 
 Nextcloud dialog helpers
 

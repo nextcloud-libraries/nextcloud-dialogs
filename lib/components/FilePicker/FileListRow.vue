@@ -1,3 +1,7 @@
+<!--
+  - SPDX-FileCopyrightText: 2023-2024 Nextcloud GmbH and Nextcloud contributors
+  - SPDX-License-Identifier: AGPL-3.0-or-later
+-->
 <template>
 	<tr :tabindex="(showCheckbox && !isDirectory) ? undefined : 0"
 		:aria-selected="!isPickable ? undefined : selected"

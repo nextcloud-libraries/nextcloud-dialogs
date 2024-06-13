@@ -1,3 +1,7 @@
+<!--
+  - SPDX-FileCopyrightText: 2023 Nextcloud GmbH and Nextcloud contributors
+  - SPDX-License-Identifier: AGPL-3.0-or-later
+-->
 <!-- Simple component to fake a loading table row with placeholders -->
 <template>
 	<tr aria-hidden="true" class="file-picker__row loading-row">
