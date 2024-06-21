@@ -6,6 +6,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v5.3.3](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.3.3) (2024-06-21)
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.3.2...v5.3.3)
+
+### Fixed
+* fix: Use `shallowRef` instead of `shallowReactive` because Vue 2 limitation
+* fix: Prevent invalid range for skeleton number
+
+### Changed
+* refactor: `@nextcloud/files` is now aware of public shares also now have `@nextcloud/sharing` [\#1361](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1361) \([susnux](https://github.com/susnux)\)
+* refactor: Use sorting function from files library
+* Add SPDX header [\#1354](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1354) \([AndyScherzinger](https://github.com/AndyScherzinger)\)
+* chore(deps-dev): Bump braces from 3.0.2 to 3.0.3
+* chore(deps): Bump @vueuse/core from 10.10.0 to 10.11.0
+* chore(deps-dev): Bump sass from 1.77.4 to 1.77.5
+* chore(deps-dev): Bump vite from 5.2.13 to 5.3.1
+
 ## [v5.3.2](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.3.2) (2024-06-10)
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.3.1...v5.3.2)
 
