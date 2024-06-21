@@ -60,7 +60,7 @@
 					<LoadingTableRow v-for="index in skeletonNumber" :key="index" :show-checkbox="multiselect" />
 				</template>
 				<template v-else>
-					<FileListRow v-for="file in sortedFiles"
+					<FileListRow v-for="file of sortedFiles"
 						:key="file.fileid || file.path"
 						:allow-pick-directory="allowPickDirectory"
 						:show-checkbox="multiselect"
@@ -212,7 +212,7 @@ const fileContainer = ref<HTMLDivElement>()
 			}
 		}
 		// container height - 50px table header / row height of 50px
-		skeletonNumber.value = Math.floor((height - 50) / 50)
+		skeletonNumber.value = Math.max(1, Math.floor((height - 50) / 50))
 	})
 	onMounted(() => {
 		window.addEventListener('resize', resize)
