@@ -6,10 +6,9 @@ import type { Folder, Node } from '@nextcloud/files'
 import type { ComputedRef, Ref } from 'vue'
 import type { FileStat, ResponseDataDetailed, SearchResult } from 'webdav'
 
-import { davGetClient, davGetDefaultPropfind, davGetRecentSearch, davRemoteURL, davResultToNode, davRootPath, getFavoriteNodes } from '@nextcloud/files'
-import { generateRemoteUrl } from '@nextcloud/router'
+import { davGetClient, davGetDefaultPropfind, davGetRecentSearch, davResultToNode, davRootPath, getFavoriteNodes } from '@nextcloud/files'
 import { join } from 'path'
-import { computed, onMounted, ref, shallowRef, watch } from 'vue'
+import { onMounted, ref, shallowRef, watch } from 'vue'
 import { CancelablePromise } from 'cancelable-promise'
 
 /**
@@ -17,40 +16,18 @@ import { CancelablePromise } from 'cancelable-promise'
  *
  * @param currentView Reference to the current files view
  * @param currentPath Reference to the current files path
- * @param isPublicEndpoint True if the public `public.php` WebDAV endpoint should be used instead of `remote.php`
  */
 export const useDAVFiles = function(
 	currentView: Ref<'files'|'recent'|'favorites'> | ComputedRef<'files'|'recent'|'favorites'>,
 	currentPath: Ref<string> | ComputedRef<string>,
-	isPublicEndpoint: Ref<boolean> | ComputedRef<boolean>,
 ) {
-
-	const defaultRootPath = computed(() => isPublicEndpoint.value ? '/' : davRootPath)
-
-	const defaultRemoteUrl = computed(() => {
-		if (isPublicEndpoint.value) {
-			return generateRemoteUrl('webdav').replace('/remote.php', '/public.php')
-		}
-		return davRemoteURL
-	})
 
 	/**
 	 * The WebDAV client
 	 */
-	const client = computed(() => {
-		if (isPublicEndpoint.value) {
-			const token = (document.getElementById('sharingToken')! as HTMLInputElement).value
-			const authorization = btoa(`${token}:null`)
+	const client = davGetClient()
 
-			return davGetClient(defaultRemoteUrl.value, {
-				Authorization: `Basic ${authorization}`,
-			})
-		}
-
-		return davGetClient()
-	})
-
-	const resultToNode = (result: FileStat) => davResultToNode(result, defaultRootPath.value, defaultRemoteUrl.value)
+	const resultToNode = (result: FileStat) => davResultToNode(result)
 
 	const getRecentNodes = (): CancelablePromise<Node[]> => {
 		const controller = new AbortController()
@@ -59,7 +36,7 @@ export const useDAVFiles = function(
 		return new CancelablePromise(async (resolve, reject, onCancel) => {
 			onCancel(() => controller.abort())
 			try {
-				const { data } = await client.value.search('/', {
+				const { data } = await client.search('/', {
 					signal: controller.signal,
 					details: true,
 					data: davGetRecentSearch(lastTwoWeek),
@@ -77,16 +54,14 @@ export const useDAVFiles = function(
 		return new CancelablePromise(async (resolve, reject, onCancel) => {
 			onCancel(() => controller.abort())
 			try {
-				const results = await client.value.getDirectoryContents(`${defaultRootPath.value}${currentPath.value}`, {
+				const results = await client.getDirectoryContents(join(davRootPath, currentPath.value), {
 					signal: controller.signal,
 					details: true,
 					data: davGetDefaultPropfind(),
 				}) as ResponseDataDetailed<FileStat[]>
 				let nodes = results.data.map(resultToNode)
 				// Hack for the public endpoint which always returns folder itself
-				if (isPublicEndpoint.value) {
-					nodes = nodes.filter((file) => file.path !== currentPath.value)
-				}
+				nodes = nodes.filter((file) => file.path !== currentPath.value)
 				resolve(nodes)
 			} catch (error) {
 				reject(error)
@@ -120,12 +95,12 @@ export const useDAVFiles = function(
 	/**
 	 * Create a new directory in the current path
 	 * @param name Name of the new directory
-	 * @return The created directory
+	 * @return {Promise<Folder>} The created directory
 	 */
 	async function createDirectory(name: string): Promise<Folder> {
 		const path = join(currentPath.value, name)
 
-		await client.value.createDirectory(join(defaultRootPath.value, path))
+		await client.createDirectory(join(davRootPath, path))
 		const directory = await getFile(path) as Folder
 		files.value = [...files.value, directory]
 		return directory
@@ -137,10 +112,8 @@ export const useDAVFiles = function(
 	 * @param path The path of the file or folder
 	 * @param rootPath DAV root path, defaults to '/files/USERID'
 	 */
-	async function getFile(path: string, rootPath: string|undefined = undefined) {
-		rootPath = rootPath ?? defaultRootPath.value
-
-		const { data } = await client.value.stat(`${rootPath}${path}`, {
+	async function getFile(path: string, rootPath: string = davRootPath) {
+		const { data } = await client.stat(join(rootPath, path), {
 			details: true,
 			data: davGetDefaultPropfind(),
 		}) as ResponseDataDetailed<FileStat>
@@ -157,7 +130,7 @@ export const useDAVFiles = function(
 		isLoading.value = true
 
 		if (currentView.value === 'favorites') {
-			promise.value = getFavoriteNodes(client.value, currentPath.value, defaultRootPath.value)
+			promise.value = getFavoriteNodes(client, currentPath.value)
 		} else if (currentView.value === 'recent') {
 			promise.value = getRecentNodes()
 		} else {
