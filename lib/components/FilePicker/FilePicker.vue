@@ -77,7 +77,6 @@ import { showError } from '../../toast'
 import { useDAVFiles } from '../../composables/dav'
 import { useMimeFilter } from '../../composables/mime'
 import { useFilesSettings } from '../../composables/filesSettings'
-import { useIsPublic } from '../../composables/isPublic'
 import { t } from '../../utils/l10n'
 
 const props = withDefaults(defineProps<{
@@ -141,11 +140,6 @@ const props = withDefaults(defineProps<{
 const emit = defineEmits<{
 	(e: 'close', v?: Node[]): void
 }>()
-
-/**
- * Whether we are on a public endpoint (e.g. public share)
- */
-const { isPublic } = useIsPublic()
 
 const isOpen = ref(true)
 
@@ -218,7 +212,7 @@ watch([navigatedPath], () => {
 /**
  * The current path that should be picked from
  */
-const currentPath = computed(() => 
+const currentPath = computed(() =>
 	// Only use the path for the files view as favorites and recent only works on the root
 	currentView.value === 'files' ? navigatedPath.value || props.path || savedPath.value : '/',
 )
@@ -236,7 +230,7 @@ const {
 	isLoading,
 	loadFiles,
 	createDirectory,
-} = useDAVFiles(currentView, currentPath, isPublic)
+} = useDAVFiles(currentView, currentPath)
 
 onMounted(() => loadFiles())
 

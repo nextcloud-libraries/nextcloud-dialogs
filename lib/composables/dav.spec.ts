@@ -39,7 +39,7 @@ const waitRefLoaded = (isLoading: Ref<boolean>) => new Promise((resolve) => {
 const TestComponent = defineComponent({
 	props: ['currentView', 'currentPath', 'isPublic'],
 	setup(props) {
-		const dav = useDAVFiles(toRef(props, 'currentView'), toRef(props, 'currentPath'), toRef(props, 'isPublic'))
+		const dav = useDAVFiles(toRef(props, 'currentView'), toRef(props, 'currentPath'))
 		return {
 			...dav,
 		}
@@ -161,13 +161,13 @@ describe('dav composable', () => {
 		nextcloudFiles.davGetClient.mockImplementation(() => client)
 		nextcloudFiles.davResultToNode.mockImplementation((v) => v)
 
-		const { getFile } = useDAVFiles(ref('files'), ref('/'), ref(false))
+		const { getFile } = useDAVFiles(ref('files'), ref('/'))
 
 		const node = await getFile('/some/path/file.ext')
 		expect(node).toEqual({ path: `${nextcloudFiles.davRootPath}/some/path/file.ext` })
 		// Check mock usage
 		expect(client.stat).toBeCalledWith(`${nextcloudFiles.davRootPath}/some/path/file.ext`, { details: true })
-		expect(nextcloudFiles.davResultToNode).toBeCalledWith({ path: `${nextcloudFiles.davRootPath}/some/path/file.ext` }, nextcloudFiles.davRootPath, nextcloudFiles.davRemoteURL)
+		expect(nextcloudFiles.davResultToNode).toBeCalledWith({ path: `${nextcloudFiles.davRootPath}/some/path/file.ext` })
 	})
 
 	it('createDirectory works', async () => {
@@ -178,7 +178,7 @@ describe('dav composable', () => {
 		nextcloudFiles.davGetClient.mockImplementation(() => client)
 		nextcloudFiles.davResultToNode.mockImplementation((v) => v)
 
-		const { createDirectory } = useDAVFiles(ref('files'), ref('/foo/'), ref(false))
+		const { createDirectory } = useDAVFiles(ref('files'), ref('/foo/'))
 
 		const node = await createDirectory('my-name')
 		expect(node).toEqual({ path: `${nextcloudFiles.davRootPath}/foo/my-name` })
@@ -197,7 +197,7 @@ describe('dav composable', () => {
 
 		const view = ref<'files' | 'recent' | 'favorites'>('files')
 		const path = ref('/')
-		const { loadFiles, isLoading } = useDAVFiles(view, path, ref(false))
+		const { loadFiles, isLoading } = useDAVFiles(view, path)
 
 		expect(isLoading.value).toBe(true)
 		await loadFiles()
@@ -224,7 +224,7 @@ describe('dav composable', () => {
 
 		const view = ref<'files' | 'recent' | 'favorites'>('files')
 		const path = ref('/')
-		const { loadFiles, isLoading } = useDAVFiles(view, path, ref(false))
+		const { loadFiles, isLoading } = useDAVFiles(view, path)
 
 		const abort = vi.spyOn(AbortController.prototype, 'abort')
 

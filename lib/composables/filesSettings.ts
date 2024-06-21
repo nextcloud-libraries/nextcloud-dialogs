@@ -7,6 +7,7 @@ import type { ComputedRef, Ref } from 'vue'
 
 import { loadState } from '@nextcloud/initial-state'
 import { generateUrl } from '@nextcloud/router'
+import { isPublicShare } from '@nextcloud/sharing/public'
 import { toValue } from '@vueuse/core'
 import { computed, onMounted, ref } from 'vue'
 
@@ -14,7 +15,6 @@ import axios from '@nextcloud/axios'
 
 import { t } from '../utils/l10n'
 import { showError } from '../toast'
-import { useIsPublic } from './isPublic'
 
 interface OCAFilesUserConfig {
 	show_hidden: boolean
@@ -49,10 +49,8 @@ export const useFilesSettings = () => {
 	const sortFavoritesFirst = ref(filesUserState?.sort_favorites_first ?? true)
 	const cropImagePreviews = ref(filesUserState?.crop_image_previews ?? true)
 
-	const { isPublic } = useIsPublic()
-
 	onMounted(async () => {
-		if (!isPublic.value) {
+		if (!isPublicShare()) {
 			try {
 				const { data } = await axios.get(generateUrl('/apps/files/api/v1/configs'))
 
@@ -97,10 +95,8 @@ export const useFilesViews = (currentView?: FileListViews|Ref<FileListViews>|Com
 		order: convertOrder(filesViewsState?.favorites?.sorting_direction ?? 'asc'),
 	})
 
-	const { isPublic } = useIsPublic()
-
 	onMounted(async () => {
-		if (!isPublic.value) {
+		if (!isPublicShare()) {
 			try {
 				const { data } = await axios.get(generateUrl('/apps/files/api/v1/views'))
 				filesViewConfig.value = {
