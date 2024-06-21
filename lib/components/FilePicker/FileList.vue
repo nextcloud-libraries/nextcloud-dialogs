@@ -142,8 +142,8 @@ const { sortFavoritesFirst, cropImagePreviews } = useFilesSettings()
  */
 const sortedFiles = computed(() => {
 	return sortNodes(props.files, {
-		sortFavoritesFirst: sortFavoritesFirst.value,
 		sortFoldersFirst: true,
+		sortFavoritesFirst: sortFavoritesFirst.value,
 		sortingOrder: sortingConfig.value.order === 'descending' ? 'desc' : 'asc',
 		sortingMode: sortingConfig.value.sortBy as FilesSortingMode,
 	})

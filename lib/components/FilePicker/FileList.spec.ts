@@ -32,7 +32,7 @@ const exampleNodes = [
 		root: '/',
 		size: 321,
 		attributes: {
-			favorite: true,
+			favorite: 1,
 		},
 	}),
 	new Folder({
@@ -157,10 +157,10 @@ describe('FilePicker FileList', () => {
 			const rows = wrapper.findAll('[data-testid="file-list-row"]')
 			// all nodes are shown
 			expect(rows.length).toBe(nodes.length)
-			// folder are sorted first
-			expect(rows.at(0).attributes('data-filename')).toBe('directory')
 			// by default favorites are sorted before other files
-			expect(rows.at(1).attributes('data-filename')).toBe('favorite.txt')
+			expect(rows.at(0).attributes('data-filename')).toBe('favorite.txt')
+			// folder are sorted first
+			expect(rows.at(1).attributes('data-filename')).toBe('directory')
 			// other files are ascending
 			expect(rows.at(2).attributes('data-filename')).toBe('a-file.txt')
 			expect(rows.at(3).attributes('data-filename')).toBe('b-file.txt')
@@ -192,10 +192,10 @@ describe('FilePicker FileList', () => {
 			const rows = wrapper.findAll('.file-picker__row')
 			// all nodes are shown
 			expect(rows.length).toBe(nodes.length)
-			// folder are sorted first
-			expect(rows.at(0).attributes('data-filename')).toBe('directory')
 			// by default favorites are sorted before other files
-			expect(rows.at(1).attributes('data-filename')).toBe('favorite.txt')
+			expect(rows.at(0).attributes('data-filename')).toBe('favorite.txt')
+			// folder are sorted first
+			expect(rows.at(1).attributes('data-filename')).toBe('directory')
 			// other files are descending
 			expect(rows.at(2).attributes('data-filename')).toBe('b-file.txt')
 			expect(rows.at(3).attributes('data-filename')).toBe('a-file.txt')
