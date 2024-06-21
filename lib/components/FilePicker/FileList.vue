@@ -201,7 +201,7 @@ const fileContainer = ref<HTMLDivElement>()
 			}
 		}
 		// container height - 50px table header / row height of 50px
-		skeletonNumber.value = Math.floor((height - 50) / 50)
+		skeletonNumber.value = Math.max(1, Math.floor((height - 50) / 50))
 	})
 	onMounted(() => {
 		window.addEventListener('resize', resize)
