@@ -80,8 +80,7 @@
 import type { Node } from '@nextcloud/files'
 import type { FileListViews } from '../../composables/filesSettings'
 
-import { FileType } from '@nextcloud/files'
-import { getCanonicalLocale } from '@nextcloud/l10n'
+import { FileType, FilesSortingMode, sortNodes } from '@nextcloud/files'
 import { NcButton, NcCheckboxRadioSwitch } from '@nextcloud/vue'
 import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
 import { useFilesSettings, useFilesViews } from '../../composables/filesSettings'
@@ -142,31 +141,13 @@ const { sortFavoritesFirst, cropImagePreviews } = useFilesSettings()
  * Files sorted by columns
  */
 const sortedFiles = computed(() => {
-	const ordering = {
-		ascending: <T, >(a: T, b: T, fn: (a: T, b: T) => number) => fn(a, b),
-		descending: <T, >(a: T, b: T, fn: (a: T, b: T) => number) => fn(b, a),
-		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-		none: <T, >(_a: T, _b: T, _fn: (a: T, b: T) => number) => 0,
-	}
-
-	const sorting = {
-		basename: (a: Node, b: Node) => (a.attributes?.displayName || a.basename).localeCompare(b.attributes?.displayName || b.basename, getCanonicalLocale()),
-		size: (a: Node, b: Node) => (a.size || 0) - (b.size || 0),
-		// reverted because "young" is smaller than "old"
-		mtime: (a: Node, b: Node) => (b.mtime?.getTime?.() || 0) - (a.mtime?.getTime?.() || 0),
-	}
-
-	return [...props.files].sort(
-		(a, b) =>
-		// Folders always come above the files
-			(b.type === FileType.Folder ? 1 : 0) - (a.type === FileType.Folder ? 1 : 0)
-		// Favorites above other files
-		|| (sortFavoritesFirst ? ((b.attributes.favorite ? 1 : 0) - (a.attributes.favorite ? 1 : 0)) : 0)
-		// then sort by name / size / modified
-		|| ordering[sortingConfig.value.order](a, b, sorting[sortingConfig.value.sortBy]),
-	)
-},
-)
+	return sortNodes(props.files, {
+		sortFavoritesFirst: sortFavoritesFirst.value,
+		sortFoldersFirst: true,
+		sortingOrder: sortingConfig.value.order === 'descending' ? 'desc' : 'asc',
+		sortingMode: sortingConfig.value.sortBy as FilesSortingMode,
+	})
+})
 
 /**
  * Contains the selectable files, filtering out directories if `allowPickDirectory` is not set
