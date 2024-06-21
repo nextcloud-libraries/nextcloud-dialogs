@@ -72,7 +72,7 @@ import FilePickerNavigation from './FilePickerNavigation.vue'
 
 import { emit as emitOnEventBus } from '@nextcloud/event-bus'
 import { NcDialog, NcEmptyContent } from '@nextcloud/vue'
-import { computed, onMounted, ref, shallowReactive, toRef, watch } from 'vue'
+import { computed, onMounted, ref, shallowRef, toRef, watch } from 'vue'
 import { showError } from '../../toast'
 import { useDAVFiles } from '../../composables/dav'
 import { useMimeFilter } from '../../composables/mime'
@@ -147,7 +147,7 @@ const isOpen = ref(true)
  * Map buttons to Dialog buttons by wrapping the callback function to pass the selected files
  */
 const dialogButtons = computed(() => {
-	const nodes = selectedFiles.length === 0 && props.allowPickDirectory && currentFolder.value ? [currentFolder.value] : selectedFiles
+	const nodes = selectedFiles.value.length === 0 && props.allowPickDirectory && currentFolder.value ? [currentFolder.value] : selectedFiles.value
 	const buttons = typeof props.buttons === 'function'
 		? props.buttons(nodes, currentPath.value, currentView.value)
 		: props.buttons
@@ -188,7 +188,7 @@ const viewHeadline = computed(() => currentView.value === 'favorites' ? t('Favor
 /**
  * All currently selected files
  */
-const selectedFiles = shallowReactive<Node[]>([])
+const selectedFiles = shallowRef<Node[]>([])
 
 /**
  * Last path navigated to using the file picker
@@ -205,7 +205,7 @@ watch([navigatedPath], () => {
 	if (props.path === undefined && navigatedPath.value) {
 		window.sessionStorage.setItem('NC.FilePicker.LastPath', navigatedPath.value)
 		// Reset selected files
-		selectedFiles.splice(0, selectedFiles.length)
+		selectedFiles.value = []
 	}
 })
 
