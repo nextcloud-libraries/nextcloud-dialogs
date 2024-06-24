@@ -22,10 +22,9 @@
 		<div class="file-picker__main">
 			<!-- Header title / file list breadcrumbs -->
 			<FilePickerBreadcrumbs v-if="currentView === 'files'"
-				:path="currentPath"
+				:path.sync="currentPath"
 				:show-menu="allowPickDirectory"
-				@create-node="onCreateFolder"
-				@update:path="navigatedPath = $event" />
+				@create-node="onCreateFolder" />
 			<div v-else class="file-picker__view">
 				<h3>{{ viewHeadline }}</h3>
 			</div>
@@ -212,10 +211,16 @@ watch([navigatedPath], () => {
 /**
  * The current path that should be picked from
  */
-const currentPath = computed(() =>
-	// Only use the path for the files view as favorites and recent only works on the root
-	currentView.value === 'files' ? navigatedPath.value || props.path || savedPath.value : '/',
-)
+const currentPath = computed({
+	get: () => {
+		// Only use the path for the files view as favorites and recent only works on the root
+		return currentView.value === 'files' ? navigatedPath.value || props.path || savedPath.value : '/'
+	},
+	set: (path: string) => {
+		// forward setting the current path to the navigated path
+		navigatedPath.value = path
+	},
+})
 
 /**
  * A string used to filter files in current view
