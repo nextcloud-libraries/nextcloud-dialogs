@@ -6,6 +6,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## 5.3.4
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.3.3...v5.3.4)
+
+### Fixed
+* fix(FilePicker): Forward update of `currentPath` to `navigatedPath` [\#1370](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1370) \([susnux](https://github.com/susnux)\)
+
+### Changed
+* chore(deps-dev): Bump sass to 1.77.6
+* chore(deps-dev): Bump @nextcloud/vite-config to 1.3.0
+* chore(deps-dev): Bump happy-dom to 14.12.3
+* chore(deps-dev): Bump typedoc to 0.26.0
+* chore(deps-dev): Bump typescript to 5.5.2
+
 ## [v5.3.3](https://github.com/nextcloud-libraries/nextcloud-dialogs/tree/v5.3.3) (2024-06-21)
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.3.2...v5.3.3)
 
