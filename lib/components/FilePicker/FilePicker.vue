@@ -146,13 +146,19 @@ const isOpen = ref(true)
  * Map buttons to Dialog buttons by wrapping the callback function to pass the selected files
  */
 const dialogButtons = computed(() => {
-	const nodes = selectedFiles.value.length === 0 && props.allowPickDirectory && currentFolder.value ? [currentFolder.value] : selectedFiles.value
+	const nodes = selectedFiles.value.length === 0
+		&& props.allowPickDirectory
+		&& currentFolder.value
+		? [currentFolder.value]
+		: selectedFiles.value
+
 	const buttons = typeof props.buttons === 'function'
 		? props.buttons(nodes, currentPath.value, currentView.value)
 		: props.buttons
 
 	return buttons.map((button) => ({
 		...button,
+		disabled: button.disabled || isLoading.value,
 		callback: () => {
 			// lock default close handling
 			isHandlingCallback = true
@@ -203,9 +209,9 @@ const navigatedPath = ref('')
 watch([navigatedPath], () => {
 	if (props.path === undefined && navigatedPath.value) {
 		window.sessionStorage.setItem('NC.FilePicker.LastPath', navigatedPath.value)
-		// Reset selected files
-		selectedFiles.value = []
 	}
+	// Reset selected files
+	selectedFiles.value = []
 })
 
 /**

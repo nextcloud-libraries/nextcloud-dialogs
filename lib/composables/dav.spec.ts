@@ -71,7 +71,6 @@ describe('dav composable', () => {
 		expect(Array.isArray(vue.vm.files)).toBe(true)
 		expect(vue.vm.files.length).toBe(0)
 		// functions
-		expect(typeof vue.vm.getFile === 'function').toBe(true)
 		expect(typeof vue.vm.loadFiles === 'function').toBe(true)
 	})
 
@@ -153,23 +152,6 @@ describe('dav composable', () => {
 		expect(client.search).toBeCalledTimes(1)
 	})
 
-	it('getFile works', async () => {
-		const client = {
-			stat: vi.fn((v) => ({ data: { path: v } })),
-			getDirectoryContents: vi.fn(() => ({ data: [] })),
-		}
-		nextcloudFiles.davGetClient.mockImplementation(() => client)
-		nextcloudFiles.davResultToNode.mockImplementation((v) => v)
-
-		const { getFile } = useDAVFiles(ref('files'), ref('/'))
-
-		const node = await getFile('/some/path/file.ext')
-		expect(node).toEqual({ path: `${nextcloudFiles.davRootPath}/some/path/file.ext` })
-		// Check mock usage
-		expect(client.stat).toBeCalledWith(`${nextcloudFiles.davRootPath}/some/path/file.ext`, { details: true })
-		expect(nextcloudFiles.davResultToNode).toBeCalledWith({ path: `${nextcloudFiles.davRootPath}/some/path/file.ext` })
-	})
-
 	it('createDirectory works', async () => {
 		const client = {
 			stat: vi.fn((v) => ({ data: { path: v } })),
@@ -189,11 +171,12 @@ describe('dav composable', () => {
 	it('loadFiles work', async () => {
 		const client = {
 			stat: vi.fn((v) => ({ data: { path: v } })),
-			getDirectoryContents: vi.fn((p, o) => ({ data: [] })),
-			search: vi.fn((p, o) => ({ data: { results: [], truncated: false } })),
+			getDirectoryContents: vi.fn((_p, _o) => ({ data: [] })),
+			search: vi.fn((_p, _o) => ({ data: { results: [], truncated: false } })),
 		}
 		nextcloudFiles.davGetClient.mockImplementationOnce(() => client)
 		nextcloudFiles.davResultToNode.mockImplementationOnce((v) => v)
+		nextcloudFiles.getFavoriteNodes.mockImplementationOnce(() => Promise.resolve([]))
 
 		const view = ref<'files' | 'recent' | 'favorites'>('files')
 		const path = ref('/')
@@ -216,8 +199,8 @@ describe('dav composable', () => {
 	it('request cancelation works', async () => {
 		const client = {
 			stat: vi.fn((v) => ({ data: { path: v } })),
-			getDirectoryContents: vi.fn((p, o) => ({ data: [] })),
-			search: vi.fn((p, o) => ({ data: { results: [], truncated: false } })),
+			getDirectoryContents: vi.fn((_p, _o) => ({ data: [] })),
+			search: vi.fn((_p, _o) => ({ data: { results: [], truncated: false } })),
 		}
 		nextcloudFiles.davGetClient.mockImplementationOnce(() => client)
 		nextcloudFiles.davResultToNode.mockImplementationOnce((v) => v)
