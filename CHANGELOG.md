@@ -6,6 +6,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## 5.3.5
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.3.4...v5.3.5)
+
+### Fixed
+* fix(FilePicker): Cleanup DAV handling and properly handle `currentFolder` [\#1378](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1378) \([susnux](https://github.com/susnux)\)
+
+### Changed
+* Updated translations
+* chore(deps): Bump @nextcloud/typings from 1.8.0 to 1.9.0
+* chore(deps-dev): Bump typedoc from 0.26.0 to 0.26.3
+* chore(deps-dev): Bump @zamiell/typedoc-plugin-not-exported from 0.2.0 to 0.3.0
+* chore(deps-dev): Bump vite from 5.3.1 to 5.3.2
+
 ## 5.3.4
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.3.3...v5.3.4)
 
