@@ -3,11 +3,14 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-import type { IDialogButton, ISeverity } from './components/types'
+import type { IDialogButton } from './components/types'
 import type Vue from 'vue'
 
-import GenericDialog from './components/GenericDialog.vue'
+import { DialogSeverity } from './components/types'
 import { spawnDialog } from './utils/dialogs'
+import GenericDialog from './components/GenericDialog.vue'
+
+export { DialogSeverity } from './components/types'
 
 /**
  * This class provides generic Nextcloud themed dialogs
@@ -17,7 +20,7 @@ export class Dialog {
 	#name: string
 	#text: string
 	#buttons: IDialogButton[]
-	#severity?: ISeverity
+	#severity?: DialogSeverity
 	#dialog?: Vue
 
 	/** @deprecated */
@@ -27,7 +30,7 @@ export class Dialog {
 		name: string,
 		text: string,
 		buttons: IDialogButton[] = [],
-		severity?: ISeverity,
+		severity?: DialogSeverity,
 	) {
 		this.#name = name
 		this.#text = text
@@ -80,18 +83,32 @@ export class Dialog {
 
 /**
  * The DialogBuilder provides an easy to use interface for creating simple dialogs in consistent Nextcloud design
+ *
+ * @example
+ * ```ts
+ * // It is recommended to use `getDialogBuilder` instead
+ * const dialogBuilder = new DialogBuilder('The dialog title')
+ * const dialog = dialogBuilder
+ *     .setText('The dialog message')
+ *     .setSeverity(DialogSeverity.Warning)
+ *     .addButton({
+ *         label: 'Ok',
+ *         callback: () => console.warn('Warning was dismissed'),
+ *     })
+ *     .build()
+ * ```
  */
 export class DialogBuilder {
 
-	#severity?: ISeverity
+	#severity?: DialogSeverity
 	#text: string
 	#name: string
 	#buttons: IDialogButton[]
 
-	constructor() {
+	constructor(name?: string) {
 		this.#severity = undefined
 		this.#text = ''
-		this.#name = ''
+		this.#name = name ?? ''
 		this.#buttons = []
 	}
 
@@ -117,7 +134,7 @@ export class DialogBuilder {
 	 * Set the severity of the dialog
 	 * @param severity Severity of the dialog
 	 */
-	setSeverity(severity: ISeverity) {
+	setSeverity(severity: DialogSeverity) {
 		this.#severity = severity
 		return this
 	}
@@ -147,4 +164,22 @@ export class DialogBuilder {
 		return new Dialog(this.#name, this.#text, this.#buttons, this.#severity)
 	}
 
+}
+
+/**
+ * Get the dialog builder to create a new dialog
+ *
+ * @param name The name of the dialog (title)
+ * @example
+ * ```ts
+ * const dialog = getDialogBuilder('Confirm action')
+ *     .addButton({
+ *         label: 'Ok',
+ *         callback: () => console.warn('confirmed'),
+ *     })
+ *     .build()
+ * ```
+ */
+export function getDialogBuilder(name: string) {
+	return new DialogBuilder(name)
 }
