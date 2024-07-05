@@ -37,6 +37,12 @@ export { spawnDialog } from './utils/dialogs.js'
 export {
 	Dialog,
 	DialogBuilder,
+	DialogSeverity,
+	getDialogBuilder,
 } from './dialogs'
 
-export type { IFilePickerButton, IFilePickerFilter } from './components/types.js'
+export type {
+	IDialogButton,
+	IFilePickerButton,
+	IFilePickerFilter,
+} from './components/types.js'

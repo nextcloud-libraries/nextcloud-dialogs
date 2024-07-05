@@ -5,7 +5,11 @@
 
 import type { Node } from '@nextcloud/files'
 
-export type ISeverity = 'info' | 'warning' | 'error'
+export enum DialogSeverity {
+	Info = 'info',
+	Warning = 'warning',
+	Error = 'error',
+}
 
 /**
  * Interface for defining buttons passed to the Dialog component
@@ -53,6 +57,6 @@ export interface IFilePickerButton extends Omit<IDialogButton, 'callback'> {
 export type IFilePickerButtonFactory = (selectedNodes: Node[], currentPath: string, currentView: string) => IFilePickerButton[]
 
 /**
-* Type of filter functions to filter the FilePicker's file list
-*/
+ * Type of filter functions to filter the FilePicker's file list
+ */
 export type IFilePickerFilter = (node: Node) => boolean

@@ -17,12 +17,13 @@
 </template>
 
 <script setup lang="ts">
-import type { ISeverity } from './types.d.ts'
+import type { IDialogButton } from './types'
+
+import { onMounted, onUnmounted } from 'vue'
+import { DialogSeverity } from './types'
 
 import NcDialog from '@nextcloud/vue/dist/Components/NcDialog.js'
 import NcNoteCard from '@nextcloud/vue/dist/Components/NcNoteCard.js'
-import type { IDialogButton } from './types'
-import { onMounted, onUnmounted } from 'vue'
 
 const props = defineProps<{
 	/**
@@ -49,7 +50,7 @@ const props = defineProps<{
 	/**
 	 * Severity of the dialog - if a notecard is used
 	 */
-	severity?: ISeverity
+	severity?: DialogSeverity
 }>()
 
 /**
