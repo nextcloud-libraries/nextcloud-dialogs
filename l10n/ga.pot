@@ -125,4 +125,4 @@ msgid "Undo"
 msgstr "Cealaigh"
 
 msgid "Upload some content or sync with your devices!"
-msgstr "Uaslódáil roinnt inneachair nó sioncronaigh le do ghléasanna!"
+msgstr "Uaslódáil roinnt ábhair nó sioncronaigh le do ghléasanna!"
