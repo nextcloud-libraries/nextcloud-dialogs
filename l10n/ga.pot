@@ -116,7 +116,7 @@ msgid "Select entry"
 msgstr "Roghnaigh iontráil"
 
 msgid "Select the row for {nodename}"
-msgstr "Roghnaigh an ró le haghaidh {nodename}"
+msgstr "Roghnaigh an ró do {nodename}"
 
 msgid "Size"
 msgstr "Méid"
@@ -125,4 +125,4 @@ msgid "Undo"
 msgstr "Cealaigh"
 
 msgid "Upload some content or sync with your devices!"
-msgstr "Uaslódáil roinnt inneachair nó sioncronaigh le do ghléasanna!"
+msgstr "Uaslódáil roinnt ábhair nó sioncronaigh le do ghléasanna!"
