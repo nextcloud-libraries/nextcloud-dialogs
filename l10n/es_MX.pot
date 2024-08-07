@@ -1,15 +1,126 @@
 # 
 # Translators:
-# Joas Schilling, 2023
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# Jehu Marcos Herrera Puentes, 2024
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
+"Last-Translator: Jehu Marcos Herrera Puentes, 2024\n"
 "Language-Team: Spanish (Mexico) (https://app.transifex.com/nextcloud/teams/64236/es_MX/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: es_MX\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: lib/toast.ts:223
+msgid "\"{name}\" is an invalid folder name."
+msgstr "\"{name}\" es un nombre de carpeta inválido."
+
+msgid "\"{name}\" is not an allowed folder name"
+msgstr "\"{name}\" no es un nombre de carpeta permitido."
+
+msgid "\"/\" is not allowed inside a folder name."
+msgstr "\"/\" no está permitido en el nombre de la carpeta."
+
+msgid "All files"
+msgstr "Todos los archivos"
+
+msgid "Choose"
+msgstr "Seleccionar"
+
+msgid "Choose {file}"
+msgstr "Seleccionar {file}"
+
+msgid "Choose %n file"
+msgid_plural "Choose %n files"
+msgstr[0] "Seleccionar %n archivo"
+msgstr[1] "Seleccionar %n archivos"
+msgstr[2] "Seleccionar %n archivos"
+
+msgid "Copy"
+msgstr "Copiar"
+
+msgid "Copy to {target}"
+msgstr "Copiar a {target}"
+
+msgid "Could not create the new folder"
+msgstr "No se pudo crear la nueva carpeta"
+
+msgid "Could not load files settings"
+msgstr "No se pudo cargar la configuración de archivos"
+
+msgid "Could not load files views"
+msgstr "No se pudieron cargar las vistas de los archivos"
+
+msgid "Create directory"
+msgstr "Crear carpeta"
+
+msgid "Current view selector"
+msgstr "Selector de vista actual"
+
+msgid "Favorites"
+msgstr "Favoritos"
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr "Los archivos y carpetas que marque como favoritos aparecerán aquí."
+
+msgid "Files and folders you recently modified will show up here."
+msgstr "Los archivos y carpetas que modificó recientemente aparecerán aquí."
+
+msgid "Filter file list"
+msgstr "Filtrar lista de archivos"
+
+msgid "Folder name cannot be empty."
+msgstr "El nombre de la carpeta no puede estar vacío."
+
+msgid "Home"
+msgstr "Inicio"
+
+msgid "Modified"
+msgstr "Modificado"
+
+msgid "Move"
+msgstr "Mover"
+
+msgid "Move to {target}"
+msgstr "Mover a {target}"
+
+msgid "Name"
+msgstr "Nombre"
+
+msgid "New"
+msgstr "Nuevo"
+
+msgid "New folder"
+msgstr "Nueva carpeta"
+
+msgid "New folder name"
+msgstr "Nombre de nueva carpeta"
+
+msgid "No files in here"
+msgstr "No hay archivos aquí"
+
+msgid "No files matching your filter were found."
+msgstr "No se encontraron archivos que coincidan con su filtro."
+
+msgid "No matching files"
+msgstr "No hay archivos coincidentes"
+
+msgid "Recent"
+msgstr "Reciente"
+
+msgid "Select all entries"
+msgstr "Seleccionar todas las entradas"
+
+msgid "Select entry"
+msgstr "Seleccionar entrada"
+
+msgid "Select the row for {nodename}"
+msgstr "Seleccione la fila para {nodename}"
+
+msgid "Size"
+msgstr "Tamaño"
+
 msgid "Undo"
 msgstr "Deshacer"
+
+msgid "Upload some content or sync with your devices!"
+msgstr "¡Suba algún contenido o sincronice con sus dispositivos!"
