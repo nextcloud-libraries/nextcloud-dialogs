@@ -3,11 +3,14 @@
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Rémi LEBLOND, 2023
 # Mordecai, 2023
-# fleopaul thp, 2023
+# fleopaulD, 2023
+# François Ch., 2024
+# Jérôme HERBINET, 2024
+# Benoit Pruneau, 2024
 # 
 msgid ""
 msgstr ""
-"Last-Translator: fleopaul thp, 2023\n"
+"Last-Translator: Benoit Pruneau, 2024\n"
 "Language-Team: French (https://app.transifex.com/nextcloud/teams/64236/fr/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: fr\n"
@@ -31,6 +34,12 @@ msgstr "Choisir"
 msgid "Choose {file}"
 msgstr "Choisir {file}"
 
+msgid "Choose %n file"
+msgid_plural "Choose %n files"
+msgstr[0] "Choisir %n fichier"
+msgstr[1] "Choisir %n fichiers"
+msgstr[2] "Choisir %n fichiers "
+
 msgid "Copy"
 msgstr "Copier"
 
@@ -39,6 +48,12 @@ msgstr "Copier vers {target}"
 
 msgid "Could not create the new folder"
 msgstr "Impossible de créer le nouveau dossier"
+
+msgid "Could not load files settings"
+msgstr "Les paramètres des fichiers n'ont pas pu être chargés"
+
+msgid "Could not load files views"
+msgstr "Les aperçus des fichiers n'ont pas pu être chargés"
 
 msgid "Create directory"
 msgstr "Créer un répertoire"
@@ -56,7 +71,7 @@ msgid "Files and folders you recently modified will show up here."
 msgstr "Les fichiers et répertoires modifiés récemment apparaîtront ici."
 
 msgid "Filter file list"
-msgstr "Liste de filtre de fichiers"
+msgstr "Filtrer la liste des fichiers"
 
 msgid "Folder name cannot be empty."
 msgstr "Le nom du dossier ne peut pas être vide."
