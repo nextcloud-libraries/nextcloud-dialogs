@@ -77,7 +77,7 @@ msgid "Home"
 msgstr "ホーム"
 
 msgid "Modified"
-msgstr "修正済み"
+msgstr "変更済み"
 
 msgid "Move"
 msgstr "移動"
