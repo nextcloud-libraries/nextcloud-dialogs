@@ -13,6 +13,7 @@ import Vue, { toRaw } from 'vue'
  * @param props Properties to pass to the dialog
  * @param onClose Callback when the dialog is closed
  */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const spawnDialog = (dialog: Component | AsyncComponent, props: any, onClose: (...rest: unknown[]) => void = () => {}): Vue => {
 	const el = document.createElement('div')
 

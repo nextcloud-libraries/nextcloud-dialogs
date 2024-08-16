@@ -37,7 +37,7 @@ const waitRefLoaded = (isLoading: Ref<boolean>) => new Promise((resolve) => {
 })
 
 const TestComponent = defineComponent({
-	props: ['currentView', 'currentPath', 'isPublic'],
+	props: ['currentView', 'currentPath'],
 	setup(props) {
 		const dav = useDAVFiles(toRef(props, 'currentView'), toRef(props, 'currentPath'))
 		return {
@@ -60,7 +60,6 @@ describe('dav composable', () => {
 			propsData: {
 				currentView: 'files',
 				currentPath: '/',
-				isPublic: false,
 			},
 		})
 		// Loading is set to true
@@ -85,7 +84,6 @@ describe('dav composable', () => {
 			propsData: {
 				currentView: 'files',
 				currentPath: '/',
-				isPublic: false,
 			},
 		})
 
@@ -105,7 +103,6 @@ describe('dav composable', () => {
 			propsData: {
 				currentView: 'files',
 				currentPath: '/',
-				isPublic: false,
 			},
 		})
 
@@ -133,7 +130,6 @@ describe('dav composable', () => {
 			propsData: {
 				currentView: 'files',
 				currentPath: '/',
-				isPublic: false,
 			},
 		})
 

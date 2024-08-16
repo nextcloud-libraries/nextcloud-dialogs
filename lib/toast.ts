@@ -214,7 +214,7 @@ export function showUndo(text: string, onUndo: (e: MouseEvent) => void, options?
 		// force 10 seconds of timeout
 		timeout: TOAST_UNDO_TIMEOUT,
 		// remove close button
-		close: false
+		close: false,
 	})
 
 	// Generate undo layout

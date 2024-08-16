@@ -11,10 +11,10 @@ import { useFilesSettings } from './filesSettings'
 const axios = vi.hoisted(() => ({
 	get: vi.fn(),
 }))
-const isPublic = vi.hoisted(() => ({ value: false }))
+const nextcloudSharing = vi.hoisted(() => ({ isPublicShare: vi.fn(() => false) }))
 
 vi.mock('@nextcloud/axios', () => ({ default: axios }))
-vi.mock('./isPublic', () => ({ useIsPublic: () => ({ isPublic }) }))
+vi.mock('@nextcloud/sharing/public', () => nextcloudSharing)
 
 const TestComponent = defineComponent({
 	setup() {
