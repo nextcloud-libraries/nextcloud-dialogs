@@ -1,6 +1,6 @@
 {
   "name": "@nextcloud/dialogs",
-  "version": "5.3.5",
+  "version": "6.0.0",
   "description": "Nextcloud dialog helpers",
   "types": "dist/index.d.ts",
   "main": "dist/index.cjs",
@@ -50,7 +50,7 @@
     "dist"
   ],
   "peerDependencies": {
-    "@nextcloud/vue": "^8.9.1",
+    "@nextcloud/vue": "^8.16.0",
     "vue": "^2.7.16"
   },
   "dependencies": {
