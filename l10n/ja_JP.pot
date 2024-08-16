@@ -1,15 +1,128 @@
 # 
 # Translators:
-# Joas Schilling, 2023
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# Uchiyama Takuya <uchiyama@j-wmc.com>, 2023
+# takehito kondo, 2023
+# kojima.imamura, 2024
+# Takafumi AKAMATSU, 2024
+# devi, 2024
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
+"Last-Translator: devi, 2024\n"
 "Language-Team: Japanese (Japan) (https://app.transifex.com/nextcloud/teams/64236/ja_JP/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: ja_JP\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: lib/toast.ts:223
+msgid "\"{name}\" is an invalid folder name."
+msgstr "\"{name}\" はフォルダー名に使用できません。"
+
+msgid "\"{name}\" is not an allowed folder name"
+msgstr "\"{name}\"は許可されたフォルダー名ではありません"
+
+msgid "\"/\" is not allowed inside a folder name."
+msgstr "フォルダー名に「/（スラッシュ）」は使用できません。"
+
+msgid "All files"
+msgstr "すべてのファイル"
+
+msgid "Choose"
+msgstr "選択"
+
+msgid "Choose {file}"
+msgstr "{file} を選択"
+
+msgid "Choose %n file"
+msgid_plural "Choose %n files"
+msgstr[0] "%n 個のファイルを選択"
+
+msgid "Copy"
+msgstr "コピー"
+
+msgid "Copy to {target}"
+msgstr "{target} にコピー"
+
+msgid "Could not create the new folder"
+msgstr "新しいフォルダーを作成できませんでした"
+
+msgid "Could not load files settings"
+msgstr "ファイル設定を読み込めませんでした"
+
+msgid "Could not load files views"
+msgstr "ファイルビューを読み込めませんでした"
+
+msgid "Create directory"
+msgstr "ディレクトリを作成"
+
+msgid "Current view selector"
+msgstr "現在のビューセレクタ"
+
+msgid "Favorites"
+msgstr "お気に入り"
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr "お気に入りとしてマークしたファイルとフォルダがここに表示されます。"
+
+msgid "Files and folders you recently modified will show up here."
+msgstr "最近変更したファイルとフォルダがここに表示されます。"
+
+msgid "Filter file list"
+msgstr "ファイルリストをフィルタ"
+
+msgid "Folder name cannot be empty."
+msgstr "フォルダ名は空にできません。"
+
+msgid "Home"
+msgstr "ホーム"
+
+msgid "Modified"
+msgstr "修正済み"
+
+msgid "Move"
+msgstr "移動"
+
+msgid "Move to {target}"
+msgstr "{target} に移動"
+
+msgid "Name"
+msgstr "名前"
+
+msgid "New"
+msgstr "新規作成"
+
+msgid "New folder"
+msgstr "新しいフォルダー"
+
+msgid "New folder name"
+msgstr "新しいフォルダーの名前"
+
+msgid "No files in here"
+msgstr "ファイルがありません"
+
+msgid "No files matching your filter were found."
+msgstr "フィルタに一致するファイルは見つかりませんでした。"
+
+msgid "No matching files"
+msgstr "一致するファイルはありません"
+
+msgid "Recent"
+msgstr "最近"
+
+msgid "Select all entries"
+msgstr "すべてのエントリを選択"
+
+msgid "Select entry"
+msgstr "エントリを選択"
+
+msgid "Select the row for {nodename}"
+msgstr "{nodename} の行を選択"
+
+msgid "Size"
+msgstr "サイズ"
+
 msgid "Undo"
 msgstr "元に戻す"
+
+msgid "Upload some content or sync with your devices!"
+msgstr "コンテンツをアップロードするか、デバイスと同期してください！"
