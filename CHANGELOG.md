@@ -6,6 +6,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## 6.0.0
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.3.5...v6.0.0)
+
+### Breaking
+
+v6.0.0 is only compatible with Nextcloud 29 and newer.
+Technically this is the same as v5.3.5, but v5.3.3 was a breaking change as it dropped support for Nextcloud 28 and older on public shares.
+
+### Changed
+* chore: Enhance docs about generic dialogs and export all related types [\#1380](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1380) \([susnux](https://github.com/susnux)\)
+* Migrate REUSE to TOML format [\#1386](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1386) \([AndyScherzinger](https://github.com/AndyScherzinger)\)
+* chore(deps): Bump @nextcloud/typings to 1.9.1
+* chore(deps): Bump @nextcloud/sharing to 0.2.3
+* chore(deps): Bump fast-xml-parser to 4.4.1
+* chore(deps): Bump @nextcloud/files to 3.8.0
+* chore(deps): Bump @vueuse/core to 10.11.1
+* chore(deps): Bump webdav to 5.7.1
+* chore(deps): Bump axios to 1.7.4
+
 ## 5.3.5
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.3.4...v5.3.5)
 
