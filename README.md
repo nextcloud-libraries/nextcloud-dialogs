@@ -19,7 +19,8 @@ Since version 4.2 this package provides a Vue.js based file picker, so this pack
 
 `@nextcloud/dialogs` | `@nextcloud/vue` | Nextcloud server version
 -----|-------|-----------------------
-5.x  | 8.x   | Nextcloud 28 and newer
+6.x  | 8.x   | Nextcloud 29 and newer
+5.x  | 8.x   | Nextcloud 28, 29, 30
 4.2+ | 7.12  | Nextcloud 25, 26, 27, 27.1
 4.1  | *any* | *any*
 
