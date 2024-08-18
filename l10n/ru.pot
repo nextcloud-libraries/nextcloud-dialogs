@@ -6,10 +6,11 @@
 # Alex <kekcuha@gmail.com>, 2024
 # R4SAS, 2024
 # Влад, 2024
+# Kitsune R, 2024
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Влад, 2024\n"
+"Last-Translator: Kitsune R, 2024\n"
 "Language-Team: Russian (https://app.transifex.com/nextcloud/teams/64236/ru/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: ru\n"
@@ -80,7 +81,7 @@ msgid "Home"
 msgstr "Home"
 
 msgid "Modified"
-msgstr "Модифицированный"
+msgstr "Изменен"
 
 msgid "Move"
 msgstr "Переместить"
