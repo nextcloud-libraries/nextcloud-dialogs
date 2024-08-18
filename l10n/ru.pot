@@ -99,7 +99,7 @@ msgid "New folder"
 msgstr "Новая папка"
 
 msgid "New folder name"
-msgstr "Новое имя папки"
+msgstr "Имя новой папки"
 
 msgid "No files in here"
 msgstr "Здесь нет файлов"
