@@ -73,7 +73,7 @@ export const useDAVFiles = function(
 		})
 	}
 
-	const getNodes = (): CancelablePromise<Node[]> => {
+	const getNodes = (): CancelablePromise<ContentsWithRoot> => {
 		const controller = new AbortController()
 		return new CancelablePromise(async (resolve, reject, onCancel) => {
 			onCancel(() => controller.abort())
@@ -81,14 +81,14 @@ export const useDAVFiles = function(
 				const results = await client.value.getDirectoryContents(`${defaultRootPath}${currentPath.value}`, {
 					signal: controller.signal,
 					details: true,
+					includeSelf: true,
 					data: davGetDefaultPropfind(),
 				}) as ResponseDataDetailed<FileStat[]>
-				let nodes = results.data.map(resultToNode)
-				// Hack for the public endpoint which always returns folder itself
-				if (isPublicEndpoint) {
-					nodes = nodes.filter((file) => file.path !== currentPath.value)
-				}
-				resolve(nodes)
+				const nodes = results.data.map(resultToNode)
+				resolve({
+					folder: nodes.find((file) => file.path === currentPath.value) as Folder,
+					contents: nodes.filter((file) => file.path !== currentPath.value),
+				})
 			} catch (error) {
 				reject(error)
 			}
