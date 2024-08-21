@@ -6,6 +6,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## 5.3.7
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.3.6...v5.3.7)
+
+### Fixed
+* fix: Fetch also current folder in DAV [\#1428](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1428) \([susnux](https://github.com/susnux)\)
+
 ## 5.3.6
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.3.5...v5.3.6)
 
