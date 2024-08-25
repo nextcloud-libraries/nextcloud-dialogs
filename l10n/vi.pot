@@ -1,15 +1,124 @@
 # 
 # Translators:
-# Joas Schilling, 2023
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# Tran Duc, 2024
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
+"Last-Translator: Tran Duc, 2024\n"
 "Language-Team: Vietnamese (https://app.transifex.com/nextcloud/teams/64236/vi/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: vi\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: lib/toast.ts:223
+msgid "\"{name}\" is an invalid folder name."
+msgstr "\"{name}\" là tên thư mục không hợp lệ."
+
+msgid "\"{name}\" is not an allowed folder name"
+msgstr "\"1{name}\"không phải là tên thư mục được phép"
+
+msgid "\"/\" is not allowed inside a folder name."
+msgstr "\"/\"không được phép đặt trong tên thư mục."
+
+msgid "All files"
+msgstr "Tất cả tệp"
+
+msgid "Choose"
+msgstr "Chọn"
+
+msgid "Choose {file}"
+msgstr "Chọn {file}"
+
+msgid "Choose %n file"
+msgid_plural "Choose %n files"
+msgstr[0] "Chọn %n tệp"
+
+msgid "Copy"
+msgstr "Sao chép"
+
+msgid "Copy to {target}"
+msgstr "Sao chép đến {target}"
+
+msgid "Could not create the new folder"
+msgstr "Không thể tạo thư mục mới"
+
+msgid "Could not load files settings"
+msgstr "Không thể tải tập tin cài đặt"
+
+msgid "Could not load files views"
+msgstr "Không thể tải xuống tệp xem"
+
+msgid "Create directory"
+msgstr "Tạo thư mục"
+
+msgid "Current view selector"
+msgstr "Hiện tại chế độ xem của bộ chọn"
+
+msgid "Favorites"
+msgstr "Yêu cầu thích"
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr "Các tập tin và thư mục bạn đánh dấu yêu thích sẽ hiển thị ở đây."
+
+msgid "Files and folders you recently modified will show up here."
+msgstr "Các tập tin và thư mục bạn sửa đổi gần đây sẽ hiển thị ở đây."
+
+msgid "Filter file list"
+msgstr "Filter list file"
+
+msgid "Folder name cannot be empty."
+msgstr "Thư mục tên không được để trống."
+
+msgid "Home"
+msgstr "Trang chủ"
+
+msgid "Modified"
+msgstr "Đã sửa đổi"
+
+msgid "Move"
+msgstr "Di chuyển"
+
+msgid "Move to {target}"
+msgstr "Di chuyển đến{target}"
+
+msgid "Name"
+msgstr "Tên"
+
+msgid "New"
+msgstr "Mới"
+
+msgid "New folder"
+msgstr "New thư mục"
+
+msgid "New folder name"
+msgstr "New thư mục tên"
+
+msgid "No files in here"
+msgstr "No file at here"
+
+msgid "No files matching your filter were found."
+msgstr "Không tìm thấy tệp nào phù hợp với bộ lọc của bạn."
+
+msgid "No matching files"
+msgstr "No file phù hợp"
+
+msgid "Recent"
+msgstr "Gần đây"
+
+msgid "Select all entries"
+msgstr "Choose all items"
+
+msgid "Select entry"
+msgstr "Chọn mục nhập"
+
+msgid "Select the row for {nodename}"
+msgstr "Choose hang cho{nodename}"
+
+msgid "Size"
+msgstr "Kích cỡ"
+
 msgid "Undo"
 msgstr "Hoàn tác"
+
+msgid "Upload some content or sync with your devices!"
+msgstr "Tải lên một số nội dung hoặc đồng bộ hóa với thiết bị của bạn!"
