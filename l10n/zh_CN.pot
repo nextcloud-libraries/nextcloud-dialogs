@@ -4,10 +4,11 @@
 # ken, 2023
 # Eric, 2023
 # Phonebook3599, 2024
+# Ruijian Deng, 2024
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Phonebook3599, 2024\n"
+"Last-Translator: Ruijian Deng, 2024\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/nextcloud/teams/64236/zh_CN/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: zh_CN\n"
@@ -87,7 +88,7 @@ msgid "Name"
 msgstr "名称"
 
 msgid "New"
-msgstr "新"
+msgstr "新建"
 
 msgid "New folder"
 msgstr "新文件夹"
