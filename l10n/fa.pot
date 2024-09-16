@@ -22,7 +22,7 @@ msgid "\"/\" is not allowed inside a folder name."
 msgstr "\"/\" نمی تواند در نام پوشه استفاده شود."
 
 msgid "All files"
-msgstr "همه فایل ها"
+msgstr "همه فایل‌ها"
 
 msgid "Choose"
 msgstr "انتخاب"
