@@ -13,7 +13,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 msgid "\"{name}\" is an invalid folder name."
-msgstr "{name} نام پوشه مجاز نیست"
+msgstr "{name} نام پوشه معتبر نیست"
 
 msgid "\"{name}\" is not an allowed folder name"
 msgstr "{name} نام پوشه مجاز نیست"
