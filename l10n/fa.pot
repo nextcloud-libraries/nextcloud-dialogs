@@ -13,7 +13,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 msgid "\"{name}\" is an invalid folder name."
-msgstr "{name} نام پوشه مجاز نیست"
+msgstr "{name} نام پوشه معتبر نیست"
 
 msgid "\"{name}\" is not an allowed folder name"
 msgstr "{name} نام پوشه مجاز نیست"
@@ -39,7 +39,7 @@ msgid "Copy"
 msgstr "رونوشت"
 
 msgid "Copy to {target}"
-msgstr "کپی از {target}"
+msgstr "رونوشت از {target}"
 
 msgid "Could not create the new folder"
 msgstr "پوشه جدید ایجاد نشد"
