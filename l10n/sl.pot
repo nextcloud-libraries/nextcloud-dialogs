@@ -1,15 +1,129 @@
 # 
 # Translators:
-# Joas Schilling, 2023
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# Simon Bogina, 2024
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
+"Last-Translator: Simon Bogina, 2024\n"
 "Language-Team: Slovenian (https://app.transifex.com/nextcloud/teams/64236/sl/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: sl\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 
-#: lib/toast.ts:223
+msgid "\"{name}\" is an invalid folder name."
+msgstr "{name} je neveljavno ime mape."
+
+msgid "\"{name}\" is not an allowed folder name"
+msgstr "{name} ni dovoljeno ime mape"
+
+msgid "\"/\" is not allowed inside a folder name."
+msgstr "\"/\" ni dovoljen v imenu mape."
+
+msgid "All files"
+msgstr "Vse datoteke"
+
+msgid "Choose"
+msgstr "Izberi"
+
+msgid "Choose {file}"
+msgstr "Izberi {file}"
+
+msgid "Choose %n file"
+msgid_plural "Choose %n files"
+msgstr[0] "Izberi %n datoteko"
+msgstr[1] "Izberi %n datoteki"
+msgstr[2] "Izberi %n datotek"
+msgstr[3] "Izberi %n datotek"
+
+msgid "Copy"
+msgstr "Kopiraj"
+
+msgid "Copy to {target}"
+msgstr "Kopiraj v {target}"
+
+msgid "Could not create the new folder"
+msgstr "Nisem mogel ustvariti nove mape"
+
+msgid "Could not load files settings"
+msgstr "NIsem mogel naložiti nastavitev datotek"
+
+msgid "Could not load files views"
+msgstr "Nisem mogel naložiti pogledov datotek"
+
+msgid "Create directory"
+msgstr "Ustvari mapo"
+
+msgid "Current view selector"
+msgstr "Izbirnik trenutnega pogleda"
+
+msgid "Favorites"
+msgstr "Priljubljene"
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr ""
+"Datoteke in mape ki jih označite kot priljubljene se bodo prikazale tukaj."
+
+msgid "Files and folders you recently modified will show up here."
+msgstr ""
+"Daoteke in mape ki ste jih pred kratkim spremenili se bodo prikazale tukaj."
+
+msgid "Filter file list"
+msgstr "Filtriraj seznam datotek"
+
+msgid "Folder name cannot be empty."
+msgstr "Ime mape ne more biti prazno"
+
+msgid "Home"
+msgstr "Domov"
+
+msgid "Modified"
+msgstr "Spremenjeno"
+
+msgid "Move"
+msgstr "Premakni"
+
+msgid "Move to {target}"
+msgstr "Premakni v {target}"
+
+msgid "Name"
+msgstr "Ime"
+
+msgid "New"
+msgstr "Nov"
+
+msgid "New folder"
+msgstr "Nova mapa"
+
+msgid "New folder name"
+msgstr "Novo ime mape"
+
+msgid "No files in here"
+msgstr "Tukaj ni datotek"
+
+msgid "No files matching your filter were found."
+msgstr "Ni bilo najdenih ujemajočih datotek glede na vaš filter."
+
+msgid "No matching files"
+msgstr "Ni ujemajočih datotek"
+
+msgid "Recent"
+msgstr "Nedavne"
+
+msgid "Select all entries"
+msgstr "Izberi vse vnose"
+
+msgid "Select entry"
+msgstr "Izberi vnos"
+
+msgid "Select the row for {nodename}"
+msgstr "Izberi vrstico za {nodename}"
+
+msgid "Size"
+msgstr "Velikost"
+
 msgid "Undo"
 msgstr "Razveljavi"
+
+msgid "Upload some content or sync with your devices!"
+msgstr "Naloži nekaj vsebine ali sinhroniziraj s svojimi napravami!"
