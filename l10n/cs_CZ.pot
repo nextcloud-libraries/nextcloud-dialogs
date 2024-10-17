@@ -125,4 +125,4 @@ msgstr "Zpět"
 
 msgid "Upload some content or sync with your devices!"
 msgstr ""
-"Nahrajte nějaký obsah nebo proveďte synchronizaci se svými zařízeními!"
+"Nahrajte sem nějaký obsah nebo proveďte synchronizaci se svými zařízeními!"
