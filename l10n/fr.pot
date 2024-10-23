@@ -7,17 +7,18 @@
 # François Ch., 2024
 # Jérôme HERBINET, 2024
 # Benoit Pruneau, 2024
+# DEV314R, 2024
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Benoit Pruneau, 2024\n"
+"Last-Translator: DEV314R, 2024\n"
 "Language-Team: French (https://app.transifex.com/nextcloud/teams/64236/fr/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 msgid "\"{name}\" is an invalid folder name."
-msgstr "« {name} » n'est pas un nom de dossier valide."
+msgstr "\"{name}\" n'est pas un nom de dossier valide."
 
 msgid "\"{name}\" is not an allowed folder name"
 msgstr "« {name} » n'est pas un nom de dossier autorisé."
