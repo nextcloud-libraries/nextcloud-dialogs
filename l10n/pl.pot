@@ -4,10 +4,11 @@
 # JUJER wtf, 2023
 # M H <haincu@o2.pl>, 2023
 # Valdnet, 2024
+# Piotr Strębski <strebski@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Valdnet, 2024\n"
+"Last-Translator: Piotr Strębski <strebski@gmail.com>, 2024\n"
 "Language-Team: Polish (https://app.transifex.com/nextcloud/teams/64236/pl/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: pl\n"
@@ -31,6 +32,13 @@ msgstr "Wybierz"
 msgid "Choose {file}"
 msgstr "Wybierz {file}"
 
+msgid "Choose %n file"
+msgid_plural "Choose %n files"
+msgstr[0] "Wybierz %n plik"
+msgstr[1] "Wybierz %n pliki"
+msgstr[2] "Wybierz %n plików"
+msgstr[3] "Wybierz %n plików"
+
 msgid "Copy"
 msgstr "Kopiuj"
 
@@ -39,6 +47,12 @@ msgstr "Skopiuj do {target}"
 
 msgid "Could not create the new folder"
 msgstr "Nie można utworzyć nowego folderu"
+
+msgid "Could not load files settings"
+msgstr "Nie można wczytać ustawień plików"
+
+msgid "Could not load files views"
+msgstr "Nie można wczytać widoków plików"
 
 msgid "Create directory"
 msgstr "Utwórz katalog"
