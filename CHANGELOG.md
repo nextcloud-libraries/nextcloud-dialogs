@@ -6,6 +6,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## 6.0.1
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.0.0...v6.0.1)
+
+### Fixed
+* fix: Mention supported versions in README by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1422
+* fix: Rate-limit image previews by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1478
+
+### Changed
+* Updated translations
+* Updated development dependencies
+* chore(deps): Bump @nextcloud/auth to 2.4.0
+* chore(deps): Bump @vueuse/core to 11.2.0
+* chore(deps): Bump @nextcloud/files to 3.9.0
+* chore(deps): Bump dompurify to 3.1.6
+* chore(deps): Bump @nextcloud/axios to 2.5.1
+
 ## 6.0.0
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.3.5...v6.0.0)
 
