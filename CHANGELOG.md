@@ -6,6 +6,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## 5.3.8
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.3.7...v5.3.8)
+
+### Fixed
+* Rate-limit image previews [\#1486](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1486)
+
 ## 5.3.7
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.3.6...v5.3.7)
 
