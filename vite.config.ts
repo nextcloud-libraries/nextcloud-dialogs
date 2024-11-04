@@ -31,29 +31,6 @@ export default defineConfig((env) => {
 				// Fix for vite config, TODO: remove with next release
 				cssCodeSplit: false,
 			},
-			// vitest configuration
-			test: {
-				environment: 'happy-dom',
-				coverage: {
-					all: true,
-					provider: 'v8',
-					include: ['lib/**/*.ts', 'lib/*.ts'],
-					exclude: ['lib/**/*.spec.ts'],
-				},
-				css: {
-					modules: {
-						classNameStrategy: 'non-scoped',
-					},
-				},
-				server: {
-					deps: {
-						inline: [
-							/@nextcloud\/vue/, // Fix unresolvable .css extension for ssr
-							/@nextcloud\/files/, // Fix CommonJS cancelable-promise not supporting named exports
-						],
-					},
-				},
-			},
 		},
 		// We build for ESM and legacy common js
 		libraryFormats: ['es', 'cjs'],

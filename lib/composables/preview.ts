@@ -4,11 +4,13 @@
  */
 
 import type { Node } from '@nextcloud/files'
+import type { MaybeRef } from '@vueuse/core'
 import type { Ref } from 'vue'
 
 import { generateUrl } from '@nextcloud/router'
 import { toValue } from '@vueuse/core'
 import { ref, watchEffect } from 'vue'
+import { preloadImage } from '../utils/imagePreload'
 
 interface PreviewOptions {
 	/**
@@ -66,14 +68,22 @@ export function getPreviewURL(node: Node, options: PreviewOptions = {}) {
 	}
 }
 
-export const usePreviewURL = (node: Node | Ref<Node>, options?: PreviewOptions | Ref<PreviewOptions>) => {
+export const usePreviewURL = (node: Node | Ref<Node>, options?: MaybeRef<PreviewOptions>) => {
 	const previewURL = ref<URL|null>(null)
+	const previewLoaded = ref(false)
 
 	watchEffect(() => {
+		previewLoaded.value = false
 		previewURL.value = getPreviewURL(toValue(node), toValue(options || {}))
+		if (previewURL.value) {
+			preloadImage(previewURL.value.href).then((success: boolean) => {
+				previewLoaded.value = success
+			})
+		}
 	})
 
 	return {
 		previewURL,
+		previewLoaded,
 	}
 }
