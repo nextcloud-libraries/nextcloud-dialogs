@@ -79,7 +79,7 @@ msgid "Home"
 msgstr "البداية"
 
 msgid "Modified"
-msgstr "مُعدَّل"
+msgstr "التعديل"
 
 msgid "Move"
 msgstr "نقل"
