@@ -37,13 +37,13 @@ msgstr[1] "إختَر %n ملف"
 msgstr[2] "إختَر %n ملف"
 msgstr[3] "إختَر %n ملفات"
 msgstr[4] "إختَر %n ملف"
-msgstr[5] "إختَر %n ملف"
+msgstr[5] "إختر %n ملف"
 
 msgid "Copy"
 msgstr "نسخ"
 
 msgid "Copy to {target}"
-msgstr "نسخٌ إلى {target}"
+msgstr "نسخ إلى {target}"
 
 msgid "Could not create the new folder"
 msgstr "تعذّر إنشاء المجلد الجديد"
@@ -52,7 +52,7 @@ msgid "Could not load files settings"
 msgstr "يتعذّر تحميل إعدادات الملفات"
 
 msgid "Could not load files views"
-msgstr "يتعذّر تحميل مناظير views الملفات"
+msgstr "تعذر تحميل عرض الملفات"
 
 msgid "Create directory"
 msgstr "إنشاء مجلد"
@@ -70,7 +70,7 @@ msgid "Files and folders you recently modified will show up here."
 msgstr "الملفات و المجلدات التي قمت مؤخراً بتعديلها سوف تظهر هنا."
 
 msgid "Filter file list"
-msgstr "فلترة قائمة الملفات"
+msgstr "تصفية قائمة الملفات"
 
 msgid "Folder name cannot be empty."
 msgstr "اسم المجلد لا يمكن أن يكون فارغاً."
@@ -79,10 +79,10 @@ msgid "Home"
 msgstr "البداية"
 
 msgid "Modified"
-msgstr "مُعدَّل"
+msgstr "التعديل"
 
 msgid "Move"
-msgstr "أُنقُل"
+msgstr "نقل"
 
 msgid "Move to {target}"
 msgstr "نقل إلى {target}"
@@ -103,10 +103,10 @@ msgid "No files in here"
 msgstr "لا توجد ملفات هنا"
 
 msgid "No files matching your filter were found."
-msgstr "لا توجد ملفات تتطابق مع الفلتر الذي وضعته"
+msgstr "لا توجد ملفات تتطابق مع عامل التصفية الذي وضعته"
 
 msgid "No matching files"
-msgstr "لا توجد ملفات مُطابِقة"
+msgstr "لا توجد ملفات مطابقة"
 
 msgid "Recent"
 msgstr "الحالي"
