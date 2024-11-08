@@ -52,7 +52,7 @@ msgid "Could not load files settings"
 msgstr "يتعذّر تحميل إعدادات الملفات"
 
 msgid "Could not load files views"
-msgstr "يتعذّر تحميل مناظير views الملفات"
+msgstr "تعذر تحميل عرض الملفات"
 
 msgid "Create directory"
 msgstr "إنشاء مجلد"
