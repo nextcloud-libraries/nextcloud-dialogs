@@ -58,7 +58,7 @@ msgid "Create directory"
 msgstr "إنشاء مجلد"
 
 msgid "Current view selector"
-msgstr "مُنتقِي المنظور الحالي"
+msgstr "محدد العرض الحالي"
 
 msgid "Favorites"
 msgstr "المُفضَّلة"
