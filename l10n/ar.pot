@@ -103,7 +103,7 @@ msgid "No files in here"
 msgstr "لا توجد ملفات هنا"
 
 msgid "No files matching your filter were found."
-msgstr "لا توجد ملفات تتطابق مع الفلتر الذي وضعته"
+msgstr "لا توجد ملفات تتطابق مع عامل التصفية الذي وضعته"
 
 msgid "No matching files"
 msgstr "لا توجد ملفات مطابقة"
