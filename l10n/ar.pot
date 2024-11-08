@@ -37,13 +37,13 @@ msgstr[1] "إختَر %n ملف"
 msgstr[2] "إختَر %n ملف"
 msgstr[3] "إختَر %n ملفات"
 msgstr[4] "إختَر %n ملف"
-msgstr[5] "إختَر %n ملف"
+msgstr[5] "إختر %n ملف"
 
 msgid "Copy"
 msgstr "نسخ"
 
 msgid "Copy to {target}"
-msgstr "نسخٌ إلى {target}"
+msgstr "نسخ إلى {target}"
 
 msgid "Could not create the new folder"
 msgstr "تعذّر إنشاء المجلد الجديد"
