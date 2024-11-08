@@ -70,7 +70,7 @@ msgid "Files and folders you recently modified will show up here."
 msgstr "الملفات و المجلدات التي قمت مؤخراً بتعديلها سوف تظهر هنا."
 
 msgid "Filter file list"
-msgstr "فلترة قائمة الملفات"
+msgstr "تصفية قائمة الملفات"
 
 msgid "Folder name cannot be empty."
 msgstr "اسم المجلد لا يمكن أن يكون فارغاً."
