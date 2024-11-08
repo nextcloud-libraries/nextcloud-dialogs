@@ -28,7 +28,7 @@ msgid "Choose"
 msgstr "إختَر"
 
 msgid "Choose {file}"
-msgstr "إختَر {file}"
+msgstr "إختر {file}"
 
 msgid "Choose %n file"
 msgid_plural "Choose %n files"
