@@ -106,7 +106,7 @@ msgid "No files matching your filter were found."
 msgstr "لا توجد ملفات تتطابق مع الفلتر الذي وضعته"
 
 msgid "No matching files"
-msgstr "لا توجد ملفات مُطابِقة"
+msgstr "لا توجد ملفات مطابقة"
 
 msgid "Recent"
 msgstr "الحالي"
