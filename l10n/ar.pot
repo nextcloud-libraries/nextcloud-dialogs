@@ -61,7 +61,7 @@ msgid "Current view selector"
 msgstr "محدد العرض الحالي"
 
 msgid "Favorites"
-msgstr "المُفضَّلة"
+msgstr "المفضلة"
 
 msgid "Files and folders you mark as favorite will show up here."
 msgstr "الملفات و المجلدات التي تُميِّزُها كمٌفضَّلة ستظهر هنا."
