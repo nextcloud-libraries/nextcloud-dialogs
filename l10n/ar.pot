@@ -82,7 +82,7 @@ msgid "Modified"
 msgstr "مُعدَّل"
 
 msgid "Move"
-msgstr "أُنقُل"
+msgstr "نقل"
 
 msgid "Move to {target}"
 msgstr "نقل إلى {target}"
