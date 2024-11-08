@@ -85,7 +85,7 @@ msgid "Move"
 msgstr "أُنقُل"
 
 msgid "Move to {target}"
-msgstr "أُنقُل إلى {target}"
+msgstr "نقل إلى {target}"
 
 msgid "Name"
 msgstr "الاسم"
@@ -94,7 +94,7 @@ msgid "New"
 msgstr "جديد"
 
 msgid "New folder"
-msgstr "مٌجلّد جديد"
+msgstr "مجلد جديد"
 
 msgid "New folder name"
 msgstr "اسم المجلد الجديد"
