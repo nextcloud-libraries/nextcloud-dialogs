@@ -112,7 +112,7 @@ msgid "Recent"
 msgstr "الحالي"
 
 msgid "Select all entries"
-msgstr "حدِّد كل المداخل"
+msgstr "حدد جميع الإدخالات"
 
 msgid "Select entry"
 msgstr "إختَر المدخل"
