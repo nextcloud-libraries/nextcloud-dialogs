@@ -127,4 +127,4 @@ msgid "Undo"
 msgstr "تراجع"
 
 msgid "Upload some content or sync with your devices!"
-msgstr "قُم برفع محتوىً أو قُم بمزامنة أجهزتك!"
+msgstr "قم برفع بعض المحتوى أو المزامنة مع أجهزتك!"
