@@ -2,10 +2,11 @@
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Ali <alimahwer@yahoo.com>, 2024
+# abusaud, 2024
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Ali <alimahwer@yahoo.com>, 2024\n"
+"Last-Translator: abusaud, 2024\n"
 "Language-Team: Arabic (https://app.transifex.com/nextcloud/teams/64236/ar/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: ar\n"
@@ -54,7 +55,7 @@ msgid "Could not load files views"
 msgstr "يتعذّر تحميل مناظير views الملفات"
 
 msgid "Create directory"
-msgstr "أنشِيءْ مجلّداً"
+msgstr "إنشاء مجلد"
 
 msgid "Current view selector"
 msgstr "مُنتقِي المنظور الحالي"
