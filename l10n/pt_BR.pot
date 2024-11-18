@@ -2,11 +2,12 @@
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Flávio Veras <flaviove@gmail.com>, 2023
-# Cauan Henrique Zorzenon <cauanzorzenon@gmail.com>, 2024
+# Cauan Henrique Zorzenon <cauanzorzenon1@protonmail.com>, 2024
+# Cristiano Silva, 2024
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Cauan Henrique Zorzenon <cauanzorzenon@gmail.com>, 2024\n"
+"Last-Translator: Cristiano Silva, 2024\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/nextcloud/teams/64236/pt_BR/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: pt_BR\n"
@@ -28,7 +29,7 @@ msgid "Choose"
 msgstr "Escolher"
 
 msgid "Choose {file}"
-msgstr "Escolher arquivo}"
+msgstr "Escolher {file}"
 
 msgid "Choose %n file"
 msgid_plural "Choose %n files"
