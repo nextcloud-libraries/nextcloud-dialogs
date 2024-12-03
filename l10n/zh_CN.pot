@@ -4,11 +4,11 @@
 # ken, 2023
 # Eric, 2023
 # Phonebook3599, 2024
-# Ruijian Deng, 2024
+# Gloryandel, 2024
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Ruijian Deng, 2024\n"
+"Last-Translator: Gloryandel, 2024\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/nextcloud/teams/64236/zh_CN/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: zh_CN\n"
@@ -21,7 +21,7 @@ msgid "\"{name}\" is not an allowed folder name"
 msgstr "“{name}”不是允许的文件夹名称"
 
 msgid "\"/\" is not allowed inside a folder name."
-msgstr "文件夹名称中不允许包含“/”。"
+msgstr "文件夹名称中不允许包含 “/”。"
 
 msgid "All files"
 msgstr "所有文件"
