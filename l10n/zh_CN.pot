@@ -15,7 +15,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "\"{name}\" is an invalid folder name."
-msgstr "“{name}”是无效的文件夹名称。"
+msgstr "“{name}” 是无效的文件夹名称。"
 
 msgid "\"{name}\" is not an allowed folder name"
 msgstr "“{name}” 不是允许的文件夹名称"
