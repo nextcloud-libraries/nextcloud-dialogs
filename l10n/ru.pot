@@ -7,10 +7,11 @@
 # R4SAS, 2024
 # Влад, 2024
 # Kitsune R, 2024
+# Александр, 2024
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Kitsune R, 2024\n"
+"Last-Translator: Александр, 2024\n"
 "Language-Team: Russian (https://app.transifex.com/nextcloud/teams/64236/ru/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: ru\n"
@@ -78,7 +79,7 @@ msgid "Folder name cannot be empty."
 msgstr "Имя папки не может быть пустым."
 
 msgid "Home"
-msgstr "Home"
+msgstr "Домой"
 
 msgid "Modified"
 msgstr "Изменен"
