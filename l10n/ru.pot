@@ -56,7 +56,7 @@ msgid "Could not load files settings"
 msgstr "Не удалось загрузить настройки файлов"
 
 msgid "Could not load files views"
-msgstr "Не удалось загрузить файлы просмотров"
+msgstr "Не удалось загрузить конфигурацию просмотра файлов"
 
 msgid "Create directory"
 msgstr "Создать папку"
