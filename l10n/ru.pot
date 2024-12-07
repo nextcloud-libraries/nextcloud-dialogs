@@ -120,10 +120,10 @@ msgid "Select all entries"
 msgstr "Выбрать все записи"
 
 msgid "Select entry"
-msgstr "Выберите запись"
+msgstr "Выбрать запись"
 
 msgid "Select the row for {nodename}"
-msgstr "Выберите строку для {nodename}"
+msgstr "Выбрать строку для «{nodename}»"
 
 msgid "Size"
 msgstr "Размер"
