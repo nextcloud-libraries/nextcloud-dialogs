@@ -68,7 +68,8 @@ msgid "Favorites"
 msgstr "Избранное"
 
 msgid "Files and folders you mark as favorite will show up here."
-msgstr "Здесь появятся файлы и папки, которые вы пометили как избранные."
+msgstr ""
+"Здесь будут отображаться файлы и папки, которые вы пометили как избранные."
 
 msgid "Files and folders you recently modified will show up here."
 msgstr "Здесь будут отображаться файлы и папки, которые вы недавно изменили."
