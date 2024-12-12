@@ -1,15 +1,125 @@
 # 
 # Translators:
-# Transifex Bot <>, 2023
+# DT Navy, 2024
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Transifex Bot <>, 2023\n"
+"Last-Translator: DT Navy, 2024\n"
 "Language-Team: Malay (Malaysia) (https://app.transifex.com/nextcloud/teams/64236/ms_MY/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: ms_MY\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: lib/toast.ts:223
-msgid "Undo"
+msgid "\"{name}\" is an invalid folder name."
+msgstr "\"{name}\" adalah nama folder yang tidak sesuai "
+
+msgid "\"{name}\" is not an allowed folder name"
+msgstr "\"{name}\" nama folder yang tidak dibenarkan"
+
+msgid "\"/\" is not allowed inside a folder name."
+msgstr "\"/\" tidak dibenarkan dalam nama folder"
+
+msgid "All files"
+msgstr "Semua fail"
+
+msgid "Choose"
+msgstr "Pilih"
+
+msgid "Choose {file}"
+msgstr "Pilih {file}"
+
+msgid "Choose %n file"
+msgid_plural "Choose %n files"
+msgstr[0] "Pilih fail %n"
+
+msgid "Copy"
+msgstr "menyalin"
+
+msgid "Copy to {target}"
+msgstr "menyalin ke {target}"
+
+msgid "Could not create the new folder"
+msgstr "Tidak dapat mewujudkan folder baharu"
+
+msgid "Could not load files settings"
+msgstr "Tidak dapat memuatkan tetapan fail"
+
+msgid "Could not load files views"
+msgstr "Tidak dapat memuatkan paparan fail"
+
+msgid "Create directory"
+msgstr "mewujudkan direktori"
+
+msgid "Current view selector"
+msgstr "pemilih pandangan semasa"
+
+msgid "Favorites"
+msgstr "Pilihan"
+
+msgid "Files and folders you mark as favorite will show up here."
 msgstr ""
+"Fail dan folder yang anda tanda sebagai pilihan akan dipaparkan di sini."
+
+msgid "Files and folders you recently modified will show up here."
+msgstr ""
+"Fail dan folder yang anda telah ubah suai baru-baru ini dipaparkan di sini."
+
+msgid "Filter file list"
+msgstr "Menapis senarai fail"
+
+msgid "Folder name cannot be empty."
+msgstr "Nama folder tidak boleh kosong."
+
+msgid "Home"
+msgstr "Utama"
+
+msgid "Modified"
+msgstr "Ubah suai"
+
+msgid "Move"
+msgstr "pindah"
+
+msgid "Move to {target}"
+msgstr "pindah ke {target}"
+
+msgid "Name"
+msgstr "Nama"
+
+msgid "New"
+msgstr "Baru"
+
+msgid "New folder"
+msgstr "Folder Baharu"
+
+msgid "New folder name"
+msgstr "Nama folder baharu"
+
+msgid "No files in here"
+msgstr "Tiada fail di sini"
+
+msgid "No files matching your filter were found."
+msgstr "Tiada fail yang sepadan dengan tapisan anda."
+
+msgid "No matching files"
+msgstr "Tiada fail yang sepadan"
+
+msgid "Recent"
+msgstr "baru-baru ini"
+
+msgid "Select all entries"
+msgstr "Pilih semua entri"
+
+msgid "Select entry"
+msgstr "Pilih entri"
+
+msgid "Select the row for {nodename}"
+msgstr "memilih baris {nodename}"
+
+msgid "Size"
+msgstr "Saiz"
+
+msgid "Undo"
+msgstr "buat asal"
+
+msgid "Upload some content or sync with your devices!"
+msgstr "Muat naik beberapa kandungan atau selaras dengan peranti anda!"
