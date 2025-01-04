@@ -2,10 +2,11 @@
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Magnus Höglund, 2024
+# Martin H <pilino+transifex@posteo.de>, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Magnus Höglund, 2024\n"
+"Last-Translator: Martin H <pilino+transifex@posteo.de>, 2025\n"
 "Language-Team: Swedish (https://app.transifex.com/nextcloud/teams/64236/sv/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: sv\n"
@@ -47,7 +48,7 @@ msgid "Could not load files settings"
 msgstr "Kunde inte ladda filinställningar"
 
 msgid "Could not load files views"
-msgstr "Kunde inte ladda läsa in filvyer"
+msgstr "Kunde inte ladda filvyer"
 
 msgid "Create directory"
 msgstr "Skapa katalog"
