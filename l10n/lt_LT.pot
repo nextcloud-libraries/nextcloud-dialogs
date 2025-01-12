@@ -1,15 +1,129 @@
 # 
 # Translators:
-# Joas Schilling, 2023
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# Paulius Liškauskas, 2024
+# Moo, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Joas Schilling, 2023\n"
+"Last-Translator: Moo, 2025\n"
 "Language-Team: Lithuanian (Lithuania) (https://app.transifex.com/nextcloud/teams/64236/lt_LT/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: lt_LT\n"
 "Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);\n"
 
-#: lib/toast.ts:223
+msgid "\"{name}\" is an invalid folder name."
+msgstr "„{name}“ yra netinkamas aplanko pavadinimas."
+
+msgid "\"{name}\" is not an allowed folder name"
+msgstr "„{name}“ yra neleidžiamas aplanko pavadinimas"
+
+msgid "\"/\" is not allowed inside a folder name."
+msgstr "„/“ yra neleidžiamas aplanko pavadinime."
+
+msgid "All files"
+msgstr "Visi failai"
+
+msgid "Choose"
+msgstr "Pasirinkti"
+
+msgid "Choose {file}"
+msgstr "Pasirinkti {file}"
+
+msgid "Choose %n file"
+msgid_plural "Choose %n files"
+msgstr[0] "Pasirinkti %n failą"
+msgstr[1] "Pasirinkti %n failus"
+msgstr[2] "Pasirinkti %n failų"
+msgstr[3] "Pasirinkti %n failą"
+
+msgid "Copy"
+msgstr "Kopijuoti"
+
+msgid "Copy to {target}"
+msgstr "Kopijuoti į {target}"
+
+msgid "Could not create the new folder"
+msgstr "Nepavyko sukurti naujo aplanko"
+
+msgid "Could not load files settings"
+msgstr "Nepavyko įkelti failų nustatymų"
+
+msgid "Could not load files views"
+msgstr "Nepavyko įkelti failų peržiūrų"
+
+msgid "Create directory"
+msgstr "Sukurti katalogą"
+
+msgid "Current view selector"
+msgstr "Dabartinis peržiūros pasirinkimas"
+
+msgid "Favorites"
+msgstr "Populiariausi"
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr ""
+"Failai ir aplankai, kuriuos pažymėsite kaip mėgstamiausius, bus rodomi čia."
+
+msgid "Files and folders you recently modified will show up here."
+msgstr "Čia bus rodomi failai ir aplankai, kuriuos neseniai pakeitėte."
+
+msgid "Filter file list"
+msgstr "Filtruoti failų sąrašą"
+
+msgid "Folder name cannot be empty."
+msgstr "Aplanko pavadinimas negali būti tuščias."
+
+msgid "Home"
+msgstr "Pradžia"
+
+msgid "Modified"
+msgstr "Pakeista"
+
+msgid "Move"
+msgstr "Perkelti"
+
+msgid "Move to {target}"
+msgstr "Perkelti į {target}"
+
+msgid "Name"
+msgstr "Vardas"
+
+msgid "New"
+msgstr "Naujas"
+
+msgid "New folder"
+msgstr "Naujas aplankas"
+
+msgid "New folder name"
+msgstr "Naujas aplanko pavadinimas"
+
+msgid "No files in here"
+msgstr "Čia failų nėra"
+
+msgid "No files matching your filter were found."
+msgstr "Nepavyko rasti failų pagal filtro nustatymus"
+
+msgid "No matching files"
+msgstr "Nėra atitinkančių failų"
+
+msgid "Recent"
+msgstr "Nauji"
+
+msgid "Select all entries"
+msgstr "Žymėti visus įrašus"
+
+msgid "Select entry"
+msgstr "Žymėti įrašą"
+
+msgid "Select the row for {nodename}"
+msgstr "Pasirinkite eilutę {nodename}"
+
+msgid "Size"
+msgstr "Dydis"
+
 msgid "Undo"
 msgstr "Atšaukti"
+
+msgid "Upload some content or sync with your devices!"
+msgstr "Įkelkite turinio arba sinchronizuokite su savo įrenginiais!"
