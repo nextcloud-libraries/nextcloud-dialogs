@@ -72,7 +72,7 @@ msgid "Filter file list"
 msgstr "Filtruoti failų sąrašą"
 
 msgid "Folder name cannot be empty."
-msgstr "Aplanko pavadinimo laukelis negali būti tuščias."
+msgstr "Aplanko pavadinimas negali būti tuščias."
 
 msgid "Home"
 msgstr "Pradžia"
