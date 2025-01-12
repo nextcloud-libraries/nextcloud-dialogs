@@ -111,7 +111,7 @@ msgid "Recent"
 msgstr "Nauji"
 
 msgid "Select all entries"
-msgstr "Pasirinkti visus"
+msgstr "Žymėti visus įrašus"
 
 msgid "Select entry"
 msgstr "Pasirinkti"
