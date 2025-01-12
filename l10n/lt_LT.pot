@@ -114,7 +114,7 @@ msgid "Select all entries"
 msgstr "Žymėti visus įrašus"
 
 msgid "Select entry"
-msgstr "Pasirinkti"
+msgstr "Žymėti įrašą"
 
 msgid "Select the row for {nodename}"
 msgstr "Pasirinkite eilutę {nodename}"
