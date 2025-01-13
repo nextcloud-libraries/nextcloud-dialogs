@@ -50,7 +50,7 @@ msgid "Could not load files settings"
 msgstr "Não foi possível carregar as definições dos ficheiros"
 
 msgid "Could not load files views"
-msgstr "Não foi possível carregar os ficheiros de visualização"
+msgstr "Não foi possível carregar as visualizações dos ficheiros"
 
 msgid "Create directory"
 msgstr "Criar pasta"
