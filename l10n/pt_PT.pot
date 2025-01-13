@@ -50,7 +50,7 @@ msgid "Could not load files settings"
 msgstr "Não foi possível carregar as definições dos ficheiros"
 
 msgid "Could not load files views"
-msgstr "Não foi possível carregar os ficheiros de visualização"
+msgstr "Não foi possível carregar as visualizações dos ficheiros"
 
 msgid "Create directory"
 msgstr "Criar pasta"
@@ -62,16 +62,16 @@ msgid "Favorites"
 msgstr "Favoritos"
 
 msgid "Files and folders you mark as favorite will show up here."
-msgstr "Os ficheiros e pastas que marcar como favoritos aparecerão aqui."
+msgstr "Os ficheiros e as pastas que marcar como favoritos aparecerão aqui."
 
 msgid "Files and folders you recently modified will show up here."
-msgstr "Os ficheiros e pastas que modificou recentemente aparecerão aqui."
+msgstr "Os ficheiros e as pastas que modificou recentemente aparecerão aqui."
 
 msgid "Filter file list"
 msgstr "Filtrar lista de ficheiros"
 
 msgid "Folder name cannot be empty."
-msgstr "Nome da pasta não pode estar vazio."
+msgstr "O nome da pasta não pode estar vazio."
 
 msgid "Home"
 msgstr "Início"
@@ -101,7 +101,7 @@ msgid "No files in here"
 msgstr "Sem ficheiros aqui"
 
 msgid "No files matching your filter were found."
-msgstr "Nenhum ficheiro correspondente ao seu filtro encontrado."
+msgstr "Não foi encontrado nenhum ficheiro correspondente ao seu filtro."
 
 msgid "No matching files"
 msgstr "Nenhum ficheiro correspondente"
