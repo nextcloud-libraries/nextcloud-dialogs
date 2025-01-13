@@ -17,7 +17,7 @@ msgid "\"{name}\" is an invalid folder name."
 msgstr "\"{name}\" é um nome de pasta inválido."
 
 msgid "\"{name}\" is not an allowed folder name"
-msgstr "\"{name}\" não é um nome permitido para pastas"
+msgstr "\"{name}\" não é um nome de pasta permitido"
 
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "\"/\" não é permitido dentro do nome da pasta"
