@@ -101,7 +101,7 @@ msgid "No files in here"
 msgstr "Sem ficheiros aqui"
 
 msgid "No files matching your filter were found."
-msgstr "Nenhum ficheiro correspondente ao seu filtro encontrado."
+msgstr "Não foi encontrado nenhum ficheiro correspondente ao seu filtro."
 
 msgid "No matching files"
 msgstr "Nenhum ficheiro correspondente"
