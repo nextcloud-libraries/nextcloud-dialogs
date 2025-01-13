@@ -1,20 +1,20 @@
 # 
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
-# Manuela Silva <mmsrs@sky.com>, 2023
 # Miguel Ferreira, 2024
 # Claudio Almeida, 2025
+# Manuela Silva <mmsrs@sky.com>, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Claudio Almeida, 2025\n"
+"Last-Translator: Manuela Silva <mmsrs@sky.com>, 2025\n"
 "Language-Team: Portuguese (Portugal) (https://app.transifex.com/nextcloud/teams/64236/pt_PT/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: pt_PT\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 msgid "\"{name}\" is an invalid folder name."
-msgstr "\"{name}\" é um nome de pasta inválido"
+msgstr "\"{name}\" é um nome de pasta inválido."
 
 msgid "\"{name}\" is not an allowed folder name"
 msgstr "\"{name}\" não é um nome permitido para pastas"
