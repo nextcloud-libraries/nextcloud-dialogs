@@ -65,7 +65,7 @@ msgid "Files and folders you mark as favorite will show up here."
 msgstr "Os ficheiros e as pastas que marcar como favoritos aparecerão aqui."
 
 msgid "Files and folders you recently modified will show up here."
-msgstr "Os ficheiros e pastas que modificou recentemente aparecerão aqui."
+msgstr "Os ficheiros e as pastas que modificou recentemente aparecerão aqui."
 
 msgid "Filter file list"
 msgstr "Filtrar lista de ficheiros"
