@@ -4,17 +4,18 @@
 # D PE, 2023
 # Syvert Fossdal, 2024
 # armandg <geirawsm@pm.me>, 2024
+# Magnus Granås, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: armandg <geirawsm@pm.me>, 2024\n"
+"Last-Translator: Magnus Granås, 2025\n"
 "Language-Team: Norwegian Bokmål (Norway) (https://app.transifex.com/nextcloud/teams/64236/nb_NO/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: nb_NO\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "\"{name}\" is an invalid folder name."
-msgstr "\"{name}\" er et ugyldig mappenavn."
+msgstr "«{name}» er ikke et gyl mappenavn."
 
 msgid "\"{name}\" is not an allowed folder name"
 msgstr "\"{name}\" er ikke et tillatt mappenavn."
@@ -29,7 +30,7 @@ msgid "Choose"
 msgstr "Velg"
 
 msgid "Choose {file}"
-msgstr "Velg {fil}"
+msgstr "Velg {file}"
 
 msgid "Choose %n file"
 msgid_plural "Choose %n files"
@@ -40,7 +41,7 @@ msgid "Copy"
 msgstr "Kopier"
 
 msgid "Copy to {target}"
-msgstr "Kopier til {destinasjon}"
+msgstr "Kopier til {target}"
 
 msgid "Could not create the new folder"
 msgstr "Kunne ikke opprette den nye mappen"
@@ -82,7 +83,7 @@ msgid "Move"
 msgstr "Flytt"
 
 msgid "Move to {target}"
-msgstr "Flytt til {destinasjon}"
+msgstr "Flytt til {target}"
 
 msgid "Name"
 msgstr "Navn"
@@ -103,10 +104,10 @@ msgid "No files matching your filter were found."
 msgstr "Ingen filer funnet med ditt filter."
 
 msgid "No matching files"
-msgstr "Ingen treffende filer"
+msgstr "Ingen filer samsvarer"
 
 msgid "Recent"
-msgstr "Nylig"
+msgstr "Nylige"
 
 msgid "Select all entries"
 msgstr "Velg alle oppføringer"
@@ -115,7 +116,7 @@ msgid "Select entry"
 msgstr "Velg oppføring"
 
 msgid "Select the row for {nodename}"
-msgstr "Velg raden for {nodenavn}"
+msgstr "Velg raden for {nodename}"
 
 msgid "Size"
 msgstr "Størrelse"
