@@ -83,7 +83,7 @@ msgid "Move"
 msgstr "Flytt"
 
 msgid "Move to {target}"
-msgstr "Flytt til {destinasjon}"
+msgstr "Flytt til {target}"
 
 msgid "Name"
 msgstr "Navn"
