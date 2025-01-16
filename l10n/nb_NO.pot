@@ -116,7 +116,7 @@ msgid "Select entry"
 msgstr "Velg oppføring"
 
 msgid "Select the row for {nodename}"
-msgstr "Velg raden for {nodenavn}"
+msgstr "Velg raden for {nodename}"
 
 msgid "Size"
 msgstr "Størrelse"
