@@ -104,10 +104,10 @@ msgid "No files matching your filter were found."
 msgstr "Ingen filer funnet med ditt filter."
 
 msgid "No matching files"
-msgstr "Ingen treffende filer"
+msgstr "Ingen filer samsvarer"
 
 msgid "Recent"
-msgstr "Nylig"
+msgstr "Nylige"
 
 msgid "Select all entries"
 msgstr "Velg alle oppføringer"
