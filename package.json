@@ -18,8 +18,8 @@
       "require": "./dist/filepicker.cjs"
     },
     "./style.css": {
-      "import": "./dist/style.css",
-      "require": "./dist/style.css"
+      "import": "./dist/dialogs.css",
+      "require": "./dist/dialogs.css"
     }
   },
   "scripts": {

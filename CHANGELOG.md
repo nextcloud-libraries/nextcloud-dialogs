@@ -6,6 +6,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## 6.1.1
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.1.0...v6.1.1)
+
+### Fixed
+* Fix css name change by @skjnldsv in https://github.com/nextcloud-libraries/nextcloud-dialogs/issues/1558
+
 ## 6.1.0
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.0.1...v6.1.0)
 
