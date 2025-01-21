@@ -10,6 +10,8 @@ import { t } from './utils/l10n.js'
 
 import '../styles/toast.scss'
 
+import LoaderSvg from '../styles/loader.svg?raw'
+
 /**
  * Enum of available Toast types
  */
@@ -204,7 +206,18 @@ export function showSuccess(text: string, options?: ToastOptions): Toast {
  * @param options
  */
 export function showLoading(text: string, options?: ToastOptions): Toast {
-	return showMessage(text, {
+	// Generate loader svg
+	const loader = document.createElement('span')
+	loader.innerHTML = LoaderSvg
+	loader.classList.add('toast-loader')
+
+	// Generate loader layout
+	const loaderContent = document.createElement('span')
+	loaderContent.classList.add('toast-loader-container')
+	loaderContent.innerText = text
+	loaderContent.appendChild(loader)
+
+	return showMessage(loaderContent, {
 		...options,
 		close: false,
 		timeout: TOAST_PERMANENT_TIMEOUT,
