@@ -6,6 +6,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## 6.1.0
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.0.1...v6.1.0)
+
+### Enhancements
+* feat(toast): add loading toast by @skjnldsv in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1554
+* feat(files): Add encrypted icon for end-to-end encrypted folder by @JuliaKirschenheuter in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1545
+
+### Fixed
+* Fix npm audit by @nextcloud-command in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1502
+
+### Changed
+* Updated translations
+* Updated development dependencies
+
 ## 6.0.1
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.0.0...v6.0.1)
 
