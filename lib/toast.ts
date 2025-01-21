@@ -20,6 +20,7 @@ export enum ToastType {
 	SUCCESS = 'toast-success',
 	PERMANENT = 'toast-error',
 	UNDO = 'toast-undo',
+	LOADING = 'toast-loading',
 }
 
 /** @deprecated Use ToastAriaLive.OFF */
@@ -196,6 +197,22 @@ export function showSuccess(text: string, options?: ToastOptions): Toast {
 }
 
 /**
+ * Show a toast message with a loading spinner
+ * The toast will be shown permanently and needs to be hidden manually by calling hideToast()
+ *
+ * @param text Message to be shown in the toast, any HTML is removed by default
+ * @param options
+ */
+export function showLoading(text: string, options?: ToastOptions): Toast {
+	return showMessage(text, {
+		...options,
+		close: false,
+		timeout: TOAST_PERMANENT_TIMEOUT,
+		type: ToastType.LOADING,
+	})
+}
+
+/**
  * Show a toast message with undo styling
  *
  * @param text Message to be shown in the toast, any HTML is removed by default
@@ -214,7 +231,7 @@ export function showUndo(text: string, onUndo: (e: MouseEvent) => void, options?
 		// force 10 seconds of timeout
 		timeout: TOAST_UNDO_TIMEOUT,
 		// remove close button
-		close: false
+		close: false,
 	})
 
 	// Generate undo layout

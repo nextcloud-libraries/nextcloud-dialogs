@@ -26,6 +26,7 @@ export {
 	showInfo,
 	showError,
 	showUndo,
+	showLoading,
 } from './toast.js'
 
 export type {
