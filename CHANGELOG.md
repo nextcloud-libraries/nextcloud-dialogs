@@ -6,6 +6,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## 6.1.1
+[Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.1.0...v6.1.1)
+
+## Fixed
+* fix(toast): loading svg by @skjnldsv in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1559
+* fixed css output file via @nextcloud/vite-config update
+
+## Changed
+* chore(deps): Bump p-queue from 8.0.1 to 8.1.0
+* chore(deps-dev): Bump @nextcloud/vite-config from 1.5.0 to 1.5.1
+* chore(deps-dev): Bump @vitest/coverage-v8 from 2.1.8 to 3.0.3
+* chore(deps-dev): Bump happy-dom from 16.7.1 to 16.7.2
+* chore(deps-dev): Bump vite from 6.0.7 to 6.0.9
+* chore(deps-dev): Bump vite from 6.0.9 to 6.0.11
+* chore(deps-dev): Bump vitest from 2.1.8 to 3.0.3
+
 ## 6.1.0
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.0.1...v6.1.0)
 
