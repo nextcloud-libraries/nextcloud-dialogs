@@ -78,7 +78,7 @@ msgid "Folder name cannot be empty."
 msgstr "Der Ordnername darf nicht leer sein."
 
 msgid "Home"
-msgstr "Startseite"
+msgstr "Home"
 
 msgid "Modified"
 msgstr "Geändert"
