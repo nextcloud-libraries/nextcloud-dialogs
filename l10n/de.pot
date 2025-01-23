@@ -4,7 +4,6 @@
 # Mario Siegmann <mario_siegmann@web.de>, 2023
 # Markus Eckstein, 2023
 # Andy Scherzinger <info@andy-scherzinger.de>, 2023
-# Joachim Sokolowski, 2023
 # Ettore Atalan <atalanttore@googlemail.com>, 2024
 # Martin Wilichowski, 2025
 # 
@@ -102,7 +101,7 @@ msgid "New folder name"
 msgstr "Neuer Ordnername"
 
 msgid "No files in here"
-msgstr "Keine Dateien vorhanden"
+msgstr "Hier sind keine Dateien"
 
 msgid "No files matching your filter were found."
 msgstr "Es wurden keine Dateien gefunden, die deinem Filter entsprechen."
