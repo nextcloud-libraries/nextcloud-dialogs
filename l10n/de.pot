@@ -127,4 +127,4 @@ msgid "Undo"
 msgstr "Rückgängig machen"
 
 msgid "Upload some content or sync with your devices!"
-msgstr "Lade Inhalte hoch oder synchronisieren diese mit deinen Geräten!"
+msgstr "Lade Inhalte hoch oder synchronisiere diese mit deinen Geräten!"
