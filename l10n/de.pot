@@ -1,6 +1,5 @@
 # 
 # Translators:
-# John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Mario Siegmann <mario_siegmann@web.de>, 2023
 # Markus Eckstein, 2023
 # Andy Scherzinger <info@andy-scherzinger.de>, 2023
@@ -110,7 +109,7 @@ msgid "No matching files"
 msgstr "Keine passenden Dateien"
 
 msgid "Recent"
-msgstr "Jüngste"
+msgstr "Neueste"
 
 msgid "Select all entries"
 msgstr "Alle Einträge auswählen"
@@ -125,7 +124,7 @@ msgid "Size"
 msgstr "Größe"
 
 msgid "Undo"
-msgstr "Rückgängig"
+msgstr "Rückgängig machen"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Lade Inhalte hoch oder synchronisieren diese mit deinen Geräten!"
