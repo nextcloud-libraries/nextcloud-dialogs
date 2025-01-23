@@ -1,15 +1,14 @@
 # 
 # Translators:
-# John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Mario Siegmann <mario_siegmann@web.de>, 2023
 # Markus Eckstein, 2023
 # Andy Scherzinger <info@andy-scherzinger.de>, 2023
-# Joachim Sokolowski, 2023
 # Ettore Atalan <atalanttore@googlemail.com>, 2024
+# Martin Wilichowski, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Ettore Atalan <atalanttore@googlemail.com>, 2024\n"
+"Last-Translator: Martin Wilichowski, 2025\n"
 "Language-Team: German (https://app.transifex.com/nextcloud/teams/64236/de/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: de\n"
@@ -45,7 +44,7 @@ msgid "Copy to {target}"
 msgstr "Nach {target} kopieren"
 
 msgid "Could not create the new folder"
-msgstr "Der neue Ordner konnte nicht erstellt werden."
+msgstr "Der neue Ordner konnte nicht erstellt werden"
 
 msgid "Could not load files settings"
 msgstr "Dateieinstellungen konnten nicht geladen werden"
@@ -77,7 +76,7 @@ msgid "Folder name cannot be empty."
 msgstr "Der Ordnername darf nicht leer sein."
 
 msgid "Home"
-msgstr "Startseite"
+msgstr "Home"
 
 msgid "Modified"
 msgstr "Geändert"
@@ -101,7 +100,7 @@ msgid "New folder name"
 msgstr "Neuer Ordnername"
 
 msgid "No files in here"
-msgstr "Keine Dateien vorhanden"
+msgstr "Hier sind keine Dateien"
 
 msgid "No files matching your filter were found."
 msgstr "Es wurden keine Dateien gefunden, die deinem Filter entsprechen."
@@ -110,7 +109,7 @@ msgid "No matching files"
 msgstr "Keine passenden Dateien"
 
 msgid "Recent"
-msgstr "Jüngste"
+msgstr "Neueste"
 
 msgid "Select all entries"
 msgstr "Alle Einträge auswählen"
@@ -125,7 +124,7 @@ msgid "Size"
 msgstr "Größe"
 
 msgid "Undo"
-msgstr "Rückgängig"
+msgstr "Rückgängig machen"
 
 msgid "Upload some content or sync with your devices!"
-msgstr "Lade Inhalte hoch oder synchronisieren diese mit deinen Geräten!"
+msgstr "Lade Inhalte hoch oder synchronisiere diese mit deinen Geräten!"
