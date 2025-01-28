@@ -15,7 +15,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "\"{name}\" is an invalid folder name."
-msgstr "«{name}» er ikke et gyl mappenavn."
+msgstr "«{name}» er ikke et gyldig mappenavn."
 
 msgid "\"{name}\" is not an allowed folder name"
 msgstr "\"{name}\" er ikke et tillatt mappenavn."
