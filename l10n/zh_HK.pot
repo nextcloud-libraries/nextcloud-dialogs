@@ -1,11 +1,11 @@
 # 
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
-# Café Tango, 2024
+# Café Tango, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Café Tango, 2024\n"
+"Last-Translator: Café Tango, 2025\n"
 "Language-Team: Chinese (Hong Kong) (https://app.transifex.com/nextcloud/teams/64236/zh_HK/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: zh_HK\n"
@@ -121,4 +121,4 @@ msgid "Undo"
 msgstr "還原"
 
 msgid "Upload some content or sync with your devices!"
-msgstr "上傳一些內容或與您的裝置同步"
+msgstr "上傳一些內容或與您的裝置同步！"
