@@ -109,7 +109,7 @@ msgid "Select all entries"
 msgstr "選擇所有項目"
 
 msgid "Select entry"
-msgstr "選取條目"
+msgstr "選擇項目"
 
 msgid "Select the row for {nodename}"
 msgstr "選取 {nodename} 的列"
