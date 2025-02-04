@@ -46,7 +46,7 @@ msgid "Could not load files settings"
 msgstr "無法載入檔案設定"
 
 msgid "Could not load files views"
-msgstr "無法載入文件視圖"
+msgstr "無法載入檔案視圖"
 
 msgid "Create directory"
 msgstr "建立目錄"
@@ -100,19 +100,19 @@ msgid "No files matching your filter were found."
 msgstr "找不到符合您過濾條件的檔案。"
 
 msgid "No matching files"
-msgstr "無符合的檔案"
+msgstr "沒有匹配的檔案"
 
 msgid "Recent"
 msgstr "最近"
 
 msgid "Select all entries"
-msgstr "選取所有條目"
+msgstr "選擇所有項目"
 
 msgid "Select entry"
-msgstr "選取條目"
+msgstr "選擇項目"
 
 msgid "Select the row for {nodename}"
-msgstr "選取 {nodename} 的列"
+msgstr "為 {nodename} 選擇該列"
 
 msgid "Size"
 msgstr "大小"
