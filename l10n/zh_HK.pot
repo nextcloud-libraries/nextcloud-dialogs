@@ -100,7 +100,7 @@ msgid "No files matching your filter were found."
 msgstr "找不到符合您過濾條件的檔案。"
 
 msgid "No matching files"
-msgstr "無符合的檔案"
+msgstr "沒有匹配的檔案"
 
 msgid "Recent"
 msgstr "最近"
