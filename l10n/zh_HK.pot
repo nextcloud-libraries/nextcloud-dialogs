@@ -46,7 +46,7 @@ msgid "Could not load files settings"
 msgstr "無法載入檔案設定"
 
 msgid "Could not load files views"
-msgstr "無法載入文件視圖"
+msgstr "無法載入檔案視圖"
 
 msgid "Create directory"
 msgstr "建立目錄"
