@@ -52,7 +52,7 @@ msgid "Create directory"
 msgstr "建立目錄"
 
 msgid "Current view selector"
-msgstr "目前檢視選取器"
+msgstr "目前視圖選擇器"
 
 msgid "Favorites"
 msgstr "最愛"
