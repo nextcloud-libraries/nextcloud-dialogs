@@ -15,7 +15,7 @@ msgid "\"{name}\" is an invalid folder name."
 msgstr "「{name}」是無效的資料夾名稱。"
 
 msgid "\"{name}\" is not an allowed folder name"
-msgstr "「{name}」是無效的資料夾名稱。"
+msgstr "資料夾名稱「{name}」不符合允許的規範。"
 
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "資料夾名稱中不允許使用 \"/\"。"
