@@ -106,7 +106,7 @@ msgid "Recent"
 msgstr "最近"
 
 msgid "Select all entries"
-msgstr "選取所有條目"
+msgstr "選擇所有項目"
 
 msgid "Select entry"
 msgstr "選取條目"
