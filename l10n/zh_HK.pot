@@ -112,7 +112,7 @@ msgid "Select entry"
 msgstr "選擇項目"
 
 msgid "Select the row for {nodename}"
-msgstr "為 {nodename} 選擇該列"
+msgstr "選擇 {nodename} 的列"
 
 msgid "Size"
 msgstr "大小"
