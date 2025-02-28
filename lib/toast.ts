@@ -48,7 +48,6 @@ export const TOAST_PERMANENT_TIMEOUT = -1
 /**
  * Type of a toast
  * @see https://apvarun.github.io/toastify-js/
- * @notExported
  */
 type Toast = ReturnType<typeof Toastify>
 
