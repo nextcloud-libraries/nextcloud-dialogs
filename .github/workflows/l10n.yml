@@ -1,33 +1,43 @@
-# SPDX-FileCopyrightText: 2020-2024 Nextcloud GmbH and Nextcloud contributors
+# SPDX-FileCopyrightText: 2021-2024 Nextcloud GmbH and Nextcloud contributors
 # SPDX-License-Identifier: MIT
+
 name: L10n
 on: pull_request
+
+permissions:
+  contents: read
 
 jobs:
   l10n-extract-check:
     runs-on: ubuntu-latest
+
     name: Pot check
-
     steps:
-    - uses: actions/checkout@master
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
 
-    - name: Read package.json node and npm engines version
-      uses: skjnldsv/read-package-engines-version-actions@0ce2ed60f6df073a62a77c0a4958dd0fc68e32e7 # v2.1
-      id: versions
-      with:
-        fallbackNode: '^16'
-        fallbackNpm: '^7'
+      - name: Read package.json node and npm engines version
+        uses: skjnldsv/read-package-engines-version-actions@06d6baf7d8f41934ab630e97d9e6c0bc9c9ac5e4 # v3
+        id: versions
+        with:
+          fallbackNode: '^20'
+          fallbackNpm: '^10'
 
-    - name: Set up node ${{ steps.versions.outputs.nodeVersion }}
-      uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
-      with:
-        node-version: ${{ steps.versions.outputs.nodeVersion }}
+      - name: Set up node ${{ steps.versions.outputs.nodeVersion }}
+        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
+        with:
+          node-version: ${{ steps.versions.outputs.nodeVersion }}
 
-    - name: npm install
-      run: npm ci
+      - name: Set up npm ${{ steps.versions.outputs.npmVersion }}
+        run: npm i -g npm@"${{ steps.versions.outputs.npmVersion }}"
 
-    - name: extract l10n files
-      run: npm run l10n:extract
+      - name: Install dependencies
+        run: npm ci
 
-    - name: Check l10n file changes
-      run: bash -c "[[ ! \"`git status --porcelain l10n`\" ]] || ( echo 'Uncommited l10n changes. Run \`npm run l10n:extract\`.' && exit 1 )"
+      - name: Extract l10n files
+        run: npm run l10n:extract
+
+      - name: Check l10n file changes
+        run: bash -c "[[ ! \"`git status --porcelain l10n`\" ]] || ( echo 'Uncommited l10n changes. Run \`npm run l10n:extract\`.' && exit 1 )"
