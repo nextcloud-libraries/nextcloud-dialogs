@@ -3,6 +3,17 @@
 version: 2
 updates:
 - package-ecosystem: npm
+  target-branch: 'main'
+  directory: "/"
+  schedule:
+    interval: weekly
+    day: saturday
+    time: "03:00"
+    timezone: Europe/Paris
+  open-pull-requests-limit: 10
+  versioning-strategy: increase
+- package-ecosystem: npm
+  target-branch: 'stable5'
   directory: "/"
   schedule:
     interval: weekly
