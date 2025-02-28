@@ -15,11 +15,7 @@
       { "name": "typescript-plugin-css-modules" }
     ]
   },
-  "exclude": [
-    "node_modules",
-    "dist",
-    "build"
-  ],
+  "include": ["lib"],
   "vueCompilerOptions": {
     "target": 2.7
   }
