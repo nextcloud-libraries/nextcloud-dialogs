@@ -75,7 +75,7 @@
   "devDependencies": {
     "@mdi/svg": "^7.4.47",
     "@nextcloud/browserslist-config": "^3.0.1",
-    "@nextcloud/eslint-config": "^8.4.1",
+    "@nextcloud/eslint-config": "^8.4.2",
     "@nextcloud/stylelint-config": "^2.4.0",
     "@nextcloud/vite-config": "^1.4.2",
     "@types/gettext-parser": "^8.0.0",
