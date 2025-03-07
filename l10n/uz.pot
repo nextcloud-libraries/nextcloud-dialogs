@@ -1,15 +1,123 @@
 # 
 # Translators:
-# Transifex Bot <>, 2023
+# Khurshid Ibatov <Khurshid.Ibatov@tibbiysugurta.uz>, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Transifex Bot <>, 2023\n"
+"Last-Translator: Khurshid Ibatov <Khurshid.Ibatov@tibbiysugurta.uz>, 2025\n"
 "Language-Team: Uzbek (https://app.transifex.com/nextcloud/teams/64236/uz/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: uz\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: lib/toast.ts:223
+msgid "\"{name}\" is an invalid folder name."
+msgstr "\"{name}\" jild nomi yaroqsiz."
+
+msgid "\"{name}\" is not an allowed folder name"
+msgstr "\"{name}\" ruxsat etilgan jild nomi emas"
+
+msgid "\"/\" is not allowed inside a folder name."
+msgstr "\"/\" papka nomi ichida ruxsat berilmaydi."
+
+msgid "All files"
+msgstr "Barcha fayllar"
+
+msgid "Choose"
+msgstr "Tanlang"
+
+msgid "Choose {file}"
+msgstr "Tanlang {file}"
+
+msgid "Choose %n file"
+msgid_plural "Choose %n files"
+msgstr[0] "Tanlang %n faylni"
+
+msgid "Copy"
+msgstr "Nusxa"
+
+msgid "Copy to {target}"
+msgstr " {target} ga nusxa"
+
+msgid "Could not create the new folder"
+msgstr "Yangi jild yaratib bo‘lmadi"
+
+msgid "Could not load files settings"
+msgstr "Fayl sozlamalari yuklanmadi"
+
+msgid "Could not load files views"
+msgstr "Fayllarni koʻrishni yuklab boʻlmadi"
+
+msgid "Create directory"
+msgstr "Katalog yaratish"
+
+msgid "Current view selector"
+msgstr "Joriy ko'rinish selektori"
+
+msgid "Favorites"
+msgstr "Tanlanganlar"
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr "Tanlangan deb belgilagan fayl va papkalar shu yerda koʻrinadi."
+
+msgid "Files and folders you recently modified will show up here."
+msgstr "Siz yaqinda oʻzgartirgan fayl va papkalar shu yerda koʻrinadi."
+
+msgid "Filter file list"
+msgstr "Fayl ro'yxatini filtrlash"
+
+msgid "Folder name cannot be empty."
+msgstr "Jild nomi boʻsh boʻlishi mumkin emas."
+
+msgid "Home"
+msgstr "Uy"
+
+msgid "Modified"
+msgstr "Modifikatsiyalangan"
+
+msgid "Move"
+msgstr "Ko'chirish"
+
+msgid "Move to {target}"
+msgstr " {target} ga ko'chirish"
+
+msgid "Name"
+msgstr "Nomi"
+
+msgid "New"
+msgstr "Yangi"
+
+msgid "New folder"
+msgstr "Yangi jild"
+
+msgid "New folder name"
+msgstr "Yangi jild nomi"
+
+msgid "No files in here"
+msgstr "Fayl mavjud emas"
+
+msgid "No files matching your filter were found."
+msgstr "Filtringizga mos keladigan fayl topilmadi."
+
+msgid "No matching files"
+msgstr "Mos fayllar yo'q"
+
+msgid "Recent"
+msgstr "Yaqinda"
+
+msgid "Select all entries"
+msgstr "Barcha yozuvlarni tanlang"
+
+msgid "Select entry"
+msgstr "Yozuvni tanlang"
+
+msgid "Select the row for {nodename}"
+msgstr "{nodename} uchun qatorni tanlang"
+
+msgid "Size"
+msgstr "O`lcham"
+
 msgid "Undo"
-msgstr ""
+msgstr "Bekor qilish"
+
+msgid "Upload some content or sync with your devices!"
+msgstr "Qurilmangizga ba'zi kontentni yuklang yoki sinxronlang!"
