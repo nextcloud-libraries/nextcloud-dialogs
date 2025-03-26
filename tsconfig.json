@@ -1,5 +1,5 @@
 {
-  "extends": "@vue/tsconfig",
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "declaration": true,
