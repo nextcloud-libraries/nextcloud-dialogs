@@ -113,7 +113,7 @@ describe('FilePicker FileList', () => {
 		// there is an aria label
 		expect(selectAll.props('ariaLabel')).toBeTruthy()
 		// no checked
-		expect(selectAll.props('checked')).toBe(false)
+		expect(selectAll.props('modelValue')).toBe(false)
 	})
 
 	it('header checkbox is checked when all nodes are selected', async () => {
@@ -131,7 +131,7 @@ describe('FilePicker FileList', () => {
 		})
 
 		const selectAll = wrapper.find('[data-testid="select-all-checkbox"]')
-		expect(selectAll.props('checked')).toBe(true)
+		expect(selectAll.props('modelValue')).toBe(true)
 	})
 
 	describe('file list sorting', () => {

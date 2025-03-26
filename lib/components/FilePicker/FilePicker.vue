@@ -3,19 +3,19 @@
   - SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 <template>
-	<NcDialog :container="container"
+	<NcDialog :open.sync="isOpen"
+		:container="container"
 		:buttons="dialogButtons"
 		:name="name"
 		size="large"
 		content-classes="file-picker__content"
 		dialog-classes="file-picker"
 		navigation-classes="file-picker__navigation"
-		:open.sync="isOpen"
 		@update:open="handleClose">
 		<template #navigation="{ isCollapsed }">
-			<FilePickerNavigation :is-collapsed="isCollapsed"
-				:current-view.sync="currentView"
+			<FilePickerNavigation :current-view.sync="currentView"
 				:filter-string.sync="filterString"
+				:is-collapsed="isCollapsed"
 				:disabled-navigation="disabledNavigation" />
 		</template>
 
@@ -32,13 +32,13 @@
 			<!-- File list -->
 			<!-- If loading or files found show file list, otherwise show empty content-->
 			<FileList v-if="isLoading || filteredFiles.length > 0"
+				:path.sync="currentPath"
+				:selected-files.sync="selectedFiles"
 				:allow-pick-directory="allowPickDirectory"
 				:current-view="currentView"
 				:files="filteredFiles"
 				:multiselect="multiselect"
 				:loading="isLoading"
-				:path.sync="currentPath"
-				:selected-files.sync="selectedFiles"
 				:name="viewHeadline"
 				@update:path="currentView = 'files'" />
 			<NcEmptyContent v-else-if="filterString"

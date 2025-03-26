@@ -77,7 +77,7 @@ describe('FilePicker: FileListRow', () => {
 			},
 			stubs: {
 				NcCheckboxRadioSwitch: {
-					template: '<label><input type="checkbox" @click="$emit(\'update:checked\', true)" ></label>',
+					template: '<label><input type="checkbox" @click="$emit(\'update:model-value\', true)" ></label>',
 				},
 			},
 		})
