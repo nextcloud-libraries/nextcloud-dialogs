@@ -17,7 +17,7 @@ const TestComponent = defineComponent({
 	props: {
 		currentView: {
 			type: String as PropType<FileListViews>,
-		}
+		},
 	},
 	setup(props) {
 		const settings = useFilesViews(props.currentView)

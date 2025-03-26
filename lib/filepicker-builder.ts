@@ -263,9 +263,7 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 	}
 
 	/**
-	 * Allow to pick directories besides files
-	 *
-	 * @param allow True to allow picking directories
+	 * Disable navigation (view selection)
 	 */
 	public disableNavigation() {
 		this.disabledNavigation = true

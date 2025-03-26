@@ -7,7 +7,7 @@
 		:class="fileListIconStyles['file-picker__file-icon']">
 		<template v-if="!previewLoaded">
 			<IconFile v-if="isFile" :size="20" />
-			<component :is="folderDecorationIcon" v-else-if="folderDecorationIcon"/>
+			<component :is="folderDecorationIcon" v-else-if="folderDecorationIcon" />
 			<IconFolder v-else :size="20" />
 		</template>
 	</div>
@@ -71,13 +71,13 @@ const folderDecorationIcon = computed(() => {
 	}
 
 	switch (props.node.attributes?.['mount-type']) {
-		case 'external':
-		case 'external-session':
-			return NetworkIcon
-		case 'group':
-			return AccountGroupIcon
-		case 'shared':
-			return AccountPlusIcon
+	case 'external':
+	case 'external-session':
+		return NetworkIcon
+	case 'group':
+		return AccountGroupIcon
+	case 'shared':
+		return AccountPlusIcon
 	}
 
 	return null

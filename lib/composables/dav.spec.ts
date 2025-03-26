@@ -97,7 +97,7 @@ describe('dav composable', () => {
 
 	it('reloads on path change', async () => {
 		const client = {
-			getDirectoryContents: vi.fn((str) => ({ data: [] })),
+			getDirectoryContents: vi.fn(() => ({ data: [] })),
 		}
 		nextcloudFiles.davGetClient.mockImplementationOnce(() => client)
 
@@ -124,8 +124,8 @@ describe('dav composable', () => {
 
 	it('reloads on view change', async () => {
 		const client = {
-			getDirectoryContents: vi.fn((str) => ({ data: [] })),
-			search: vi.fn((str) => ({ data: { results: [], truncated: false } })),
+			getDirectoryContents: vi.fn(() => ({ data: [] })),
+			search: vi.fn(() => ({ data: { results: [], truncated: false } })),
 		}
 		nextcloudFiles.davGetClient.mockImplementationOnce(() => client)
 
@@ -171,8 +171,8 @@ describe('dav composable', () => {
 	it('loadFiles work', async () => {
 		const client = {
 			stat: vi.fn((v) => ({ data: { path: v } })),
-			getDirectoryContents: vi.fn((_p, _o) => ({ data: [] })),
-			search: vi.fn((_p, _o) => ({ data: { results: [], truncated: false } })),
+			getDirectoryContents: vi.fn(() => ({ data: [] })),
+			search: vi.fn(() => ({ data: { results: [], truncated: false } })),
 		}
 		nextcloudFiles.davGetClient.mockImplementationOnce(() => client)
 		nextcloudFiles.davResultToNode.mockImplementationOnce((v) => v)
@@ -199,8 +199,8 @@ describe('dav composable', () => {
 	it('request cancelation works', async () => {
 		const client = {
 			stat: vi.fn((v) => ({ data: { path: v } })),
-			getDirectoryContents: vi.fn((_p, _o) => ({ data: [] })),
-			search: vi.fn((_p, _o) => ({ data: { results: [], truncated: false } })),
+			getDirectoryContents: vi.fn(() => ({ data: [] })),
+			search: vi.fn(() => ({ data: { results: [], truncated: false } })),
 		}
 		nextcloudFiles.davGetClient.mockImplementationOnce(() => client)
 		nextcloudFiles.davResultToNode.mockImplementationOnce((v) => v)

@@ -13,10 +13,10 @@ import Vue, { toRaw } from 'vue'
  * @param props Properties to pass to the dialog
  * @param onClose Callback when the dialog is closed
  */
-export const spawnDialog = (dialog: Component | AsyncComponent, props: any, onClose: (...rest: unknown[]) => void = () => {}): Vue => {
+export const spawnDialog = (dialog: Component | AsyncComponent, props: Record<string, unknown>, onClose: (...rest: unknown[]) => void = () => {}): Vue => {
 	const el = document.createElement('div')
 
-	const container: HTMLElement = document.querySelector(props?.container) || document.body
+	const container: HTMLElement = document.querySelector(props?.container as string) || document.body
 	container.appendChild(el)
 
 	const vue = new Vue({
