@@ -6,10 +6,10 @@
 	<Fragment>
 		<!-- Filter for the file list -->
 		<NcTextField class="file-picker__filter-input"
-			:value="filterString"
 			:label="t('Filter file list')"
 			:show-trailing-button="!!filterString"
-			@update:value="updateFilterValue"
+			:model-value="filterString"
+			@update:model-value="updateFilterValue"
 			@trailing-button-click="updateFilterValue('')">
 			<IconMagnify :size="16" />
 			<template #trailing-button-icon>
@@ -36,8 +36,8 @@
 				:clearable="false"
 				:searchable="false"
 				:options="availableViews"
-				:value="currentViewObject"
-				@input="(v) => emit('update:currentView', v.id)" />
+				:model-value="currentViewObject"
+				@update:model-value="emit('update:currentView', $event.id)" />
 		</template>
 	</Fragment>
 </template>
@@ -47,7 +47,10 @@ import IconClose from 'vue-material-design-icons/Close.vue'
 import IconMagnify from 'vue-material-design-icons/Magnify.vue'
 
 import { getCurrentUser } from '@nextcloud/auth'
-import { NcButton, NcIconSvgWrapper, NcSelect, NcTextField } from '@nextcloud/vue'
+import NcButton from '@nextcloud/vue/components/NcButton'
+import NcIconSvgWrapper from '@nextcloud/vue/components/NcIconSvgWrapper'
+import NcSelect from '@nextcloud/vue/components/NcSelect'
+import NcTextField from '@nextcloud/vue/components/NcTextField'
 import { computed, ref } from 'vue'
 import { Fragment } from 'vue-frag'
 import { t } from '../../utils/l10n'

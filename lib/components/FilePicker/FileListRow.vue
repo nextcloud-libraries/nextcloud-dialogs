@@ -17,10 +17,10 @@
 		}">
 		<td v-if="showCheckbox" class="row-checkbox" @click.stop="() => {/* Stop the click event */}">
 			<NcCheckboxRadioSwitch :aria-label="t('Select the row for {nodename}', { nodename: displayName })"
-				:checked="selected"
 				:disabled="!isPickable"
 				data-testid="row-checkbox"
-				@update:checked="toggleSelected" />
+				:model-value="selected"
+				@update:model-value="toggleSelected" />
 		</td>
 		<td class="row-name">
 			<div class="file-picker__name-container" data-testid="row-name">
@@ -38,10 +38,11 @@
 	</tr>
 </template>
 <script setup lang="ts">
-import type { Node } from '@nextcloud/files'
+import type { INode } from '@nextcloud/files'
 
 import { formatFileSize, FileType } from '@nextcloud/files'
-import { NcCheckboxRadioSwitch, NcDateTime } from '@nextcloud/vue'
+import NcCheckboxRadioSwitch from '@nextcloud/vue/components/NcCheckboxRadioSwitch'
+import NcDateTime from '@nextcloud/vue/components/NcDateTime'
 import { computed } from 'vue'
 import { t } from '../../utils/l10n'
 
@@ -57,7 +58,7 @@ const props = defineProps<{
 	/** Whether the node can be picked */
 	canPick: boolean
 	/** The current node */
-	node: Node
+	node: INode
 	/** Whether the preview should be cropped */
 	cropImagePreviews: boolean
 }>()
@@ -66,7 +67,7 @@ const emit = defineEmits<{
 	/** Emitted when the selected state is changed */
 	(e: 'update:selected', v: boolean): void
 	/** Emitted when a directory was not selected but entered */
-	(e: 'enter-directory', node: Node): void
+	(e: 'enter-directory', node: INode): void
 }>()
 
 /**

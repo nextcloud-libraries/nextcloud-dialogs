@@ -3,9 +3,8 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-import type { Node } from '@nextcloud/files'
+import type { INode } from '@nextcloud/files'
 import type { MaybeRef } from '@vueuse/core'
-import type { Ref } from 'vue'
 
 import { generateUrl } from '@nextcloud/router'
 import { toValue } from '@vueuse/core'
@@ -36,7 +35,7 @@ interface PreviewOptions {
  * @param node The node to generate the preview for
  * @param options Preview options
  */
-export function getPreviewURL(node: Node, options: PreviewOptions = {}) {
+export function getPreviewURL(node: INode, options: PreviewOptions = {}) {
 	options = { size: 32, cropPreview: false, mimeFallback: true, ...options }
 
 	try {
@@ -68,7 +67,7 @@ export function getPreviewURL(node: Node, options: PreviewOptions = {}) {
 	}
 }
 
-export const usePreviewURL = (node: Node | Ref<Node>, options?: MaybeRef<PreviewOptions>) => {
+export const usePreviewURL = (node: MaybeRef<INode>, options?: MaybeRef<PreviewOptions>) => {
 	const previewURL = ref<URL|null>(null)
 	const previewLoaded = ref(false)
 

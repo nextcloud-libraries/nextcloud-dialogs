@@ -7,14 +7,16 @@
 		:class="fileListIconStyles['file-picker__file-icon']">
 		<template v-if="!previewLoaded">
 			<IconFile v-if="isFile" :size="20" />
-			<component :is="folderDecorationIcon" v-else-if="folderDecorationIcon"/>
+			<component :is="folderDecorationIcon" v-else-if="folderDecorationIcon" />
 			<IconFolder v-else :size="20" />
 		</template>
 	</div>
 </template>
 
 <script setup lang="ts">
-import { FileType, type Node } from '@nextcloud/files'
+import type { INode } from '@nextcloud/files'
+import { FileType } from '@nextcloud/files'
+import { ShareType } from '@nextcloud/sharing'
 import { computed, ref, toRef } from 'vue'
 import { usePreviewURL } from '../../composables/preview'
 
@@ -34,7 +36,7 @@ import fileListIconStylesModule from './FileListIcon.module.scss'
 const fileListIconStyles = ref(fileListIconStylesModule)
 
 const props = defineProps<{
-	node: Node
+	node: INode
 	cropImagePreviews: boolean
 }>()
 
@@ -71,13 +73,13 @@ const folderDecorationIcon = computed(() => {
 	}
 
 	switch (props.node.attributes?.['mount-type']) {
-		case 'external':
-		case 'external-session':
-			return NetworkIcon
-		case 'group':
-			return AccountGroupIcon
-		case 'shared':
-			return AccountPlusIcon
+	case 'external':
+	case 'external-session':
+		return NetworkIcon
+	case 'group':
+		return AccountGroupIcon
+	case 'shared':
+		return AccountPlusIcon
 	}
 
 	return null

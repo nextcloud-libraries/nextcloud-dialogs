@@ -3,8 +3,6 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-///<reference types="toastify-js" />
-
 import Toastify from 'toastify-js'
 import { t } from './utils/l10n.js'
 
@@ -20,7 +18,6 @@ export enum ToastType {
 	WARNING = 'toast-warning',
 	INFO = 'toast-info',
 	SUCCESS = 'toast-success',
-	PERMANENT = 'toast-error',
 	UNDO = 'toast-undo',
 	LOADING = 'toast-loading',
 }
@@ -102,7 +99,7 @@ export interface ToastOptions {
  * Show a toast message
  *
  * @param data Message to be shown in the toast, any HTML is removed by default
- * @param options
+ * @param options ToastOptions
  */
 export function showMessage(data: string|Node, options?: ToastOptions): Toast {
 	options = Object.assign({
@@ -113,7 +110,7 @@ export function showMessage(data: string|Node, options?: ToastOptions): Toast {
 		selector: undefined,
 		onRemove: () => { },
 		onClick: undefined,
-		close: true
+		close: true,
 	}, options)
 
 	if (typeof data === 'string' && !options.isHTML) {
@@ -161,7 +158,7 @@ export function showMessage(data: string|Node, options?: ToastOptions): Toast {
  * Show a toast message with error styling
  *
  * @param text Message to be shown in the toast, any HTML is removed by default
- * @param options
+ * @param options ToastOptions
  */
 export function showError(text: string, options?: ToastOptions): Toast {
 	return showMessage(text, { ...options, type: ToastType.ERROR })
@@ -171,7 +168,7 @@ export function showError(text: string, options?: ToastOptions): Toast {
  * Show a toast message with warning styling
  *
  * @param text Message to be shown in the toast, any HTML is removed by default
- * @param options
+ * @param options ToastOptions
  */
 export function showWarning(text: string, options?: ToastOptions): Toast {
 	return showMessage(text, { ...options, type: ToastType.WARNING })
@@ -181,7 +178,7 @@ export function showWarning(text: string, options?: ToastOptions): Toast {
  * Show a toast message with info styling
  *
  * @param text Message to be shown in the toast, any HTML is removed by default
- * @param options
+ * @param options ToastOptions
  */
 export function showInfo(text: string, options?: ToastOptions): Toast {
 	return showMessage(text, { ...options, type: ToastType.INFO })
@@ -191,7 +188,7 @@ export function showInfo(text: string, options?: ToastOptions): Toast {
  * Show a toast message with success styling
  *
  * @param text Message to be shown in the toast, any HTML is removed by default
- * @param options
+ * @param options ToastOptions
  */
 export function showSuccess(text: string, options?: ToastOptions): Toast {
 	return showMessage(text, { ...options, type: ToastType.SUCCESS })
@@ -202,7 +199,7 @@ export function showSuccess(text: string, options?: ToastOptions): Toast {
  * The toast will be shown permanently and needs to be hidden manually by calling hideToast()
  *
  * @param text Message to be shown in the toast, any HTML is removed by default
- * @param options
+ * @param options ToastOptions
  */
 export function showLoading(text: string, options?: ToastOptions): Toast {
 	// Generate loader svg
@@ -229,15 +226,13 @@ export function showLoading(text: string, options?: ToastOptions): Toast {
  *
  * @param text Message to be shown in the toast, any HTML is removed by default
  * @param onUndo Function that is called when the undo button is clicked
- * @param options
+ * @param options ToastOptions
  */
 export function showUndo(text: string, onUndo: (e: MouseEvent) => void, options?: ToastOptions): Toast {
 	// onUndo callback is mandatory
 	if (!(onUndo instanceof Function)) {
 		throw new Error('Please provide a valid onUndo method')
 	}
-
-	let toast: Toast
 
 	options = Object.assign(options || {}, {
 		// force 10 seconds of timeout
@@ -255,6 +250,8 @@ export function showUndo(text: string, onUndo: (e: MouseEvent) => void, options?
 	undoContent.innerText = text
 	undoContent.appendChild(undoButton)
 
+	const toast = showMessage(undoContent, { ...options, type: ToastType.UNDO })
+
 	undoButton.addEventListener('click', function(event) {
 		event.stopPropagation()
 		onUndo(event)
@@ -265,6 +262,5 @@ export function showUndo(text: string, onUndo: (e: MouseEvent) => void, options?
 		}
 	})
 
-	toast = showMessage(undoContent, { ...options, type: ToastType.UNDO })
 	return toast
 }

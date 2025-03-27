@@ -13,9 +13,9 @@
 						</span>
 						<NcCheckboxRadioSwitch v-if="multiselect"
 							:aria-label="t('Select all entries')"
-							:checked="allSelected"
 							data-testid="select-all-checkbox"
-							@update:checked="onSelectAll" />
+							:model-value="allSelected"
+							@update:model-value="onSelectAll" />
 					</th>
 					<th :aria-sort="sortByName" class="row-name">
 						<div class="header-wrapper">
@@ -77,11 +77,12 @@
 </template>
 
 <script setup lang="ts">
-import type { Node } from '@nextcloud/files'
+import type { INode } from '@nextcloud/files'
 import type { FileListViews } from '../../composables/filesSettings'
 
 import { FileType, FilesSortingMode, sortNodes } from '@nextcloud/files'
-import { NcButton, NcCheckboxRadioSwitch } from '@nextcloud/vue'
+import NcButton from '@nextcloud/vue/components/NcButton'
+import NcCheckboxRadioSwitch from '@nextcloud/vue/components/NcCheckboxRadioSwitch'
 import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
 import { useFilesSettings, useFilesViews } from '../../composables/filesSettings'
 import { t } from '../../utils/l10n'
@@ -96,14 +97,14 @@ const props = defineProps<{
 	multiselect: boolean
 	allowPickDirectory: boolean
 	loading: boolean
-	files: Node[]
-	selectedFiles: Node[]
+	files: INode[]
+	selectedFiles: INode[]
 	path: string
 }>()
 
 const emit = defineEmits<{
 	(e: 'update:path', path: string): void
-	(e: 'update:selectedFiles', nodes: Node[]): void
+	(e: 'update:selectedFiles', nodes: INode[]): void
 }>()
 
 /// sorting related stuff
@@ -176,7 +177,7 @@ function onSelectAll() {
  * Handle selecting a node on the files list
  * @param file the selected node
  */
-function onNodeSelected(file: Node) {
+function onNodeSelected(file: INode) {
 	if (props.selectedFiles.includes(file)) {
 		emit('update:selectedFiles', props.selectedFiles.filter((f) => f.path !== file.path))
 	} else {
@@ -193,7 +194,7 @@ function onNodeSelected(file: Node) {
  * Emit the new current path
  * @param dir The directory that is entered
  */
-function onChangeDirectory(dir: Node) {
+function onChangeDirectory(dir: INode) {
 	emit('update:path', dir.path)
 }
 

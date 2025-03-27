@@ -27,6 +27,7 @@ export interface IFilesView {
 
 /**
  * Get available file views
+ * @param isAnonymous - Whether the user is anonymous
  */
 export const useViews = (isAnonymous: Ref<boolean> | ComputedRef<boolean>) => {
 
