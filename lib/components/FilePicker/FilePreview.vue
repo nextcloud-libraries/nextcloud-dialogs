@@ -14,7 +14,9 @@
 </template>
 
 <script setup lang="ts">
-import { FileType, type Node } from '@nextcloud/files'
+import type { INode } from '@nextcloud/files'
+import { FileType } from '@nextcloud/files'
+import { ShareType } from '@nextcloud/sharing'
 import { computed, ref, toRef } from 'vue'
 import { usePreviewURL } from '../../composables/preview'
 
@@ -34,7 +36,7 @@ import fileListIconStylesModule from './FileListIcon.module.scss'
 const fileListIconStyles = ref(fileListIconStylesModule)
 
 const props = defineProps<{
-	node: Node
+	node: INode
 	cropImagePreviews: boolean
 }>()
 

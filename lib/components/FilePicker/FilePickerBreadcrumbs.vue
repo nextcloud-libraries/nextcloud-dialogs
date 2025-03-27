@@ -51,7 +51,10 @@ import IconFolder from 'vue-material-design-icons/Folder.vue'
 import IconHome from 'vue-material-design-icons/Home.vue'
 import IconPlus from 'vue-material-design-icons/Plus.vue'
 
-import { NcActions, NcActionInput, NcBreadcrumbs, NcBreadcrumb } from '@nextcloud/vue'
+import NcActions from '@nextcloud/vue/components/NcActions'
+import NcActionInput from '@nextcloud/vue/components/NcActionInput'
+import NcBreadcrumbs from '@nextcloud/vue/components/NcBreadcrumbs'
+import NcBreadcrumb from '@nextcloud/vue/components/NcBreadcrumb'
 import { computed, ref } from 'vue'
 import { t } from '../../utils/l10n'
 

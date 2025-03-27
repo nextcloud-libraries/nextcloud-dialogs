@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-import type { ContentsWithRoot, Node } from '@nextcloud/files'
+import type { ContentsWithRoot, Folder, Node } from '@nextcloud/files'
 import type { FileStat, ResponseDataDetailed, SearchResult, WebDAVClient } from 'webdav'
 
 import { davGetDefaultPropfind, davGetRecentSearch, davResultToNode, davRootPath } from '@nextcloud/files'
@@ -53,7 +53,7 @@ export function getNodes(client: WebDAVClient, directoryPath: string): Cancelabl
 			const nodes = results.data.map((result: FileStat) => davResultToNode(result))
 			resolve({
 				contents: nodes.filter(({ path }) => path !== directoryPath),
-				folder: nodes.find(({ path }) => path === directoryPath),
+				folder: nodes.find(({ path }) => path === directoryPath) as Folder,
 			})
 		} catch (error) {
 			reject(error)
