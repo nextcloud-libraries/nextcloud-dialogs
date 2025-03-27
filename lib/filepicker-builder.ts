@@ -7,7 +7,7 @@ import type { IFilePickerButton, IFilePickerButtonFactory, IFilePickerFilter } f
 import type { Node } from '@nextcloud/files'
 
 import { basename } from 'path'
-import { spawnDialog } from './utils/dialogs'
+import { spawnDialog } from '@nextcloud/vue/functions/dialogs'
 import { n, t } from './utils/l10n'
 
 import IconMove from '@mdi/svg/svg/folder-move.svg?raw'
