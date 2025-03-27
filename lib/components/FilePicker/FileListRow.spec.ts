@@ -45,7 +45,7 @@ describe('FilePicker: FileListRow', () => {
 		// shallowMounted
 		expect(wrapper.exists()).toBe(true)
 		expect(wrapper.element.tagName.toLowerCase()).toBe('tr')
-		expect(wrapper.find('[data-testid="file-list-row"]').isEmpty()).toBe(false)
+		expect(wrapper.find('[data-testid="file-list-row"]').text()).not.toBe('')
 	})
 
 	it('shows checkbox based on `showCheckbox` property', async () => {
