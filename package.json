@@ -77,7 +77,7 @@
     "@nextcloud/browserslist-config": "^3.0.1",
     "@nextcloud/eslint-config": "^8.4.2",
     "@nextcloud/stylelint-config": "^3.0.1",
-    "@nextcloud/vite-config": "^1.5.2",
+    "@nextcloud/vite-config": "^2.3.2",
     "@nextcloud/vue": "8.23.1",
     "@types/gettext-parser": "^8.0.0",
     "@vitest/coverage-v8": "^3.0.9",
