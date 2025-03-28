@@ -8,6 +8,7 @@ import { File } from '@nextcloud/files'
 import { shallowMount } from '@vue/test-utils'
 
 import FileListRow from './FileListRow.vue'
+import { nextTick } from 'vue'
 
 describe('FilePicker: FileListRow', () => {
 	const node = new File({
@@ -135,7 +136,8 @@ describe('FilePicker: FileListRow', () => {
 			},
 		})
 
-		await wrapper.trigger('keydown', { key: 'Enter', bubbles: true })
+		wrapper.element.dispatchEvent(new KeyboardEvent('keydown', { bubbles: true, key: 'Enter' }))
+		await nextTick()
 
 		expect(wrapper.emitted('update:selected')).toEqual([[true]])
 	})
