@@ -51,7 +51,7 @@ msgid "Could not load files settings"
 msgstr "Não foi possível carregar configurações de arquivos"
 
 msgid "Could not load files views"
-msgstr "Não foi possível carregar exibições de arquivos"
+msgstr "Não foi possível carregar visualições de arquivos"
 
 msgid "Create directory"
 msgstr "Criar diretório"
