@@ -4,10 +4,11 @@
 # Flávio Veras <flaviove@gmail.com>, 2023
 # Cauan Henrique Zorzenon <cauanzorzenon1@protonmail.com>, 2024
 # Cristiano Silva, 2024
+# F Bausch, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Cristiano Silva, 2024\n"
+"Last-Translator: F Bausch, 2025\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/nextcloud/teams/64236/pt_BR/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: pt_BR\n"
@@ -71,7 +72,7 @@ msgid "Filter file list"
 msgstr "Filtrar lista de arquivos"
 
 msgid "Folder name cannot be empty."
-msgstr "O nome da pasta não pode ficar vazio."
+msgstr "O nome da pasta não pode ser vazio."
 
 msgid "Home"
 msgstr "Home"
