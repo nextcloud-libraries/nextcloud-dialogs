@@ -63,7 +63,7 @@ msgid "Favorites"
 msgstr "Favoritos"
 
 msgid "Files and folders you mark as favorite will show up here."
-msgstr "Os arquivos e pastas marcados como favoritos aparecerão aqui."
+msgstr "Os arquivos e pastas que você marca como favoritos aparecerão aqui."
 
 msgid "Files and folders you recently modified will show up here."
 msgstr "Arquivos e pastas que você modificou recentemente aparecerão aqui."
