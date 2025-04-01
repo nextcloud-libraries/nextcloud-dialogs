@@ -79,7 +79,7 @@ export const useDAVFiles = function(
 			promise.value = getNodes(client, currentPath.value)
 		}
 		const content = await promise.value
-		if ('folder' in content) {
+		if (content && 'folder' in content) {
 			folder.value = content.folder
 			files.value = content.contents
 		} else {
