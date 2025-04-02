@@ -111,13 +111,13 @@ msgid "Recent"
 msgstr "Recente"
 
 msgid "Select all entries"
-msgstr "Selecione todas as entradas"
+msgstr "Selecionar todas as entradas"
 
 msgid "Select entry"
-msgstr "Selecione a entrada"
+msgstr "Selecionar a entrada"
 
 msgid "Select the row for {nodename}"
-msgstr "Selecione a linha para {nodename}"
+msgstr "Selecionar a linha para {nodename}"
 
 msgid "Size"
 msgstr "Tamanho"
