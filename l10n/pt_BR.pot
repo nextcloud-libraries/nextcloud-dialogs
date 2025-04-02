@@ -126,4 +126,4 @@ msgid "Undo"
 msgstr "Desfazer"
 
 msgid "Upload some content or sync with your devices!"
-msgstr "Carregue algum conteúdo ou sincronize com seus dispositivos!"
+msgstr "Faça upload de algum conteúdo ou sincronize com seus dispositivos!"
