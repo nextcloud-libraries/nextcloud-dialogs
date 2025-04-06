@@ -75,7 +75,7 @@ msgid "Folder name cannot be empty."
 msgstr "O nome da pasta não pode ser vazio."
 
 msgid "Home"
-msgstr "Home"
+msgstr "Início"
 
 msgid "Modified"
 msgstr "Modificado"
