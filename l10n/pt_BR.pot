@@ -114,7 +114,7 @@ msgid "Select all entries"
 msgstr "Selecionar todas as entradas"
 
 msgid "Select entry"
-msgstr "Selecionar a entrada"
+msgstr "Selecionar entrada"
 
 msgid "Select the row for {nodename}"
 msgstr "Selecionar a linha para {nodename}"
