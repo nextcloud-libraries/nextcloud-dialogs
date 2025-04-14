@@ -41,7 +41,7 @@ msgid "Copy"
 msgstr "복사"
 
 msgid "Copy to {target}"
-msgstr "{target}(으)로 복사"
+msgstr "{target}으로 복사"
 
 msgid "Could not create the new folder"
 msgstr "새 폴더를 만들 수 없음"
