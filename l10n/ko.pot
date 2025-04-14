@@ -5,17 +5,18 @@
 # Brandon Han, 2024
 # 이상오, 2024
 # Hyeongjin Park, 2025
+# LEE Hwanyong <hwan@ajou.ac.kr>, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Hyeongjin Park, 2025\n"
+"Last-Translator: LEE Hwanyong <hwan@ajou.ac.kr>, 2025\n"
 "Language-Team: Korean (https://app.transifex.com/nextcloud/teams/64236/ko/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: ko\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "\"{name}\" is an invalid folder name."
-msgstr "\"{name}\"은(는) 사용할 수 없는 폴더명입니다."
+msgstr "\"{name}\"은 사용할 수 없는 폴더명입니다."
 
 msgid "\"{name}\" is not an allowed folder name"
 msgstr "\"{name}\"은(는) 허용되지 않은 폴더명입니다."
