@@ -1,7 +1,6 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "extends": "@vue/tsconfig",
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
     "declaration": true,
     "esModuleInterop": true,
     "lib": ["DOM", "ESNext"],
@@ -10,13 +9,12 @@
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "target": "ESNext",
-    "sourceMap": true,
     "plugins": [
       { "name": "typescript-plugin-css-modules" }
     ]
   },
   "include": ["lib"],
   "vueCompilerOptions": {
-    "target": 2.7
+    "target": 3.5
   }
 }
