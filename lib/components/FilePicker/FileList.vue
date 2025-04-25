@@ -20,9 +20,9 @@
 					<th :aria-sort="sortByName" class="row-name">
 						<div class="header-wrapper">
 							<span class="file-picker__header-preview" />
-							<NcButton :wide="true"
-								type="tertiary"
-								data-test="file-picker_sort-name"
+							<NcButton data-test="file-picker_sort-name"
+								variant="tertiary"
+								wide
 								@click="toggleSorting('basename')">
 								<template #icon>
 									<IconSortAscending v-if="sortByName === 'ascending'" :size="20" />
@@ -34,7 +34,7 @@
 						</div>
 					</th>
 					<th :aria-sort="sortBySize" class="row-size">
-						<NcButton :wide="true" type="tertiary" @click="toggleSorting('size')">
+						<NcButton variant="tertiary" wide @click="toggleSorting('size')">
 							<template #icon>
 								<IconSortAscending v-if="sortBySize === 'ascending'" :size="20" />
 								<IconSortDescending v-else-if="sortBySize === 'descending'" :size="20" />
@@ -44,7 +44,7 @@
 						</NcButton>
 					</th>
 					<th :aria-sort="sortByModified" class="row-modified">
-						<NcButton :wide="true" type="tertiary" @click="toggleSorting('mtime')">
+						<NcButton variant="tertiary" wide @click="toggleSorting('mtime')">
 							<template #icon>
 								<IconSortAscending v-if="sortByModified === 'ascending'" :size="20" />
 								<IconSortDescending v-else-if="sortByModified === 'descending'" :size="20" />

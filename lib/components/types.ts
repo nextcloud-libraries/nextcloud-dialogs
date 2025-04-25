@@ -5,11 +5,7 @@
 
 import type { Node } from '@nextcloud/files'
 
-export enum DialogSeverity {
-	Info = 'info',
-	Warning = 'warning',
-	Error = 'error',
-}
+export type IDialogSeverity = 'info' | 'warning' | 'error'
 
 /**
  * Interface for defining buttons passed to the Dialog component
@@ -32,7 +28,7 @@ export interface IDialogButton {
 	 * Button type
 	 * @see https://nextcloud-vue-components.netlify.app/#/Components/NcButton
 	 */
-	type?: 'primary' | 'secondary' | 'error' | 'warning' | 'success'
+	variant?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'warning' | 'success'
 
 	/**
 	 * Disabled state of the button

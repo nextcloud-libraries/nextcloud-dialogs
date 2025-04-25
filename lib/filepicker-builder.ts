@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-import type { IFilePickerButton, IFilePickerButtonFactory, IFilePickerFilter } from './components/types'
 import type { Node } from '@nextcloud/files'
+import type { IFilePickerButton, IFilePickerButtonFactory, IFilePickerFilter } from './components/types.ts'
 
-import { basename } from 'path'
 import { spawnDialog } from '@nextcloud/vue/functions/dialog'
+import { basename } from 'path'
 import { n, t } from './utils/l10n'
 
 import IconMove from '@mdi/svg/svg/folder-move.svg?raw'
@@ -68,28 +68,26 @@ export class FilePicker<IsMultiSelect extends boolean> {
 	 * @return Promise with array of picked files or rejected promise on close without picking
 	 */
 	public async pickNodes(): Promise<Node[]> {
-		const { FilePickerVue } = await import('./components/FilePicker/index')
+		const { default: FilePickerVue } = await import('./components/FilePicker/FilePicker.vue')
 
-		return new Promise((resolve, reject) => {
-			spawnDialog(FilePickerVue, {
-				allowPickDirectory: this.directoriesAllowed,
-				buttons: this.buttons,
-				container: this.container,
-				name: this.title,
-				path: this.path,
-				mimetypeFilter: this.mimeTypeFilter,
-				multiselect: this.multiSelect,
-				filterFn: this.filter,
-				disabledNavigation: this.disabledNavigation,
-			}, (...rest: unknown[]) => {
-				const [nodes] = rest as [nodes: Node[]]
-				if (!Array.isArray(nodes) || nodes.length === 0) {
-					reject(new FilePickerClosed('FilePicker: No nodes selected'))
-				} else {
-					resolve(nodes)
-				}
-			})
+		const [nodes] = await spawnDialog(FilePickerVue, {
+			allowPickDirectory: this.directoriesAllowed,
+			buttons: this.buttons,
+			name: this.title,
+			path: this.path,
+			mimetypeFilter: this.mimeTypeFilter,
+			multiselect: this.multiSelect,
+			filterFn: this.filter,
+			disabledNavigation: this.disabledNavigation,
+		}, {
+			container: this.container,
 		})
+
+		if (!Array.isArray(nodes) || nodes.length === 0) {
+			throw new FilePickerClosed('FilePicker: No nodes selected')
+		}
+
+		return nodes
 	}
 
 	/**
@@ -215,24 +213,24 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 				}
 				buttons.push({
 					callback: () => {},
-					type: 'primary',
 					label,
+					variant: 'primary',
 				})
 			}
 			if (type === FilePickerType.CopyMove || type === FilePickerType.Copy) {
 				buttons.push({
 					callback: () => {},
 					label: target ? t('Copy to {target}', { target }) : t('Copy'),
-					type: 'primary',
 					icon: IconCopy,
+					variant: 'primary',
 				})
 			}
 			if (type === FilePickerType.Move || type === FilePickerType.CopyMove) {
 				buttons.push({
 					callback: () => {},
 					label: target ? t('Move to {target}', { target }) : t('Move'),
-					type: type === FilePickerType.Move ? 'primary' : 'secondary',
 					icon: IconMove,
+					variant: type === FilePickerType.Move ? 'primary' : 'secondary',
 				})
 			}
 			return buttons

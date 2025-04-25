@@ -62,7 +62,7 @@ describe('FilePicker FileList', () => {
 		const consoleWarning = vi.spyOn(console, 'warn')
 
 		const wrapper = shallowMount(FileList, {
-			propsData: {
+			props: {
 				currentView: 'files',
 				multiselect: false,
 				allowPickDirectory: false,
@@ -80,7 +80,7 @@ describe('FilePicker FileList', () => {
 
 	it('header checkbox is not shown if multiselect is `false`', () => {
 		const wrapper = shallowMount(FileList, {
-			propsData: {
+			props: {
 				currentView: 'files',
 				multiselect: false,
 				allowPickDirectory: false,
@@ -95,7 +95,7 @@ describe('FilePicker FileList', () => {
 
 	it('header checkbox is shown if multiselect is `true`', async () => {
 		const wrapper = shallowMount(FileList, {
-			propsData: {
+			props: {
 				currentView: 'files',
 				multiselect: true,
 				allowPickDirectory: false,
@@ -111,15 +111,15 @@ describe('FilePicker FileList', () => {
 		const selectAll = wrapper.find('[data-testid="select-all-checkbox"]')
 		expect(selectAll.exists()).toBe(true)
 		// there is an aria label
-		expect(selectAll.props('ariaLabel')).toBeTruthy()
+		expect(selectAll.attributes('arialabel')).toBeTruthy()
 		// no checked
-		expect(selectAll.props('modelValue')).toBe(false)
+		expect(selectAll.attributes('modelvalue')).toBe('false')
 	})
 
 	it('header checkbox is checked when all nodes are selected', async () => {
 		const nodes = [...exampleNodes]
 		const wrapper = shallowMount(FileList, {
-			propsData: {
+			props: {
 				currentView: 'files',
 				multiselect: true,
 				allowPickDirectory: false,
@@ -131,14 +131,14 @@ describe('FilePicker FileList', () => {
 		})
 
 		const selectAll = wrapper.find('[data-testid="select-all-checkbox"]')
-		expect(selectAll.props('modelValue')).toBe(true)
+		expect(selectAll.attributes('modelvalue')).toBe('true')
 	})
 
 	describe('file list sorting', () => {
 		it('is sorted initially by name', async () => {
 			const nodes = [...exampleNodes]
 			const wrapper = mount(FileList, {
-				propsData: {
+				props: {
 					currentView: 'files',
 					multiselect: true,
 					allowPickDirectory: false,
@@ -169,7 +169,7 @@ describe('FilePicker FileList', () => {
 		it('can sort descending by name', async () => {
 			const nodes = [...exampleNodes]
 			const wrapper = mount(FileList, {
-				propsData: {
+				props: {
 					currentView: 'files',
 					multiselect: true,
 					allowPickDirectory: false,

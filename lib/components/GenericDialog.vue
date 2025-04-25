@@ -4,8 +4,8 @@
 -->
 <template>
 	<NcDialog dialog-classes="nc-generic-dialog"
-		:buttons="buttons"
-		:name="name"
+		:buttons
+		:name
 		:message="text"
 		@update:open="$emit('close')">
 		<NcNoteCard v-if="severity" :type="severity">
@@ -17,11 +17,9 @@
 </template>
 
 <script setup lang="ts">
-import type { IDialogButton } from './types'
+import type { IDialogButton, IDialogSeverity } from './types.ts'
 
 import { onMounted, onUnmounted } from 'vue'
-import { DialogSeverity } from './types'
-
 import NcDialog from '@nextcloud/vue/components/NcDialog'
 import NcNoteCard from '@nextcloud/vue/components/NcNoteCard'
 
@@ -50,7 +48,11 @@ const props = defineProps<{
 	/**
 	 * Severity of the dialog - if a notecard is used
 	 */
-	severity?: DialogSeverity
+	severity?: IDialogSeverity
+}>()
+
+defineEmits<{
+	close: []
 }>()
 
 /**

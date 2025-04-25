@@ -3,7 +3,7 @@
   - SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 <template>
-	<NcDialog :open.sync="isOpen"
+	<NcDialog v-model:open="isOpen"
 		:container="container"
 		:buttons="dialogButtons"
 		:name="name"
@@ -13,16 +13,16 @@
 		navigation-classes="file-picker__navigation"
 		@update:open="handleClose">
 		<template #navigation="{ isCollapsed }">
-			<FilePickerNavigation :current-view.sync="currentView"
-				:filter-string.sync="filterString"
-				:is-collapsed="isCollapsed"
-				:disabled-navigation="disabledNavigation" />
+			<FilePickerNavigation v-model:current-view="currentView"
+				v-model:filter-string="filterString"
+				:is-collapsed
+				:disabled-navigation />
 		</template>
 
 		<div class="file-picker__main">
 			<!-- Header title / file list breadcrumbs -->
 			<FilePickerBreadcrumbs v-if="currentView === 'files'"
-				:path.sync="currentPath"
+				v-model:path="currentPath"
 				:show-menu="allowPickDirectory"
 				@create-node="onCreateFolder" />
 			<div v-else class="file-picker__view">
@@ -32,8 +32,8 @@
 			<!-- File list -->
 			<!-- If loading or files found show file list, otherwise show empty content-->
 			<FileList v-if="isLoading || filteredFiles.length > 0"
-				:path.sync="currentPath"
-				:selected-files.sync="selectedFiles"
+				v-model:path="currentPath"
+				v-model:selected-files="selectedFiles"
 				:allow-pick-directory="allowPickDirectory"
 				:current-view="currentView"
 				:files="filteredFiles"
@@ -61,7 +61,7 @@
 
 <script setup lang="ts">
 import type { Node } from '@nextcloud/files'
-import type { IFilePickerButton, IFilePickerButtonFactory, IFilePickerFilter } from '../types.ts'
+import type { IDialogButton, IFilePickerButton, IFilePickerButtonFactory, IFilePickerFilter } from '../types.ts'
 import type { IFilesViewId } from '../../composables/views.ts'
 
 import IconFile from 'vue-material-design-icons/File.vue'
@@ -165,7 +165,7 @@ const dialogButtons = computed(() => {
 			isHandlingCallback = true
 			handleButtonClick(button.callback, nodes)
 		},
-	} as IFilePickerButton))
+	} satisfies IDialogButton))
 })
 
 /**
@@ -311,12 +311,6 @@ const handleClose = (open: boolean) => {
 	if (!open && !isHandlingCallback) {
 		emit('close')
 	}
-}
-</script>
-
-<script lang="ts">
-export default {
-	name: 'FilePicker',
 }
 </script>
 

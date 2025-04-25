@@ -19,7 +19,7 @@
 				@click="emit('update:path', dir.path)" />
 		</template>
 		<template v-if="showMenu" #actions>
-			<NcActions :open.sync="actionsOpen"
+			<NcActions v-model:open="actionsOpen"
 				:aria-label="t('Create directory')"
 				:force-menu="true"
 				:force-name="true"
@@ -30,7 +30,7 @@
 					<IconPlus :size="20" />
 				</template>
 				<NcActionInput ref="nameInput"
-					:value.sync="newNodeName"
+					v-model="newNodeName"
 					:label="t('New folder')"
 					:placeholder="t('New folder name')"
 					@submit="onSubmit"
@@ -45,8 +45,6 @@
 </template>
 
 <script setup lang="ts">
-import type Vue from 'vue'
-
 import IconFolder from 'vue-material-design-icons/Folder.vue'
 import IconHome from 'vue-material-design-icons/Home.vue'
 import IconPlus from 'vue-material-design-icons/Plus.vue'
@@ -55,7 +53,7 @@ import NcActions from '@nextcloud/vue/components/NcActions'
 import NcActionInput from '@nextcloud/vue/components/NcActionInput'
 import NcBreadcrumbs from '@nextcloud/vue/components/NcBreadcrumbs'
 import NcBreadcrumb from '@nextcloud/vue/components/NcBreadcrumb'
-import { computed, ref } from 'vue'
+import { computed, ref, useTemplateRef } from 'vue'
 import { t } from '../../utils/l10n'
 
 const props = defineProps<{
@@ -83,7 +81,7 @@ const actionsOpen = ref(false)
  */
 const newNodeName = ref('')
 
-const nameInput = ref<Vue>()
+const nameInput = useTemplateRef('nameInput')
 
 /**
  * Validate user folder name input
