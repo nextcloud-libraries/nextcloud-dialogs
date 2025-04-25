@@ -2,24 +2,14 @@
   "name": "@nextcloud/dialogs",
   "version": "7.0.0-rc.0",
   "description": "Nextcloud dialog helpers",
-  "types": "dist/index.d.ts",
-  "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
   "type": "module",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
-    },
-    "./filepicker.js": {
-      "types": "./dist/filepicker.d.ts",
-      "import": "./dist/filepicker.mjs",
-      "require": "./dist/filepicker.cjs"
+      "import": "./dist/index.mjs"
     },
     "./style.css": {
-      "import": "./dist/style.css",
-      "require": "./dist/style.css"
+      "import": "./dist/style.css"
     }
   },
   "scripts": {
@@ -95,7 +85,7 @@
     "vue-material-design-icons": "^5.3.1"
   },
   "engines": {
-    "node": "^20.0.0",
+    "node": "^20 || ^22",
     "npm": "^10.0.0"
   },
   "browserslist": [

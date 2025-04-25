@@ -22,18 +22,13 @@ const translations = readdirSync('./l10n')
 
 export default createLibConfig({
 	index: 'lib/index.ts',
-	filepicker: 'lib/filepicker.ts',
 }, {
 	config: {
 		build: {
-			// Fix for vite config, TODO: remove with next release
 			cssCodeSplit: false,
 		},
 	},
-	// We build for ESM and legacy common js
-	libraryFormats: ['es', 'cjs'],
-	// We want one single output CSS file
-	inlineCSS: false,
+	libraryFormats: ['es'],
 	// Packages that should be externalized or bundled
 	nodeExternalsOptions: {
 		// for subpath imports like '@nextcloud/l10n/gettext'
