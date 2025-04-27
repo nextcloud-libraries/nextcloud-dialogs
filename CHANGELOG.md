@@ -6,6 +6,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## UNRELEASED
+### Notes
+
+The export of the file picker Vue component is deprecated and will be removed in the next version.
+Instead please use the `FilePickerBuilder`.
+
 ## 6.1.1
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.1.0...v6.1.1)
 
