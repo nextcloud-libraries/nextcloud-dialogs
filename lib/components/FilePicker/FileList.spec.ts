@@ -158,12 +158,12 @@ describe('FilePicker FileList', () => {
 			// all nodes are shown
 			expect(rows.length).toBe(nodes.length)
 			// by default favorites are sorted before other files
-			expect(rows.at(0).attributes('data-filename')).toBe('favorite.txt')
+			expect(rows.at(0)!.attributes('data-filename')).toBe('favorite.txt')
 			// folder are sorted first
-			expect(rows.at(1).attributes('data-filename')).toBe('directory')
+			expect(rows.at(1)!.attributes('data-filename')).toBe('directory')
 			// other files are ascending
-			expect(rows.at(2).attributes('data-filename')).toBe('a-file.txt')
-			expect(rows.at(3).attributes('data-filename')).toBe('b-file.txt')
+			expect(rows.at(2)!.attributes('data-filename')).toBe('a-file.txt')
+			expect(rows.at(3)!.attributes('data-filename')).toBe('b-file.txt')
 		})
 
 		it('can sort descending by name', async () => {
@@ -193,12 +193,12 @@ describe('FilePicker FileList', () => {
 			// all nodes are shown
 			expect(rows.length).toBe(nodes.length)
 			// by default favorites are sorted before other files
-			expect(rows.at(0).attributes('data-filename')).toBe('favorite.txt')
+			expect(rows.at(0)!.attributes('data-filename')).toBe('favorite.txt')
 			// folder are sorted first
-			expect(rows.at(1).attributes('data-filename')).toBe('directory')
+			expect(rows.at(1)!.attributes('data-filename')).toBe('directory')
 			// other files are descending
-			expect(rows.at(2).attributes('data-filename')).toBe('b-file.txt')
-			expect(rows.at(3).attributes('data-filename')).toBe('a-file.txt')
+			expect(rows.at(2)!.attributes('data-filename')).toBe('b-file.txt')
+			expect(rows.at(3)!.attributes('data-filename')).toBe('a-file.txt')
 		})
 	})
 })

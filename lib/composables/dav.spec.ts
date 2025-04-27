@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-import type { Ref } from 'vue'
+import type { ComponentPublicInstance, Ref } from 'vue'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { shallowMount } from '@vue/test-utils'
 import { defineComponent, ref, toRef, nextTick, h } from 'vue'
@@ -20,9 +20,10 @@ const nextcloudFiles = vi.hoisted(() => ({
 }))
 vi.mock('@nextcloud/files', () => nextcloudFiles)
 
-const waitLoaded = (vue: ReturnType<typeof shallowMount>) => new Promise((resolve) => {
+// eslint-disable-next-line @typescript-eslint/ban-types
+const waitLoaded = (vm: ComponentPublicInstance<{}, { isLoading: boolean }>) => new Promise((resolve) => {
 	const w = () => {
-		if (vue.vm.isLoading) window.setTimeout(w, 50)
+		if (vm.isLoading) window.setTimeout(w, 50)
 		else resolve(true)
 	}
 	w()
@@ -90,14 +91,15 @@ describe('dav composable', () => {
 		})
 
 		// wait until files are loaded
-		await waitLoaded(vue)
+		await waitLoaded(vue.vm)
 
 		expect(vue.vm.files).toEqual(['node 1', 'node 2'])
 	})
 
 	it('reloads on path change', async () => {
 		const client = {
-			getDirectoryContents: vi.fn(() => ({ data: [] })),
+			// eslint-disable-next-line @typescript-eslint/no-unused-vars
+			getDirectoryContents: vi.fn((_path: string) => ({ data: [] })),
 		}
 		nextcloudFiles.davGetClient.mockImplementationOnce(() => client)
 
@@ -110,13 +112,13 @@ describe('dav composable', () => {
 		})
 
 		// wait until files are loaded
-		await waitLoaded(vue)
+		await waitLoaded(vue.vm)
 
 		expect(client.getDirectoryContents).toBeCalledTimes(1)
 		expect(client.getDirectoryContents.mock.calls[0][0]).toBe(`${nextcloudFiles.davRootPath}/`)
 
 		vue.setProps({ currentPath: '/other' })
-		await waitLoaded(vue)
+		await waitLoaded(vue.vm)
 
 		expect(client.getDirectoryContents).toBeCalledTimes(2)
 		expect(client.getDirectoryContents.mock.calls[1][0]).toBe(`${nextcloudFiles.davRootPath}/other`)
@@ -124,7 +126,8 @@ describe('dav composable', () => {
 
 	it('reloads on view change', async () => {
 		const client = {
-			getDirectoryContents: vi.fn(() => ({ data: [] })),
+			// eslint-disable-next-line @typescript-eslint/no-unused-vars
+			getDirectoryContents: vi.fn((_path: string) => ({ data: [] })),
 			search: vi.fn(() => ({ data: { results: [], truncated: false } })),
 		}
 		nextcloudFiles.davGetClient.mockImplementationOnce(() => client)
@@ -138,14 +141,14 @@ describe('dav composable', () => {
 		})
 
 		// wait until files are loaded
-		await waitLoaded(vue)
+		await waitLoaded(vue.vm)
 
 		expect(client.search).not.toBeCalled()
 		expect(client.getDirectoryContents).toBeCalledTimes(1)
 		expect(client.getDirectoryContents.mock.calls[0][0]).toBe(`${nextcloudFiles.davRootPath}/`)
 
 		vue.setProps({ currentView: 'recent' })
-		await waitLoaded(vue)
+		await waitLoaded(vue.vm)
 
 		// Uses search instead of getDirectoryContents
 		expect(client.getDirectoryContents).toBeCalledTimes(1)

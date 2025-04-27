@@ -47,7 +47,7 @@ export interface IFilePickerButton extends Omit<IDialogButton, 'callback'> {
 	 *
 	 * @param nodes Array of `@nextcloud/files` Nodes that were selected
 	 */
-	callback: (nodes: Node[]) => void
+	callback: (nodes: Node[]) => void | Promise<void>
 }
 
 export type IFilePickerButtonFactory = (selectedNodes: Node[], currentPath: string, currentView: string) => IFilePickerButton[]

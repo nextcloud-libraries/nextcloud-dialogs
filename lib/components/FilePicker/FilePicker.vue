@@ -4,7 +4,6 @@
 -->
 <template>
 	<NcDialog v-model:open="isOpen"
-		:container="container"
 		:buttons="dialogButtons"
 		:name="name"
 		size="large"
@@ -95,13 +94,7 @@ const props = withDefaults(defineProps<{
 	/**
 	 * Is the navigation disabled
 	 */
-	 disabledNavigation?: boolean
-
-	/**
-	 * Where to mount the dialog
-	 * @default 'body'
-	 */
-	container?: string
+	disabledNavigation?: boolean
 
 	/**
 	 * Custom filter function used to filter pickable files
@@ -130,7 +123,6 @@ const props = withDefaults(defineProps<{
 }>(), {
 	allowPickDirectory: false,
 	disabledNavigation: false,
-	container: 'body',
 	filterFn: undefined,
 	mimetypeFilter: () => [],
 	multiselect: true,
@@ -175,7 +167,7 @@ const dialogButtons = computed(() => {
 let isHandlingCallback = false
 
 const handleButtonClick = async (callback: IFilePickerButton['callback'], nodes: Node[]) => {
-	callback(nodes)
+	await callback(nodes)
 	emit('close', nodes)
 	// Unlock close
 	isHandlingCallback = false
