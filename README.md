@@ -83,6 +83,10 @@ const paths = await filepicker.pick()
 ```
 
 #### Use the Vue component directly
+
+> [!WARNING]  
+> The Vue component is deprecated and will no longer be exported in a future version.
+
 We also provide the `@nextcloud/dialogs/filepicker.js` entry point to allow using the Vue component directly:
 
 ```vue
