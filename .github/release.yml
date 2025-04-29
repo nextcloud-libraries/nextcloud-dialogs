@@ -1,0 +1,35 @@
+# https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes
+# SPDX-FileCopyrightText: 2021-2024 Nextcloud GmbH and Nextcloud contributors
+# SPDX-License-Identifier: CC0-1.0
+changelog:
+  exclude:
+    authors:
+      - dependabot
+      - dependabot[bot]
+      - nextcloud-bot
+      - nextcloud-command
+    labels:
+      - automated
+      - dependencies
+      - duplicate
+      - invalid
+      - l10n
+      - question
+      - wontfix
+
+  categories:
+    - title: 🔐 Security
+      labels:
+        - security
+    - title: 💥 Breaking Changes
+      labels:
+        - breaking
+    - title: 🚀 Enhancements
+      labels:
+        - enhancement
+    - title: 🐛 Fixed bugs
+      labels:
+        - bug
+    - title: Other Changes
+      labels:
+        - "*"
