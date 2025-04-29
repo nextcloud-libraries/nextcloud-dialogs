@@ -12,6 +12,10 @@ All notable changes to this project will be documented in this file.
 The export of the file picker Vue component is deprecated and will be removed in the next version.
 Instead please use the `FilePickerBuilder`.
 
+The `Dialog.hide` method is deprecated.
+Instead only user interaction should close dialogs,
+for this use the promise returned by `Dialog.show` which will resolve if the user answered the dialog and rejected if the user aborted (closed) the dialog.
+
 ## 6.1.1
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.1.0...v6.1.1)
 

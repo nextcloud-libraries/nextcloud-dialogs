@@ -54,7 +54,7 @@ export class Dialog {
 	 * Spawn and show the dialog - if already open the previous instance will be destroyed
 	 * @return Promise that resolves when the dialog is answered successfully and rejects on close
 	 */
-	show() {
+	async show() {
 		if (this.#dialog) {
 			this.#dialog.$destroy()
 		}
@@ -75,6 +75,8 @@ export class Dialog {
 
 	/**
 	 * Hide and destroy the current dialog instance
+	 *
+	 * @deprecated use the promise of the `show` methods for the user interaction.
 	 */
 	hide() {
 		this.#dialog?.$destroy()
