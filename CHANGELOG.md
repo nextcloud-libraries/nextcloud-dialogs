@@ -6,7 +6,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## UNRELEASED
+## [v6.2.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.1.1...v6.2.0)
 ### Notes
 
 The export of the file picker Vue component is deprecated and will be removed in the next version.
@@ -16,11 +16,36 @@ The `Dialog.hide` method is deprecated.
 Instead only user interaction should close dialogs,
 for this use the promise returned by `Dialog.show` which will resolve if the user answered the dialog and rejected if the user aborted (closed) the dialog.
 
+### Added
+* feat: allow picking files using the Nextcloud Nodes API [\#1730](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1730) \([susnux](https://github.com/susnux)\)
+
+### Fixed
+* fix(file-picker): align folder design with Nextcloud files app [\#1733](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1733) \([susnux](https://github.com/susnux)\)
+* fix: the nc-vue dialogs function module is called `dialog` not `dialogs` [\#1732](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1732) \([susnux](https://github.com/susnux)\)
+* perf: do not pre-load folder mime icon [\#1734](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1734) \([susnux](https://github.com/susnux)\)
+
+### Changed
+* docs: Update README.md [\#1627](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1627) \([susnux](https://github.com/susnux)\)
+* chore: update workflows [\#1609](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1609) \([susnux](https://github.com/susnux)\)
+* chore: simplify vitest config and fix some build issues [\#1606](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1606) \([susnux](https://github.com/susnux)\)
+* chore: supported branches [\#1608](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1608) \([susnux](https://github.com/susnux)\)
+* chore: prepare for vue3 migration [\#1681](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1681) \([ShGKme](https://github.com/ShGKme)\)
+* chore: deprecate export of filepicker Vue component [\#1728](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1728) \([susnux](https://github.com/susnux)\)
+* chore: Nextcloud 28 is EOL so is nextcloud-dialogs v5 [\#1729](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1729) \([susnux](https://github.com/susnux)\)
+* chore: deprecate `Dialog.hide` [\#1731](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1731) \([susnux](https://github.com/susnux)\)
+* chore(deps): Bump axios to 1.8.2
+* chore(deps): Bump webdav to 5.8.0
+* chore(deps): Bump dompurify to 3.2.4
+* chore(deps): Bump `@nextcloud/event-bus` to 3.3.2
+* chore(deps): Bump `@nextcloud/files` to 3.10.2
+* chore(deps): Bump `@nextcloud/l10n` to 3.2.0
+* chore(deps): Bump `@vueuse/core` to 11.3.0
+
 ## 6.1.1
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.1.0...v6.1.1)
 
 ## Fixed
-* fix(toast): loading svg by @skjnldsv in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1559
+* fix(toast): loading svg [\#1559](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1559) \([skjnldsv](https://github.com/skjnldsv)\)
 * fixed css output file via @nextcloud/vite-config update
 
 ## Changed
@@ -36,11 +61,11 @@ for this use the promise returned by `Dialog.show` which will resolve if the use
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.0.1...v6.1.0)
 
 ### Enhancements
-* feat(toast): add loading toast by @skjnldsv in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1554
-* feat(files): Add encrypted icon for end-to-end encrypted folder by @JuliaKirschenheuter in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1545
+* feat(toast): add loading toast [\#1554](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1554) \([skjnldsv](https://github.com/skjnldsv)\)
+* feat(files): Add encrypted icon for end-to-end encrypted folder [\#1545](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1545) \([JuliaKirschenheuter](https://github.com/JuliaKirschenheuter)\)
 
 ### Fixed
-* Fix npm audit by @nextcloud-command in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1502
+* Fix npm audit [\#1502](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1502) \([nextcloud-command](https://github.com/nextcloud-command)\)
 
 ### Changed
 * Updated translations
@@ -50,8 +75,8 @@ for this use the promise returned by `Dialog.show` which will resolve if the use
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.0.0...v6.0.1)
 
 ### Fixed
-* fix: Mention supported versions in README by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1422
-* fix: Rate-limit image previews by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1478
+* fix: Mention supported versions in README [\#1422](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1422) \([susnux](https://github.com/susnux)\)
+* fix: Rate-limit image previews [\#1478](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1478) \([susnux](https://github.com/susnux)\)
 
 ### Changed
 * Updated translations
@@ -177,7 +202,7 @@ Technically this is the same as v5.3.5, but v5.3.3 was a breaking change as it d
 [Full Changelog](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v5.1.2...v5.2.0)
 
 ### Enhancements
-* feat: allow to disable file picker navigation by @skjnldsv in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1261
+* feat: allow to disable file picker navigation [\#1261](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1261) \([skjnldsv](https://github.com/skjnldsv)\)
 
 ### Fixed bug
 * fix(FilePicker): Adjust margin of view-selector to be consistent with filter input
