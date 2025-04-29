@@ -6,6 +6,7 @@
 import type { INode } from '@nextcloud/files'
 import type { MaybeRef } from '@vueuse/core'
 
+import { FileType } from '@nextcloud/files'
 import { generateUrl } from '@nextcloud/router'
 import { toValue } from '@vueuse/core'
 import { ref, watchEffect } from 'vue'
@@ -74,7 +75,7 @@ export const usePreviewURL = (node: MaybeRef<INode>, options?: MaybeRef<PreviewO
 	watchEffect(() => {
 		previewLoaded.value = false
 		previewURL.value = getPreviewURL(toValue(node), toValue(options || {}))
-		if (previewURL.value) {
+		if (previewURL.value && toValue(node).type === FileType.File) {
 			preloadImage(previewURL.value.href).then((success: boolean) => {
 				previewLoaded.value = success
 			})
