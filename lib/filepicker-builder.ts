@@ -63,11 +63,11 @@ export class FilePicker<IsMultiSelect extends boolean> {
 	}
 
 	/**
-	 * Pick files using the FilePicker
+	 * Pick files using the FilePicker.
 	 *
 	 * @return Promise with array of picked files or rejected promise on close without picking
 	 */
-	public async pick(): Promise<IsMultiSelect extends true ? string[] : string> {
+	public async pickNodes(): Promise<Node[]> {
 		const { FilePickerVue } = await import('./components/FilePicker/index')
 
 		return new Promise((resolve, reject) => {
@@ -86,14 +86,23 @@ export class FilePicker<IsMultiSelect extends boolean> {
 				if (!Array.isArray(nodes) || nodes.length === 0) {
 					reject(new FilePickerClosed('FilePicker: No nodes selected'))
 				} else {
-					if (this.multiSelect) {
-						resolve((nodes as Node[]).map((node) => node.path) as (IsMultiSelect extends true ? string[] : string))
-					} else {
-						resolve(((nodes as Node[])[0]?.path || '/') as (IsMultiSelect extends true ? string[] : string))
-					}
+					resolve(nodes)
 				}
 			})
 		})
+	}
+
+	/**
+	 * Pick files using the FilePicker
+	 *
+	 * @return Promise with array of paths of picked files or rejected promise on close without picking
+	 */
+	public async pick(): Promise<IsMultiSelect extends true ? string[] : string> {
+		const nodes = await this.pickNodes()
+		if (this.multiSelect) {
+			return (nodes[0]?.path ?? '/') as (IsMultiSelect extends true ? string[] : string)
+		}
+		return nodes.map((node) => node.path) as (IsMultiSelect extends true ? string[] : string)
 	}
 
 }
