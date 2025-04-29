@@ -6,7 +6,7 @@
 import type { IDialogButton } from './components/types'
 import type Vue from 'vue'
 
-import { spawnDialog } from '@nextcloud/vue/functions/dialogs'
+import { spawnDialog } from '@nextcloud/vue/functions/dialog'
 
 import { DialogSeverity } from './components/types'
 import GenericDialog from './components/GenericDialog.vue'

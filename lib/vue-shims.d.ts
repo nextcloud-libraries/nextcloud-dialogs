@@ -12,7 +12,7 @@ declare module '@nextcloud/vue/components/*' {
 	export default Vue
 }
 
-declare module '@nextcloud/vue/functions/dialogs' {
+declare module '@nextcloud/vue/functions/dialog' {
 	import type { Component, AsyncComponent } from 'vue'
 	interface DialogProps {
 		[index: string]: unknown
