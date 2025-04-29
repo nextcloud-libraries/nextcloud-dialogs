@@ -7,6 +7,7 @@
  * (leading icon on the name row and header)
  */
 .file-picker__file-icon {
+	position: relative;
 	width: 32px;
 	height: 32px;
 	min-width: 32px;
@@ -16,4 +17,15 @@
 	// for the fallback
 	display: flex;
 	justify-content: center;
+}
+
+.file-picker__file-icon--primary {
+	color: var(--color-primary-element);
+}
+
+.file-picker__file-icon-overlay {
+	color: var(--color-primary-element-text);
+	position: absolute;
+	// 32px icon size - 16px overlay size + 2px padding to align with folder icon
+	inset-block-start: 10px;
 }

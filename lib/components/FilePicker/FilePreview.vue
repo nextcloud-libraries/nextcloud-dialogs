@@ -6,28 +6,32 @@
 	<div :style="previewLoaded ? { backgroundImage: `url(${previewURL})`} : undefined"
 		:class="fileListIconStyles['file-picker__file-icon']">
 		<template v-if="!previewLoaded">
-			<IconFile v-if="isFile" :size="20" />
-			<component :is="folderDecorationIcon" v-else-if="folderDecorationIcon" />
-			<IconFolder v-else :size="20" />
+			<IconFile v-if="isFile" :size="32" />
+			<template v-else>
+				<NcIconSvgWrapper v-if="folderDecorationIcon"
+					:class="fileListIconStyles['file-picker__file-icon-overlay']"
+					inline
+					:path="folderDecorationIcon"
+					:size="16" />
+				<IconFolder :class="fileListIconStyles['file-picker__file-icon--primary']"
+					:size="32" />
+			</template>
 		</template>
 	</div>
 </template>
 
 <script setup lang="ts">
 import type { INode } from '@nextcloud/files'
+
+import { mdiAccountPlus, mdiGroup, mdiLink, mdiLock, mdiNetwork, mdiTag } from '@mdi/js'
 import { FileType } from '@nextcloud/files'
 import { ShareType } from '@nextcloud/sharing'
 import { computed, ref, toRef } from 'vue'
 import { usePreviewURL } from '../../composables/preview'
 
+import NcIconSvgWrapper from '@nextcloud/vue/components/NcIconSvgWrapper'
 import IconFile from 'vue-material-design-icons/File.vue'
 import IconFolder from 'vue-material-design-icons/Folder.vue'
-import LockIcon from 'vue-material-design-icons/Lock.vue'
-import TagIcon from 'vue-material-design-icons/Tag.vue'
-import LinkIcon from 'vue-material-design-icons/Link.vue'
-import AccountPlusIcon from 'vue-material-design-icons/AccountPlus.vue'
-import NetworkIcon from 'vue-material-design-icons/Network.vue'
-import AccountGroupIcon from 'vue-material-design-icons/AccountGroup.vue'
 
 // CSS modules
 import fileListIconStylesModule from './FileListIcon.module.scss'
@@ -53,33 +57,33 @@ const folderDecorationIcon = computed(() => {
 
 	// Encrypted folders
 	if (props.node.attributes?.['is-encrypted'] === 1) {
-		return LockIcon
+		return mdiLock
 	}
 
 	// System tags
 	if (props.node.attributes?.['is-tag']) {
-		return TagIcon
+		return mdiTag
 	}
 
 	// Link and mail shared folders
 	const shareTypes = Object.values(props.node.attributes?.['share-types'] || {}).flat() as number[]
 	if (shareTypes.some(type => type === ShareType.Link || type === ShareType.Email)) {
-		return LinkIcon
+		return mdiLink
 	}
 
 	// Shared folders
 	if (shareTypes.length > 0) {
-		return AccountPlusIcon
+		return mdiAccountPlus
 	}
 
 	switch (props.node.attributes?.['mount-type']) {
 	case 'external':
 	case 'external-session':
-		return NetworkIcon
+		return mdiNetwork
 	case 'group':
-		return AccountGroupIcon
+		return mdiGroup
 	case 'shared':
-		return AccountPlusIcon
+		return mdiAccountPlus
 	}
 
 	return null
