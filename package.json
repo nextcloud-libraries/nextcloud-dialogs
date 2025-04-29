@@ -29,6 +29,7 @@
     "dev": "vite --mode development build",
     "dev:watch": "vite --mode development build --watch",
     "doc": "typedoc --tsconfig tsconfig-typedoc.json --highlightLanguages vue --plugin typedoc-plugin-missing-exports --out dist/doc dist/index.d.ts dist/filepicker.d.ts && touch dist/doc/.nojekyll",
+    "prerelease:format-changelog": "node build/format-changelog.mjs",
     "lint": "eslint lib/",
     "lint:fix": "eslint --fix lib/",
     "stylelint": "stylelint lib/**/*.vue",
