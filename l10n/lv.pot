@@ -1,15 +1,127 @@
 # 
 # Translators:
-# Transifex Bot <>, 2023
+# Papuass <martinsb@gmail.com>, 2024
+# Armīns Jeltajevs <armins.jeltajevs@gmail.com>, 2024
+# Edgars Andersons, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Transifex Bot <>, 2023\n"
+"Last-Translator: Edgars Andersons, 2025\n"
 "Language-Team: Latvian (https://app.transifex.com/nextcloud/teams/64236/lv/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: lv\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
 
-#: lib/toast.ts:223
+msgid "\"{name}\" is an invalid folder name."
+msgstr "\"{name}\" nav derīgs mapes nosaukums."
+
+msgid "\"{name}\" is not an allowed folder name"
+msgstr "\"{name}\" nav atļauts mapes nosaukums"
+
+msgid "\"/\" is not allowed inside a folder name."
+msgstr "\"/\" nav atļauts mapes nosaukuma izmantošanā."
+
+msgid "All files"
+msgstr "Visas datnes"
+
+msgid "Choose"
+msgstr "Izvēlieties"
+
+msgid "Choose {file}"
+msgstr "Izvēlieties {file}"
+
+msgid "Choose %n file"
+msgid_plural "Choose %n files"
+msgstr[0] "Izvēlēties %n datņu"
+msgstr[1] "Izvēlēties %n datni"
+msgstr[2] "Izvēlēties %n datnes"
+
+msgid "Copy"
+msgstr "Kopēt"
+
+msgid "Copy to {target}"
+msgstr "Kopēt uz {target}"
+
+msgid "Could not create the new folder"
+msgstr "Nevarēja izveidot jaunu mapi"
+
+msgid "Could not load files settings"
+msgstr "Nevarēja ielādēt datņu iestatījumus"
+
+msgid "Could not load files views"
+msgstr "Nevarēja ielādēt datņu apskatījumus"
+
+msgid "Create directory"
+msgstr "Izveidot direktoriju"
+
+msgid "Current view selector"
+msgstr "Pašreizēja skata atlasītājs"
+
+msgid "Favorites"
+msgstr "Favorīti"
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr "Šeit parādīsies datnes un mapes, kas tiks atzīmētas kā iecienītas."
+
+msgid "Files and folders you recently modified will show up here."
+msgstr "Šeit parādīsies datnes un mapes, kuras nesen tika izmainītas."
+
+msgid "Filter file list"
+msgstr "Atlasīt datņu sarakstu"
+
+msgid "Folder name cannot be empty."
+msgstr "Mapes nosaukums nevar būt tukšs."
+
+msgid "Home"
+msgstr "Sākums"
+
+msgid "Modified"
+msgstr "Izmaninīta"
+
+msgid "Move"
+msgstr "Pārvietot"
+
+msgid "Move to {target}"
+msgstr "Pārvietot uz {target}"
+
+msgid "Name"
+msgstr "Nosaukums"
+
+msgid "New"
+msgstr "Jauns"
+
+msgid "New folder"
+msgstr "Jauna mape"
+
+msgid "New folder name"
+msgstr "Jaunas mapes nosaukums"
+
+msgid "No files in here"
+msgstr "Šeit nav datņu"
+
+msgid "No files matching your filter were found."
+msgstr "Netika atrasta neviena datne, kas atbilst atlasei."
+
+msgid "No matching files"
+msgstr "Nav atbilstošu datņu"
+
+msgid "Recent"
+msgstr "Nesenās"
+
+msgid "Select all entries"
+msgstr "Atlasīt visus ierakstus"
+
+msgid "Select entry"
+msgstr "Atlasīt ierakstu"
+
+msgid "Select the row for {nodename}"
+msgstr "Atlasīt rindu {nodename}"
+
+msgid "Size"
+msgstr "Izmērs"
+
 msgid "Undo"
-msgstr ""
+msgstr "Atsaukt"
+
+msgid "Upload some content or sync with your devices!"
+msgstr "Augšupielādē kādu saturu vai sinhronizē savās iekārtās!"
