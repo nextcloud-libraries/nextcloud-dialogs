@@ -12,3 +12,13 @@ updates:
     timezone: Europe/Paris
   open-pull-requests-limit: 10
   versioning-strategy: increase
+- package-ecosystem: npm
+  target-branch: 'stable6'
+  directory: "/"
+  schedule:
+    interval: weekly
+    day: saturday
+    time: "03:00"
+    timezone: Europe/Paris
+  open-pull-requests-limit: 10
+  versioning-strategy: increase
