@@ -6,7 +6,7 @@ SPDX-PackageSupplier = "Nextcloud <info@nextcloud.com>"
 SPDX-PackageDownloadLocation = "https://github.com/nextcloud-libraries/nextcloud-dialogs"
 
 [[annotations]]
-path = ["package-lock.json", "package.json", "tsconfig-typedoc.json", "tsconfig.json", "test/tsconfig.json", ".eslintrc.json"]
+path = ["package-lock.json", "package.json", "tsconfig-typedoc.json", "tsconfig.json", "test/tsconfig.json"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2019-2024 Nextcloud GmbH and Nextcloud contributors"
 SPDX-License-Identifier = "AGPL-3.0-or-later"
