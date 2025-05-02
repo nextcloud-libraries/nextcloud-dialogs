@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 import type { ContentsWithRoot, Folder, Node } from '@nextcloud/files'
+import type { CancelablePromise } from 'cancelable-promise'
 import type { ComputedRef, Ref } from 'vue'
 
 import { davGetClient, davRootPath, getFavoriteNodes } from '@nextcloud/files'
-import { CancelablePromise } from 'cancelable-promise'
 import { joinPaths as join } from '@nextcloud/paths'
 import { onMounted, ref, shallowRef, watch } from 'vue'
 import { getFile, getNodes, getRecentNodes } from '../utils/dav'

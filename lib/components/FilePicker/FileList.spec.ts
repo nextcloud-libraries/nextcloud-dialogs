@@ -3,12 +3,11 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
+import { File, Folder } from '@nextcloud/files'
 import { mount, shallowMount } from '@vue/test-utils'
 import { beforeAll, describe, expect, it, vi } from 'vitest'
-
-import FileList from './FileList.vue'
-import { File, Folder } from '@nextcloud/files'
 import { nextTick } from 'vue'
+import FileList from './FileList.vue'
 
 const axios = vi.hoisted(() => ({
 	get: vi.fn(() => new Promise(() => {})),

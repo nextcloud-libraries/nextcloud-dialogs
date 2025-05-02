@@ -3,12 +3,11 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-import { afterEach, describe, expect, it, vi } from 'vitest'
 import { File } from '@nextcloud/files'
 import { shallowMount } from '@vue/test-utils'
-
-import FileListRow from './FileListRow.vue'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 import { nextTick } from 'vue'
+import FileListRow from './FileListRow.vue'
 
 describe('FilePicker: FileListRow', () => {
 	const node = new File({

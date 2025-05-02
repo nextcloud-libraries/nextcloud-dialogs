@@ -3,10 +3,13 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-import { describe, it, expect, vi, afterEach, beforeAll, afterAll } from 'vitest'
+import type { PropType } from 'vue'
+import type { FileListViews } from './filesSettings.ts'
+
 import { shallowMount } from '@vue/test-utils'
-import { defineComponent, h, type PropType } from 'vue'
-import { useFilesViews, type FileListViews } from './filesSettings'
+import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from 'vitest'
+import { defineComponent, h } from 'vue'
+import { useFilesViews } from './filesSettings'
 
 const axios = vi.hoisted(() => ({
 	get: vi.fn(),

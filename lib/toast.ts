@@ -4,11 +4,10 @@
  */
 
 import Toastify from 'toastify-js'
+import LoaderSvg from '../styles/loader.svg?raw'
 import { t } from './utils/l10n.js'
 
 import '../styles/toast.scss'
-
-import LoaderSvg from '../styles/loader.svg?raw'
 
 /**
  * Enum of available Toast types

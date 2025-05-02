@@ -77,20 +77,19 @@
 </template>
 
 <script setup lang="ts">
-import type { INode } from '@nextcloud/files'
+import type { FilesSortingMode, INode } from '@nextcloud/files'
 import type { FileListViews } from '../../composables/filesSettings'
 
-import { FileType, FilesSortingMode, sortNodes } from '@nextcloud/files'
+import { FileType, sortNodes } from '@nextcloud/files'
+import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
 import NcButton from '@nextcloud/vue/components/NcButton'
 import NcCheckboxRadioSwitch from '@nextcloud/vue/components/NcCheckboxRadioSwitch'
-import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
+import IconSortDescending from 'vue-material-design-icons/MenuDown.vue'
+import IconSortAscending from 'vue-material-design-icons/MenuUp.vue'
+import FileListRow from './FileListRow.vue'
+import LoadingTableRow from './LoadingTableRow.vue'
 import { useFilesSettings, useFilesViews } from '../../composables/filesSettings'
 import { t } from '../../utils/l10n'
-
-import IconSortAscending from 'vue-material-design-icons/MenuUp.vue'
-import IconSortDescending from 'vue-material-design-icons/MenuDown.vue'
-import LoadingTableRow from './LoadingTableRow.vue'
-import FileListRow from './FileListRow.vue'
 
 const props = defineProps<{
 	currentView: FileListViews,

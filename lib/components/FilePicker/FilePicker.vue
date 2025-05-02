@@ -60,22 +60,21 @@
 
 <script setup lang="ts">
 import type { Node } from '@nextcloud/files'
-import type { IDialogButton, IFilePickerButton, IFilePickerButtonFactory, IFilePickerFilter } from '../types.ts'
 import type { IFilesViewId } from '../../composables/views.ts'
+import type { IDialogButton, IFilePickerButton, IFilePickerButtonFactory, IFilePickerFilter } from '../types.ts'
 
+import { emit as emitOnEventBus } from '@nextcloud/event-bus'
+import { computed, onMounted, ref, shallowRef, toRef, watch } from 'vue'
+import NcDialog from '@nextcloud/vue/components/NcDialog'
+import NcEmptyContent from '@nextcloud/vue/components/NcEmptyContent'
 import IconFile from 'vue-material-design-icons/File.vue'
 import FileList from './FileList.vue'
 import FilePickerBreadcrumbs from './FilePickerBreadcrumbs.vue'
 import FilePickerNavigation from './FilePickerNavigation.vue'
-
-import { emit as emitOnEventBus } from '@nextcloud/event-bus'
-import NcDialog from '@nextcloud/vue/components/NcDialog'
-import NcEmptyContent from '@nextcloud/vue/components/NcEmptyContent'
-import { computed, onMounted, ref, shallowRef, toRef, watch } from 'vue'
-import { showError } from '../../toast'
 import { useDAVFiles } from '../../composables/dav'
-import { useMimeFilter } from '../../composables/mime'
 import { useFilesSettings } from '../../composables/filesSettings'
+import { useMimeFilter } from '../../composables/mime'
+import { showError } from '../../toast'
 import { t } from '../../utils/l10n'
 
 const props = withDefaults(defineProps<{

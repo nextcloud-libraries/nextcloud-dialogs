@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest'
-import { getPreviewURL, usePreviewURL } from './preview'
 import { File } from '@nextcloud/files'
-import { defineComponent, h, toRef } from 'vue'
 import { shallowMount } from '@vue/test-utils'
+import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest'
+import { defineComponent, h, toRef } from 'vue'
+import { getPreviewURL, usePreviewURL } from './preview.ts'
 
 describe('preview composable', () => {
 	const createData = (path: string, mime: string) => ({

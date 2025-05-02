@@ -4,9 +4,10 @@
  */
 
 import type { ComponentPublicInstance, Ref } from 'vue'
-import { describe, it, expect, vi, beforeEach } from 'vitest'
+
 import { shallowMount } from '@vue/test-utils'
-import { defineComponent, ref, toRef, nextTick, h } from 'vue'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { defineComponent, h, nextTick, ref, toRef } from 'vue'
 import { useDAVFiles } from './dav'
 
 const nextcloudFiles = vi.hoisted(() => ({

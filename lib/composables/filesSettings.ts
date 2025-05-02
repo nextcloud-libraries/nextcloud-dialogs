@@ -5,16 +5,14 @@
 
 import type { ComputedRef, Ref } from 'vue'
 
+import axios from '@nextcloud/axios'
 import { loadState } from '@nextcloud/initial-state'
 import { generateUrl } from '@nextcloud/router'
 import { isPublicShare } from '@nextcloud/sharing/public'
 import { toValue } from '@vueuse/core'
 import { computed, onMounted, ref } from 'vue'
-
-import axios from '@nextcloud/axios'
-
-import { t } from '../utils/l10n'
 import { showError } from '../toast'
+import { t } from '../utils/l10n.ts'
 
 interface OCAFilesUserConfig {
 	show_hidden: boolean

@@ -41,17 +41,16 @@
 </template>
 
 <script setup lang="ts">
-import IconClose from 'vue-material-design-icons/Close.vue'
-import IconMagnify from 'vue-material-design-icons/Magnify.vue'
-
 import { getCurrentUser } from '@nextcloud/auth'
+import { computed, ref } from 'vue'
 import NcButton from '@nextcloud/vue/components/NcButton'
 import NcIconSvgWrapper from '@nextcloud/vue/components/NcIconSvgWrapper'
 import NcSelect from '@nextcloud/vue/components/NcSelect'
 import NcTextField from '@nextcloud/vue/components/NcTextField'
-import { computed, ref } from 'vue'
-import { t } from '../../utils/l10n'
+import IconClose from 'vue-material-design-icons/Close.vue'
+import IconMagnify from 'vue-material-design-icons/Magnify.vue'
 import { useViews } from '../../composables/views'
+import { t } from '../../utils/l10n'
 
 const props = defineProps<{
 	currentView: 'files' | 'recent' | 'favorites',

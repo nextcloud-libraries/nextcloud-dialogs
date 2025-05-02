@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-import { describe, it, expect, vi, afterEach, beforeAll, afterAll } from 'vitest'
 import { shallowMount } from '@vue/test-utils'
+import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from 'vitest'
 import { defineComponent, h, nextTick } from 'vue'
 import { useFilesSettings } from './filesSettings'
 

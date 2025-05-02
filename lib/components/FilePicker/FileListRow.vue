@@ -40,13 +40,12 @@
 <script setup lang="ts">
 import type { INode } from '@nextcloud/files'
 
-import { formatFileSize, FileType } from '@nextcloud/files'
+import { FileType, formatFileSize } from '@nextcloud/files'
+import { computed } from 'vue'
 import NcCheckboxRadioSwitch from '@nextcloud/vue/components/NcCheckboxRadioSwitch'
 import NcDateTime from '@nextcloud/vue/components/NcDateTime'
-import { computed } from 'vue'
-import { t } from '../../utils/l10n'
-
 import FilePreview from './FilePreview.vue'
+import { t } from '../../utils/l10n'
 
 const props = defineProps<{
 	/** Can directories be picked */

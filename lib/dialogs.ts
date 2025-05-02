@@ -4,8 +4,8 @@
  */
 
 import type { IDialogButton, IDialogSeverity } from './components/types.ts'
-import { spawnDialog } from '@nextcloud/vue/functions/dialog'
 
+import { spawnDialog } from '@nextcloud/vue/functions/dialog'
 import GenericDialog from './components/GenericDialog.vue'
 
 export type * from './components/types.ts'
