@@ -1,10 +1,42 @@
 <!--
-  - SPDX-FileCopyrightText: 2020-2024 Nextcloud GmbH and Nextcloud contributors
+  - SPDX-FileCopyrightText: 2020 Nextcloud GmbH and Nextcloud contributors
   - SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 # Changelog
 
 All notable changes to this project will be documented in this file.
+
+## [v7.0.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.2.0...v7.0.0-rc.0)
+
+### Notes
+
+This package now builds on top of `@nextcloud/vue` version 9 using Vue 3.
+While this package uses Vue 3 it is also possible to use it within a Vue 2 project,
+in this case the Vue dependency will not be shared as the dependency was moved from a peer dependency to a plain dependency.
+This also means that if you are using Vue 2 you have to ensure you do not use bundler
+configurations that enforce resolving Vue to the same version as this will fail now,
+instead let the bundler choose the matching Vue version.
+
+For example if using Webpack this will no longer work in **Vue 2** apps:
+```js
+  resolve: {
+		alias: {
+			vue$: path.resolve('./node_modules/vue'),
+		},
+  }
+```
+
+For Vue 3 apps nothing changed, meaning the app and this library will share the same Vue dependency as long as the versions are compatible.
+
+### Breaking
+
+* This package now uses Vue 3 internally.
+* The deprecated FilePicker component export was removed to allow using this library in Vue 2 and Vue 3 apps.
+* The deprecated `Dialog.hide` method was removed, instead await the returned promise and wait for the user interaction.
+
+### Changed
+
+* refactor: do not use Node internals but @nextcloud/paths package [\#1752](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1752) \([susnux](https://github.com/susnux)\)
 
 ## [v6.2.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.1.1...v6.2.0)
 ### Notes
