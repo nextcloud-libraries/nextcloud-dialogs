@@ -7,7 +7,7 @@ import type { ComputedRef, Ref } from 'vue'
 
 import { davGetClient, davRootPath, getFavoriteNodes } from '@nextcloud/files'
 import { CancelablePromise } from 'cancelable-promise'
-import { join } from 'node:path'
+import { joinPaths as join } from '@nextcloud/paths'
 import { onMounted, ref, shallowRef, watch } from 'vue'
 import { getFile, getNodes, getRecentNodes } from '../utils/dav'
 

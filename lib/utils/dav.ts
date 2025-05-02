@@ -7,8 +7,8 @@ import type { ContentsWithRoot, Folder, Node } from '@nextcloud/files'
 import type { FileStat, ResponseDataDetailed, SearchResult, WebDAVClient } from 'webdav'
 
 import { davGetDefaultPropfind, davGetRecentSearch, davResultToNode, davRootPath } from '@nextcloud/files'
+import { joinPaths as join } from '@nextcloud/paths'
 import { CancelablePromise } from 'cancelable-promise'
-import { join } from 'node:path'
 
 /**
  * Get the recently changed nodes from the last two weeks
