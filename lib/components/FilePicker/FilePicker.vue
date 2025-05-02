@@ -82,6 +82,7 @@ import { useFilesSettings } from '../../composables/filesSettings.ts'
 import { useMimeFilter } from '../../composables/mime.ts'
 import { showError } from '../../toast.ts'
 import { t } from '../../utils/l10n.ts'
+import { logger } from '../../utils/logger.ts'
 
 const props = withDefaults(defineProps<{
 	/** Buttons to be displayed */
@@ -301,7 +302,7 @@ const onCreateFolder = async (name: string) => {
 		// emit event bus to force files app to reload that file if needed
 		emitOnEventBus('files:node:created', files.value.filter((file) => file.basename === name)[0])
 	} catch (error) {
-		console.warn('Could not create new folder', { name, error })
+		logger.warn('Could not create new folder', { name, error })
 		// show error to user
 		showError(t('Could not create the new folder'))
 	}

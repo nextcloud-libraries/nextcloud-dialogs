@@ -13,6 +13,7 @@ import { toValue } from '@vueuse/core'
 import { computed, onMounted, ref } from 'vue'
 import { showError } from '../toast.ts'
 import { t } from '../utils/l10n.ts'
+import { logger } from '../utils/logger.ts'
 
 interface OCAFilesUserConfig {
 	show_hidden: boolean
@@ -56,11 +57,11 @@ export const useFilesSettings = () => {
 				sortFavoritesFirst.value = data?.data?.sort_favorites_first ?? true
 				cropImagePreviews.value = data?.data?.crop_image_previews ?? true
 			} catch (error) {
-				console.error('Could not load files settings', error)
+				logger.error('Could not load files settings', error)
 				showError(t('Could not load files settings'))
 			}
 		} else {
-			console.debug('Skip loading files settings - currently on public share')
+			logger.debug('Skip loading files settings - currently on public share')
 		}
 	})
 
@@ -111,11 +112,11 @@ export const useFilesViews = (currentView?: FileListViews | Ref<FileListViews> |
 					order: convertOrder(data?.data?.recent?.sorting_direction),
 				}
 			} catch (error) {
-				console.error('Could not load files views', error)
+				logger.error('Could not load files views', error)
 				showError(t('Could not load files views'))
 			}
 		} else {
-			console.debug('Skip loading files views - currently on public share')
+			logger.debug('Skip loading files views - currently on public share')
 		}
 	})
 

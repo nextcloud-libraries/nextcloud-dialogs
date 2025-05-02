@@ -7,6 +7,7 @@ import type { IDialogButton, IDialogSeverity } from './components/types.ts'
 
 import { spawnDialog } from '@nextcloud/vue/functions/dialog'
 import GenericDialog from './components/GenericDialog.vue'
+import { logger } from './utils/logger.ts'
 
 export type * from './components/types.ts'
 
@@ -133,7 +134,7 @@ export class DialogBuilder {
 	 */
 	setButtons(buttons: IDialogButton[]) {
 		if (this.#buttons.length > 0) {
-			console.warn('[@nextcloud/dialogs] Dialog buttons are already set - this overrides previous buttons.')
+			logger.warn('[@nextcloud/dialogs] Dialog buttons are already set - this overrides previous buttons.')
 		}
 		this.#buttons = buttons
 		return this

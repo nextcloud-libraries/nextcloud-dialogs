@@ -11,6 +11,7 @@ import IconCopy from '@mdi/svg/svg/folder-multiple.svg?raw'
 import { basename } from '@nextcloud/paths'
 import { spawnDialog } from '@nextcloud/vue/functions/dialog'
 import { n, t } from './utils/l10n.ts'
+import { logger } from './utils/logger.ts'
 
 /**
  * @deprecated
@@ -172,7 +173,7 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 	 */
 	public addButton(button: IFilePickerButton) {
 		if (typeof this.buttons === 'function') {
-			console.warn('FilePicker buttons were set to factory, now overwritten with button object.')
+			logger.warn('FilePicker buttons were set to factory, now overwritten with button object.')
 			this.buttons = []
 		}
 		this.buttons.push(button)
