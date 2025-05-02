@@ -40,7 +40,8 @@ export class FilePicker<IsMultiSelect extends boolean> {
 	private container?: string
 	private disabledNavigation: boolean
 
-	public constructor(title: string,
+	public constructor(
+		title: string,
 		multiSelect: IsMultiSelect,
 		mimeTypeFilter: string[],
 		directoriesAllowed: boolean,

@@ -13,16 +13,16 @@ export type IDialogSeverity = 'info' | 'warning' | 'error'
  */
 export interface IDialogButton {
 	/** Label of the button */
-	label: string,
+	label: string
 
 	/** Callback on button click */
-	callback: () => void,
+	callback: () => void
 
 	/**
 	 * Optional Icon for the button
 	 * Should be a SVG image as raw string
 	 */
-	icon?: string,
+	icon?: string
 
 	/**
 	 * Button type

@@ -92,7 +92,7 @@ import { useFilesSettings, useFilesViews } from '../../composables/filesSettings
 import { t } from '../../utils/l10n'
 
 const props = defineProps<{
-	currentView: FileListViews,
+	currentView: FileListViews
 	multiselect: boolean
 	allowPickDirectory: boolean
 	loading: boolean

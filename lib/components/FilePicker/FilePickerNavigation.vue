@@ -53,10 +53,10 @@ import { useViews } from '../../composables/views'
 import { t } from '../../utils/l10n'
 
 const props = defineProps<{
-	currentView: 'files' | 'recent' | 'favorites',
-	filterString: string,
-	isCollapsed: boolean,
-	disabledNavigation: boolean,
+	currentView: 'files' | 'recent' | 'favorites'
+	filterString: string
+	isCollapsed: boolean
+	disabledNavigation: boolean
 }>()
 
 interface INavigationEvents {

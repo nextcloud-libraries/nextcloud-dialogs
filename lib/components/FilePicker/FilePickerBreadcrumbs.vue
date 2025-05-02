@@ -125,8 +125,7 @@ const pathElements = computed(() => props.path.split('/')
 	.map((v, i, elements) => ({
 		name: v,
 		path: '/' + elements.slice(0, i + 1).join('/'),
-	})),
-)
+	})))
 </script>
 
 <style scoped lang="scss">

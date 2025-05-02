@@ -118,7 +118,7 @@ const props = withDefaults(defineProps<{
 	 * The initial path of the file picker
 	 * @default '/'
 	 */
-	 path?: string
+	path?: string
 }>(), {
 	allowPickDirectory: false,
 	disabledNavigation: false,
