@@ -12,7 +12,8 @@ import { CancelablePromise } from 'cancelable-promise'
 
 /**
  * Get the recently changed nodes from the last two weeks
- * @param client The WebDAV client
+ *
+ * @param client - The WebDAV client
  */
 export function getRecentNodes(client: WebDAVClient): CancelablePromise<Node[]> {
 	const controller = new AbortController()
@@ -36,8 +37,9 @@ export function getRecentNodes(client: WebDAVClient): CancelablePromise<Node[]> 
 
 /**
  * Get the directory content
- * @param client The WebDAV client
- * @param directoryPath The path to fetch
+ *
+ * @param client - The WebDAV client
+ * @param directoryPath - The path to fetch
  */
 export function getNodes(client: WebDAVClient, directoryPath: string): CancelablePromise<ContentsWithRoot> {
 	const controller = new AbortController()

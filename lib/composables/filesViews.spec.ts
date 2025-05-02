@@ -9,7 +9,7 @@ import type { FileListViews } from './filesSettings.ts'
 import { shallowMount } from '@vue/test-utils'
 import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from 'vitest'
 import { defineComponent, h } from 'vue'
-import { useFilesViews } from './filesSettings'
+import { useFilesViews } from './filesSettings.ts'
 
 const axios = vi.hoisted(() => ({
 	get: vi.fn(),
@@ -32,9 +32,15 @@ const TestComponent = defineComponent({
 })
 
 describe('files app views config composable', () => {
-	beforeAll(() => { vi.useFakeTimers() })
-	afterAll(() => { vi.useRealTimers() })
-	afterEach(() => { vi.resetAllMocks() })
+	beforeAll(() => {
+		vi.useFakeTimers()
+	})
+	afterAll(() => {
+		vi.useRealTimers()
+	})
+	afterEach(() => {
+		vi.resetAllMocks()
+	})
 
 	it('Sets the inital state correctly', async () => {
 		axios.get.mockImplementation(() => {

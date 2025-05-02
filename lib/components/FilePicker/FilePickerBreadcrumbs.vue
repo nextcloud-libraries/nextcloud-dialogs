@@ -5,21 +5,24 @@
 <template>
 	<NcBreadcrumbs class="file-picker__breadcrumbs">
 		<template #default>
-			<NcBreadcrumb :name="t('All files')"
+			<NcBreadcrumb
+				:name="t('All files')"
 				:title="t('Home')"
 				@click="emit('update:path', '/')">
 				<template #icon>
 					<IconHome :size="20" />
 				</template>
 			</NcBreadcrumb>
-			<NcBreadcrumb v-for="dir in pathElements"
+			<NcBreadcrumb
+				v-for="dir in pathElements"
 				:key="dir.path"
 				:name="dir.name"
 				:title="dir.path"
 				@click="emit('update:path', dir.path)" />
 		</template>
 		<template v-if="showMenu" #actions>
-			<NcActions v-model:open="actionsOpen"
+			<NcActions
+				v-model:open="actionsOpen"
 				:aria-label="t('Create directory')"
 				:force-menu="true"
 				:force-name="true"
@@ -29,7 +32,8 @@
 				<template #icon>
 					<IconPlus :size="20" />
 				</template>
-				<NcActionInput ref="nameInput"
+				<NcActionInput
+					ref="nameInput"
 					v-model="newNodeName"
 					:label="t('New folder')"
 					:placeholder="t('New folder name')"
@@ -53,7 +57,7 @@ import NcBreadcrumbs from '@nextcloud/vue/components/NcBreadcrumbs'
 import IconFolder from 'vue-material-design-icons/Folder.vue'
 import IconHome from 'vue-material-design-icons/Home.vue'
 import IconPlus from 'vue-material-design-icons/Plus.vue'
-import { t } from '../../utils/l10n'
+import { t } from '../../utils/l10n.ts'
 
 const props = defineProps<{
 	/** Current path to display */

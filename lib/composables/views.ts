@@ -6,7 +6,7 @@
 import type { ComputedRef, Ref } from 'vue'
 
 import { mdiClock, mdiFolder, mdiStar } from '@mdi/js'
-import { t } from '../utils/l10n'
+import { t } from '../utils/l10n.ts'
 
 export type IFilesViewId = 'files' | 'favorites' | 'recent'
 
@@ -27,10 +27,10 @@ export interface IFilesView {
 
 /**
  * Get available file views
+ *
  * @param isAnonymous - Whether the user is anonymous
  */
 export const useViews = (isAnonymous: Ref<boolean> | ComputedRef<boolean>) => {
-
 	/**
 	 * All defined views
 	 */

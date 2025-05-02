@@ -3,17 +3,20 @@
   - SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 <template>
-	<div :style="previewLoaded ? { backgroundImage: `url(${previewURL})`} : undefined"
+	<div
+		:style="previewLoaded ? { backgroundImage: `url(${previewURL})` } : undefined"
 		:class="fileListIconStyles['file-picker__file-icon']">
 		<template v-if="!previewLoaded">
 			<IconFile v-if="isFile" :size="32" />
 			<template v-else>
-				<NcIconSvgWrapper v-if="folderDecorationIcon"
+				<NcIconSvgWrapper
+					v-if="folderDecorationIcon"
 					:class="fileListIconStyles['file-picker__file-icon-overlay']"
 					inline
 					:path="folderDecorationIcon"
 					:size="16" />
-				<IconFolder :class="fileListIconStyles['file-picker__file-icon--primary']"
+				<IconFolder
+					:class="fileListIconStyles['file-picker__file-icon--primary']"
 					:size="32" />
 			</template>
 		</template>
@@ -27,11 +30,10 @@ import { mdiAccountPlus, mdiGroup, mdiLink, mdiLock, mdiNetwork, mdiTag } from '
 import { FileType } from '@nextcloud/files'
 import { ShareType } from '@nextcloud/sharing'
 import { computed, ref, toRef } from 'vue'
-import { usePreviewURL } from '../../composables/preview'
-
 import NcIconSvgWrapper from '@nextcloud/vue/components/NcIconSvgWrapper'
 import IconFile from 'vue-material-design-icons/File.vue'
 import IconFolder from 'vue-material-design-icons/Folder.vue'
+import { usePreviewURL } from '../../composables/preview.ts'
 
 // CSS modules
 import fileListIconStylesModule from './FileListIcon.module.scss'
@@ -40,7 +42,13 @@ import fileListIconStylesModule from './FileListIcon.module.scss'
 const fileListIconStyles = ref(fileListIconStylesModule)
 
 const props = defineProps<{
+	/**
+	 * Node to show preview of
+	 */
 	node: INode
+	/**
+	 * Crop the preview to fit the container or preserve original aspect ratio
+	 */
 	cropImagePreviews: boolean
 }>()
 
@@ -67,7 +75,7 @@ const folderDecorationIcon = computed(() => {
 
 	// Link and mail shared folders
 	const shareTypes = Object.values(props.node.attributes?.['share-types'] || {}).flat() as number[]
-	if (shareTypes.some(type => type === ShareType.Link || type === ShareType.Email)) {
+	if (shareTypes.some((type) => type === ShareType.Link || type === ShareType.Email)) {
 		return mdiLink
 	}
 
@@ -77,16 +85,15 @@ const folderDecorationIcon = computed(() => {
 	}
 
 	switch (props.node.attributes?.['mount-type']) {
-	case 'external':
-	case 'external-session':
-		return mdiNetwork
-	case 'group':
-		return mdiGroup
-	case 'shared':
-		return mdiAccountPlus
+		case 'external':
+		case 'external-session':
+			return mdiNetwork
+		case 'group':
+			return mdiGroup
+		case 'shared':
+			return mdiAccountPlus
 	}
 
 	return null
-
 })
 </script>

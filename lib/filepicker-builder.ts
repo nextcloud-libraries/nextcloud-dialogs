@@ -10,7 +10,7 @@ import IconMove from '@mdi/svg/svg/folder-move.svg?raw'
 import IconCopy from '@mdi/svg/svg/folder-multiple.svg?raw'
 import { basename } from '@nextcloud/paths'
 import { spawnDialog } from '@nextcloud/vue/functions/dialog'
-import { n, t } from './utils/l10n'
+import { n, t } from './utils/l10n.ts'
 
 /**
  * @deprecated
@@ -29,7 +29,6 @@ export enum FilePickerType {
 export class FilePickerClosed extends Error {}
 
 export class FilePicker<IsMultiSelect extends boolean> {
-
 	private title: string
 	private multiSelect: IsMultiSelect
 	private mimeTypeFilter: string[]
@@ -102,11 +101,9 @@ export class FilePicker<IsMultiSelect extends boolean> {
 		}
 		return nodes.map((node) => node.path) as (IsMultiSelect extends true ? string[] : string)
 	}
-
 }
 
 export class FilePickerBuilder<IsMultiSelect extends boolean> {
-
 	private title: string
 	private multiSelect = false
 	private mimeTypeFilter: string[] = []
@@ -195,6 +192,7 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 
 	/**
 	 * Set FilePicker type based on legacy file picker types
+	 *
 	 * @param type The legacy filepicker type to emulate
 	 * @deprecated Use `addButton` or `setButtonFactory` instead as with setType you do not know which button was pressed
 	 */
@@ -293,7 +291,6 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 			this.disabledNavigation,
 		)
 	}
-
 }
 
 /**

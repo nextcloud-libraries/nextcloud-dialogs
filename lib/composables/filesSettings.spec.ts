@@ -6,7 +6,7 @@
 import { shallowMount } from '@vue/test-utils'
 import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from 'vitest'
 import { defineComponent, h, nextTick } from 'vue'
-import { useFilesSettings } from './filesSettings'
+import { useFilesSettings } from './filesSettings.ts'
 
 const axios = vi.hoisted(() => ({
 	get: vi.fn(),
@@ -27,9 +27,15 @@ const TestComponent = defineComponent({
 })
 
 describe('files app settings composable', () => {
-	beforeAll(() => { vi.useFakeTimers() })
-	afterAll(() => { vi.useRealTimers() })
-	afterEach(() => { vi.resetAllMocks() })
+	beforeAll(() => {
+		vi.useFakeTimers()
+	})
+	afterAll(() => {
+		vi.useRealTimers()
+	})
+	afterEach(() => {
+		vi.resetAllMocks()
+	})
 
 	it('Sets the inital state correctly', async () => {
 		axios.get.mockImplementation(() => {

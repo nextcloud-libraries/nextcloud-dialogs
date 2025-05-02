@@ -9,7 +9,7 @@ import type { ComputedRef, Ref } from 'vue'
 import { davGetClient, davRootPath, getFavoriteNodes } from '@nextcloud/files'
 import { joinPaths as join } from '@nextcloud/paths'
 import { onMounted, ref, shallowRef, watch } from 'vue'
-import { getFile, getNodes, getRecentNodes } from '../utils/dav'
+import { getFile, getNodes, getRecentNodes } from '../utils/dav.ts'
 
 /**
  * Handle file loading using WebDAV
@@ -18,10 +18,9 @@ import { getFile, getNodes, getRecentNodes } from '../utils/dav'
  * @param currentPath Reference to the current files path
  */
 export const useDAVFiles = function(
-	currentView: Ref<'files'|'recent'|'favorites'> | ComputedRef<'files'|'recent'|'favorites'>,
+	currentView: Ref<'files' | 'recent' | 'favorites'> | ComputedRef<'files' | 'recent' | 'favorites'>,
 	currentPath: Ref<string> | ComputedRef<string>,
 ) {
-
 	/**
 	 * The WebDAV client
 	 */
@@ -35,7 +34,7 @@ export const useDAVFiles = function(
 	/**
 	 * The current folder
 	 */
-	const folder = shallowRef<Folder|null>(null)
+	const folder = shallowRef<Folder | null>(null)
 
 	/**
 	 * Loading state of the files
@@ -50,8 +49,9 @@ export const useDAVFiles = function(
 	/**
 	 * Create a new directory in the current path
 	 * The directory will be added to the current file list
+	 *
 	 * @param name Name of the new directory
-	 * @return {Promise<Folder>} The created directory
+	 * @return The created directory
 	 */
 	async function createDirectory(name: string): Promise<Folder> {
 		const path = join(currentPath.value, name)

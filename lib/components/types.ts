@@ -26,12 +26,14 @@ export interface IDialogButton {
 
 	/**
 	 * Button type
+	 *
 	 * @see https://nextcloud-vue-components.netlify.app/#/Components/NcButton
 	 */
 	variant?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'warning' | 'success'
 
 	/**
 	 * Disabled state of the button
+	 *
 	 * @default false
 	 */
 	disabled?: boolean

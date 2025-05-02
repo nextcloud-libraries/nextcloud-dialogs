@@ -11,7 +11,7 @@ import { generateUrl } from '@nextcloud/router'
 import { isPublicShare } from '@nextcloud/sharing/public'
 import { toValue } from '@vueuse/core'
 import { computed, onMounted, ref } from 'vue'
-import { showError } from '../toast'
+import { showError } from '../toast.ts'
 import { t } from '../utils/l10n.ts'
 
 interface OCAFilesUserConfig {
@@ -21,8 +21,8 @@ interface OCAFilesUserConfig {
 }
 
 interface OCAFilesView {
-	sorting_direction: 'asc'|'desc'
-	sorting_mode: 'basename'|'size'|'mtime'
+	sorting_direction: 'asc' | 'desc'
+	sorting_mode: 'basename' | 'size' | 'mtime'
 }
 
 interface OCAFilesViewConfig {
@@ -30,18 +30,18 @@ interface OCAFilesViewConfig {
 }
 
 interface ViewConfig {
-	sortBy: 'basename'|'size'|'mtime'
-	order: 'ascending'|'descending'|'none'
+	sortBy: 'basename' | 'size' | 'mtime'
+	order: 'ascending' | 'descending' | 'none'
 }
 
-export type FileListViews = 'files'|'recent'|'favorites'
+export type FileListViews = 'files' | 'recent' | 'favorites'
 
 /**
  * Composable to get the files app settings
  * (show hidden files, sort favorites, crop previews)
  */
 export const useFilesSettings = () => {
-	const filesUserState = loadState<OCAFilesUserConfig|null>('files', 'config', null)
+	const filesUserState = loadState<OCAFilesUserConfig | null>('files', 'config', null)
 
 	const showHiddenFiles = ref(filesUserState?.show_hidden ?? true)
 	const sortFavoritesFirst = ref(filesUserState?.sort_favorites_first ?? true)
@@ -73,12 +73,13 @@ export const useFilesSettings = () => {
 
 /**
  * Composable to get the files app view configs for sorting the files list
+ *
  * @param currentView the currently active view
  */
-export const useFilesViews = (currentView?: FileListViews|Ref<FileListViews>|ComputedRef<FileListViews>) => {
+export const useFilesViews = (currentView?: FileListViews | Ref<FileListViews> | ComputedRef<FileListViews>) => {
 	const convertOrder = (order?: string) => order === 'asc' ? 'ascending' : (order === 'desc' ? 'descending' : 'none')
 
-	const filesViewsState = loadState<OCAFilesViewConfig|null>('files', 'viewConfigs', null)
+	const filesViewsState = loadState<OCAFilesViewConfig | null>('files', 'viewConfigs', null)
 
 	const filesViewConfig = ref<ViewConfig>({
 		sortBy: filesViewsState?.files?.sorting_mode ?? 'basename',

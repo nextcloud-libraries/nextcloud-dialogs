@@ -4,7 +4,8 @@
 -->
 <template>
 	<!-- Filter for the file list -->
-	<NcTextField class="file-picker__filter-input"
+	<NcTextField
+		class="file-picker__filter-input"
 		:label="t('Filter file list')"
 		:show-trailing-button="!!filterString"
 		:model-value="filterString"
@@ -17,10 +18,12 @@
 	</NcTextField>
 	<template v-if="availableViews.length > 1 && !disabledNavigation">
 		<!-- On non collapsed dialogs show the tablist, otherwise a dropdown is shown -->
-		<ul v-if="!isCollapsed"
+		<ul
+			v-if="!isCollapsed"
 			class="file-picker__side">
 			<li v-for="view in availableViews" :key="view.id">
-				<NcButton :variant="currentView === view.id ? 'primary' : 'tertiary'"
+				<NcButton
+					:variant="currentView === view.id ? 'primary' : 'tertiary'"
 					:wide="true"
 					@click="$emit('update:currentView', view.id)">
 					<template #icon>
@@ -30,7 +33,8 @@
 				</NcButton>
 			</li>
 		</ul>
-		<NcSelect v-else
+		<NcSelect
+			v-else
 			:aria-label="t('Current view selector')"
 			:clearable="false"
 			:searchable="false"
@@ -49,13 +53,25 @@ import NcSelect from '@nextcloud/vue/components/NcSelect'
 import NcTextField from '@nextcloud/vue/components/NcTextField'
 import IconClose from 'vue-material-design-icons/Close.vue'
 import IconMagnify from 'vue-material-design-icons/Magnify.vue'
-import { useViews } from '../../composables/views'
-import { t } from '../../utils/l10n'
+import { useViews } from '../../composables/views.ts'
+import { t } from '../../utils/l10n.ts'
 
 const props = defineProps<{
+	/**
+	 * Current view
+	 */
 	currentView: 'files' | 'recent' | 'favorites'
+	/**
+	 * Current query for filenames
+	 */
 	filterString: string
+	/**
+	 * Collapsed state of the navigation
+	 */
 	isCollapsed: boolean
+	/**
+	 * Disabled state of the navigation
+	 */
 	disabledNavigation: boolean
 }>()
 
@@ -70,7 +86,7 @@ const { availableViews } = useViews(ref(getCurrentUser() === null))
 /**
  * The currently active view object
  */
-const currentViewObject = computed(() => availableViews.filter(v => v.id === props.currentView)[0] ?? availableViews[0])
+const currentViewObject = computed(() => availableViews.filter((v) => v.id === props.currentView)[0] ?? availableViews[0])
 
 /**
  * Propagate current filter value to paren

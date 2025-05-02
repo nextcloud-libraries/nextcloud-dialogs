@@ -11,7 +11,8 @@
 						<span class="hidden-visually">
 							{{ t('Select entry') }}
 						</span>
-						<NcCheckboxRadioSwitch v-if="multiselect"
+						<NcCheckboxRadioSwitch
+							v-if="multiselect"
 							:aria-label="t('Select all entries')"
 							data-testid="select-all-checkbox"
 							:model-value="allSelected"
@@ -20,7 +21,8 @@
 					<th :aria-sort="sortByName" class="row-name">
 						<div class="header-wrapper">
 							<span class="file-picker__header-preview" />
-							<NcButton data-test="file-picker_sort-name"
+							<NcButton
+								data-test="file-picker_sort-name"
 								variant="tertiary"
 								wide
 								@click="toggleSorting('basename')">
@@ -60,7 +62,8 @@
 					<LoadingTableRow v-for="index in skeletonNumber" :key="index" :show-checkbox="multiselect" />
 				</template>
 				<template v-else>
-					<FileListRow v-for="file of sortedFiles"
+					<FileListRow
+						v-for="file of sortedFiles"
 						:key="file.fileid || file.path"
 						:allow-pick-directory="allowPickDirectory"
 						:show-checkbox="multiselect"
@@ -78,7 +81,7 @@
 
 <script setup lang="ts">
 import type { FilesSortingMode, INode } from '@nextcloud/files'
-import type { FileListViews } from '../../composables/filesSettings'
+import type { FileListViews } from '../../composables/filesSettings.ts'
 
 import { FileType, sortNodes } from '@nextcloud/files'
 import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
@@ -88,16 +91,37 @@ import IconSortDescending from 'vue-material-design-icons/MenuDown.vue'
 import IconSortAscending from 'vue-material-design-icons/MenuUp.vue'
 import FileListRow from './FileListRow.vue'
 import LoadingTableRow from './LoadingTableRow.vue'
-import { useFilesSettings, useFilesViews } from '../../composables/filesSettings'
-import { t } from '../../utils/l10n'
+import { useFilesSettings, useFilesViews } from '../../composables/filesSettings.ts'
+import { t } from '../../utils/l10n.ts'
 
 const props = defineProps<{
+	/**
+	 * Current view
+	 */
 	currentView: FileListViews
+	/**
+	 * Allow selecting multiple elements
+	 */
 	multiselect: boolean
+	/**
+	 * Allow picking directories
+	 */
 	allowPickDirectory: boolean
+	/**
+	 * Is in loading state (WebDAV request ongoing)
+	 */
 	loading: boolean
+	/**
+	 * Files to show
+	 */
 	files: INode[]
+	/**
+	 * Currently selected files
+	 */
 	selectedFiles: INode[]
+	/**
+	 * Current path
+	 */
 	path: string
 }>()
 
@@ -174,6 +198,7 @@ function onSelectAll() {
 
 /**
  * Handle selecting a node on the files list
+ *
  * @param file the selected node
  */
 function onNodeSelected(file: INode) {
@@ -191,6 +216,7 @@ function onNodeSelected(file: INode) {
 
 /**
  * Emit the new current path
+ *
  * @param dir The directory that is entered
  */
 function onChangeDirectory(dir: INode) {

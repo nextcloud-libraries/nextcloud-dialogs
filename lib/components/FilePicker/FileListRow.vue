@@ -3,11 +3,14 @@
   - SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 <template>
-	<tr :tabindex="(showCheckbox && !isDirectory) ? undefined : 0"
+	<tr
+		:tabindex="(showCheckbox && !isDirectory) ? undefined : 0"
 		:aria-selected="!isPickable ? undefined : selected"
-		:class="['file-picker__row', {
-			'file-picker__row--selected': selected && !showCheckbox
-		}]"
+		:class="[
+			'file-picker__row', {
+				'file-picker__row--selected': selected && !showCheckbox,
+			},
+		]"
 		:data-filename="node.basename"
 		data-testid="file-list-row"
 		v-on="{
@@ -15,8 +18,9 @@
 			/* same as tabindex -> if we hide the checkbox or this is a directory we need keyboard access to enter the directory or select the node */
 			...(!showCheckbox || isDirectory ? { keydown: handleKeyDown } : {}),
 		}">
-		<td v-if="showCheckbox" class="row-checkbox" @click.stop="() => {/* Stop the click event */}">
-			<NcCheckboxRadioSwitch :aria-label="t('Select the row for {nodename}', { nodename: displayName })"
+		<td v-if="showCheckbox" class="row-checkbox" @click.stop="() => { /* Stop the click event */ }">
+			<NcCheckboxRadioSwitch
+				:aria-label="t('Select the row for {nodename}', { nodename: displayName })"
 				:disabled="!isPickable"
 				data-testid="row-checkbox"
 				:model-value="selected"
@@ -37,6 +41,7 @@
 		</td>
 	</tr>
 </template>
+
 <script setup lang="ts">
 import type { INode } from '@nextcloud/files'
 
@@ -45,7 +50,7 @@ import { computed } from 'vue'
 import NcCheckboxRadioSwitch from '@nextcloud/vue/components/NcCheckboxRadioSwitch'
 import NcDateTime from '@nextcloud/vue/components/NcDateTime'
 import FilePreview from './FilePreview.vue'
-import { t } from '../../utils/l10n'
+import { t } from '../../utils/l10n.ts'
 
 const props = defineProps<{
 	/** Can directories be picked */
@@ -111,6 +116,7 @@ function handleClick() {
 
 /**
  * Handle keydown on the table row, pressing the enter key will be similar to clicking for keyboard navigation
+ *
  * @param event The Keydown event
  */
 function handleKeyDown(event: KeyboardEvent) {

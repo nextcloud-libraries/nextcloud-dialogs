@@ -5,7 +5,7 @@
 
 import { describe, expect, it } from 'vitest'
 import { ref } from 'vue'
-import { useViews } from './views'
+import { useViews } from './views.ts'
 
 describe('views composable', () => {
 	it('contains all views', () => {

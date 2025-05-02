@@ -9,7 +9,7 @@ export {
 	FilePickerClosed,
 	FilePickerType,
 	getFilePickerBuilder,
-} from './filepicker-builder'
+} from './filepicker-builder.ts'
 
 export {
 	showError,
@@ -33,17 +33,17 @@ export type {
 	ToastOptions,
 } from './toast.js'
 
-export { spawnDialog } from './utils/dialogs.js'
+export { spawnDialog } from './utils/dialogs.ts'
 
 export {
 	Dialog,
 	DialogBuilder,
 	getDialogBuilder,
-} from './dialogs'
+} from './dialogs.ts'
 
 export type {
 	IDialogButton,
 	IDialogSeverity,
 	IFilePickerButton,
 	IFilePickerFilter,
-} from './components/types.js'
+} from './components/types.ts'
