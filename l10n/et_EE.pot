@@ -27,7 +27,7 @@ msgid "Choose"
 msgstr "Tee valik"
 
 msgid "Choose {file}"
-msgstr "Vali {faili}"
+msgstr "Vali {file} fail"
 
 msgid "Choose %n file"
 msgid_plural "Choose %n files"
@@ -38,7 +38,7 @@ msgid "Copy"
 msgstr "Kopeeri"
 
 msgid "Copy to {target}"
-msgstr "Kopeeri {sihtkohta}"
+msgstr "Kopeeri sihtkohta {target}"
 
 msgid "Could not create the new folder"
 msgstr "Uut kausta ei saanud luua"
