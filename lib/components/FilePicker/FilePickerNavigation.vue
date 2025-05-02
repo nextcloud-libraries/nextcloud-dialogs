@@ -3,43 +3,41 @@
   - SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 <template>
-	<Fragment>
-		<!-- Filter for the file list -->
-		<NcTextField class="file-picker__filter-input"
-			:label="t('Filter file list')"
-			:show-trailing-button="!!filterString"
-			:model-value="filterString"
-			@update:model-value="updateFilterValue"
-			@trailing-button-click="updateFilterValue('')">
-			<IconMagnify :size="16" />
-			<template #trailing-button-icon>
-				<IconClose :size="16" />
-			</template>
-		</NcTextField>
-		<template v-if="availableViews.length > 1 && !disabledNavigation">
-			<!-- On non collapsed dialogs show the tablist, otherwise a dropdown is shown -->
-			<ul v-if="!isCollapsed"
-				class="file-picker__side">
-				<li v-for="view in availableViews" :key="view.id">
-					<NcButton :type="currentView === view.id ? 'primary' : 'tertiary'"
-						:wide="true"
-						@click="$emit('update:currentView', view.id)">
-						<template #icon>
-							<NcIconSvgWrapper :path="view.icon" :size="20" />
-						</template>
-						{{ view.label }}
-					</NcButton>
-				</li>
-			</ul>
-			<NcSelect v-else
-				:aria-label="t('Current view selector')"
-				:clearable="false"
-				:searchable="false"
-				:options="availableViews"
-				:model-value="currentViewObject"
-				@update:model-value="emit('update:currentView', $event.id)" />
+	<!-- Filter for the file list -->
+	<NcTextField class="file-picker__filter-input"
+		:label="t('Filter file list')"
+		:show-trailing-button="!!filterString"
+		:model-value="filterString"
+		@update:model-value="updateFilterValue"
+		@trailing-button-click="updateFilterValue('')">
+		<IconMagnify :size="16" />
+		<template #trailing-button-icon>
+			<IconClose :size="16" />
 		</template>
-	</Fragment>
+	</NcTextField>
+	<template v-if="availableViews.length > 1 && !disabledNavigation">
+		<!-- On non collapsed dialogs show the tablist, otherwise a dropdown is shown -->
+		<ul v-if="!isCollapsed"
+			class="file-picker__side">
+			<li v-for="view in availableViews" :key="view.id">
+				<NcButton :variant="currentView === view.id ? 'primary' : 'tertiary'"
+					:wide="true"
+					@click="$emit('update:currentView', view.id)">
+					<template #icon>
+						<NcIconSvgWrapper :path="view.icon" :size="20" />
+					</template>
+					{{ view.label }}
+				</NcButton>
+			</li>
+		</ul>
+		<NcSelect v-else
+			:aria-label="t('Current view selector')"
+			:clearable="false"
+			:searchable="false"
+			:options="availableViews"
+			:model-value="currentViewObject"
+			@update:model-value="emit('update:currentView', $event.id)" />
+	</template>
 </template>
 
 <script setup lang="ts">
@@ -52,7 +50,6 @@ import NcIconSvgWrapper from '@nextcloud/vue/components/NcIconSvgWrapper'
 import NcSelect from '@nextcloud/vue/components/NcSelect'
 import NcTextField from '@nextcloud/vue/components/NcTextField'
 import { computed, ref } from 'vue'
-import { Fragment } from 'vue-frag'
 import { t } from '../../utils/l10n'
 import { useViews } from '../../composables/views'
 

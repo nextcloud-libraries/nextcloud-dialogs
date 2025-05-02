@@ -3,8 +3,7 @@
   - SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 <template>
-	<NcDialog :open.sync="isOpen"
-		:container="container"
+	<NcDialog v-model:open="isOpen"
 		:buttons="dialogButtons"
 		:name="name"
 		size="large"
@@ -13,16 +12,16 @@
 		navigation-classes="file-picker__navigation"
 		@update:open="handleClose">
 		<template #navigation="{ isCollapsed }">
-			<FilePickerNavigation :current-view.sync="currentView"
-				:filter-string.sync="filterString"
-				:is-collapsed="isCollapsed"
-				:disabled-navigation="disabledNavigation" />
+			<FilePickerNavigation v-model:current-view="currentView"
+				v-model:filter-string="filterString"
+				:is-collapsed
+				:disabled-navigation />
 		</template>
 
 		<div class="file-picker__main">
 			<!-- Header title / file list breadcrumbs -->
 			<FilePickerBreadcrumbs v-if="currentView === 'files'"
-				:path.sync="currentPath"
+				v-model:path="currentPath"
 				:show-menu="allowPickDirectory"
 				@create-node="onCreateFolder" />
 			<div v-else class="file-picker__view">
@@ -32,8 +31,8 @@
 			<!-- File list -->
 			<!-- If loading or files found show file list, otherwise show empty content-->
 			<FileList v-if="isLoading || filteredFiles.length > 0"
-				:path.sync="currentPath"
-				:selected-files.sync="selectedFiles"
+				v-model:path="currentPath"
+				v-model:selected-files="selectedFiles"
 				:allow-pick-directory="allowPickDirectory"
 				:current-view="currentView"
 				:files="filteredFiles"
@@ -61,7 +60,7 @@
 
 <script setup lang="ts">
 import type { Node } from '@nextcloud/files'
-import type { IFilePickerButton, IFilePickerButtonFactory, IFilePickerFilter } from '../types.ts'
+import type { IDialogButton, IFilePickerButton, IFilePickerButtonFactory, IFilePickerFilter } from '../types.ts'
 import type { IFilesViewId } from '../../composables/views.ts'
 
 import IconFile from 'vue-material-design-icons/File.vue'
@@ -95,13 +94,7 @@ const props = withDefaults(defineProps<{
 	/**
 	 * Is the navigation disabled
 	 */
-	 disabledNavigation?: boolean
-
-	/**
-	 * Where to mount the dialog
-	 * @default 'body'
-	 */
-	container?: string
+	disabledNavigation?: boolean
 
 	/**
 	 * Custom filter function used to filter pickable files
@@ -130,7 +123,6 @@ const props = withDefaults(defineProps<{
 }>(), {
 	allowPickDirectory: false,
 	disabledNavigation: false,
-	container: 'body',
 	filterFn: undefined,
 	mimetypeFilter: () => [],
 	multiselect: true,
@@ -165,7 +157,7 @@ const dialogButtons = computed(() => {
 			isHandlingCallback = true
 			handleButtonClick(button.callback, nodes)
 		},
-	} as IFilePickerButton))
+	} satisfies IDialogButton))
 })
 
 /**
@@ -175,7 +167,7 @@ const dialogButtons = computed(() => {
 let isHandlingCallback = false
 
 const handleButtonClick = async (callback: IFilePickerButton['callback'], nodes: Node[]) => {
-	callback(nodes)
+	await callback(nodes)
 	emit('close', nodes)
 	// Unlock close
 	isHandlingCallback = false
@@ -311,12 +303,6 @@ const handleClose = (open: boolean) => {
 	if (!open && !isHandlingCallback) {
 		emit('close')
 	}
-}
-</script>
-
-<script lang="ts">
-export default {
-	name: 'FilePicker',
 }
 </script>
 

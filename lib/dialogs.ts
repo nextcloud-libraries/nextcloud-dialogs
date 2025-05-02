@@ -3,15 +3,12 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-import type { IDialogButton } from './components/types'
-import type Vue from 'vue'
-
+import type { IDialogButton, IDialogSeverity } from './components/types.ts'
 import { spawnDialog } from '@nextcloud/vue/functions/dialog'
 
-import { DialogSeverity } from './components/types'
 import GenericDialog from './components/GenericDialog.vue'
 
-export { DialogSeverity } from './components/types'
+export type * from './components/types.ts'
 
 /**
  * This class provides generic Nextcloud themed dialogs
@@ -21,8 +18,7 @@ export class Dialog {
 	#name: string
 	#text: string
 	#buttons: IDialogButton[]
-	#severity?: DialogSeverity
-	#dialog?: Vue
+	#severity?: IDialogSeverity
 
 	/** @deprecated */
 	#html?: string
@@ -31,13 +27,12 @@ export class Dialog {
 		name: string,
 		text: string,
 		buttons: IDialogButton[] = [],
-		severity?: DialogSeverity,
+		severity?: IDialogSeverity,
 	) {
 		this.#name = name
 		this.#text = text
 		this.#buttons = buttons
 		this.#severity = severity
-		this.#dialog = undefined
 		this.#html = undefined
 	}
 
@@ -52,34 +47,22 @@ export class Dialog {
 
 	/**
 	 * Spawn and show the dialog - if already open the previous instance will be destroyed
+	 *
 	 * @return Promise that resolves when the dialog is answered successfully and rejects on close
 	 */
 	async show() {
-		if (this.#dialog) {
-			this.#dialog.$destroy()
+		const result = await spawnDialog(GenericDialog,
+			{
+				buttons: this.#buttons,
+				name: this.#name,
+				text: this.#text,
+				severity: this.#severity,
+				html: this.#html,
+			},
+		)
+		if (!result) {
+			throw new Error('Dialog closed')
 		}
-
-		return new Promise((resolve) => {
-			this.#dialog = spawnDialog(GenericDialog,
-				{
-					buttons: this.#buttons,
-					name: this.#name,
-					text: this.#text,
-					severity: this.#severity,
-					html: this.#html,
-				},
-				resolve,
-			)
-		})
-	}
-
-	/**
-	 * Hide and destroy the current dialog instance
-	 *
-	 * @deprecated use the promise of the `show` methods for the user interaction.
-	 */
-	hide() {
-		this.#dialog?.$destroy()
 	}
 
 }
@@ -103,7 +86,7 @@ export class Dialog {
  */
 export class DialogBuilder {
 
-	#severity?: DialogSeverity
+	#severity?: IDialogSeverity
 	#text: string
 	#name: string
 	#buttons: IDialogButton[]
@@ -137,7 +120,7 @@ export class DialogBuilder {
 	 * Set the severity of the dialog
 	 * @param severity Severity of the dialog
 	 */
-	setSeverity(severity: DialogSeverity) {
+	setSeverity(severity: IDialogSeverity) {
 		this.#severity = severity
 		return this
 	}

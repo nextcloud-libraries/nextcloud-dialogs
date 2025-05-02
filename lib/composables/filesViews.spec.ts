@@ -5,7 +5,7 @@
 
 import { describe, it, expect, vi, afterEach, beforeAll, afterAll } from 'vitest'
 import { shallowMount } from '@vue/test-utils'
-import { defineComponent, type PropType } from 'vue'
+import { defineComponent, h, type PropType } from 'vue'
 import { useFilesViews, type FileListViews } from './filesSettings'
 
 const axios = vi.hoisted(() => ({
@@ -25,7 +25,7 @@ const TestComponent = defineComponent({
 			...settings,
 		}
 	},
-	render: (h) => h('div'),
+	render: () => h('div'),
 })
 
 describe('files app views config composable', () => {

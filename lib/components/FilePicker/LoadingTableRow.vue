@@ -35,7 +35,7 @@ defineProps<{
 </script>
 
 <style scoped lang="scss">
-@use './FileList.scss';
+@use './FileList';
 
 @keyframes gradient {
 	0% {

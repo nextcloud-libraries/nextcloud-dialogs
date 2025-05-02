@@ -6,7 +6,7 @@
 import { getGettextBuilder } from '@nextcloud/l10n/gettext'
 
 const gtBuilder = getGettextBuilder()
-	.detectLocale()
+	.detectLanguage()
 
 __TRANSLATIONS__.map(data => gtBuilder.addTranslation(data.locale, data.json))
 

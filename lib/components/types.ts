@@ -5,11 +5,7 @@
 
 import type { Node } from '@nextcloud/files'
 
-export enum DialogSeverity {
-	Info = 'info',
-	Warning = 'warning',
-	Error = 'error',
-}
+export type IDialogSeverity = 'info' | 'warning' | 'error'
 
 /**
  * Interface for defining buttons passed to the Dialog component
@@ -32,7 +28,7 @@ export interface IDialogButton {
 	 * Button type
 	 * @see https://nextcloud-vue-components.netlify.app/#/Components/NcButton
 	 */
-	type?: 'primary' | 'secondary' | 'error' | 'warning' | 'success'
+	variant?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'warning' | 'success'
 
 	/**
 	 * Disabled state of the button
@@ -51,7 +47,7 @@ export interface IFilePickerButton extends Omit<IDialogButton, 'callback'> {
 	 *
 	 * @param nodes Array of `@nextcloud/files` Nodes that were selected
 	 */
-	callback: (nodes: Node[]) => void
+	callback: (nodes: Node[]) => void | Promise<void>
 }
 
 export type IFilePickerButtonFactory = (selectedNodes: Node[], currentPath: string, currentView: string) => IFilePickerButton[]

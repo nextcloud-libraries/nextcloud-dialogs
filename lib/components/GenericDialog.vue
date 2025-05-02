@@ -4,10 +4,10 @@
 -->
 <template>
 	<NcDialog dialog-classes="nc-generic-dialog"
-		:buttons="buttons"
-		:name="name"
+		:buttons="dialogButtons"
+		:name
 		:message="text"
-		@update:open="$emit('close')">
+		@update:open="$emit('close', false)">
 		<NcNoteCard v-if="severity" :type="severity">
 			<p v-text="text" />
 		</NcNoteCard>
@@ -17,11 +17,9 @@
 </template>
 
 <script setup lang="ts">
-import type { IDialogButton } from './types'
+import type { IDialogButton, IDialogSeverity } from './types.ts'
 
-import { onMounted, onUnmounted } from 'vue'
-import { DialogSeverity } from './types'
-
+import { computed, onMounted, onUnmounted } from 'vue'
 import NcDialog from '@nextcloud/vue/components/NcDialog'
 import NcNoteCard from '@nextcloud/vue/components/NcNoteCard'
 
@@ -50,8 +48,20 @@ const props = defineProps<{
 	/**
 	 * Severity of the dialog - if a notecard is used
 	 */
-	severity?: DialogSeverity
+	severity?: IDialogSeverity
 }>()
+
+const emit = defineEmits<{
+	close: [buttonClick: boolean]
+}>()
+
+const dialogButtons = computed(() => props.buttons?.map((button) => ({
+	...button,
+	callback() {
+		button.callback()
+		emit('close', true)
+	},
+})))
 
 /**
  * Handler used to ensure the message is also shown when the page is unloaded

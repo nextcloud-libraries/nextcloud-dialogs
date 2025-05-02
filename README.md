@@ -15,14 +15,21 @@ npm i -S @nextcloud/dialogs
 ```
 
 ### Version compatibility
-Since version 4.2 this package provides a Vue.js based file picker, so this package depends on `@nextcloud/vue`. So to not introduce style collisions stick with the supported versions:
+Since version 4.2 this package provides a Vue.js based file picker, so this package depends on `@nextcloud/vue`.
+So to not introduce style collisions stick with the supported versions:
 
 | `@nextcloud/dialogs` | maintained | `@nextcloud/vue` dependency |   Nextcloud server version |
 |----------------------|------------|-----------------------------|----------------------------|
+|                 7.x  |         ✅ |                9.x (Vue 3)¹ | Nextcloud 30 and newer     |
 |                 6.x  |         ✅ |                        8.x  | Nextcloud 29 and newer     |
 |                 5.x  |         ❌ |                        8.x  | Nextcloud 28, 29, 30       |
 |                 4.2+ |         ❌ |                        7.12 | Nextcloud 25, 26, 27, 27.1 |
 |                 4.1  |         ❌ |                       *any* |  *any*                     |
+
+¹: In version 7.x the `@nextcloud/vue` dependency is moved to `dependencies` so you can also use this library
+with an old version of `@nextcloud/vue` in your app dependencies if your app still uses Vue 2.
+Note that this might increase the bundled app size.
+If your app also already uses `@nextcloud/vue` version 9.x and Vue 3 then the bundle size will not increase.
 
 ## Usage
 
@@ -62,11 +69,8 @@ showError('This is an error shown without a timeout', { timeout: -1 })
 A full list of available options can be found in the [documentation](https://nextcloud-libraries.github.io/nextcloud-dialogs/).
 
 ### FilePicker
-There are two ways to spawn a FilePicker provided by the library:
-
-#### Use the FilePickerBuilder
-This way you do not need to use Vue, but can programatically spawn a FilePicker.
-The FilePickerBuilder is included in the main entry point of this library, so you can use it like this:
+To spawn the FilePicker provided by the library you have to use the *FilePickerBuilder*.
+The *FilePickerBuilder* is included in the main entry point of this library, so you can use it like this:
 
 ```js
 import { getFilePickerBuilder } from '@nextcloud/dialogs'
@@ -80,41 +84,6 @@ const filepicker = getFilePickerBuilder('Pick plain text files')
 
 // You get the file nodes by the button callback, but also the pick yields the paths of the picked files
 const paths = await filepicker.pick()
-```
-
-#### Use the Vue component directly
-
-> [!WARNING]  
-> The Vue component is deprecated and will no longer be exported in a future version.
-
-We also provide the `@nextcloud/dialogs/filepicker.js` entry point to allow using the Vue component directly:
-
-```vue
-<template>
-  <FilePicker name="Pick some files" :buttons="buttons" />
-</template>
-<script setup lang="ts">
-  import {
-    FilePickerVue as FilePicker,
-    type IFilePickerButton,
-  } from '@nextcloud/dialogs/filepicker.js'
-  import type { Node } from '@nextcloud/files'
-  import IconShare from 'vue-material-design-icons/Share.vue'
-
-  const buttons: IFilePickerButton[] = [
-    {
-      label: 'Pick',
-      callback: (nodes: Node[]) => console.log('Picked', nodes),
-      type: 'primary'
-    },
-    {
-      label: 'Share',
-      callback: (nodes: Node[]) => console.log('Share picked files', nodes),
-      type: 'secondary',
-      icon: IconShare,
-    }
-  ]
-</script>
 ```
 
 ## Development

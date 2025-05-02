@@ -33,7 +33,7 @@
 			{{ formatFileSize(node.size || 0) }}
 		</td>
 		<td class="row-modified">
-			<NcDateTime :timestamp="node.mtime" :ignore-seconds="true" />
+			<NcDateTime :timestamp ignore-seconds />
 		</td>
 	</tr>
 </template>
@@ -65,10 +65,12 @@ const props = defineProps<{
 
 const emit = defineEmits<{
 	/** Emitted when the selected state is changed */
-	(e: 'update:selected', v: boolean): void
+	'update:selected': [selected: boolean]
 	/** Emitted when a directory was not selected but entered */
-	(e: 'enter-directory', node: INode): void
+	enterDirectory: [node: INode]
 }>()
+
+const timestamp = computed(() => props.node.mtime ?? 0)
 
 /**
  * The displayname of the current node (excluding file extension)
@@ -102,7 +104,7 @@ function toggleSelected() {
  */
 function handleClick() {
 	if (isDirectory.value) {
-		emit('enter-directory', props.node)
+		emit('enterDirectory', props.node)
 	} else {
 		toggleSelected()
 	}
@@ -120,7 +122,7 @@ function handleKeyDown(event: KeyboardEvent) {
 </script>
 
 <style scoped lang="scss">
-@use './FileList.scss';
+@use './FileList';
 
 .file-picker {
 	&__row {
