@@ -4,10 +4,11 @@
  */
 
 import type { ComponentPublicInstance, Ref } from 'vue'
-import { describe, it, expect, vi, beforeEach } from 'vitest'
+
 import { shallowMount } from '@vue/test-utils'
-import { defineComponent, ref, toRef, nextTick, h } from 'vue'
-import { useDAVFiles } from './dav'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { defineComponent, h, nextTick, ref, toRef } from 'vue'
+import { useDAVFiles } from './dav.ts'
 
 const nextcloudFiles = vi.hoisted(() => ({
 	davGetClient: vi.fn(),
@@ -20,19 +21,25 @@ const nextcloudFiles = vi.hoisted(() => ({
 }))
 vi.mock('@nextcloud/files', () => nextcloudFiles)
 
-// eslint-disable-next-line @typescript-eslint/ban-types
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 const waitLoaded = (vm: ComponentPublicInstance<{}, { isLoading: boolean }>) => new Promise((resolve) => {
 	const w = () => {
-		if (vm.isLoading) window.setTimeout(w, 50)
-		else resolve(true)
+		if (vm.isLoading) {
+			window.setTimeout(w, 50)
+		} else {
+			resolve(true)
+		}
 	}
 	w()
 })
 
 const waitRefLoaded = (isLoading: Ref<boolean>) => new Promise((resolve) => {
 	const w = () => {
-		if (isLoading.value) window.setTimeout(w, 50)
-		else resolve(true)
+		if (isLoading.value) {
+			window.setTimeout(w, 50)
+		} else {
+			resolve(true)
+		}
 	}
 	w()
 })
@@ -49,7 +56,9 @@ const TestComponent = defineComponent({
 })
 
 describe('dav composable', () => {
-	beforeEach(() => { vi.resetAllMocks() })
+	beforeEach(() => {
+		vi.resetAllMocks()
+	})
 
 	it('Sets the inital state correctly', () => {
 		const client = {

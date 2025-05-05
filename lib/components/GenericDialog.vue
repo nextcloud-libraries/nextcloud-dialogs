@@ -3,7 +3,8 @@
   - SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 <template>
-	<NcDialog dialog-classes="nc-generic-dialog"
+	<NcDialog
+		dialog-classes="nc-generic-dialog"
 		:buttons="dialogButtons"
 		:name
 		:message="text"
@@ -36,6 +37,7 @@ const props = defineProps<{
 
 	/**
 	 * HTML content
+	 *
 	 * @deprecated DO NOT USE! This is just for backwards compatibility and will be removed in the near future!
 	 */
 	html?: string

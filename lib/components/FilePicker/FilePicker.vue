@@ -3,7 +3,8 @@
   - SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 <template>
-	<NcDialog v-model:open="isOpen"
+	<NcDialog
+		v-model:open="isOpen"
 		:buttons="dialogButtons"
 		:name="name"
 		size="large"
@@ -12,7 +13,8 @@
 		navigation-classes="file-picker__navigation"
 		@update:open="handleClose">
 		<template #navigation="{ isCollapsed }">
-			<FilePickerNavigation v-model:current-view="currentView"
+			<FilePickerNavigation
+				v-model:current-view="currentView"
 				v-model:filter-string="filterString"
 				:is-collapsed
 				:disabled-navigation />
@@ -20,7 +22,8 @@
 
 		<div class="file-picker__main">
 			<!-- Header title / file list breadcrumbs -->
-			<FilePickerBreadcrumbs v-if="currentView === 'files'"
+			<FilePickerBreadcrumbs
+				v-if="currentView === 'files'"
 				v-model:path="currentPath"
 				:show-menu="allowPickDirectory"
 				@create-node="onCreateFolder" />
@@ -30,7 +33,8 @@
 
 			<!-- File list -->
 			<!-- If loading or files found show file list, otherwise show empty content-->
-			<FileList v-if="isLoading || filteredFiles.length > 0"
+			<FileList
+				v-if="isLoading || filteredFiles.length > 0"
 				v-model:path="currentPath"
 				v-model:selected-files="selectedFiles"
 				:allow-pick-directory="allowPickDirectory"
@@ -40,14 +44,16 @@
 				:loading="isLoading"
 				:name="viewHeadline"
 				@update:path="currentView = 'files'" />
-			<NcEmptyContent v-else-if="filterString"
+			<NcEmptyContent
+				v-else-if="filterString"
 				:name="t('No matching files')"
 				:description="t('No files matching your filter were found.')">
 				<template #icon>
 					<IconFile />
 				</template>
 			</NcEmptyContent>
-			<NcEmptyContent v-else
+			<NcEmptyContent
+				v-else
 				:name="t('No files in here')"
 				:description="noFilesDescription">
 				<template #icon>
@@ -60,23 +66,23 @@
 
 <script setup lang="ts">
 import type { Node } from '@nextcloud/files'
-import type { IDialogButton, IFilePickerButton, IFilePickerButtonFactory, IFilePickerFilter } from '../types.ts'
 import type { IFilesViewId } from '../../composables/views.ts'
+import type { IDialogButton, IFilePickerButton, IFilePickerButtonFactory, IFilePickerFilter } from '../types.ts'
 
+import { emit as emitOnEventBus } from '@nextcloud/event-bus'
+import { computed, onMounted, ref, shallowRef, toRef, watch } from 'vue'
+import NcDialog from '@nextcloud/vue/components/NcDialog'
+import NcEmptyContent from '@nextcloud/vue/components/NcEmptyContent'
 import IconFile from 'vue-material-design-icons/File.vue'
 import FileList from './FileList.vue'
 import FilePickerBreadcrumbs from './FilePickerBreadcrumbs.vue'
 import FilePickerNavigation from './FilePickerNavigation.vue'
-
-import { emit as emitOnEventBus } from '@nextcloud/event-bus'
-import NcDialog from '@nextcloud/vue/components/NcDialog'
-import NcEmptyContent from '@nextcloud/vue/components/NcEmptyContent'
-import { computed, onMounted, ref, shallowRef, toRef, watch } from 'vue'
-import { showError } from '../../toast'
-import { useDAVFiles } from '../../composables/dav'
-import { useMimeFilter } from '../../composables/mime'
-import { useFilesSettings } from '../../composables/filesSettings'
-import { t } from '../../utils/l10n'
+import { useDAVFiles } from '../../composables/dav.ts'
+import { useFilesSettings } from '../../composables/filesSettings.ts'
+import { useMimeFilter } from '../../composables/mime.ts'
+import { showError } from '../../toast.ts'
+import { t } from '../../utils/l10n.ts'
+import { logger } from '../../utils/logger.ts'
 
 const props = withDefaults(defineProps<{
 	/** Buttons to be displayed */
@@ -87,6 +93,7 @@ const props = withDefaults(defineProps<{
 
 	/**
 	 * Can directories be picked
+	 *
 	 * @default false
 	 */
 	allowPickDirectory?: boolean
@@ -105,27 +112,28 @@ const props = withDefaults(defineProps<{
 	 * List of allowed mime types
 	 * You can use placeholders for e.g. allowing all subtypes of images `['image/*']`.
 	 * Note that if unset all files are allowed, which is the same as passing `['*∕*']`
+	 *
 	 * @default []
 	 */
 	mimetypeFilter?: string[]
 
 	/**
 	 * Is it allowed to pick multiple files
-	 * @default true
 	 */
 	multiselect?: boolean
 
 	/**
 	 * The initial path of the file picker
+	 *
 	 * @default '/'
 	 */
-	 path?: string
+	path?: string
 }>(), {
 	allowPickDirectory: false,
 	disabledNavigation: false,
 	filterFn: undefined,
 	mimetypeFilter: () => [],
-	multiselect: true,
+	multiselect: false,
 	path: undefined,
 })
 
@@ -134,6 +142,64 @@ const emit = defineEmits<{
 }>()
 
 const isOpen = ref(true)
+
+/**
+ * Name of the currently active view
+ */
+const currentView = ref<IFilesViewId>('files')
+
+/**
+ * Last path navigated to using the file picker
+ * (required as sessionStorage is not reactive)
+ */
+const savedPath = ref(window?.sessionStorage.getItem('NC.FilePicker.LastPath') || '/')
+
+/**
+ * The path the user manually navigated to using this filepicker instance
+ */
+const navigatedPath = ref('')
+
+/**
+ * The current path that should be picked from
+ */
+const currentPath = computed({
+	get: () => {
+		// Only use the path for the files view as favorites and recent only works on the root
+		return currentView.value === 'files' ? navigatedPath.value || props.path || savedPath.value : '/'
+	},
+	set: (path: string) => {
+		// forward setting the current path to the navigated path
+		navigatedPath.value = path
+	},
+})
+
+/**
+ * All currently selected files
+ */
+const selectedFiles = shallowRef<Node[]>([])
+
+const {
+	files,
+	folder: currentFolder,
+	isLoading,
+	loadFiles,
+	createDirectory,
+} = useDAVFiles(currentView, currentPath)
+
+// Save the navigated path to the session storage on change
+watch([navigatedPath], () => {
+	if (props.path === undefined && navigatedPath.value) {
+		window.sessionStorage.setItem('NC.FilePicker.LastPath', navigatedPath.value)
+	}
+	// Reset selected files
+	selectedFiles.value = []
+})
+
+/**
+ * Flag that is set when a button was clicked to prevent the default close event to be emitted
+ * This is needed as `handleButtonClick` is async and thus might execute after NcDialog already closed
+ */
+let isHandlingCallback = false
 
 /**
  * Map buttons to Dialog buttons by wrapping the callback function to pass the selected files
@@ -161,12 +227,10 @@ const dialogButtons = computed(() => {
 })
 
 /**
- * Flag that is set when a button was clicked to prevent the default close event to be emitted
- * This is needed as `handleButtonClick` is async and thus might execute after NcDialog already closed
+ * @param callback - Callback of the button
+ * @param nodes - Currently selected nodes
  */
-let isHandlingCallback = false
-
-const handleButtonClick = async (callback: IFilePickerButton['callback'], nodes: Node[]) => {
+async function handleButtonClick(callback: IFilePickerButton['callback'], nodes: Node[]) {
 	await callback(nodes)
 	emit('close', nodes)
 	// Unlock close
@@ -174,52 +238,9 @@ const handleButtonClick = async (callback: IFilePickerButton['callback'], nodes:
 }
 
 /**
- * Name of the currently active view
- */
-const currentView = ref<IFilesViewId>('files')
-
-/**
  * Headline to be used on the current view
  */
 const viewHeadline = computed(() => currentView.value === 'favorites' ? t('Favorites') : (currentView.value === 'recent' ? t('Recent') : ''))
-
-/**
- * All currently selected files
- */
-const selectedFiles = shallowRef<Node[]>([])
-
-/**
- * Last path navigated to using the file picker
- * (required as sessionStorage is not reactive)
- */
-const savedPath = ref(window?.sessionStorage.getItem('NC.FilePicker.LastPath') || '/')
-
-/**
- * The path the user manually navigated to using this filepicker instance
- */
-const navigatedPath = ref('')
-// Save the navigated path to the session storage on change
-watch([navigatedPath], () => {
-	if (props.path === undefined && navigatedPath.value) {
-		window.sessionStorage.setItem('NC.FilePicker.LastPath', navigatedPath.value)
-	}
-	// Reset selected files
-	selectedFiles.value = []
-})
-
-/**
- * The current path that should be picked from
- */
-const currentPath = computed({
-	get: () => {
-		// Only use the path for the files view as favorites and recent only works on the root
-		return currentView.value === 'files' ? navigatedPath.value || props.path || savedPath.value : '/'
-	},
-	set: (path: string) => {
-		// forward setting the current path to the navigated path
-		navigatedPath.value = path
-	},
-})
 
 /**
  * A string used to filter files in current view
@@ -227,14 +248,6 @@ const currentPath = computed({
 const filterString = ref('')
 
 const { isSupportedMimeType } = useMimeFilter(toRef(props, 'mimetypeFilter')) // vue 3.3 will allow cleaner syntax of toRef(() => props.mimetypeFilter)
-
-const {
-	files,
-	folder: currentFolder,
-	isLoading,
-	loadFiles,
-	createDirectory,
-} = useDAVFiles(currentView, currentPath)
 
 onMounted(() => loadFiles())
 
@@ -252,7 +265,7 @@ const filteredFiles = computed(() => {
 	}
 	if (props.mimetypeFilter.length > 0) {
 		// filter by mime type but always include folders to navigate
-		filtered = filtered.filter(file => file.type === 'folder' || (file.mime && isSupportedMimeType(file.mime)))
+		filtered = filtered.filter((file) => file.type === 'folder' || (file.mime && isSupportedMimeType(file.mime)))
 	}
 	if (filterString.value) {
 		filtered = filtered.filter((file) => file.basename.toLowerCase().includes(filterString.value.toLowerCase()))
@@ -289,7 +302,7 @@ const onCreateFolder = async (name: string) => {
 		// emit event bus to force files app to reload that file if needed
 		emitOnEventBus('files:node:created', files.value.filter((file) => file.basename === name)[0])
 	} catch (error) {
-		console.warn('Could not create new folder', { name, error })
+		logger.warn('Could not create new folder', { name, error })
 		// show error to user
 		showError(t('Could not create the new folder'))
 	}
@@ -297,6 +310,7 @@ const onCreateFolder = async (name: string) => {
 
 /**
  * Handle closing the file picker
+ *
  * @param open If the dialog is open
  */
 const handleClose = (open: boolean) => {

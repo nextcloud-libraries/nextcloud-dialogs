@@ -4,9 +4,10 @@
  */
 
 import type { IDialogButton, IDialogSeverity } from './components/types.ts'
-import { spawnDialog } from '@nextcloud/vue/functions/dialog'
 
+import { spawnDialog } from '@nextcloud/vue/functions/dialog'
 import GenericDialog from './components/GenericDialog.vue'
+import { logger } from './utils/logger.ts'
 
 export type * from './components/types.ts'
 
@@ -14,7 +15,6 @@ export type * from './components/types.ts'
  * This class provides generic Nextcloud themed dialogs
  */
 export class Dialog {
-
 	#name: string
 	#text: string
 	#buttons: IDialogButton[]
@@ -51,7 +51,8 @@ export class Dialog {
 	 * @return Promise that resolves when the dialog is answered successfully and rejects on close
 	 */
 	async show() {
-		const result = await spawnDialog(GenericDialog,
+		const result = await spawnDialog(
+			GenericDialog,
 			{
 				buttons: this.#buttons,
 				name: this.#name,
@@ -64,7 +65,6 @@ export class Dialog {
 			throw new Error('Dialog closed')
 		}
 	}
-
 }
 
 /**
@@ -85,7 +85,6 @@ export class Dialog {
  * ```
  */
 export class DialogBuilder {
-
 	#severity?: IDialogSeverity
 	#text: string
 	#name: string
@@ -100,6 +99,7 @@ export class DialogBuilder {
 
 	/**
 	 * Set dialog name
+	 *
 	 * @param name The name or headline of the dialog
 	 */
 	setName(name: string) {
@@ -109,6 +109,7 @@ export class DialogBuilder {
 
 	/**
 	 * Set the dialog text
+	 *
 	 * @param text Main text of the dialog
 	 */
 	setText(text: string) {
@@ -118,6 +119,7 @@ export class DialogBuilder {
 
 	/**
 	 * Set the severity of the dialog
+	 *
 	 * @param severity Severity of the dialog
 	 */
 	setSeverity(severity: IDialogSeverity) {
@@ -127,11 +129,12 @@ export class DialogBuilder {
 
 	/**
 	 * Set buttons from array
+	 *
 	 * @param buttons Either an array of dialog buttons
 	 */
 	setButtons(buttons: IDialogButton[]) {
 		if (this.#buttons.length > 0) {
-			console.warn('[@nextcloud/dialogs] Dialog buttons are already set - this overrides previous buttons.')
+			logger.warn('[@nextcloud/dialogs] Dialog buttons are already set - this overrides previous buttons.')
 		}
 		this.#buttons = buttons
 		return this
@@ -139,6 +142,7 @@ export class DialogBuilder {
 
 	/**
 	 * Add a single button
+	 *
 	 * @param button Button to add
 	 */
 	addButton(button: IDialogButton) {
@@ -149,7 +153,6 @@ export class DialogBuilder {
 	build() {
 		return new Dialog(this.#name, this.#text, this.#buttons, this.#severity)
 	}
-
 }
 
 /**

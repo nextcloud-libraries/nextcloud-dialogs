@@ -8,7 +8,7 @@ import { getGettextBuilder } from '@nextcloud/l10n/gettext'
 const gtBuilder = getGettextBuilder()
 	.detectLanguage()
 
-__TRANSLATIONS__.map(data => gtBuilder.addTranslation(data.locale, data.json))
+__TRANSLATIONS__.map((data) => gtBuilder.addTranslation(data.locale, data.json))
 
 const gt = gtBuilder.build()
 

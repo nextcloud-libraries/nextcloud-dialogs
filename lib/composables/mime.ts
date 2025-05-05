@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 import type { ComputedRef, Ref } from 'vue'
+
 import { computed } from 'vue'
 
 /**
@@ -17,18 +18,18 @@ export const useMimeFilter = function(allowedMIMETypes: Ref<readonly string[]> |
 
 	/**
 	 * Check if a given MIME type string is supported by the MIME filter values
+	 *
 	 * @param mime MIME type string to check
 	 * @return True if mime is allowed by MIME filter values, false otherwise
 	 */
 	const isSupportedMimeType = (mime: string): boolean => {
 		const mimeTypeArray = mime.split('/')
-		return splittedTypes.value.some(
-			([type, subtype]) =>
-				// check mime type matches or is wildcard
-				(mimeTypeArray[0] === type || type === '*')
-				// check mime subtype matches or is wildcard
-				&& (mimeTypeArray[1] === subtype || subtype === '*'),
-		)
+		return splittedTypes.value.some(([type, subtype]) => (
+			// check mime type matches or is wildcard
+			(mimeTypeArray[0] === type || type === '*')
+			// check mime subtype matches or is wildcard
+			&& (mimeTypeArray[1] === subtype || subtype === '*')
+		))
 	}
 
 	return {

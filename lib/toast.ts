@@ -4,11 +4,10 @@
  */
 
 import Toastify from 'toastify-js'
+import LoaderSvg from '../styles/loader.svg?raw'
 import { t } from './utils/l10n.js'
 
 import '../styles/toast.scss'
-
-import LoaderSvg from '../styles/loader.svg?raw'
 
 /**
  * Enum of available Toast types
@@ -44,6 +43,7 @@ export const TOAST_PERMANENT_TIMEOUT = -1
 
 /**
  * Type of a toast
+ *
  * @see https://apvarun.github.io/toastify-js/
  */
 type Toast = ReturnType<typeof Toastify>
@@ -56,6 +56,7 @@ export interface ToastOptions {
 
 	/**
 	 * Set to true to allow HTML content inside of the toast text
+	 *
 	 * @default false
 	 */
 	isHTML?: boolean
@@ -101,8 +102,8 @@ export interface ToastOptions {
  * @param data Message to be shown in the toast, any HTML is removed by default
  * @param options ToastOptions
  */
-export function showMessage(data: string|Node, options?: ToastOptions): Toast {
-	options = Object.assign({
+export function showMessage(data: string | Node, options?: ToastOptions): Toast {
+	options = {
 		timeout: TOAST_DEFAULT_TIMEOUT,
 		isHTML: false,
 		type: undefined,
@@ -111,7 +112,8 @@ export function showMessage(data: string|Node, options?: ToastOptions): Toast {
 		onRemove: () => { },
 		onClick: undefined,
 		close: true,
-	}, options)
+		...options,
+	}
 
 	if (typeof data === 'string' && !options.isHTML) {
 		// fime mae sure that text is extracted

@@ -4,8 +4,8 @@
  */
 
 import { describe, expect, it } from 'vitest'
-import { useMimeFilter } from './mime'
 import { ref } from 'vue'
+import { useMimeFilter } from './mime.ts'
 
 describe('mime composable', () => {
 	it('isSupportedMimeType returns true if supported', () => {

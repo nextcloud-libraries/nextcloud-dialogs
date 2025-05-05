@@ -8,23 +8,25 @@ import type { MaybeRef } from '@vueuse/core'
 
 import { FileType } from '@nextcloud/files'
 import { generateUrl } from '@nextcloud/router'
-import { toValue } from '@vueuse/core'
-import { ref, watchEffect } from 'vue'
-import { preloadImage } from '../utils/imagePreload'
+import { ref, toValue, watchEffect } from 'vue'
+import { preloadImage } from '../utils/imagePreload.ts'
 
 interface PreviewOptions {
 	/**
 	 * Size of the previews in px
+	 *
 	 * @default 32
 	 */
 	size?: number
 	/**
 	 * Should the preview fall back to the mime type icon
+	 *
 	 * @default true
 	 */
 	mimeFallback?: boolean
 	/**
 	 * Should the preview be cropped or fitted
+	 *
 	 * @default false (meaning it gets fitted)
 	 */
 	cropPreview?: boolean
@@ -48,7 +50,7 @@ export function getPreviewURL(node: INode, options: PreviewOptions = {}) {
 		let url
 		try {
 			url = new URL(previewUrl)
-		} catch (e) {
+		} catch {
 			url = new URL(previewUrl, window.location.origin)
 		}
 
@@ -63,13 +65,13 @@ export function getPreviewURL(node: INode, options: PreviewOptions = {}) {
 		// cache busting
 		url.searchParams.set('c', `${node.attributes.etag}`)
 		return url
-	} catch (e) {
+	} catch {
 		return null
 	}
 }
 
 export const usePreviewURL = (node: MaybeRef<INode>, options?: MaybeRef<PreviewOptions>) => {
-	const previewURL = ref<URL|null>(null)
+	const previewURL = ref<URL | null>(null)
 	const previewLoaded = ref(false)
 
 	watchEffect(() => {

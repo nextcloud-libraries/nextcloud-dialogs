@@ -5,16 +5,15 @@
 
 import type { ComputedRef, Ref } from 'vue'
 
+import axios from '@nextcloud/axios'
 import { loadState } from '@nextcloud/initial-state'
 import { generateUrl } from '@nextcloud/router'
 import { isPublicShare } from '@nextcloud/sharing/public'
 import { toValue } from '@vueuse/core'
 import { computed, onMounted, ref } from 'vue'
-
-import axios from '@nextcloud/axios'
-
-import { t } from '../utils/l10n'
-import { showError } from '../toast'
+import { showError } from '../toast.ts'
+import { t } from '../utils/l10n.ts'
+import { logger } from '../utils/logger.ts'
 
 interface OCAFilesUserConfig {
 	show_hidden: boolean
@@ -23,8 +22,8 @@ interface OCAFilesUserConfig {
 }
 
 interface OCAFilesView {
-	sorting_direction: 'asc'|'desc'
-	sorting_mode: 'basename'|'size'|'mtime'
+	sorting_direction: 'asc' | 'desc'
+	sorting_mode: 'basename' | 'size' | 'mtime'
 }
 
 interface OCAFilesViewConfig {
@@ -32,18 +31,18 @@ interface OCAFilesViewConfig {
 }
 
 interface ViewConfig {
-	sortBy: 'basename'|'size'|'mtime'
-	order: 'ascending'|'descending'|'none'
+	sortBy: 'basename' | 'size' | 'mtime'
+	order: 'ascending' | 'descending' | 'none'
 }
 
-export type FileListViews = 'files'|'recent'|'favorites'
+export type FileListViews = 'files' | 'recent' | 'favorites'
 
 /**
  * Composable to get the files app settings
  * (show hidden files, sort favorites, crop previews)
  */
 export const useFilesSettings = () => {
-	const filesUserState = loadState<OCAFilesUserConfig|null>('files', 'config', null)
+	const filesUserState = loadState<OCAFilesUserConfig | null>('files', 'config', null)
 
 	const showHiddenFiles = ref(filesUserState?.show_hidden ?? true)
 	const sortFavoritesFirst = ref(filesUserState?.sort_favorites_first ?? true)
@@ -58,11 +57,11 @@ export const useFilesSettings = () => {
 				sortFavoritesFirst.value = data?.data?.sort_favorites_first ?? true
 				cropImagePreviews.value = data?.data?.crop_image_previews ?? true
 			} catch (error) {
-				console.error('Could not load files settings', error)
+				logger.error('Could not load files settings', error)
 				showError(t('Could not load files settings'))
 			}
 		} else {
-			console.debug('Skip loading files settings - currently on public share')
+			logger.debug('Skip loading files settings - currently on public share')
 		}
 	})
 
@@ -75,12 +74,13 @@ export const useFilesSettings = () => {
 
 /**
  * Composable to get the files app view configs for sorting the files list
+ *
  * @param currentView the currently active view
  */
-export const useFilesViews = (currentView?: FileListViews|Ref<FileListViews>|ComputedRef<FileListViews>) => {
+export const useFilesViews = (currentView?: FileListViews | Ref<FileListViews> | ComputedRef<FileListViews>) => {
 	const convertOrder = (order?: string) => order === 'asc' ? 'ascending' : (order === 'desc' ? 'descending' : 'none')
 
-	const filesViewsState = loadState<OCAFilesViewConfig|null>('files', 'viewConfigs', null)
+	const filesViewsState = loadState<OCAFilesViewConfig | null>('files', 'viewConfigs', null)
 
 	const filesViewConfig = ref<ViewConfig>({
 		sortBy: filesViewsState?.files?.sorting_mode ?? 'basename',
@@ -112,11 +112,11 @@ export const useFilesViews = (currentView?: FileListViews|Ref<FileListViews>|Com
 					order: convertOrder(data?.data?.recent?.sorting_direction),
 				}
 			} catch (error) {
-				console.error('Could not load files views', error)
+				logger.error('Could not load files views', error)
 				showError(t('Could not load files views'))
 			}
 		} else {
-			console.debug('Skip loading files views - currently on public share')
+			logger.debug('Skip loading files views - currently on public share')
 		}
 	})
 

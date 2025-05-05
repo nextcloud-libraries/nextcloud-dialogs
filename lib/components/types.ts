@@ -13,25 +13,27 @@ export type IDialogSeverity = 'info' | 'warning' | 'error'
  */
 export interface IDialogButton {
 	/** Label of the button */
-	label: string,
+	label: string
 
 	/** Callback on button click */
-	callback: () => void,
+	callback: () => void
 
 	/**
 	 * Optional Icon for the button
 	 * Should be a SVG image as raw string
 	 */
-	icon?: string,
+	icon?: string
 
 	/**
 	 * Button type
+	 *
 	 * @see https://nextcloud-vue-components.netlify.app/#/Components/NcButton
 	 */
 	variant?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'warning' | 'success'
 
 	/**
 	 * Disabled state of the button
+	 *
 	 * @default false
 	 */
 	disabled?: boolean

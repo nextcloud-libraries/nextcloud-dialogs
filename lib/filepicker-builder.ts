@@ -6,12 +6,12 @@
 import type { Node } from '@nextcloud/files'
 import type { IFilePickerButton, IFilePickerButtonFactory, IFilePickerFilter } from './components/types.ts'
 
-import { basename } from '@nextcloud/paths'
-import { spawnDialog } from '@nextcloud/vue/functions/dialog'
-import { n, t } from './utils/l10n'
-
 import IconMove from '@mdi/svg/svg/folder-move.svg?raw'
 import IconCopy from '@mdi/svg/svg/folder-multiple.svg?raw'
+import { basename } from '@nextcloud/paths'
+import { spawnDialog } from '@nextcloud/vue/functions/dialog'
+import { n, t } from './utils/l10n.ts'
+import { logger } from './utils/logger.ts'
 
 /**
  * @deprecated
@@ -30,7 +30,6 @@ export enum FilePickerType {
 export class FilePickerClosed extends Error {}
 
 export class FilePicker<IsMultiSelect extends boolean> {
-
 	private title: string
 	private multiSelect: IsMultiSelect
 	private mimeTypeFilter: string[]
@@ -41,7 +40,8 @@ export class FilePicker<IsMultiSelect extends boolean> {
 	private container?: string
 	private disabledNavigation: boolean
 
-	public constructor(title: string,
+	public constructor(
+		title: string,
 		multiSelect: IsMultiSelect,
 		mimeTypeFilter: string[],
 		directoriesAllowed: boolean,
@@ -102,11 +102,9 @@ export class FilePicker<IsMultiSelect extends boolean> {
 		}
 		return nodes.map((node) => node.path) as (IsMultiSelect extends true ? string[] : string)
 	}
-
 }
 
 export class FilePickerBuilder<IsMultiSelect extends boolean> {
-
 	private title: string
 	private multiSelect = false
 	private mimeTypeFilter: string[] = []
@@ -175,7 +173,7 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 	 */
 	public addButton(button: IFilePickerButton) {
 		if (typeof this.buttons === 'function') {
-			console.warn('FilePicker buttons were set to factory, now overwritten with button object.')
+			logger.warn('FilePicker buttons were set to factory, now overwritten with button object.')
 			this.buttons = []
 		}
 		this.buttons.push(button)
@@ -195,6 +193,7 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 
 	/**
 	 * Set FilePicker type based on legacy file picker types
+	 *
 	 * @param type The legacy filepicker type to emulate
 	 * @deprecated Use `addButton` or `setButtonFactory` instead as with setType you do not know which button was pressed
 	 */
@@ -293,7 +292,6 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 			this.disabledNavigation,
 		)
 	}
-
 }
 
 /**
