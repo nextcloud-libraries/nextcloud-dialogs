@@ -14,6 +14,9 @@ msgstr ""
 msgid "All files"
 msgstr ""
 
+msgid "Cancel"
+msgstr ""
+
 msgid "Choose"
 msgstr ""
 
@@ -46,6 +49,12 @@ msgstr ""
 msgid "Current view selector"
 msgstr ""
 
+msgid "Enter your name"
+msgstr ""
+
+msgid "Failed to set nickname."
+msgstr ""
+
 msgid "Favorites"
 msgstr ""
 
@@ -59,6 +68,9 @@ msgid "Filter file list"
 msgstr ""
 
 msgid "Folder name cannot be empty."
+msgstr ""
+
+msgid "Guest identification"
 msgstr ""
 
 msgid "Home"
@@ -94,6 +106,9 @@ msgstr ""
 msgid "No matching files"
 msgstr ""
 
+msgid "Please enter a name with at least 2 characters."
+msgstr ""
+
 msgid "Recent"
 msgstr ""
 
@@ -109,8 +124,17 @@ msgstr ""
 msgid "Size"
 msgstr ""
 
+msgid "Submit name"
+msgstr ""
+
 msgid "Undo"
 msgstr ""
 
 msgid "Upload some content or sync with your devices!"
+msgstr ""
+
+msgid "You are currently not identified."
+msgstr ""
+
+msgid "You cannot leave the name empty."
 msgstr ""
