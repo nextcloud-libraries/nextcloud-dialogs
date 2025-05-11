@@ -1,13 +1,14 @@
 {
   "extends": "@vue/tsconfig",
   "compilerOptions": {
+    "allowImportingTsExtensions": true,
     "declaration": true,
     "esModuleInterop": true,
     "lib": ["DOM", "ESNext"],
     "outDir": "./dist",
     "rootDir": "lib/",
     "module": "ESNext",
-    "moduleResolution": "Bundler",
+    "moduleResolution": "bundler",
     "target": "ESNext",
     "plugins": [
       { "name": "typescript-plugin-css-modules" }
