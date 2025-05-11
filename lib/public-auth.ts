@@ -3,13 +3,10 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-import type { ComponentProps } from 'vue-component-type-helpers'
+import type { PublicAuthPromptProps } from './components/PublicAuthPrompt.vue'
+
 import { defineAsyncComponent } from 'vue'
 import { spawnDialog } from '@nextcloud/vue/functions/dialog'
-
-import type PublicAuthPrompt from './components/PublicAuthPrompt.vue'
-
-type PublicAuthPromptProps = ComponentProps<typeof PublicAuthPrompt>
 
 /**
  * Show the public auth prompt dialog
