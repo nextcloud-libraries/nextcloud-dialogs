@@ -47,3 +47,5 @@ export type {
 	IFilePickerButton,
 	IFilePickerFilter,
 } from './components/types.js'
+
+export { showGuestUserPrompt } from './public-auth.js'
