@@ -23,6 +23,9 @@ msgstr "„/“ pole kausta nimes lubatud."
 msgid "All files"
 msgstr "Kõik failid"
 
+msgid "Cancel"
+msgstr "Katkesta"
+
 msgid "Choose"
 msgstr "Tee valik"
 
@@ -55,6 +58,12 @@ msgstr "Kataloogi loomine"
 msgid "Current view selector"
 msgstr "Praeguse vaate valija"
 
+msgid "Enter your name"
+msgstr "Sisesta oma nimi"
+
+msgid "Failed to set nickname."
+msgstr "Hüüdnime ei õnnestunud lisada"
+
 msgid "Favorites"
 msgstr "Lemmikud"
 
@@ -69,6 +78,9 @@ msgstr "Filtreeri faililoendit"
 
 msgid "Folder name cannot be empty."
 msgstr "Kausta nimi ei saa olla tühi."
+
+msgid "Guest identification"
+msgstr "Külalise tuvastamine"
 
 msgid "Home"
 msgstr "Avaleht"
@@ -103,6 +115,9 @@ msgstr "Sinu filtrile vastavaid faile ei leidunud."
 msgid "No matching files"
 msgstr "Puuduvad sobivad failid"
 
+msgid "Please enter a name with at least 2 characters."
+msgstr "Palun sisesta vähemalt 2 tähemärki pikk nimi."
+
 msgid "Recent"
 msgstr "Hiljutine"
 
@@ -118,8 +133,17 @@ msgstr "Vali rida „{nodename}“ jaoks"
 msgid "Size"
 msgstr "Suurus"
 
+msgid "Submit name"
+msgstr "Lisa nimi"
+
 msgid "Undo"
 msgstr "Tühista"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Lisa mingit sisu või sünkroniseeri see oma seadmestest!"
+
+msgid "You are currently not identified."
+msgstr "Sa oled hetkel tuvastamata."
+
+msgid "You cannot leave the name empty."
+msgstr "Sa ei saa jätte nime tühjaks."
