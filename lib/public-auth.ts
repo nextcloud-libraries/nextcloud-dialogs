@@ -19,9 +19,10 @@ export type GuestUserPromptOptions = PublicAuthPromptProps
  * @return The selected name or undefined if dialog was closed
  */
 export async function showGuestUserPrompt(props: GuestUserPromptOptions): Promise<string | undefined> {
-	const [name] = await spawnDialog(
+	const name = await spawnDialog(
 		defineAsyncComponent(() => import('./components/PublicAuthPrompt.vue')),
 		props,
 	)
+	/// @ts-expect-error TODO: remove when fixed upstream: https://github.com/nextcloud-libraries/nextcloud-vue/issues/6902
 	return name
 }
