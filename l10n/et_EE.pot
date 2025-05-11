@@ -12,7 +12,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "\"{name}\" is an invalid folder name."
-msgstr "„{name}“ on vigane kaustanimi"
+msgstr "„{name}“ on vigane kausta nimi"
 
 msgid "\"{name}\" is not an allowed folder name"
 msgstr "„{name}“ pole kausta nimes lubatud"
