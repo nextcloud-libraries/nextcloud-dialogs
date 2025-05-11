@@ -2,6 +2,15 @@
   "name": "@nextcloud/dialogs",
   "version": "7.0.0-rc.0",
   "description": "Nextcloud dialog helpers",
+  "keywords": [
+    "nextcloud"
+  ],
+  "homepage": "https://github.com/nextcloud-libraries/nextcloud-dialogs#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nextcloud-libraries/nextcloud-dialogs"
+  },
+  "license": "AGPL-3.0-or-later",
   "type": "module",
   "exports": {
     ".": {
@@ -12,33 +21,30 @@
       "import": "./dist/style.css"
     }
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build:doc": "npm run dev && npm run doc",
     "build": "vite --mode production build",
+    "build:doc": "npm run dev && npm run doc",
     "dev": "vite --mode development build",
-    "watch": "vite --mode development build --watch",
     "doc": "typedoc --tsconfig tsconfig-typedoc.json --highlightLanguages vue --plugin typedoc-plugin-missing-exports --out dist/doc dist/index.d.ts dist/filepicker.d.ts && touch dist/doc/.nojekyll",
-    "prerelease:format-changelog": "node build/format-changelog.mjs",
+    "l10n:extract": "node build/extract-l10n.js",
     "lint": "eslint lib/",
     "lint:fix": "eslint --fix lib/",
+    "prerelease:format-changelog": "node build/format-changelog.mjs",
     "stylelint": "stylelint lib/**/*.vue",
     "stylelint:fix": "stylelint lib/**/*.vue --fix",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
-    "l10n:extract": "node build/extract-l10n.js"
+    "watch": "vite --mode development build --watch"
   },
-  "keywords": [
-    "nextcloud"
+  "browserslist": [
+    "extends @nextcloud/browserslist-config"
   ],
-  "homepage": "https://github.com/nextcloud-libraries/nextcloud-dialogs#readme",
-  "license": "AGPL-3.0-or-later",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/nextcloud-libraries/nextcloud-dialogs"
+  "stylelint": {
+    "extends": "@nextcloud/stylelint-config"
   },
-  "files": [
-    "dist"
-  ],
   "dependencies": {
     "@mdi/js": "^7.4.47",
     "@nextcloud/auth": "^2.4.0",
@@ -90,11 +96,5 @@
   "engines": {
     "node": "^20 || ^22",
     "npm": "^10.0.0"
-  },
-  "browserslist": [
-    "extends @nextcloud/browserslist-config"
-  ],
-  "stylelint": {
-    "extends": "@nextcloud/stylelint-config"
   }
 }
