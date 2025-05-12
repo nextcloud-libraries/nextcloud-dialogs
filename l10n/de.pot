@@ -85,7 +85,7 @@ msgid "Folder name cannot be empty."
 msgstr "Der Ordnername darf nicht leer sein."
 
 msgid "Guest identification"
-msgstr "Gastidentifikation"
+msgstr "Gast-Identifikation"
 
 msgid "Home"
 msgstr "Home"
