@@ -1,12 +1,12 @@
 # 
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
-# Mark Ziegler <mark.ziegler@rakekniven.de>, 2023
 # Mario Siegmann <mario_siegmann@web.de>, 2024
+# Mark Ziegler <mark.ziegler@rakekniven.de>, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Mario Siegmann <mario_siegmann@web.de>, 2024\n"
+"Last-Translator: Mark Ziegler <mark.ziegler@rakekniven.de>, 2025\n"
 "Language-Team: German (Germany) (https://app.transifex.com/nextcloud/teams/64236/de_DE/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: de_DE\n"
@@ -23,6 +23,9 @@ msgstr "\"/\" ist innerhalb eines Ordnernamens nicht zulässig."
 
 msgid "All files"
 msgstr "Alle Dateien"
+
+msgid "Cancel"
+msgstr "Abbrechen"
 
 msgid "Choose"
 msgstr "Auswählen"
@@ -56,6 +59,12 @@ msgstr "Verzeichnis erstellen"
 msgid "Current view selector"
 msgstr "Aktuelle Ansichtsauswahl"
 
+msgid "Enter your name"
+msgstr "Geben Sie Ihren Namen ein"
+
+msgid "Failed to set nickname."
+msgstr "Spitzname konnte nicht gespeichert werden."
+
 msgid "Favorites"
 msgstr "Favoriten"
 
@@ -72,6 +81,9 @@ msgstr "Dateiliste filtern"
 
 msgid "Folder name cannot be empty."
 msgstr "Der Ordnername darf nicht leer sein."
+
+msgid "Guest identification"
+msgstr "Gastidentifikation"
 
 msgid "Home"
 msgstr "Home"
@@ -106,6 +118,9 @@ msgstr "Es wurden keine Dateien gefunden, die Ihrem Filter entsprechen."
 msgid "No matching files"
 msgstr "Keine passenden Dateien"
 
+msgid "Please enter a name with at least 2 characters."
+msgstr "Bitte geben Sie einen Namen mit mindestens zwei Zeichen ein."
+
 msgid "Recent"
 msgstr "Neueste"
 
@@ -121,9 +136,18 @@ msgstr "Die Zeile für {nodename} auswählen."
 msgid "Size"
 msgstr "Größe"
 
+msgid "Submit name"
+msgstr "Namen senden"
+
 msgid "Undo"
 msgstr "Rückgängig machen"
 
 msgid "Upload some content or sync with your devices!"
 msgstr ""
 "Laden Sie Inhalte hoch oder synchronisieren Sie diese mit Ihren Geräten!"
+
+msgid "You are currently not identified."
+msgstr "Sie sind im Moment nicht identifiziert."
+
+msgid "You cannot leave the name empty."
+msgstr "Sie können den Namen nicht leer lassen."
