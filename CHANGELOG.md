@@ -6,6 +6,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v6.3.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.2.0...v6.3.0)
+### 🚀 Enhancements
+* [stable6] feat: add guest auth prompt component by @skjnldsv in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1759
+### 🐛 Fixed bugs
+* [stable6] fix(FilePickerBuilder): correctly return array / plain value depending on multiselect by @backportbot in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1777
+### Other Changes
+* Updates for project Nextcloud dialogs library by @transifex-integration in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1740
+* Updates for project Nextcloud dialogs library by @transifex-integration in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1741
+
 ## [v6.2.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.1.1...v6.2.0)
 ### Notes
 
