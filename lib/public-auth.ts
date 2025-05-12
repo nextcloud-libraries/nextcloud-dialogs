@@ -5,21 +5,24 @@
 
 import type { PublicAuthPromptProps } from './components/PublicAuthPrompt.vue'
 
-import { defineAsyncComponent } from 'vue'
 import { spawnDialog } from '@nextcloud/vue/functions/dialog'
+import { defineAsyncComponent } from 'vue'
+
+export type GuestUserPromptOptions = PublicAuthPromptProps
 
 /**
  * Show the public auth prompt dialog
  * This is used to ask the current user their nickname
  * as well as show some additional contextual information
- * @param props The props to pass to the dialog, see PublicAuthPrompt.vue for details
+ *
+ * @param props - The props to pass to the dialog
+ * @return The selected name or undefined if dialog was closed
  */
-export function showGuestUserPrompt(props: PublicAuthPromptProps) {
-	return new Promise((resolve) => {
-		spawnDialog(
-			defineAsyncComponent(() => import('./components/PublicAuthPrompt.vue')),
-			props,
-			resolve,
-		)
-	})
+export async function showGuestUserPrompt(props: GuestUserPromptOptions): Promise<string | undefined> {
+	const name = await spawnDialog(
+		defineAsyncComponent(() => import('./components/PublicAuthPrompt.vue')),
+		props,
+	)
+	/// @ts-expect-error TODO: remove when fixed upstream: https://github.com/nextcloud-libraries/nextcloud-vue/issues/6902
+	return name
 }

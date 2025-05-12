@@ -12,6 +12,12 @@ export {
 } from './filepicker-builder.ts'
 
 export {
+	type GuestUserPromptOptions,
+
+	showGuestUserPrompt,
+} from './public-auth.ts'
+
+export {
 	showError,
 	showInfo,
 	showLoading,

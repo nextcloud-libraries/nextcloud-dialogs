@@ -4,23 +4,22 @@
 -->
 
 <script setup lang="ts">
-import { computed, ref, useTemplateRef, watch } from 'vue'
-import { getBuilder } from '@nextcloud/browser-storage'
 import { setGuestNickname } from '@nextcloud/auth'
+import { getBuilder } from '@nextcloud/browser-storage'
 import { showError } from '@nextcloud/dialogs'
-
+import { computed, ref, useTemplateRef, watch } from 'vue'
 import NcDialog from '@nextcloud/vue/components/NcDialog'
 import NcNoteCard from '@nextcloud/vue/components/NcNoteCard'
 import NcTextField from '@nextcloud/vue/components/NcTextField'
-
 import { t } from '../utils/l10n.ts'
+import { logger } from '../utils/logger.ts'
 
 export interface PublicAuthPromptProps {
 	/**
 	 * Preselected nickname.
 	 * No name preselected by default.
 	 */
-	nickname?: string,
+	nickname?: string
 
 	/**
 	 * Dialog title
@@ -51,10 +50,11 @@ export interface PublicAuthPromptProps {
 }
 
 const props = withDefaults(defineProps<PublicAuthPromptProps>(), {
-	title: t('Guest identification'),
 	nickname: '',
 	notice: t('You are currently not identified.'),
 	submitLabel: t('Submit name'),
+	text: '',
+	title: t('Guest identification'),
 })
 
 const emit = defineEmits<{
@@ -91,6 +91,9 @@ const buttons = computed(() => {
 	return [submitButton]
 })
 
+/**
+ * Handle saving the nickname and return it.
+ */
 function onSubmit() {
 	const nickname = name.value.trim()
 
@@ -113,9 +116,9 @@ function onSubmit() {
 	try {
 		// Set the nickname
 		setGuestNickname(nickname)
-	} catch (e) {
+	} catch (error) {
+		logger.error('Failed to set nickname', { error })
 		showError(t('Failed to set nickname.'))
-		console.error('Failed to set nickname', e)
 		inputElement.value.focus()
 		return
 	}
@@ -142,18 +145,20 @@ function onSubmit() {
 		</p>
 
 		<!-- Header -->
-		<NcNoteCard class="public-auth-prompt__header"
+		<NcNoteCard
+			class="public-auth-prompt__header"
 			:text="notice"
 			type="info" />
 
 		<!-- Form -->
-		<NcTextField ref="input"
+		<NcTextField
+			ref="input"
+			v-model="name"
 			class="public-auth-prompt__input"
 			data-cy-public-auth-prompt-dialog-name
 			:label="t('Name')"
 			:placeholder="t('Enter your name')"
 			:required="!cancellable"
-			v-model="name"
 			minlength="2"
 			name="name" />
 	</NcDialog>
