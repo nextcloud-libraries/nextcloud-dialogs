@@ -98,9 +98,10 @@ export class FilePicker<IsMultiSelect extends boolean> {
 	public async pick(): Promise<IsMultiSelect extends true ? string[] : string> {
 		const nodes = await this.pickNodes()
 		if (this.multiSelect) {
-			return (nodes[0]?.path ?? '/') as (IsMultiSelect extends true ? string[] : string)
+			return nodes.map((node) => node.path) as (IsMultiSelect extends true ? string[] : string)
 		}
-		return nodes.map((node) => node.path) as (IsMultiSelect extends true ? string[] : string)
+		const path = nodes[0]?.path ?? '/'
+		return path as (IsMultiSelect extends true ? string[] : string)
 	}
 }
 
