@@ -26,6 +26,9 @@ msgstr "\"/\" não é permitido dentro de um nome de pasta."
 msgid "All files"
 msgstr "Todos os arquivos"
 
+msgid "Cancel"
+msgstr "Cancelar"
+
 msgid "Choose"
 msgstr "Escolher"
 
@@ -59,6 +62,12 @@ msgstr "Criar diretório"
 msgid "Current view selector"
 msgstr "Seletor de visualização atual"
 
+msgid "Enter your name"
+msgstr "Digite seu nome"
+
+msgid "Failed to set nickname."
+msgstr "Falha ao definir apelido."
+
 msgid "Favorites"
 msgstr "Favoritos"
 
@@ -73,6 +82,9 @@ msgstr "Filtrar lista de arquivos"
 
 msgid "Folder name cannot be empty."
 msgstr "O nome da pasta não pode ser vazio."
+
+msgid "Guest identification"
+msgstr "Identificação de Convidados"
 
 msgid "Home"
 msgstr "Início"
@@ -107,6 +119,9 @@ msgstr "Nenhum arquivo correspondente ao seu filtro foi encontrado."
 msgid "No matching files"
 msgstr "Nenhum arquivo correspondente"
 
+msgid "Please enter a name with at least 2 characters."
+msgstr "Digite um nome com pelo menos 2 caracteres."
+
 msgid "Recent"
 msgstr "Recente"
 
@@ -122,8 +137,17 @@ msgstr "Selecionar a linha para {nodename}"
 msgid "Size"
 msgstr "Tamanho"
 
+msgid "Submit name"
+msgstr "Enviar nome"
+
 msgid "Undo"
 msgstr "Desfazer"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Faça upload de algum conteúdo ou sincronize com seus dispositivos!"
+
+msgid "You are currently not identified."
+msgstr "No momento, você não está identificado."
+
+msgid "You cannot leave the name empty."
+msgstr "Você não pode deixar o nome vazio."
