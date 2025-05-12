@@ -14,6 +14,7 @@ All notable changes to this project will be documented in this file.
 ### Other Changes
 * Updates for project Nextcloud dialogs library by @transifex-integration in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1740
 * Updates for project Nextcloud dialogs library by @transifex-integration in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1741
+* Update @nextcloud/auth to 2.5.0 by @skjnldsv
 
 ## [v6.2.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.1.1...v6.2.0)
 ### Notes
