@@ -62,7 +62,7 @@ msgid "Current view selector"
 msgstr "Aktuelle Ansichtsauswahl"
 
 msgid "Enter your name"
-msgstr "Geben Sie Ihren Namen ein"
+msgstr "Gib deinen Namen ein"
 
 msgid "Failed to set nickname."
 msgstr "Spitzname konnte nicht gespeichert werden."
