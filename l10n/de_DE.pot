@@ -120,7 +120,7 @@ msgid "No matching files"
 msgstr "Keine passenden Dateien"
 
 msgid "Please enter a name with at least 2 characters."
-msgstr "Bitte geben Sie einen Namen mit mindestens zwei Zeichen ein."
+msgstr "Bitte einen Namen mit mindestens zwei Zeichen eingeben."
 
 msgid "Recent"
 msgstr "Neueste"
