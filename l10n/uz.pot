@@ -1,10 +1,10 @@
 # 
 # Translators:
-# Khurshid Ibatov <Khurshid.Ibatov@tibbiysugurta.uz>, 2025
+# Khurshid Ibatov <x.ibatov@dtsj.uz>, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Khurshid Ibatov <Khurshid.Ibatov@tibbiysugurta.uz>, 2025\n"
+"Last-Translator: Khurshid Ibatov <x.ibatov@dtsj.uz>, 2025\n"
 "Language-Team: Uzbek (https://app.transifex.com/nextcloud/teams/64236/uz/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: uz\n"
@@ -21,6 +21,9 @@ msgstr "\"/\" papka nomi ichida ruxsat berilmaydi."
 
 msgid "All files"
 msgstr "Barcha fayllar"
+
+msgid "Cancel"
+msgstr "Bekor qilish"
 
 msgid "Choose"
 msgstr "Tanlang"
@@ -53,6 +56,12 @@ msgstr "Katalog yaratish"
 msgid "Current view selector"
 msgstr "Joriy ko'rinish selektori"
 
+msgid "Enter your name"
+msgstr "Ismingizni kiriting"
+
+msgid "Failed to set nickname."
+msgstr "Taxallusni o‘rnatib bo‘lmadi."
+
 msgid "Favorites"
 msgstr "Tanlanganlar"
 
@@ -67,6 +76,9 @@ msgstr "Fayl ro'yxatini filtrlash"
 
 msgid "Folder name cannot be empty."
 msgstr "Jild nomi boʻsh boʻlishi mumkin emas."
+
+msgid "Guest identification"
+msgstr "Foydalanuvchini identifikatsiyalash"
 
 msgid "Home"
 msgstr "Uy"
@@ -101,6 +113,9 @@ msgstr "Filtringizga mos keladigan fayl topilmadi."
 msgid "No matching files"
 msgstr "Mos fayllar yo'q"
 
+msgid "Please enter a name with at least 2 characters."
+msgstr "Kamida 2 ta belgidan iborat nom kiriting."
+
 msgid "Recent"
 msgstr "Yaqinda"
 
@@ -116,8 +131,17 @@ msgstr "{nodename} uchun qatorni tanlang"
 msgid "Size"
 msgstr "O`lcham"
 
+msgid "Submit name"
+msgstr "Ismni tasdiqlang"
+
 msgid "Undo"
 msgstr "Bekor qilish"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Qurilmangizga ba'zi kontentni yuklang yoki sinxronlang!"
+
+msgid "You are currently not identified."
+msgstr "Siz hozirda identifikatsiyadan o'tmagansiz"
+
+msgid "You cannot leave the name empty."
+msgstr "Ism katagini bo'sh qoldirib bo'lmaydi."
