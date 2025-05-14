@@ -1,12 +1,12 @@
 # 
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
-# Magnus Höglund, 2024
 # Martin H <pilino+transifex@posteo.de>, 2025
+# Magnus Höglund, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Martin H <pilino+transifex@posteo.de>, 2025\n"
+"Last-Translator: Magnus Höglund, 2025\n"
 "Language-Team: Swedish (https://app.transifex.com/nextcloud/teams/64236/sv/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: sv\n"
@@ -23,6 +23,9 @@ msgstr "\"/\" är inte tillåtet i ett mappnamn."
 
 msgid "All files"
 msgstr "Alla filer"
+
+msgid "Cancel"
+msgstr "Avbryt"
 
 msgid "Choose"
 msgstr "Välj"
@@ -56,6 +59,12 @@ msgstr "Skapa katalog"
 msgid "Current view selector"
 msgstr "Aktuell vyväljare"
 
+msgid "Enter your name"
+msgstr "Ange ditt namn"
+
+msgid "Failed to set nickname."
+msgstr "Kunde inte ställa in smeknamn."
+
 msgid "Favorites"
 msgstr "Favoriter"
 
@@ -70,6 +79,9 @@ msgstr "Filtrera fillistan"
 
 msgid "Folder name cannot be empty."
 msgstr "Mappnamnet får inte vara tomt."
+
+msgid "Guest identification"
+msgstr "Gästidentifiering"
 
 msgid "Home"
 msgstr "Hem"
@@ -104,6 +116,9 @@ msgstr "Inga filer som matchar ditt filter hittades."
 msgid "No matching files"
 msgstr "Inga matchande filer"
 
+msgid "Please enter a name with at least 2 characters."
+msgstr "Ange ett namn med minst 2 tecken."
+
 msgid "Recent"
 msgstr "Nyligen"
 
@@ -119,8 +134,17 @@ msgstr "Välj raden för {nodename}"
 msgid "Size"
 msgstr "Storlek"
 
+msgid "Submit name"
+msgstr "Skicka namn"
+
 msgid "Undo"
 msgstr "Ångra"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Ladda upp lite innehåll eller synkronisera med dina enheter!"
+
+msgid "You are currently not identified."
+msgstr "Du är för närvarande inte identifierad."
+
+msgid "You cannot leave the name empty."
+msgstr "Du kan inte lämna namnet tomt."
