@@ -1,11 +1,11 @@
 # 
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
-# Pavel Borecki <pavel.borecki@gmail.com>, 2024
+# Pavel Borecki <pavel.borecki@gmail.com>, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>, 2024\n"
+"Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>, 2025\n"
 "Language-Team: Czech (Czech Republic) (https://app.transifex.com/nextcloud/teams/64236/cs_CZ/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: cs_CZ\n"
@@ -22,6 +22,9 @@ msgstr "znak „/“ (dopředné lomítko) není možné použít uvnitř názvu
 
 msgid "All files"
 msgstr "Veškeré soubory"
+
+msgid "Cancel"
+msgstr "Storno"
 
 msgid "Choose"
 msgstr "Zvolit"
@@ -57,6 +60,12 @@ msgstr "Vytvořit složku"
 msgid "Current view selector"
 msgstr "Výběr stávajícího zobrazení"
 
+msgid "Enter your name"
+msgstr "Zadejte své jméno"
+
+msgid "Failed to set nickname."
+msgstr "Nepodařilo se nastavit přezdívku."
+
 msgid "Favorites"
 msgstr "Oblíbené"
 
@@ -71,6 +80,9 @@ msgstr "Filtrovat seznam souborů"
 
 msgid "Folder name cannot be empty."
 msgstr "Složku je třeba nějak nazvat."
+
+msgid "Guest identification"
+msgstr "Identifikace hosta"
 
 msgid "Home"
 msgstr "Domů"
@@ -105,6 +117,9 @@ msgstr "Nenalezeny žádné soubory odpovídající vašemu filtru"
 msgid "No matching files"
 msgstr "Žádné odpovídající soubory"
 
+msgid "Please enter a name with at least 2 characters."
+msgstr "Zadejte jméno dlouhé alespoň 2 znaky."
+
 msgid "Recent"
 msgstr "Nedávné"
 
@@ -120,9 +135,18 @@ msgstr "Vybrat řádek pro {nodename}"
 msgid "Size"
 msgstr "Velikost"
 
+msgid "Submit name"
+msgstr "Odeslat jméno"
+
 msgid "Undo"
 msgstr "Zpět"
 
 msgid "Upload some content or sync with your devices!"
 msgstr ""
 "Nahrajte sem nějaký obsah nebo proveďte synchronizaci se svými zařízeními!"
+
+msgid "You are currently not identified."
+msgstr "V tuto chvíli nejste identifikovaní."
+
+msgid "You cannot leave the name empty."
+msgstr "Jméno nelze ponechat nevyplněné."
