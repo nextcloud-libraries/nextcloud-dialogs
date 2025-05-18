@@ -1,10 +1,10 @@
 # 
 # Translators:
-# Aindriú Mac Giolla Eoin, 2024
+# Aindriú Mac Giolla Eoin, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Aindriú Mac Giolla Eoin, 2024\n"
+"Last-Translator: Aindriú Mac Giolla Eoin, 2025\n"
 "Language-Team: Irish (https://app.transifex.com/nextcloud/teams/64236/ga/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: ga\n"
@@ -21,6 +21,9 @@ msgstr "Ní cheadaítear \"/\" taobh istigh d'ainm fillteáin."
 
 msgid "All files"
 msgstr "Gach comhad"
+
+msgid "Cancel"
+msgstr "Cealaigh"
 
 msgid "Choose"
 msgstr "Roghnaigh"
@@ -57,6 +60,12 @@ msgstr "Cruthaigh eolaire"
 msgid "Current view selector"
 msgstr "Roghnóir amhairc reatha"
 
+msgid "Enter your name"
+msgstr "Cuir isteach d'ainm"
+
+msgid "Failed to set nickname."
+msgstr "Theip ar leasainm a shocrú."
+
 msgid "Favorites"
 msgstr "Ceanáin"
 
@@ -72,6 +81,9 @@ msgstr "Scag liosta comhad"
 
 msgid "Folder name cannot be empty."
 msgstr "Ní féidir ainm fillteáin a bheith folamh."
+
+msgid "Guest identification"
+msgstr "Aitheantas aoi"
 
 msgid "Home"
 msgstr "Baile"
@@ -106,6 +118,9 @@ msgstr "Níor aimsíodh aon chomhad a tháinig le do scagaire."
 msgid "No matching files"
 msgstr "Gan comhaid meaitseála"
 
+msgid "Please enter a name with at least 2 characters."
+msgstr "Cuir isteach ainm ina bhfuil 2 charachtar ar a laghad."
+
 msgid "Recent"
 msgstr "le déanaí"
 
@@ -121,8 +136,17 @@ msgstr "Roghnaigh an ró do {nodename}"
 msgid "Size"
 msgstr "Méid"
 
+msgid "Submit name"
+msgstr "Cuir isteach ainm"
+
 msgid "Undo"
 msgstr "Cealaigh"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Uaslódáil roinnt ábhair nó sioncronaigh le do ghléasanna!"
+
+msgid "You are currently not identified."
+msgstr "Níl aitheantas tugtha duit faoi láthair."
+
+msgid "You cannot leave the name empty."
+msgstr "Ní féidir leat an t-ainm a fhágáil folamh."
