@@ -53,7 +53,7 @@ msgid "Could not load files views"
 msgstr "Failide vaatamiskordi ei õnnestunud laadida"
 
 msgid "Create directory"
-msgstr "Kataloogi loomine"
+msgstr "Loo kaust"
 
 msgid "Current view selector"
 msgstr "Praeguse vaate valija"
