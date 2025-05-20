@@ -3,10 +3,11 @@
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Paulius Liškauskas, 2024
 # Moo, 2025
+# M G, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Moo, 2025\n"
+"Last-Translator: M G, 2025\n"
 "Language-Team: Lithuanian (Lithuania) (https://app.transifex.com/nextcloud/teams/64236/lt_LT/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: lt_LT\n"
@@ -23,6 +24,9 @@ msgstr "„/“ yra neleidžiamas aplanko pavadinime."
 
 msgid "All files"
 msgstr "Visi failai"
+
+msgid "Cancel"
+msgstr "Atšaukti"
 
 msgid "Choose"
 msgstr "Pasirinkti"
@@ -58,6 +62,12 @@ msgstr "Sukurti katalogą"
 msgid "Current view selector"
 msgstr "Dabartinis peržiūros pasirinkimas"
 
+msgid "Enter your name"
+msgstr "Įrašykite savo vardą"
+
+msgid "Failed to set nickname."
+msgstr "Nepavyko nustatyti slapyvardžio"
+
 msgid "Favorites"
 msgstr "Populiariausi"
 
@@ -73,6 +83,9 @@ msgstr "Filtruoti failų sąrašą"
 
 msgid "Folder name cannot be empty."
 msgstr "Aplanko pavadinimas negali būti tuščias."
+
+msgid "Guest identification"
+msgstr "Svečio identifikacija"
 
 msgid "Home"
 msgstr "Pradžia"
@@ -107,6 +120,9 @@ msgstr "Nepavyko rasti failų pagal filtro nustatymus"
 msgid "No matching files"
 msgstr "Nėra atitinkančių failų"
 
+msgid "Please enter a name with at least 2 characters."
+msgstr "Įrašykite vardą iš mažiausiai dviejų ženklų."
+
 msgid "Recent"
 msgstr "Nauji"
 
@@ -122,8 +138,17 @@ msgstr "Pasirinkite eilutę {nodename}"
 msgid "Size"
 msgstr "Dydis"
 
+msgid "Submit name"
+msgstr "Patvirtinti vardą"
+
 msgid "Undo"
 msgstr "Atšaukti"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Įkelkite turinio arba sinchronizuokite su savo įrenginiais!"
+
+msgid "You are currently not identified."
+msgstr "Šiuo metu nesate identifikuotas."
+
+msgid "You cannot leave the name empty."
+msgstr "Negalite palikti tuščio vardo lauko."
