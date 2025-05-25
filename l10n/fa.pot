@@ -3,10 +3,11 @@
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Amir Shekoohi, 2024
 # reza reza <forghan89@yahoo.com>, 2024
+# Omid Nateghi, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: reza reza <forghan89@yahoo.com>, 2024\n"
+"Last-Translator: Omid Nateghi, 2025\n"
 "Language-Team: Persian (https://app.transifex.com/nextcloud/teams/64236/fa/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: fa\n"
@@ -23,6 +24,9 @@ msgstr "\"/\" نمی‌تواند در نام پوشه استفاده شود."
 
 msgid "All files"
 msgstr "همه فایل‌ها"
+
+msgid "Cancel"
+msgstr "لغو"
 
 msgid "Choose"
 msgstr "انتخاب"
@@ -56,6 +60,12 @@ msgstr "ایجاد فهرست"
 msgid "Current view selector"
 msgstr "انتخابگر نماگر فعلی"
 
+msgid "Enter your name"
+msgstr "نام خود را وارد کنید"
+
+msgid "Failed to set nickname."
+msgstr "تنظیم نام مستعار ناموفق بود."
+
 msgid "Favorites"
 msgstr "علایق"
 
@@ -73,6 +83,9 @@ msgstr "فیلتر لیست فایل"
 
 msgid "Folder name cannot be empty."
 msgstr "نام پوشه نمی تواند خالی باشد."
+
+msgid "Guest identification"
+msgstr "شناسایی مهمان"
 
 msgid "Home"
 msgstr "خانه"
@@ -107,6 +120,9 @@ msgstr "هیچ فایلی مطابق با فیلتر شما یافت نشد."
 msgid "No matching files"
 msgstr "فایل منطبقی وجود ندارد"
 
+msgid "Please enter a name with at least 2 characters."
+msgstr "لطفاً نامی با حداقل ۲ کاراکتر وارد کنید."
+
 msgid "Recent"
 msgstr "اخیر"
 
@@ -122,8 +138,17 @@ msgstr "انتخاب ردیف برای {nodename}"
 msgid "Size"
 msgstr "اندازه"
 
+msgid "Submit name"
+msgstr "ارسال نام"
+
 msgid "Undo"
 msgstr "بازگردانی"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "مقداری محتوا آپلود کنید یا با دستگاه های خود همگام سازی کنید!"
+
+msgid "You are currently not identified."
+msgstr "شما در حال حاضر شناسایی نشده‌اید."
+
+msgid "You cannot leave the name empty."
+msgstr "نمی‌توانید نام را خالی بگذارید."
