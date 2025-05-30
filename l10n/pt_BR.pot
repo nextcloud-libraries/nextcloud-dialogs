@@ -84,7 +84,7 @@ msgid "Folder name cannot be empty."
 msgstr "O nome da pasta não pode ser vazio."
 
 msgid "Guest identification"
-msgstr "Identificação de Convidados"
+msgstr "Identificação de convidados"
 
 msgid "Home"
 msgstr "Início"
