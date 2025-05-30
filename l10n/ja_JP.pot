@@ -2,14 +2,15 @@
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Uchiyama Takuya <uchiyama@j-wmc.com>, 2023
-# takehito kondo, 2023
+# takehito K kondo, 2023
 # kojima.imamura, 2024
 # Takafumi AKAMATSU, 2024
 # devi, 2024
+# kshimohata, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: devi, 2024\n"
+"Last-Translator: kshimohata, 2025\n"
 "Language-Team: Japanese (Japan) (https://app.transifex.com/nextcloud/teams/64236/ja_JP/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: ja_JP\n"
@@ -26,6 +27,9 @@ msgstr "フォルダー名に「/（スラッシュ）」は使用できませ�
 
 msgid "All files"
 msgstr "すべてのファイル"
+
+msgid "Cancel"
+msgstr "キャンセル"
 
 msgid "Choose"
 msgstr "選択"
@@ -58,6 +62,12 @@ msgstr "ディレクトリを作成"
 msgid "Current view selector"
 msgstr "現在のビューセレクタ"
 
+msgid "Enter your name"
+msgstr "名前を入力してください"
+
+msgid "Failed to set nickname."
+msgstr "ニックネームの設定に失敗しました。"
+
 msgid "Favorites"
 msgstr "お気に入り"
 
@@ -72,6 +82,9 @@ msgstr "ファイルリストをフィルタ"
 
 msgid "Folder name cannot be empty."
 msgstr "フォルダ名は空にできません。"
+
+msgid "Guest identification"
+msgstr "ゲスト識別"
 
 msgid "Home"
 msgstr "ホーム"
@@ -106,6 +119,9 @@ msgstr "フィルタに一致するファイルは見つかりませんでした
 msgid "No matching files"
 msgstr "一致するファイルはありません"
 
+msgid "Please enter a name with at least 2 characters."
+msgstr "名前を2文字以上で入力してください。"
+
 msgid "Recent"
 msgstr "最近"
 
@@ -121,8 +137,17 @@ msgstr "{nodename} の行を選択"
 msgid "Size"
 msgstr "サイズ"
 
+msgid "Submit name"
+msgstr "名前を送信する"
+
 msgid "Undo"
 msgstr "元に戻す"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "コンテンツをアップロードするか、デバイスと同期してください！"
+
+msgid "You are currently not identified."
+msgstr "現在あなたは識別されていません。"
+
+msgid "You cannot leave the name empty."
+msgstr "名前を空にすることはできません。"
