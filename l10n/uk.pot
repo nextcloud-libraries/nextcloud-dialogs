@@ -1,10 +1,10 @@
 # 
 # Translators:
-# O St <oleksiy.stasevych@gmail.com>, 2024
+# O St <oleksiy.stasevych@gmail.com>, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: O St <oleksiy.stasevych@gmail.com>, 2024\n"
+"Last-Translator: O St <oleksiy.stasevych@gmail.com>, 2025\n"
 "Language-Team: Ukrainian (https://app.transifex.com/nextcloud/teams/64236/uk/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: uk\n"
@@ -21,6 +21,9 @@ msgstr "\"/\" не дозволено у назві каталогу."
 
 msgid "All files"
 msgstr "Всі файли"
+
+msgid "Cancel"
+msgstr "Скасувати"
 
 msgid "Choose"
 msgstr "Вибрати"
@@ -56,6 +59,12 @@ msgstr "Створити каталог"
 msgid "Current view selector"
 msgstr "Вибір подання"
 
+msgid "Enter your name"
+msgstr "Зазначте ваше ім'я"
+
+msgid "Failed to set nickname."
+msgstr "Не вдалося встановити псевдо."
+
 msgid "Favorites"
 msgstr "Із зірочкою"
 
@@ -70,6 +79,9 @@ msgstr "Фільтрувати список файлів"
 
 msgid "Folder name cannot be empty."
 msgstr "Ім'я каталогу не може бути порожнім."
+
+msgid "Guest identification"
+msgstr "Ім'я для гостя"
 
 msgid "Home"
 msgstr "Домівка"
@@ -104,6 +116,9 @@ msgstr "Відсутні збіги за фільтром."
 msgid "No matching files"
 msgstr "Відсутні збіги файлів."
 
+msgid "Please enter a name with at least 2 characters."
+msgstr "Зазначте ім'я довжиною не менше 2 символів"
+
 msgid "Recent"
 msgstr "Останні"
 
@@ -119,8 +134,17 @@ msgstr "Вибрати рядок для {nodename}"
 msgid "Size"
 msgstr "Розмір"
 
+msgid "Submit name"
+msgstr "Встановити ім'я"
+
 msgid "Undo"
 msgstr "Повернути"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Завантажте вміст або синхронізуйте з вашим пристроєм!"
+
+msgid "You are currently not identified."
+msgstr "Вас зараз не визначено."
+
+msgid "You cannot leave the name empty."
+msgstr "Потрібно зазначити ім'я."
