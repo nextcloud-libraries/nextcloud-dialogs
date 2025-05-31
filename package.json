@@ -82,7 +82,7 @@
     "gettext-extractor": "^3.8.0",
     "gettext-parser": "^8.0.0",
     "happy-dom": "^17.5.6",
-    "sass": "^1.89.0",
+    "sass": "^1.89.1",
     "stylelint": "^16.20.0",
     "tslib": "^2.8.1",
     "typedoc": "^0.28.5",
