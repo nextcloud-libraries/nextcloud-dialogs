@@ -1,12 +1,12 @@
 # 
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
-# Jiri Grönroos <jiri.gronroos@iki.fi>, 2024
 # thingumy, 2024
+# Jiri Grönroos <jiri.gronroos@iki.fi>, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: thingumy, 2024\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>, 2025\n"
 "Language-Team: Finnish (Finland) (https://app.transifex.com/nextcloud/teams/64236/fi_FI/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: fi_FI\n"
@@ -23,6 +23,9 @@ msgstr "\"/\" ei ole sallittu kansion nimessä."
 
 msgid "All files"
 msgstr "Kaikki tiedostot"
+
+msgid "Cancel"
+msgstr "Peruuta"
 
 msgid "Choose"
 msgstr "Valitse"
@@ -56,6 +59,12 @@ msgstr "Luo kansio"
 msgid "Current view selector"
 msgstr "Nykyisen näkymän valinta"
 
+msgid "Enter your name"
+msgstr "Kirjoita nimesi"
+
+msgid "Failed to set nickname."
+msgstr "Kutsumanimen asettaminen epäonnistui."
+
 msgid "Favorites"
 msgstr "Suosikit"
 
@@ -70,6 +79,9 @@ msgstr "Suodata tiedostolistaa"
 
 msgid "Folder name cannot be empty."
 msgstr "Kansion nimi ei voi olla tyhjä."
+
+msgid "Guest identification"
+msgstr "Vieraan tunnistaminen"
 
 msgid "Home"
 msgstr "Koti"
@@ -104,6 +116,9 @@ msgstr "Suodatinta vastaavia tiedostoja ei löytynyt."
 msgid "No matching files"
 msgstr "Ei vastaavia tiedostoja"
 
+msgid "Please enter a name with at least 2 characters."
+msgstr "Kirjoita vähintään kaksi merkkiä sisältävä nimi."
+
 msgid "Recent"
 msgstr "Viimeisimmät"
 
@@ -119,8 +134,17 @@ msgstr "Valitse rivi {nodename}:lle"
 msgid "Size"
 msgstr "Koko"
 
+msgid "Submit name"
+msgstr "Lähetä nimi"
+
 msgid "Undo"
 msgstr "Kumoa"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Lähetä jotain sisältöä tai synkronoi laitteidesi kanssa!"
+
+msgid "You are currently not identified."
+msgstr "Sinua ei ole tunnistettu."
+
+msgid "You cannot leave the name empty."
+msgstr "Nimeä ei voi jättää tyhjäksi."
