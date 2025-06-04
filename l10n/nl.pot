@@ -1,13 +1,14 @@
 # 
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
-# Joost <joho500@hotmail.com>, 2023
+# Joost <joho500@proton.me>, 2023
 # Jeroen Gui, 2023
 # Casper <casper@vrije-mens.org>, 2024
+# Stephan Paternotte <stephan@paternottes.net>, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Casper <casper@vrije-mens.org>, 2024\n"
+"Last-Translator: Stephan Paternotte <stephan@paternottes.net>, 2025\n"
 "Language-Team: Dutch (https://app.transifex.com/nextcloud/teams/64236/nl/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: nl\n"
@@ -25,8 +26,11 @@ msgstr "\"/\" is niet toegestaan binnen een bestandsnaam"
 msgid "All files"
 msgstr "Alle bestanden"
 
+msgid "Cancel"
+msgstr "Annuleren"
+
 msgid "Choose"
-msgstr "Kies"
+msgstr "Kiezen"
 
 msgid "Choose {file}"
 msgstr "Kies {file}"
@@ -37,10 +41,10 @@ msgstr[0] "Kies %n bestand"
 msgstr[1] "Kies %n bestanden"
 
 msgid "Copy"
-msgstr "Kopieer"
+msgstr "Kopiëren"
 
 msgid "Copy to {target}"
-msgstr "Kopieer naar {target}"
+msgstr "Kopiëren naar {target}"
 
 msgid "Could not create the new folder"
 msgstr "Kon de nieuwe map niet maken"
@@ -52,29 +56,38 @@ msgid "Could not load files views"
 msgstr "Kon de bestandsweergaves niet laden"
 
 msgid "Create directory"
-msgstr "Maak map"
+msgstr "Map aanmaken"
 
 msgid "Current view selector"
 msgstr "Huidige weergave keuze"
+
+msgid "Enter your name"
+msgstr "Voer je naam in"
+
+msgid "Failed to set nickname."
+msgstr "Kon geen bijnaam instellen."
 
 msgid "Favorites"
 msgstr "Favorieten"
 
 msgid "Files and folders you mark as favorite will show up here."
-msgstr "Bestanden en mappen die je favoriet maakt, worden hier getoond."
+msgstr "Bestanden en mappen die je als favoriet markeert, verschijnen hier."
 
 msgid "Files and folders you recently modified will show up here."
 msgstr ""
-"Bestanden en mappen die je recent hebt gewijzigd, worden hier getoond."
+"Bestanden en mappen die je recentelijk hebt gewijzigd, verschijnen hier."
 
 msgid "Filter file list"
-msgstr "Filter bestandslijst"
+msgstr "Bestandslijst filteren"
 
 msgid "Folder name cannot be empty."
 msgstr "Mapnaam mag niet leeg zijn."
 
+msgid "Guest identification"
+msgstr "Gastenidentificatie"
+
 msgid "Home"
-msgstr "Home"
+msgstr "Thuis"
 
 msgid "Modified"
 msgstr "Gewijzigd"
@@ -104,16 +117,19 @@ msgid "No files matching your filter were found."
 msgstr "Geen bestanden gevonden die voldoen aan je filter."
 
 msgid "No matching files"
-msgstr "Geen gevonden bestanden"
+msgstr "Geen overeenkomende bestanden"
+
+msgid "Please enter a name with at least 2 characters."
+msgstr "Voer een naam in met minimaal 2 tekens."
 
 msgid "Recent"
 msgstr "Recent"
 
 msgid "Select all entries"
-msgstr "Selecteer alle invoer"
+msgstr "Alle invoer selecteren"
 
 msgid "Select entry"
-msgstr "Selecteer invoer"
+msgstr "Invoer selecteren"
 
 msgid "Select the row for {nodename}"
 msgstr "Selecteer de rij voor {nodename}"
@@ -121,8 +137,17 @@ msgstr "Selecteer de rij voor {nodename}"
 msgid "Size"
 msgstr "Grootte"
 
+msgid "Submit name"
+msgstr "Naam indienen"
+
 msgid "Undo"
 msgstr "Ongedaan maken"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Upload inhoud of synchroniseer met je apparaten!"
+
+msgid "You are currently not identified."
+msgstr "Je bent momenteel niet geïdentificeerd."
+
+msgid "You cannot leave the name empty."
+msgstr "Je kunt de naam niet leeg laten."
