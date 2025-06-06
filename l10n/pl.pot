@@ -4,11 +4,12 @@
 # JUJER wtf, 2023
 # M H <haincu@o2.pl>, 2023
 # Valdnet, 2024
-# Piotr Strębski <strebski@gmail.com>, 2024
+# Piotr Strebski <strebski@gmail.com>, 2024
+# ayeteere, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Piotr Strębski <strebski@gmail.com>, 2024\n"
+"Last-Translator: ayeteere, 2025\n"
 "Language-Team: Polish (https://app.transifex.com/nextcloud/teams/64236/pl/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: pl\n"
@@ -25,6 +26,9 @@ msgstr "Znak \"/\" nie jest dozwolony w nazwie folderu"
 
 msgid "All files"
 msgstr "Wszystkie pliki"
+
+msgid "Cancel"
+msgstr "Anuluj"
 
 msgid "Choose"
 msgstr "Wybierz"
@@ -60,6 +64,12 @@ msgstr "Utwórz katalog"
 msgid "Current view selector"
 msgstr "Bieżący selektor widoku"
 
+msgid "Enter your name"
+msgstr "Wprowadź nazwę"
+
+msgid "Failed to set nickname."
+msgstr "Nie udało się utworzyć pseudonimu."
+
 msgid "Favorites"
 msgstr "Ulubione"
 
@@ -76,6 +86,9 @@ msgstr "Filtruj listę plików"
 
 msgid "Folder name cannot be empty."
 msgstr "Nazwa folderu nie może być pusta"
+
+msgid "Guest identification"
+msgstr "Identyfikacja gościa"
 
 msgid "Home"
 msgstr "Strona główna"
@@ -110,6 +123,9 @@ msgstr "Nie znaleziono plików spełniających warunki filtru"
 msgid "No matching files"
 msgstr "Brak pasujących plików"
 
+msgid "Please enter a name with at least 2 characters."
+msgstr "Wprowadź nazwę zawierającą minimum 2 znaki."
+
 msgid "Recent"
 msgstr "Ostatni"
 
@@ -125,8 +141,17 @@ msgstr "Wybierz wiersz dla {nodename}"
 msgid "Size"
 msgstr "Rozmiar"
 
+msgid "Submit name"
+msgstr "Zatwierdź nazwę"
+
 msgid "Undo"
 msgstr "Cofnij"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Wyślij zawartość lub zsynchronizuj ze swoimi urządzeniami!"
+
+msgid "You are currently not identified."
+msgstr "Użytkownik nie został uwierzytelniony."
+
+msgid "You cannot leave the name empty."
+msgstr "Nazwa nie może być pusta."
