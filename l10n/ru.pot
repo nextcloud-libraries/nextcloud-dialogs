@@ -6,13 +6,14 @@
 # Alex <kekcuha@gmail.com>, 2024
 # R4SAS, 2024
 # Влад, 2024
-# Kitsune R, 2024
+# Alexey Rusakov, 2024
 # Александр, 2024
 # Maksim Sukharev, 2024
+# Igor Orlov, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Maksim Sukharev, 2024\n"
+"Last-Translator: Igor Orlov, 2025\n"
 "Language-Team: Russian (https://app.transifex.com/nextcloud/teams/64236/ru/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: ru\n"
@@ -29,6 +30,9 @@ msgstr "Символ «/» не допускается внутри имени �
 
 msgid "All files"
 msgstr "Все файлы"
+
+msgid "Cancel"
+msgstr "Отмена"
 
 msgid "Choose"
 msgstr "Выбрать"
@@ -64,6 +68,12 @@ msgstr "Создать папку"
 msgid "Current view selector"
 msgstr "Переключатель текущего вида"
 
+msgid "Enter your name"
+msgstr "Введите ваше имя"
+
+msgid "Failed to set nickname."
+msgstr "Не удалось задать никнейм."
+
 msgid "Favorites"
 msgstr "Избранное"
 
@@ -79,6 +89,9 @@ msgstr "Фильтровать список файлов"
 
 msgid "Folder name cannot be empty."
 msgstr "Имя папки не может быть пустым."
+
+msgid "Guest identification"
+msgstr "Гостевая идентификация"
 
 msgid "Home"
 msgstr "Домой"
@@ -113,6 +126,9 @@ msgstr "Файлы, соответствующие вашему фильтру, 
 msgid "No matching files"
 msgstr "Нет подходящих файлов"
 
+msgid "Please enter a name with at least 2 characters."
+msgstr "Пожалуйста введите имя длиной не менее 2 символов."
+
 msgid "Recent"
 msgstr "Недавний"
 
@@ -128,8 +144,17 @@ msgstr "Выбрать строку для «{nodename}»"
 msgid "Size"
 msgstr "Размер"
 
+msgid "Submit name"
+msgstr "Отправить имя"
+
 msgid "Undo"
 msgstr "Отменить"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Загрузите контент или синхронизируйте его со своими устройствами!"
+
+msgid "You are currently not identified."
+msgstr "В данный момент вы не идентифицированы."
+
+msgid "You cannot leave the name empty."
+msgstr "Вы не можете оставить имя пустым."
