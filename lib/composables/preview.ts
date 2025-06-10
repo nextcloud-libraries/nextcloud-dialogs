@@ -70,7 +70,11 @@ export function getPreviewURL(node: INode, options: PreviewOptions = {}) {
 	}
 }
 
-export const usePreviewURL = (node: MaybeRef<INode>, options?: MaybeRef<PreviewOptions>) => {
+/**
+ * @param node - The node to get the preview of
+ * @param options - Preview options
+ */
+export function usePreviewURL(node: MaybeRef<INode>, options?: MaybeRef<PreviewOptions>) {
 	const previewURL = ref<URL | null>(null)
 	const previewLoaded = ref(false)
 

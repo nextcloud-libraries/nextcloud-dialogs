@@ -17,7 +17,7 @@ import { getFile, getNodes, getRecentNodes } from '../utils/dav.ts'
  * @param currentView Reference to the current files view
  * @param currentPath Reference to the current files path
  */
-export const useDAVFiles = function(
+export function useDAVFiles(
 	currentView: Ref<'files' | 'recent' | 'favorites'> | ComputedRef<'files' | 'recent' | 'favorites'>,
 	currentPath: Ref<string> | ComputedRef<string>,
 ) {

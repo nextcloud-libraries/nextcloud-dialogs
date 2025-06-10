@@ -111,7 +111,7 @@ function validateInput() {
 /**
  * Handle creating a new node
  */
-const onSubmit = function() {
+function onSubmit() {
 	const name = newNodeName.value.trim()
 
 	if (validateInput()) {

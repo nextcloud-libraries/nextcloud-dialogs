@@ -94,6 +94,16 @@ import LoadingTableRow from './LoadingTableRow.vue'
 import { useFilesSettings, useFilesViews } from '../../composables/filesSettings.ts'
 import { t } from '../../utils/l10n.ts'
 
+/**
+ * Current path
+ */
+const path = defineModel<string>('path', { required: true })
+
+/**
+ * Currently selected files
+ */
+const selectedFiles = defineModel<INode[]>('selectedFiles', { required: true })
+
 const props = defineProps<{
 	/**
 	 * Current view
@@ -115,19 +125,6 @@ const props = defineProps<{
 	 * Files to show
 	 */
 	files: INode[]
-	/**
-	 * Currently selected files
-	 */
-	selectedFiles: INode[]
-	/**
-	 * Current path
-	 */
-	path: string
-}>()
-
-const emit = defineEmits<{
-	(e: 'update:path', path: string): void
-	(e: 'update:selectedFiles', nodes: INode[]): void
 }>()
 
 /// sorting related stuff
@@ -147,7 +144,10 @@ const sortByName = computed(() => sortingConfig.value.sortBy === 'basename' ? (s
 const sortBySize = computed(() => sortingConfig.value.sortBy === 'size' ? (sortingConfig.value.order === 'none' ? undefined : sortingConfig.value.order) : undefined)
 const sortByModified = computed(() => sortingConfig.value.sortBy === 'mtime' ? (sortingConfig.value.order === 'none' ? undefined : sortingConfig.value.order) : undefined)
 
-const toggleSorting = (sortBy: ISortingAttributes) => {
+/**
+ * @param sortBy - The attributes to sort by
+ */
+function toggleSorting(sortBy: ISortingAttributes) {
 	if (sortingConfig.value.sortBy === sortBy) {
 		if (sortingConfig.value.order === 'ascending') {
 			customSortingConfig.value = { sortBy: sortingConfig.value.sortBy, order: 'descending' }
@@ -181,18 +181,18 @@ const selectableFiles = computed(() => props.files.filter((file) => props.allowP
 /**
  * Whether all selectable files are currently selected
  */
-const allSelected = computed(() => !props.loading && props.selectedFiles.length > 0 && props.selectedFiles.length >= selectableFiles.value.length)
+const allSelected = computed(() => !props.loading && selectedFiles.value.length > 0 && selectedFiles.value.length >= selectableFiles.value.length)
 
 /**
  * Handle the "select all" checkbox
  */
 function onSelectAll() {
-	if (props.selectedFiles.length < selectableFiles.value.length) {
+	if (selectedFiles.value.length < selectableFiles.value.length) {
 		// If not all selected, select all
-		emit('update:selectedFiles', selectableFiles.value)
+		selectedFiles.value = [...selectableFiles.value]
 	} else {
 		// If already all selected, deselect all
-		emit('update:selectedFiles', [])
+		selectedFiles.value = []
 	}
 }
 
@@ -202,14 +202,14 @@ function onSelectAll() {
  * @param file the selected node
  */
 function onNodeSelected(file: INode) {
-	if (props.selectedFiles.includes(file)) {
-		emit('update:selectedFiles', props.selectedFiles.filter((f) => f.path !== file.path))
+	if (selectedFiles.value.includes(file)) {
+		selectedFiles.value = selectedFiles.value.filter((f) => f.path !== file.path)
 	} else {
 		if (props.multiselect) {
-			emit('update:selectedFiles', [...props.selectedFiles, file])
+			selectedFiles.value = [...selectedFiles.value, file]
 		} else {
 			// no multi select so only this file is selected
-			emit('update:selectedFiles', [file])
+			selectedFiles.value = [file]
 		}
 	}
 }
@@ -220,7 +220,7 @@ function onNodeSelected(file: INode) {
  * @param dir The directory that is entered
  */
 function onChangeDirectory(dir: INode) {
-	emit('update:path', dir.path)
+	path.value = dir.path
 }
 
 /**

@@ -22,27 +22,31 @@ const nextcloudFiles = vi.hoisted(() => ({
 vi.mock('@nextcloud/files', () => nextcloudFiles)
 
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
-const waitLoaded = (vm: ComponentPublicInstance<{}, { isLoading: boolean }>) => new Promise((resolve) => {
-	const w = () => {
-		if (vm.isLoading) {
-			window.setTimeout(w, 50)
-		} else {
-			resolve(true)
+function waitLoaded(vm: ComponentPublicInstance<{}, { isLoading: boolean }>) {
+	return new Promise((resolve) => {
+		const w = () => {
+			if (vm.isLoading) {
+				window.setTimeout(w, 50)
+			} else {
+				resolve(true)
+			}
 		}
-	}
-	w()
-})
+		w()
+	})
+}
 
-const waitRefLoaded = (isLoading: Ref<boolean>) => new Promise((resolve) => {
-	const w = () => {
-		if (isLoading.value) {
-			window.setTimeout(w, 50)
-		} else {
-			resolve(true)
+function waitRefLoaded(isLoading: Ref<boolean>) {
+	return new Promise((resolve) => {
+		const w = () => {
+			if (isLoading.value) {
+				window.setTimeout(w, 50)
+			} else {
+				resolve(true)
+			}
 		}
-	}
-	w()
-})
+		w()
+	})
+}
 
 const TestComponent = defineComponent({
 	props: ['currentView', 'currentPath', 'isPublic'],
