@@ -71,7 +71,7 @@ watch(() => props.nickname, () => {
 	name.value = props.nickname
 })
 
-watch(() => name.value, (newName) => {
+watch(name, (newName) => {
 	// Check validity of the new name
 	const validity = getGuestNameValidity(newName)
 	if (!validity) {
