@@ -2,10 +2,19 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 
+msgid "\"{char}\" is not allowed inside a name."
+msgstr ""
+
+msgid "\"{extension}\" is not an allowed name."
+msgstr ""
+
 msgid "\"{name}\" is an invalid folder name."
 msgstr ""
 
 msgid "\"{name}\" is not an allowed folder name"
+msgstr ""
+
+msgid "\"{segment}\" is a reserved name and not allowed."
 msgstr ""
 
 msgid "\"/\" is not allowed inside a folder name."
@@ -76,6 +85,9 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
+msgid "Invalid name."
+msgstr ""
+
 msgid "Modified"
 msgstr ""
 
@@ -86,6 +98,15 @@ msgid "Move to {target}"
 msgstr ""
 
 msgid "Name"
+msgstr ""
+
+msgid "Names must not be empty."
+msgstr ""
+
+msgid "Names must not end with \"{extension}\"."
+msgstr ""
+
+msgid "Names must not start with a dot."
 msgstr ""
 
 msgid "New"
