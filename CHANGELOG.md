@@ -6,7 +6,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [v7.0.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.2.0...v7.0.0-rc.0)
+## [v7.0.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.2.0...v7.0.0-rc.1)
 
 ### Notes
 
@@ -39,8 +39,20 @@ For Vue 3 apps nothing changed, meaning the app and this library will share the 
 + import { spawnDialog } from '@nextcloud/vue/functions/dialog'
 ```
 
-### Changed
+### Added
+* feat: add guest auth prompt [\#1760](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1760) \([backportbot](https://github.com/backportbot)\)
 
+### Fixed
+* fix(FilePickerBuilder): correctly return array / plain value depending on multiselect [\#1775](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1775) \([susnux](https://github.com/susnux)\)
+* fix: display guest name validity [\#1836](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1836) \([skjnldsv](https://github.com/skjnldsv)\)
+
+### Changed
+* chore: update to ESLint v9 and apply new rules [\#1753](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1753) \([susnux](https://github.com/susnux)\)
+* Updates for project Nextcloud dialogs library [\#1757](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1757) \([transifex-integration](https://github.com/transifex-integration)\)
+* chore: move from `dev:watch` back to `watch` [\#1758](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1758) \([skjnldsv](https://github.com/skjnldsv)\)
+* Updates for project Nextcloud dialogs library [\#1776](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1776) \([transifex-integration](https://github.com/transifex-integration)\)
+* refactor: adjust code to comply with code style (again) [\#1774](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1774) \([susnux](https://github.com/susnux)\)
+* chore!: remove `spawnDialog` in favor of version from `@nextcloud/vue` [\#1783](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1783) \([susnux](https://github.com/susnux)\)
 * refactor: do not use Node internals but @nextcloud/paths package [\#1752](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1752) \([susnux](https://github.com/susnux)\)
 
 ## [v6.2.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.1.1...v6.2.0)
