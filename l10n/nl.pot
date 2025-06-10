@@ -14,11 +14,20 @@ msgstr ""
 "Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "\"{char}\" is not allowed inside a name."
+msgstr "\"{char}\" is niet toegestaan in een naam."
+
+msgid "\"{extension}\" is not an allowed name."
+msgstr "\"{extension}\" is geen toegestane naam."
+
 msgid "\"{name}\" is an invalid folder name."
 msgstr "\"{name}\" is een ongeldige mapnaam."
 
 msgid "\"{name}\" is not an allowed folder name"
 msgstr "\"{name}\" is geen toegestane mapnaam"
+
+msgid "\"{segment}\" is a reserved name and not allowed."
+msgstr "\"{segment}\" is een gereserveerde naam en niet toegestaan."
 
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "\"/\" is niet toegestaan binnen een bestandsnaam"
@@ -89,6 +98,9 @@ msgstr "Gastenidentificatie"
 msgid "Home"
 msgstr "Thuis"
 
+msgid "Invalid name."
+msgstr "Ongeldige naam."
+
 msgid "Modified"
 msgstr "Gewijzigd"
 
@@ -100,6 +112,15 @@ msgstr "Verplaats naar {target}"
 
 msgid "Name"
 msgstr "Naam"
+
+msgid "Names must not be empty."
+msgstr "Namen mogen niet leeg zijn."
+
+msgid "Names must not end with \"{extension}\"."
+msgstr "Namen mogen niet eindigen met \"{extension}\"."
+
+msgid "Names must not start with a dot."
+msgstr "Namen mogen niet begonnen met een punt."
 
 msgid "New"
 msgstr "Nieuw"
