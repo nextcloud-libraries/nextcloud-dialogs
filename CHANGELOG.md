@@ -6,6 +6,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v6.3.1](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.3.0...v6.3.1)
+### 🐛 Fixed bugs
+* [stable6] fix: display guest name validity by @skjnldsv in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1837
+
 ## [v6.3.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.2.0...v6.3.0)
 ### 🚀 Enhancements
 * [stable6] feat: add guest auth prompt component by @skjnldsv in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1759
