@@ -52,7 +52,7 @@ export interface PublicAuthPromptProps {
 
 const props = withDefaults(defineProps<PublicAuthPromptProps>(), {
 	nickname: '',
-	notice: t('You are currently not identified.'),
+	notice: '',
 	submitLabel: t('Submit name'),
 	text: '',
 	title: t('Guest identification'),
@@ -102,6 +102,20 @@ const buttons = computed(() => {
 	}
 
 	return [submitButton]
+})
+
+const defaultNotice = computed(() => {
+	if (props.notice) {
+		return props.notice
+	}
+
+	// If no notice is provided, use a default one
+	// that changes based on the nickname definition
+	if (name.value) {
+		return t('You are currently identified as {nickname}.', { nickname: name.value })
+	}
+
+	return t('You are currently not identified.')
 })
 
 /**
@@ -169,7 +183,7 @@ function onSubmit() {
 		<!-- Header -->
 		<NcNoteCard
 			class="public-auth-prompt__header"
-			:text="notice"
+			:text="defaultNotice"
 			type="info" />
 
 		<!-- Form -->
