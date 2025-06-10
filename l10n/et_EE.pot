@@ -11,11 +11,20 @@ msgstr ""
 "Language: et_EE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "\"{char}\" is not allowed inside a name."
+msgstr "„{char}“ pole nimes lubatud."
+
+msgid "\"{extension}\" is not an allowed name."
+msgstr "„{extension}“ pole lubatud nimi."
+
 msgid "\"{name}\" is an invalid folder name."
-msgstr "„{name}“ on vigane kausta nimi"
+msgstr "„{name}“ on vigane kausta nimi."
 
 msgid "\"{name}\" is not an allowed folder name"
 msgstr "„{name}“ pole kausta nimes lubatud"
+
+msgid "\"{segment}\" is a reserved name and not allowed."
+msgstr "„{segment}“ on reserveeritud nimi ja pole kasutamiseks lubatud."
 
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "„/“ pole kausta nimes lubatud."
@@ -85,6 +94,9 @@ msgstr "Külalise tuvastamine"
 msgid "Home"
 msgstr "Avaleht"
 
+msgid "Invalid name."
+msgstr "Vigane nimi."
+
 msgid "Modified"
 msgstr "Muudetud"
 
@@ -96,6 +108,15 @@ msgstr "Teisalda kausta {target}"
 
 msgid "Name"
 msgstr "Nimi"
+
+msgid "Names must not be empty."
+msgstr "Nimi ei saa olla tühi."
+
+msgid "Names must not end with \"{extension}\"."
+msgstr "Nime lõpus ei tohi olla „{extension}“."
+
+msgid "Names must not start with a dot."
+msgstr "Nime alguses ei tohi olla punkt."
 
 msgid "New"
 msgstr "Uus"
