@@ -39,8 +39,6 @@ export type {
 	ToastOptions,
 } from './toast.js'
 
-export { spawnDialog } from './utils/dialogs.ts'
-
 export {
 	Dialog,
 	DialogBuilder,
