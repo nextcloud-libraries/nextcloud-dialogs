@@ -295,7 +295,7 @@ const noFilesDescription = computed(() => {
  *
  * @param name The new folder name
  */
-const onCreateFolder = async (name: string) => {
+async function onCreateFolder(name: string) {
 	try {
 		const folder = await createDirectory(name)
 		navigatedPath.value = folder.path
@@ -313,7 +313,7 @@ const onCreateFolder = async (name: string) => {
  *
  * @param open If the dialog is open
  */
-const handleClose = (open: boolean) => {
+function handleClose(open: boolean) {
 	if (!open && !isHandlingCallback) {
 		emit('close')
 	}

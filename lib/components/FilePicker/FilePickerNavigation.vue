@@ -75,12 +75,11 @@ const props = defineProps<{
 	disabledNavigation: boolean
 }>()
 
+const emit = defineEmits<INavigationEvents>()
 interface INavigationEvents {
 	(e: 'update:currentView', v: typeof props.currentView): void
 	(e: 'update:filterString', v: string): void
 }
-const emit = defineEmits<INavigationEvents>()
-
 const { availableViews } = useViews(ref(getCurrentUser() === null))
 
 /**

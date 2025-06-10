@@ -6,8 +6,9 @@
 	<tr
 		:tabindex="(showCheckbox && !isDirectory) ? undefined : 0"
 		:aria-selected="!isPickable ? undefined : selected"
+		class="file-picker__row"
 		:class="[
-			'file-picker__row', {
+			{
 				'file-picker__row--selected': selected && !showCheckbox,
 			},
 		]"

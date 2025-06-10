@@ -38,9 +38,6 @@ import { usePreviewURL } from '../../composables/preview.ts'
 // CSS modules
 import fileListIconStylesModule from './FileListIcon.module.scss'
 
-// workaround for vue2.7 bug, can be removed with vue3
-const fileListIconStyles = ref(fileListIconStylesModule)
-
 const props = defineProps<{
 	/**
 	 * Node to show preview of
@@ -51,6 +48,9 @@ const props = defineProps<{
 	 */
 	cropImagePreviews: boolean
 }>()
+
+// workaround for vue2.7 bug, can be removed with vue3
+const fileListIconStyles = ref(fileListIconStylesModule)
 
 const {
 	previewURL,

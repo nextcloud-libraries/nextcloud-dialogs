@@ -41,7 +41,7 @@ export type FileListViews = 'files' | 'recent' | 'favorites'
  * Composable to get the files app settings
  * (show hidden files, sort favorites, crop previews)
  */
-export const useFilesSettings = () => {
+export function useFilesSettings() {
 	const filesUserState = loadState<OCAFilesUserConfig | null>('files', 'config', null)
 
 	const showHiddenFiles = ref(filesUserState?.show_hidden ?? true)
@@ -77,7 +77,7 @@ export const useFilesSettings = () => {
  *
  * @param currentView the currently active view
  */
-export const useFilesViews = (currentView?: FileListViews | Ref<FileListViews> | ComputedRef<FileListViews>) => {
+export function useFilesViews(currentView?: FileListViews | Ref<FileListViews> | ComputedRef<FileListViews>) {
 	const convertOrder = (order?: string) => order === 'asc' ? 'ascending' : (order === 'desc' ? 'descending' : 'none')
 
 	const filesViewsState = loadState<OCAFilesViewConfig | null>('files', 'viewConfigs', null)

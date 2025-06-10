@@ -12,7 +12,7 @@ import { computed } from 'vue'
  *
  * @param allowedMIMETypes Reference to allowed MIME types
  */
-export const useMimeFilter = function(allowedMIMETypes: Ref<readonly string[]> | ComputedRef<readonly string[]>) {
+export function useMimeFilter(allowedMIMETypes: Ref<readonly string[]> | ComputedRef<readonly string[]>) {
 	// Cache splitted MIME types
 	const splittedTypes = computed(() => allowedMIMETypes.value.map((filter) => filter.split('/')))
 
