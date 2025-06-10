@@ -11,11 +11,20 @@ msgstr ""
 "Language: cs_CZ\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
+msgid "\"{char}\" is not allowed inside a name."
+msgstr "„{char}“ není možné použít uvnitř názvu."
+
+msgid "\"{extension}\" is not an allowed name."
+msgstr "„{extension}“ není možné použít jako název."
+
 msgid "\"{name}\" is an invalid folder name."
 msgstr "„{name}“ není platný název složky."
 
 msgid "\"{name}\" is not an allowed folder name"
 msgstr "„{name}“ není povolený název složky."
+
+msgid "\"{segment}\" is a reserved name and not allowed."
+msgstr "„{segment}“ je vyhrazeným názvem a není možné ho použít."
 
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "znak „/“ (dopředné lomítko) není možné použít uvnitř názvu složky."
@@ -87,6 +96,9 @@ msgstr "Identifikace hosta"
 msgid "Home"
 msgstr "Domů"
 
+msgid "Invalid name."
+msgstr "Neplatný název."
+
 msgid "Modified"
 msgstr "Změněno"
 
@@ -98,6 +110,15 @@ msgstr "Přesunout do {target}"
 
 msgid "Name"
 msgstr "Název"
+
+msgid "Names must not be empty."
+msgstr "Názvy je třeba vyplnit."
+
+msgid "Names must not end with \"{extension}\"."
+msgstr "Názvy nemohou končit na „{extension}“."
+
+msgid "Names must not start with a dot."
+msgstr "Názvy nemohou začínat tečkou."
 
 msgid "New"
 msgstr "Nové"
