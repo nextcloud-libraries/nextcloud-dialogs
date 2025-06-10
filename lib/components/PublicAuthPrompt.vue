@@ -39,12 +39,12 @@ import { getBuilder } from '@nextcloud/browser-storage'
 import { setGuestNickname } from '@nextcloud/auth'
 import { showError } from '@nextcloud/dialogs'
 
-import NcButton from '@nextcloud/vue/components/NcButton'
 import NcDialog from '@nextcloud/vue/components/NcDialog'
 import NcNoteCard from '@nextcloud/vue/components/NcNoteCard'
 import NcTextField from '@nextcloud/vue/components/NcTextField'
 
 import { t } from '../utils/l10n.ts'
+import { getGuestNameValidity } from '../utils/guestNameValidity.ts'
 
 const storage = getBuilder('public').build()
 
@@ -157,6 +157,19 @@ export default defineComponent({
 				this.name = this.nickname
 			},
 			immediate: true,
+		},
+		
+		name() {
+			// Check validity of the new name
+			const newName = this.name.trim?.() || ''
+			const input = (this.$refs.input as Vue|undefined)?.$el.querySelector('input')
+			if (!input) {
+				return
+			}
+
+			const validity = getGuestNameValidity(newName)
+			input.setCustomValidity(validity)
+			input.reportValidity()
 		},
 	},
 
