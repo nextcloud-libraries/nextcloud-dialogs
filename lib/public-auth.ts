@@ -23,6 +23,5 @@ export async function showGuestUserPrompt(props: GuestUserPromptOptions): Promis
 		defineAsyncComponent(() => import('./components/PublicAuthPrompt.vue')),
 		props,
 	)
-	/// @ts-expect-error TODO: remove when fixed upstream: https://github.com/nextcloud-libraries/nextcloud-vue/issues/6902
 	return name
 }

@@ -6,11 +6,12 @@
 <script setup lang="ts">
 import { setGuestNickname } from '@nextcloud/auth'
 import { getBuilder } from '@nextcloud/browser-storage'
-import { showError } from '@nextcloud/dialogs'
 import { computed, ref, useTemplateRef, watch } from 'vue'
 import NcDialog from '@nextcloud/vue/components/NcDialog'
 import NcNoteCard from '@nextcloud/vue/components/NcNoteCard'
 import NcTextField from '@nextcloud/vue/components/NcTextField'
+import { showError } from '../toast.ts'
+import { getGuestNameValidity } from '../utils/guestNameValidity.ts'
 import { t } from '../utils/l10n.ts'
 import { logger } from '../utils/logger.ts'
 
@@ -70,6 +71,18 @@ watch(() => props.nickname, () => {
 	name.value = props.nickname
 })
 
+watch(name, (newName) => {
+	// Check validity of the new name
+	const validity = getGuestNameValidity(newName)
+	if (!validity) {
+		// If the nickname is not valid, show an error
+		inputElement.value.setCustomValidity(validity)
+		inputElement.value.reportValidity()
+		inputElement.value.focus()
+		return
+	}
+})
+
 const buttons = computed(() => {
 	const cancelButton = {
 		label: t('Cancel'),
@@ -96,6 +109,15 @@ const buttons = computed(() => {
  */
 function onSubmit() {
 	const nickname = name.value.trim()
+
+	const validity = getGuestNameValidity(nickname)
+	if (validity) {
+		// If the nickname is not valid, show an error
+		inputElement.value.setCustomValidity(validity)
+		inputElement.value.reportValidity()
+		inputElement.value.focus()
+		return
+	}
 
 	if (nickname === '') {
 		// Show error if the nickname is empty
