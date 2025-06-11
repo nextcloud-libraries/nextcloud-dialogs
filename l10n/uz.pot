@@ -10,11 +10,20 @@ msgstr ""
 "Language: uz\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+msgid "\"{char}\" is not allowed inside a name."
+msgstr "Nom ichida \"{char}\" ga ruxsat berilmagan."
+
+msgid "\"{extension}\" is not an allowed name."
+msgstr "\"{extension}\" ruxsat etilgan nom emas."
+
 msgid "\"{name}\" is an invalid folder name."
 msgstr "\"{name}\" jild nomi yaroqsiz."
 
 msgid "\"{name}\" is not an allowed folder name"
 msgstr "\"{name}\" ruxsat etilgan jild nomi emas"
+
+msgid "\"{segment}\" is a reserved name and not allowed."
+msgstr "\"{segment}\" - zaxiralangan nom va ruxsat berilmaydi."
 
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "\"/\" papka nomi ichida ruxsat berilmaydi."
@@ -83,6 +92,9 @@ msgstr "Foydalanuvchini identifikatsiyalash"
 msgid "Home"
 msgstr "Uy"
 
+msgid "Invalid name."
+msgstr "Nomi noto‘g‘ri."
+
 msgid "Modified"
 msgstr "Modifikatsiyalangan"
 
@@ -94,6 +106,15 @@ msgstr " {target} ga ko'chirish"
 
 msgid "Name"
 msgstr "Nomi"
+
+msgid "Names must not be empty."
+msgstr "Ismlar bo'sh bo'lmasligi kerak."
+
+msgid "Names must not end with \"{extension}\"."
+msgstr "Ismlar \"{extension}\" bilan tugamasligi kerak."
+
+msgid "Names must not start with a dot."
+msgstr "Ismlar nuqta bilan boshlanmasligi kerak."
 
 msgid "New"
 msgstr "Yangi"
