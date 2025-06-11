@@ -14,11 +14,20 @@ msgstr ""
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
+msgid "\"{char}\" is not allowed inside a name."
+msgstr "\"{char}\" não é permitido dentro de um nome."
+
+msgid "\"{extension}\" is not an allowed name."
+msgstr "\"{extension}\" não é um nome permitido."
+
 msgid "\"{name}\" is an invalid folder name."
 msgstr "\"{name}\" é um nome de pasta inválido."
 
 msgid "\"{name}\" is not an allowed folder name"
 msgstr "\"{name}\" não é um nome de pasta permitido"
+
+msgid "\"{segment}\" is a reserved name and not allowed."
+msgstr "\"{segment}\" é um nome reservado e não permitido."
 
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "\"/\" não é permitido dentro de um nome de pasta."
@@ -89,6 +98,9 @@ msgstr "Identificação de convidados"
 msgid "Home"
 msgstr "Início"
 
+msgid "Invalid name."
+msgstr "Nome inválido."
+
 msgid "Modified"
 msgstr "Modificado"
 
@@ -100,6 +112,15 @@ msgstr "Mover para {target}"
 
 msgid "Name"
 msgstr "Nome"
+
+msgid "Names must not be empty."
+msgstr "Nomes não podem estar vazios."
+
+msgid "Names must not end with \"{extension}\"."
+msgstr "Nomes não podem terminar com \"{extension}\"."
+
+msgid "Names must not start with a dot."
+msgstr "Nomes não podem começar com um ponto."
 
 msgid "New"
 msgstr "Novo"
