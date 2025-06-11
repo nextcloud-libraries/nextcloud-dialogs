@@ -10,11 +10,20 @@ msgstr ""
 "Language: ga\n"
 "Plural-Forms: nplurals=5; plural=(n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : 4);\n"
 
+msgid "\"{char}\" is not allowed inside a name."
+msgstr "Ní cheadaítear \"{char}\" laistigh d'ainm."
+
+msgid "\"{extension}\" is not an allowed name."
+msgstr "Ní ainm ceadaithe é \"{extension}\"."
+
 msgid "\"{name}\" is an invalid folder name."
 msgstr "Is ainm fillteáin neamhbhailí é \"{name}\"."
 
 msgid "\"{name}\" is not an allowed folder name"
 msgstr "Ní ainm fillteáin ceadaithe é \"{name}\"."
+
+msgid "\"{segment}\" is a reserved name and not allowed."
+msgstr "Is ainm curtha in áirithe é \"{segment}\" agus ní cheadaítear é."
 
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "Ní cheadaítear \"/\" taobh istigh d'ainm fillteáin."
@@ -88,6 +97,9 @@ msgstr "Aitheantas aoi"
 msgid "Home"
 msgstr "Baile"
 
+msgid "Invalid name."
+msgstr "Ainm neamhbhailí."
+
 msgid "Modified"
 msgstr "Athraithe"
 
@@ -99,6 +111,15 @@ msgstr "Bog go{target}"
 
 msgid "Name"
 msgstr "Ainm"
+
+msgid "Names must not be empty."
+msgstr "Ní féidir ainmneacha a bheith folamh."
+
+msgid "Names must not end with \"{extension}\"."
+msgstr "Ní féidir ainmneacha a chríochnú le \"{extension}\"."
+
+msgid "Names must not start with a dot."
+msgstr "Ní mór ainmneacha a bheith ag tosú le ponc."
 
 msgid "New"
 msgstr "Nua"
