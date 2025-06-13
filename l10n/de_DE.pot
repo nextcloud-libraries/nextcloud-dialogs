@@ -2,22 +2,31 @@
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Mark Ziegler <mark.ziegler@rakekniven.de>, 2025
-# Mario Siegmann <mario_siegmann@web.de>, 2025
 # Martin Wilichowski, 2025
+# Mario Siegmann <mario_siegmann@web.de>, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Martin Wilichowski, 2025\n"
+"Last-Translator: Mario Siegmann <mario_siegmann@web.de>, 2025\n"
 "Language-Team: German (Germany) (https://app.transifex.com/nextcloud/teams/64236/de_DE/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "\"{char}\" is not allowed inside a name."
+msgstr "\"{char}\" ist innerhalb eines Namens nicht zulässig."
+
+msgid "\"{extension}\" is not an allowed name."
+msgstr "\"{extension}\" ist kein zulässiger Name."
 
 msgid "\"{name}\" is an invalid folder name."
 msgstr "\"{name}\" ist ein ungültiger Ordnername."
 
 msgid "\"{name}\" is not an allowed folder name"
 msgstr "\"{name}\" ist kein zulässiger Ordnername"
+
+msgid "\"{segment}\" is a reserved name and not allowed."
+msgstr "\"{segment}\" ist ein reservierter Name und nicht zulässig."
 
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "\"/\" ist innerhalb eines Ordnernamens nicht zulässig."
@@ -89,6 +98,9 @@ msgstr "Gast-Identifikation"
 msgid "Home"
 msgstr "Home"
 
+msgid "Invalid name."
+msgstr "Ungültiger Name."
+
 msgid "Modified"
 msgstr "Geändert"
 
@@ -100,6 +112,15 @@ msgstr "Nach {target} verschieben"
 
 msgid "Name"
 msgstr "Name"
+
+msgid "Names must not be empty."
+msgstr "Namen dürfen nicht leer sein."
+
+msgid "Names must not end with \"{extension}\"."
+msgstr "Namen dürfen nicht mit \"{extension}\" enden."
+
+msgid "Names must not start with a dot."
+msgstr "Namen dürfen nicht mit einem Punkt beginnen."
 
 msgid "New"
 msgstr "Neu"
