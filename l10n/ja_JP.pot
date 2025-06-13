@@ -16,11 +16,20 @@ msgstr ""
 "Language: ja_JP\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+msgid "\"{char}\" is not allowed inside a name."
+msgstr "名前に\"{char}\"は使用できません。"
+
+msgid "\"{extension}\" is not an allowed name."
+msgstr "\"{extension}\"は許可された名前ではありません"
+
 msgid "\"{name}\" is an invalid folder name."
 msgstr "\"{name}\" はフォルダー名に使用できません。"
 
 msgid "\"{name}\" is not an allowed folder name"
 msgstr "\"{name}\"は許可されたフォルダー名ではありません"
+
+msgid "\"{segment}\" is a reserved name and not allowed."
+msgstr "\"{segment}\"は予約名であり使用できません。"
 
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "フォルダー名に「/（スラッシュ）」は使用できません。"
@@ -89,6 +98,9 @@ msgstr "ゲスト識別"
 msgid "Home"
 msgstr "ホーム"
 
+msgid "Invalid name."
+msgstr "無効な名前です。"
+
 msgid "Modified"
 msgstr "変更済み"
 
@@ -100,6 +112,15 @@ msgstr "{target} に移動"
 
 msgid "Name"
 msgstr "名前"
+
+msgid "Names must not be empty."
+msgstr "名前は空にできません。"
+
+msgid "Names must not end with \"{extension}\"."
+msgstr "名前の末尾に\"{extension}\"は使用できません"
+
+msgid "Names must not start with a dot."
+msgstr "ドットで始まる名前は使用できません。"
 
 msgid "New"
 msgstr "新規作成"
