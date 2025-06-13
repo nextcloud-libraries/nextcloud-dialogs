@@ -10,14 +10,23 @@ msgstr ""
 "Language: uk\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
+msgid "\"{char}\" is not allowed inside a name."
+msgstr "{char} не дозволено всередині імени."
+
+msgid "\"{extension}\" is not an allowed name."
+msgstr "{extension} не є недозволене ім'я."
+
 msgid "\"{name}\" is an invalid folder name."
-msgstr "\"{name}\" є недійсною назвою для каталогу."
+msgstr "\"{name}\" є недійсне ім'я каталогу."
 
 msgid "\"{name}\" is not an allowed folder name"
-msgstr "\"{name}\" не є дозволеною назвою для каталогу."
+msgstr "\"{name}\" не є дозволене ім'я каталогу."
+
+msgid "\"{segment}\" is a reserved name and not allowed."
+msgstr "{segment} є зарезервоване ім'я і не дозволене для використання."
 
 msgid "\"/\" is not allowed inside a folder name."
-msgstr "\"/\" не дозволено у назві каталогу."
+msgstr "\"/\" не дозволено у імені каталогу."
 
 msgid "All files"
 msgstr "Всі файли"
@@ -86,6 +95,9 @@ msgstr "Ім'я для гостя"
 msgid "Home"
 msgstr "Домівка"
 
+msgid "Invalid name."
+msgstr "Недійсне ім'я."
+
 msgid "Modified"
 msgstr "Змінено"
 
@@ -97,6 +109,15 @@ msgstr "Перемістити до {target}"
 
 msgid "Name"
 msgstr "Ім'я"
+
+msgid "Names must not be empty."
+msgstr "Ім'я не може бути порожнє."
+
+msgid "Names must not end with \"{extension}\"."
+msgstr "Ім'я не може закінчуватися на \"{extension}\"."
+
+msgid "Names must not start with a dot."
+msgstr "Ім'я не може починатися з крапки."
 
 msgid "New"
 msgstr "Новий"
