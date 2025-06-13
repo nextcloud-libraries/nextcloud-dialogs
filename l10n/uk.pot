@@ -14,7 +14,7 @@ msgid "\"{char}\" is not allowed inside a name."
 msgstr "\"{char}\" не дозволено всередині імени."
 
 msgid "\"{extension}\" is not an allowed name."
-msgstr "\"{extension}\" неє дозволене ім'я."
+msgstr "\"{extension}\" не є дозволене ім'я."
 
 msgid "\"{name}\" is an invalid folder name."
 msgstr "\"{name}\" є недійсне ім'я каталогу."
