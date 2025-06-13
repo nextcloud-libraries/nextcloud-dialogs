@@ -87,7 +87,7 @@ msgid "Filter file list"
 msgstr "Фільтрувати список файлів"
 
 msgid "Folder name cannot be empty."
-msgstr "Ім'я каталогу не може бути порожнім."
+msgstr "Ім'я каталогу не може бути порожнє."
 
 msgid "Guest identification"
 msgstr "Ім'я для гостя"
