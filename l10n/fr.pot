@@ -150,7 +150,7 @@ msgid "Recent"
 msgstr "Récents"
 
 msgid "Select all entries"
-msgstr "Tous sélectionner"
+msgstr "Tout sélectionner"
 
 msgid "Select entry"
 msgstr "Sélectionner une entrée"
