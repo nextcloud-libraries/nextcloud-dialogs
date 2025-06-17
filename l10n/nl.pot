@@ -108,7 +108,7 @@ msgid "Move"
 msgstr "Verplaatsen"
 
 msgid "Move to {target}"
-msgstr "Verplaats naar {target}"
+msgstr "Verplaatsen naar {target}"
 
 msgid "Name"
 msgstr "Naam"
