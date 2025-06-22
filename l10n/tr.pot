@@ -1,15 +1,21 @@
 # 
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
-# Kaya Zeren <kayazeren@gmail.com>, 2024
+# Kaya Zeren <kayazeren@gmail.com>, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Kaya Zeren <kayazeren@gmail.com>, 2024\n"
+"Last-Translator: Kaya Zeren <kayazeren@gmail.com>, 2025\n"
 "Language-Team: Turkish (https://app.transifex.com/nextcloud/teams/64236/tr/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: tr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "\"{char}\" is not allowed inside a name."
+msgstr "Bir ad içinde \"{char}\" karakteri kullanılamaz."
+
+msgid "\"{extension}\" is not an allowed name."
+msgstr "\"{extension}\" adına izin verilmiyor."
 
 msgid "\"{name}\" is an invalid folder name."
 msgstr "\"{name}\" geçersiz bir klasör adı."
@@ -17,11 +23,17 @@ msgstr "\"{name}\" geçersiz bir klasör adı."
 msgid "\"{name}\" is not an allowed folder name"
 msgstr "\"{name}\" izin verilen bir klasör adı değil"
 
+msgid "\"{segment}\" is a reserved name and not allowed."
+msgstr "\"{segment}\" adı sistem için ayrılmış olduğundan kullanılamaz."
+
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "\"/\" karakteri klasör adında kullanılamaz."
 
 msgid "All files"
 msgstr "Tüm dosyalar"
+
+msgid "Cancel"
+msgstr "İptal"
 
 msgid "Choose"
 msgstr "Seçin"
@@ -55,6 +67,12 @@ msgstr "Klasör oluştur"
 msgid "Current view selector"
 msgstr "Geçerli görünüm seçici"
 
+msgid "Enter your name"
+msgstr "Adınızı yazın"
+
+msgid "Failed to set nickname."
+msgstr "Takma ad ayarlanamadı."
+
 msgid "Favorites"
 msgstr "Sık kullanılanlar"
 
@@ -71,8 +89,14 @@ msgstr "Dosya listesini süz"
 msgid "Folder name cannot be empty."
 msgstr "Klasör adı boş olamaz."
 
+msgid "Guest identification"
+msgstr "Konuk kimliği"
+
 msgid "Home"
 msgstr "Giriş"
+
+msgid "Invalid name."
+msgstr "Ad geçersiz."
 
 msgid "Modified"
 msgstr "Değiştirilme"
@@ -85,6 +109,15 @@ msgstr "{target} üzerine taşı"
 
 msgid "Name"
 msgstr "Ad"
+
+msgid "Names must not be empty."
+msgstr "Ad boş olamaz."
+
+msgid "Names must not end with \"{extension}\"."
+msgstr "Ad \"{extension}\" ile bitemez."
+
+msgid "Names must not start with a dot."
+msgstr "Ad nokta karakteri ile başlayamaz."
 
 msgid "New"
 msgstr "Yeni"
@@ -104,6 +137,9 @@ msgstr "Süzgece uyan bir dosya bulunamadı."
 msgid "No matching files"
 msgstr "Eşleşen bir dosya yok"
 
+msgid "Please enter a name with at least 2 characters."
+msgstr "Ad en az 2 karakter uzunluğunda olmalıdır."
+
 msgid "Recent"
 msgstr "Son kullanılanlar"
 
@@ -119,8 +155,17 @@ msgstr "{nodename} satırını seçin"
 msgid "Size"
 msgstr "Boyut"
 
+msgid "Submit name"
+msgstr "Adı gönder"
+
 msgid "Undo"
 msgstr "Geri al"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Bazı içerikler yükleyin ya da aygıtlarınızla eşitleyin!"
+
+msgid "You are currently not identified."
+msgstr "Henüz kendinizi tanıtmadınız."
+
+msgid "You cannot leave the name empty."
+msgstr "Ad boş bırakılamaz."
