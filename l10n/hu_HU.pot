@@ -3,14 +3,21 @@
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Főnyedi Áron <sajtman@gmail.com>, 2023
 # Gyuris Gellért <jobel@ujevangelizacio.hu>, 2024
+# János Schrempf <schrempf.janos@gmail.com>, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Gyuris Gellért <jobel@ujevangelizacio.hu>, 2024\n"
+"Last-Translator: János Schrempf <schrempf.janos@gmail.com>, 2025\n"
 "Language-Team: Hungarian (Hungary) (https://app.transifex.com/nextcloud/teams/64236/hu_HU/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: hu_HU\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "\"{char}\" is not allowed inside a name."
+msgstr "\"{char}\" nem engedélyezett névben."
+
+msgid "\"{extension}\" is not an allowed name."
+msgstr "\"{extension}\" nem engedélyezett név."
 
 msgid "\"{name}\" is an invalid folder name."
 msgstr "„{name}” érvénytelen mappanév."
@@ -18,11 +25,17 @@ msgstr "„{name}” érvénytelen mappanév."
 msgid "\"{name}\" is not an allowed folder name"
 msgstr "„{name}” nem engedélyezett mappanév"
 
+msgid "\"{segment}\" is a reserved name and not allowed."
+msgstr "\"{segment}\" foglalt név és nem engedélyezett."
+
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "„/” jel nem szerepelhet mappa nevében."
 
 msgid "All files"
 msgstr "Minden fájl"
+
+msgid "Cancel"
+msgstr "Mégse"
 
 msgid "Choose"
 msgstr "Kiválasztás"
@@ -56,6 +69,12 @@ msgstr "Mappa létrehozása"
 msgid "Current view selector"
 msgstr "Jelenlegi nézet választó"
 
+msgid "Enter your name"
+msgstr "Add meg a neved"
+
+msgid "Failed to set nickname."
+msgstr "Becenév beállítás sikertelen."
+
 msgid "Favorites"
 msgstr "Kedvencek"
 
@@ -71,8 +90,14 @@ msgstr "Fájl lista szűrése"
 msgid "Folder name cannot be empty."
 msgstr "A mappa neve nem lehet üres."
 
+msgid "Guest identification"
+msgstr "Vendég azonosítás"
+
 msgid "Home"
 msgstr "Kezdőlap"
+
+msgid "Invalid name."
+msgstr "Érvénytelen név."
 
 msgid "Modified"
 msgstr "Módosítva"
@@ -85,6 +110,15 @@ msgstr "Mozgatás ide: {target}"
 
 msgid "Name"
 msgstr "Név"
+
+msgid "Names must not be empty."
+msgstr "Nevek nem lehetnek üresek."
+
+msgid "Names must not end with \"{extension}\"."
+msgstr "Nevek nem végződhetnek \"{extension}\"-re."
+
+msgid "Names must not start with a dot."
+msgstr "Nevek nem kezdődhetnek ponttal."
 
 msgid "New"
 msgstr "Új"
@@ -104,6 +138,9 @@ msgstr "Nincs a szűrési feltételeknek megfelelő fájl."
 msgid "No matching files"
 msgstr "Nincs ilyen fájl"
 
+msgid "Please enter a name with at least 2 characters."
+msgstr "Kérlek adj meg egy legalább 2 karakteres nevet."
+
 msgid "Recent"
 msgstr "Gyakori"
 
@@ -119,8 +156,17 @@ msgstr "Válassz sort a következőnek: {nodename}"
 msgid "Size"
 msgstr "Méret"
 
+msgid "Submit name"
+msgstr "Név beküldése"
+
 msgid "Undo"
 msgstr "Visszavonás"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Tölts fel tartalmat vagy szinkronizálj az eszközeiddel!"
+
+msgid "You are currently not identified."
+msgstr "Jelenleg nem vagy azonosítva."
+
+msgid "You cannot leave the name empty."
+msgstr "A nevet nem hagyhatod üresen."
