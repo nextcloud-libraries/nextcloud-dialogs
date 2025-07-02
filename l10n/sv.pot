@@ -12,11 +12,20 @@ msgstr ""
 "Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "\"{char}\" is not allowed inside a name."
+msgstr "\"{char}\" är inte tillåtet i ett namn."
+
+msgid "\"{extension}\" is not an allowed name."
+msgstr "\"{extension}\" är inte ett tillåtet namn."
+
 msgid "\"{name}\" is an invalid folder name."
 msgstr "\"{name}\" är ett ogiltigt mappnamn."
 
 msgid "\"{name}\" is not an allowed folder name"
 msgstr "\"{name}\" är inte ett tillåtet mappnamn"
+
+msgid "\"{segment}\" is a reserved name and not allowed."
+msgstr "\"{segment}\" är ett reserverat namn och inte tillåtet."
 
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "\"/\" är inte tillåtet i ett mappnamn."
@@ -86,6 +95,9 @@ msgstr "Gästidentifiering"
 msgid "Home"
 msgstr "Hem"
 
+msgid "Invalid name."
+msgstr "Ogiltigt namn."
+
 msgid "Modified"
 msgstr "Ändrad"
 
@@ -97,6 +109,15 @@ msgstr "Flytta till {target}"
 
 msgid "Name"
 msgstr "Namn"
+
+msgid "Names must not be empty."
+msgstr "Namn får inte vara tomt."
+
+msgid "Names must not end with \"{extension}\"."
+msgstr "Namn får inte sluta med \"{extension}\"."
+
+msgid "Names must not start with a dot."
+msgstr "Namn får inte börja med en punkt."
 
 msgid "New"
 msgstr "Ny"
