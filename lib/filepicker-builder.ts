@@ -70,7 +70,7 @@ export class FilePicker<IsMultiSelect extends boolean> {
 	public async pickNodes(): Promise<Node[]> {
 		const { default: FilePickerVue } = await import('./components/FilePicker/FilePicker.vue')
 
-		const [nodes] = await spawnDialog(FilePickerVue, {
+		const nodes = await spawnDialog(FilePickerVue, {
 			allowPickDirectory: this.directoriesAllowed,
 			buttons: this.buttons,
 			name: this.title,
