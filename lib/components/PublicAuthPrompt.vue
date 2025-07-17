@@ -17,7 +17,7 @@
 
 		<!-- Header -->
 		<NcNoteCard class="public-auth-prompt__header"
-			:text="notice"
+			:text="defaultNotice"
 			type="info" />
 
 		<!-- Form -->
@@ -91,7 +91,7 @@ export default defineComponent({
 		 */
 		notice: {
 			type: String,
-			default: t('You are currently not identified.'),
+			default: '',
 		},
 
 		/**
@@ -147,6 +147,19 @@ export default defineComponent({
 			}
 
 			return [submitButton]
+		},
+
+		defaultNotice() {
+			if (this.notice) {
+				return this.notice
+			}
+
+			// If no notice is provided, use a default one
+			// that changes based on the nickname definition
+			if (this.nickname) {
+				return t('You are currently identified as {nickname}.', { nickname: this.nickname })
+			}
+			return t('You are currently not identified.')
 		},
 	},
 
