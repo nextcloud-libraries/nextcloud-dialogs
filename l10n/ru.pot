@@ -10,20 +10,30 @@
 # Александр, 2024
 # Maksim Sukharev, 2024
 # Igor Orlov, 2025
+# Leonid Fedotov, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Igor Orlov, 2025\n"
+"Last-Translator: Leonid Fedotov, 2025\n"
 "Language-Team: Russian (https://app.transifex.com/nextcloud/teams/64236/ru/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: ru\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+msgid "\"{char}\" is not allowed inside a name."
+msgstr "\"{char}\" не допускается внутри имени."
+
+msgid "\"{extension}\" is not an allowed name."
+msgstr "\"{extension}\" это не допустимое имя."
 
 msgid "\"{name}\" is an invalid folder name."
 msgstr "«{name}» — недопустимое имя папки."
 
 msgid "\"{name}\" is not an allowed folder name"
 msgstr "«{name}» не является разрешенным именем папки"
+
+msgid "\"{segment}\" is a reserved name and not allowed."
+msgstr "\"{segment}\" это зарезервированное имя и не допустимо."
 
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "Символ «/» не допускается внутри имени папки."
@@ -96,6 +106,9 @@ msgstr "Гостевая идентификация"
 msgid "Home"
 msgstr "Домой"
 
+msgid "Invalid name."
+msgstr "Неверное имя."
+
 msgid "Modified"
 msgstr "Изменен"
 
@@ -107,6 +120,15 @@ msgstr "Переместить в «{target}»"
 
 msgid "Name"
 msgstr "Имя"
+
+msgid "Names must not be empty."
+msgstr "Имена не могут быть пустыми."
+
+msgid "Names must not end with \"{extension}\"."
+msgstr "Имена не могут оканчиваться на \"{extension}\"."
+
+msgid "Names must not start with a dot."
+msgstr "Имена должны начинаться с точки."
 
 msgid "New"
 msgstr "Новый"
