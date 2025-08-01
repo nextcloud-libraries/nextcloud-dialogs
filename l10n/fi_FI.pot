@@ -3,20 +3,30 @@
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # thingumy, 2024
 # Jiri Grönroos <jiri.gronroos@iki.fi>, 2025
+# Susanna Ånäs <susanna.anas@gmail.com>, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>, 2025\n"
+"Last-Translator: Susanna Ånäs <susanna.anas@gmail.com>, 2025\n"
 "Language-Team: Finnish (Finland) (https://app.transifex.com/nextcloud/teams/64236/fi_FI/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: fi_FI\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "\"{char}\" is not allowed inside a name."
+msgstr "\"{char}\" ei ole sallittu nimessä."
+
+msgid "\"{extension}\" is not an allowed name."
+msgstr "\"{extension}\" ei ole sallittu nimi."
 
 msgid "\"{name}\" is an invalid folder name."
 msgstr "\"{name}\" on virheellinen kansion nimi."
 
 msgid "\"{name}\" is not an allowed folder name"
 msgstr "\"{name}\" ei ole sallittu kansion nimi"
+
+msgid "\"{segment}\" is a reserved name and not allowed."
+msgstr "\"{segment}\" on varattu nimi eikä se ole sallittu."
 
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "\"/\" ei ole sallittu kansion nimessä."
@@ -86,6 +96,9 @@ msgstr "Vieraan tunnistaminen"
 msgid "Home"
 msgstr "Koti"
 
+msgid "Invalid name."
+msgstr "Virheellinen nimi."
+
 msgid "Modified"
 msgstr "Muokattu"
 
@@ -97,6 +110,15 @@ msgstr "Siirrä sijaintiin {target}"
 
 msgid "Name"
 msgstr "Nimi"
+
+msgid "Names must not be empty."
+msgstr "Nimet eivät saa olla tyhjiä."
+
+msgid "Names must not end with \"{extension}\"."
+msgstr "Nimet eivät saa päättyä sanaan \"{extension}\"."
+
+msgid "Names must not start with a dot."
+msgstr "Nimet eivät saa alkaa pisteellä."
 
 msgid "New"
 msgstr "Uusi"
