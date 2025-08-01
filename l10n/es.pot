@@ -3,15 +3,21 @@
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # FranciscoFJ <dev-ooo@satel-sa.com>, 2023
 # Mark Ziegler <mark.ziegler@rakekniven.de>, 2024
-# Julio C. Ortega, 2024
+# Julio C. Ortega, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Julio C. Ortega, 2024\n"
+"Last-Translator: Julio C. Ortega, 2025\n"
 "Language-Team: Spanish (https://app.transifex.com/nextcloud/teams/64236/es/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: es\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+
+msgid "\"{char}\" is not allowed inside a name."
+msgstr "\"{char}\" no está permitido dentro de un nombre."
+
+msgid "\"{extension}\" is not an allowed name."
+msgstr "\"{extension}\" no es un nombre permitido."
 
 msgid "\"{name}\" is an invalid folder name."
 msgstr "\"{name}\" es un nombre de carpeta no válido."
@@ -19,11 +25,17 @@ msgstr "\"{name}\" es un nombre de carpeta no válido."
 msgid "\"{name}\" is not an allowed folder name"
 msgstr "\"{name}\" no es un nombre de carpeta permitido"
 
+msgid "\"{segment}\" is a reserved name and not allowed."
+msgstr "\"{segment}\" es un nombre reservado y no está permitido."
+
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "\"/\" no está permitido dentro del nombre de una carpeta."
 
 msgid "All files"
 msgstr "Todos los archivos"
+
+msgid "Cancel"
+msgstr "Cancelar"
 
 msgid "Choose"
 msgstr "Seleccionar"
@@ -58,6 +70,12 @@ msgstr "Crear directorio"
 msgid "Current view selector"
 msgstr "Selector de vista actual"
 
+msgid "Enter your name"
+msgstr "Ingrese su nombre"
+
+msgid "Failed to set nickname."
+msgstr "Fallo al establecer apodo."
+
 msgid "Favorites"
 msgstr "Favoritos"
 
@@ -73,8 +91,14 @@ msgstr "Filtrar lista de archivos"
 msgid "Folder name cannot be empty."
 msgstr "El nombre de la carpeta no puede estar vacío."
 
+msgid "Guest identification"
+msgstr "Identificación de invitado"
+
 msgid "Home"
 msgstr "Inicio"
+
+msgid "Invalid name."
+msgstr "Nombre inválido."
 
 msgid "Modified"
 msgstr "Modificado"
@@ -87,6 +111,15 @@ msgstr "Mover a {target}"
 
 msgid "Name"
 msgstr "Nombre"
+
+msgid "Names must not be empty."
+msgstr "Los nombres no deben estar vacíos."
+
+msgid "Names must not end with \"{extension}\"."
+msgstr "Los nombres no deben terminar con \"{extension}\"."
+
+msgid "Names must not start with a dot."
+msgstr "Los nombres no deben iniciar con un punto."
 
 msgid "New"
 msgstr "Nuevo"
@@ -106,6 +139,9 @@ msgstr "No se encontraron archivos que coincidiesen con su filtro."
 msgid "No matching files"
 msgstr "No hay archivos coincidentes"
 
+msgid "Please enter a name with at least 2 characters."
+msgstr "Por favor, ingrese un nombre con al menos 2 caracteres."
+
 msgid "Recent"
 msgstr "Reciente"
 
@@ -121,8 +157,17 @@ msgstr "Seleccione la fila para {nodename}"
 msgid "Size"
 msgstr "Tamaño"
 
+msgid "Submit name"
+msgstr "Enviar nombre"
+
 msgid "Undo"
 msgstr "Deshacer"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "¡Cargue algún contenido o sincronice con sus dispositivos!"
+
+msgid "You are currently not identified."
+msgstr "Ud. no se encuentra identificado actualmente."
+
+msgid "You cannot leave the name empty."
+msgstr "No puede dejar el nombre vacío."
