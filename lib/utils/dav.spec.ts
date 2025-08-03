@@ -25,7 +25,7 @@ describe('DAV utils', () => {
 			getDirectoryContents: vi.fn(() => ({ data: [] })),
 		} as unknown as WebDAVClient
 
-		const { getFile } = await import('./dav')
+		const { getFile } = await import('./dav.ts')
 
 		const node = await getFile(client, '/some/path/file.ext')
 		expect(node).toEqual({ path: `${nextcloudFiles.davRootPath}/some/path/file.ext` })
