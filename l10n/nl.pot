@@ -5,17 +5,18 @@
 # Jeroen Gui, 2023
 # Casper <casper@vrije-mens.org>, 2024
 # Stephan Paternotte <stephan@paternottes.net>, 2025
+# Denise Wiesner, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Stephan Paternotte <stephan@paternottes.net>, 2025\n"
+"Last-Translator: Denise Wiesner, 2025\n"
 "Language-Team: Dutch (https://app.transifex.com/nextcloud/teams/64236/nl/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "\"{char}\" is not allowed inside a name."
-msgstr "\"{char}\" is niet toegestaan in een naam."
+msgstr "\"{char}\" mag niet gebruikt worden in de benaming."
 
 msgid "\"{extension}\" is not an allowed name."
 msgstr "\"{extension}\" is geen toegestane naam."
