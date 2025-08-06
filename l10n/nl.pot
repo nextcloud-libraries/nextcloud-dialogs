@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "\"{char}\" is not allowed inside a name."
-msgstr "\"{char}\" mag niet gebruikt worden in de benaming."
+msgstr "\"{char}\" kan niet gebruikt worden in de benaming."
 
 msgid "\"{extension}\" is not an allowed name."
 msgstr "\"{extension}\" is geen toegestane naam."
