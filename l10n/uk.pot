@@ -165,7 +165,7 @@ msgid "Upload some content or sync with your devices!"
 msgstr "Завантажте вміст або синхронізуйте з вашим пристроєм!"
 
 msgid "You are currently not identified."
-msgstr "Вас зараз не визначено."
+msgstr "Вас не ідентифіковано."
 
 msgid "You cannot leave the name empty."
 msgstr "Потрібно зазначити ім'я."
