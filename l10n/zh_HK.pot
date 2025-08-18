@@ -11,17 +11,29 @@ msgstr ""
 "Language: zh_HK\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+msgid "\"{char}\" is not allowed inside a name."
+msgstr "名稱中不能使用 \"{char}\"。"
+
+msgid "\"{extension}\" is not an allowed name."
+msgstr "「{extension}」並非允許的名稱。"
+
 msgid "\"{name}\" is an invalid folder name."
 msgstr "「{name}」是無效的資料夾名稱。"
 
 msgid "\"{name}\" is not an allowed folder name"
 msgstr "資料夾名稱「{name}」不符合允許的規範。"
 
+msgid "\"{segment}\" is a reserved name and not allowed."
+msgstr "「{segment}」是一個保留名稱，不能使用。"
+
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "資料夾名稱中不允許使用 \"/\"。"
 
 msgid "All files"
 msgstr "所有檔案"
+
+msgid "Cancel"
+msgstr "取消"
 
 msgid "Choose"
 msgstr "選擇"
@@ -54,6 +66,12 @@ msgstr "建立目錄"
 msgid "Current view selector"
 msgstr "目前視圖選擇器"
 
+msgid "Enter your name"
+msgstr "輸入您的名字"
+
+msgid "Failed to set nickname."
+msgstr "無法設置暱稱。"
+
 msgid "Favorites"
 msgstr "最愛"
 
@@ -69,8 +87,14 @@ msgstr "過濾檔案清單"
 msgid "Folder name cannot be empty."
 msgstr "資料夾名稱不能為空。"
 
+msgid "Guest identification"
+msgstr "訪客身份識別"
+
 msgid "Home"
 msgstr "首頁"
+
+msgid "Invalid name."
+msgstr "無效的名字。"
 
 msgid "Modified"
 msgstr "已修改"
@@ -83,6 +107,15 @@ msgstr "移動至 {target}"
 
 msgid "Name"
 msgstr "名稱"
+
+msgid "Names must not be empty."
+msgstr "名稱不能為空。"
+
+msgid "Names must not end with \"{extension}\"."
+msgstr "名稱不得以「{extension}」結尾。"
+
+msgid "Names must not start with a dot."
+msgstr "名稱不得以點開頭。"
 
 msgid "New"
 msgstr "新"
@@ -102,6 +135,9 @@ msgstr "找不到符合您過濾條件的檔案。"
 msgid "No matching files"
 msgstr "沒有匹配的檔案"
 
+msgid "Please enter a name with at least 2 characters."
+msgstr "請輸入至少 2 個字符的名稱。"
+
 msgid "Recent"
 msgstr "最近"
 
@@ -117,8 +153,17 @@ msgstr "選擇 {nodename} 的列"
 msgid "Size"
 msgstr "大小"
 
+msgid "Submit name"
+msgstr "遞交名字"
+
 msgid "Undo"
 msgstr "還原"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "上傳一些內容或與您的裝置同步！"
+
+msgid "You are currently not identified."
+msgstr "您目前尚未被識別。"
+
+msgid "You cannot leave the name empty."
+msgstr "名稱不能留空。"
