@@ -15,11 +15,20 @@ msgstr ""
 "Language: pl\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
+msgid "\"{char}\" is not allowed inside a name."
+msgstr "\"{char}\" nie jest dozwolone w nazwie."
+
+msgid "\"{extension}\" is not an allowed name."
+msgstr "\"{extension}\" nie jest dozwoloną nazwą."
+
 msgid "\"{name}\" is an invalid folder name."
 msgstr "\"{name}\" jest nieprawidłową nazwą folderu"
 
 msgid "\"{name}\" is not an allowed folder name"
 msgstr "\"{name}\" nie jest dozwoloną nazwą folderu"
+
+msgid "\"{segment}\" is a reserved name and not allowed."
+msgstr "\"{segment}\" jest zastrzeżoną nazwą i nie jest dozwolone."
 
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "Znak \"/\" nie jest dozwolony w nazwie folderu"
@@ -93,6 +102,9 @@ msgstr "Identyfikacja gościa"
 msgid "Home"
 msgstr "Strona główna"
 
+msgid "Invalid name."
+msgstr "Nieprawidłowa nazwa."
+
 msgid "Modified"
 msgstr "Zmodyfikowano"
 
@@ -104,6 +116,15 @@ msgstr "Przejdź do {target}"
 
 msgid "Name"
 msgstr "Nazwa"
+
+msgid "Names must not be empty."
+msgstr "Nazwy nie mogą być puste."
+
+msgid "Names must not end with \"{extension}\"."
+msgstr "Nazwy nie mogą kończyć się na \"{extension}\"."
+
+msgid "Names must not start with a dot."
+msgstr "Nazwy nie mogą zaczynać się od kropki."
 
 msgid "New"
 msgstr "Nowy"
