@@ -27,7 +27,7 @@
 				:force-menu="true"
 				:force-name="true"
 				:menu-name="t('New')"
-				type="secondary"
+				variant="secondary"
 				@close="newNodeName = ''">
 				<template #icon>
 					<IconPlus :size="20" />
