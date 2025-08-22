@@ -29,7 +29,7 @@ msgid "\"{name}\" is not an allowed folder name"
 msgstr "\"{name}\"은 허용되지 않은 폴더명입니다."
 
 msgid "\"{segment}\" is a reserved name and not allowed."
-msgstr "같은 이름을 가진 \"1{segment}\"이(가) 이미 사용 중입니다."
+msgstr "같은 이름을 가진 \"{segment}\"이(가) 이미 사용 중입니다."
 
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "\"/\"는 폴더명에 사용할 수 없는 기호입니다."
