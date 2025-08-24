@@ -1,10 +1,10 @@
 # 
 # Translators:
-# O St <oleksiy.stasevych@gmail.com>, 2025
+# O St, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: O St <oleksiy.stasevych@gmail.com>, 2025\n"
+"Last-Translator: O St, 2025\n"
 "Language-Team: Ukrainian (https://app.transifex.com/nextcloud/teams/64236/uk/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: uk\n"
@@ -14,16 +14,16 @@ msgid "\"{char}\" is not allowed inside a name."
 msgstr "\"{char}\" не дозволено всередині імени."
 
 msgid "\"{extension}\" is not an allowed name."
-msgstr "\"{extension}\" не є дозволене ім'я."
+msgstr "\"{extension}\" недозволене ім'я."
 
 msgid "\"{name}\" is an invalid folder name."
-msgstr "\"{name}\" є недійсне ім'я каталогу."
+msgstr "\"{name}\" недійсне ім'я каталогу."
 
 msgid "\"{name}\" is not an allowed folder name"
-msgstr "\"{name}\" не є дозволене ім'я каталогу."
+msgstr "\"{name}\" недозволене ім'я каталогу."
 
 msgid "\"{segment}\" is a reserved name and not allowed."
-msgstr "\"{segment}\" є зарезервоване ім'я і не дозволено для використання."
+msgstr "\"{segment}\" зарезервоване ім'я і не дозволено для використання."
 
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "\"/\" не дозволено у імені каталогу."
