@@ -20,7 +20,7 @@ msgid "\"{name}\" is an invalid folder name."
 msgstr "\"{name}\" недійсне ім'я каталогу."
 
 msgid "\"{name}\" is not an allowed folder name"
-msgstr "\"{name}\" не є дозволене ім'я каталогу."
+msgstr "\"{name}\" недозволене ім'я каталогу."
 
 msgid "\"{segment}\" is a reserved name and not allowed."
 msgstr "\"{segment}\" є зарезервоване ім'я і не дозволено для використання."
