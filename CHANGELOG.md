@@ -45,6 +45,8 @@ For Vue 3 apps nothing changed, meaning the app and this library will share the 
 ### Fixed
 * fix(FilePickerBuilder): correctly return array / plain value depending on multiselect [\#1775](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1775) \([susnux](https://github.com/susnux)\)
 * fix: display guest name validity [\#1836](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1836) \([skjnldsv](https://github.com/skjnldsv)\)
+* fix: return nodes array from smartpicker by @grnd-alt in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1879
+* fix(PublicAuthPrompt): change default notice if identified by @backportbot[bot] in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1880
 
 ### Changed
 * chore: update to ESLint v9 and apply new rules [\#1753](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1753) \([susnux](https://github.com/susnux)\)
@@ -54,6 +56,8 @@ For Vue 3 apps nothing changed, meaning the app and this library will share the 
 * refactor: adjust code to comply with code style (again) [\#1774](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1774) \([susnux](https://github.com/susnux)\)
 * chore!: remove `spawnDialog` in favor of version from `@nextcloud/vue` [\#1783](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1783) \([susnux](https://github.com/susnux)\)
 * refactor: do not use Node internals but @nextcloud/paths package [\#1752](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1752) \([susnux](https://github.com/susnux)\)
+* Updates for project Nextcloud dialogs library by @transifex-integration[bot] 
+* chore(deps): @nextcloud family + various upgrades by @skjnldsv in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1905
 
 ## [v6.2.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.1.1...v6.2.0)
 ### Notes
