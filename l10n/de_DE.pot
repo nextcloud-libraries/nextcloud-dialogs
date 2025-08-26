@@ -168,6 +168,9 @@ msgid "Upload some content or sync with your devices!"
 msgstr ""
 "Laden Sie Inhalte hoch oder synchronisieren Sie diese mit Ihren Geräten!"
 
+msgid "You are currently identified as {nickname}."
+msgstr "Sie sind derzeit als {nickname} identifiziert."
+
 msgid "You are currently not identified."
 msgstr "Sie sind momentan nicht identifiziert."
 
