@@ -3,12 +3,12 @@
 # Markus Eckstein, 2023
 # Andy Scherzinger <info@andy-scherzinger.de>, 2023
 # Ettore Atalan <atalanttore@googlemail.com>, 2024
-# Mario Siegmann <mario_siegmann@web.de>, 2025
 # Martin Wilichowski, 2025
+# Mario Siegmann <mario_siegmann@web.de>, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Martin Wilichowski, 2025\n"
+"Last-Translator: Mario Siegmann <mario_siegmann@web.de>, 2025\n"
 "Language-Team: German (https://app.transifex.com/nextcloud/teams/64236/de/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: de\n"
@@ -167,6 +167,9 @@ msgstr "Rückgängig machen"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Lade Inhalte hoch oder synchronisiere diese mit deinen Geräten!"
+
+msgid "You are currently identified as {nickname}."
+msgstr "Du bist derzeit als {nickname} identifiziert."
 
 msgid "You are currently not identified."
 msgstr "Du bist momentan nicht identifiziert."
