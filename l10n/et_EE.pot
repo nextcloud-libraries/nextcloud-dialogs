@@ -163,6 +163,9 @@ msgstr "Tühista"
 msgid "Upload some content or sync with your devices!"
 msgstr "Lisa mingit sisu või sünkroniseeri see oma seadmestest!"
 
+msgid "You are currently identified as {nickname}."
+msgstr "Sa oled hetkel tuvastatav kui {nickname}.."
+
 msgid "You are currently not identified."
 msgstr "Sa oled hetkel tuvastamata."
 
