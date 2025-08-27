@@ -164,6 +164,9 @@ msgstr "Geri al"
 msgid "Upload some content or sync with your devices!"
 msgstr "Bazı içerikler yükleyin ya da aygıtlarınızla eşitleyin!"
 
+msgid "You are currently identified as {nickname}."
+msgstr "{nickname} olarak tanınıyorsunuz."
+
 msgid "You are currently not identified."
 msgstr "Henüz kendinizi tanıtmadınız."
 
