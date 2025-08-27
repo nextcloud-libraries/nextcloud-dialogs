@@ -166,6 +166,9 @@ msgstr "Cealaigh"
 msgid "Upload some content or sync with your devices!"
 msgstr "Uaslódáil roinnt ábhair nó sioncronaigh le do ghléasanna!"
 
+msgid "You are currently identified as {nickname}."
+msgstr "Is é {nickname} an ainm atá ort faoi láthair."
+
 msgid "You are currently not identified."
 msgstr "Níl aitheantas tugtha duit faoi láthair."
 
