@@ -86,27 +86,27 @@
 
 	// Various toasts types
 	&.toast-error {
-		border-left: 3px solid var(--color-error);
+		border-left: 3px solid var(--color-element-error, var(--color-error));
 	}
 
 	&.toast-info {
-		border-left: 3px solid var(--color-primary);
+		border-left: 3px solid var(--color-element-info, var(--color-primary));
 	}
 
 	&.toast-warning {
-		border-left: 3px solid var(--color-warning);
+		border-left: 3px solid var(--color-element-warning, var(--color-warning));
 	}
 
 	&.toast-success {
-		border-left: 3px solid var(--color-success);
+		border-left: 3px solid var(--color-element-success, var(--color-success));
 	}
 
 	&.toast-undo {
-		border-left: 3px solid var(--color-success);
+		border-left: 3px solid var(--color-element-success, var(--color-success));
 	}
 
 	&.toast-loading {
-		border-left: 3px solid var(--color-primary);
+		border-left: 3px solid var(--color-element-info, var(--color-primary));
 
 		.toast-loader {
 			display: inline-block;
