@@ -162,6 +162,9 @@ msgstr "還原"
 msgid "Upload some content or sync with your devices!"
 msgstr "上傳一些內容或與您的裝置同步！"
 
+msgid "You are currently identified as {nickname}."
+msgstr "您目前被識別為 {nickname}。"
+
 msgid "You are currently not identified."
 msgstr "您目前尚未被識別。"
 
