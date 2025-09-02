@@ -166,6 +166,9 @@ msgstr "Deshacer"
 msgid "Upload some content or sync with your devices!"
 msgstr "¡Cargue algún contenido o sincronice con sus dispositivos!"
 
+msgid "You are currently identified as {nickname}."
+msgstr "Ud. se encuentra identificado actualmente como {nickname}."
+
 msgid "You are currently not identified."
 msgstr "Ud. no se encuentra identificado actualmente."
 
