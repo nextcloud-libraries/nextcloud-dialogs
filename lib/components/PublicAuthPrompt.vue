@@ -29,6 +29,7 @@
 			:required="!cancellable"
 			v-model="name"
 			minlength="2"
+			maxlength="64"
 			name="name" />
 	</NcDialog>
 </template>
