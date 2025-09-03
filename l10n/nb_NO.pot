@@ -5,14 +5,21 @@
 # Syvert Fossdal, 2024
 # armandg <geirawsm@pm.me>, 2024
 # Magnus Granås, 2025
+# Tore Aursand, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Magnus Granås, 2025\n"
+"Last-Translator: Tore Aursand, 2025\n"
 "Language-Team: Norwegian Bokmål (Norway) (https://app.transifex.com/nextcloud/teams/64236/nb_NO/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: nb_NO\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "\"{char}\" is not allowed inside a name."
+msgstr "\"{char}\" er ikke tillatt i et navn."
+
+msgid "\"{extension}\" is not an allowed name."
+msgstr "\"{extension}\" er ikke et tillatt navn."
 
 msgid "\"{name}\" is an invalid folder name."
 msgstr "«{name}» er ikke et gyldig mappenavn."
@@ -20,11 +27,17 @@ msgstr "«{name}» er ikke et gyldig mappenavn."
 msgid "\"{name}\" is not an allowed folder name"
 msgstr "«{name}» er ikke et tillatt mappenavn."
 
+msgid "\"{segment}\" is a reserved name and not allowed."
+msgstr "\"{segment}\" er et reservert navn og er ikke tillatt."
+
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "\"/\" er ikke tillatt inne i et mappenavn."
 
 msgid "All files"
 msgstr "Alle filer"
+
+msgid "Cancel"
+msgstr "Avbryt"
 
 msgid "Choose"
 msgstr "Velg"
@@ -58,6 +71,12 @@ msgstr "Opprett mappe"
 msgid "Current view selector"
 msgstr "Nåværende visningsvelger"
 
+msgid "Enter your name"
+msgstr "Skriv inn navnet ditt"
+
+msgid "Failed to set nickname."
+msgstr "Kunne ikke lagre kallenavnet."
+
 msgid "Favorites"
 msgstr "Favoritter"
 
@@ -73,8 +92,14 @@ msgstr "Filtrer filliste"
 msgid "Folder name cannot be empty."
 msgstr "Mappenavn kan ikke være tomt."
 
+msgid "Guest identification"
+msgstr "Gjesteidentifikasjon"
+
 msgid "Home"
 msgstr "Hjem"
+
+msgid "Invalid name."
+msgstr "Ugyldig navn."
 
 msgid "Modified"
 msgstr "Modifisert"
@@ -87,6 +112,15 @@ msgstr "Flytt til {target}"
 
 msgid "Name"
 msgstr "Navn"
+
+msgid "Names must not be empty."
+msgstr "Navn kan ikke være tomme."
+
+msgid "Names must not end with \"{extension}\"."
+msgstr "Navn kan ikke ende med \"{extension}\"."
+
+msgid "Names must not start with a dot."
+msgstr "Navn kan ikke starte med et punktum."
 
 msgid "New"
 msgstr "Ny"
@@ -106,6 +140,9 @@ msgstr "Ingen filer funnet med ditt filter."
 msgid "No matching files"
 msgstr "Ingen filer samsvarer"
 
+msgid "Please enter a name with at least 2 characters."
+msgstr "Vennligst angi et navn som har minst 2 tegn."
+
 msgid "Recent"
 msgstr "Nylige"
 
@@ -121,8 +158,20 @@ msgstr "Velg raden for {nodename}"
 msgid "Size"
 msgstr "Størrelse"
 
+msgid "Submit name"
+msgstr "Bekreft navn"
+
 msgid "Undo"
 msgstr "Angre"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Last opp innhold eller synkroniser med enhetene dine!"
+
+msgid "You are currently identified as {nickname}."
+msgstr "Du er akkurat nå identifisert som {nickname}."
+
+msgid "You are currently not identified."
+msgstr "Du er akkurat nå ikke identifisert."
+
+msgid "You cannot leave the name empty."
+msgstr "Du kan ikke la navnet være blankt."
