@@ -166,6 +166,9 @@ msgid "Upload some content or sync with your devices!"
 msgstr ""
 "Nahrajte sem nějaký obsah nebo proveďte synchronizaci se svými zařízeními!"
 
+msgid "You are currently identified as {nickname}."
+msgstr "V tuto chvíli jste identifikováni jako {nickname}."
+
 msgid "You are currently not identified."
 msgstr "V tuto chvíli nejste identifikovaní."
 
