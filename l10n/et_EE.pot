@@ -109,6 +109,9 @@ msgstr "Teisalda kausta {target}"
 msgid "Name"
 msgstr "Nimi"
 
+msgid "Names may be at most 64 characters long."
+msgstr "Nimed võivad olla vaid kuni 64 tähemärki pikad."
+
 msgid "Names must not be empty."
 msgstr "Nimi ei saa olla tühi."
 
