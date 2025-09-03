@@ -196,6 +196,7 @@ function onSubmit() {
 			:placeholder="t('Enter your name')"
 			:required="!cancellable"
 			minlength="2"
+			maxlength="64"
 			name="name" />
 	</NcDialog>
 </template>

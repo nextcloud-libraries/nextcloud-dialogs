@@ -20,6 +20,10 @@ export function getGuestNameValidity(name: string): string {
 		return t('Names must not start with a dot.')
 	}
 
+	if (name.length > 64) {
+		return t('Names may be at most 64 characters long.')
+	}
+
 	try {
 		validateFilename(name)
 		return ''
