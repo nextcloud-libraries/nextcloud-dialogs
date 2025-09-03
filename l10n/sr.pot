@@ -1,15 +1,21 @@
 # 
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
-# Иван Пешић, 2024
+# Иван Пешић, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Иван Пешић, 2024\n"
+"Last-Translator: Иван Пешић, 2025\n"
 "Language-Team: Serbian (https://app.transifex.com/nextcloud/teams/64236/sr/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: sr\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+msgid "\"{char}\" is not allowed inside a name."
+msgstr "„{char}” није дозвољено унутар имена."
+
+msgid "\"{extension}\" is not an allowed name."
+msgstr "„{extension}” није дозвољено име."
 
 msgid "\"{name}\" is an invalid folder name."
 msgstr "„{name}” није исправно име фолдера."
@@ -17,11 +23,17 @@ msgstr "„{name}” није исправно име фолдера."
 msgid "\"{name}\" is not an allowed folder name"
 msgstr "„{name}” није дозвољено име за фолдер."
 
+msgid "\"{segment}\" is a reserved name and not allowed."
+msgstr "„{segment}” је резервисано име и није дозвољено."
+
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "„/” није дозвољено унутар имена фолдера."
 
 msgid "All files"
 msgstr "Сви фајлови"
+
+msgid "Cancel"
+msgstr "Откажи"
 
 msgid "Choose"
 msgstr "Изаберите"
@@ -56,6 +68,12 @@ msgstr "Креирај директоријум"
 msgid "Current view selector"
 msgstr "Бирач тренутног приказа"
 
+msgid "Enter your name"
+msgstr "Унесите своје име"
+
+msgid "Failed to set nickname."
+msgstr "Није успело постављање надимка."
+
 msgid "Favorites"
 msgstr "Омиљено"
 
@@ -71,8 +89,14 @@ msgstr "Фитрирање листе фајлова"
 msgid "Folder name cannot be empty."
 msgstr "Име фолдера не може бити празно."
 
+msgid "Guest identification"
+msgstr "Идентификација госта"
+
 msgid "Home"
 msgstr "Почетак"
+
+msgid "Invalid name."
+msgstr "Неисправно име."
 
 msgid "Modified"
 msgstr "Измењено"
@@ -85,6 +109,15 @@ msgstr "Премести у {target}"
 
 msgid "Name"
 msgstr "Име"
+
+msgid "Names must not be empty."
+msgstr "Имена не смеју да буду празна."
+
+msgid "Names must not end with \"{extension}\"."
+msgstr "Имена не смеју да се завршавају на „{extension}”."
+
+msgid "Names must not start with a dot."
+msgstr "Имена не смеју да почињу тачком."
 
 msgid "New"
 msgstr "Ново"
@@ -104,6 +137,9 @@ msgstr "Није пронађен ниједан фајл који задово�
 msgid "No matching files"
 msgstr "Нема таквих фајлова"
 
+msgid "Please enter a name with at least 2 characters."
+msgstr "Молимо вас да унесете име од барем два карактера."
+
 msgid "Recent"
 msgstr "Скорашње"
 
@@ -119,8 +155,20 @@ msgstr "Изаберите ред за {nodename}"
 msgid "Size"
 msgstr "Величина"
 
+msgid "Submit name"
+msgstr "Предај име"
+
 msgid "Undo"
 msgstr "Поништи"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Отпремите нешто или синхронизујте са својим уређајима!"
+
+msgid "You are currently identified as {nickname}."
+msgstr "Тренутно се идентификујете као {nickname}."
+
+msgid "You are currently not identified."
+msgstr "Тренутно немате идентификацију."
+
+msgid "You cannot leave the name empty."
+msgstr "Име не можете да оставите празно."
