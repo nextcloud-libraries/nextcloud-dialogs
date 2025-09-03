@@ -8,10 +8,11 @@
 # Jérôme HERBINET, 2024
 # DEV314R, 2024
 # Benoit Pruneau, 2025
+# Caro Leviia, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Benoit Pruneau, 2025\n"
+"Last-Translator: Caro Leviia, 2025\n"
 "Language-Team: French (https://app.transifex.com/nextcloud/teams/64236/fr/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: fr\n"
@@ -116,6 +117,9 @@ msgstr "Déplacer vers {target}"
 msgid "Name"
 msgstr "Nom"
 
+msgid "Names may be at most 64 characters long."
+msgstr "Les noms peuvent comporter au maximum 64 caractères."
+
 msgid "Names must not be empty."
 msgstr "Les noms ne peuvent pas être vides."
 
@@ -169,6 +173,9 @@ msgstr "Rétablir"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Charger du contenu ou synchroniser avec vos équipements !"
+
+msgid "You are currently identified as {nickname}."
+msgstr "Vous êtes actuellement identifié comme {nickname}."
 
 msgid "You are currently not identified."
 msgstr "Vous n'êtes pas identifié actuellement."
