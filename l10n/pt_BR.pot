@@ -5,10 +5,11 @@
 # Cauan Henrique Zorzenon <cauanzorzenon1@protonmail.com>, 2024
 # Cristiano Silva, 2024
 # F Bausch, 2025
+# Mário Rodrigues, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: F Bausch, 2025\n"
+"Last-Translator: Mário Rodrigues, 2025\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/nextcloud/teams/64236/pt_BR/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: pt_BR\n"
@@ -166,6 +167,9 @@ msgstr "Desfazer"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Faça upload de algum conteúdo ou sincronize com seus dispositivos!"
+
+msgid "You are currently identified as {nickname}."
+msgstr "Encontra-se identificado como {nickname}"
 
 msgid "You are currently not identified."
 msgstr "No momento, você não está identificado."
