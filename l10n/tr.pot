@@ -110,6 +110,9 @@ msgstr "{target} üzerine taşı"
 msgid "Name"
 msgstr "Ad"
 
+msgid "Names may be at most 64 characters long."
+msgstr "Adlar en fazla 64 karakter uzunluğunda olabilir."
+
 msgid "Names must not be empty."
 msgstr "Ad boş olamaz."
 
