@@ -112,6 +112,9 @@ msgstr "Bog go{target}"
 msgid "Name"
 msgstr "Ainm"
 
+msgid "Names may be at most 64 characters long."
+msgstr "Ní fhéadfaidh ainmneacha a bheith níos mó ná 64 carachtar ar fhad."
+
 msgid "Names must not be empty."
 msgstr "Ní féidir ainmneacha a bheith folamh."
 
