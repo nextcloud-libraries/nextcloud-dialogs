@@ -110,6 +110,9 @@ msgstr "Flytta till {target}"
 msgid "Name"
 msgstr "Namn"
 
+msgid "Names may be at most 64 characters long."
+msgstr "Namnen kan vara högst 64 tecken långa."
+
 msgid "Names must not be empty."
 msgstr "Namn får inte vara tomt."
 
@@ -163,6 +166,9 @@ msgstr "Ångra"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Ladda upp lite innehåll eller synkronisera med dina enheter!"
+
+msgid "You are currently identified as {nickname}."
+msgstr "Du är för närvarande identifierad som {nickname}."
 
 msgid "You are currently not identified."
 msgstr "Du är för närvarande inte identifierad."
