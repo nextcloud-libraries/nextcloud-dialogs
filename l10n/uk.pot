@@ -110,6 +110,9 @@ msgstr "Перемістити до {target}"
 msgid "Name"
 msgstr "Ім'я"
 
+msgid "Names may be at most 64 characters long."
+msgstr "Імена мають мати довжину не більше 64 символів."
+
 msgid "Names must not be empty."
 msgstr "Ім'я не може бути порожнє."
 
@@ -163,6 +166,9 @@ msgstr "Повернути"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Завантажте вміст або синхронізуйте з вашим пристроєм!"
+
+msgid "You are currently identified as {nickname}."
+msgstr "Вас визначено як {nickname}."
 
 msgid "You are currently not identified."
 msgstr "Вас не ідентифіковано."
