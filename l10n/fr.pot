@@ -73,7 +73,7 @@ msgid "Create directory"
 msgstr "Créer un répertoire"
 
 msgid "Current view selector"
-msgstr "Sélecteur de vue courante"
+msgstr "Sélecteur d'affichage actuel"
 
 msgid "Enter your name"
 msgstr "Entrez votre nom"
