@@ -67,7 +67,7 @@ msgid "Could not load files settings"
 msgstr "Les paramètres des fichiers n'ont pas pu être chargés"
 
 msgid "Could not load files views"
-msgstr "Les aperçus des fichiers n'ont pas pu être chargés"
+msgstr "Impossible de charger les vues des fichiers"
 
 msgid "Create directory"
 msgstr "Créer un répertoire"
