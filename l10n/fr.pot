@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 msgid "\"{char}\" is not allowed inside a name."
-msgstr "« {char} » n'est pas permis dans un nom."
+msgstr "\"{char}\" n'est pas autorisé dans un nom."
 
 msgid "\"{extension}\" is not an allowed name."
 msgstr "« {extension} » n'est pas un nom permis."
