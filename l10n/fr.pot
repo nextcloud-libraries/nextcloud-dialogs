@@ -133,10 +133,10 @@ msgid "New"
 msgstr "Nouveau"
 
 msgid "New folder"
-msgstr "Nouveau répertoire"
+msgstr "Nouveau dossier"
 
 msgid "New folder name"
-msgstr "Nom du nouveau répertoire"
+msgstr "Nom du nouveau dossier"
 
 msgid "No files in here"
 msgstr "Aucun fichier ici"
