@@ -127,7 +127,7 @@ msgid "Names must not end with \"{extension}\"."
 msgstr "Les noms ne peuvent pas se terminer par « {extension} »."
 
 msgid "Names must not start with a dot."
-msgstr "Les noms ne peuvent pas débuter par un point."
+msgstr "Les noms ne peuvent pas commencer par un point."
 
 msgid "New"
 msgstr "Nouveau"
