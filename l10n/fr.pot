@@ -124,7 +124,7 @@ msgid "Names must not be empty."
 msgstr "Les noms ne peuvent pas être vides."
 
 msgid "Names must not end with \"{extension}\"."
-msgstr "Les noms ne peuvent pas se terminer par « {extension} »."
+msgstr "Les noms ne doivent pas se terminer par \"{extension}\"."
 
 msgid "Names must not start with a dot."
 msgstr "Les noms ne peuvent pas commencer par un point."
