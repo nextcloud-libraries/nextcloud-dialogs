@@ -34,7 +34,7 @@ msgid "\"{segment}\" is a reserved name and not allowed."
 msgstr "\"{segment}\" est un nom réservé et n'est pas autorisé."
 
 msgid "\"/\" is not allowed inside a folder name."
-msgstr "Le caractère « / » n'est pas autorisé dans un nom de dossier."
+msgstr "Le caractère \"/\" n'est pas autorisé dans un nom de dossier."
 
 msgid "All files"
 msgstr "Tous les fichiers"
