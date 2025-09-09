@@ -145,7 +145,7 @@ msgid "No files matching your filter were found."
 msgstr "Aucun fichier trouvé correspondant à votre filtre."
 
 msgid "No matching files"
-msgstr "Aucun fichier trouvé"
+msgstr "Aucun fichier correspondant"
 
 msgid "Please enter a name with at least 2 characters."
 msgstr "Veuillez entrer un nom avec au moins 2 caractères."
