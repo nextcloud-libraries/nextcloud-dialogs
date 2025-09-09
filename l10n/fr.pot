@@ -22,7 +22,7 @@ msgid "\"{char}\" is not allowed inside a name."
 msgstr "\"{char}\" n'est pas autorisé dans un nom."
 
 msgid "\"{extension}\" is not an allowed name."
-msgstr "« {extension} » n'est pas un nom permis."
+msgstr "\"{extension}\" n'est pas un nom autorisé."
 
 msgid "\"{name}\" is an invalid folder name."
 msgstr "\"{name}\" n'est pas un nom de dossier valide."
