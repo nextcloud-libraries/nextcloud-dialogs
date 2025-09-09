@@ -19,22 +19,22 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 msgid "\"{char}\" is not allowed inside a name."
-msgstr "« {char} » n'est pas permis dans un nom."
+msgstr "\"{char}\" n'est pas autorisé dans un nom."
 
 msgid "\"{extension}\" is not an allowed name."
-msgstr "« {extension} » n'est pas un nom permis."
+msgstr "\"{extension}\" n'est pas un nom autorisé."
 
 msgid "\"{name}\" is an invalid folder name."
 msgstr "\"{name}\" n'est pas un nom de dossier valide."
 
 msgid "\"{name}\" is not an allowed folder name"
-msgstr "\"{name}\" n'est pas un nom de dossier autorisé."
+msgstr "\"{name}\" n'est pas un nom de dossier autorisé"
 
 msgid "\"{segment}\" is a reserved name and not allowed."
-msgstr "« {segment} » est un nom réservé et n'est pas autorisé."
+msgstr "\"{segment}\" est un nom réservé et n'est pas autorisé."
 
 msgid "\"/\" is not allowed inside a folder name."
-msgstr "Le caractère « / » n'est pas autorisé dans un nom de dossier."
+msgstr "Le caractère \"/\" n'est pas autorisé dans un nom de dossier."
 
 msgid "All files"
 msgstr "Tous les fichiers"
@@ -124,19 +124,19 @@ msgid "Names must not be empty."
 msgstr "Les noms ne peuvent pas être vides."
 
 msgid "Names must not end with \"{extension}\"."
-msgstr "Les noms ne peuvent pas se terminer par « {extension} »."
+msgstr "Les noms ne doivent pas se terminer par \"{extension}\"."
 
 msgid "Names must not start with a dot."
-msgstr "Les noms ne peuvent pas débuter par un point."
+msgstr "Les noms ne peuvent pas commencer par un point."
 
 msgid "New"
 msgstr "Nouveau"
 
 msgid "New folder"
-msgstr "Nouveau répertoire"
+msgstr "Nouveau dossier"
 
 msgid "New folder name"
-msgstr "Nom du nouveau répertoire"
+msgstr "Nom du nouveau dossier"
 
 msgid "No files in here"
 msgstr "Aucun fichier ici"
@@ -145,7 +145,7 @@ msgid "No files matching your filter were found."
 msgstr "Aucun fichier trouvé correspondant à votre filtre."
 
 msgid "No matching files"
-msgstr "Aucun fichier trouvé"
+msgstr "Aucun fichier correspondant"
 
 msgid "Please enter a name with at least 2 characters."
 msgstr "Veuillez entrer un nom avec au moins 2 caractères."
@@ -172,7 +172,7 @@ msgid "Undo"
 msgstr "Rétablir"
 
 msgid "Upload some content or sync with your devices!"
-msgstr "Charger du contenu ou synchroniser avec vos équipements !"
+msgstr "Chargez du contenu ou synchronisez avec vos équipements !"
 
 msgid "You are currently identified as {nickname}."
 msgstr "Vous êtes actuellement identifié comme {nickname}."
