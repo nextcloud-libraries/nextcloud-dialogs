@@ -28,7 +28,7 @@ msgid "\"{name}\" is an invalid folder name."
 msgstr "\"{name}\" n'est pas un nom de dossier valide."
 
 msgid "\"{name}\" is not an allowed folder name"
-msgstr "\"{name}\" n'est pas un nom de dossier autorisé."
+msgstr "\"{name}\" n'est pas un nom de dossier autorisé"
 
 msgid "\"{segment}\" is a reserved name and not allowed."
 msgstr "« {segment} » est un nom réservé et n'est pas autorisé."
