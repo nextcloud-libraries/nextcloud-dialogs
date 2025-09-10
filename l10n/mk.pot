@@ -110,6 +110,9 @@ msgstr "Премести во {target}"
 msgid "Name"
 msgstr "Име"
 
+msgid "Names may be at most 64 characters long."
+msgstr "Имињата можат да бидат најмногу со 64 карактери."
+
 msgid "Names must not be empty."
 msgstr "Имињата неможе да бидат празни."
 
@@ -163,6 +166,9 @@ msgstr "Врати"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Прикачи содржина или синхронизирај со ваши уреди!"
+
+msgid "You are currently identified as {nickname}."
+msgstr "Моментално сте идентификувани како {nickname}."
 
 msgid "You are currently not identified."
 msgstr "Моментално не сте идентификувани."
