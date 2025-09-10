@@ -8,13 +8,13 @@
 # Влад, 2024
 # Alexey Rusakov, 2024
 # Александр, 2024
-# Maksim Sukharev, 2024
 # Igor Orlov, 2025
 # Leonid Fedotov, 2025
+# Maksim Sukharev, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Leonid Fedotov, 2025\n"
+"Last-Translator: Maksim Sukharev, 2025\n"
 "Language-Team: Russian (https://app.transifex.com/nextcloud/teams/64236/ru/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: ru\n"
@@ -121,6 +121,9 @@ msgstr "Переместить в «{target}»"
 msgid "Name"
 msgstr "Имя"
 
+msgid "Names may be at most 64 characters long."
+msgstr "Имена не могут быть длинее 64 символов."
+
 msgid "Names must not be empty."
 msgstr "Имена не могут быть пустыми."
 
@@ -174,6 +177,9 @@ msgstr "Отменить"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Загрузите контент или синхронизируйте его со своими устройствами!"
+
+msgid "You are currently identified as {nickname}."
+msgstr "Вы идентифицированы как {nickname}."
 
 msgid "You are currently not identified."
 msgstr "В данный момент вы не идентифицированы."
