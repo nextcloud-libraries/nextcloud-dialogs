@@ -107,6 +107,9 @@ msgstr " {target} ga ko'chirish"
 msgid "Name"
 msgstr "Nomi"
 
+msgid "Names may be at most 64 characters long."
+msgstr "Ismlar ko'pi bilan 64 ta belgidan iborat bo'lishi mumkin."
+
 msgid "Names must not be empty."
 msgstr "Ismlar bo'sh bo'lmasligi kerak."
 
@@ -160,6 +163,9 @@ msgstr "Bekor qilish"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Qurilmangizga ba'zi kontentni yuklang yoki sinxronlang!"
+
+msgid "You are currently identified as {nickname}."
+msgstr "Siz hozirda {nickname} sifatida aniqlangansiz."
 
 msgid "You are currently not identified."
 msgstr "Siz hozirda identifikatsiyadan o'tmagansiz"
