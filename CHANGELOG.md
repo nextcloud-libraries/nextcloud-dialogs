@@ -6,18 +6,29 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v6.3.2](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.3.1...v6.3.2)
+### 🐛 Fixed bugs
+* fix(PublicAuthPrompt): change default notice if identified [\#1841](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1841) \([skjnldsv](https://github.com/skjnldsv)\)
+* style(toast): adjust colors for Nextcloud 32 [\#1913](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1913)
+* fix(guestName): limit length to 64 characters [\#1921](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1921)
+* fix(FilePicker): make move primary and copy secondary [\#1935](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1935)
+
+### Other Changes
+* chore: bump node version [\#1937](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1937) \([susnux](https://github.com/susnux)\)
+
+
 ## [v6.3.1](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.3.0...v6.3.1)
 ### 🐛 Fixed bugs
-* [stable6] fix: display guest name validity by @skjnldsv in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1837
+* fix: display guest name validity [\#1837](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1837) \([skjnldsv](https://github.com/skjnldsv)\)
 
 ## [v6.3.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.2.0...v6.3.0)
 ### 🚀 Enhancements
-* [stable6] feat: add guest auth prompt component by @skjnldsv in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1759
+* feat: add guest auth prompt component [\#1759](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1759) \([skjnldsv](https://github.com/skjnldsv)\)
 ### 🐛 Fixed bugs
-* [stable6] fix(FilePickerBuilder): correctly return array / plain value depending on multiselect by @backportbot in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1777
+* fix(FilePickerBuilder): correctly return array / plain value depending on multiselect [\#1777](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1777) \([backportbot](https://github.com/backportbot)\)
 ### Other Changes
-* Updates for project Nextcloud dialogs library by @transifex-integration in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1740
-* Updates for project Nextcloud dialogs library by @transifex-integration in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1741
+* Updates for project Nextcloud dialogs library [\#1740](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1740) \([transifex-integration](https://github.com/transifex-integration)\)
+* Updates for project Nextcloud dialogs library [\#1741](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1741) \([transifex-integration](https://github.com/transifex-integration)\)
 * Update @nextcloud/auth to 2.5.0 by @skjnldsv
 
 ## [v6.2.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.1.1...v6.2.0)
