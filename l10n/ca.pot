@@ -4,27 +4,40 @@
 # v v <e670006006@gmail.com>, 2024
 # Marc Riera <marcriera@softcatala.org>, 2024
 # Sergi Font, 2024
-# Benet Joan Darder <benetj@gmail.com>, 2025
+# Oriol Lladó, 2025
+# Jaume Batlle Brugal <Jaumetbb@gmail.com>, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Benet Joan Darder <benetj@gmail.com>, 2025\n"
+"Last-Translator: Jaume Batlle Brugal <Jaumetbb@gmail.com>, 2025\n"
 "Language-Team: Catalan (https://app.transifex.com/nextcloud/teams/64236/ca/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: ca\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "\"{char}\" is not allowed inside a name."
+msgstr "No és permès d'usar el caràcter \"{char}\" en un nom."
+
+msgid "\"{extension}\" is not an allowed name."
+msgstr "\"{extension}\" no és un nom vàlid."
+
 msgid "\"{name}\" is an invalid folder name."
-msgstr "\"{name}\" és un nom de carpeta no vàlid."
+msgstr "\"{name}\" no és vàlid com a nom de carpeta."
 
 msgid "\"{name}\" is not an allowed folder name"
-msgstr "\"{name}\" no és permès com a nom de carpeta"
+msgstr "\"{name}\" no és vàlid com a nom de carpeta."
+
+msgid "\"{segment}\" is a reserved name and not allowed."
+msgstr "\"{segment}\" és un mot reservat i no està permès com a nom."
 
 msgid "\"/\" is not allowed inside a folder name."
-msgstr "\"/\" no és permès en el nom de carpeta."
+msgstr "\"/\" no està permès en el nom d'una carpeta."
 
 msgid "All files"
 msgstr "Tots els fitxers"
+
+msgid "Cancel"
+msgstr "Cancel·la"
 
 msgid "Choose"
 msgstr "Tria"
@@ -53,10 +66,16 @@ msgid "Could not load files views"
 msgstr "No es poden carregar fitxers de vistes"
 
 msgid "Create directory"
-msgstr "Crear directori"
+msgstr "Crea un directori"
 
 msgid "Current view selector"
 msgstr "Selector de visualització actual"
+
+msgid "Enter your name"
+msgstr "Escriviu el vostre nom"
+
+msgid "Failed to set nickname."
+msgstr "No s'ha pogut desar el sobrenom."
 
 msgid "Favorites"
 msgstr "Preferits"
@@ -74,8 +93,14 @@ msgstr "Filtrar llistat de fitxers"
 msgid "Folder name cannot be empty."
 msgstr "El nom de la carpeta no pot estar buit."
 
+msgid "Guest identification"
+msgstr "Identificació com a convidat"
+
 msgid "Home"
 msgstr "Inici"
+
+msgid "Invalid name."
+msgstr "Nom no vàlid"
 
 msgid "Modified"
 msgstr "Data de modificació"
@@ -88,6 +113,18 @@ msgstr "Desplaça a {target}"
 
 msgid "Name"
 msgstr "Nom"
+
+msgid "Names may be at most 64 characters long."
+msgstr "Els noms poden tenir com a màxim 64 caràcters."
+
+msgid "Names must not be empty."
+msgstr "Els noms no poden ser buits."
+
+msgid "Names must not end with \"{extension}\"."
+msgstr "Els noms no poden acabar amb l'extensió \"{extension}\"."
+
+msgid "Names must not start with a dot."
+msgstr "Els noms no poden començar amb un punt."
 
 msgid "New"
 msgstr "Crea"
@@ -107,6 +144,9 @@ msgstr "No s'ha trobat cap fitxer que coincideixi amb el filtre."
 msgid "No matching files"
 msgstr "No hi ha cap fitxer que coincideixi"
 
+msgid "Please enter a name with at least 2 characters."
+msgstr "Si us plau, escriu un nom amb 2 caràcters com a mínim"
+
 msgid "Recent"
 msgstr "Recents"
 
@@ -122,8 +162,20 @@ msgstr "Selecciona la fila per a {nodename}"
 msgid "Size"
 msgstr "Mida"
 
+msgid "Submit name"
+msgstr "Entreu el nom"
+
 msgid "Undo"
 msgstr "Desfés"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Pugeu contingut o sincronitzeu-lo amb els vostres dispositius!"
+
+msgid "You are currently identified as {nickname}."
+msgstr "Actualment se us mostra com a {nickname}."
+
+msgid "You are currently not identified."
+msgstr "Actualment no esteu identificat."
+
+msgid "You cannot leave the name empty."
+msgstr "No podeu deixar el nom en blanc."
