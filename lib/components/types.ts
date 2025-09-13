@@ -17,10 +17,16 @@ export enum DialogSeverity {
  */
 export interface IDialogButton {
 	/** Label of the button */
-	label: string,
+	label: string
 
 	/** Callback on button click */
-	callback: () => void,
+	callback: () => void
+
+	/**
+	 * Disabled state of the button
+	 * @default false
+	 */
+	disabled?: boolean
 
 	/**
 	 * Optional Icon for the button
@@ -30,15 +36,16 @@ export interface IDialogButton {
 
 	/**
 	 * Button type
+	 * @deprecated - use `variant` instead
 	 * @see https://nextcloud-vue-components.netlify.app/#/Components/NcButton
 	 */
 	type?: 'primary' | 'secondary' | 'error' | 'warning' | 'success'
 
 	/**
-	 * Disabled state of the button
-	 * @default false
+	 * Button type
+	 * @see https://nextcloud-vue-components.netlify.app/#/Components/NcButton
 	 */
-	disabled?: boolean
+	variant?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'success'
 }
 
 /**

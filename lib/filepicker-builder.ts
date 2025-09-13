@@ -224,16 +224,16 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 				buttons.push({
 					callback: () => {},
 					label: target ? t('Copy to {target}', { target }) : t('Copy'),
-					type: 'primary',
 					icon: IconCopy,
+					variant: type === FilePickerType.Copy ? 'primary' : 'secondary',
 				})
 			}
-			if (type === FilePickerType.Move || type === FilePickerType.CopyMove) {
+			if (type === FilePickerType.CopyMove || type === FilePickerType.Move) {
 				buttons.push({
 					callback: () => {},
 					label: target ? t('Move to {target}', { target }) : t('Move'),
-					type: type === FilePickerType.Move ? 'primary' : 'secondary',
 					icon: IconMove,
+					variant: 'primary', // move is always primary - also on copy-move
 				})
 			}
 			return buttons
