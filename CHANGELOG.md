@@ -6,6 +6,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v6.3.2](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.3.1...v6.3.2)
+### 🐛 Fixed bugs
+* fix(PublicAuthPrompt): change default notice if identified [\#1841](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1841) \([skjnldsv](https://github.com/skjnldsv)\)
+* style(toast): adjust colors for Nextcloud 32 [\#1913](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1913)
+* fix(guestName): limit length to 64 characters [\#1921](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1921)
+* fix(FilePicker): make move primary and copy secondary [\#1935](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1935)
+
+### Other Changes
+* chore: bump node version [\#1937](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1937) \([susnux](https://github.com/susnux)\)
+
+
 ## [v6.3.1](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.3.0...v6.3.1)
 ### 🐛 Fixed bugs
 * fix: display guest name validity [\#1837](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1837) \([skjnldsv](https://github.com/skjnldsv)\)
