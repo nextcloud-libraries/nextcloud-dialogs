@@ -113,6 +113,9 @@ msgstr "Nach {target} verschieben"
 msgid "Name"
 msgstr "Name"
 
+msgid "Names may be at most 64 characters long."
+msgstr "Namen dürfen maximal 64 Zeichen lang sein."
+
 msgid "Names must not be empty."
 msgstr "Namen dürfen nicht leer sein."
 
