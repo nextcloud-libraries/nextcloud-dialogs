@@ -6,7 +6,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [v7.0.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.2.0...v7.0.0-rc.1)
+## [v7.0.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.3.2...v7.0.0-rc.3)
 
 ### Notes
 
@@ -45,8 +45,11 @@ For Vue 3 apps nothing changed, meaning the app and this library will share the 
 ### Fixed
 * fix(FilePickerBuilder): correctly return array / plain value depending on multiselect [\#1775](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1775) \([susnux](https://github.com/susnux)\)
 * fix: display guest name validity [\#1836](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1836) \([skjnldsv](https://github.com/skjnldsv)\)
-* fix: return nodes array from smartpicker by @grnd-alt in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1879
-* fix(PublicAuthPrompt): change default notice if identified by @backportbot[bot] in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1880
+* fix: return nodes array from smartpicker [\#1879](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1879) \([grnd-alt](https://github.com/grnd-alt)\)
+* fix(PublicAuthPrompt): change default notice if identified [\#1880](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1880) \([backportbot[bot]](https://github.com/backportbot[bot])\)
+* style(toast): adjust colors for Nextcloud 32 [\#1912](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1912) \([Antreesy](https://github.com/Antreesy)\)
+* fix(guestName): limit length to 64 characters [\#1915](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1915) \([max-nextcloud](https://github.com/max-nextcloud)\)
+* fix(FilePicker): make move primary and copy secondary [\#1933](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1933) \([susnux](https://github.com/susnux)\)
 
 ### Changed
 * chore: update to ESLint v9 and apply new rules [\#1753](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1753) \([susnux](https://github.com/susnux)\)
@@ -57,7 +60,32 @@ For Vue 3 apps nothing changed, meaning the app and this library will share the 
 * chore!: remove `spawnDialog` in favor of version from `@nextcloud/vue` [\#1783](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1783) \([susnux](https://github.com/susnux)\)
 * refactor: do not use Node internals but @nextcloud/paths package [\#1752](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1752) \([susnux](https://github.com/susnux)\)
 * Updates for project Nextcloud dialogs library by @transifex-integration[bot] 
-* chore(deps): @nextcloud family + various upgrades by @skjnldsv in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1905
+* chore(deps): @nextcloud family + various upgrades [\#1905](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1905) \([skjnldsv](https://github.com/skjnldsv)\)
+
+## [v6.3.2](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.3.1...v6.3.2)
+### 🐛 Fixed bugs
+* fix(PublicAuthPrompt): change default notice if identified [\#1841](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1841) \([skjnldsv](https://github.com/skjnldsv)\)
+* style(toast): adjust colors for Nextcloud 32 [\#1913](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1913)
+* fix(guestName): limit length to 64 characters [\#1921](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1921)
+* fix(FilePicker): make move primary and copy secondary [\#1935](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1935)
+
+### Other Changes
+* chore: bump node version [\#1937](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1937) \([susnux](https://github.com/susnux)\)
+
+
+## [v6.3.1](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.3.0...v6.3.1)
+### 🐛 Fixed bugs
+* fix: display guest name validity [\#1837](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1837) \([skjnldsv](https://github.com/skjnldsv)\)
+
+## [v6.3.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.2.0...v6.3.0)
+### 🚀 Enhancements
+* feat: add guest auth prompt component [\#1759](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1759) \([skjnldsv](https://github.com/skjnldsv)\)
+### 🐛 Fixed bugs
+* fix(FilePickerBuilder): correctly return array / plain value depending on multiselect [\#1777](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1777) \([backportbot](https://github.com/backportbot)\)
+### Other Changes
+* Updates for project Nextcloud dialogs library [\#1740](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1740) \([transifex-integration](https://github.com/transifex-integration)\)
+* Updates for project Nextcloud dialogs library [\#1741](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1741) \([transifex-integration](https://github.com/transifex-integration)\)
+* Update @nextcloud/auth to 2.5.0 by @skjnldsv
 
 ## [v6.2.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.1.1...v6.2.0)
 ### Notes

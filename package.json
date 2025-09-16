@@ -1,6 +1,6 @@
 {
   "name": "@nextcloud/dialogs",
-  "version": "7.0.0-rc.2",
+  "version": "7.0.0-rc.3",
   "description": "Nextcloud dialog helpers",
   "keywords": [
     "nextcloud"
