@@ -111,6 +111,9 @@ msgstr "Přesunout do {target}"
 msgid "Name"
 msgstr "Název"
 
+msgid "Names may be at most 64 characters long."
+msgstr "Je třeba, aby délka jmen nepřesahovala 64 znaků."
+
 msgid "Names must not be empty."
 msgstr "Názvy je třeba vyplnit."
 
