@@ -2,14 +2,21 @@
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Efstathios Iosifidis <iefstathios@gmail.com>, 2025
+# Γιάννος, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Efstathios Iosifidis <iefstathios@gmail.com>, 2025\n"
+"Last-Translator: Γιάννος, 2025\n"
 "Language-Team: Greek (https://app.transifex.com/nextcloud/teams/64236/el/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "\"{char}\" is not allowed inside a name."
+msgstr "\"{char}\" δεν επιτρέπεται μέσα σε ένα όνομα."
+
+msgid "\"{extension}\" is not an allowed name."
+msgstr "\"{extension}\" δεν είναι επιτρεπτό όνομα."
 
 msgid "\"{name}\" is an invalid folder name."
 msgstr "Το \"{name}\" δεν είναι έγκυρο όνομα φακέλου."
@@ -17,11 +24,17 @@ msgstr "Το \"{name}\" δεν είναι έγκυρο όνομα φακέλου
 msgid "\"{name}\" is not an allowed folder name"
 msgstr "Το \"{name}\" δεν είναι επιτρεπτό όνομα φακέλου"
 
+msgid "\"{segment}\" is a reserved name and not allowed."
+msgstr "\"{segment}\" είναι ένα δεσμευμένο όνομα και δεν επιτρέπεται."
+
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "Το \"/\" δεν επιτρέπεται μέσα στο όνομα ενός φακέλου."
 
 msgid "All files"
 msgstr "Όλα τα αρχεία"
+
+msgid "Cancel"
+msgstr "Ακύρωση"
 
 msgid "Choose"
 msgstr "Επιλογή"
@@ -55,6 +68,12 @@ msgstr "Δημιουργία καταλόγου"
 msgid "Current view selector"
 msgstr "Επιλογέας τρέχουσας προβολής"
 
+msgid "Enter your name"
+msgstr "Εισάγετε το όνομά σας"
+
+msgid "Failed to set nickname."
+msgstr "Αποτυχία στην ρύθμιση του ψευδώνυμου."
+
 msgid "Favorites"
 msgstr "Αγαπημένα"
 
@@ -72,8 +91,14 @@ msgstr "Φιλτράρισμα λίστας αρχείων"
 msgid "Folder name cannot be empty."
 msgstr "Το όνομα του φακέλου δεν μπορεί να είναι κενό."
 
+msgid "Guest identification"
+msgstr "Ταυτοποίηση επισκέπτη"
+
 msgid "Home"
 msgstr "Αρχική"
+
+msgid "Invalid name."
+msgstr "Μη έγκυρο όνομα."
 
 msgid "Modified"
 msgstr "Τροποποιήθηκε"
@@ -86,6 +111,18 @@ msgstr "Μετακίνηση στο {target}"
 
 msgid "Name"
 msgstr "Όνομα"
+
+msgid "Names may be at most 64 characters long."
+msgstr "Τα ονόματα μπορούν να έχουν μέγιστο μήκος 64 χαρακτήρες."
+
+msgid "Names must not be empty."
+msgstr "Τα ονόματα δεν πρέπει να είναι κενά."
+
+msgid "Names must not end with \"{extension}\"."
+msgstr "Τα ονόματα δεν πρέπει να τελειώνουν με \"{extension}\"."
+
+msgid "Names must not start with a dot."
+msgstr "Τα ονόματα δεν πρέπει να ξεκινούν με τελεία."
 
 msgid "New"
 msgstr "Νέο"
@@ -105,6 +142,9 @@ msgstr "Δεν βρέθηκαν αρχεία που να ταιριάζουν μ
 msgid "No matching files"
 msgstr "Κανένα αρχείο δεν ταιριάζει"
 
+msgid "Please enter a name with at least 2 characters."
+msgstr "Παρακαλώ εισάγετε ένα όνομα με τουλάχιστον 2 χαρακτήρες."
+
 msgid "Recent"
 msgstr "Πρόσφατα"
 
@@ -120,8 +160,20 @@ msgstr "Επιλέξτε τη γραμμή για το {nodename}"
 msgid "Size"
 msgstr "Μέγεθος"
 
+msgid "Submit name"
+msgstr "Υποβολή ονόματος"
+
 msgid "Undo"
 msgstr "Αναίρεση"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Ανεβάστε κάποιο περιεχόμενο ή συγχρονίστε με τις συσκευές σας!"
+
+msgid "You are currently identified as {nickname}."
+msgstr "Αυτή τη στιγμή έχετε αναγνωριστεί ως {nickname}."
+
+msgid "You are currently not identified."
+msgstr "Δεν έχετε ταυτοποιηθεί."
+
+msgid "You cannot leave the name empty."
+msgstr "Δεν μπορείτε να αφήσετε το όνομα κενό."
