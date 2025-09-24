@@ -7,10 +7,11 @@
 # Hyeongjin Park, 2025
 # LEE Hwanyong <hwan@ajou.ac.kr>, 2025
 # 보헤민, 2025
+# OHORA YOON, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: 보헤민, 2025\n"
+"Last-Translator: OHORA YOON, 2025\n"
 "Language-Team: Korean (https://app.transifex.com/nextcloud/teams/64236/ko/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: ko\n"
@@ -115,6 +116,9 @@ msgstr "{target}으로 이동"
 msgid "Name"
 msgstr "이름"
 
+msgid "Names may be at most 64 characters long."
+msgstr "이름은 아마도 최대 64글자 입니다."
+
 msgid "Names must not be empty."
 msgstr "이름은 비어 있으면 안 됩니다."
 
@@ -168,6 +172,9 @@ msgstr "되돌리기"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "기기에서 파일을 업로드 또는 동기화하세요!"
+
+msgid "You are currently identified as {nickname}."
+msgstr "{nickname}로서 인증 상태 입니다."
 
 msgid "You are currently not identified."
 msgstr "현재 인증되지 않았습니다."
