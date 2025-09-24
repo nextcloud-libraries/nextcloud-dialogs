@@ -1,15 +1,21 @@
 # 
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
-# Miguel Anxo Bouzada <mbouzada@gmail.com>, 2024
+# Miguel Anxo Bouzada <mbouzada@gmail.com>, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>, 2024\n"
+"Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>, 2025\n"
 "Language-Team: Galician (https://app.transifex.com/nextcloud/teams/64236/gl/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: gl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "\"{char}\" is not allowed inside a name."
+msgstr "«{char}» non está permitido dentro dun nome."
+
+msgid "\"{extension}\" is not an allowed name."
+msgstr "«{extension}» non é un nome permitido."
 
 msgid "\"{name}\" is an invalid folder name."
 msgstr "«{name}» non é un nome de cartafol válido."
@@ -17,11 +23,17 @@ msgstr "«{name}» non é un nome de cartafol válido."
 msgid "\"{name}\" is not an allowed folder name"
 msgstr "«{name}» non é un nome de cartafol permitido"
 
+msgid "\"{segment}\" is a reserved name and not allowed."
+msgstr "«{segment}» é un nome reservado e non está permitido."
+
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "A «/» non está permitida no nome dun cartafol."
 
 msgid "All files"
 msgstr "Todos os ficheiros"
+
+msgid "Cancel"
+msgstr "Cancelar"
 
 msgid "Choose"
 msgstr "Escoller"
@@ -55,6 +67,12 @@ msgstr "Crear un directorio"
 msgid "Current view selector"
 msgstr "Selector de vista actual"
 
+msgid "Enter your name"
+msgstr "Introduza o seu nome"
+
+msgid "Failed to set nickname."
+msgstr "Produciuse un fallo ao definir o alcume."
+
 msgid "Favorites"
 msgstr "Favoritos"
 
@@ -70,8 +88,14 @@ msgstr "Filtrar a lista de ficheiros"
 msgid "Folder name cannot be empty."
 msgstr "O nome do cartafol non pode estar baleiro."
 
+msgid "Guest identification"
+msgstr "Identificación do convidado"
+
 msgid "Home"
 msgstr "Inicio"
+
+msgid "Invalid name."
+msgstr "Nome incorrecto"
 
 msgid "Modified"
 msgstr "Modificado"
@@ -84,6 +108,18 @@ msgstr "Mover cara a {target}"
 
 msgid "Name"
 msgstr "Nome"
+
+msgid "Names may be at most 64 characters long."
+msgstr "Os nomes poden ter unha lonxitude máxima de 64 caracteres."
+
+msgid "Names must not be empty."
+msgstr "Os nomes non deben estar baleiros."
+
+msgid "Names must not end with \"{extension}\"."
+msgstr "Os nomes non deben rematar en «{extension}»."
+
+msgid "Names must not start with a dot."
+msgstr "Os nomes non deben comezar cun punto."
 
 msgid "New"
 msgstr "Novo"
@@ -103,6 +139,9 @@ msgstr "Non se atopou ningún ficheiro que coincida co filtro."
 msgid "No matching files"
 msgstr "Non hai ficheiros coincidentes"
 
+msgid "Please enter a name with at least 2 characters."
+msgstr "Introduza un nome con polo menos 2 caracteres."
+
 msgid "Recent"
 msgstr "Recente"
 
@@ -118,8 +157,20 @@ msgstr "Seleccionar a fila para {nodename}"
 msgid "Size"
 msgstr "Tamaño"
 
+msgid "Submit name"
+msgstr "Enviar o nome"
+
 msgid "Undo"
 msgstr "Desfacer"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Enviar algún contido ou sincronizalo cos seus dispositivos!"
+
+msgid "You are currently identified as {nickname}."
+msgstr "Vde. está identificado actualmente como {nickname}."
+
+msgid "You are currently not identified."
+msgstr "Vde. non está identificado actualmente."
+
+msgid "You cannot leave the name empty."
+msgstr "Vde. non pode deixar o nome baleiro."
