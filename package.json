@@ -95,7 +95,19 @@
     "vue-material-design-icons": "^5.3.1"
   },
   "engines": {
-    "node": "^20 || ^22",
-    "npm": "^10.0.0"
+    "node": "^20 || ^22 || ^24"
+  },
+  "devEngines": {
+    "packageManager": [
+      {
+        "name": "npm",
+        "version": "^10.5.0",
+        "onFail": "error"
+      }
+    ],
+    "runtime": {
+      "name": "node",
+      "version": "^22.0.0"
+    }
   }
 }
