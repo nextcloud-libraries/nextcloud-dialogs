@@ -113,6 +113,9 @@ msgstr "{target} に移動"
 msgid "Name"
 msgstr "名前"
 
+msgid "Names may be at most 64 characters long."
+msgstr "名前は最大64文字です。"
+
 msgid "Names must not be empty."
 msgstr "名前は空にできません。"
 
@@ -166,6 +169,9 @@ msgstr "元に戻す"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "コンテンツをアップロードするか、デバイスと同期してください！"
+
+msgid "You are currently identified as {nickname}."
+msgstr "現在、{nickname}として識別されています。"
 
 msgid "You are currently not identified."
 msgstr "現在あなたは識別されていません。"
