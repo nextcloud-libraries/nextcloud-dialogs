@@ -110,6 +110,9 @@ msgstr "Премести у {target}"
 msgid "Name"
 msgstr "Име"
 
+msgid "Names may be at most 64 characters long."
+msgstr "Највећа дужина имена може бити 64 карактера."
+
 msgid "Names must not be empty."
 msgstr "Имена не смеју да буду празна."
 
