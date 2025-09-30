@@ -33,6 +33,7 @@ For Vue 3 apps nothing changed, meaning the app and this library will share the 
 * This package now uses Vue 3 internally.
 * The deprecated FilePicker component export was removed to allow using this library in Vue 2 and Vue 3 apps.
 * The deprecated `Dialog.hide` method was removed, instead await the returned promise and wait for the user interaction.
+* The deprecated `Dialog.setHTML` method was removed. If you need custom HTML content use `NcDialog` from `@nextcloud/vue`.
 * The `spawnDialog` helper method was removed, instead use the function provided by `@nextcloud/vue`
 ```diff
 - import { spawnDialog } from '@nextcloud/dialogs'
