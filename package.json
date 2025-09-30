@@ -80,7 +80,7 @@
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.8.1",
     "core-js": "^3.45.1",
-    "gettext-extractor": "^3.8.0",
+    "gettext-extractor": "^4.0.1",
     "gettext-parser": "^8.0.0",
     "happy-dom": "^18.0.1",
     "sass": "^1.93.2",
