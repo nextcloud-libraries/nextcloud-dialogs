@@ -4,6 +4,13 @@
  */
 
 export {
+	type ConflictPickerOptions,
+	type ConflictResolutionResult,
+
+	openConflictPicker,
+} from './conflict-picker.ts'
+
+export {
 	FilePicker,
 	FilePickerBuilder,
 	FilePickerClosed,

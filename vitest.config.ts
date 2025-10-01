@@ -19,7 +19,7 @@ const testConfig = defineConfig({
 				classNameStrategy: 'non-scoped',
 			},
 		},
-		setupFiles: 'test/setup.ts',
+		setupFiles: 'tests/setup.ts',
 		server: {
 			deps: {
 				inline: [
