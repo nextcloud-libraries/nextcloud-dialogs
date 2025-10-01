@@ -7,6 +7,7 @@ import type { IDialogButton, IDialogSeverity } from './components/types.ts'
 
 import { spawnDialog } from '@nextcloud/vue/functions/dialog'
 import GenericDialog from './components/GenericDialog.vue'
+import { t } from './utils/l10n.ts'
 import { logger } from './utils/logger.ts'
 
 export type * from './components/types.ts'
@@ -157,4 +158,58 @@ export class DialogBuilder {
  */
 export function getDialogBuilder(name: string) {
 	return new DialogBuilder(name)
+}
+
+export interface ConfirmationDialogOptions {
+	/** The name of the dialog (heading) */
+	name: string
+	/** The text of the dialog */
+	text: string
+	/** The text of the confirmation button */
+	labelConfirm?: string
+	/** The text of the reject button */
+	labelReject?: string
+	/** The severity */
+	severity?: IDialogSeverity
+}
+
+/**
+ * Open a new confirmation dialog.
+ * The dialog either resolves to true when the confirm-button was pressed,
+ * or to false if the reject-button was pressed.
+ *
+ * @param options - Dialog options see `ConfirmationDialogOptions`
+ */
+export async function showConfirmation(options: ConfirmationDialogOptions): Promise<boolean> {
+	options = {
+		labelConfirm: t('Confirm'),
+		...options,
+	}
+
+	const { promise, resolve } = Promise.withResolvers<boolean>()
+	const buttons: IDialogButton[] = [{
+		label: options.labelConfirm!,
+		variant: 'primary',
+		callback() {
+			resolve(true)
+		},
+	}]
+
+	if (options.labelReject) {
+		buttons.unshift({
+			label: options.labelReject,
+			callback() {
+				resolve(false)
+			},
+		})
+	}
+
+	const dialog = new Dialog(
+		options.name,
+		options.text,
+		buttons,
+		options.severity,
+	)
+	await dialog.show()
+	return promise
 }
