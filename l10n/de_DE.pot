@@ -251,5 +251,5 @@ msgstr "Es muss mindestens eine Konfliktlösung gewählt werden"
 
 msgid "You need to select at least one version of each file to continue."
 msgstr ""
-"Es muss mindestens eine Version jeder Datei ausgewählt weden, um "
+"Es muss mindestens eine Version jeder Datei ausgewählt werden, um "
 "fortzufahren."

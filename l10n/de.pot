@@ -32,11 +32,24 @@ msgstr "\"{segment}\" ist ein reservierter Name und nicht zulässig."
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "\"/\" ist innerhalb eines Ordnernamens nicht zulässig."
 
+msgid "%n file conflict"
+msgid_plural "%n files conflict"
+msgstr[0] "%n Dateikonflikt"
+msgstr[1] "%n Dateikonflikte"
+
+msgid "%n file conflict in {dirname}"
+msgid_plural "%n file conflicts in {dirname}"
+msgstr[0] "%n Dateikonflikt in {dirname}"
+msgstr[1] "%n Dateikonflikte in {dirname}"
+
 msgid "All files"
 msgstr "Alle Dateien"
 
 msgid "Cancel"
 msgstr "Abbrechen"
+
+msgid "Cancel the entire operation"
+msgstr "Den gesamten Vorgang abbrechen"
 
 msgid "Choose"
 msgstr "Auswählen"
@@ -48,6 +61,9 @@ msgid "Choose %n file"
 msgid_plural "Choose %n files"
 msgstr[0] "%n Datei auswählen"
 msgstr[1] "%n Dateien auswählen"
+
+msgid "Continue"
+msgstr "Fortsetzen"
 
 msgid "Copy"
 msgstr "Kopieren"
@@ -72,6 +88,9 @@ msgstr "Aktuelle Ansichtsauswahl"
 
 msgid "Enter your name"
 msgstr "Gib deinen Namen ein"
+
+msgid "Existing version"
+msgstr "Vorhandene Version"
 
 msgid "Failed to set nickname."
 msgstr "Spitzname konnte nicht gespeichert werden."
@@ -99,8 +118,18 @@ msgstr "Gast-Identifikation"
 msgid "Home"
 msgstr "Home"
 
+msgid ""
+"If you select both versions, the incoming file will have a number added to "
+"its name."
+msgstr ""
+"Wenn beide Versionen ausgewählt werden, wird dem Namen der eingehenden Datei"
+" eine Nummer hinzugefügt."
+
 msgid "Invalid name."
 msgstr "Ungültiger Name."
+
+msgid "Last modified date unknown"
+msgstr "Datum der letzten Änderung unbekannt"
 
 msgid "Modified"
 msgstr "Geändert"
@@ -135,6 +164,9 @@ msgstr "Neuer Ordner"
 msgid "New folder name"
 msgstr "Neuer Ordnername"
 
+msgid "New version"
+msgstr "Neue Version"
+
 msgid "No files in here"
 msgstr "Hier sind keine Dateien"
 
@@ -150,8 +182,17 @@ msgstr "Bitte einen Namen mit mindestens zwei Zeichen eingeben."
 msgid "Recent"
 msgstr "Neueste"
 
+msgid "Select all checkboxes"
+msgstr "Alle Kontrollkästchen aktivieren"
+
 msgid "Select all entries"
 msgstr "Alle Einträge auswählen"
+
+msgid "Select all existing files"
+msgstr "Alle vorhandenen Dateien auswählen"
+
+msgid "Select all new files"
+msgstr "Alle neuen Dateien auswählen"
 
 msgid "Select entry"
 msgstr "Eintrag auswählen"
@@ -162,6 +203,14 @@ msgstr "Die Zeile für {nodename} auswählen."
 msgid "Size"
 msgstr "Größe"
 
+msgid "Skip %n file"
+msgid_plural "Skip %n files"
+msgstr[0] "%n Datei überspringen"
+msgstr[1] "%n Dateien überspringen"
+
+msgid "Skip this file"
+msgstr "Diese Datei überspringen"
+
 msgid "Submit name"
 msgstr "Namen senden"
 
@@ -171,6 +220,23 @@ msgstr "Rückgängig machen"
 msgid "Upload some content or sync with your devices!"
 msgstr "Lade Inhalte hoch oder synchronisiere diese mit deinen Geräten!"
 
+msgid ""
+"When an incoming folder is selected, any conflicting files within it will "
+"also be overwritten."
+msgstr ""
+"Wenn ein eingehender Ordner ausgewählt wird, werden auch alle darin "
+"enthaltenen Dateien mit Konflikten überschrieben."
+
+msgid ""
+"When an incoming folder is selected, the content is written into the "
+"existing folder and a recursive conflict resolution is performed."
+msgstr ""
+"Bei Auswahl eines eingehenden Ordners wird der Inhalt in den vorhandenen "
+"Ordner geschrieben und eine rekursive Konfliktlösung durchgeführt."
+
+msgid "Which files do you want to keep?"
+msgstr "Welche Dateien sollen behalten werden?"
+
 msgid "You are currently identified as {nickname}."
 msgstr "Du bist derzeit als {nickname} identifiziert."
 
@@ -179,3 +245,11 @@ msgstr "Du bist momentan nicht identifiziert."
 
 msgid "You cannot leave the name empty."
 msgstr "Du kannst den Namen nicht leer lassen."
+
+msgid "You need to choose at least one conflict solution"
+msgstr "Es muss mindestens eine Konfliktlösung gewählt werden"
+
+msgid "You need to select at least one version of each file to continue."
+msgstr ""
+"Es muss mindestens eine Version jeder Datei ausgewählt werden, um "
+"fortzufahren."
