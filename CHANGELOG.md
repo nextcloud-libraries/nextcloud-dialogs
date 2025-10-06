@@ -42,6 +42,8 @@ For Vue 3 apps nothing changed, meaning the app and this library will share the 
 
 ### Added
 * feat: add guest auth prompt [\#1760](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1760) \([backportbot](https://github.com/backportbot)\)
+* feat(ConflictPicker): move conflict picker dialog from `@nextcloud/upload` [\#1971](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1971) \([susnux](https://github.com/susnux)\)
+* feat(dialogs): allow to quickly show a dialog [\#1986](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1986) \([susnux](https://github.com/susnux)\)
 
 ### Fixed
 * fix(FilePickerBuilder): correctly return array / plain value depending on multiselect [\#1775](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1775) \([susnux](https://github.com/susnux)\)
@@ -51,6 +53,7 @@ For Vue 3 apps nothing changed, meaning the app and this library will share the 
 * style(toast): adjust colors for Nextcloud 32 [\#1912](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1912) \([Antreesy](https://github.com/Antreesy)\)
 * fix(guestName): limit length to 64 characters [\#1915](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1915) \([max-nextcloud](https://github.com/max-nextcloud)\)
 * fix(FilePicker): make move primary and copy secondary [\#1933](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1933) \([susnux](https://github.com/susnux)\)
+* fix: allow dismiss the undo toast [\#1944](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1944) \([luka-nextcloud](https://github.com/luka-nextcloud)\)
 
 ### Changed
 * chore: update to ESLint v9 and apply new rules [\#1753](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1753) \([susnux](https://github.com/susnux)\)
@@ -62,6 +65,8 @@ For Vue 3 apps nothing changed, meaning the app and this library will share the 
 * refactor: do not use Node internals but @nextcloud/paths package [\#1752](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1752) \([susnux](https://github.com/susnux)\)
 * Updates for project Nextcloud dialogs library by @transifex-integration[bot] 
 * chore(deps): @nextcloud family + various upgrades [\#1905](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1905) \([skjnldsv](https://github.com/skjnldsv)\)
+* chore: fix node version for dependabot [\#1960](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1960) \([susnux](https://github.com/susnux)\)
+* chore(dialogs)!: remove deprecated `setHTML` method [\#1985](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1985) \([susnux](https://github.com/susnux)\)
 
 ## [v6.3.2](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.3.1...v6.3.2)
 ### 🐛 Fixed bugs
