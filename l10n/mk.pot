@@ -29,11 +29,24 @@ msgstr "\"{segment}\" е резервирано име и не е дозволе
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "\"/\" не е дозволена во име на папка."
 
+msgid "%n file conflict"
+msgid_plural "%n files conflict"
+msgstr[0] "%n конфликт со датотекa"
+msgstr[1] "%n конфликти со датотеки"
+
+msgid "%n file conflict in {dirname}"
+msgid_plural "%n file conflicts in {dirname}"
+msgstr[0] "%n конфликт со датотека во {dirname}"
+msgstr[1] "%n конфликти со датотеки vo {dirname}"
+
 msgid "All files"
 msgstr "Сите датотеки"
 
 msgid "Cancel"
 msgstr "Откажи"
+
+msgid "Cancel the entire operation"
+msgstr "Прекини ја целата операција"
 
 msgid "Choose"
 msgstr "Избери"
@@ -45,6 +58,12 @@ msgid "Choose %n file"
 msgid_plural "Choose %n files"
 msgstr[0] "Избери %n датотека"
 msgstr[1] "Избери %n датотеки"
+
+msgid "Confirm"
+msgstr "Потврди"
+
+msgid "Continue"
+msgstr "Продолжи"
 
 msgid "Copy"
 msgstr "Копирај"
@@ -69,6 +88,9 @@ msgstr "Избирач на тековен приказ"
 
 msgid "Enter your name"
 msgstr "Внесете го вашето име"
+
+msgid "Existing version"
+msgstr "Моментална верзија"
 
 msgid "Failed to set nickname."
 msgstr "Неуспешно поставување прекар."
@@ -95,8 +117,18 @@ msgstr "Гостинска идентификација"
 msgid "Home"
 msgstr "Почетна"
 
+msgid ""
+"If you select both versions, the incoming file will have a number added to "
+"its name."
+msgstr ""
+"Ако ги избереш двете верзии, влезната датотека ќе добие број додаден на "
+"нејзиното име."
+
 msgid "Invalid name."
 msgstr "Невалидно име."
+
+msgid "Last modified date unknown"
+msgstr "Датумот на последна измена е непознат"
 
 msgid "Modified"
 msgstr "Променето"
@@ -131,6 +163,9 @@ msgstr "Нова папка"
 msgid "New folder name"
 msgstr "Ново име на папка"
 
+msgid "New version"
+msgstr "Нова верзија"
+
 msgid "No files in here"
 msgstr "Овде нема датотеки"
 
@@ -146,8 +181,17 @@ msgstr "Внесете име со најмалку 2 карактери."
 msgid "Recent"
 msgstr "Неодамнешни"
 
+msgid "Select all checkboxes"
+msgstr "Избери ги сите полиња за избор"
+
 msgid "Select all entries"
 msgstr "Изберете ги сите записи"
+
+msgid "Select all existing files"
+msgstr "Изберете ги сите постоечки датотеки"
+
+msgid "Select all new files"
+msgstr "Изберете ги сите нови датотеки"
 
 msgid "Select entry"
 msgstr "Избери запис"
@@ -158,6 +202,14 @@ msgstr "Избери ред за {nodename}"
 msgid "Size"
 msgstr "Големина"
 
+msgid "Skip %n file"
+msgid_plural "Skip %n files"
+msgstr[0] "Прескокни %n датотека"
+msgstr[1] "Прескокни %n датотеки"
+
+msgid "Skip this file"
+msgstr "Прескокни ја оваа датотека"
+
 msgid "Submit name"
 msgstr "Испрати име"
 
@@ -167,6 +219,23 @@ msgstr "Врати"
 msgid "Upload some content or sync with your devices!"
 msgstr "Прикачи содржина или синхронизирај со ваши уреди!"
 
+msgid ""
+"When an incoming folder is selected, any conflicting files within it will "
+"also be overwritten."
+msgstr ""
+"Кога е избрана влезна папка, сите конфликтни датотеки во неа исто така ќе "
+"бидат препишани."
+
+msgid ""
+"When an incoming folder is selected, the content is written into the "
+"existing folder and a recursive conflict resolution is performed."
+msgstr ""
+"Кога е избрана влезна папка, содржината се запишува во постоечката папка и "
+"се извршува рекурсивно решавање на конфликти."
+
+msgid "Which files do you want to keep?"
+msgstr "Кој датотеки сакаш да ги зачуваш?"
+
 msgid "You are currently identified as {nickname}."
 msgstr "Моментално сте идентификувани како {nickname}."
 
@@ -175,3 +244,10 @@ msgstr "Моментално не сте идентификувани."
 
 msgid "You cannot leave the name empty."
 msgstr "Не можете да го оставите името празно."
+
+msgid "You need to choose at least one conflict solution"
+msgstr "Треба да избереш најмалку едно решение за конфликт"
+
+msgid "You need to select at least one version of each file to continue."
+msgstr ""
+"Треба да избереш најмалку една верзија за секоја датотека за да продолжи."
