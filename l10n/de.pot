@@ -62,6 +62,9 @@ msgid_plural "Choose %n files"
 msgstr[0] "%n Datei auswählen"
 msgstr[1] "%n Dateien auswählen"
 
+msgid "Confirm"
+msgstr "Bestätigen"
+
 msgid "Continue"
 msgstr "Fortsetzen"
 
