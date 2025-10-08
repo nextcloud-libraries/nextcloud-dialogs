@@ -6,7 +6,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [v7.0.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.3.2...v7.0.0-rc.3)
+## [v7.0.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.3.2...v7.0.0)
 
 ### Notes
 
