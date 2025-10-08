@@ -7,9 +7,7 @@
 <h2 id="installation" class="tsd-anchor-link">Installation<a href="#installation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><pre><code><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-0">i</span><span class="hl-1"> -</span><span class="hl-2">S</span><span class="hl-1"> @</span><span class="hl-0">nextcloud</span><span class="hl-1">/</span><span class="hl-0">dialogs</span>
 </code><button>Copy</button></pre>
 
-<h3 id="version-compatibility" class="tsd-anchor-link">Version compatibility<a href="#version-compatibility" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>Since version 4.2 this package provides a Vue.js based file picker, so this package depends on <code>@nextcloud/vue</code>.
-So to not introduce style collisions stick with the supported versions:</p>
-<table>
+<h3 id="version-compatibility" class="tsd-anchor-link">Version compatibility<a href="#version-compatibility" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><table>
 <thead>
 <tr>
 <th><code>@nextcloud/dialogs</code></th>
@@ -23,13 +21,13 @@ So to not introduce style collisions stick with the supported versions:</p>
 <td>7.x</td>
 <td>✅</td>
 <td>9.x (Vue 3)¹</td>
-<td>Nextcloud 30 and newer</td>
+<td>Nextcloud 31 and newer</td>
 </tr>
 <tr>
 <td>6.x</td>
 <td>✅</td>
 <td>8.x</td>
-<td>Nextcloud 29 and newer</td>
+<td>Nextcloud 29, 30, 31, 32</td>
 </tr>
 <tr>
 <td>5.x</td>
@@ -40,14 +38,14 @@ So to not introduce style collisions stick with the supported versions:</p>
 <tr>
 <td>4.2+</td>
 <td>❌</td>
-<td>7.12</td>
+<td>7.12²</td>
 <td>Nextcloud 25, 26, 27, 27.1</td>
 </tr>
 <tr>
 <td>4.1</td>
 <td>❌</td>
 <td><em>any</em></td>
-<td><em>any</em></td>
+<td><em>any up to Nextcloud 30</em></td>
 </tr>
 </tbody>
 </table>
@@ -55,6 +53,7 @@ So to not introduce style collisions stick with the supported versions:</p>
 with an old version of <code>@nextcloud/vue</code> in your app dependencies if your app still uses Vue 2.
 Note that this might increase the bundled app size.
 If your app also already uses <code>@nextcloud/vue</code> version 9.x and Vue 3 then the bundle size will not increase.</p>
+<p>²: Since version 4.2 this package provides a Vue.js based file picker, so this package depends on <code>@nextcloud/vue</code>.</p>
 <h2 id="usage" class="tsd-anchor-link">Usage<a href="#usage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><h3 id="general" class="tsd-anchor-link">General<a href="#general" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>The styles for the components (Toasts and FilePicker) are provided in the <code>style.css</code> file.
 So make sure that the  <code>@nextcloud/dialogs/style.css</code> file is included in your app to make sure that the toasts or FilePicker have a proper styling applied.</p>
 <pre><code class="js"><span class="hl-3">import</span><span class="hl-1"> </span><span class="hl-4">&#39;@nextcloud/dialogs/style.css&#39;</span>
