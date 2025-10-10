@@ -34,11 +34,22 @@ msgstr "\"{segment}\"は予約名であり使用できません。"
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "フォルダー名に「/（スラッシュ）」は使用できません。"
 
+msgid "%n file conflict"
+msgid_plural "%n files conflict"
+msgstr[0] "%nファイルが競合しています"
+
+msgid "%n file conflict in {dirname}"
+msgid_plural "%n file conflicts in {dirname}"
+msgstr[0] "%nディレクトリ{dirname}内のファイル競合"
+
 msgid "All files"
 msgstr "すべてのファイル"
 
 msgid "Cancel"
 msgstr "キャンセル"
+
+msgid "Cancel the entire operation"
+msgstr "操作全体をキャンセルする"
 
 msgid "Choose"
 msgstr "選択"
@@ -49,6 +60,12 @@ msgstr "{file} を選択"
 msgid "Choose %n file"
 msgid_plural "Choose %n files"
 msgstr[0] "%n 個のファイルを選択"
+
+msgid "Confirm"
+msgstr "承認"
+
+msgid "Continue"
+msgstr "続ける"
 
 msgid "Copy"
 msgstr "コピー"
@@ -74,6 +91,9 @@ msgstr "現在のビューセレクタ"
 msgid "Enter your name"
 msgstr "名前を入力してください"
 
+msgid "Existing version"
+msgstr "現行バージョン"
+
 msgid "Failed to set nickname."
 msgstr "ニックネームの設定に失敗しました。"
 
@@ -98,8 +118,16 @@ msgstr "ゲスト識別"
 msgid "Home"
 msgstr "ホーム"
 
+msgid ""
+"If you select both versions, the incoming file will have a number added to "
+"its name."
+msgstr "両方のバージョンを選択した場合、受信ファイル名には番号が追加されます。"
+
 msgid "Invalid name."
 msgstr "無効な名前です。"
+
+msgid "Last modified date unknown"
+msgstr "最終更新日不明"
 
 msgid "Modified"
 msgstr "変更済み"
@@ -134,6 +162,9 @@ msgstr "新しいフォルダー"
 msgid "New folder name"
 msgstr "新しいフォルダーの名前"
 
+msgid "New version"
+msgstr "新バージョン"
+
 msgid "No files in here"
 msgstr "ファイルがありません"
 
@@ -149,8 +180,17 @@ msgstr "名前を2文字以上で入力してください。"
 msgid "Recent"
 msgstr "最近"
 
+msgid "Select all checkboxes"
+msgstr "すべてのチェックボックスを選択する"
+
 msgid "Select all entries"
 msgstr "すべてのエントリを選択"
+
+msgid "Select all existing files"
+msgstr "既存のファイルをすべて選択"
+
+msgid "Select all new files"
+msgstr "すべての新規ファイルを選択"
 
 msgid "Select entry"
 msgstr "エントリを選択"
@@ -161,6 +201,13 @@ msgstr "{nodename} の行を選択"
 msgid "Size"
 msgstr "サイズ"
 
+msgid "Skip %n file"
+msgid_plural "Skip %n files"
+msgstr[0] "%n 個のファイルをスキップ"
+
+msgid "Skip this file"
+msgstr "このファイルをスキップ"
+
 msgid "Submit name"
 msgstr "名前を送信する"
 
@@ -170,6 +217,19 @@ msgstr "元に戻す"
 msgid "Upload some content or sync with your devices!"
 msgstr "コンテンツをアップロードするか、デバイスと同期してください！"
 
+msgid ""
+"When an incoming folder is selected, any conflicting files within it will "
+"also be overwritten."
+msgstr "受信フォルダが選択されている場合、そのフォルダ内の競合ファイルも上書きされます。"
+
+msgid ""
+"When an incoming folder is selected, the content is written into the "
+"existing folder and a recursive conflict resolution is performed."
+msgstr "受信フォルダが選択されると、内容は既存のフォルダに書き込まれ、再帰的な競合解決が実行されます。"
+
+msgid "Which files do you want to keep?"
+msgstr "どのファイルを残しますか？"
+
 msgid "You are currently identified as {nickname}."
 msgstr "現在、{nickname}として識別されています。"
 
@@ -178,3 +238,9 @@ msgstr "現在あなたは識別されていません。"
 
 msgid "You cannot leave the name empty."
 msgstr "名前を空にすることはできません。"
+
+msgid "You need to choose at least one conflict solution"
+msgstr "少なくとも1つの競合ソリューションを選択する必要があります"
+
+msgid "You need to select at least one version of each file to continue."
+msgstr "続行するには、各ファイルのバージョンを少なくとも1つ選択する必要があります。"
