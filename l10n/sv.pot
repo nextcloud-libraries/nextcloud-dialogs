@@ -30,11 +30,24 @@ msgstr "\"{segment}\" är ett reserverat namn och inte tillåtet."
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "\"/\" är inte tillåtet i ett mappnamn."
 
+msgid "%n file conflict"
+msgid_plural "%n files conflict"
+msgstr[0] "%n fil är i konflikt"
+msgstr[1] "%n filer är i konflikt"
+
+msgid "%n file conflict in {dirname}"
+msgid_plural "%n file conflicts in {dirname}"
+msgstr[0] "%n fil är i konflikt i {dirname}"
+msgstr[1] "%n filer är i konflikt i {dirname}"
+
 msgid "All files"
 msgstr "Alla filer"
 
 msgid "Cancel"
 msgstr "Avbryt"
+
+msgid "Cancel the entire operation"
+msgstr "Avbryt hela operationen"
 
 msgid "Choose"
 msgstr "Välj"
@@ -46,6 +59,12 @@ msgid "Choose %n file"
 msgid_plural "Choose %n files"
 msgstr[0] "Välj %n fil"
 msgstr[1] "Välj %n filer"
+
+msgid "Confirm"
+msgstr "Bekräfta"
+
+msgid "Continue"
+msgstr "Fortsätt"
 
 msgid "Copy"
 msgstr "Kopiera"
@@ -71,6 +90,9 @@ msgstr "Aktuell vyväljare"
 msgid "Enter your name"
 msgstr "Ange ditt namn"
 
+msgid "Existing version"
+msgstr "Nuvarande version"
+
 msgid "Failed to set nickname."
 msgstr "Kunde inte ställa in smeknamn."
 
@@ -95,8 +117,18 @@ msgstr "Gästidentifiering"
 msgid "Home"
 msgstr "Hem"
 
+msgid ""
+"If you select both versions, the incoming file will have a number added to "
+"its name."
+msgstr ""
+"Om du väljer båda versionerna kommer den inkommande filen att få ett nummer "
+"tillagt i sitt namn."
+
 msgid "Invalid name."
 msgstr "Ogiltigt namn."
+
+msgid "Last modified date unknown"
+msgstr "Senaste ändringsdatum okänt"
 
 msgid "Modified"
 msgstr "Ändrad"
@@ -131,6 +163,9 @@ msgstr "Ny mapp"
 msgid "New folder name"
 msgstr "Nytt mappnamn"
 
+msgid "New version"
+msgstr "Ny version"
+
 msgid "No files in here"
 msgstr "Inga filer här"
 
@@ -146,8 +181,17 @@ msgstr "Ange ett namn med minst 2 tecken."
 msgid "Recent"
 msgstr "Nyligen"
 
+msgid "Select all checkboxes"
+msgstr "Markera alla kryssrutor"
+
 msgid "Select all entries"
 msgstr "Välj alla poster"
+
+msgid "Select all existing files"
+msgstr "Välj alla befintliga filer"
+
+msgid "Select all new files"
+msgstr "Välj alla nya filer"
 
 msgid "Select entry"
 msgstr "Välj post"
@@ -158,6 +202,14 @@ msgstr "Välj raden för {nodename}"
 msgid "Size"
 msgstr "Storlek"
 
+msgid "Skip %n file"
+msgid_plural "Skip %n files"
+msgstr[0] "Hoppa över %n fil"
+msgstr[1] "Hoppa över %n filer"
+
+msgid "Skip this file"
+msgstr "Hoppa över den här filen"
+
 msgid "Submit name"
 msgstr "Skicka namn"
 
@@ -167,6 +219,23 @@ msgstr "Ångra"
 msgid "Upload some content or sync with your devices!"
 msgstr "Ladda upp lite innehåll eller synkronisera med dina enheter!"
 
+msgid ""
+"When an incoming folder is selected, any conflicting files within it will "
+"also be overwritten."
+msgstr ""
+"När en inkommande mapp väljs kommer eventuella konflikterande filer i den "
+"också att skrivas över."
+
+msgid ""
+"When an incoming folder is selected, the content is written into the "
+"existing folder and a recursive conflict resolution is performed."
+msgstr ""
+"När en inkommande mapp väljs skrivs innehållet in i den befintliga mappen "
+"och en rekursiv konfliktlösning utförs."
+
+msgid "Which files do you want to keep?"
+msgstr "Vilka filer vill du behålla?"
+
 msgid "You are currently identified as {nickname}."
 msgstr "Du är för närvarande identifierad som {nickname}."
 
@@ -175,3 +244,9 @@ msgstr "Du är för närvarande inte identifierad."
 
 msgid "You cannot leave the name empty."
 msgstr "Du kan inte lämna namnet tomt."
+
+msgid "You need to choose at least one conflict solution"
+msgstr "Du måste välja minst en konfliktlösning"
+
+msgid "You need to select at least one version of each file to continue."
+msgstr "Du måste välja minst en version av varje fil för att fortsätta."
