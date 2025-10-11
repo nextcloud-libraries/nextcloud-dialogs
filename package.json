@@ -80,7 +80,7 @@
     "@vitest/coverage-v8": "^3.2.4",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.8.1",
-    "core-js": "^3.45.1",
+    "core-js": "^3.46.0",
     "gettext-extractor": "^4.0.1",
     "gettext-parser": "^8.0.0",
     "happy-dom": "^19.0.2",
