@@ -6,6 +6,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v7.0.1](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v7.0.0...v7.0.1)
+### Fixed
+* fix: export `showConfirmation` method [\#2029](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2029) \([susnux](https://github.com/susnux)\)
+
+### Changed
+* docs: adjust changes link for v7.0.0 [\#2008](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2008) \([susnux](https://github.com/susnux)\)
+* Updated translations
+
 ## [v7.0.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.3.2...v7.0.0)
 
 ### Notes
