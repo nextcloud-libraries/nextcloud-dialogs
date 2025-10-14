@@ -1,15 +1,23 @@
 # 
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
-# Martin Bonde <Martin@maboni.dk>, 2024
+# Ryan Skov <rs@escapecloud.net>, 2025
+# Rasmus Terkelsen, 2025
+# Martin Bonde <Martin@maboni.dk>, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Martin Bonde <Martin@maboni.dk>, 2024\n"
+"Last-Translator: Martin Bonde <Martin@maboni.dk>, 2025\n"
 "Language-Team: Danish (https://app.transifex.com/nextcloud/teams/64236/da/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: da\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "\"{char}\" is not allowed inside a name."
+msgstr "\"{char}\" er ikke tilladt i et navn."
+
+msgid "\"{extension}\" is not an allowed name."
+msgstr "\"{extension}\" er ikke tilladt i et navn."
 
 msgid "\"{name}\" is an invalid folder name."
 msgstr "\"{name}\" er et ugyldigt mappenavn."
@@ -17,11 +25,30 @@ msgstr "\"{name}\" er et ugyldigt mappenavn."
 msgid "\"{name}\" is not an allowed folder name"
 msgstr "\"{name}\" er ikke et tilladt mappenavn"
 
+msgid "\"{segment}\" is a reserved name and not allowed."
+msgstr "\"{segment}\" er et reserveret navn og er derfor ikke tilladt."
+
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "\"/\" er ikke tilladt i et mappenavn."
 
+msgid "%n file conflict"
+msgid_plural "%n files conflict"
+msgstr[0] "%n filkonflikt"
+msgstr[1] "%n filer konflikter"
+
+msgid "%n file conflict in {dirname}"
+msgid_plural "%n file conflicts in {dirname}"
+msgstr[0] "%n filkonflikt i {dirname}"
+msgstr[1] "%n filkonflikter i {dirname}"
+
 msgid "All files"
 msgstr "Alle filer"
+
+msgid "Cancel"
+msgstr "Fortryd"
+
+msgid "Cancel the entire operation"
+msgstr "Annullér hele operationen"
 
 msgid "Choose"
 msgstr "Vælg"
@@ -33,6 +60,12 @@ msgid "Choose %n file"
 msgid_plural "Choose %n files"
 msgstr[0] "Vælg %n fil"
 msgstr[1] "Vælg %n filer"
+
+msgid "Confirm"
+msgstr "Bekræft"
+
+msgid "Continue"
+msgstr "Fortsæt"
 
 msgid "Copy"
 msgstr "Kopier"
@@ -55,6 +88,15 @@ msgstr "Opret mappe"
 msgid "Current view selector"
 msgstr "Aktuel visningsvælger"
 
+msgid "Enter your name"
+msgstr "Indtast dit navn"
+
+msgid "Existing version"
+msgstr "Eksisterende version"
+
+msgid "Failed to set nickname."
+msgstr "Forsøg på at gemme kaldenavn mislykkedes."
+
 msgid "Favorites"
 msgstr "Favoritter"
 
@@ -70,8 +112,24 @@ msgstr "Filtrer fil liste"
 msgid "Folder name cannot be empty."
 msgstr "Mappenavnet må ikke være tomt."
 
+msgid "Guest identification"
+msgstr "Gæsteidentifikation"
+
 msgid "Home"
 msgstr "Hjem"
+
+msgid ""
+"If you select both versions, the incoming file will have a number added to "
+"its name."
+msgstr ""
+"Hvis du vælger begge versioner, vil den indkommende fil have et nummer "
+"tilføjet til sit navn."
+
+msgid "Invalid name."
+msgstr "Ugyldigt navn."
+
+msgid "Last modified date unknown"
+msgstr "Senest ændret dato ukendt"
 
 msgid "Modified"
 msgstr "Ændret"
@@ -85,6 +143,18 @@ msgstr "Flyt til {target}"
 msgid "Name"
 msgstr "Navn"
 
+msgid "Names may be at most 64 characters long."
+msgstr "Navne kan højst være 64 tegn lange."
+
+msgid "Names must not be empty."
+msgstr "Navne kan ikke være tomt."
+
+msgid "Names must not end with \"{extension}\"."
+msgstr "Navne må ikke ende på \"{extension}\"."
+
+msgid "Names must not start with a dot."
+msgstr "Navne skal starte med et punktum."
+
 msgid "New"
 msgstr "Ny"
 
@@ -93,6 +163,9 @@ msgstr "Ny mappe"
 
 msgid "New folder name"
 msgstr "Ny mappe navn"
+
+msgid "New version"
+msgstr "Ny version"
 
 msgid "No files in here"
 msgstr "Ingen filer here"
@@ -103,11 +176,23 @@ msgstr "Der blev ikke fundet nogen filer, der matcher dit filter."
 msgid "No matching files"
 msgstr "Ingen matchende filer"
 
+msgid "Please enter a name with at least 2 characters."
+msgstr "Indtast et navn med mindst 2 tegn."
+
 msgid "Recent"
 msgstr "Seneste"
 
+msgid "Select all checkboxes"
+msgstr "Markér alle afkrydsningsfelter"
+
 msgid "Select all entries"
 msgstr "Vælg alle poster"
+
+msgid "Select all existing files"
+msgstr "Vælg alle eksisterende filer"
+
+msgid "Select all new files"
+msgstr "Vælg alle nye filer"
 
 msgid "Select entry"
 msgstr "Vælg post"
@@ -118,8 +203,51 @@ msgstr "Vælg rækken for {nodenavn}"
 msgid "Size"
 msgstr "Størelse"
 
+msgid "Skip %n file"
+msgid_plural "Skip %n files"
+msgstr[0] "Spring %n fil over"
+msgstr[1] "Spring %n filer over"
+
+msgid "Skip this file"
+msgstr "Spring denne fil over"
+
+msgid "Submit name"
+msgstr "Indsend navn"
+
 msgid "Undo"
 msgstr "Fortryd"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Upload noget indhold eller synkroniser med dine enheder!"
+
+msgid ""
+"When an incoming folder is selected, any conflicting files within it will "
+"also be overwritten."
+msgstr ""
+"Når en indkommende mappe er valgt, vil eventuelle modstridende filer i det "
+"også blive overskrevet."
+
+msgid ""
+"When an incoming folder is selected, the content is written into the "
+"existing folder and a recursive conflict resolution is performed."
+msgstr ""
+"Når en indkommende mappe er valgt, er indholdet skrevet ind i den "
+"eksisterende mappe og en rekursiv konfliktløsning udføres."
+
+msgid "Which files do you want to keep?"
+msgstr "Hvilke filer vil du have?"
+
+msgid "You are currently identified as {nickname}."
+msgstr "Du er i øjeblikket identificeret som {nickname}."
+
+msgid "You are currently not identified."
+msgstr "Du er ikke identificeret."
+
+msgid "You cannot leave the name empty."
+msgstr "Du kan ikke efterlade navnet tomt."
+
+msgid "You need to choose at least one conflict solution"
+msgstr "Du skal vælge mindst én konfliktløsning"
+
+msgid "You need to select at least one version of each file to continue."
+msgstr "Du skal vælge mindst én version af hver fil for at fortsætte."
