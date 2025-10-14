@@ -50,6 +50,7 @@ export {
 	Dialog,
 	DialogBuilder,
 	getDialogBuilder,
+	showConfirmation,
 } from './dialogs.ts'
 
 export type {
