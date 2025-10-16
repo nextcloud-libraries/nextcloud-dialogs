@@ -132,6 +132,10 @@ function handleKeyDown(event: KeyboardEvent) {
 
 .file-picker {
 	&__row {
+		* {
+			cursor: pointer;
+		}
+
 		&--selected {
 			background-color: var(--color-background-dark);
 		}
