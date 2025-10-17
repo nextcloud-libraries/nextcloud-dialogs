@@ -10,6 +10,7 @@
 		:class="[
 			{
 				'file-picker__row--selected': selected && !showCheckbox,
+				'file-picker__row--not-navigatable': isDirectory && !isNavigatable,
 				'file-picker__row--not-pickable': !isPickable,
 			},
 		]"
@@ -47,7 +48,7 @@
 <script setup lang="ts">
 import type { INode } from '@nextcloud/files'
 
-import { FileType, formatFileSize } from '@nextcloud/files'
+import { FileType, formatFileSize, Permission } from '@nextcloud/files'
 import { computed } from 'vue'
 import NcCheckboxRadioSwitch from '@nextcloud/vue/components/NcCheckboxRadioSwitch'
 import NcDateTime from '@nextcloud/vue/components/NcDateTime'
@@ -99,6 +100,11 @@ const isDirectory = computed(() => props.node.type === FileType.Folder)
 const isPickable = computed(() => props.canPick && (props.allowPickDirectory || !isDirectory.value))
 
 /**
+ * If this node is not readable, then we cannot navigate to it.
+ */
+const isNavigatable = computed(() => (props.node.permissions & Permission.READ) === Permission.READ)
+
+/**
  * Toggle the selection state
  */
 function toggleSelected() {
@@ -114,7 +120,9 @@ function toggleSelected() {
  */
 function handleClick() {
 	if (isDirectory.value) {
-		emit('enterDirectory', props.node)
+		if (isNavigatable.value) {
+			emit('enterDirectory', props.node)
+		}
 	} else {
 		toggleSelected()
 	}
@@ -145,6 +153,12 @@ function handleKeyDown(event: KeyboardEvent) {
 			background-color: var(--color-background-dark);
 		}
 
+		&--not-navigatable {
+			filter: saturate(0.7);
+			opacity: 0.7;
+		}
+
+		&--not-navigatable,
 		&--not-pickable {
 
 			* {
