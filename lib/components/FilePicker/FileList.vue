@@ -64,7 +64,7 @@
 						:key="file.fileid || file.path"
 						:allow-pick-directory="allowPickDirectory"
 						:show-checkbox="multiselect"
-						:can-pick="multiselect || selectedFiles.length === 0 || selectedFiles.includes(file)"
+						:can-pick="(multiselect || selectedFiles.length === 0 || selectedFiles.includes(file)) && (canPick === undefined || canPick(file))"
 						:selected="selectedFiles.includes(file)"
 						:node="file"
 						:crop-image-previews="cropImagePreviews"
@@ -91,6 +91,7 @@ import IconSortAscending from 'vue-material-design-icons/MenuUp.vue'
 import IconSortDescending from 'vue-material-design-icons/MenuDown.vue'
 import LoadingTableRow from './LoadingTableRow.vue'
 import FileListRow from './FileListRow.vue'
+import type { IFilePickerCanPick } from '../types'
 
 const props = defineProps<{
 	currentView: FileListViews,
@@ -98,6 +99,10 @@ const props = defineProps<{
 	allowPickDirectory: boolean
 	loading: boolean
 	files: INode[]
+	/**
+	 * Custom function to decide if a node can be picked
+	 */
+	canPick?: IFilePickerCanPick
 	selectedFiles: INode[]
 	path: string
 }>()

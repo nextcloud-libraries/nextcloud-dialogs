@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-import type { Node } from '@nextcloud/files'
+import type { INode, Node } from '@nextcloud/files'
 
 export enum DialogSeverity {
 	Info = 'info',
@@ -67,3 +67,8 @@ export type IFilePickerButtonFactory = (selectedNodes: Node[], currentPath: stri
  * Type of filter functions to filter the FilePicker's file list
  */
 export type IFilePickerFilter = (node: Node) => boolean
+
+/**
+ * Type of functions to allow or not picking a node
+ */
+export type IFilePickerCanPick = (node: INode) => boolean

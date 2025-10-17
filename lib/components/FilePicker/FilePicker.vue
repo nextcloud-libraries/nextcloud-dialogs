@@ -40,6 +40,7 @@
 				:multiselect="multiselect"
 				:loading="isLoading"
 				:name="viewHeadline"
+				:can-pick="canPickFn"
 				@update:path="currentView = 'files'" />
 			<NcEmptyContent v-else-if="filterString"
 				:name="t('No matching files')"
@@ -61,7 +62,7 @@
 
 <script setup lang="ts">
 import type { Node } from '@nextcloud/files'
-import type { IFilePickerButton, IFilePickerButtonFactory, IFilePickerFilter } from '../types.ts'
+import type { IFilePickerButton, IFilePickerButtonFactory, IFilePickerCanPick, IFilePickerFilter } from '../types.ts'
 import type { IFilesViewId } from '../../composables/views.ts'
 
 import IconFile from 'vue-material-design-icons/File.vue'
@@ -109,6 +110,11 @@ const props = withDefaults(defineProps<{
 	filterFn?: IFilePickerFilter
 
 	/**
+	 * Custom function to decide if a node can be picked
+	 */
+	canPickFn?: IFilePickerCanPick
+
+	/**
 	 * List of allowed mime types
 	 * You can use placeholders for e.g. allowing all subtypes of images `['image/*']`.
 	 * Note that if unset all files are allowed, which is the same as passing `['*∕*']`
@@ -132,6 +138,7 @@ const props = withDefaults(defineProps<{
 	disabledNavigation: false,
 	container: 'body',
 	filterFn: undefined,
+	canPickFn: undefined,
 	mimetypeFilter: () => [],
 	multiselect: true,
 	path: undefined,
