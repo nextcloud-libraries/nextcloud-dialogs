@@ -67,7 +67,7 @@
 						:key="file.fileid || file.path"
 						:allow-pick-directory="allowPickDirectory"
 						:show-checkbox="multiselect"
-						:can-pick="multiselect || selectedFiles.length === 0 || selectedFiles.includes(file)"
+						:can-pick="(multiselect || selectedFiles.length === 0 || selectedFiles.includes(file)) && (canPick === undefined || canPick(file))"
 						:selected="selectedFiles.includes(file)"
 						:node="file"
 						:crop-image-previews="cropImagePreviews"
@@ -82,6 +82,7 @@
 <script setup lang="ts">
 import type { FilesSortingMode, INode } from '@nextcloud/files'
 import type { FileListViews } from '../../composables/filesSettings.ts'
+import type { IFilePickerCanPick } from '../types.ts'
 
 import { FileType, sortNodes } from '@nextcloud/files'
 import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
@@ -125,6 +126,10 @@ const props = defineProps<{
 	 * Files to show
 	 */
 	files: INode[]
+	/**
+	 * Custom function to decide if a node can be picked
+	 */
+	canPick?: IFilePickerCanPick
 }>()
 
 /// sorting related stuff

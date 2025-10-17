@@ -10,6 +10,7 @@
 		:class="[
 			{
 				'file-picker__row--selected': selected && !showCheckbox,
+				'file-picker__row--not-pickable': !isPickable,
 			},
 		]"
 		:data-filename="node.basename"
@@ -101,6 +102,10 @@ const isPickable = computed(() => props.canPick && (props.allowPickDirectory || 
  * Toggle the selection state
  */
 function toggleSelected() {
+	if (!isPickable.value) {
+		return
+	}
+
 	emit('update:selected', !props.selected)
 }
 
@@ -139,6 +144,14 @@ function handleKeyDown(event: KeyboardEvent) {
 		&--selected {
 			background-color: var(--color-background-dark);
 		}
+
+		&--not-pickable {
+
+			* {
+				cursor: default !important;
+			}
+		}
+
 		&:hover {
 			background-color: var(--color-background-hover);
 		}
