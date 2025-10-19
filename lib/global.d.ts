@@ -3,9 +3,15 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-import type { GettextTranslationBundle } from '@nextcloud/l10n/gettext'
+import type { GettextTranslation } from '@nextcloud/l10n/gettext'
 
-declare const __TRANSLATIONS__: { locale: string, json: GettextTranslationBundle }[]
+declare global {
+	// Allow injected by vite
+	const __TRANSLATIONS__: {
+		language: string
+		translations: GettextTranslation[]
+	}[]
+}
 
 // Allow css modules
 declare module '*.module.css';

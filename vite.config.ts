@@ -7,18 +7,25 @@ import { readdirSync, readFileSync } from 'fs'
 import { po as poParser } from 'gettext-parser'
 
 const translations = readdirSync('./l10n')
-	.filter(name => name !== 'messages.pot' && name.endsWith('.pot'))
-	.map(file => {
+	.filter((name: string) => name !== 'messages.pot' && name.endsWith('.pot'))
+	.map((file: string) => {
 		const path = './l10n/' + file
-		const locale = file.slice(0, -'.pot'.length)
+		const language = file.slice(0, -'.pot'.length)
 
 		const po = readFileSync(path)
 		const json = poParser.parse(po)
+		// compress the translations
+		const translations = Object.entries(json.translations[''])
+			.filter(([key]) => key)
+			// eslint-disable-next-line @typescript-eslint/no-unused-vars
+			.map(([_, value]) => value)
+
 		return {
-			locale,
-			json,
+			language,
+			translations,
 		}
 	})
+	.filter(({ translations }) => translations.length > 1)
 
 export default createLibConfig({
 	index: 'lib/index.ts',
