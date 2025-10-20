@@ -247,7 +247,7 @@ msgid "You are currently not identified."
 msgstr "Actualment no esteu identificat."
 
 msgid "You cannot leave the name empty."
-msgstr "No podeu deixar el nom en blanc."
+msgstr "No podeu deixar el nom buit."
 
 msgid "You need to choose at least one conflict solution"
 msgstr "Heu de triar com a mínim una solució de conflicte"
