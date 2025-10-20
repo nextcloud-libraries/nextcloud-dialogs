@@ -17,8 +17,7 @@ const translations = readdirSync('./l10n')
 		// compress the translations
 		const translations = Object.entries(json.translations[''])
 			.filter(([key]) => key)
-			// eslint-disable-next-line @typescript-eslint/no-unused-vars
-			.map(([_, value]) => value)
+			.map(([, value]) => value)
 
 		return {
 			language,
