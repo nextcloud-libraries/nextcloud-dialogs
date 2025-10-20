@@ -20,10 +20,10 @@ msgid "\"{char}\" is not allowed inside a name."
 msgstr "No és permès d'usar el caràcter \"{char}\" en un nom."
 
 msgid "\"{extension}\" is not an allowed name."
-msgstr "\"{extension}\" no és un nom vàlid."
+msgstr "\"{extension}\" no és un nom permès."
 
 msgid "\"{name}\" is an invalid folder name."
-msgstr "\"{name}\" no és vàlid com a nom de carpeta."
+msgstr "\"{name}\" no és permès com a nom de carpeta."
 
 msgid "\"{name}\" is not an allowed folder name"
 msgstr "\"{name}\" no és vàlid com a nom de carpeta"
