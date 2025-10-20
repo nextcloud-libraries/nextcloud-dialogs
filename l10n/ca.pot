@@ -4,12 +4,12 @@
 # v v <e670006006@gmail.com>, 2024
 # Marc Riera <marcriera@softcatala.org>, 2024
 # Sergi Font, 2024
-# Oriol Lladó, 2025
 # Jaume Batlle Brugal <Jaumetbb@gmail.com>, 2025
+# Leandro Navarro <leandro@pangea.org>, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Jaume Batlle Brugal <Jaumetbb@gmail.com>, 2025\n"
+"Last-Translator: Leandro Navarro <leandro@pangea.org>, 2025\n"
 "Language-Team: Catalan (https://app.transifex.com/nextcloud/teams/64236/ca/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: ca\n"
@@ -19,13 +19,13 @@ msgid "\"{char}\" is not allowed inside a name."
 msgstr "No és permès d'usar el caràcter \"{char}\" en un nom."
 
 msgid "\"{extension}\" is not an allowed name."
-msgstr "\"{extension}\" no és un nom vàlid."
+msgstr "\"{extension}\" no és un nom permès."
 
 msgid "\"{name}\" is an invalid folder name."
 msgstr "\"{name}\" no és vàlid com a nom de carpeta."
 
 msgid "\"{name}\" is not an allowed folder name"
-msgstr "\"{name}\" no és vàlid com a nom de carpeta."
+msgstr "\"{name}\" no és vàlid com a nom de carpeta"
 
 msgid "\"{segment}\" is a reserved name and not allowed."
 msgstr "\"{segment}\" és un mot reservat i no està permès com a nom."
@@ -33,11 +33,24 @@ msgstr "\"{segment}\" és un mot reservat i no està permès com a nom."
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "\"/\" no està permès en el nom d'una carpeta."
 
+msgid "%n file conflict"
+msgid_plural "%n files conflict"
+msgstr[0] "%n conflicte de fitxers"
+msgstr[1] "%n conflictes de fitxers"
+
+msgid "%n file conflict in {dirname}"
+msgid_plural "%n file conflicts in {dirname}"
+msgstr[0] "%n onflicte de fitxers a {dirname}"
+msgstr[1] "%n conflictes de fitxers a {dirname}"
+
 msgid "All files"
 msgstr "Tots els fitxers"
 
 msgid "Cancel"
-msgstr "Cancel·la"
+msgstr "Cancel·lar"
+
+msgid "Cancel the entire operation"
+msgstr "Cancel·lar tota l'operació"
 
 msgid "Choose"
 msgstr "Tria"
@@ -49,6 +62,12 @@ msgid "Choose %n file"
 msgid_plural "Choose %n files"
 msgstr[0] "Tria %n fitxer"
 msgstr[1] "Tria %n fitxers"
+
+msgid "Confirm"
+msgstr "Confirma"
+
+msgid "Continue"
+msgstr "Continuar"
 
 msgid "Copy"
 msgstr "Copia"
@@ -73,6 +92,9 @@ msgstr "Selector de visualització actual"
 
 msgid "Enter your name"
 msgstr "Escriviu el vostre nom"
+
+msgid "Existing version"
+msgstr "Versió existent"
 
 msgid "Failed to set nickname."
 msgstr "No s'ha pogut desar el sobrenom."
@@ -99,8 +121,18 @@ msgstr "Identificació com a convidat"
 msgid "Home"
 msgstr "Inici"
 
+msgid ""
+"If you select both versions, the incoming file will have a number added to "
+"its name."
+msgstr ""
+"Si seleccioneu les dues versions, el fitxer entrant tindrà un número afegit "
+"al seu nom."
+
 msgid "Invalid name."
-msgstr "Nom no vàlid"
+msgstr "Nom no vàlid."
+
+msgid "Last modified date unknown"
+msgstr "Data de l'última modificació desconeguda"
 
 msgid "Modified"
 msgstr "Data de modificació"
@@ -135,6 +167,9 @@ msgstr "Carpeta nova"
 msgid "New folder name"
 msgstr "Nom de la carpeta nova"
 
+msgid "New version"
+msgstr "Nova versió"
+
 msgid "No files in here"
 msgstr "No hi ha cap fitxer"
 
@@ -145,13 +180,22 @@ msgid "No matching files"
 msgstr "No hi ha cap fitxer que coincideixi"
 
 msgid "Please enter a name with at least 2 characters."
-msgstr "Si us plau, escriu un nom amb 2 caràcters com a mínim"
+msgstr "Si us plau, escriu un nom amb 2 caràcters com a mínim."
 
 msgid "Recent"
 msgstr "Recents"
 
+msgid "Select all checkboxes"
+msgstr "Selecciona totes les caselles de selecció"
+
 msgid "Select all entries"
 msgstr "Selecciona totes les entrades"
+
+msgid "Select all existing files"
+msgstr "Selecciona tots els fitxers existents"
+
+msgid "Select all new files"
+msgstr "Selecciona tots els fitxers nous"
 
 msgid "Select entry"
 msgstr "Selecciona l'entrada"
@@ -162,6 +206,14 @@ msgstr "Selecciona la fila per a {nodename}"
 msgid "Size"
 msgstr "Mida"
 
+msgid "Skip %n file"
+msgid_plural "Skip %n files"
+msgstr[0] "Omet %n fitxer"
+msgstr[1] "Omet %n fitxers"
+
+msgid "Skip this file"
+msgstr "Omet aquest fitxer"
+
 msgid "Submit name"
 msgstr "Entreu el nom"
 
@@ -171,6 +223,23 @@ msgstr "Desfés"
 msgid "Upload some content or sync with your devices!"
 msgstr "Pugeu contingut o sincronitzeu-lo amb els vostres dispositius!"
 
+msgid ""
+"When an incoming folder is selected, any conflicting files within it will "
+"also be overwritten."
+msgstr ""
+"Quan es selecciona una carpeta entrant, també se sobreescriuran els fitxers "
+"que hi entrin en conflicte."
+
+msgid ""
+"When an incoming folder is selected, the content is written into the "
+"existing folder and a recursive conflict resolution is performed."
+msgstr ""
+"Quan es selecciona una carpeta entrant, el contingut s'escriu a la carpeta "
+"existent i es realitza una resolució recursiva de conflictes."
+
+msgid "Which files do you want to keep?"
+msgstr "Quins fitxers voleu conservar?"
+
 msgid "You are currently identified as {nickname}."
 msgstr "Actualment se us mostra com a {nickname}."
 
@@ -178,4 +247,11 @@ msgid "You are currently not identified."
 msgstr "Actualment no esteu identificat."
 
 msgid "You cannot leave the name empty."
-msgstr "No podeu deixar el nom en blanc."
+msgstr "No podeu deixar el nom buit."
+
+msgid "You need to choose at least one conflict solution"
+msgstr "Heu de triar com a mínim una solució de conflicte"
+
+msgid "You need to select at least one version of each file to continue."
+msgstr ""
+"Heu de seleccionar com a mínim una versió de cada fitxer per continuar."
