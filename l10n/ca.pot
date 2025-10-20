@@ -4,7 +4,6 @@
 # v v <e670006006@gmail.com>, 2024
 # Marc Riera <marcriera@softcatala.org>, 2024
 # Sergi Font, 2024
-# Oriol Lladó, 2025
 # Jaume Batlle Brugal <Jaumetbb@gmail.com>, 2025
 # Leandro Navarro <leandro@pangea.org>, 2025
 # 
@@ -48,7 +47,7 @@ msgid "All files"
 msgstr "Tots els fitxers"
 
 msgid "Cancel"
-msgstr "Cancel·la"
+msgstr "Cancel·lar"
 
 msgid "Cancel the entire operation"
 msgstr "Cancel·la tota l'operació"
