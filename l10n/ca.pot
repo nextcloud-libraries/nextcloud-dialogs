@@ -50,7 +50,7 @@ msgid "Cancel"
 msgstr "Cancel·lar"
 
 msgid "Cancel the entire operation"
-msgstr "Cancel·la tota l'operació"
+msgstr "Cancel·lar tota l'operació"
 
 msgid "Choose"
 msgstr "Tria"
@@ -67,7 +67,7 @@ msgid "Confirm"
 msgstr "Confirma"
 
 msgid "Continue"
-msgstr "Continua"
+msgstr "Continuar"
 
 msgid "Copy"
 msgstr "Copia"
