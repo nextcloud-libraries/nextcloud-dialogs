@@ -6,6 +6,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v7.1.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v7.0.1...v7.1.0)
+
+### Enhancements
+
+* feat(FilePicker): Improve pick and navigation logic to match user expectation by @artonge in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2033
+
+### Fixed
+
+* fix: compress translations in assets by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2044
+
+### Changes
+
+* Updates for project Nextcloud dialogs library by @transifex-integration[bot] in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2045
+* chore(deps): Update browserslist by @artonge in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2047
+
 ## [v7.0.1](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v7.0.0...v7.0.1)
 ### Fixed
 * fix: export `showConfirmation` method [\#2029](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2029) \([susnux](https://github.com/susnux)\)
@@ -71,7 +86,7 @@ For Vue 3 apps nothing changed, meaning the app and this library will share the 
 * refactor: adjust code to comply with code style (again) [\#1774](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1774) \([susnux](https://github.com/susnux)\)
 * chore!: remove `spawnDialog` in favor of version from `@nextcloud/vue` [\#1783](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1783) \([susnux](https://github.com/susnux)\)
 * refactor: do not use Node internals but @nextcloud/paths package [\#1752](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1752) \([susnux](https://github.com/susnux)\)
-* Updates for project Nextcloud dialogs library by @transifex-integration[bot] 
+* Updates for project Nextcloud dialogs library by @transifex-integration[bot]
 * chore(deps): @nextcloud family + various upgrades [\#1905](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1905) \([skjnldsv](https://github.com/skjnldsv)\)
 * chore: fix node version for dependabot [\#1960](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1960) \([susnux](https://github.com/susnux)\)
 * chore(dialogs)!: remove deprecated `setHTML` method [\#1985](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1985) \([susnux](https://github.com/susnux)\)
