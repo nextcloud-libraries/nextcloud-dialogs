@@ -57,5 +57,6 @@ export type {
 	IDialogButton,
 	IDialogSeverity,
 	IFilePickerButton,
+	IFilePickerCanPick,
 	IFilePickerFilter,
 } from './components/types.ts'

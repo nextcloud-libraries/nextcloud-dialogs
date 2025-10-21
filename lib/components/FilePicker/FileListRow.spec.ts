@@ -3,22 +3,109 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-import { File } from '@nextcloud/files'
+import type { VueWrapper } from '@vue/test-utils'
+import type { ComponentProps } from 'vue-component-type-helpers'
+
+import { File, Folder, Permission } from '@nextcloud/files'
 import { shallowMount } from '@vue/test-utils'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { nextTick } from 'vue'
 import FileListRow from './FileListRow.vue'
 
-describe('FilePicker: FileListRow', () => {
-	const node = new File({
-		owner: null,
-		mtime: new Date(),
-		mime: 'text/plain',
-		source: 'https://example.com/dav/a.txt',
-		root: '/',
-		attributes: { displayName: 'test' },
-	})
+type SubmitAction = (wrapper: VueWrapper<any>) => Promise<void>
+type ElementEvent = { 'update:selected': boolean | undefined, enterDirectory: Folder | undefined }
 
+async function clickCheckboxAction(wrapper: VueWrapper<any>) {
+	wrapper.find('input[type="checkbox"]').trigger('click')
+}
+
+async function clickElementAction(wrapper: VueWrapper<any>) {
+	wrapper.find('[data-testid="row-name"]').trigger('click')
+}
+
+async function pressEnterAction(wrapper: VueWrapper<any>) {
+	wrapper.element.dispatchEvent(new KeyboardEvent('keydown', { bubbles: true, key: 'Enter' }))
+	await nextTick()
+}
+
+function testSubmitNode(name: string, props: ComponentProps<typeof FileListRow>, eventPayload: ElementEvent, actionCallback: SubmitAction) {
+	it(name, async () => {
+		const wrapper = shallowMount(FileListRow, {
+			props,
+			global: {
+				stubs: {
+					NcCheckboxRadioSwitch: {
+						template: '<label><input type="checkbox" @click="$emit(\'update:model-value\', true)" ></label>',
+					},
+				},
+			},
+		})
+
+		await actionCallback(wrapper)
+
+		for (const [event, payload] of Object.entries(eventPayload)) {
+			if (payload === undefined) {
+				expect(wrapper.emitted(event)).toBeUndefined()
+			} else {
+				expect(wrapper.emitted(event)).toEqual([[payload]])
+			}
+		}
+	})
+}
+
+const node = new File({
+	owner: 'alice',
+	mtime: new Date(),
+	mime: 'text/plain',
+	source: 'https://example.com/remote.php/dav/alice/a.txt',
+	root: '/',
+	attributes: { displayName: 'test' },
+})
+
+const folder = new Folder({
+	owner: 'alice',
+	mtime: new Date(),
+	mime: 'httpd/unix-directory',
+	source: 'https://example.com/remote.php/dav/alice/b',
+	root: '/',
+	permissions: Permission.ALL,
+	attributes: { displayName: 'test folder' },
+})
+
+const folderNonReadable = new Folder({
+	owner: 'alice',
+	mtime: new Date(),
+	mime: 'httpd/unix-directory',
+	source: 'https://example.com/remote.php/dav/alice/b',
+	root: '/',
+	permissions: Permission.ALL & ~Permission.READ,
+	attributes: { displayName: 'test folder' },
+})
+
+const defaultOptions = {
+	selected: false,
+	cropImagePreviews: true,
+	canPick: true,
+	showCheckbox: true,
+	allowPickDirectory: true,
+}
+
+const noEmits = {
+	'update:selected': undefined,
+	enterDirectory: undefined,
+}
+
+const selectNode = {
+	'update:selected': true,
+	enterDirectory: undefined,
+}
+
+const navigateToFolder = {
+	'update:selected': undefined,
+	enterDirectory: folder,
+}
+
+describe('FilePicker: FileListRow', () => {
 	afterEach(() => {
 		vi.restoreAllMocks()
 	})
@@ -64,82 +151,73 @@ describe('FilePicker: FileListRow', () => {
 		expect(wrapper.find('[data-testid="row-checkbox"]').exists()).toBe(false)
 	})
 
-	it('Click checkbox triggers select', async () => {
-		const wrapper = shallowMount(FileListRow, {
-			props: {
-				allowPickDirectory: false,
-				selected: false,
-				showCheckbox: true,
-				canPick: true,
-				node,
-				cropImagePreviews: true,
-			},
-			global: {
-				stubs: {
-					NcCheckboxRadioSwitch: {
-						template: '<label><input type="checkbox" @click="$emit(\'update:model-value\', true)" ></label>',
-					},
-				},
-			},
+	describe('when node is a file', () => {
+		const fileOptions = {
+			...defaultOptions,
+			node,
+		}
+
+		testSubmitNode('Click checkbox triggers select', { ...fileOptions }, selectNode, clickCheckboxAction)
+		testSubmitNode('Click element triggers select', { ...fileOptions }, selectNode, clickElementAction)
+		testSubmitNode('Click element without checkbox triggers select', { ...fileOptions, showCheckbox: false }, selectNode, clickElementAction)
+		testSubmitNode('Enter triggers select', { ...fileOptions, showCheckbox: false }, selectNode, pressEnterAction)
+
+		describe('canPick: false', () => {
+			const options = {
+				...fileOptions,
+				canPick: false,
+			}
+
+			testSubmitNode('Click checkbox does not triggers select', options, noEmits, clickCheckboxAction)
+			testSubmitNode('Click element does not triggers select', options, noEmits, clickElementAction)
+			testSubmitNode('Click element without checkbox does not triggers select', { ...options, showCheckbox: false }, noEmits, clickElementAction)
+			testSubmitNode('Enter does not triggers select', { ...options, showCheckbox: false }, noEmits, pressEnterAction)
 		})
-
-		await wrapper.find('input[type="checkbox"]').trigger('click')
-
-		// one event with payload `true` is expected
-		expect(wrapper.emitted('update:selected')).toEqual([[true]])
 	})
 
-	it('Click element triggers select', async () => {
-		const wrapper = shallowMount(FileListRow, {
-			props: {
-				allowPickDirectory: false,
-				selected: false,
-				showCheckbox: true,
-				canPick: true,
-				node,
-				cropImagePreviews: true,
-			},
+	describe('when node is a folder', () => {
+		const folderOptions = {
+			...defaultOptions,
+			node: folder,
+		}
+
+		testSubmitNode('Click checkbox triggers select', folderOptions, selectNode, clickCheckboxAction)
+		testSubmitNode('Click element navigates to it', folderOptions, navigateToFolder, clickElementAction)
+		testSubmitNode('Click element without checkbox navigates to it', { ...folderOptions, showCheckbox: false }, navigateToFolder, clickElementAction)
+		testSubmitNode('Enter navigates to it', { ...folderOptions, showCheckbox: false }, navigateToFolder, pressEnterAction)
+
+		describe('canPick: false', () => {
+			const options = {
+				...folderOptions,
+				canPick: false,
+			}
+
+			testSubmitNode('Click checkbox does not triggers select', options, noEmits, clickCheckboxAction)
+			testSubmitNode('Click element navigates to it', options, navigateToFolder, clickElementAction)
+			testSubmitNode('Click element without checkbox navigates to it', { ...options, showCheckbox: false }, navigateToFolder, clickElementAction)
+			testSubmitNode('Enter navigates to it', { ...options, showCheckbox: false }, navigateToFolder, pressEnterAction)
 		})
 
-		await wrapper.find('[data-testid="row-name"]').trigger('click')
+		describe('without READ permissions', () => {
+			const options = {
+				...folderOptions,
+				node: folderNonReadable,
+			}
 
-		// one event with payload `true` is expected
-		expect(wrapper.emitted('update:selected')).toEqual([[true]])
-	})
-
-	it('Click element without checkbox triggers select', async () => {
-		const wrapper = shallowMount(FileListRow, {
-			props: {
-				allowPickDirectory: false,
-				selected: false,
-				showCheckbox: false,
-				canPick: true,
-				node,
-				cropImagePreviews: true,
-			},
+			testSubmitNode('Click checkbox triggers select', options, selectNode, clickCheckboxAction)
+			testSubmitNode('Click element does not navigates to it', options, noEmits, clickElementAction)
+			testSubmitNode('Click element without checkbox does not navigates to it', { ...options, showCheckbox: false }, noEmits, clickElementAction)
+			testSubmitNode('Enter does not navigates to it', { ...options, showCheckbox: false }, noEmits, pressEnterAction)
 		})
 
-		await wrapper.find('[data-testid="row-name"]').trigger('click')
-
-		// one event with payload `true` is expected
-		expect(wrapper.emitted('update:selected')).toEqual([[true]])
-	})
-
-	it('Enter triggers select', async () => {
-		const wrapper = shallowMount(FileListRow, {
-			props: {
+		describe('allowPickDirectory: false', () => {
+			const options = {
+				...folderOptions,
+				node: folderNonReadable,
 				allowPickDirectory: false,
-				selected: false,
-				showCheckbox: false,
-				canPick: true,
-				node,
-				cropImagePreviews: true,
-			},
+			}
+
+			testSubmitNode('Click checkbox does not triggers select', options, noEmits, clickCheckboxAction)
 		})
-
-		wrapper.element.dispatchEvent(new KeyboardEvent('keydown', { bubbles: true, key: 'Enter' }))
-		await nextTick()
-
-		expect(wrapper.emitted('update:selected')).toEqual([[true]])
 	})
 })

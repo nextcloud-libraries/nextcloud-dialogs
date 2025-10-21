@@ -26,7 +26,7 @@ test('Show confirmation dialog', async () => {
 	const confirm = getByRole(dialog, 'button', { name: 'Confirm' })
 	expect(confirm).toBeInstanceOf(HTMLElement)
 	await fireEvent(confirm, new MouseEvent('click', { bubbles: true }))
-	expect(promise).resolves.toBe(true)
+	await expect(promise).resolves.toBe(true)
 })
 
 test('show confirmation dialog with reject', async () => {
@@ -43,7 +43,7 @@ test('show confirmation dialog with reject', async () => {
 	expect(confirm).toBeInstanceOf(HTMLElement)
 	expect(reject).toBeInstanceOf(HTMLElement)
 	await fireEvent(reject, new MouseEvent('click', { bubbles: true }))
-	expect(promise).resolves.toBe(false)
+	await expect(promise).resolves.toBe(false)
 })
 
 test('show confirmation dialog and close', async () => {
@@ -56,5 +56,5 @@ test('show confirmation dialog and close', async () => {
 	const close = getByRole(dialog, 'button', { name: 'Close' })
 	expect(close).toBeInstanceOf(HTMLElement)
 	await fireEvent(close, new MouseEvent('click', { bubbles: true }))
-	expect(promise).rejects.toThrowError('Dialog closed')
+	await expect(promise).rejects.toThrowError('Dialog closed')
 })

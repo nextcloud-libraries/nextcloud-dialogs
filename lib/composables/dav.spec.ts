@@ -64,7 +64,7 @@ describe('dav composable', () => {
 		vi.resetAllMocks()
 	})
 
-	it('Sets the inital state correctly', () => {
+	it('Sets the initial state correctly', () => {
 		const client = {
 			getDirectoryContents: vi.fn(() => ({ data: [] })),
 		}
@@ -128,13 +128,13 @@ describe('dav composable', () => {
 		await waitLoaded(vue.vm)
 
 		expect(client.getDirectoryContents).toBeCalledTimes(1)
-		expect(client.getDirectoryContents.mock.calls[0][0]).toBe(`${nextcloudFiles.davRootPath}/`)
+		expect(client.getDirectoryContents.mock.calls[0]![0]).toBe(`${nextcloudFiles.davRootPath}/`)
 
 		vue.setProps({ currentPath: '/other' })
 		await waitLoaded(vue.vm)
 
 		expect(client.getDirectoryContents).toBeCalledTimes(2)
-		expect(client.getDirectoryContents.mock.calls[1][0]).toBe(`${nextcloudFiles.davRootPath}/other`)
+		expect(client.getDirectoryContents.mock.calls[1]![0]).toBe(`${nextcloudFiles.davRootPath}/other`)
 	})
 
 	it('reloads on view change', async () => {
@@ -158,7 +158,7 @@ describe('dav composable', () => {
 
 		expect(client.search).not.toBeCalled()
 		expect(client.getDirectoryContents).toBeCalledTimes(1)
-		expect(client.getDirectoryContents.mock.calls[0][0]).toBe(`${nextcloudFiles.davRootPath}/`)
+		expect(client.getDirectoryContents.mock.calls[0]![0]).toBe(`${nextcloudFiles.davRootPath}/`)
 
 		vue.setProps({ currentView: 'recent' })
 		await waitLoaded(vue.vm)
