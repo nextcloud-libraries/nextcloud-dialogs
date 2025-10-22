@@ -14,7 +14,7 @@ import FileListRow from './FileListRow.vue'
 import { nextTick } from 'vue'
 
 type SubmitAction = (wrapper: VueWrapper<any>) => Promise<void>
-type ElementEvent = { 'update:selected': boolean | undefined, enterDirectory: Folder | undefined }
+type ElementEvent = { 'update:selected': boolean | undefined, 'enter-directory': Folder | undefined }
 
 async function clickCheckboxAction(wrapper: VueWrapper<any>) {
 	wrapper.find('input[type="checkbox"]').trigger('click')
@@ -91,17 +91,17 @@ const defaultOptions = {
 
 const noEmits = {
 	'update:selected': undefined,
-	enterDirectory: undefined,
+	'enter-directory': undefined,
 }
 
 const selectNode = {
 	'update:selected': true,
-	enterDirectory: undefined,
+	'enter-directory': undefined,
 }
 
 const navigateToFolder = {
 	'update:selected': undefined,
-	enterDirectory: folder,
+	'enter-directory': folder,
 }
 
 describe('FilePicker: FileListRow', () => {

@@ -114,7 +114,7 @@ function toggleSelected() {
 function handleClick() {
 	if (isDirectory.value) {
 		if (isNavigatable.value) {
-			emit('enterDirectory', props.node)
+			emit('enter-directory', props.node)
 		}
 	} else {
 		toggleSelected()
