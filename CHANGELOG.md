@@ -6,6 +6,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v6.4.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.3.2...v6.4.0)
+### 🚀 Enhancements
+* feat(FilePicker): Improve pick and navigation logic to match user expectation [\#2051](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2051)
+
+### Other Changes
+* Updated dependencies
+* chore: update workflows from organization [\#1942](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1942) \([susnux](https://github.com/susnux)\)
+* chore: update workflows from organization [\#2053](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2053) \([susnux](https://github.com/susnux)\)
+
 ## [v6.3.2](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.3.1...v6.3.2)
 ### 🐛 Fixed bugs
 * fix(PublicAuthPrompt): change default notice if identified [\#1841](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1841) \([skjnldsv](https://github.com/skjnldsv)\)
@@ -15,7 +24,6 @@ All notable changes to this project will be documented in this file.
 
 ### Other Changes
 * chore: bump node version [\#1937](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/1937) \([susnux](https://github.com/susnux)\)
-
 
 ## [v6.3.1](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.3.0...v6.3.1)
 ### 🐛 Fixed bugs
