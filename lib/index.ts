@@ -45,6 +45,7 @@ export {
 export type {
 	IDialogButton,
 	IFilePickerButton,
+	IFilePickerCanPick,
 	IFilePickerFilter,
 } from './components/types.js'
 

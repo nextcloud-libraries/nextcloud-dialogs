@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-import type { IFilePickerButton, IFilePickerButtonFactory, IFilePickerFilter } from './components/types'
+import type { IFilePickerButton, IFilePickerButtonFactory, IFilePickerCanPick, IFilePickerFilter } from './components/types'
 import type { Node } from '@nextcloud/files'
 
 import { basename } from 'path'
@@ -38,6 +38,7 @@ export class FilePicker<IsMultiSelect extends boolean> {
 	private buttons: IFilePickerButton[] | IFilePickerButtonFactory
 	private path?: string
 	private filter?: IFilePickerFilter
+	private canPick?: IFilePickerCanPick
 	private container?: string
 	private disabledNavigation: boolean
 
@@ -48,6 +49,7 @@ export class FilePicker<IsMultiSelect extends boolean> {
 		buttons: IFilePickerButton[] | IFilePickerButtonFactory,
 		path?: string,
 		filter?: IFilePickerFilter,
+		canPick?: IFilePickerCanPick,
 		container?: string,
 		disabledNavigation = false,
 	) {
@@ -57,6 +59,7 @@ export class FilePicker<IsMultiSelect extends boolean> {
 		this.directoriesAllowed = directoriesAllowed
 		this.path = path
 		this.filter = filter
+		this.canPick = canPick
 		this.buttons = buttons
 		this.container = container
 		this.disabledNavigation = disabledNavigation
@@ -80,6 +83,7 @@ export class FilePicker<IsMultiSelect extends boolean> {
 				mimetypeFilter: this.mimeTypeFilter,
 				multiselect: this.multiSelect,
 				filterFn: this.filter,
+				canPickFn: this.canPick,
 				disabledNavigation: this.disabledNavigation,
 			}, (...rest: unknown[]) => {
 				const [nodes] = rest as [nodes: Node[]]
@@ -116,6 +120,7 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 	private directoriesAllowed = false
 	private path?: string
 	private filter?: IFilePickerFilter
+	private canPick?: IFilePickerCanPick
 	private buttons: IFilePickerButton[] | IFilePickerButtonFactory = []
 	private container?: string
 	private disabledNavigation = false
@@ -273,6 +278,16 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 	}
 
 	/**
+	 * Add function to allow or not picking a node
+	 *
+	 * @param canPick Function to decide if a node can be picked
+	 */
+	public setCanPick(canPick: IFilePickerCanPick) {
+		this.canPick = canPick
+		return this
+	}
+
+	/**
 	 * Disable navigation (view selection)
 	 */
 	public disableNavigation() {
@@ -292,6 +307,7 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 			this.buttons,
 			this.path,
 			this.filter,
+			this.canPick,
 			this.container,
 			this.disabledNavigation,
 		)
