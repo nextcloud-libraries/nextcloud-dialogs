@@ -6,6 +6,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v6.4.1](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.3.2...v6.4.0)
+### 🐛 Fixed bugs
+* fix(FileListRow): enter-directory event name [\#2059](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2059) \([artonge](https://github.com/artonge)\)
+
 ## [v6.4.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.3.2...v6.4.0)
 ### 🚀 Enhancements
 * feat(FilePicker): Improve pick and navigation logic to match user expectation [\#2051](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2051)
