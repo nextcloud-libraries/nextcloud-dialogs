@@ -29,11 +29,28 @@ msgstr "„{segment}“ je vyhrazeným názvem a není možné ho použít."
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "znak „/“ (dopředné lomítko) není možné použít uvnitř názvu složky."
 
+msgid "%n file conflict"
+msgid_plural "%n files conflict"
+msgstr[0] "%n kolize souboru"
+msgstr[1] "%n kolize souborů"
+msgstr[2] "%n kolizí souborů"
+msgstr[3] "%n kolize souborů"
+
+msgid "%n file conflict in {dirname}"
+msgid_plural "%n file conflicts in {dirname}"
+msgstr[0] "%n kolize souborů v {dirname}"
+msgstr[1] "%n kolize souborů v {dirname}"
+msgstr[2] "%n kolizí souborů v {dirname}"
+msgstr[3] "%n kolize souborů v {dirname}"
+
 msgid "All files"
 msgstr "Veškeré soubory"
 
 msgid "Cancel"
 msgstr "Storno"
+
+msgid "Cancel the entire operation"
+msgstr "Zrušit celou operaci"
 
 msgid "Choose"
 msgstr "Zvolit"
@@ -47,6 +64,12 @@ msgstr[0] "Zvolte %n soubor"
 msgstr[1] "Zvolte %n soubory"
 msgstr[2] "Zvolte %n souborů"
 msgstr[3] "Zvolte %n soubory"
+
+msgid "Confirm"
+msgstr "Potvrdit"
+
+msgid "Continue"
+msgstr "Pokračovat"
 
 msgid "Copy"
 msgstr "Zkopírovat"
@@ -72,6 +95,9 @@ msgstr "Výběr stávajícího zobrazení"
 msgid "Enter your name"
 msgstr "Zadejte své jméno"
 
+msgid "Existing version"
+msgstr "Existující verze"
+
 msgid "Failed to set nickname."
 msgstr "Nepodařilo se nastavit přezdívku."
 
@@ -96,8 +122,17 @@ msgstr "Identifikace hosta"
 msgid "Home"
 msgstr "Domů"
 
+msgid ""
+"If you select both versions, the incoming file will have a number added to "
+"its name."
+msgstr ""
+"Pokud vyberete obě verze, pak k názvu příchozího souboru bude přidáno číslo."
+
 msgid "Invalid name."
 msgstr "Neplatný název."
+
+msgid "Last modified date unknown"
+msgstr "Datum poslední změny neznámé"
 
 msgid "Modified"
 msgstr "Změněno"
@@ -132,6 +167,9 @@ msgstr "Nová složka"
 msgid "New folder name"
 msgstr "Název pro novou složku"
 
+msgid "New version"
+msgstr "Nová verze"
+
 msgid "No files in here"
 msgstr "Nejsou zde žádné soubory"
 
@@ -147,8 +185,17 @@ msgstr "Zadejte jméno dlouhé alespoň 2 znaky."
 msgid "Recent"
 msgstr "Nedávné"
 
+msgid "Select all checkboxes"
+msgstr "Vybrat všechny zaškrtávací kolonky"
+
 msgid "Select all entries"
 msgstr "Vybrat všechny položky"
+
+msgid "Select all existing files"
+msgstr "Vybrat všechny existující soubory"
+
+msgid "Select all new files"
+msgstr "Vybrat všechny nové soubory"
 
 msgid "Select entry"
 msgstr "Vybrat položku"
@@ -158,6 +205,16 @@ msgstr "Vybrat řádek pro {nodename}"
 
 msgid "Size"
 msgstr "Velikost"
+
+msgid "Skip %n file"
+msgid_plural "Skip %n files"
+msgstr[0] "Přeskočit %n soubor"
+msgstr[1] "Přeskočit %n soubory"
+msgstr[2] "Přeskočit %n souborů"
+msgstr[3] "Přeskočit %n soubory"
+
+msgid "Skip this file"
+msgstr "Přeskočit tento soubor"
 
 msgid "Submit name"
 msgstr "Odeslat jméno"
@@ -169,6 +226,23 @@ msgid "Upload some content or sync with your devices!"
 msgstr ""
 "Nahrajte sem nějaký obsah nebo proveďte synchronizaci se svými zařízeními!"
 
+msgid ""
+"When an incoming folder is selected, any conflicting files within it will "
+"also be overwritten."
+msgstr ""
+"Pokud je vybrána příchozí složka, budou v ní také přepsány jakékoli "
+"kolidující soubory."
+
+msgid ""
+"When an incoming folder is selected, the content is written into the "
+"existing folder and a recursive conflict resolution is performed."
+msgstr ""
+"Pokud je vybrána příchozí složka, je obsah zapsán do existující složky a je "
+"provedeno rekurzivní vyřešení kolizí."
+
+msgid "Which files do you want to keep?"
+msgstr "Které soubory chcete ponechat?"
+
 msgid "You are currently identified as {nickname}."
 msgstr "V tuto chvíli jste identifikováni jako {nickname}."
 
@@ -177,3 +251,11 @@ msgstr "V tuto chvíli nejste identifikovaní."
 
 msgid "You cannot leave the name empty."
 msgstr "Jméno nelze ponechat nevyplněné."
+
+msgid "You need to choose at least one conflict solution"
+msgstr "Je třeba zvolit alespoň jedno z řešení kolize"
+
+msgid "You need to select at least one version of each file to continue."
+msgstr ""
+"Aby bylo možné pokračovat, je třeba vybrat alespoň jednu verzi od každého "
+"souboru."
