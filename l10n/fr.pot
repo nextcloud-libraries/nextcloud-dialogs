@@ -1,18 +1,18 @@
 # 
 # Translators:
-# John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Rémi LEBLOND, 2023
 # Mordecai, 2023
 # fleopaulD, 2023
 # L. Ch., 2024
-# Jérôme HERBINET, 2024
 # DEV314R, 2024
 # Benoit Pruneau, 2025
 # Caro Leviia, 2025
+# Jérôme HERBINET, 2025
+# Benoit H, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Caro Leviia, 2025\n"
+"Last-Translator: Benoit H, 2025\n"
 "Language-Team: French (https://app.transifex.com/nextcloud/teams/64236/fr/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: fr\n"
@@ -36,11 +36,26 @@ msgstr "\"{segment}\" est un nom réservé et n'est pas autorisé."
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "Le caractère \"/\" n'est pas autorisé dans un nom de dossier."
 
+msgid "%n file conflict"
+msgid_plural "%n files conflict"
+msgstr[0] "%n conflit de fichier"
+msgstr[1] "%n conflit de fichiers"
+msgstr[2] "%n conflit de fichiers"
+
+msgid "%n file conflict in {dirname}"
+msgid_plural "%n file conflicts in {dirname}"
+msgstr[0] "%nconflit de fichier dans {dirname}"
+msgstr[1] "%n conflit de fichiers dans {dirname}"
+msgstr[2] "%nconflit de fichiers dans {dirname}"
+
 msgid "All files"
 msgstr "Tous les fichiers"
 
 msgid "Cancel"
 msgstr "Annuler"
+
+msgid "Cancel the entire operation"
+msgstr "Tout annuler "
 
 msgid "Choose"
 msgstr "Choisir"
@@ -53,6 +68,12 @@ msgid_plural "Choose %n files"
 msgstr[0] "Choisir %n fichier"
 msgstr[1] "Choisir %n fichiers"
 msgstr[2] "Choisir %n fichiers "
+
+msgid "Confirm"
+msgstr "Confirmer"
+
+msgid "Continue"
+msgstr "Continuer"
 
 msgid "Copy"
 msgstr "Copier"
@@ -78,6 +99,9 @@ msgstr "Sélecteur d'affichage actuel"
 msgid "Enter your name"
 msgstr "Entrez votre nom"
 
+msgid "Existing version"
+msgstr "Version actuelle "
+
 msgid "Failed to set nickname."
 msgstr "Échec de définition du surnom."
 
@@ -102,8 +126,18 @@ msgstr "Identification d'invité"
 msgid "Home"
 msgstr "Accueil"
 
+msgid ""
+"If you select both versions, the incoming file will have a number added to "
+"its name."
+msgstr ""
+"Si vous conservez les deux versions, le fichier reçu sera renommé avec un "
+"numéro."
+
 msgid "Invalid name."
 msgstr "Nom invalide."
+
+msgid "Last modified date unknown"
+msgstr "Date de modification inconnue"
 
 msgid "Modified"
 msgstr "Modifié"
@@ -138,6 +172,9 @@ msgstr "Nouveau dossier"
 msgid "New folder name"
 msgstr "Nom du nouveau dossier"
 
+msgid "New version"
+msgstr "Nouvel version"
+
 msgid "No files in here"
 msgstr "Aucun fichier ici"
 
@@ -153,26 +190,61 @@ msgstr "Veuillez entrer un nom avec au moins 2 caractères."
 msgid "Recent"
 msgstr "Récents"
 
+msgid "Select all checkboxes"
+msgstr "Sélectionner toutes les cases à cocher"
+
 msgid "Select all entries"
 msgstr "Tout sélectionner"
+
+msgid "Select all existing files"
+msgstr "Sélectionner tous les fichiers existants"
+
+msgid "Select all new files"
+msgstr "Sélectionner tous les nouveaux fichiers"
 
 msgid "Select entry"
 msgstr "Sélectionner une entrée"
 
 msgid "Select the row for {nodename}"
-msgstr "Sélectionner l'enregistrement pour {nodename}"
+msgstr "Sélectionner la ligne correspondant à {nodename}"
 
 msgid "Size"
 msgstr "Taille"
+
+msgid "Skip %n file"
+msgid_plural "Skip %n files"
+msgstr[0] "Ignorer %n fichier"
+msgstr[1] "Ignorer %n fichiers "
+msgstr[2] "Ignorer %n fichiers "
+
+msgid "Skip this file"
+msgstr "Ignorer ce fichier"
 
 msgid "Submit name"
 msgstr "Envoyer le nom"
 
 msgid "Undo"
-msgstr "Rétablir"
+msgstr "Annuler"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Chargez du contenu ou synchronisez avec vos équipements !"
+
+msgid ""
+"When an incoming folder is selected, any conflicting files within it will "
+"also be overwritten."
+msgstr ""
+"En sélectionnant un dossier entrant, les fichiers en conflit qu’il contient "
+"seront automatiquement écrasés."
+
+msgid ""
+"When an incoming folder is selected, the content is written into the "
+"existing folder and a recursive conflict resolution is performed."
+msgstr ""
+"Lorsque vous sélectionnez un dossier entrant, son contenu est ajouté au "
+"dossier existant et les conflits sont résolus automatiquement."
+
+msgid "Which files do you want to keep?"
+msgstr "Quels fichiers souhaitez-vous conserver ?"
 
 msgid "You are currently identified as {nickname}."
 msgstr "Vous êtes actuellement identifié comme {nickname}."
@@ -182,3 +254,9 @@ msgstr "Vous n'êtes pas identifié actuellement."
 
 msgid "You cannot leave the name empty."
 msgstr "Vous ne pouvez pas laisser le nom vide."
+
+msgid "You need to choose at least one conflict solution"
+msgstr "Vous devez choisir au moins une option pour résoudre le conflit"
+
+msgid "You need to select at least one version of each file to continue."
+msgstr "Sélectionnez au moins une version de chaque fichier pour continuer."
