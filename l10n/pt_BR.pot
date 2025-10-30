@@ -1,15 +1,15 @@
 # 
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
-# Flávio Veras <flaviove@gmail.com>, 2023
 # Cauan Henrique Zorzenon <cauanzorzenon1@protonmail.com>, 2024
 # Cristiano Silva, 2024
 # Mário Rodrigues, 2025
 # F Bausch, 2025
+# Flávio Veras <flaviove@gmail.com>, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: F Bausch, 2025\n"
+"Last-Translator: Flávio Veras <flaviove@gmail.com>, 2025\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/nextcloud/teams/64236/pt_BR/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: pt_BR\n"
@@ -33,11 +33,26 @@ msgstr "\"{segment}\" é um nome reservado e não permitido."
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "\"/\" não é permitido dentro de um nome de pasta."
 
+msgid "%n file conflict"
+msgid_plural "%n files conflict"
+msgstr[0] "%n conflito de arquivos"
+msgstr[1] "%n conflito de arquivos"
+msgstr[2] "%n conflito de arquivos"
+
+msgid "%n file conflict in {dirname}"
+msgid_plural "%n file conflicts in {dirname}"
+msgstr[0] "%n conflitos de arquivos em {dirname}"
+msgstr[1] "%n conflitos de arquivos em {dirname}"
+msgstr[2] "%n conflitos de arquivos em {dirname}"
+
 msgid "All files"
 msgstr "Todos os arquivos"
 
 msgid "Cancel"
 msgstr "Cancelar"
+
+msgid "Cancel the entire operation"
+msgstr "Cancelar toda a operação"
 
 msgid "Choose"
 msgstr "Escolher"
@@ -50,6 +65,12 @@ msgid_plural "Choose %n files"
 msgstr[0] "Escolher %n arquivo"
 msgstr[1] "Escolher %n arquivos"
 msgstr[2] "Escolher %n arquivos"
+
+msgid "Confirm"
+msgstr "Confirmar"
+
+msgid "Continue"
+msgstr "Continuar"
 
 msgid "Copy"
 msgstr "Copiar"
@@ -75,6 +96,9 @@ msgstr "Seletor de visualização atual"
 msgid "Enter your name"
 msgstr "Digite seu nome"
 
+msgid "Existing version"
+msgstr "Versão existente"
+
 msgid "Failed to set nickname."
 msgstr "Falha ao definir apelido."
 
@@ -99,8 +123,18 @@ msgstr "Identificação de convidados"
 msgid "Home"
 msgstr "Início"
 
+msgid ""
+"If you select both versions, the incoming file will have a number added to "
+"its name."
+msgstr ""
+"Se você selecionar ambas as versões, um número será adicionado ao nome do "
+"arquivo recebido."
+
 msgid "Invalid name."
 msgstr "Nome inválido."
+
+msgid "Last modified date unknown"
+msgstr "Data da última modificação desconhecida"
 
 msgid "Modified"
 msgstr "Modificado"
@@ -135,6 +169,9 @@ msgstr "Nova pasta"
 msgid "New folder name"
 msgstr "Novo nome de pasta"
 
+msgid "New version"
+msgstr "Nova versão"
+
 msgid "No files in here"
 msgstr "Nenhum arquivo aqui"
 
@@ -150,8 +187,17 @@ msgstr "Digite um nome com pelo menos 2 caracteres."
 msgid "Recent"
 msgstr "Recente"
 
+msgid "Select all checkboxes"
+msgstr "Selecione todas as caixas de seleção"
+
 msgid "Select all entries"
 msgstr "Selecionar todas as entradas"
+
+msgid "Select all existing files"
+msgstr "Selecione todos os arquivos existentes"
+
+msgid "Select all new files"
+msgstr "Selecione todos os novos arquivos"
 
 msgid "Select entry"
 msgstr "Selecionar entrada"
@@ -162,6 +208,15 @@ msgstr "Selecionar a linha para {nodename}"
 msgid "Size"
 msgstr "Tamanho"
 
+msgid "Skip %n file"
+msgid_plural "Skip %n files"
+msgstr[0] "Ignorar %n arquivos"
+msgstr[1] "Ignorar %n arquivos"
+msgstr[2] "Ignorar %n arquivos"
+
+msgid "Skip this file"
+msgstr "Ignorar este arquivo"
+
 msgid "Submit name"
 msgstr "Enviar nome"
 
@@ -171,6 +226,23 @@ msgstr "Desfazer"
 msgid "Upload some content or sync with your devices!"
 msgstr "Faça upload de algum conteúdo ou sincronize com seus dispositivos!"
 
+msgid ""
+"When an incoming folder is selected, any conflicting files within it will "
+"also be overwritten."
+msgstr ""
+"Ao selecionar uma pasta de entrada, quaisquer arquivos conflitantes dentro "
+"dela também serão sobrescritos."
+
+msgid ""
+"When an incoming folder is selected, the content is written into the "
+"existing folder and a recursive conflict resolution is performed."
+msgstr ""
+"Quando uma pasta de entrada é selecionada, o conteúdo é gravado na pasta "
+"existente e uma resolução recursiva de conflitos é realizada."
+
+msgid "Which files do you want to keep?"
+msgstr "Quais arquivos você deseja manter?"
+
 msgid "You are currently identified as {nickname}."
 msgstr "Encontra-se identificado como {nickname}"
 
@@ -179,3 +251,11 @@ msgstr "No momento, você não está identificado."
 
 msgid "You cannot leave the name empty."
 msgstr "Você não pode deixar o nome vazio."
+
+msgid "You need to choose at least one conflict solution"
+msgstr "Você precisa escolher pelo menos uma solução para o conflito."
+
+msgid "You need to select at least one version of each file to continue."
+msgstr ""
+"Você precisa selecionar pelo menos uma versão de cada arquivo para "
+"continuar."
