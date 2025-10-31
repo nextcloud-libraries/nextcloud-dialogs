@@ -34,6 +34,7 @@ export class FilePicker<IsMultiSelect extends boolean> {
 	private multiSelect: IsMultiSelect
 	private mimeTypeFilter: string[]
 	private directoriesAllowed: boolean
+	private createNewAllowed: boolean
 	private buttons: IFilePickerButton[] | IFilePickerButtonFactory
 	private path?: string
 	private filter?: IFilePickerFilter
@@ -46,6 +47,7 @@ export class FilePicker<IsMultiSelect extends boolean> {
 		multiSelect: IsMultiSelect,
 		mimeTypeFilter: string[],
 		directoriesAllowed: boolean,
+		createNewAllowed: boolean,
 		buttons: IFilePickerButton[] | IFilePickerButtonFactory,
 		path?: string,
 		filter?: IFilePickerFilter,
@@ -57,6 +59,7 @@ export class FilePicker<IsMultiSelect extends boolean> {
 		this.multiSelect = multiSelect
 		this.mimeTypeFilter = mimeTypeFilter
 		this.directoriesAllowed = directoriesAllowed
+		this.createNewAllowed = createNewAllowed
 		this.path = path
 		this.filter = filter
 		this.canPick = canPick
@@ -75,6 +78,7 @@ export class FilePicker<IsMultiSelect extends boolean> {
 
 		const nodes = await spawnDialog(FilePickerVue, {
 			allowPickDirectory: this.directoriesAllowed,
+			allowCreateNew: this.createNewAllowed,
 			buttons: this.buttons,
 			name: this.title,
 			path: this.path,
@@ -114,6 +118,7 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 	private multiSelect = false
 	private mimeTypeFilter: string[] = []
 	private directoriesAllowed = false
+	private createNewAllowed = false
 	private path?: string
 	private filter?: IFilePickerFilter
 	private canPick?: IFilePickerCanPick
@@ -255,6 +260,16 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 	}
 
 	/**
+	 * Allow to create New folders
+	 *
+	 * @param allow True to allow creating
+	 */
+	public allowCreateNew(allow = true) {
+		this.createNewAllowed = allow
+		return this
+	}
+
+	/**
 	 * Set starting path of the FilePicker
 	 *
 	 * @param path Path to start from picking
@@ -301,6 +316,7 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 			this.multiSelect as IsMultiSelect,
 			this.mimeTypeFilter,
 			this.directoriesAllowed,
+			this.createNewAllowed,
 			this.buttons,
 			this.path,
 			this.filter,

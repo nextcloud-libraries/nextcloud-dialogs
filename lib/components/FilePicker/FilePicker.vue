@@ -25,7 +25,7 @@
 			<FilePickerBreadcrumbs
 				v-if="currentView === 'files'"
 				v-model:path="currentPath"
-				:show-menu="allowPickDirectory"
+				:show-menu="allowCreateNew"
 				@create-node="onCreateFolder" />
 			<div v-else class="file-picker__view">
 				<h3>{{ viewHeadline }}</h3>
@@ -100,6 +100,13 @@ const props = withDefaults(defineProps<{
 	allowPickDirectory?: boolean
 
 	/**
+	 * Can new Files/folders be created
+	 *
+	 * @default false
+	 */
+	allowCreateNew?: boolean
+
+	/**
 	 * Is the navigation disabled
 	 */
 	disabledNavigation?: boolean
@@ -136,6 +143,7 @@ const props = withDefaults(defineProps<{
 	path?: string
 }>(), {
 	allowPickDirectory: false,
+	allowCreateNew: false,
 	disabledNavigation: false,
 	filterFn: undefined,
 	canPickFn: undefined,
