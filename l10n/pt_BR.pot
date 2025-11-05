@@ -4,12 +4,12 @@
 # Cauan Henrique Zorzenon <cauanzorzenon1@protonmail.com>, 2024
 # Cristiano Silva, 2024
 # Mário Rodrigues, 2025
-# F Bausch, 2025
 # Flávio Veras <flaviove@gmail.com>, 2025
+# F Bausch, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Flávio Veras <flaviove@gmail.com>, 2025\n"
+"Last-Translator: F Bausch, 2025\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/nextcloud/teams/64236/pt_BR/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: pt_BR\n"
@@ -35,14 +35,14 @@ msgstr "\"/\" não é permitido dentro de um nome de pasta."
 
 msgid "%n file conflict"
 msgid_plural "%n files conflict"
-msgstr[0] "%n conflito de arquivos"
-msgstr[1] "%n conflito de arquivos"
-msgstr[2] "%n conflito de arquivos"
+msgstr[0] "%n arquivo conflita"
+msgstr[1] "%n de arquivos conflitam"
+msgstr[2] "%n arquivos conflitam"
 
 msgid "%n file conflict in {dirname}"
 msgid_plural "%n file conflicts in {dirname}"
-msgstr[0] "%n conflitos de arquivos em {dirname}"
-msgstr[1] "%n conflitos de arquivos em {dirname}"
+msgstr[0] "%n conflito de arquivo em {dirname}"
+msgstr[1] "%n de conflitos de arquivos em {dirname}"
 msgstr[2] "%n conflitos de arquivos em {dirname}"
 
 msgid "All files"
@@ -210,8 +210,8 @@ msgstr "Tamanho"
 
 msgid "Skip %n file"
 msgid_plural "Skip %n files"
-msgstr[0] "Ignorar %n arquivos"
-msgstr[1] "Ignorar %n arquivos"
+msgstr[0] "Ignorar %n arquivo"
+msgstr[1] "Ignorar %n de arquivos"
 msgstr[2] "Ignorar %n arquivos"
 
 msgid "Skip this file"
