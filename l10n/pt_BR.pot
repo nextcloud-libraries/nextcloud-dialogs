@@ -41,8 +41,8 @@ msgstr[2] "%n arquivos conflitam"
 
 msgid "%n file conflict in {dirname}"
 msgid_plural "%n file conflicts in {dirname}"
-msgstr[0] "%n conflitos de arquivos em {dirname}"
-msgstr[1] "%n conflitos de arquivos em {dirname}"
+msgstr[0] "%n conflito de arquivo em {dirname}"
+msgstr[1] "%n de conflitos de arquivos em {dirname}"
 msgstr[2] "%n conflitos de arquivos em {dirname}"
 
 msgid "All files"
