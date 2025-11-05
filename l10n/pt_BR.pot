@@ -210,8 +210,8 @@ msgstr "Tamanho"
 
 msgid "Skip %n file"
 msgid_plural "Skip %n files"
-msgstr[0] "Ignorar %n arquivos"
-msgstr[1] "Ignorar %n arquivos"
+msgstr[0] "Ignorar %n arquivo"
+msgstr[1] "Ignorar %n de arquivos"
 msgstr[2] "Ignorar %n arquivos"
 
 msgid "Skip this file"
