@@ -8,11 +8,12 @@
 # Benoit Pruneau, 2025
 # Caro Leviia, 2025
 # Jérôme HERBINET, 2025
-# Benoit H, 2025
+# nomoreroses, 2025
+# William Méauzoone, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Benoit H, 2025\n"
+"Last-Translator: William Méauzoone, 2025\n"
 "Language-Team: French (https://app.transifex.com/nextcloud/teams/64236/fr/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: fr\n"
@@ -173,7 +174,7 @@ msgid "New folder name"
 msgstr "Nom du nouveau dossier"
 
 msgid "New version"
-msgstr "Nouvel version"
+msgstr "Nouvelle version"
 
 msgid "No files in here"
 msgstr "Aucun fichier ici"
