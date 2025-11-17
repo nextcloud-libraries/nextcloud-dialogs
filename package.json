@@ -58,7 +58,7 @@
     "@nextcloud/router": "^3.0.1",
     "@nextcloud/sharing": "^0.3.0",
     "@nextcloud/typings": "^1.10.0",
-    "@nextcloud/vue": "^9.1.0",
+    "@nextcloud/vue": "^9.2.0",
     "@types/toastify-js": "^1.12.4",
     "@vueuse/core": "^14.0.0",
     "cancelable-promise": "^4.3.1",
