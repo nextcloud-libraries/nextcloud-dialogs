@@ -1,5 +1,6 @@
-# SPDX-FileCopyrightText: 2021-2024 Nextcloud GmbH and Nextcloud contributors
+# SPDX-FileCopyrightText: 2024 Nextcloud GmbH and Nextcloud contributors
 # SPDX-License-Identifier: CC0-1.0
+
 version: 2
 updates:
 - package-ecosystem: npm
@@ -12,6 +13,15 @@ updates:
     timezone: Europe/Paris
   open-pull-requests-limit: 10
   versioning-strategy: increase
+  groups:
+    vite:
+      patterns:
+        - "vite"
+        - "@nextcloud/vite-config"
+    vitest:
+      patterns:
+        - "vitest"
+        - "@vitest/*"
 - package-ecosystem: npm
   target-branch: 'stable6'
   directory: "/"
@@ -22,3 +32,12 @@ updates:
     timezone: Europe/Paris
   open-pull-requests-limit: 10
   versioning-strategy: increase
+  groups:
+    vite:
+      patterns:
+        - "vite"
+        - "@nextcloud/vite-config"
+    vitest:
+      patterns:
+        - "vitest"
+        - "@vitest/*"
