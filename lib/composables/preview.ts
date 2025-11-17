@@ -4,7 +4,7 @@
  */
 
 import type { INode } from '@nextcloud/files'
-import type { MaybeRef } from '@vueuse/core'
+import type { MaybeRef } from 'vue'
 
 import { FileType } from '@nextcloud/files'
 import { generateUrl } from '@nextcloud/router'
