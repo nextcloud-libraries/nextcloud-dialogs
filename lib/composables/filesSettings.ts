@@ -9,8 +9,7 @@ import axios from '@nextcloud/axios'
 import { loadState } from '@nextcloud/initial-state'
 import { generateUrl } from '@nextcloud/router'
 import { isPublicShare } from '@nextcloud/sharing/public'
-import { toValue } from '@vueuse/core'
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, ref, toValue } from 'vue'
 import { showError } from '../toast.ts'
 import { t } from '../utils/l10n.ts'
 import { logger } from '../utils/logger.ts'
@@ -57,7 +56,7 @@ export function useFilesSettings() {
 				sortFavoritesFirst.value = data?.data?.sort_favorites_first ?? true
 				cropImagePreviews.value = data?.data?.crop_image_previews ?? true
 			} catch (error) {
-				logger.error('Could not load files settings', error)
+				logger.error('Could not load files settings', { error })
 				showError(t('Could not load files settings'))
 			}
 		} else {
@@ -112,7 +111,7 @@ export function useFilesViews(currentView?: FileListViews | Ref<FileListViews> |
 					order: convertOrder(data?.data?.recent?.sorting_direction),
 				}
 			} catch (error) {
-				logger.error('Could not load files views', error)
+				logger.error('Could not load files views', { error })
 				showError(t('Could not load files views'))
 			}
 		} else {
