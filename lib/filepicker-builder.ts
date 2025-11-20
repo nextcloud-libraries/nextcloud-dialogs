@@ -34,6 +34,7 @@ export class FilePicker<IsMultiSelect extends boolean> {
 	private multiSelect: IsMultiSelect
 	private mimeTypeFilter: string[]
 	private directoriesAllowed: boolean
+	private noMenu: boolean
 	private buttons: IFilePickerButton[] | IFilePickerButtonFactory
 	private path?: string
 	private filter?: IFilePickerFilter
@@ -46,6 +47,7 @@ export class FilePicker<IsMultiSelect extends boolean> {
 		multiSelect: IsMultiSelect,
 		mimeTypeFilter: string[],
 		directoriesAllowed: boolean,
+		noMenu: boolean,
 		buttons: IFilePickerButton[] | IFilePickerButtonFactory,
 		path?: string,
 		filter?: IFilePickerFilter,
@@ -57,6 +59,7 @@ export class FilePicker<IsMultiSelect extends boolean> {
 		this.multiSelect = multiSelect
 		this.mimeTypeFilter = mimeTypeFilter
 		this.directoriesAllowed = directoriesAllowed
+		this.noMenu = noMenu
 		this.path = path
 		this.filter = filter
 		this.canPick = canPick
@@ -75,6 +78,7 @@ export class FilePicker<IsMultiSelect extends boolean> {
 
 		const nodes = await spawnDialog(FilePickerVue, {
 			allowPickDirectory: this.directoriesAllowed,
+			noMenu: this.noMenu,
 			buttons: this.buttons,
 			name: this.title,
 			path: this.path,
@@ -114,6 +118,7 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 	private multiSelect = false
 	private mimeTypeFilter: string[] = []
 	private directoriesAllowed = false
+	private noMenu = false
 	private path?: string
 	private filter?: IFilePickerFilter
 	private canPick?: IFilePickerCanPick
@@ -255,6 +260,16 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 	}
 
 	/**
+	 * Allow to create New folders
+	 *
+	 * @param noMenu True to hide menu
+	 */
+	public setNoMenu(noMenu = true) {
+		this.noMenu = noMenu
+		return this
+	}
+
+	/**
 	 * Set starting path of the FilePicker
 	 *
 	 * @param path Path to start from picking
@@ -301,6 +316,7 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 			this.multiSelect as IsMultiSelect,
 			this.mimeTypeFilter,
 			this.directoriesAllowed,
+			this.noMenu,
 			this.buttons,
 			this.path,
 			this.filter,
