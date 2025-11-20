@@ -1,15 +1,244 @@
 # 
 # Translators:
-# Transifex Bot <>, 2023
+# bone NI, 2025
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Transifex Bot <>, 2023\n"
+"Last-Translator: bone NI, 2025\n"
 "Language-Team: Lao (https://app.transifex.com/nextcloud/teams/64236/lo/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: lo\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: lib/toast.ts:223
+msgid "\"{char}\" is not allowed inside a name."
+msgstr "ບໍ່ອະນຸຍາດໃຫ້ມີ \"{char}\" ພາຍໃນຊື່."
+
+msgid "\"{extension}\" is not an allowed name."
+msgstr "\"{extension}\" ບໍ່ແມ່ນຊື່ທີ່ໄດ້ຮັບອະນຸຍາດ."
+
+msgid "\"{name}\" is an invalid folder name."
+msgstr "\"{name}\" ແມ່ນຊື່ໂຟນເດີທີ່ບໍ່ຖືກຕ້ອງ."
+
+msgid "\"{name}\" is not an allowed folder name"
+msgstr "\"{name}\" ບໍ່ແມ່ນຊື່ໂຟນເດີທີ່ໄດ້ຮັບອະນຸຍາດ"
+
+msgid "\"{segment}\" is a reserved name and not allowed."
+msgstr "\"{segment}\" ແມ່ນຊື່ທີ່ສະຫງວນໄວ້ ແລະ ບໍ່ໄດ້ຮັບອະນຸຍາດ."
+
+msgid "\"/\" is not allowed inside a folder name."
+msgstr "ບໍ່ອະນຸຍາດໃຫ້ມີ \"/\" ພາຍໃນຊື່ໂຟນເດີ."
+
+msgid "%n file conflict"
+msgid_plural "%n files conflict"
+msgstr[0] "ໄຟລ໌ຂັດກັນ %n ລາຍການ"
+
+msgid "%n file conflict in {dirname}"
+msgid_plural "%n file conflicts in {dirname}"
+msgstr[0] "ໄຟລ໌ຂັດກັນ %n ລາຍການໃນ {dirname}"
+
+msgid "All files"
+msgstr "ໄຟລ໌ທັງໝົດ"
+
+msgid "Cancel"
+msgstr "ຍົກເລີກ"
+
+msgid "Cancel the entire operation"
+msgstr "ຍົກເລີກການດຳເນີນການທັງໝົດ"
+
+msgid "Choose"
+msgstr "ເລືອກ"
+
+msgid "Choose {file}"
+msgstr "ເລືອກ {file}"
+
+msgid "Choose %n file"
+msgid_plural "Choose %n files"
+msgstr[0] "ເລືອກ %n ໄຟລ໌"
+
+msgid "Confirm"
+msgstr "ຢືນຢັນ"
+
+msgid "Continue"
+msgstr "ດຳເນີນການຕໍ່"
+
+msgid "Copy"
+msgstr "ຄັດລອກ"
+
+msgid "Copy to {target}"
+msgstr "ຄັດລອກໄປທີ່ {target}"
+
+msgid "Could not create the new folder"
+msgstr "ບໍ່ສາມາດສ້າງໂຟນເດີໃໝ່ໄດ້"
+
+msgid "Could not load files settings"
+msgstr "ບໍ່ສາມາດໂຫຼດການຕັ້ງຄ່າໄຟລ໌ໄດ້"
+
+msgid "Could not load files views"
+msgstr "ບໍ່ສາມາດໂຫຼດມຸມມອງໄຟລ໌ໄດ້"
+
+msgid "Create directory"
+msgstr "ສ້າງໄດເຣັກທໍຣີ"
+
+msgid "Current view selector"
+msgstr "ຕົວເລືອກມຸມມອງປັດຈຸບັນ"
+
+msgid "Enter your name"
+msgstr "ປ້ອນຊື່ຂອງທ່ານ"
+
+msgid "Existing version"
+msgstr "ເວີຊັນທີ່ມີຢູ່"
+
+msgid "Failed to set nickname."
+msgstr "ຕັ້ງຊື່ຫຼິ້ນບໍ່ສຳເລັດ."
+
+msgid "Favorites"
+msgstr "ລາຍການທີ່ມັກ"
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr "ໄຟລ໌ ແລະ ໂຟນເດີທີ່ທ່ານໝາຍວ່າເປັນລາຍການທີ່ມັກຈະສະແດງຢູ່ບ່ອນນີ້."
+
+msgid "Files and folders you recently modified will show up here."
+msgstr "ໄຟລ໌ ແລະ ໂຟນເດີທີ່ທ່ານແກ້ໄຂລ່າສຸດຈະສະແດງຢູ່ບ່ອນນີ້."
+
+msgid "Filter file list"
+msgstr "ກັ່ນຕອງລາຍການໄຟລ໌"
+
+msgid "Folder name cannot be empty."
+msgstr "ຊື່ໂຟນເດີຕ້ອງບໍ່ຫວ່າງເປົ່າ."
+
+msgid "Guest identification"
+msgstr "ການລະບຸຕົວຕົນຂອງແຂກ"
+
+msgid "Home"
+msgstr "ໜ້າຫຼັກ"
+
+msgid ""
+"If you select both versions, the incoming file will have a number added to "
+"its name."
+msgstr "ຖ້າທ່ານເລືອກທັງສອງເວີຊັນ, ໄຟລ໌ທີ່ເຂົ້າມາຈະມີຕົວເລກເພີ່ມໃສ່ຊື່ຂອງມັນ."
+
+msgid "Invalid name."
+msgstr "ຊື່ບໍ່ຖືກຕ້ອງ."
+
+msgid "Last modified date unknown"
+msgstr "ບໍ່ຮູ້ວັນທີແກ້ໄຂລ່າສຸດ"
+
+msgid "Modified"
+msgstr "ແກ້ໄຂເມື່ອ"
+
+msgid "Move"
+msgstr "ຍ້າຍ"
+
+msgid "Move to {target}"
+msgstr "ຍ້າຍໄປທີ່ {target}"
+
+msgid "Name"
+msgstr "ຊື່"
+
+msgid "Names may be at most 64 characters long."
+msgstr "ຊື່ອາດມີຄວາມຍາວສູງສຸດ 64 ຕົວອັກສອນ."
+
+msgid "Names must not be empty."
+msgstr "ຊື່ຕ້ອງບໍ່ຫວ່າງເປົ່າ."
+
+msgid "Names must not end with \"{extension}\"."
+msgstr "ຊື່ຕ້ອງບໍ່ລົງທ້າຍດ້ວຍ \"{extension}\"."
+
+msgid "Names must not start with a dot."
+msgstr "ຊື່ຕ້ອງບໍ່ຂຶ້ນຕົ້ນດ້ວຍຈຸດ."
+
+msgid "New"
+msgstr "ໃໝ່"
+
+msgid "New folder"
+msgstr "ໂຟນເດີໃໝ່"
+
+msgid "New folder name"
+msgstr "ຊື່ໂຟນເດີໃໝ່"
+
+msgid "New version"
+msgstr "ເວີຊັນໃໝ່"
+
+msgid "No files in here"
+msgstr "ບໍ່ມີໄຟລ໌ຢູ່ບ່ອນນີ້"
+
+msgid "No files matching your filter were found."
+msgstr "ບໍ່ພົບໄຟລ໌ທີ່ກົງກັບການກັ່ນຕອງຂອງທ່ານ."
+
+msgid "No matching files"
+msgstr "ບໍ່ມີໄຟລ໌ທີ່ກົງກັນ"
+
+msgid "Please enter a name with at least 2 characters."
+msgstr "ກະລຸນາປ້ອນຊື່ທີ່ມີຢ່າງໜ້ອຍ 2 ຕົວອັກສອນ."
+
+msgid "Recent"
+msgstr "ລ່າສຸດ"
+
+msgid "Select all checkboxes"
+msgstr "ເລືອກກ່ອງໝາຍທັງໝົດ"
+
+msgid "Select all entries"
+msgstr "ເລືອກທຸກລາຍການ"
+
+msgid "Select all existing files"
+msgstr "ເລືອກໄຟລ໌ທີ່ມີຢູ່ທັງໝົດ"
+
+msgid "Select all new files"
+msgstr "ເລືອກໄຟລ໌ໃໝ່ທັງໝົດ"
+
+msgid "Select entry"
+msgstr "ເລືອກລາຍການ"
+
+msgid "Select the row for {nodename}"
+msgstr "ເລືອກແຖວສຳລັບ {nodename}"
+
+msgid "Size"
+msgstr "ຂະໜາດ"
+
+msgid "Skip %n file"
+msgid_plural "Skip %n files"
+msgstr[0] "ຂ້າມ %n ໄຟລ໌"
+
+msgid "Skip this file"
+msgstr "ຂ້າມໄຟລ໌ນີ້"
+
+msgid "Submit name"
+msgstr "ສົ່ງຊື່"
+
 msgid "Undo"
+msgstr "ເອົາຄືນ"
+
+msgid "Upload some content or sync with your devices!"
+msgstr "ອັບໂຫຼດເນື້ອຫາ ຫຼື ຊິງຄ໌ກັບອຸປະກອນຂອງທ່ານ!"
+
+msgid ""
+"When an incoming folder is selected, any conflicting files within it will "
+"also be overwritten."
 msgstr ""
+"ເມື່ອເລືອກໂຟນເດີທີ່ເຂົ້າມາ, "
+"ໄຟລ໌ໃດໆທີ່ຂັດກັນພາຍໃນໂຟນເດີນັ້ນກໍຈະຖືກຂຽນທັບເຊັ່ນກັນ."
+
+msgid ""
+"When an incoming folder is selected, the content is written into the "
+"existing folder and a recursive conflict resolution is performed."
+msgstr ""
+"ເມື່ອເລືອກໂຟນເດີທີ່ເຂົ້າມາ, ເນື້ອຫາຈະຖືກຂຽນລົງໃນໂຟນເດີທີ່ມີຢູ່ ແລະ "
+"ຈະມີການແກ້ໄຂຂໍ້ຂັດແຍ່ງແບບຕໍ່ເນື່ອງ."
+
+msgid "Which files do you want to keep?"
+msgstr "ທ່ານຕ້ອງການເກັບໄຟລ໌ໃດໄວ້?"
+
+msgid "You are currently identified as {nickname}."
+msgstr "ຕອນນີ້ທ່ານຖືກລະບຸວ່າເປັນ {nickname}."
+
+msgid "You are currently not identified."
+msgstr "ຕອນນີ້ທ່ານຍັງບໍ່ໄດ້ຖືກລະບຸຕົວຕົນ."
+
+msgid "You cannot leave the name empty."
+msgstr "ທ່ານບໍ່ສາມາດປະຊື່ໃຫ້ຫວ່າງເປົ່າໄດ້."
+
+msgid "You need to choose at least one conflict solution"
+msgstr "ທ່ານຈຳເປັນຕ້ອງເລືອກວິທີແກ້ໄຂຂໍ້ຂັດແຍ່ງຢ່າງໜ້ອຍໜຶ່ງຢ່າງ"
+
+msgid "You need to select at least one version of each file to continue."
+msgstr "ທ່ານຈຳເປັນຕ້ອງເລືອກຢ່າງໜ້ອຍໜຶ່ງເວີຊັນຂອງແຕ່ລະໄຟລ໌ເພື່ອດຳເນີນການຕໍ່."
