@@ -29,11 +29,22 @@ msgstr "「{segment}」是一個保留名稱，不能使用。"
 msgid "\"/\" is not allowed inside a folder name."
 msgstr "資料夾名稱中不允許使用 \"/\"。"
 
+msgid "%n file conflict"
+msgid_plural "%n files conflict"
+msgstr[0] "%n 檔案衝突"
+
+msgid "%n file conflict in {dirname}"
+msgid_plural "%n file conflicts in {dirname}"
+msgstr[0] "{dirname} 中有 %n 個檔案衝突"
+
 msgid "All files"
 msgstr "所有檔案"
 
 msgid "Cancel"
 msgstr "取消"
+
+msgid "Cancel the entire operation"
+msgstr "取消整個操作"
 
 msgid "Choose"
 msgstr "選擇"
@@ -44,6 +55,12 @@ msgstr "選擇 {file}"
 msgid "Choose %n file"
 msgid_plural "Choose %n files"
 msgstr[0] "選擇 %n 個檔案"
+
+msgid "Confirm"
+msgstr "確認"
+
+msgid "Continue"
+msgstr "繼續"
 
 msgid "Copy"
 msgstr "複製"
@@ -69,6 +86,9 @@ msgstr "目前視圖選擇器"
 msgid "Enter your name"
 msgstr "輸入您的名字"
 
+msgid "Existing version"
+msgstr "現有的版本"
+
 msgid "Failed to set nickname."
 msgstr "無法設置暱稱。"
 
@@ -93,8 +113,16 @@ msgstr "訪客身份識別"
 msgid "Home"
 msgstr "首頁"
 
+msgid ""
+"If you select both versions, the incoming file will have a number added to "
+"its name."
+msgstr "如果您選擇兩個版本，傳入的檔案名稱將會附加一個數字。"
+
 msgid "Invalid name."
 msgstr "無效的名字。"
+
+msgid "Last modified date unknown"
+msgstr "最後的修改日期不詳"
 
 msgid "Modified"
 msgstr "已修改"
@@ -107,6 +135,9 @@ msgstr "移動至 {target}"
 
 msgid "Name"
 msgstr "名稱"
+
+msgid "Names may be at most 64 characters long."
+msgstr "名稱長度最多為 64 個字元。"
 
 msgid "Names must not be empty."
 msgstr "名稱不能為空。"
@@ -126,6 +157,9 @@ msgstr "新資料夾"
 msgid "New folder name"
 msgstr "新資料夾名稱"
 
+msgid "New version"
+msgstr "新版本"
+
 msgid "No files in here"
 msgstr "此處無檔案"
 
@@ -141,8 +175,17 @@ msgstr "請輸入至少 2 個字符的名稱。"
 msgid "Recent"
 msgstr "最近"
 
+msgid "Select all checkboxes"
+msgstr "選擇所有復選框"
+
 msgid "Select all entries"
 msgstr "選擇所有項目"
+
+msgid "Select all existing files"
+msgstr "選擇所有現有的檔案"
+
+msgid "Select all new files"
+msgstr "選擇所有新檔案"
 
 msgid "Select entry"
 msgstr "選擇項目"
@@ -153,6 +196,13 @@ msgstr "選擇 {nodename} 的列"
 msgid "Size"
 msgstr "大小"
 
+msgid "Skip %n file"
+msgid_plural "Skip %n files"
+msgstr[0] "跳過 %n 個檔案"
+
+msgid "Skip this file"
+msgstr "跳過此檔案"
+
 msgid "Submit name"
 msgstr "遞交名字"
 
@@ -162,6 +212,19 @@ msgstr "還原"
 msgid "Upload some content or sync with your devices!"
 msgstr "上傳一些內容或與您的裝置同步！"
 
+msgid ""
+"When an incoming folder is selected, any conflicting files within it will "
+"also be overwritten."
+msgstr "選取傳入資料夾時，其中任何衝突的檔案也將被覆蓋。"
+
+msgid ""
+"When an incoming folder is selected, the content is written into the "
+"existing folder and a recursive conflict resolution is performed."
+msgstr "當選取傳入資料夾時，內容將寫入現有資料夾，並執行遞歸衝突解決。"
+
+msgid "Which files do you want to keep?"
+msgstr "你想保留哪些檔案？"
+
 msgid "You are currently identified as {nickname}."
 msgstr "您目前被識別為 {nickname}。"
 
@@ -170,3 +233,9 @@ msgstr "您目前尚未被識別。"
 
 msgid "You cannot leave the name empty."
 msgstr "名稱不能留空。"
+
+msgid "You need to choose at least one conflict solution"
+msgstr "你需要選擇至少一種衝突解決方案。"
+
+msgid "You need to select at least one version of each file to continue."
+msgstr "您必須選擇每個文件的至少一個版本才能繼續。"
