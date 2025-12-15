@@ -57,7 +57,6 @@
     "@nextcloud/paths": "^2.4.0",
     "@nextcloud/router": "^3.1.0",
     "@nextcloud/sharing": "^0.3.0",
-    "@nextcloud/typings": "^1.10.0",
     "@nextcloud/vue": "^9.3.0",
     "@types/toastify-js": "^1.12.4",
     "@vueuse/core": "^14.1.0",
