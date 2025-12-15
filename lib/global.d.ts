@@ -12,7 +12,3 @@ declare global {
 		translations: GettextTranslation[]
 	}[]
 }
-
-// Allow css modules
-declare module '*.module.css';
-declare module '*.module.scss';
