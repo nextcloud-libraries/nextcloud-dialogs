@@ -47,15 +47,15 @@
 <script setup lang="ts">
 import type Vue from 'vue'
 
+import { InvalidFilenameError, InvalidFilenameErrorReason, validateFilename } from '@nextcloud/files'
+import { computed, ref } from 'vue'
+import NcActionInput from '@nextcloud/vue/components/NcActionInput'
+import NcActions from '@nextcloud/vue/components/NcActions'
+import NcBreadcrumb from '@nextcloud/vue/components/NcBreadcrumb'
+import NcBreadcrumbs from '@nextcloud/vue/components/NcBreadcrumbs'
 import IconFolder from 'vue-material-design-icons/Folder.vue'
 import IconHome from 'vue-material-design-icons/Home.vue'
 import IconPlus from 'vue-material-design-icons/Plus.vue'
-
-import NcActions from '@nextcloud/vue/components/NcActions'
-import NcActionInput from '@nextcloud/vue/components/NcActionInput'
-import NcBreadcrumbs from '@nextcloud/vue/components/NcBreadcrumbs'
-import NcBreadcrumb from '@nextcloud/vue/components/NcBreadcrumb'
-import { computed, ref } from 'vue'
 import { t } from '../../utils/l10n'
 
 const props = defineProps<{
@@ -93,14 +93,26 @@ function validateInput() {
 	const input = nameInput.value?.$el?.querySelector('input')
 
 	let validity = ''
-	if (name.length === 0) {
-		validity = t('Folder name cannot be empty.')
-	} else if (name.includes('/')) {
-		validity = t('"/" is not allowed inside a folder name.')
-	} else if (['..', '.'].includes(name)) {
-		validity = t('"{name}" is an invalid folder name.', { name })
-	} else if (window.OC.config?.blacklist_files_regex && name.match(window.OC.config?.blacklist_files_regex)) {
-		validity = t('"{name}" is not an allowed folder name', { name })
+	try {
+		validateFilename(name)
+	} catch (error) {
+		if (!(error instanceof InvalidFilenameError)) {
+			throw error
+		}
+
+		switch (error.reason) {
+			case InvalidFilenameErrorReason.Character:
+				validity = t('"{char}" is not allowed inside a folder name.', { char: error.segment })
+				break
+			case InvalidFilenameErrorReason.ReservedName:
+				validity = t('"{segment}" is a reserved name and not allowed for folder names.', { segment: error.segment })
+				break
+			case InvalidFilenameErrorReason.Extension:
+				validity = t('Folder names must not end with "{extension}".', { extension: error.segment })
+				break
+			default:
+				validity = t('Invalid folder name.')
+		}
 	}
 	if (input) {
 		input.setCustomValidity(validity)
