@@ -65,7 +65,6 @@
     "@nextcloud/l10n": "^3.4.1",
     "@nextcloud/router": "^3.1.0",
     "@nextcloud/sharing": "^0.3.0",
-    "@nextcloud/typings": "^1.10.0",
     "@types/toastify-js": "^1.12.4",
     "@vueuse/core": "^11.3.0",
     "cancelable-promise": "^4.3.1",
