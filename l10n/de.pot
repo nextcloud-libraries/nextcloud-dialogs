@@ -1,7 +1,6 @@
 # 
 # Translators:
 # Markus Eckstein, 2023
-# Andy Scherzinger <info@andy-scherzinger.de>, 2023
 # Ettore Atalan <atalanttore@googlemail.com>, 2024
 # Martin Wilichowski, 2025
 # Mario Siegmann <mario_siegmann@web.de>, 2025
@@ -14,23 +13,21 @@ msgstr ""
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "\"{char}\" is not allowed inside a folder name."
+msgstr "\"{char}\" ist innerhalb eines Ordnernamens nicht zulässig."
+
 msgid "\"{char}\" is not allowed inside a name."
 msgstr "\"{char}\" ist innerhalb eines Namens nicht zulässig."
 
 msgid "\"{extension}\" is not an allowed name."
 msgstr "\"{extension}\" ist kein zulässiger Name."
 
-msgid "\"{name}\" is an invalid folder name."
-msgstr "\"{name}\" ist ein ungültiger Ordnername."
-
-msgid "\"{name}\" is not an allowed folder name"
-msgstr "\"{name}\" ist kein zulässiger Ordnername"
+msgid "\"{segment}\" is a reserved name and not allowed for folder names."
+msgstr ""
+"\"{segment}\" ist ein reservierter Name und nicht zulässig für Ordnernamen."
 
 msgid "\"{segment}\" is a reserved name and not allowed."
 msgstr "\"{segment}\" ist ein reservierter Name und nicht zulässig."
-
-msgid "\"/\" is not allowed inside a folder name."
-msgstr "\"/\" ist innerhalb eines Ordnernamens nicht zulässig."
 
 msgid "%n file conflict"
 msgid_plural "%n files conflict"
@@ -112,8 +109,8 @@ msgstr ""
 msgid "Filter file list"
 msgstr "Dateiliste filtern"
 
-msgid "Folder name cannot be empty."
-msgstr "Der Ordnername darf nicht leer sein."
+msgid "Folder names must not end with \"{extension}\"."
+msgstr "Ordnernamen dürfen nicht mit \"{extension}\" enden."
 
 msgid "Guest identification"
 msgstr "Gast-Identifikation"
@@ -127,6 +124,9 @@ msgid ""
 msgstr ""
 "Wenn beide Versionen ausgewählt werden, wird dem Namen der eingehenden Datei"
 " eine Nummer hinzugefügt."
+
+msgid "Invalid folder name."
+msgstr "Ungültiger Ordnername."
 
 msgid "Invalid name."
 msgstr "Ungültiger Name."
