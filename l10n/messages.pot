@@ -2,22 +2,19 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 
+msgid "\"{char}\" is not allowed inside a folder name."
+msgstr ""
+
 msgid "\"{char}\" is not allowed inside a name."
 msgstr ""
 
 msgid "\"{extension}\" is not an allowed name."
 msgstr ""
 
-msgid "\"{name}\" is an invalid folder name."
-msgstr ""
-
-msgid "\"{name}\" is not an allowed folder name"
+msgid "\"{segment}\" is a reserved name and not allowed for folder names."
 msgstr ""
 
 msgid "\"{segment}\" is a reserved name and not allowed."
-msgstr ""
-
-msgid "\"/\" is not allowed inside a folder name."
 msgstr ""
 
 msgid "%n file conflict"
@@ -98,7 +95,7 @@ msgstr ""
 msgid "Filter file list"
 msgstr ""
 
-msgid "Folder name cannot be empty."
+msgid "Folder names must not end with \"{extension}\"."
 msgstr ""
 
 msgid "Guest identification"
@@ -108,6 +105,9 @@ msgid "Home"
 msgstr ""
 
 msgid "If you select both versions, the incoming file will have a number added to its name."
+msgstr ""
+
+msgid "Invalid folder name."
 msgstr ""
 
 msgid "Invalid name."
