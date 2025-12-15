@@ -5,7 +5,7 @@
 
 import type { INode } from '@nextcloud/files'
 
-import { spawnDialog } from '@nextcloud/vue'
+import { spawnDialog } from '@nextcloud/vue/functions/dialog'
 import { defineAsyncComponent } from 'vue'
 
 export type ConflictInput = File | FileSystemEntry | INode
