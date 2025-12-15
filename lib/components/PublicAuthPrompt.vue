@@ -74,11 +74,9 @@ watch(() => props.nickname, () => {
 watch(name, (newName) => {
 	// Check validity of the new name
 	const validity = getGuestNameValidity(newName)
-	if (!validity) {
+	if (!validity && inputElement.value) {
 		// If the nickname is not valid, show an error
-		inputElement.value.setCustomValidity(validity)
-		inputElement.value.reportValidity()
-		inputElement.value.focus()
+		setCustomValidity(validity)
 		return
 	}
 })
@@ -127,25 +125,19 @@ function onSubmit() {
 	const validity = getGuestNameValidity(nickname)
 	if (validity) {
 		// If the nickname is not valid, show an error
-		inputElement.value.setCustomValidity(validity)
-		inputElement.value.reportValidity()
-		inputElement.value.focus()
+		setCustomValidity(validity)
 		return
 	}
 
 	if (nickname === '') {
 		// Show error if the nickname is empty
-		inputElement.value.setCustomValidity(t('You cannot leave the name empty.'))
-		inputElement.value.reportValidity()
-		inputElement.value.focus()
+		setCustomValidity(t('You cannot leave the name empty.'))
 		return
 	}
 
 	if (nickname.length < 2) {
 		// Show error if the nickname is too short
-		inputElement.value.setCustomValidity(t('Please enter a name with at least 2 characters.'))
-		inputElement.value.reportValidity()
-		inputElement.value.focus()
+		setCustomValidity(t('Please enter a name with at least 2 characters.'))
 		return
 	}
 
@@ -155,7 +147,7 @@ function onSubmit() {
 	} catch (error) {
 		logger.error('Failed to set nickname', { error })
 		showError(t('Failed to set nickname.'))
-		inputElement.value.focus()
+		inputElement.value!.focus()
 		return
 	}
 
@@ -164,6 +156,21 @@ function onSubmit() {
 
 	// Close the dialog
 	emit('close', name.value)
+}
+
+/**
+ * Set custom validity message on the input
+ *
+ * @param message - The validity message
+ */
+function setCustomValidity(message: string) {
+	if (inputElement.value) {
+		// @ts-expect-error -- not exposed by the library but exists (todo: fix in vue library)
+		inputElement.value.setCustomValidity(message)
+		// @ts-expect-error -- not exposed by the library but exists (todo: fix in vue library)
+		inputElement.value.reportValidity()
+		inputElement.value.focus()
+	}
 }
 </script>
 
