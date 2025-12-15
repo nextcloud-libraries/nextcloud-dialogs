@@ -63,8 +63,15 @@ export async function openConflictPicker<T extends ConflictInput>(
 ): Promise<ConflictResolutionResult<T> | null> {
 	const ConflictPicker = defineAsyncComponent(() => import('./components/ConflictPicker/ConflictPicker.vue'))
 
-	content = content.filter(isConflictingNode)
-	content.sort((a, b) => indexOf(a) - indexOf(b))
+	const incoming: T[] = []
+	const existing: INode[] = []
+	for (const node of content) {
+		if (isConflictingNode(node)) {
+			existing.push(node)
+			incoming.push(conflicts[indexOf(node)]!)
+		}
+	}
+
 	if (conflicts.length === 0 || content.length === 0) {
 		throw new Error('ConflictPicker: files and conflicts must not be empty')
 	}
@@ -75,8 +82,8 @@ export async function openConflictPicker<T extends ConflictInput>(
 
 	return await spawnDialog(ConflictPicker, {
 		dirname,
-		conflicts,
-		content,
+		existing,
+		incoming,
 		recursiveUpload: options?.recursive === true,
 	}, {
 		container: options?.container,
