@@ -23,7 +23,7 @@
 <script setup lang="ts">
 import type { INode } from '@nextcloud/files'
 
-import { mdiAccountPlus, mdiGroup, mdiLink, mdiLock, mdiNetwork, mdiTag } from '@mdi/js'
+import { mdiAccountGroupOutline, mdiAccountPlus, mdiKey, mdiLink, mdiNetworkOutline, mdiTagOutline } from '@mdi/js'
 import { FileType } from '@nextcloud/files'
 import { ShareType } from '@nextcloud/sharing'
 import { computed, ref, toRef } from 'vue'
@@ -57,12 +57,12 @@ const folderDecorationIcon = computed(() => {
 
 	// Encrypted folders
 	if (props.node.attributes?.['is-encrypted'] === 1) {
-		return mdiLock
+		return mdiKey
 	}
 
 	// System tags
 	if (props.node.attributes?.['is-tag']) {
-		return mdiTag
+		return mdiTagOutline
 	}
 
 	// Link and mail shared folders
@@ -77,13 +77,13 @@ const folderDecorationIcon = computed(() => {
 	}
 
 	switch (props.node.attributes?.['mount-type']) {
-	case 'external':
-	case 'external-session':
-		return mdiNetwork
-	case 'group':
-		return mdiGroup
-	case 'shared':
-		return mdiAccountPlus
+		case 'external':
+		case 'external-session':
+			return mdiNetworkOutline
+		case 'group':
+			return mdiAccountGroupOutline
+		case 'shared':
+			return mdiAccountPlus
 	}
 
 	return null
