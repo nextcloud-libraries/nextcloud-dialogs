@@ -11,23 +11,20 @@ msgstr ""
 "Language: et_EE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "\"{char}\" is not allowed inside a folder name."
+msgstr "„{char}“ pole kausta nimes lubatud."
+
 msgid "\"{char}\" is not allowed inside a name."
 msgstr "„{char}“ pole nimes lubatud."
 
 msgid "\"{extension}\" is not an allowed name."
 msgstr "„{extension}“ pole lubatud nimi."
 
-msgid "\"{name}\" is an invalid folder name."
-msgstr "„{name}“ on vigane kausta nimi."
-
-msgid "\"{name}\" is not an allowed folder name"
-msgstr "„{name}“ pole kausta nimes lubatud"
+msgid "\"{segment}\" is a reserved name and not allowed for folder names."
+msgstr "„{segment}“ on reserveeritud nimi ja pole kausta nimes lubatud."
 
 msgid "\"{segment}\" is a reserved name and not allowed."
 msgstr "„{segment}“ on reserveeritud nimi ja pole kasutamiseks lubatud."
-
-msgid "\"/\" is not allowed inside a folder name."
-msgstr "„/“ pole kausta nimes lubatud."
 
 msgid "%n file conflict"
 msgid_plural "%n files conflict"
@@ -69,7 +66,7 @@ msgid "Copy"
 msgstr "Kopeeri"
 
 msgid "Copy to {target}"
-msgstr "Kopeeri sihtkohta {target}"
+msgstr "Kopeeri sihtkohta „{target}“"
 
 msgid "Could not create the new folder"
 msgstr "Uut kausta ei saanud luua"
@@ -107,8 +104,8 @@ msgstr "Siin kuvatakse hiljuti muudetud failid ja kaustad."
 msgid "Filter file list"
 msgstr "Filtreeri faililoendit"
 
-msgid "Folder name cannot be empty."
-msgstr "Kausta nimi ei saa olla tühi."
+msgid "Folder names must not end with \"{extension}\"."
+msgstr "Kausta nime lõpus ei tohi olla „{extension}“."
 
 msgid "Guest identification"
 msgstr "Külalise tuvastamine"
@@ -120,6 +117,9 @@ msgid ""
 "If you select both versions, the incoming file will have a number added to "
 "its name."
 msgstr "Kui valid mõlemad versioonid, siis uue faili nimele lisatakse number."
+
+msgid "Invalid folder name."
+msgstr "Vigane kausta nimi."
 
 msgid "Invalid name."
 msgstr "Vigane nimi."
@@ -134,7 +134,7 @@ msgid "Move"
 msgstr "Teisalda"
 
 msgid "Move to {target}"
-msgstr "Teisalda kausta {target}"
+msgstr "Teisalda kausta „{target}“"
 
 msgid "Name"
 msgstr "Nimi"
@@ -214,7 +214,7 @@ msgid "Undo"
 msgstr "Tühista"
 
 msgid "Upload some content or sync with your devices!"
-msgstr "Lisa mingit sisu või sünkroniseeri see oma seadmestest!"
+msgstr "Lisa mingit sisu või sünkrooni see oma seadmetest!"
 
 msgid ""
 "When an incoming folder is selected, any conflicting files within it will "
