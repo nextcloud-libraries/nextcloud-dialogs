@@ -9,7 +9,6 @@ const testConfig = defineConfig({
 	test: {
 		environment: 'happy-dom',
 		coverage: {
-			all: true,
 			provider: 'v8',
 			include: ['lib/**/*.ts', 'lib/*.ts'],
 			exclude: ['lib/**/*.spec.ts'],
