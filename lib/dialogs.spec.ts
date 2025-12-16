@@ -3,11 +3,13 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-import { cleanup, findByRole, fireEvent, getByLabelText, getByRole } from '@testing-library/vue'
-import { afterEach, expect, test } from 'vitest'
+import { findByRole, fireEvent, getByLabelText, getByRole } from '@testing-library/vue'
+import { expect, test } from 'vitest'
 import { showConfirmation } from './dialogs.ts'
 
-afterEach(cleanup)
+async function waitForTransition() {
+	await new Promise((r) => window.setTimeout(r, 250))
+}
 
 test('Show confirmation dialog', async () => {
 	const promise = showConfirmation({
@@ -16,6 +18,8 @@ test('Show confirmation dialog', async () => {
 	})
 
 	const dialog = await findByRole(document.documentElement, 'dialog')
+	await waitForTransition()
+
 	expect(dialog).toBeInstanceOf(HTMLElement)
 
 	expect(getByLabelText(document.documentElement, 'Dialog name')).toBe(dialog)
@@ -38,8 +42,10 @@ test('show confirmation dialog with reject', async () => {
 	})
 
 	const dialog = await findByRole(document.documentElement, 'dialog')
-	const confirm = getByRole(dialog, 'button', { name: 'My confirm' })
-	const reject = getByRole(dialog, 'button', { name: 'My reject' })
+	await waitForTransition()
+
+	const confirm = await findByRole(dialog, 'button', { name: 'My confirm' })
+	const reject = await findByRole(dialog, 'button', { name: 'My reject' })
 	expect(confirm).toBeInstanceOf(HTMLElement)
 	expect(reject).toBeInstanceOf(HTMLElement)
 	await fireEvent(reject, new MouseEvent('click', { bubbles: true }))
@@ -53,8 +59,9 @@ test('show confirmation dialog and close', async () => {
 	})
 
 	const dialog = await findByRole(document.documentElement, 'dialog')
-	const close = getByRole(dialog, 'button', { name: 'Close' })
-	expect(close).toBeInstanceOf(HTMLElement)
+	await waitForTransition()
+
+	const close = await findByRole(dialog, 'button', { name: 'Close' })
 	await fireEvent(close, new MouseEvent('click', { bubbles: true }))
 	await expect(promise).rejects.toThrowError('Dialog closed')
 })
