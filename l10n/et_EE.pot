@@ -134,7 +134,7 @@ msgid "Move"
 msgstr "Teisalda"
 
 msgid "Move to {target}"
-msgstr "Teisalda kausta {target}"
+msgstr "Teisalda kausta „{target}“"
 
 msgid "Name"
 msgstr "Nimi"
