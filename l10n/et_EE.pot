@@ -214,7 +214,7 @@ msgid "Undo"
 msgstr "Tühista"
 
 msgid "Upload some content or sync with your devices!"
-msgstr "Lisa mingit sisu või sünkroniseeri see oma seadmestest!"
+msgstr "Lisa mingit sisu või sünkrooni see oma seadmetest!"
 
 msgid ""
 "When an incoming folder is selected, any conflicting files within it will "
