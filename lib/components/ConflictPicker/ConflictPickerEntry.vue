@@ -177,7 +177,7 @@ function validate() {
 
 <template>
 	<fieldset :class="$style.pickerEntry">
-		<legend>{{ existing.basename }}</legend>
+		<legend>{{ existing.displayname }}</legend>
 
 		<!-- Incoming file -->
 		<NcCheckboxRadioSwitch

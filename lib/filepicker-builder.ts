@@ -211,13 +211,13 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 	public setType(type: FilePickerType) {
 		this.buttons = (nodes, path) => {
 			const buttons: IFilePickerButton[] = []
-			const node = nodes?.[0]?.attributes?.displayName || nodes?.[0]?.basename
-			const target = node || basename(path)
+			const node = nodes[0]
+			const target = node?.displayname || basename(path)
 
 			if (type === FilePickerType.Choose) {
 				let label = t('Choose')
 				if (nodes.length === 1) {
-					label = t('Choose {file}', { file: node })
+					label = t('Choose {file}', { file: target })
 				} else if (this.multiSelect) {
 					label = n('Choose %n file', 'Choose %n files', nodes.length)
 				}
