@@ -6,8 +6,8 @@
 import type { ContentsWithRoot, Folder, Node } from '@nextcloud/files'
 import type { FileStat, ResponseDataDetailed, SearchResult, WebDAVClient } from 'webdav'
 
-import { davGetDefaultPropfind, davGetRecentSearch, davResultToNode, davRootPath } from '@nextcloud/files'
-import { joinPaths as join } from '@nextcloud/paths'
+import { defaultRootPath, getDefaultPropfind, getRecentSearch, resultToNode } from '@nextcloud/files/dav'
+import { join } from '@nextcloud/paths'
 import { CancelablePromise } from 'cancelable-promise'
 
 /**
@@ -25,9 +25,9 @@ export function getRecentNodes(client: WebDAVClient): CancelablePromise<Node[]> 
 			const { data } = await client.search('/', {
 				signal: controller.signal,
 				details: true,
-				data: davGetRecentSearch(lastTwoWeek),
+				data: getRecentSearch(lastTwoWeek),
 			}) as ResponseDataDetailed<SearchResult>
-			const nodes = data.results.map((result: FileStat) => davResultToNode(result))
+			const nodes = data.results.map((result: FileStat) => resultToNode(result))
 			resolve(nodes)
 		} catch (error) {
 			reject(error)
@@ -46,13 +46,13 @@ export function getNodes(client: WebDAVClient, directoryPath: string): Cancelabl
 	return new CancelablePromise(async (resolve, reject, onCancel) => {
 		onCancel(() => controller.abort())
 		try {
-			const results = await client.getDirectoryContents(join(davRootPath, directoryPath), {
+			const results = await client.getDirectoryContents(join(defaultRootPath, directoryPath), {
 				signal: controller.signal,
 				details: true,
 				includeSelf: true,
-				data: davGetDefaultPropfind(),
+				data: getDefaultPropfind(),
 			}) as ResponseDataDetailed<FileStat[]>
-			const nodes = results.data.map((result: FileStat) => davResultToNode(result))
+			const nodes = results.data.map((result: FileStat) => resultToNode(result))
 			resolve({
 				contents: nodes.filter(({ path }) => path !== directoryPath),
 				folder: nodes.find(({ path }) => path === directoryPath) as Folder,
@@ -70,9 +70,9 @@ export function getNodes(client: WebDAVClient, directoryPath: string): Cancelabl
  * @param path The path of the file or folder
  */
 export async function getFile(client: WebDAVClient, path: string) {
-	const { data } = await client.stat(join(davRootPath, path), {
+	const { data } = await client.stat(join(defaultRootPath, path), {
 		details: true,
-		data: davGetDefaultPropfind(),
+		data: getDefaultPropfind(),
 	}) as ResponseDataDetailed<FileStat>
-	return davResultToNode(data)
+	return resultToNode(data)
 }

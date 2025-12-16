@@ -8,11 +8,11 @@ import type { WebDAVClient } from 'webdav'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 const nextcloudFiles = vi.hoisted(() => ({
-	davResultToNode: vi.fn((v) => v),
-	davGetDefaultPropfind: vi.fn(() => 'propfind content'),
-	davRootPath: '/root/path',
+	resultToNode: vi.fn((v) => v),
+	getDefaultPropfind: vi.fn(() => 'propfind content'),
+	defaultRootPath: '/root/path',
 }))
-vi.mock('@nextcloud/files', () => nextcloudFiles)
+vi.mock('@nextcloud/files/dav', () => nextcloudFiles)
 
 describe('DAV utils', () => {
 	beforeEach(() => {
@@ -28,9 +28,9 @@ describe('DAV utils', () => {
 		const { getFile } = await import('./dav.ts')
 
 		const node = await getFile(client, '/some/path/file.ext')
-		expect(node).toEqual({ path: `${nextcloudFiles.davRootPath}/some/path/file.ext` })
+		expect(node).toEqual({ path: `${nextcloudFiles.defaultRootPath}/some/path/file.ext` })
 		// Check mock usage
-		expect(client.stat).toBeCalledWith(`${nextcloudFiles.davRootPath}/some/path/file.ext`, { details: true, data: 'propfind content' })
-		expect(nextcloudFiles.davResultToNode).toBeCalledWith({ path: `${nextcloudFiles.davRootPath}/some/path/file.ext` })
+		expect(client.stat).toBeCalledWith(`${nextcloudFiles.defaultRootPath}/some/path/file.ext`, { details: true, data: 'propfind content' })
+		expect(nextcloudFiles.resultToNode).toBeCalledWith({ path: `${nextcloudFiles.defaultRootPath}/some/path/file.ext` })
 	})
 })

@@ -11,15 +11,15 @@ import { defineComponent, h, nextTick, ref, toRef } from 'vue'
 import { useDAVFiles } from './dav.ts'
 
 const nextcloudFiles = vi.hoisted(() => ({
-	davGetClient: vi.fn(),
-	davRootPath: '/root/uid',
-	davRemoteURL: 'https://localhost/remote.php/dav',
-	davResultToNode: vi.fn(),
-	davGetDefaultPropfind: vi.fn(),
-	davGetRecentSearch: (time: number) => `recent ${time}`,
+	getClient: vi.fn(),
+	defaultRootPath: '/root/uid',
+	defaultRemoteURL: 'https://localhost/remote.php/dav',
+	resultToNode: vi.fn(),
+	getDefaultPropfind: vi.fn(),
+	getRecentSearch: (time: number) => `recent ${time}`,
 	getFavoriteNodes: vi.fn(),
 }))
-vi.mock('@nextcloud/files', () => nextcloudFiles)
+vi.mock('@nextcloud/files/dav', () => nextcloudFiles)
 
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 function waitLoaded(vm: ComponentPublicInstance<{}, { isLoading: boolean }>) {
@@ -68,7 +68,7 @@ describe('dav composable', () => {
 		const client = {
 			getDirectoryContents: vi.fn(() => ({ data: [] })),
 		}
-		nextcloudFiles.davGetClient.mockImplementationOnce(() => client)
+		nextcloudFiles.getClient.mockImplementationOnce(() => client)
 
 		const vue = shallowMount(TestComponent, {
 			props: {
@@ -80,7 +80,7 @@ describe('dav composable', () => {
 		// Loading is set to true
 		expect(vue.vm.isLoading).toBe(true)
 		// Dav client for dav remote url is gathered
-		expect(nextcloudFiles.davGetClient).toBeCalled()
+		expect(nextcloudFiles.getClient).toBeCalled()
 		// files is an empty array
 		expect(Array.isArray(vue.vm.files)).toBe(true)
 		expect(vue.vm.files.length).toBe(0)
@@ -92,8 +92,8 @@ describe('dav composable', () => {
 		const client = {
 			getDirectoryContents: vi.fn(() => ({ data: ['1', '2'] })),
 		}
-		nextcloudFiles.davGetClient.mockImplementationOnce(() => client)
-		nextcloudFiles.davResultToNode.mockImplementation((v) => `node ${v}`)
+		nextcloudFiles.getClient.mockImplementationOnce(() => client)
+		nextcloudFiles.resultToNode.mockImplementation((v) => `node ${v}`)
 
 		const vue = shallowMount(TestComponent, {
 			props: {
@@ -114,7 +114,7 @@ describe('dav composable', () => {
 			// eslint-disable-next-line @typescript-eslint/no-unused-vars
 			getDirectoryContents: vi.fn((_path: string) => ({ data: [] })),
 		}
-		nextcloudFiles.davGetClient.mockImplementationOnce(() => client)
+		nextcloudFiles.getClient.mockImplementationOnce(() => client)
 
 		const vue = shallowMount(TestComponent, {
 			props: {
@@ -128,13 +128,13 @@ describe('dav composable', () => {
 		await waitLoaded(vue.vm)
 
 		expect(client.getDirectoryContents).toBeCalledTimes(1)
-		expect(client.getDirectoryContents.mock.calls[0]![0]).toBe(`${nextcloudFiles.davRootPath}/`)
+		expect(client.getDirectoryContents.mock.calls[0]![0]).toBe(`${nextcloudFiles.defaultRootPath}/`)
 
 		vue.setProps({ currentPath: '/other' })
 		await waitLoaded(vue.vm)
 
 		expect(client.getDirectoryContents).toBeCalledTimes(2)
-		expect(client.getDirectoryContents.mock.calls[1]![0]).toBe(`${nextcloudFiles.davRootPath}/other`)
+		expect(client.getDirectoryContents.mock.calls[1]![0]).toBe(`${nextcloudFiles.defaultRootPath}/other`)
 	})
 
 	it('reloads on view change', async () => {
@@ -143,7 +143,7 @@ describe('dav composable', () => {
 			getDirectoryContents: vi.fn((_path: string) => ({ data: [] })),
 			search: vi.fn(() => ({ data: { results: [], truncated: false } })),
 		}
-		nextcloudFiles.davGetClient.mockImplementationOnce(() => client)
+		nextcloudFiles.getClient.mockImplementationOnce(() => client)
 
 		const vue = shallowMount(TestComponent, {
 			props: {
@@ -158,7 +158,7 @@ describe('dav composable', () => {
 
 		expect(client.search).not.toBeCalled()
 		expect(client.getDirectoryContents).toBeCalledTimes(1)
-		expect(client.getDirectoryContents.mock.calls[0]![0]).toBe(`${nextcloudFiles.davRootPath}/`)
+		expect(client.getDirectoryContents.mock.calls[0]![0]).toBe(`${nextcloudFiles.defaultRootPath}/`)
 
 		vue.setProps({ currentView: 'recent' })
 		await waitLoaded(vue.vm)
@@ -173,15 +173,15 @@ describe('dav composable', () => {
 			stat: vi.fn((v) => ({ data: { path: v } })),
 			createDirectory: vi.fn(() => {}),
 		}
-		nextcloudFiles.davGetClient.mockImplementation(() => client)
-		nextcloudFiles.davResultToNode.mockImplementation((v) => v)
+		nextcloudFiles.getClient.mockImplementation(() => client)
+		nextcloudFiles.resultToNode.mockImplementation((v) => v)
 
 		const { createDirectory } = useDAVFiles(ref('files'), ref('/foo/'))
 
 		const node = await createDirectory('my-name')
-		expect(node).toEqual({ path: `${nextcloudFiles.davRootPath}/foo/my-name` })
-		expect(client.stat).toBeCalledWith(`${nextcloudFiles.davRootPath}/foo/my-name`, { details: true })
-		expect(client.createDirectory).toBeCalledWith(`${nextcloudFiles.davRootPath}/foo/my-name`)
+		expect(node).toEqual({ path: `${nextcloudFiles.defaultRootPath}/foo/my-name` })
+		expect(client.stat).toBeCalledWith(`${nextcloudFiles.defaultRootPath}/foo/my-name`, { details: true })
+		expect(client.createDirectory).toBeCalledWith(`${nextcloudFiles.defaultRootPath}/foo/my-name`)
 	})
 
 	it('loadFiles work', async () => {
@@ -190,8 +190,8 @@ describe('dav composable', () => {
 			getDirectoryContents: vi.fn(() => ({ data: [] })),
 			search: vi.fn(() => ({ data: { results: [], truncated: false } })),
 		}
-		nextcloudFiles.davGetClient.mockImplementationOnce(() => client)
-		nextcloudFiles.davResultToNode.mockImplementationOnce((v) => v)
+		nextcloudFiles.getClient.mockImplementationOnce(() => client)
+		nextcloudFiles.resultToNode.mockImplementationOnce((v) => v)
 		nextcloudFiles.getFavoriteNodes.mockImplementationOnce(() => Promise.resolve([]))
 
 		const view = ref<'files' | 'recent' | 'favorites'>('files')
@@ -201,7 +201,7 @@ describe('dav composable', () => {
 		expect(isLoading.value).toBe(true)
 		await loadFiles()
 		expect(isLoading.value).toBe(false)
-		expect(client.getDirectoryContents).toBeCalledWith(`${nextcloudFiles.davRootPath}/`, expect.objectContaining({ details: true }))
+		expect(client.getDirectoryContents).toBeCalledWith(`${nextcloudFiles.defaultRootPath}/`, expect.objectContaining({ details: true }))
 
 		view.value = 'recent'
 		await waitRefLoaded(isLoading)
@@ -218,8 +218,8 @@ describe('dav composable', () => {
 			getDirectoryContents: vi.fn(() => ({ data: [] })),
 			search: vi.fn(() => ({ data: { results: [], truncated: false } })),
 		}
-		nextcloudFiles.davGetClient.mockImplementationOnce(() => client)
-		nextcloudFiles.davResultToNode.mockImplementationOnce((v) => v)
+		nextcloudFiles.getClient.mockImplementationOnce(() => client)
+		nextcloudFiles.resultToNode.mockImplementationOnce((v) => v)
 
 		const view = ref<'files' | 'recent' | 'favorites'>('files')
 		const path = ref('/')
