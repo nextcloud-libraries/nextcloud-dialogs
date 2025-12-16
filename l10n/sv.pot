@@ -12,23 +12,20 @@ msgstr ""
 "Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "\"{char}\" is not allowed inside a folder name."
+msgstr "\"{char}\" är inte tillåtet i ett mappnamn."
+
 msgid "\"{char}\" is not allowed inside a name."
 msgstr "\"{char}\" är inte tillåtet i ett namn."
 
 msgid "\"{extension}\" is not an allowed name."
 msgstr "\"{extension}\" är inte ett tillåtet namn."
 
-msgid "\"{name}\" is an invalid folder name."
-msgstr "\"{name}\" är ett ogiltigt mappnamn."
-
-msgid "\"{name}\" is not an allowed folder name"
-msgstr "\"{name}\" är inte ett tillåtet mappnamn"
+msgid "\"{segment}\" is a reserved name and not allowed for folder names."
+msgstr "\"{segment}\" är ett reserverat namn och inte tillåtet mappnamn."
 
 msgid "\"{segment}\" is a reserved name and not allowed."
 msgstr "\"{segment}\" är ett reserverat namn och inte tillåtet."
-
-msgid "\"/\" is not allowed inside a folder name."
-msgstr "\"/\" är inte tillåtet i ett mappnamn."
 
 msgid "%n file conflict"
 msgid_plural "%n files conflict"
@@ -108,8 +105,8 @@ msgstr "Filer och mappar som du nyligen ändrat kommer att visas här."
 msgid "Filter file list"
 msgstr "Filtrera fillistan"
 
-msgid "Folder name cannot be empty."
-msgstr "Mappnamnet får inte vara tomt."
+msgid "Folder names must not end with \"{extension}\"."
+msgstr "Mappnamn får inte sluta med \"{extension}\"."
 
 msgid "Guest identification"
 msgstr "Gästidentifiering"
@@ -123,6 +120,9 @@ msgid ""
 msgstr ""
 "Om du väljer båda versionerna kommer den inkommande filen att få ett nummer "
 "tillagt i sitt namn."
+
+msgid "Invalid folder name."
+msgstr "Ogiltigt mappnamn."
 
 msgid "Invalid name."
 msgstr "Ogiltigt namn."
