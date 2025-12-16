@@ -11,23 +11,22 @@ msgstr ""
 "Language: tr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+msgid "\"{char}\" is not allowed inside a folder name."
+msgstr "\"{char}\" karakteri bir klasör adında kullanılamaz."
+
 msgid "\"{char}\" is not allowed inside a name."
 msgstr "Bir ad içinde \"{char}\" karakteri kullanılamaz."
 
 msgid "\"{extension}\" is not an allowed name."
 msgstr "\"{extension}\" adına izin verilmiyor."
 
-msgid "\"{name}\" is an invalid folder name."
-msgstr "\"{name}\" geçersiz bir klasör adı."
-
-msgid "\"{name}\" is not an allowed folder name"
-msgstr "\"{name}\" izin verilen bir klasör adı değil"
+msgid "\"{segment}\" is a reserved name and not allowed for folder names."
+msgstr ""
+"\"{segment}\" adı sistem için ayrılmış olduğundan klasör adlarında "
+"kullanılamaz."
 
 msgid "\"{segment}\" is a reserved name and not allowed."
 msgstr "\"{segment}\" adı sistem için ayrılmış olduğundan kullanılamaz."
-
-msgid "\"/\" is not allowed inside a folder name."
-msgstr "\"/\" karakteri klasör adında kullanılamaz."
 
 msgid "%n file conflict"
 msgid_plural "%n files conflict"
@@ -108,8 +107,8 @@ msgstr ""
 msgid "Filter file list"
 msgstr "Dosya listesini süz"
 
-msgid "Folder name cannot be empty."
-msgstr "Klasör adı boş olamaz."
+msgid "Folder names must not end with \"{extension}\"."
+msgstr "Klasör adları \"{extension}\" ile bitemez."
 
 msgid "Guest identification"
 msgstr "Konuk kimliği"
@@ -121,6 +120,9 @@ msgid ""
 "If you select both versions, the incoming file will have a number added to "
 "its name."
 msgstr "İki sürümü de seçerseniz, gelen dosyanın adına bir sayı eklenir."
+
+msgid "Invalid folder name."
+msgstr "Klasör adı geçersiz."
 
 msgid "Invalid name."
 msgstr "Ad geçersiz."
