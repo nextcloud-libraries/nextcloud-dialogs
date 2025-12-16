@@ -58,7 +58,7 @@ const node = new File({
 	mime: 'text/plain',
 	source: 'https://example.com/remote.php/dav/alice/a.txt',
 	root: '/',
-	attributes: { displayName: 'test' },
+	attributes: { displayname: 'test' },
 })
 
 const folder = new Folder({
@@ -68,7 +68,7 @@ const folder = new Folder({
 	source: 'https://example.com/remote.php/dav/alice/b',
 	root: '/',
 	permissions: Permission.ALL,
-	attributes: { displayName: 'test folder' },
+	attributes: { displayname: 'test folder' },
 })
 
 const folderNonReadable = new Folder({
@@ -78,7 +78,7 @@ const folderNonReadable = new Folder({
 	source: 'https://example.com/remote.php/dav/alice/b',
 	root: '/',
 	permissions: Permission.ALL & ~Permission.READ,
-	attributes: { displayName: 'test folder' },
+	attributes: { displayname: 'test folder' },
 })
 
 const defaultOptions = {
