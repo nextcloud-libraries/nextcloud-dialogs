@@ -238,8 +238,8 @@ const fileContainer = ref<HTMLDivElement>()
 		const nodes = fileContainer.value?.parentElement?.children || []
 		let height = fileContainer.value?.parentElement?.clientHeight || 450
 		for (let index = 0; index < nodes.length; index++) {
-			if (!fileContainer.value?.isSameNode(nodes[index])) {
-				height -= nodes[index].clientHeight
+			if (!fileContainer.value?.isSameNode(nodes[index]!)) {
+				height -= nodes[index]!.clientHeight
 			}
 		}
 		// container height - 50px table header / row height of 50px

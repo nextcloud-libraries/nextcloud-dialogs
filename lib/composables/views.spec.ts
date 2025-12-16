@@ -29,6 +29,6 @@ describe('views composable', () => {
 		const { availableViews, allViews } = useViews(ref(true))
 		expect(allViews.length).toBe(3)
 		expect(availableViews.length).toBe(1)
-		expect(availableViews[0].id).toBe('files')
+		expect(availableViews[0]!.id).toBe('files')
 	})
 })

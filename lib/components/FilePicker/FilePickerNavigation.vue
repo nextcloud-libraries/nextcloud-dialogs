@@ -92,7 +92,7 @@ const currentViewObject = computed(() => availableViews.filter((v) => v.id === p
  *
  * @param value The new filter value
  */
-const updateFilterValue = (value: string) => emit('update:filterString', value)
+const updateFilterValue = (value: string | number) => emit('update:filterString', value.toString())
 </script>
 
 <style scoped lang="scss">
