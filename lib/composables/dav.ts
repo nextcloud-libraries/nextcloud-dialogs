@@ -6,8 +6,8 @@ import type { ContentsWithRoot, Folder, Node } from '@nextcloud/files'
 import type { CancelablePromise } from 'cancelable-promise'
 import type { ComputedRef, Ref } from 'vue'
 
-import { davGetClient, davRootPath, getFavoriteNodes } from '@nextcloud/files'
-import { joinPaths as join } from '@nextcloud/paths'
+import { defaultRootPath, getClient, getFavoriteNodes } from '@nextcloud/files/dav'
+import { join } from '@nextcloud/paths'
 import { onMounted, ref, shallowRef, watch } from 'vue'
 import { getFile, getNodes, getRecentNodes } from '../utils/dav.ts'
 
@@ -24,7 +24,7 @@ export function useDAVFiles(
 	/**
 	 * The WebDAV client
 	 */
-	const client = davGetClient()
+	const client = getClient()
 
 	/**
 	 * All files in current view and path
@@ -56,7 +56,7 @@ export function useDAVFiles(
 	async function createDirectory(name: string): Promise<Folder> {
 		const path = join(currentPath.value, name)
 
-		await client.createDirectory(join(davRootPath, path))
+		await client.createDirectory(join(defaultRootPath, path))
 		const directory = await getFile(client, path) as Folder
 		files.value = [...files.value, directory]
 		return directory
