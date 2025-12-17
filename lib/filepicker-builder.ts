@@ -6,7 +6,7 @@
 import type { IFilePickerButton, IFilePickerButtonFactory, IFilePickerCanPick, IFilePickerFilter } from './components/types'
 import type { Node } from '@nextcloud/files'
 
-import { basename } from 'path'
+import { basename } from '@nextcloud/paths'
 import { spawnDialog } from '@nextcloud/vue/functions/dialog'
 import { n, t } from './utils/l10n'
 

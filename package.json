@@ -63,6 +63,7 @@
     "@nextcloud/files": "^3.12.2",
     "@nextcloud/initial-state": "^3.0.0",
     "@nextcloud/l10n": "^3.4.1",
+    "@nextcloud/paths": "^3.0.0",
     "@nextcloud/router": "^3.1.0",
     "@nextcloud/sharing": "^0.3.0",
     "@types/toastify-js": "^1.12.4",
@@ -102,8 +103,19 @@
     "vue-template-compiler": "^2.7.16"
   },
   "engines": {
-    "node": "^20.0.0 || ^22.0.0 || ^24.0.0",
-    "npm": "^10.5.1"
+    "node": "^20.0.0 || ^22.0.0 || ^24.0.0"
+  },
+  "devEngines": {
+    "packageManager": [{
+      "name": "npm",
+      "version": "^11.3.0",
+      "onFail": "error"
+    }],
+    "runtime": {
+      "name": "node",
+      "version": "^24.0.0",
+      "onFail": "error"
+    }
   },
   "browserslist": [
     "extends @nextcloud/browserslist-config"
