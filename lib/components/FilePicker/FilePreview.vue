@@ -77,13 +77,13 @@ const folderDecorationIcon = computed(() => {
 	}
 
 	switch (props.node.attributes?.['mount-type']) {
-		case 'external':
-		case 'external-session':
-			return mdiNetworkOutline
-		case 'group':
-			return mdiAccountGroupOutline
-		case 'shared':
-			return mdiAccountPlus
+	case 'external':
+	case 'external-session':
+		return mdiNetworkOutline
+	case 'group':
+		return mdiAccountGroupOutline
+	case 'shared':
+		return mdiAccountPlus
 	}
 
 	return null

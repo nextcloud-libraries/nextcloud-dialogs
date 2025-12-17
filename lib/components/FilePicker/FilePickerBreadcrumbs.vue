@@ -101,17 +101,17 @@ function validateInput() {
 		}
 
 		switch (error.reason) {
-			case InvalidFilenameErrorReason.Character:
-				validity = t('"{char}" is not allowed inside a folder name.', { char: error.segment })
-				break
-			case InvalidFilenameErrorReason.ReservedName:
-				validity = t('"{segment}" is a reserved name and not allowed for folder names.', { segment: error.segment })
-				break
-			case InvalidFilenameErrorReason.Extension:
-				validity = t('Folder names must not end with "{extension}".', { extension: error.segment })
-				break
-			default:
-				validity = t('Invalid folder name.')
+		case InvalidFilenameErrorReason.Character:
+			validity = t('"{char}" is not allowed inside a folder name.', { char: error.segment })
+			break
+		case InvalidFilenameErrorReason.ReservedName:
+			validity = t('"{segment}" is a reserved name and not allowed for folder names.', { segment: error.segment })
+			break
+		case InvalidFilenameErrorReason.Extension:
+			validity = t('Folder names must not end with "{extension}".', { extension: error.segment })
+			break
+		default:
+			validity = t('Invalid folder name.')
 		}
 	}
 	if (input) {
