@@ -6,20 +6,33 @@
 
 All notable changes to this project will be documented in this file.
 
-## [v7.1.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v7.0.1...v7.1.0)
-
-### Enhancements
-
-* feat(FilePicker): Improve pick and navigation logic to match user expectation by @artonge in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2033
+## [v7.2.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v7.1.0...v7.2.0)
+### Added
+* feat(filepicker): add `allowCreateNew` [\#2070](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2070) \([grnd-alt](https://github.com/grnd-alt)\)
 
 ### Fixed
+* fix(filepicker): use `@nextcloud/files` for name validation [\#2158](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2158) \([susnux](https://github.com/susnux)\)
+* fix(filepicker): use proper folder icons [\#2180](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2180) \([susnux](https://github.com/susnux)\)
+* fix(conflict-picker): use sub-path import to only import needed parts [\#2162](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2162) \([susnux](https://github.com/susnux)\)
+* fix(conflict-picker): pass correct props to component [\#2159](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2159) \([susnux](https://github.com/susnux)\)
+* fix(types): resolve Typescript issues and add CI job to check for type issues [\#2160](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2160) \([susnux](https://github.com/susnux)\)
+* fix: always use the node displayname prop [\#2179](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2179) \([susnux](https://github.com/susnux)\)
 
-* fix: compress translations in assets by @susnux in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2044
+### Changed
+* chore: update workflows from organization [\#2052](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2052) \([susnux](https://github.com/susnux)\)
+* chore: align `devEngines` with current support Node and NPM [\#2108](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2108) \([susnux](https://github.com/susnux)\)
+* ci: update workflows from organization [\#2102](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2102) \([susnux](https://github.com/susnux)\)
 
-### Changes
+## [v7.1.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v7.0.1...v7.1.0)
+### Added
+* feat(FilePicker): Improve pick and navigation logic to match user expectation [\#2033](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2033) \([artonge](https://github.com/artonge)\)
 
-* Updates for project Nextcloud dialogs library by @transifex-integration[bot] in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2045
-* chore(deps): Update browserslist by @artonge in https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2047
+### Fixed
+* fix: compress translations in assets [\#2044](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2044) \([susnux](https://github.com/susnux)\)
+
+### Changed
+* Updates for project Nextcloud dialogs library [\#2045](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2045) \([transifex-integration[bot]](https://github.com/transifex-integration[bot])\)
+* chore(deps): Update browserslist [\#2047](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2047) \([artonge](https://github.com/artonge)\)
 
 ## [v7.0.1](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v7.0.0...v7.0.1)
 ### Fixed
