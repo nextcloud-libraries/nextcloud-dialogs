@@ -43,9 +43,10 @@
 import type { INode } from '@nextcloud/files'
 
 import { formatFileSize, FileType, Permission } from '@nextcloud/files'
+import { extname } from '@nextcloud/paths'
+import { computed } from 'vue'
 import NcCheckboxRadioSwitch from '@nextcloud/vue/components/NcCheckboxRadioSwitch'
 import NcDateTime from '@nextcloud/vue/components/NcDateTime'
-import { computed } from 'vue'
 import { t } from '../../utils/l10n'
 
 import FilePreview from './FilePreview.vue'
@@ -73,14 +74,14 @@ const emit = defineEmits<{
 }>()
 
 /**
- * The displayname of the current node (excluding file extension)
- */
-const displayName = computed(() => props.node.attributes?.displayName || props.node.basename.slice(0, props.node.extension ? -props.node.extension.length : undefined))
-
-/**
  * The file extension of the file
  */
-const fileExtension = computed(() => props.node.extension)
+const fileExtension = computed(() => extname(props.node.displayname))
+
+/**
+ * The displayname of the current node (excluding file extension)
+ */
+const displayName = computed(() => props.node.displayname.slice(0, fileExtension.value ? -fileExtension.value.length : undefined))
 
 /**
  * Check if the node is a directory
