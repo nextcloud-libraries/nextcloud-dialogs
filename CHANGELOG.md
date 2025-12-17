@@ -6,7 +6,17 @@
 
 All notable changes to this project will be documented in this file.
 
-## [v6.4.1](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.3.2...v6.4.0)
+## [v6.4.2](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.4.1...v6.4.2)
+### 🐛 Fixed bugs
+* fix(filepicker): use `@nextcloud/files` for name validation [\#2161](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2161)
+* fix(filepicker): use proper folder icons [\#2181](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2181)
+* fix: always use the node `displayname` prop [\#2182](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2182) \([susnux](https://github.com/susnux)\)
+
+### Other Changes
+* refactor: use `@nextcloud/paths` instead of NodeJS `path` [\#2177](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2177) \([susnux](https://github.com/susnux)\)
+* ci: update workflows from organization [\#2178](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2178) \([susnux](https://github.com/susnux)\)
+
+## [v6.4.1](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.4.0...v6.4.1)
 ### 🐛 Fixed bugs
 * fix(FileListRow): enter-directory event name [\#2059](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2059) \([artonge](https://github.com/artonge)\)
 
