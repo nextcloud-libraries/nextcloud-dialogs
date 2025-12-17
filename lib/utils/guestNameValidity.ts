@@ -33,17 +33,17 @@ export function getGuestNameValidity(name: string): string {
 		}
 
 		switch (error.reason) {
-			case InvalidFilenameErrorReason.Character:
-				return t('"{char}" is not allowed inside a name.', { char: error.segment })
-			case InvalidFilenameErrorReason.ReservedName:
-				return t('"{segment}" is a reserved name and not allowed.', { segment: error.segment })
-			case InvalidFilenameErrorReason.Extension:
-				if (error.segment.match(/\.[a-z]/i)) {
-					return t('"{extension}" is not an allowed name.', { extension: error.segment })
-				}
-				return t('Names must not end with "{extension}".', { extension: error.segment })
-			default:
-				return t('Invalid name.')
+		case InvalidFilenameErrorReason.Character:
+			return t('"{char}" is not allowed inside a name.', { char: error.segment })
+		case InvalidFilenameErrorReason.ReservedName:
+			return t('"{segment}" is a reserved name and not allowed.', { segment: error.segment })
+		case InvalidFilenameErrorReason.Extension:
+			if (error.segment.match(/\.[a-z]/i)) {
+				return t('"{extension}" is not an allowed name.', { extension: error.segment })
+			}
+			return t('Names must not end with "{extension}".', { extension: error.segment })
+		default:
+			return t('Invalid name.')
 		}
 	}
 }

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-import type { VueWrapper } from '@vue/test-utils'
+import type { Wrapper } from '@vue/test-utils'
 import type { ComponentProps } from 'vue-component-type-helpers'
 
 import { afterEach, describe, expect, it, vi } from 'vitest'
@@ -13,25 +13,27 @@ import { shallowMount } from '@vue/test-utils'
 import FileListRow from './FileListRow.vue'
 import { nextTick } from 'vue'
 
-type SubmitAction = (wrapper: VueWrapper<any>) => Promise<void>
+/* eslint-disable @typescript-eslint/no-explicit-any, jsdoc/require-jsdoc */
+
+type SubmitAction = (wrapper: Wrapper<any>) => Promise<void>
 type ElementEvent = { 'update:selected': boolean | undefined, 'enter-directory': Folder | undefined }
 
-async function clickCheckboxAction(wrapper: VueWrapper<any>) {
+async function clickCheckboxAction(wrapper: Wrapper<any>) {
 	wrapper.find('input[type="checkbox"]').trigger('click')
 }
 
-async function clickElementAction(wrapper: VueWrapper<any>) {
+async function clickElementAction(wrapper: Wrapper<any>) {
 	wrapper.find('[data-testid="row-name"]').trigger('click')
 }
 
-async function pressEnterAction(wrapper: VueWrapper<any>) {
+async function pressEnterAction(wrapper: Wrapper<any>) {
 	wrapper.element.dispatchEvent(new KeyboardEvent('keydown', { bubbles: true, key: 'Enter' }))
 	await nextTick()
 }
 
 function testSubmitNode(name: string, propsData: ComponentProps<typeof FileListRow>, eventPayload: ElementEvent, actionCallback: SubmitAction) {
 	it(name, async () => {
-		const wrapper = shallowMount(FileListRow, {
+		const wrapper = shallowMount(FileListRow as any, {
 			propsData,
 			stubs: {
 				NcCheckboxRadioSwitch: {
@@ -113,7 +115,7 @@ describe('FilePicker: FileListRow', () => {
 		const consoleWarn = vi.spyOn(console, 'warn')
 		const consoleError = vi.spyOn(console, 'error')
 
-		const wrapper = shallowMount(FileListRow, {
+		const wrapper = shallowMount(FileListRow as any, {
 			propsData: {
 				allowPickDirectory: true,
 				selected: false,
@@ -134,7 +136,7 @@ describe('FilePicker: FileListRow', () => {
 	})
 
 	it('shows checkbox based on `showCheckbox` property', async () => {
-		const wrapper = shallowMount(FileListRow, {
+		const wrapper = shallowMount(FileListRow as any, {
 			propsData: {
 				allowPickDirectory: true,
 				selected: false,

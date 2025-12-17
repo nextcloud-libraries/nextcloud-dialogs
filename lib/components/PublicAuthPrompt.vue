@@ -22,12 +22,12 @@
 
 		<!-- Form -->
 		<NcTextField ref="input"
+			v-model="name"
 			class="public-auth-prompt__input"
 			data-cy-public-auth-prompt-dialog-name
 			:label="t('Name')"
 			:placeholder="t('Enter your name')"
 			:required="!cancellable"
-			v-model="name"
 			minlength="2"
 			maxlength="64"
 			name="name" />
@@ -114,13 +114,13 @@ export default defineComponent({
 		},
 	},
 
+	emits: ['close'],
+
 	setup() {
 		return {
 			t,
 		}
 	},
-
-	emits: ['close'],
 
 	data() {
 		return {
@@ -172,7 +172,7 @@ export default defineComponent({
 			},
 			immediate: true,
 		},
-		
+
 		name() {
 			// Check validity of the new name
 			const newName = this.name.trim?.() || ''
