@@ -1,6 +1,6 @@
 {
   "name": "@nextcloud/dialogs",
-  "version": "6.4.1",
+  "version": "6.4.2",
   "description": "Nextcloud dialog helpers",
   "types": "dist/index.d.ts",
   "main": "dist/index.cjs",
