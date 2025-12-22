@@ -11,23 +11,21 @@ msgstr ""
 "Language: cs_CZ\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
+msgid "\"{char}\" is not allowed inside a folder name."
+msgstr "znak „{char}“ není možné použít uvnitř názvu složky."
+
 msgid "\"{char}\" is not allowed inside a name."
 msgstr "„{char}“ není možné použít uvnitř názvu."
 
 msgid "\"{extension}\" is not an allowed name."
 msgstr "„{extension}“ není možné použít jako název."
 
-msgid "\"{name}\" is an invalid folder name."
-msgstr "„{name}“ není platný název složky."
-
-msgid "\"{name}\" is not an allowed folder name"
-msgstr "„{name}“ není povolený název složky."
+msgid "\"{segment}\" is a reserved name and not allowed for folder names."
+msgstr ""
+"„{segment}“ je vyhrazeným názvem a není možné ho používat pro názvy složek."
 
 msgid "\"{segment}\" is a reserved name and not allowed."
 msgstr "„{segment}“ je vyhrazeným názvem a není možné ho použít."
-
-msgid "\"/\" is not allowed inside a folder name."
-msgstr "znak „/“ (dopředné lomítko) není možné použít uvnitř názvu složky."
 
 msgid "%n file conflict"
 msgid_plural "%n files conflict"
@@ -113,8 +111,8 @@ msgstr "Zde se zobrazí soubory a složky, které jste nedávno pozměnili."
 msgid "Filter file list"
 msgstr "Filtrovat seznam souborů"
 
-msgid "Folder name cannot be empty."
-msgstr "Složku je třeba nějak nazvat."
+msgid "Folder names must not end with \"{extension}\"."
+msgstr "Názvy složek nemohou končit na „{extension}“."
 
 msgid "Guest identification"
 msgstr "Identifikace hosta"
@@ -127,6 +125,9 @@ msgid ""
 "its name."
 msgstr ""
 "Pokud vyberete obě verze, pak k názvu příchozího souboru bude přidáno číslo."
+
+msgid "Invalid folder name."
+msgstr "Neplatný název složky."
 
 msgid "Invalid name."
 msgstr "Neplatný název."
