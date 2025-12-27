@@ -3,7 +3,6 @@
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Cauan Henrique Zorzenon <cauanzorzenon1@protonmail.com>, 2024
 # Cristiano Silva, 2024
-# Mário Rodrigues, 2025
 # Flávio Veras <flaviove@gmail.com>, 2025
 # F Bausch, 2025
 # 
@@ -15,23 +14,20 @@ msgstr ""
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
+msgid "\"{char}\" is not allowed inside a folder name."
+msgstr "\"{char}\" não é permitido dentro de um nome de pasta."
+
 msgid "\"{char}\" is not allowed inside a name."
 msgstr "\"{char}\" não é permitido dentro de um nome."
 
 msgid "\"{extension}\" is not an allowed name."
 msgstr "\"{extension}\" não é um nome permitido."
 
-msgid "\"{name}\" is an invalid folder name."
-msgstr "\"{name}\" é um nome de pasta inválido."
-
-msgid "\"{name}\" is not an allowed folder name"
-msgstr "\"{name}\" não é um nome de pasta permitido"
+msgid "\"{segment}\" is a reserved name and not allowed for folder names."
+msgstr "\"{segment}\" é um nome reservado e não permitido para nomes de pasta."
 
 msgid "\"{segment}\" is a reserved name and not allowed."
 msgstr "\"{segment}\" é um nome reservado e não permitido."
-
-msgid "\"/\" is not allowed inside a folder name."
-msgstr "\"/\" não é permitido dentro de um nome de pasta."
 
 msgid "%n file conflict"
 msgid_plural "%n files conflict"
@@ -114,8 +110,8 @@ msgstr "Arquivos e pastas que você modificou recentemente aparecerão aqui."
 msgid "Filter file list"
 msgstr "Filtrar lista de arquivos"
 
-msgid "Folder name cannot be empty."
-msgstr "O nome da pasta não pode ser vazio."
+msgid "Folder names must not end with \"{extension}\"."
+msgstr "Nomes de pasta não podem terminar com \"{extension}\"."
 
 msgid "Guest identification"
 msgstr "Identificação de convidados"
@@ -129,6 +125,9 @@ msgid ""
 msgstr ""
 "Se você selecionar ambas as versões, um número será adicionado ao nome do "
 "arquivo recebido."
+
+msgid "Invalid folder name."
+msgstr "Nome de pasta inválido."
 
 msgid "Invalid name."
 msgstr "Nome inválido."
@@ -244,7 +243,7 @@ msgid "Which files do you want to keep?"
 msgstr "Quais arquivos você deseja manter?"
 
 msgid "You are currently identified as {nickname}."
-msgstr "Encontra-se identificado como {nickname}"
+msgstr "Você está atualmente identificado como {nickname}."
 
 msgid "You are currently not identified."
 msgstr "No momento, você não está identificado."
