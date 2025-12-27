@@ -252,7 +252,7 @@ msgid "You cannot leave the name empty."
 msgstr "Você não pode deixar o nome vazio."
 
 msgid "You need to choose at least one conflict solution"
-msgstr "Você precisa escolher pelo menos uma solução para o conflito."
+msgstr "Você precisa escolher pelo menos uma solução para o conflito"
 
 msgid "You need to select at least one version of each file to continue."
 msgstr ""
