@@ -1,10 +1,8 @@
 # 
 # Translators:
 # Rémi LEBLOND, 2023
-# Mordecai, 2023
 # fleopaulD, 2023
-# L. Ch., 2024
-# DEV314R, 2024
+# Loïc Ch., 2024
 # Benoit Pruneau, 2025
 # Caro Leviia, 2025
 # Jérôme HERBINET, 2025
@@ -19,23 +17,22 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
+msgid "\"{char}\" is not allowed inside a folder name."
+msgstr "\"{char}\" n'est pas autorisé dans un nom de dossier."
+
 msgid "\"{char}\" is not allowed inside a name."
 msgstr "\"{char}\" n'est pas autorisé dans un nom."
 
 msgid "\"{extension}\" is not an allowed name."
 msgstr "\"{extension}\" n'est pas un nom autorisé."
 
-msgid "\"{name}\" is an invalid folder name."
-msgstr "\"{name}\" n'est pas un nom de dossier valide."
-
-msgid "\"{name}\" is not an allowed folder name"
-msgstr "\"{name}\" n'est pas un nom de dossier autorisé"
+msgid "\"{segment}\" is a reserved name and not allowed for folder names."
+msgstr ""
+"\"{segment}\" est un nom réservé et n'est pas autorisé pour un nom de "
+"dossier."
 
 msgid "\"{segment}\" is a reserved name and not allowed."
 msgstr "\"{segment}\" est un nom réservé et n'est pas autorisé."
-
-msgid "\"/\" is not allowed inside a folder name."
-msgstr "Le caractère \"/\" n'est pas autorisé dans un nom de dossier."
 
 msgid "%n file conflict"
 msgid_plural "%n files conflict"
@@ -118,8 +115,8 @@ msgstr "Les fichiers et répertoires modifiés récemment apparaîtront ici."
 msgid "Filter file list"
 msgstr "Filtrer la liste des fichiers"
 
-msgid "Folder name cannot be empty."
-msgstr "Le nom du dossier ne peut pas être vide."
+msgid "Folder names must not end with \"{extension}\"."
+msgstr "Les noms de dossiers ne doivent pas se terminer par \"{extension}\"."
 
 msgid "Guest identification"
 msgstr "Identification d'invité"
@@ -133,6 +130,9 @@ msgid ""
 msgstr ""
 "Si vous conservez les deux versions, le fichier reçu sera renommé avec un "
 "numéro."
+
+msgid "Invalid folder name."
+msgstr "Nom de dossier invalide."
 
 msgid "Invalid name."
 msgstr "Nom invalide."
