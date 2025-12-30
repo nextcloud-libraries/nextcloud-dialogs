@@ -13,23 +13,21 @@ msgstr ""
 "Language: sk_SK\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n == 1 ? 0 : n % 1 == 0 && n >= 2 && n <= 4 ? 1 : n % 1 != 0 ? 2: 3);\n"
 
+msgid "\"{char}\" is not allowed inside a folder name."
+msgstr "\"{char}\" nie je povolené v názve priečinka."
+
 msgid "\"{char}\" is not allowed inside a name."
 msgstr "\"{char}\" nie je povolené v rámci mena."
 
 msgid "\"{extension}\" is not an allowed name."
 msgstr "\"{extension}\" nie je povolený názov."
 
-msgid "\"{name}\" is an invalid folder name."
-msgstr "\"{name}\" je neplatný názov pričinka."
-
-msgid "\"{name}\" is not an allowed folder name"
-msgstr "\"{name}\" nie je povolený názov priečinka."
+msgid "\"{segment}\" is a reserved name and not allowed for folder names."
+msgstr ""
+"„{segment}“ je rezervované meno a nie je povolené na názvy priečinkov."
 
 msgid "\"{segment}\" is a reserved name and not allowed."
 msgstr "\"{segment}\" je rezervované meno a nie je povolené."
-
-msgid "\"/\" is not allowed inside a folder name."
-msgstr "\"/\" nie je povolené v názve priečinka."
 
 msgid "%n file conflict"
 msgid_plural "%n files conflict"
@@ -115,8 +113,8 @@ msgstr "Tu sa zobrazia súbory a priečinky, ktoré ste nedávno upravili."
 msgid "Filter file list"
 msgstr "Filtrovať zoznam súborov"
 
-msgid "Folder name cannot be empty."
-msgstr "Názov priečinka nemôže byť prázdny."
+msgid "Folder names must not end with \"{extension}\"."
+msgstr "Názvy priečinkov nesmú končiť na \"{extension}\"."
 
 msgid "Guest identification"
 msgstr "Identifikácia hosťa"
@@ -130,6 +128,9 @@ msgid ""
 msgstr ""
 "Ak vyberiete obe verzie, prichádzajúci súbor bude mať k svojmu názvu pridané"
 " číslo."
+
+msgid "Invalid folder name."
+msgstr "Neplatný názov priečinka."
 
 msgid "Invalid name."
 msgstr "Neplatné meno."
