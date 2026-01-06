@@ -1,16 +1,20 @@
 # 
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
-# Efstathios Iosifidis <iefstathios@gmail.com>, 2025
-# Γιάννος, 2025
+# ac8a127b4e32514af68813db2f21936d_cf77e36, 2025
+# ELENI STERGATOU, 2025
+# Efstathios Iosifidis <eiosifidis@gmail.com>, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Γιάννος, 2025\n"
+"Last-Translator: Efstathios Iosifidis <eiosifidis@gmail.com>, 2026\n"
 "Language-Team: Greek (https://app.transifex.com/nextcloud/teams/64236/el/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "\"{char}\" is not allowed inside a folder name."
+msgstr "Το «{char}» δεν επιτρέπεται μέσα σε όνομα φακέλου."
 
 msgid "\"{char}\" is not allowed inside a name."
 msgstr "\"{char}\" δεν επιτρέπεται μέσα σε ένα όνομα."
@@ -18,23 +22,32 @@ msgstr "\"{char}\" δεν επιτρέπεται μέσα σε ένα όνομα
 msgid "\"{extension}\" is not an allowed name."
 msgstr "\"{extension}\" δεν είναι επιτρεπτό όνομα."
 
-msgid "\"{name}\" is an invalid folder name."
-msgstr "Το \"{name}\" δεν είναι έγκυρο όνομα φακέλου."
-
-msgid "\"{name}\" is not an allowed folder name"
-msgstr "Το \"{name}\" δεν είναι επιτρεπτό όνομα φακέλου"
+msgid "\"{segment}\" is a reserved name and not allowed for folder names."
+msgstr ""
+"Το «{segment}» είναι ένα δεσμευμένο όνομα και δεν επιτρέπεται για ονόματα "
+"φακέλων."
 
 msgid "\"{segment}\" is a reserved name and not allowed."
 msgstr "\"{segment}\" είναι ένα δεσμευμένο όνομα και δεν επιτρέπεται."
 
-msgid "\"/\" is not allowed inside a folder name."
-msgstr "Το \"/\" δεν επιτρέπεται μέσα στο όνομα ενός φακέλου."
+msgid "%n file conflict"
+msgid_plural "%n files conflict"
+msgstr[0] "%n σύγκρουση αρχείου"
+msgstr[1] "%n σύγκρουση αρχείων"
+
+msgid "%n file conflict in {dirname}"
+msgid_plural "%n file conflicts in {dirname}"
+msgstr[0] "%n σύγκρουση αρχείου στο {dirname}"
+msgstr[1] "%n σύγκρουση αρχείων στο {dirname}"
 
 msgid "All files"
 msgstr "Όλα τα αρχεία"
 
 msgid "Cancel"
 msgstr "Ακύρωση"
+
+msgid "Cancel the entire operation"
+msgstr "Ακύρωση όλης της διαδικασίας"
 
 msgid "Choose"
 msgstr "Επιλογή"
@@ -46,6 +59,12 @@ msgid "Choose %n file"
 msgid_plural "Choose %n files"
 msgstr[0] "Επιλέξτε %n αρχείο"
 msgstr[1] "Επιλέξτε %n αρχεία"
+
+msgid "Confirm"
+msgstr "Επιβεβαίωση"
+
+msgid "Continue"
+msgstr "Συνέχεια"
 
 msgid "Copy"
 msgstr "Αντιγραφή"
@@ -71,6 +90,9 @@ msgstr "Επιλογέας τρέχουσας προβολής"
 msgid "Enter your name"
 msgstr "Εισάγετε το όνομά σας"
 
+msgid "Existing version"
+msgstr "Υφιστάμενη έκδοση"
+
 msgid "Failed to set nickname."
 msgstr "Αποτυχία στην ρύθμιση του ψευδώνυμου."
 
@@ -88,8 +110,8 @@ msgstr ""
 msgid "Filter file list"
 msgstr "Φιλτράρισμα λίστας αρχείων"
 
-msgid "Folder name cannot be empty."
-msgstr "Το όνομα του φακέλου δεν μπορεί να είναι κενό."
+msgid "Folder names must not end with \"{extension}\"."
+msgstr "Τα ονόματα των φακέλων δεν πρέπει να τελειώνουν με «{extension}»."
 
 msgid "Guest identification"
 msgstr "Ταυτοποίηση επισκέπτη"
@@ -97,8 +119,21 @@ msgstr "Ταυτοποίηση επισκέπτη"
 msgid "Home"
 msgstr "Αρχική"
 
+msgid ""
+"If you select both versions, the incoming file will have a number added to "
+"its name."
+msgstr ""
+"Εάν επιλέξετε και τις δύο εκδόσεις, στο όνομα του εισερχόμενου αρχείου θα "
+"προστεθεί ένας αριθμός."
+
+msgid "Invalid folder name."
+msgstr "Μη έγκυρο όνομα φακέλου."
+
 msgid "Invalid name."
 msgstr "Μη έγκυρο όνομα."
+
+msgid "Last modified date unknown"
+msgstr "Άγνωστη ημερομηνία τελευταίας τροποποίησης"
 
 msgid "Modified"
 msgstr "Τροποποιήθηκε"
@@ -133,6 +168,9 @@ msgstr "Νέος φάκελος"
 msgid "New folder name"
 msgstr "Όνομα νέου φακέλου"
 
+msgid "New version"
+msgstr "Νέα έκδοση"
+
 msgid "No files in here"
 msgstr "Δεν υπάρχουν αρχεία εδώ"
 
@@ -148,8 +186,17 @@ msgstr "Παρακαλώ εισάγετε ένα όνομα με τουλάχι�
 msgid "Recent"
 msgstr "Πρόσφατα"
 
+msgid "Select all checkboxes"
+msgstr "Επιλέξτε όλα τα πλαίσια ελέγχου"
+
 msgid "Select all entries"
-msgstr "Επιλογή όλων των εγγραφών"
+msgstr "Επιλογή όλων των καταχωρήσεων"
+
+msgid "Select all existing files"
+msgstr "Επιλογή όλων των υπάρχοντων αρχείων"
+
+msgid "Select all new files"
+msgstr "Επιλογή όλων των νέων αρχείων"
 
 msgid "Select entry"
 msgstr "Επιλογή εγγραφής"
@@ -160,6 +207,14 @@ msgstr "Επιλέξτε τη γραμμή για το {nodename}"
 msgid "Size"
 msgstr "Μέγεθος"
 
+msgid "Skip %n file"
+msgid_plural "Skip %n files"
+msgstr[0] "Παράλειψη ενός αρχείου"
+msgstr[1] "Παράλειψη %n αρχείων"
+
+msgid "Skip this file"
+msgstr "Παράλειψη αυτού το αρχείου"
+
 msgid "Submit name"
 msgstr "Υποβολή ονόματος"
 
@@ -169,6 +224,23 @@ msgstr "Αναίρεση"
 msgid "Upload some content or sync with your devices!"
 msgstr "Ανεβάστε κάποιο περιεχόμενο ή συγχρονίστε με τις συσκευές σας!"
 
+msgid ""
+"When an incoming folder is selected, any conflicting files within it will "
+"also be overwritten."
+msgstr ""
+"Όταν επιλέγεται ένας φάκελος εισερχομένων, όλα τα αρχεία που βρίσκονται σε "
+"σύγκρουση μέσα σε αυτόν θα αντικατασταθούν επίσης."
+
+msgid ""
+"When an incoming folder is selected, the content is written into the "
+"existing folder and a recursive conflict resolution is performed."
+msgstr ""
+"Όταν επιλέγεται ένας φάκελος εισερχομένων, το περιεχόμενο εγγράφεται στον "
+"υπάρχοντα φάκελο και εκτελείται μια αναδρομική επίλυση σύγκρουσης."
+
+msgid "Which files do you want to keep?"
+msgstr "Ποια αρχεία θέλετε να διατηρήσετε;"
+
 msgid "You are currently identified as {nickname}."
 msgstr "Αυτή τη στιγμή έχετε αναγνωριστεί ως {nickname}."
 
@@ -177,3 +249,11 @@ msgstr "Δεν έχετε ταυτοποιηθεί."
 
 msgid "You cannot leave the name empty."
 msgstr "Δεν μπορείτε να αφήσετε το όνομα κενό."
+
+msgid "You need to choose at least one conflict solution"
+msgstr "Πρέπει να επιλέξετε τουλάχιστον μία λύση σύγκρουσης"
+
+msgid "You need to select at least one version of each file to continue."
+msgstr ""
+"Πρέπει να επιλέξετε τουλάχιστον μία έκδοση από κάθε αρχείο για να "
+"συνεχίσετε."
