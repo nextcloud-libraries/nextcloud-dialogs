@@ -149,7 +149,7 @@ msgid "Names must not be empty."
 msgstr "名前は空にできません。"
 
 msgid "Names must not end with \"{extension}\"."
-msgstr "名前の末尾に\"{extension}\"は使用できません"
+msgstr "名前の末尾に \"{extension}\" を使用できません。"
 
 msgid "Names must not start with a dot."
 msgstr "ドットで始まる名前は使用できません。"
