@@ -84,7 +84,7 @@ msgid "Create directory"
 msgstr "ディレクトリを作成"
 
 msgid "Current view selector"
-msgstr "現在のビューセレクタ"
+msgstr "現在のビュー選択"
 
 msgid "Enter your name"
 msgstr "名前を入力してください"
@@ -99,13 +99,13 @@ msgid "Favorites"
 msgstr "お気に入り"
 
 msgid "Files and folders you mark as favorite will show up here."
-msgstr "お気に入りとしてマークしたファイルとフォルダがここに表示されます。"
+msgstr "お気に入りとしてマークしたファイルとフォルダーがここに表示されます。"
 
 msgid "Files and folders you recently modified will show up here."
-msgstr "最近変更したファイルとフォルダがここに表示されます。"
+msgstr "最近変更したファイルとフォルダーがここに表示されます。"
 
 msgid "Filter file list"
-msgstr "ファイルリストをフィルタ"
+msgstr "ファイルのリストをフィルター"
 
 msgid "Folder names must not end with \"{extension}\"."
 msgstr "フォルダー名の末尾に \"{extension}\" を使用できません。"
@@ -170,7 +170,7 @@ msgid "No files in here"
 msgstr "ファイルがありません"
 
 msgid "No files matching your filter were found."
-msgstr "フィルタに一致するファイルは見つかりませんでした。"
+msgstr "フィルターに一致するファイルは見つかりませんでした。"
 
 msgid "No matching files"
 msgstr "一致するファイルはありません"
@@ -221,12 +221,12 @@ msgstr "コンテンツをアップロードするか、デバイスと同期し
 msgid ""
 "When an incoming folder is selected, any conflicting files within it will "
 "also be overwritten."
-msgstr "受信フォルダが選択されている場合、そのフォルダ内の競合ファイルも上書きされます。"
+msgstr "受信フォルダーを選択すると、そのフォルダー内の競合ファイルも上書きされます。"
 
 msgid ""
 "When an incoming folder is selected, the content is written into the "
 "existing folder and a recursive conflict resolution is performed."
-msgstr "受信フォルダが選択されると、内容は既存のフォルダに書き込まれ、再帰的な競合解決が実行されます。"
+msgstr "受信フォルダーを選択すると、内容は既存のフォルダーに書き込まれ、再帰的な競合解決が実行されます。"
 
 msgid "Which files do you want to keep?"
 msgstr "どのファイルを残しますか？"
