@@ -99,10 +99,10 @@ msgid "Favorites"
 msgstr "お気に入り"
 
 msgid "Files and folders you mark as favorite will show up here."
-msgstr "お気に入りとしてマークしたファイルとフォルダがここに表示されます。"
+msgstr "お気に入りとしてマークしたファイルとフォルダーがここに表示されます。"
 
 msgid "Files and folders you recently modified will show up here."
-msgstr "最近変更したファイルとフォルダがここに表示されます。"
+msgstr "最近変更したファイルとフォルダーがここに表示されます。"
 
 msgid "Filter file list"
 msgstr "ファイルのリストをフィルター"
