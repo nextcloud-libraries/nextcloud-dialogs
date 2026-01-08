@@ -226,7 +226,7 @@ msgstr "受信フォルダーを選択すると、そのフォルダー内の競
 msgid ""
 "When an incoming folder is selected, the content is written into the "
 "existing folder and a recursive conflict resolution is performed."
-msgstr "受信フォルダが選択されると、内容は既存のフォルダに書き込まれ、再帰的な競合解決が実行されます。"
+msgstr "受信フォルダーを選択すると、内容は既存のフォルダーに書き込まれ、再帰的な競合解決が実行されます。"
 
 msgid "Which files do you want to keep?"
 msgstr "どのファイルを残しますか？"
