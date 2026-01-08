@@ -176,7 +176,7 @@ msgid "No matching files"
 msgstr "一致するファイルはありません"
 
 msgid "Please enter a name with at least 2 characters."
-msgstr "名前を2文字以上で入力してください。"
+msgstr "名前は2文字以上を入力してください。"
 
 msgid "Recent"
 msgstr "最近"
