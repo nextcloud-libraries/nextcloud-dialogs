@@ -182,7 +182,7 @@ msgid "Recent"
 msgstr "最近"
 
 msgid "Select all checkboxes"
-msgstr "すべてのチェックボックスを選択する"
+msgstr "すべてのチェックボックスを選択"
 
 msgid "Select all entries"
 msgstr "すべてのエントリを選択"
