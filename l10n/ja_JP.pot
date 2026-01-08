@@ -221,7 +221,7 @@ msgstr "コンテンツをアップロードするか、デバイスと同期し
 msgid ""
 "When an incoming folder is selected, any conflicting files within it will "
 "also be overwritten."
-msgstr "受信フォルダが選択されている場合、そのフォルダ内の競合ファイルも上書きされます。"
+msgstr "受信フォルダーを選択すると、そのフォルダー内の競合ファイルも上書きされます。"
 
 msgid ""
 "When an incoming folder is selected, the content is written into the "
