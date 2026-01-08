@@ -105,7 +105,7 @@ msgid "Files and folders you recently modified will show up here."
 msgstr "最近変更したファイルとフォルダがここに表示されます。"
 
 msgid "Filter file list"
-msgstr "ファイルリストをフィルタ"
+msgstr "ファイルのリストをフィルター"
 
 msgid "Folder names must not end with \"{extension}\"."
 msgstr "フォルダー名の末尾に \"{extension}\" を使用できません。"
