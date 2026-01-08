@@ -84,7 +84,7 @@ msgid "Create directory"
 msgstr "ディレクトリを作成"
 
 msgid "Current view selector"
-msgstr "現在のビューセレクター"
+msgstr "現在のビュー選択"
 
 msgid "Enter your name"
 msgstr "名前を入力してください"
