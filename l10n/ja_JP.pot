@@ -170,7 +170,7 @@ msgid "No files in here"
 msgstr "ファイルがありません"
 
 msgid "No files matching your filter were found."
-msgstr "フィルタに一致するファイルは見つかりませんでした。"
+msgstr "フィルターに一致するファイルは見つかりませんでした。"
 
 msgid "No matching files"
 msgstr "一致するファイルはありません"
