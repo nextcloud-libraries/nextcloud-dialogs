@@ -67,7 +67,7 @@
     "@nextcloud/router": "^3.1.0",
     "@nextcloud/sharing": "^0.3.0",
     "@types/toastify-js": "^1.12.4",
-    "@vueuse/core": "^11.3.0",
+    "@vueuse/core": "^14.1.0",
     "cancelable-promise": "^4.3.1",
     "p-queue": "^9.1.0",
     "toastify-js": "^1.12.0",
