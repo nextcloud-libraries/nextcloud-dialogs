@@ -7,15 +7,18 @@
 # Hyeongjin Park, 2025
 # LEE Hwanyong <hwan@ajou.ac.kr>, 2025
 # 보헤민, 2025
-# OHORA YOON, 2025
+# OHORA YOON, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: OHORA YOON, 2025\n"
+"Last-Translator: OHORA YOON, 2026\n"
 "Language-Team: Korean (https://app.transifex.com/nextcloud/teams/64236/ko/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: ko\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "\"{char}\" is not allowed inside a folder name."
+msgstr "폴더 이름 안에는 \"{char}\"를 사용할 수 없습니다."
 
 msgid "\"{char}\" is not allowed inside a name."
 msgstr "\"{char}\"는 이름 내에 사용할 수 없습니다."
@@ -23,23 +26,28 @@ msgstr "\"{char}\"는 이름 내에 사용할 수 없습니다."
 msgid "\"{extension}\" is not an allowed name."
 msgstr "\"{extension}\"은 허용되는 이름이 아닙니다."
 
-msgid "\"{name}\" is an invalid folder name."
-msgstr "\"{name}\"은 사용할 수 없는 폴더명입니다."
-
-msgid "\"{name}\" is not an allowed folder name"
-msgstr "\"{name}\"은 허용되지 않은 폴더명입니다."
+msgid "\"{segment}\" is a reserved name and not allowed for folder names."
+msgstr "\"{segment}\"는 예약된 이름이므로 폴더 이름으로 사용할 수 없습니다."
 
 msgid "\"{segment}\" is a reserved name and not allowed."
 msgstr "같은 이름을 가진 \"{segment}\"이 이미 사용 중입니다."
 
-msgid "\"/\" is not allowed inside a folder name."
-msgstr "\"/\"는 폴더명에 사용할 수 없는 기호입니다."
+msgid "%n file conflict"
+msgid_plural "%n files conflict"
+msgstr[0] "%n 파일 충돌"
+
+msgid "%n file conflict in {dirname}"
+msgid_plural "%n file conflicts in {dirname}"
+msgstr[0] "{dirname} 안의 %n 파일 충돌"
 
 msgid "All files"
 msgstr "모든 파일"
 
 msgid "Cancel"
 msgstr "취소"
+
+msgid "Cancel the entire operation"
+msgstr "전체 작업 취소"
 
 msgid "Choose"
 msgstr "선택"
@@ -50,6 +58,12 @@ msgstr "{file} 선택"
 msgid "Choose %n file"
 msgid_plural "Choose %n files"
 msgstr[0] "%n개의 파일 선택"
+
+msgid "Confirm"
+msgstr "확인"
+
+msgid "Continue"
+msgstr "계속"
 
 msgid "Copy"
 msgstr "복사"
@@ -75,6 +89,9 @@ msgstr "현재 뷰 선택자"
 msgid "Enter your name"
 msgstr "이름을 입력하세요 "
 
+msgid "Existing version"
+msgstr "기존 버전"
+
 msgid "Failed to set nickname."
 msgstr ""
 "닉네임을 설정하지 못했습니다.\n"
@@ -92,8 +109,8 @@ msgstr "최근 수정한 파일 및 폴더가 이곳에 표시됩니다."
 msgid "Filter file list"
 msgstr "파일 목록 필터링"
 
-msgid "Folder name cannot be empty."
-msgstr "폴더명을 비울 수 없습니다."
+msgid "Folder names must not end with \"{extension}\"."
+msgstr "폴더 이름은 \"{extension}\"로 끝나면 안됩니다."
 
 msgid "Guest identification"
 msgstr "게스트 확인"
@@ -101,8 +118,19 @@ msgstr "게스트 확인"
 msgid "Home"
 msgstr "홈"
 
+msgid ""
+"If you select both versions, the incoming file will have a number added to "
+"its name."
+msgstr "만약 두 버전 모두 선택한다면 들어오는 파일은 이름에 번호가 추가될 것입니다."
+
+msgid "Invalid folder name."
+msgstr "폴더 이름이 잘못되었습니다."
+
 msgid "Invalid name."
 msgstr "잘못된 이름입니다. "
+
+msgid "Last modified date unknown"
+msgstr "최근 수정 날짜 알 수 없음"
 
 msgid "Modified"
 msgstr "수정됨"
@@ -137,6 +165,9 @@ msgstr "새 폴더"
 msgid "New folder name"
 msgstr "새 폴더명"
 
+msgid "New version"
+msgstr "새로운 버전"
+
 msgid "No files in here"
 msgstr "파일이 없습니다"
 
@@ -152,8 +183,17 @@ msgstr "최소 2자 이상의 이름을 입력하십시오. "
 msgid "Recent"
 msgstr "최근"
 
+msgid "Select all checkboxes"
+msgstr "모든 체크박스 선택"
+
 msgid "Select all entries"
 msgstr "모두 선택"
+
+msgid "Select all existing files"
+msgstr "모든 기존 파일 선택"
+
+msgid "Select all new files"
+msgstr "모든 새 파일 선택"
 
 msgid "Select entry"
 msgstr "항목 선택"
@@ -164,6 +204,13 @@ msgstr "{nodename}의 행 선택"
 msgid "Size"
 msgstr "크기"
 
+msgid "Skip %n file"
+msgid_plural "Skip %n files"
+msgstr[0] "%n 파일 건너뜀"
+
+msgid "Skip this file"
+msgstr "이 파일 건너뜀"
+
 msgid "Submit name"
 msgstr "이름 제출"
 
@@ -173,6 +220,19 @@ msgstr "되돌리기"
 msgid "Upload some content or sync with your devices!"
 msgstr "기기에서 파일을 업로드 또는 동기화하세요!"
 
+msgid ""
+"When an incoming folder is selected, any conflicting files within it will "
+"also be overwritten."
+msgstr "들어오는 폴더를 선택하면 해당 폴더 내의 충돌하는 파일도 덮어쓰여집니다."
+
+msgid ""
+"When an incoming folder is selected, the content is written into the "
+"existing folder and a recursive conflict resolution is performed."
+msgstr "들어오는 폴더를 선택하면 해당 콘텐츠가 기존 폴더에 기록되고 재귀적 충돌 해결이 수행됩니다."
+
+msgid "Which files do you want to keep?"
+msgstr "어떤 파일을 보관하시겠습니까?"
+
 msgid "You are currently identified as {nickname}."
 msgstr "{nickname}로서 인증 상태 입니다."
 
@@ -181,3 +241,9 @@ msgstr "현재 인증되지 않았습니다."
 
 msgid "You cannot leave the name empty."
 msgstr "이름은 비워 둘 수 없습니다. "
+
+msgid "You need to choose at least one conflict solution"
+msgstr "최소한 하나의 갈등 해결 방안을 선택해야 합니다."
+
+msgid "You need to select at least one version of each file to continue."
+msgstr "계속 진행하려면 각 파일의 버전을 하나 이상 선택해야 합니다."
