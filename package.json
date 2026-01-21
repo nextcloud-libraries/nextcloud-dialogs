@@ -72,7 +72,7 @@
     "@nextcloud/browserslist-config": "^3.1.2",
     "@nextcloud/eslint-config": "^9.0.0-rc.6",
     "@nextcloud/logger": "^3.0.3",
-    "@nextcloud/stylelint-config": "^3.1.1",
+    "@nextcloud/stylelint-config": "^3.2.0",
     "@nextcloud/vite-config": "^2.5.2",
     "@testing-library/vue": "^8.1.0",
     "@types/gettext-parser": "^8.0.0",
