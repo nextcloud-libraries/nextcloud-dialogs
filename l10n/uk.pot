@@ -1,14 +1,17 @@
 # 
 # Translators:
-# O St, 2025
+# O St, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: O St, 2025\n"
+"Last-Translator: O St, 2026\n"
 "Language-Team: Ukrainian (https://app.transifex.com/nextcloud/teams/64236/uk/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: uk\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+
+msgid "\"{char}\" is not allowed inside a folder name."
+msgstr "{char} не дозволено всередині назви каталогу."
 
 msgid "\"{char}\" is not allowed inside a name."
 msgstr "\"{char}\" не дозволено всередині імени."
@@ -16,23 +19,34 @@ msgstr "\"{char}\" не дозволено всередині імени."
 msgid "\"{extension}\" is not an allowed name."
 msgstr "\"{extension}\" недозволене ім'я."
 
-msgid "\"{name}\" is an invalid folder name."
-msgstr "\"{name}\" недійсне ім'я каталогу."
-
-msgid "\"{name}\" is not an allowed folder name"
-msgstr "\"{name}\" недозволене ім'я каталогу."
+msgid "\"{segment}\" is a reserved name and not allowed for folder names."
+msgstr "{segment} є зарезервованим ім'ям і не дозволено для назви каталогу."
 
 msgid "\"{segment}\" is a reserved name and not allowed."
 msgstr "\"{segment}\" зарезервоване ім'я і не дозволено для використання."
 
-msgid "\"/\" is not allowed inside a folder name."
-msgstr "\"/\" не дозволено у імені каталогу."
+msgid "%n file conflict"
+msgid_plural "%n files conflict"
+msgstr[0] "%n конфлікт файлів"
+msgstr[1] "%n конфлікти файлів"
+msgstr[2] "%n конфліктів файлів"
+msgstr[3] "%n конфліктів файлів"
+
+msgid "%n file conflict in {dirname}"
+msgid_plural "%n file conflicts in {dirname}"
+msgstr[0] "%n конфлікт файлів у каталозі {dirname}"
+msgstr[1] "%n конфлікти файлів у каталозі {dirname}"
+msgstr[2] "%n конфліктів файлів у каталозі {dirname}"
+msgstr[3] "%n конфліктів файлів у каталозі {dirname}"
 
 msgid "All files"
 msgstr "Всі файли"
 
 msgid "Cancel"
 msgstr "Скасувати"
+
+msgid "Cancel the entire operation"
+msgstr "Скасувати всю операцію"
 
 msgid "Choose"
 msgstr "Вибрати"
@@ -46,6 +60,12 @@ msgstr[0] "Вибрати %n файл"
 msgstr[1] "Вибрати %n файли"
 msgstr[2] "Вибрати %n файлів"
 msgstr[3] "Вибрати %n файлів"
+
+msgid "Confirm"
+msgstr "Підтвердити"
+
+msgid "Continue"
+msgstr "Продовжити"
 
 msgid "Copy"
 msgstr "Копіювати"
@@ -71,6 +91,9 @@ msgstr "Вибір подання"
 msgid "Enter your name"
 msgstr "Зазначте ваше ім'я"
 
+msgid "Existing version"
+msgstr "Наявна версія"
+
 msgid "Failed to set nickname."
 msgstr "Не вдалося встановити псевдо."
 
@@ -86,8 +109,8 @@ msgstr "Тут показуватимуться файли та каталоги
 msgid "Filter file list"
 msgstr "Фільтрувати список файлів"
 
-msgid "Folder name cannot be empty."
-msgstr "Ім'я каталогу не може бути порожнє."
+msgid "Folder names must not end with \"{extension}\"."
+msgstr "Ім'я каталогу не може закінчуватися на \"{extension}\"."
 
 msgid "Guest identification"
 msgstr "Ім'я для гостя"
@@ -95,8 +118,20 @@ msgstr "Ім'я для гостя"
 msgid "Home"
 msgstr "Домівка"
 
+msgid ""
+"If you select both versions, the incoming file will have a number added to "
+"its name."
+msgstr ""
+"Якщо вибрати обидві версії, до назви вхідного файлу буде додано цифру. "
+
+msgid "Invalid folder name."
+msgstr "Недійсне ім'я каталогу."
+
 msgid "Invalid name."
 msgstr "Недійсне ім'я."
+
+msgid "Last modified date unknown"
+msgstr "Дата останньої зміни невідома"
 
 msgid "Modified"
 msgstr "Змінено"
@@ -131,6 +166,9 @@ msgstr "Новий каталог"
 msgid "New folder name"
 msgstr "Ім'я нового каталогу"
 
+msgid "New version"
+msgstr "Нова версія"
+
 msgid "No files in here"
 msgstr "Тут відсутні файли"
 
@@ -146,8 +184,17 @@ msgstr "Зазначте ім'я довжиною не менше 2 символ
 msgid "Recent"
 msgstr "Останні"
 
+msgid "Select all checkboxes"
+msgstr "Вибрати всі прапорці"
+
 msgid "Select all entries"
 msgstr "Вибрати всі записи"
+
+msgid "Select all existing files"
+msgstr "Вибрати всі наявні файли"
+
+msgid "Select all new files"
+msgstr "Вибрати всі нові файли"
 
 msgid "Select entry"
 msgstr "Вибрати запис"
@@ -158,6 +205,16 @@ msgstr "Вибрати рядок для {nodename}"
 msgid "Size"
 msgstr "Розмір"
 
+msgid "Skip %n file"
+msgid_plural "Skip %n files"
+msgstr[0] "Пропустити %n файл"
+msgstr[1] "Пропустити %n файли"
+msgstr[2] "Пропустити %n файлів"
+msgstr[3] "Пропустити %n файлів"
+
+msgid "Skip this file"
+msgstr "Пропустити цей файл"
+
 msgid "Submit name"
 msgstr "Встановити ім'я"
 
@@ -167,6 +224,23 @@ msgstr "Повернути"
 msgid "Upload some content or sync with your devices!"
 msgstr "Завантажте вміст або синхронізуйте з вашим пристроєм!"
 
+msgid ""
+"When an incoming folder is selected, any conflicting files within it will "
+"also be overwritten."
+msgstr ""
+"Коли вибрано вхідний каталог, будь-які файли з конфліктами буде також "
+"перезаписано."
+
+msgid ""
+"When an incoming folder is selected, the content is written into the "
+"existing folder and a recursive conflict resolution is performed."
+msgstr ""
+"Коли вибрано вхідний каталог, вміст буде записано до існуючого каталогу, а "
+"також виконано вирішення конфліктів всередині каталогу."
+
+msgid "Which files do you want to keep?"
+msgstr "Які файли залишити?"
+
 msgid "You are currently identified as {nickname}."
 msgstr "Вас визначено як {nickname}."
 
@@ -175,3 +249,9 @@ msgstr "Вас не ідентифіковано."
 
 msgid "You cannot leave the name empty."
 msgstr "Потрібно зазначити ім'я."
+
+msgid "You need to choose at least one conflict solution"
+msgstr "Треб вибрати щонайменше одне рішення конфлікту"
+
+msgid "You need to select at least one version of each file to continue."
+msgstr "Треба вибрати щонайменше одну версію кожного файлу, щоби продовжити."
