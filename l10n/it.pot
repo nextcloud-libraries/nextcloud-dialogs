@@ -192,7 +192,7 @@ msgid "Recent"
 msgstr "Recente"
 
 msgid "Select all checkboxes"
-msgstr "Seleziona tutte le caselle di selezione"
+msgstr "Seleziona tutte le caselle"
 
 msgid "Select all entries"
 msgstr "Scegli tutte le voci"
