@@ -4,26 +4,54 @@
 # Claudio Scandella, 2023
 # Raffaele Silano <raffaelone@gmail.com>, 2024
 # Sebastiano Furlan, 2024
+# esseti kappa, 2025
+# Vincenzo Reale <vinx.reale@gmail.com>, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Sebastiano Furlan, 2024\n"
+"Last-Translator: Vincenzo Reale <vinx.reale@gmail.com>, 2026\n"
 "Language-Team: Italian (https://app.transifex.com/nextcloud/teams/64236/it/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: it\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-msgid "\"{name}\" is an invalid folder name."
-msgstr "\"{name}\" non è un nome di cartella valido."
+msgid "\"{char}\" is not allowed inside a folder name."
+msgstr "\"{char}\" non è consentito all'interno di un nome di cartella."
 
-msgid "\"{name}\" is not an allowed folder name"
-msgstr "\"{name}\"  non è un nome di cartella ammesso"
+msgid "\"{char}\" is not allowed inside a name."
+msgstr "\"{char}\" non è consentito all'interno di un nome."
 
-msgid "\"/\" is not allowed inside a folder name."
-msgstr "\"/\" non è ammesso all'interno del nome di una cartella."
+msgid "\"{extension}\" is not an allowed name."
+msgstr "\"{extension}\"  non è un nome consentito"
+
+msgid "\"{segment}\" is a reserved name and not allowed for folder names."
+msgstr ""
+"\"{segment}\"  è un nome riservato e non consentito per i nomi delle "
+"cartelle."
+
+msgid "\"{segment}\" is a reserved name and not allowed."
+msgstr "\"{segment}\"  è un nome riservato e non consentito."
+
+msgid "%n file conflict"
+msgid_plural "%n files conflict"
+msgstr[0] "%n file in conflitto"
+msgstr[1] "%n file in conflitto"
+msgstr[2] "%n file in conflitto"
+
+msgid "%n file conflict in {dirname}"
+msgid_plural "%n file conflicts in {dirname}"
+msgstr[0] "%n file in conflitto in {dirname}"
+msgstr[1] "%n file in conflitto in {dirname}"
+msgstr[2] "%n file in conflitto in {dirname}"
 
 msgid "All files"
 msgstr "Tutti i file"
+
+msgid "Cancel"
+msgstr "Annulla"
+
+msgid "Cancel the entire operation"
+msgstr "Annulla l'intera operazione"
 
 msgid "Choose"
 msgstr "Scegli"
@@ -33,9 +61,15 @@ msgstr "Scegli {file}"
 
 msgid "Choose %n file"
 msgid_plural "Choose %n files"
-msgstr[0] "Seleziona %n file"
-msgstr[1] "Seleziona %n file"
-msgstr[2] "Seleziona %n file"
+msgstr[0] "Scegli %n file"
+msgstr[1] "Scegli %n file"
+msgstr[2] "Scegli %n file"
+
+msgid "Confirm"
+msgstr "Conferma"
+
+msgid "Continue"
+msgstr "Continua"
 
 msgid "Copy"
 msgstr "Copia"
@@ -53,10 +87,19 @@ msgid "Could not load files views"
 msgstr "Impossibile caricare le visualizzazioni dei file"
 
 msgid "Create directory"
-msgstr "Crea directory"
+msgstr "Crea cartella"
 
 msgid "Current view selector"
-msgstr "Selettore della vista corrente"
+msgstr "Selettore della vista attuale"
+
+msgid "Enter your name"
+msgstr "Inserisci il tuo nome"
+
+msgid "Existing version"
+msgstr "Versione esistente"
+
+msgid "Failed to set nickname."
+msgstr "Impossibile impostare lo pseudonimo."
 
 msgid "Favorites"
 msgstr "Preferiti"
@@ -70,13 +113,32 @@ msgstr ""
 "I file e le cartelle che hai modificato di recente saranno mostrate qui."
 
 msgid "Filter file list"
-msgstr "Filtra elenco file"
+msgstr "Filtra l'elenco dei file"
 
-msgid "Folder name cannot be empty."
-msgstr "Il nome della cartella non può essere vuoto."
+msgid "Folder names must not end with \"{extension}\"."
+msgstr "I nomi delle cartelle devono finire con \"{extension}\"."
+
+msgid "Guest identification"
+msgstr "Identificazione ospiti"
 
 msgid "Home"
 msgstr "Home"
+
+msgid ""
+"If you select both versions, the incoming file will have a number added to "
+"its name."
+msgstr ""
+"Se selezioni entrambe le versioni, al nome del file in arrivo verrà aggiunto"
+" un numero."
+
+msgid "Invalid folder name."
+msgstr "Nome cartella non valido."
+
+msgid "Invalid name."
+msgstr "Nome non valido."
+
+msgid "Last modified date unknown"
+msgstr "Data di ultima modifica sconosciuta"
 
 msgid "Modified"
 msgstr "Modificato"
@@ -90,6 +152,18 @@ msgstr "Sposta in {target}"
 msgid "Name"
 msgstr "Nome"
 
+msgid "Names may be at most 64 characters long."
+msgstr "I nomi dovrebbero avere una lunghezza massima di 64 caratteri."
+
+msgid "Names must not be empty."
+msgstr "I nomi non devono essere vuoti."
+
+msgid "Names must not end with \"{extension}\"."
+msgstr "I nomi devono finire con \"{extension}\"."
+
+msgid "Names must not start with a dot."
+msgstr "I nomi non possono iniziare con un punto."
+
 msgid "New"
 msgstr "Nuovo"
 
@@ -97,7 +171,10 @@ msgid "New folder"
 msgstr "Nuova cartella"
 
 msgid "New folder name"
-msgstr "Nuovo nome cartella"
+msgstr "Nome della nuova cartella"
+
+msgid "New version"
+msgstr "Nuova versione"
 
 msgid "No files in here"
 msgstr "Nessun file qui"
@@ -108,11 +185,23 @@ msgstr "Nessun file che corrisponde al tuo filtro è stato trovato."
 msgid "No matching files"
 msgstr "Nessun file corrispondente"
 
+msgid "Please enter a name with at least 2 characters."
+msgstr "Digita un nome con almeno 2 caratteri."
+
 msgid "Recent"
 msgstr "Recente"
 
+msgid "Select all checkboxes"
+msgstr "Seleziona tutte le caselle di selezione"
+
 msgid "Select all entries"
 msgstr "Scegli tutte le voci"
+
+msgid "Select all existing files"
+msgstr "Seleziona tutti i file esistenti"
+
+msgid "Select all new files"
+msgstr "Seleziona tutti i nuovi file"
 
 msgid "Select entry"
 msgstr "Seleziona la voce"
@@ -121,10 +210,57 @@ msgid "Select the row for {nodename}"
 msgstr "Seleziona la riga per {nodename}"
 
 msgid "Size"
-msgstr "Taglia/dimensioni"
+msgstr "Dimensioni"
+
+msgid "Skip %n file"
+msgid_plural "Skip %n files"
+msgstr[0] "Salta %n file"
+msgstr[1] "Salta %n file"
+msgstr[2] "Salta %n file"
+
+msgid "Skip this file"
+msgstr "Salta questo file"
+
+msgid "Submit name"
+msgstr "Invia nome"
 
 msgid "Undo"
 msgstr "Annulla"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Carica qualche contenuto o sincronizza con i tuoi dispositivi!"
+
+msgid ""
+"When an incoming folder is selected, any conflicting files within it will "
+"also be overwritten."
+msgstr ""
+"Quando si seleziona una cartella in arrivo, anche tutti i file in conflitto "
+"al suo interno saranno sovrascritti."
+
+msgid ""
+"When an incoming folder is selected, the content is written into the "
+"existing folder and a recursive conflict resolution is performed."
+msgstr ""
+"Quando si seleziona una cartella in arrivo, il contenuto viene scritto nella"
+" cartella esistente e viene eseguita una risoluzione ricorsiva dei "
+"conflitti."
+
+msgid "Which files do you want to keep?"
+msgstr "Quali file vuoi conservare?"
+
+msgid "You are currently identified as {nickname}."
+msgstr "Sei attualmente identificato come {nickname}."
+
+msgid "You are currently not identified."
+msgstr "Attualmente non sei identificato."
+
+msgid "You cannot leave the name empty."
+msgstr "Non puoi lasciare il nome vuoto."
+
+msgid "You need to choose at least one conflict solution"
+msgstr "Devi scegliere almeno una soluzione al conflitto"
+
+msgid "You need to select at least one version of each file to continue."
+msgstr ""
+"Per continuare, è necessario selezionare almeno una versione di ciascun "
+"file."
