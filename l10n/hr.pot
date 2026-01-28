@@ -1,15 +1,254 @@
 # 
 # Translators:
-# Transifex Bot <>, 2023
+# Nenad Lazarić, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Transifex Bot <>, 2023\n"
+"Last-Translator: Nenad Lazarić, 2026\n"
 "Language-Team: Croatian (https://app.transifex.com/nextcloud/teams/64236/hr/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: hr\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: lib/toast.ts:223
-msgid "Undo"
+msgid "\"{char}\" is not allowed inside a folder name."
+msgstr "Znak „{char}” nije dopušten u nazivu mape."
+
+msgid "\"{char}\" is not allowed inside a name."
+msgstr "Znak „{char}” nije dopušten u nazivu."
+
+msgid "\"{extension}\" is not an allowed name."
+msgstr "\"{extension}\" nije dopušten u nazivu."
+
+msgid "\"{segment}\" is a reserved name and not allowed for folder names."
+msgstr "\"{segment}\" je rezervirana riječ i nije dopušten u nazivu mape."
+
+msgid "\"{segment}\" is a reserved name and not allowed."
+msgstr "\"{segment}\" je rezervirana riječ i nije dopušten."
+
+msgid "%n file conflict"
+msgid_plural "%n files conflict"
+msgstr[0] "Sukobljava se %n datoteka"
+msgstr[1] "Sukobljava se %n datoteke"
+msgstr[2] "Sukobljava se %n datoteke"
+
+msgid "%n file conflict in {dirname}"
+msgid_plural "%n file conflicts in {dirname}"
+msgstr[0] "%n sukob datoteka u {dirname}"
+msgstr[1] "%n sukoba datoteka u {dirname}"
+msgstr[2] "%n sukoba datoteka u {dirname}"
+
+msgid "All files"
+msgstr "Sve datoteke"
+
+msgid "Cancel"
+msgstr "Odustani"
+
+msgid "Cancel the entire operation"
+msgstr "Odustani od cijele operacije"
+
+msgid "Choose"
+msgstr "Odaberi"
+
+msgid "Choose {file}"
+msgstr "Odaberi {file}"
+
+msgid "Choose %n file"
+msgid_plural "Choose %n files"
+msgstr[0] "Odaberi %n datoteku"
+msgstr[1] "Odaberi %n datoteka"
+msgstr[2] "Odaberi %n datoteke"
+
+msgid "Confirm"
+msgstr "Potvrdi"
+
+msgid "Continue"
+msgstr "Nastavi"
+
+msgid "Copy"
+msgstr "Kopiraj"
+
+msgid "Copy to {target}"
+msgstr "Kopiraj u {target}"
+
+msgid "Could not create the new folder"
+msgstr "Nije moguće stvoriti novu mapu"
+
+msgid "Could not load files settings"
+msgstr "Nije moguće učitati postavke datoteka"
+
+msgid "Could not load files views"
+msgstr "Nije moguće učitati prikaze datoteka"
+
+msgid "Create directory"
+msgstr "Stvori mapu"
+
+msgid "Current view selector"
+msgstr "Odabir trenutačnog prikaza"
+
+msgid "Enter your name"
+msgstr "Unesite vaše ime"
+
+msgid "Existing version"
+msgstr "Postojeća verzija"
+
+msgid "Failed to set nickname."
+msgstr "Neuspjelo postavljanje nadimka."
+
+msgid "Favorites"
+msgstr "Favoriti"
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr "Ovdje se prikazuju datoteke i mape koje ste označili kao favoriti."
+
+msgid "Files and folders you recently modified will show up here."
+msgstr "Ovdje se prikazuju datoteke i mape koje ste nedavno ažurirali."
+
+msgid "Filter file list"
+msgstr "Filtriranje liste datoteka"
+
+msgid "Folder names must not end with \"{extension}\"."
+msgstr "Nazivi mapa ne smiju završiti sa \"{extension}\"."
+
+msgid "Guest identification"
+msgstr "Identifikacija gosta"
+
+msgid "Home"
+msgstr "Naslovna"
+
+msgid ""
+"If you select both versions, the incoming file will have a number added to "
+"its name."
 msgstr ""
+"Ako odaberete obje verzije, dolaznoj datoteci bit će dodan broj u nazivu."
+
+msgid "Invalid folder name."
+msgstr "Neispavan naziv mape."
+
+msgid "Invalid name."
+msgstr "Neispravan naziv."
+
+msgid "Last modified date unknown"
+msgstr "Nepoznat datum zadnjeg ažuriranja"
+
+msgid "Modified"
+msgstr "Ažurirano"
+
+msgid "Move"
+msgstr "Premjesti"
+
+msgid "Move to {target}"
+msgstr "Premjesti u {target}"
+
+msgid "Name"
+msgstr "Naziv"
+
+msgid "Names may be at most 64 characters long."
+msgstr "Nazivi mogu imati najviše 64 znaka."
+
+msgid "Names must not be empty."
+msgstr "Nazivi ne smiju biti prazni."
+
+msgid "Names must not end with \"{extension}\"."
+msgstr "Nazivi ne smiju završiti sa \"{extension}\"."
+
+msgid "Names must not start with a dot."
+msgstr "Nazivi ne smiju započinjati točkom."
+
+msgid "New"
+msgstr "Novo"
+
+msgid "New folder"
+msgstr "Nova mapa"
+
+msgid "New folder name"
+msgstr "Novi naziv mape"
+
+msgid "New version"
+msgstr "Nova verzija"
+
+msgid "No files in here"
+msgstr "Ovdje nema datoteka"
+
+msgid "No files matching your filter were found."
+msgstr "Nisu pronađene datoteke koje odgovaraju vašem filtru."
+
+msgid "No matching files"
+msgstr "Nema odgovarajućih datoteka."
+
+msgid "Please enter a name with at least 2 characters."
+msgstr "Unesite naziv s najmanje 2 znaka."
+
+msgid "Recent"
+msgstr "Nedavno"
+
+msgid "Select all checkboxes"
+msgstr "Označi sve potvrdne okvire"
+
+msgid "Select all entries"
+msgstr "Označi sve stavke"
+
+msgid "Select all existing files"
+msgstr "Označi sve postojeće datoteke"
+
+msgid "Select all new files"
+msgstr "Označi sve nove datoteke"
+
+msgid "Select entry"
+msgstr "Označi stavku"
+
+msgid "Select the row for {nodename}"
+msgstr "Označi red za{nodename}"
+
+msgid "Size"
+msgstr "Veličina"
+
+msgid "Skip %n file"
+msgid_plural "Skip %n files"
+msgstr[0] "Preskoči %n datoteku"
+msgstr[1] "Preskoči %n datoteke"
+msgstr[2] "Preskoči %n datoteke"
+
+msgid "Skip this file"
+msgstr "Preskoči ovu datoteku"
+
+msgid "Submit name"
+msgstr "Pošalji naziv"
+
+msgid "Undo"
+msgstr "Poništi"
+
+msgid "Upload some content or sync with your devices!"
+msgstr "Prenesite neki sadržaj ili sinkronizirajte sa svojim uređajima!"
+
+msgid ""
+"When an incoming folder is selected, any conflicting files within it will "
+"also be overwritten."
+msgstr ""
+"Kada je odabrana dolazna mapa, sve datoteke unutar nje koje su u sukobu "
+"također će biti prepisane."
+
+msgid ""
+"When an incoming folder is selected, the content is written into the "
+"existing folder and a recursive conflict resolution is performed."
+msgstr ""
+"Kada je odabrana dolazna mapa, sadržaj se upisuje u postojeću mapu i provodi"
+" se rekurzivno rješavanje sukoba."
+
+msgid "Which files do you want to keep?"
+msgstr "Koje datoteke želite zadržati?"
+
+msgid "You are currently identified as {nickname}."
+msgstr "Trenutno ste identificirani kao {nickname}."
+
+msgid "You are currently not identified."
+msgstr "Trenutno niste identificirani."
+
+msgid "You cannot leave the name empty."
+msgstr "Ne možete ostaviti naziv prazan."
+
+msgid "You need to choose at least one conflict solution"
+msgstr "Morate odabrati barem jedno rješenje sukoba"
+
+msgid "You need to select at least one version of each file to continue."
+msgstr ""
+"Morate odabrati barem jednu verziju svake datoteke kako biste nastavili."
