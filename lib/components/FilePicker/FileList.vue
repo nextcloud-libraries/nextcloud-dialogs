@@ -15,8 +15,8 @@
 							v-if="multiselect"
 							:aria-label="t('Select all entries')"
 							data-testid="select-all-checkbox"
-							:model-value="allSelected"
-							@update:model-value="onSelectAll" />
+							:modelValue="allSelected"
+							@update:modelValue="onSelectAll" />
 					</th>
 					<th :aria-sort="sortByName" class="row-name">
 						<div class="header-wrapper">
@@ -59,20 +59,20 @@
 			</thead>
 			<tbody>
 				<template v-if="loading">
-					<LoadingTableRow v-for="index in skeletonNumber" :key="index" :show-checkbox="multiselect" />
+					<LoadingTableRow v-for="index in skeletonNumber" :key="index" :showCheckbox="multiselect" />
 				</template>
 				<template v-else>
 					<FileListRow
 						v-for="file of sortedFiles"
 						:key="file.fileid || file.path"
-						:allow-pick-directory="allowPickDirectory"
-						:show-checkbox="multiselect"
-						:can-pick="(multiselect || selectedFiles.length === 0 || selectedFiles.includes(file)) && (canPick === undefined || canPick(file))"
+						:allowPickDirectory="allowPickDirectory"
+						:showCheckbox="multiselect"
+						:canPick="(multiselect || selectedFiles.length === 0 || selectedFiles.includes(file)) && (canPick === undefined || canPick(file))"
 						:selected="selectedFiles.includes(file)"
 						:node="file"
-						:crop-image-previews="cropImagePreviews"
+						:cropImagePreviews="cropImagePreviews"
 						@update:selected="onNodeSelected(file)"
-						@enter-directory="onChangeDirectory" />
+						@enterDirectory="onChangeDirectory" />
 				</template>
 			</tbody>
 		</table>

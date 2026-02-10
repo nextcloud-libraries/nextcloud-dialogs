@@ -183,7 +183,7 @@ function validate() {
 		<NcCheckboxRadioSwitch
 			v-model="incomingSelected"
 			:error="!!validationMessage"
-			:helper-text="validationMessage"
+			:helperText="validationMessage"
 			:required="!conflictResolved">
 			<span :class="$style.pickerEntryItem">
 				<!-- Icon or preview -->
@@ -207,7 +207,7 @@ function validate() {
 					<NcDateTime
 						v-if="incomingMTime"
 						:timestamp="incomingMTime"
-						:relative-time="false"
+						:relativeTime="false"
 						:format="{ timeStyle: 'short', dateStyle: 'medium' }" />
 					<span v-else>
 						{{ t('Last modified date unknown') }}
@@ -223,7 +223,7 @@ function validate() {
 		<NcCheckboxRadioSwitch
 			v-model="existingSelected"
 			:error="!!validationMessage"
-			:helper-text="validationMessage"
+			:helperText="validationMessage"
 			:required="!conflictResolved">
 			<span :class="$style.pickerEntryItem">
 				<!-- Icon or preview -->
@@ -247,7 +247,7 @@ function validate() {
 					<NcDateTime
 						v-if="existingMTime"
 						:timestamp="existingMTime"
-						:relative-time="false"
+						:relativeTime="false"
 						:format="{ timeStyle: 'short', dateStyle: 'medium' }" />
 					<span v-else>
 						{{ t('Last modified date unknown') }}

@@ -179,8 +179,8 @@ function setCustomValidity(message: string) {
 		:buttons
 		class="public-auth-prompt"
 		data-cy-public-auth-prompt-dialog
-		is-form
-		no-close
+		isForm
+		noClose
 		:name="title"
 		@submit="onSubmit">
 		<p v-if="text" class="public-auth-prompt__text">

@@ -26,12 +26,12 @@
 				:aria-label="t('Select the row for {nodename}', { nodename: displayName })"
 				:disabled="!isPickable"
 				data-testid="row-checkbox"
-				:model-value="selected"
-				@update:model-value="toggleSelected" />
+				:modelValue="selected"
+				@update:modelValue="toggleSelected" />
 		</td>
 		<td class="row-name">
 			<div class="file-picker__name-container" data-testid="row-name">
-				<FilePreview :node="node" :crop-image-previews="cropImagePreviews" />
+				<FilePreview :node="node" :cropImagePreviews="cropImagePreviews" />
 				<div class="file-picker__file-name" :title="displayName" v-text="displayName" />
 				<div class="file-picker__file-extension" v-text="fileExtension" />
 			</div>
@@ -40,7 +40,7 @@
 			{{ formatFileSize(node.size || 0) }}
 		</td>
 		<td class="row-modified">
-			<NcDateTime :timestamp ignore-seconds />
+			<NcDateTime :timestamp ignoreSeconds />
 		</td>
 	</tr>
 </template>

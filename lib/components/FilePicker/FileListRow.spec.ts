@@ -1,10 +1,9 @@
-/**
+/*!
  * SPDX-FileCopyrightText: 2023 Nextcloud GmbH and Nextcloud contributors
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
 import type { VueWrapper } from '@vue/test-utils'
-import type { ComponentProps } from 'vue-component-type-helpers'
 
 import { File, Folder, Permission } from '@nextcloud/files'
 import { shallowMount } from '@vue/test-utils'
@@ -14,7 +13,7 @@ import FileListRow from './FileListRow.vue'
 
 type SubmitAction = (wrapper: VueWrapper<any>) => Promise<void>
 type ElementEvent = { 'update:selected': boolean | undefined, enterDirectory: Folder | undefined }
-
+type FileListRowProps = InstanceType<typeof FileListRow>['$props']
 async function clickCheckboxAction(wrapper: VueWrapper<any>) {
 	wrapper.find('input[type="checkbox"]').trigger('click')
 }
@@ -28,7 +27,7 @@ async function pressEnterAction(wrapper: VueWrapper<any>) {
 	await nextTick()
 }
 
-function testSubmitNode(name: string, props: ComponentProps<typeof FileListRow>, eventPayload: ElementEvent, actionCallback: SubmitAction) {
+function testSubmitNode(name: string, props: FileListRowProps, eventPayload: ElementEvent, actionCallback: SubmitAction) {
 	it(name, async () => {
 		const wrapper = shallowMount(FileListRow, {
 			props,
