@@ -80,7 +80,7 @@
 </template>
 
 <script setup lang="ts">
-import type { FilesSortingMode, INode } from '@nextcloud/files'
+import type { INode } from '@nextcloud/files'
 import type { FileListViews } from '../../composables/filesSettings.ts'
 import type { IFilePickerCanPick } from '../types.ts'
 
@@ -174,7 +174,7 @@ const sortedFiles = computed(() => {
 		sortFoldersFirst: true,
 		sortFavoritesFirst: sortFavoritesFirst.value,
 		sortingOrder: sortingConfig.value.order === 'descending' ? 'desc' : 'asc',
-		sortingMode: sortingConfig.value.sortBy as FilesSortingMode,
+		sortingMode: sortingConfig.value.sortBy,
 	})
 })
 

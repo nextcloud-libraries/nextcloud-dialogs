@@ -1,9 +1,9 @@
-/**
+/*
  * SPDX-FileCopyrightText: 2023 Nextcloud GmbH and Nextcloud contributors
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
-import type { ContentsWithRoot, Folder, Node } from '@nextcloud/files'
-import type { CancelablePromise } from 'cancelable-promise'
+
+import type { IFolder, INode } from '@nextcloud/files'
 import type { ComputedRef, Ref } from 'vue'
 
 import { defaultRootPath, getClient, getFavoriteNodes } from '@nextcloud/files/dav'
@@ -29,12 +29,12 @@ export function useDAVFiles(
 	/**
 	 * All files in current view and path
 	 */
-	const files = shallowRef<Node[]>([] as Node[]) as Ref<Node[]>
+	const files = shallowRef<INode[]>([] as INode[]) as Ref<INode[]>
 
 	/**
 	 * The current folder
 	 */
-	const folder = shallowRef<Folder | null>(null)
+	const folder = shallowRef<IFolder | null>(null)
 
 	/**
 	 * Loading state of the files
@@ -44,7 +44,7 @@ export function useDAVFiles(
 	/**
 	 * The cancelable promise used internally to cancel on fast navigation
 	 */
-	const promise = ref<null | CancelablePromise<Node[] | ContentsWithRoot>>(null)
+	let abortController: AbortController | undefined
 
 	/**
 	 * Create a new directory in the current path
@@ -53,11 +53,11 @@ export function useDAVFiles(
 	 * @param name Name of the new directory
 	 * @return The created directory
 	 */
-	async function createDirectory(name: string): Promise<Folder> {
+	async function createDirectory(name: string): Promise<IFolder> {
 		const path = join(currentPath.value, name)
 
 		await client.createDirectory(join(defaultRootPath, path))
-		const directory = await getFile(client, path) as Folder
+		const directory = await getFile(client, path) as IFolder
 		files.value = [...files.value, directory]
 		return directory
 	}
@@ -66,31 +66,35 @@ export function useDAVFiles(
 	 * Force reload files using the DAV client
 	 */
 	async function loadDAVFiles() {
-		if (promise.value) {
-			promise.value.cancel()
+		if (abortController) {
+			abortController.abort()
+			abortController = undefined
 		}
+
+		abortController = new AbortController()
 		isLoading.value = true
-
-		if (currentView.value === 'favorites') {
-			promise.value = getFavoriteNodes(client, currentPath.value)
-		} else if (currentView.value === 'recent') {
-			promise.value = getRecentNodes(client)
-		} else {
-			promise.value = getNodes(client, currentPath.value)
+		try {
+			if (currentView.value === 'favorites') {
+				files.value = await getFavoriteNodes({ client, path: currentPath.value, signal: abortController.signal })
+				folder.value = null
+			} else if (currentView.value === 'recent') {
+				files.value = await getRecentNodes({ client, signal: abortController.signal })
+				folder.value = null
+			} else {
+				const content = await getNodes({ client, path: currentPath.value, signal: abortController.signal })
+				folder.value = content.folder
+				files.value = content.contents
+			}
+		} catch (error) {
+			if (error instanceof Error && error.name === 'AbortError') {
+				// ignore abort errors
+				return
+			}
+			throw error
+		} finally {
+			abortController = undefined
+			isLoading.value = false
 		}
-		const content = await promise.value
-		if (!content) {
-			return
-		} else if ('folder' in content) {
-			folder.value = content.folder
-			files.value = content.contents
-		} else {
-			folder.value = null
-			files.value = content
-		}
-
-		promise.value = null
-		isLoading.value = false
 	}
 
 	/**

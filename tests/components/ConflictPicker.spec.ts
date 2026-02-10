@@ -17,6 +17,7 @@ afterEach(cleanup)
 test('Renders default ConflictPicker', async () => {
 	const oldImage = new NcFile({
 		id: 1,
+		root: '/files/user',
 		source: 'http://cloud.domain.com/remote.php/dav/files/user/image.jpg',
 		mime: 'image/jpeg',
 		size: 1000,
@@ -49,6 +50,7 @@ describe('ConflictPicker resolving', () => {
 	let images: File[] = []
 	const old1 = new NcFile({
 		id: 1,
+		root: '/files/user',
 		source: 'http://cloud.domain.com/remote.php/dav/files/user/image1.jpg',
 		mime: 'image/jpeg',
 		size: 1000,
@@ -57,6 +59,7 @@ describe('ConflictPicker resolving', () => {
 	})
 	const old2 = new NcFile({
 		id: 2,
+		root: '/files/user',
 		source: 'http://cloud.domain.com/remote.php/dav/files/user/image2.jpg',
 		mime: 'image/jpeg',
 		size: 1000,
@@ -67,8 +70,8 @@ describe('ConflictPicker resolving', () => {
 	beforeAll(async () => {
 		const content = await readFile(join(import.meta.dirname, '../fixtures/test.jpg'))
 		images = [
-			new File([content], 'image1.jpg', { type: 'image/jpeg' }),
-			new File([content], 'image2.jpg', { type: 'image/jpeg' }),
+			new File([new Uint8Array(content)], 'image1.jpg', { type: 'image/jpeg' }),
+			new File([new Uint8Array(content)], 'image2.jpg', { type: 'image/jpeg' }),
 		]
 	})
 

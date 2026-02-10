@@ -238,6 +238,6 @@ describe('dav composable', () => {
 		await nextTick()
 		view.value = 'favorites'
 		await waitRefLoaded(isLoading)
-		expect(abort).toBeCalledTimes(2)
+		expect(abort).toBeCalledTimes(1)
 	})
 })

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-import type { INode, Node } from '@nextcloud/files'
+import type { INode } from '@nextcloud/files'
 
 export type IDialogSeverity = 'info' | 'warning' | 'error'
 
@@ -49,15 +49,15 @@ export interface IFilePickerButton extends Omit<IDialogButton, 'callback'> {
 	 *
 	 * @param nodes Array of `@nextcloud/files` Nodes that were selected
 	 */
-	callback: (nodes: Node[]) => void | Promise<void>
+	callback: (nodes: INode[]) => void | Promise<void>
 }
 
-export type IFilePickerButtonFactory = (selectedNodes: Node[], currentPath: string, currentView: string) => IFilePickerButton[]
+export type IFilePickerButtonFactory = (selectedNodes: INode[], currentPath: string, currentView: string) => IFilePickerButton[]
 
 /**
  * Type of filter functions to filter the FilePicker's file list
  */
-export type IFilePickerFilter = (node: Node) => boolean
+export type IFilePickerFilter = (node: INode) => boolean
 
 /**
  * Type of functions to allow or not picking a node
