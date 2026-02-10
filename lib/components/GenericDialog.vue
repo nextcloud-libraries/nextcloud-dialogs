@@ -4,7 +4,7 @@
 -->
 <template>
 	<NcDialog
-		dialog-classes="nc-generic-dialog"
+		dialogClasses="nc-generic-dialog"
 		:buttons="dialogButtons"
 		:name
 		:message="text"

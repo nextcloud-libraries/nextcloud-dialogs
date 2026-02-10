@@ -203,15 +203,15 @@ function onSubmit() {
 					{{ t('Select all checkboxes') }}
 				</legend>
 				<NcCheckboxRadioSwitch
-					:model-value="areAllNewSelected"
+					:modelValue="areAllNewSelected"
 					:indeterminate="areSomeNewSelected"
-					@update:model-value="onSelectAllNew">
+					@update:modelValue="onSelectAllNew">
 					{{ t('Select all new files') }}
 				</NcCheckboxRadioSwitch>
 				<NcCheckboxRadioSwitch
-					:model-value="areAllOldSelected"
+					:modelValue="areAllOldSelected"
 					:indeterminate="areSomeOldSelected"
-					@update:model-value="onSelectAllOld">
+					@update:modelValue="onSelectAllOld">
 					{{ t('Select all existing files') }}
 				</NcCheckboxRadioSwitch>
 			</fieldset>
@@ -223,10 +223,10 @@ function onSubmit() {
 				:key="node.fileid"
 				:incoming="incoming[index]!"
 				:existing="node"
-				:incoming-selected="newSelected.includes(incoming[index]!)"
-				:existing-selected="oldSelected.includes(incoming[index]!)"
-				@update:existing-selected="toggleOldSelected(incoming[index]!)"
-				@update:incoming-selected="toggleNewSelected(incoming[index]!)" />
+				:incomingSelected="newSelected.includes(incoming[index]!)"
+				:existingSelected="oldSelected.includes(incoming[index]!)"
+				@update:existingSelected="toggleOldSelected(incoming[index]!)"
+				@update:incomingSelected="toggleNewSelected(incoming[index]!)" />
 		</form>
 
 		<!-- Controls -->

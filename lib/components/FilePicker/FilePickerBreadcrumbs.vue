@@ -8,7 +8,7 @@
 			<NcBreadcrumb
 				:name="t('All files')"
 				:title="t('Home')"
-				@click="emit('update:path', '/')">
+				@click="path = '/'">
 				<template #icon>
 					<IconHome :size="20" />
 				</template>
@@ -18,15 +18,15 @@
 				:key="dir.path"
 				:name="dir.name"
 				:title="dir.path"
-				@click="emit('update:path', dir.path)" />
+				@click="path = dir.path" />
 		</template>
 		<template v-if="showMenu" #actions>
 			<NcActions
 				v-model:open="actionsOpen"
 				:aria-label="t('Create directory')"
-				:force-menu="true"
-				:force-name="true"
-				:menu-name="t('New')"
+				:forceMenu="true"
+				:forceName="true"
+				:menuName="t('New')"
 				variant="secondary"
 				@close="newNodeName = ''">
 				<template #icon>
@@ -38,7 +38,7 @@
 					:label="t('New folder')"
 					:placeholder="t('New folder name')"
 					@submit="onSubmit"
-					@update:model-value="validateInput">
+					@update:modelValue="validateInput">
 					<template #icon>
 						<IconFolder :size="20" />
 					</template>
@@ -60,22 +60,19 @@ import IconHome from 'vue-material-design-icons/Home.vue'
 import IconPlus from 'vue-material-design-icons/Plus.vue'
 import { t } from '../../utils/l10n.ts'
 
-const props = defineProps<{
-	/** Current path to display */
-	path: string
+/** Current path to display */
+const path = defineModel<string>('path', { required: true })
+
+defineProps<{
 	/** Whether to show the "new node" menu or not */
-	showMenu: boolean
+	showMenu?: boolean
 }>()
 
 const emit = defineEmits<{
 	/**
-	 * Triggered when the path was changed by using the breadcrumbs
-	 */
-	(e: 'update:path', path: string): void
-	/**
 	 * Triggered when a new directory on the current path should be created
 	 */
-	(e: 'create-node', name: string): void
+	createNode: [name: string]
 }>()
 
 const actionsOpen = ref(false)
@@ -129,7 +126,7 @@ function onSubmit() {
 
 	if (validateInput()) {
 		actionsOpen.value = false
-		emit('create-node', name)
+		emit('createNode', name)
 		newNodeName.value = ''
 	}
 }
@@ -137,7 +134,7 @@ function onSubmit() {
 /**
  * Split current path and provide the path and the basename
  */
-const pathElements = computed(() => props.path.split('/')
+const pathElements = computed(() => path.value.split('/')
 	.filter((v) => v !== '')
 	.map((v, i, elements) => ({
 		name: v,

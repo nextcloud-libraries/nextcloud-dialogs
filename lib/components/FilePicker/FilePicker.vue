@@ -8,16 +8,16 @@
 		:buttons="dialogButtons"
 		:name="name"
 		size="large"
-		content-classes="file-picker__content"
-		dialog-classes="file-picker"
-		navigation-classes="file-picker__navigation"
+		contentClasses="file-picker__content"
+		dialogClasses="file-picker"
+		navigationClasses="file-picker__navigation"
 		@update:open="handleClose">
 		<template #navigation="{ isCollapsed }">
 			<FilePickerNavigation
-				v-model:current-view="currentView"
-				v-model:filter-string="filterString"
-				:is-collapsed
-				:disabled-navigation />
+				v-model:currentView="currentView"
+				v-model:filterString="filterString"
+				:isCollapsed
+				:disabledNavigation />
 		</template>
 
 		<div class="file-picker__main">
@@ -25,8 +25,8 @@
 			<FilePickerBreadcrumbs
 				v-if="currentView === 'files'"
 				v-model:path="currentPath"
-				:show-menu="!noMenu"
-				@create-node="onCreateFolder" />
+				:showMenu="!noMenu"
+				@createNode="onCreateFolder" />
 			<div v-else class="file-picker__view">
 				<h3>{{ viewHeadline }}</h3>
 			</div>
@@ -36,14 +36,14 @@
 			<FileList
 				v-if="isLoading || filteredFiles.length > 0"
 				v-model:path="currentPath"
-				v-model:selected-files="selectedFiles"
-				:allow-pick-directory="allowPickDirectory"
-				:current-view="currentView"
+				v-model:selectedFiles="selectedFiles"
+				:allowPickDirectory="allowPickDirectory"
+				:currentView="currentView"
 				:files="filteredFiles"
 				:multiselect="multiselect"
 				:loading="isLoading"
 				:name="viewHeadline"
-				:can-pick="canPickFn"
+				:canPick="canPickFn"
 				@update:path="currentView = 'files'" />
 			<NcEmptyContent
 				v-else-if="filterString"
