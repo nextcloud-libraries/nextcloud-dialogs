@@ -66,7 +66,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Node } from '@nextcloud/files'
+import type { INode } from '@nextcloud/files'
 import type { IFilesViewId } from '../../composables/views.ts'
 import type { IDialogButton, IFilePickerButton, IFilePickerButtonFactory, IFilePickerCanPick, IFilePickerFilter } from '../types.ts'
 
@@ -153,7 +153,7 @@ const props = withDefaults(defineProps<{
 })
 
 const emit = defineEmits<{
-	(e: 'close', v?: Node[]): void
+	(e: 'close', v?: INode[]): void
 }>()
 
 const isOpen = ref(true)
@@ -191,7 +191,7 @@ const currentPath = computed({
 /**
  * All currently selected files
  */
-const selectedFiles = shallowRef<Node[]>([])
+const selectedFiles = shallowRef<INode[]>([])
 
 const {
 	files,
@@ -245,7 +245,7 @@ const dialogButtons = computed(() => {
  * @param callback - Callback of the button
  * @param nodes - Currently selected nodes
  */
-async function handleButtonClick(callback: IFilePickerButton['callback'], nodes: Node[]) {
+async function handleButtonClick(callback: IFilePickerButton['callback'], nodes: INode[]) {
 	await callback(nodes)
 	emit('close', nodes)
 	// Unlock close
@@ -286,7 +286,7 @@ const filteredFiles = computed(() => {
 		filtered = filtered.filter((file) => file.basename.toLowerCase().includes(filterString.value.toLowerCase()))
 	}
 	if (props.filterFn) {
-		filtered = filtered.filter((f) => props.filterFn!(f as Node))
+		filtered = filtered.filter((f) => props.filterFn!(f as INode))
 	}
 	return filtered
 })

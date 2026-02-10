@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-import type { Node } from '@nextcloud/files'
+import type { INode } from '@nextcloud/files'
 import type { IFilePickerButton, IFilePickerButtonFactory, IFilePickerCanPick, IFilePickerFilter } from './components/types.ts'
 
 import IconMove from '@mdi/svg/svg/folder-move.svg?raw'
@@ -73,7 +73,7 @@ export class FilePicker<IsMultiSelect extends boolean> {
 	 *
 	 * @return Promise with array of picked files or rejected promise on close without picking
 	 */
-	public async pickNodes(): Promise<Node[]> {
+	public async pickNodes(): Promise<INode[]> {
 		const { default: FilePickerVue } = await import('./components/FilePicker/FilePicker.vue')
 
 		const nodes = await spawnDialog(FilePickerVue, {

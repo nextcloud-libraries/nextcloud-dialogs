@@ -8,59 +8,45 @@ import type { FileStat, ResponseDataDetailed, SearchResult, WebDAVClient } from 
 
 import { defaultRootPath, getDefaultPropfind, getRecentSearch, resultToNode } from '@nextcloud/files/dav'
 import { join } from '@nextcloud/paths'
-import { CancelablePromise } from 'cancelable-promise'
 
 /**
  * Get the recently changed nodes from the last two weeks
  *
- * @param client - The WebDAV client
+ * @param context - The context
+ * @param context.client - The WebDAV client
+ * @param context.signal - The abort signal to cancel the request
  */
-export function getRecentNodes(client: WebDAVClient): CancelablePromise<Node[]> {
-	const controller = new AbortController()
+export async function getRecentNodes({ client, signal }: { client: WebDAVClient, signal: AbortSignal }): Promise<Node[]> {
 	// unix timestamp in seconds, two weeks ago
 	const lastTwoWeek = Math.round(Date.now() / 1000) - (60 * 60 * 24 * 14)
-	return new CancelablePromise(async (resolve, reject, onCancel) => {
-		onCancel(() => controller.abort())
-		try {
-			const { data } = await client.search('/', {
-				signal: controller.signal,
-				details: true,
-				data: getRecentSearch(lastTwoWeek),
-			}) as ResponseDataDetailed<SearchResult>
-			const nodes = data.results.map((result: FileStat) => resultToNode(result))
-			resolve(nodes)
-		} catch (error) {
-			reject(error)
-		}
-	})
+	const { data } = await client.search('/', {
+		signal,
+		details: true,
+		data: getRecentSearch(lastTwoWeek),
+	}) as ResponseDataDetailed<SearchResult>
+	return data.results.map((result: FileStat) => resultToNode(result))
 }
 
 /**
  * Get the directory content
  *
- * @param client - The WebDAV client
- * @param directoryPath - The path to fetch
+ * @param context - The context
+ * @param context.client - The WebDAV client
+ * @param context.path - The path to fetch
+ * @param context.signal - The abort signal to cancel the request
  */
-export function getNodes(client: WebDAVClient, directoryPath: string): CancelablePromise<ContentsWithRoot> {
-	const controller = new AbortController()
-	return new CancelablePromise(async (resolve, reject, onCancel) => {
-		onCancel(() => controller.abort())
-		try {
-			const results = await client.getDirectoryContents(join(defaultRootPath, directoryPath), {
-				signal: controller.signal,
-				details: true,
-				includeSelf: true,
-				data: getDefaultPropfind(),
-			}) as ResponseDataDetailed<FileStat[]>
-			const nodes = results.data.map((result: FileStat) => resultToNode(result))
-			resolve({
-				contents: nodes.filter(({ path }) => path !== directoryPath),
-				folder: nodes.find(({ path }) => path === directoryPath) as Folder,
-			})
-		} catch (error) {
-			reject(error)
-		}
-	})
+export async function getNodes({ client, path, signal }: { client: WebDAVClient, path: string, signal: AbortSignal }): Promise<ContentsWithRoot> {
+	const results = await client.getDirectoryContents(join(defaultRootPath, path), {
+		signal,
+		details: true,
+		includeSelf: true,
+		data: getDefaultPropfind(),
+	}) as ResponseDataDetailed<FileStat[]>
+	const nodes = results.data.map((result: FileStat) => resultToNode(result))
+	return {
+		contents: nodes.filter(({ path: nodePath }) => nodePath !== path),
+		folder: nodes.find(({ path: nodePath }) => path === nodePath) as Folder,
+	}
 }
 
 /**
