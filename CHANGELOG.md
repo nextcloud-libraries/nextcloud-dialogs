@@ -6,7 +6,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [v7.2.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v7.2.0...v7.3.0)
+## [v7.3.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v7.2.0...v7.3.0)
 ### Changed
 * Migrated to `@nextcloud/files` v4.0.0 - reducing dependencies on apps targeting Nextcloud 33+ [\#2275](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2275).\
   This also removes `cancelable-promise` as a dependency by replacing it with native `AbortController`.
