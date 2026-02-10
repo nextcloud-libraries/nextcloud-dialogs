@@ -2,12 +2,15 @@
   - SPDX-FileCopyrightText: 2019-2024 Nextcloud GmbH and Nextcloud contributors
   - SPDX-License-Identifier: AGPL-3.0-or-later
 -->
-<h1 id="nextclouddialogs" class="tsd-anchor-link">@nextcloud/dialogs<a href="#nextclouddialogs" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1><p><a href="https://api.reuse.software/info/github.com/nextcloud-libraries/nextcloud-dialogs"><img src="https://api.reuse.software/badge/github.com/nextcloud-libraries/nextcloud-dialogs" alt="REUSE status"></a> <a href="https://www.npmjs.com/package/@nextcloud/dialogs"><img src="https://img.shields.io/npm/v/@nextcloud/dialogs?style=for-the-badge" alt="npm"></a></p>
+<h1 id="nextclouddialogs" class="tsd-anchor-link">@nextcloud/dialogs<a href="#nextclouddialogs" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1>
+<p><a href="https://api.reuse.software/info/github.com/nextcloud-libraries/nextcloud-dialogs"><img src="https://api.reuse.software/badge/github.com/nextcloud-libraries/nextcloud-dialogs" alt="REUSE status"></a> <a href="https://www.npmjs.com/package/@nextcloud/dialogs"><img src="https://img.shields.io/npm/v/@nextcloud/dialogs?style=for-the-badge" alt="npm"></a></p>
 <p>Nextcloud dialog helpers</p>
-<h2 id="installation" class="tsd-anchor-link">Installation<a href="#installation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><pre><code><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-0">i</span><span class="hl-1"> -</span><span class="hl-2">S</span><span class="hl-1"> @</span><span class="hl-0">nextcloud</span><span class="hl-1">/</span><span class="hl-0">dialogs</span>
+<h2 id="installation" class="tsd-anchor-link">Installation<a href="#installation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<pre><code><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-0">i</span><span class="hl-1"> -</span><span class="hl-2">S</span><span class="hl-1"> @</span><span class="hl-0">nextcloud</span><span class="hl-1">/</span><span class="hl-0">dialogs</span>
 </code><button>Copy</button></pre>
 
-<h3 id="version-compatibility" class="tsd-anchor-link">Version compatibility<a href="#version-compatibility" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><table>
+<h3 id="version-compatibility" class="tsd-anchor-link">Version compatibility<a href="#version-compatibility" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
 <thead>
 <tr>
 <th><code>@nextcloud/dialogs</code></th>
@@ -54,12 +57,15 @@ with an old version of <code>@nextcloud/vue</code> in your app dependencies if y
 Note that this might increase the bundled app size.
 If your app also already uses <code>@nextcloud/vue</code> version 9.x and Vue 3 then the bundle size will not increase.</p>
 <p>²: Since version 4.2 this package provides a Vue.js based file picker, so this package depends on <code>@nextcloud/vue</code>.</p>
-<h2 id="usage" class="tsd-anchor-link">Usage<a href="#usage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><h3 id="general" class="tsd-anchor-link">General<a href="#general" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>The styles for the components (Toasts and FilePicker) are provided in the <code>style.css</code> file.
+<h2 id="usage" class="tsd-anchor-link">Usage<a href="#usage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="general" class="tsd-anchor-link">General<a href="#general" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>The styles for the components (Toasts and FilePicker) are provided in the <code>style.css</code> file.
 So make sure that the  <code>@nextcloud/dialogs/style.css</code> file is included in your app to make sure that the toasts or FilePicker have a proper styling applied.</p>
 <pre><code class="js"><span class="hl-3">import</span><span class="hl-1"> </span><span class="hl-4">&#39;@nextcloud/dialogs/style.css&#39;</span>
 </code><button type="button">Copy</button></pre>
 
-<h3 id="toasts" class="tsd-anchor-link">Toasts<a href="#toasts" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><pre><code class="js"><span class="hl-3">import</span><span class="hl-1"> { </span><span class="hl-0">showMessage</span><span class="hl-1">, </span><span class="hl-0">showInfo</span><span class="hl-1">, </span><span class="hl-0">showSuccess</span><span class="hl-1">, </span><span class="hl-0">showWarning</span><span class="hl-1">, </span><span class="hl-0">showError</span><span class="hl-1"> } </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-4">&#39;@nextcloud/dialogs&#39;</span><br/><span class="hl-3">import</span><span class="hl-1"> </span><span class="hl-4">&#39;@nextcloud/dialogs/style.css&#39;</span>
+<h3 id="toasts" class="tsd-anchor-link">Toasts<a href="#toasts" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="js"><span class="hl-3">import</span><span class="hl-1"> { </span><span class="hl-0">showMessage</span><span class="hl-1">, </span><span class="hl-0">showInfo</span><span class="hl-1">, </span><span class="hl-0">showSuccess</span><span class="hl-1">, </span><span class="hl-0">showWarning</span><span class="hl-1">, </span><span class="hl-0">showError</span><span class="hl-1"> } </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-4">&#39;@nextcloud/dialogs&#39;</span><br/><span class="hl-3">import</span><span class="hl-1"> </span><span class="hl-4">&#39;@nextcloud/dialogs/style.css&#39;</span>
 </code><button type="button">Copy</button></pre>
 
 <p>If you using <code>@nextcloud/dialogs &gt;= 4.0</code> you don't need any svg or scss loader in you projects anymore.</p>
@@ -72,13 +78,17 @@ So make sure that the  <code>@nextcloud/dialogs/style.css</code> file is include
 </code><button>Copy</button></pre>
 
 <p>A full list of available options can be found in the <a href="https://nextcloud-libraries.github.io/nextcloud-dialogs/">documentation</a>.</p>
-<h3 id="filepicker" class="tsd-anchor-link">FilePicker<a href="#filepicker" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>To spawn the FilePicker provided by the library you have to use the <em>FilePickerBuilder</em>.
+<h3 id="filepicker" class="tsd-anchor-link">FilePicker<a href="#filepicker" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>To spawn the FilePicker provided by the library you have to use the <em>FilePickerBuilder</em>.
 The <em>FilePickerBuilder</em> is included in the main entry point of this library, so you can use it like this:</p>
 <pre><code class="js"><span class="hl-3">import</span><span class="hl-1"> { </span><span class="hl-0">getFilePickerBuilder</span><span class="hl-1"> } </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-4">&#39;@nextcloud/dialogs&#39;</span><br/><span class="hl-7">const</span><span class="hl-1"> </span><span class="hl-2">filepicker</span><span class="hl-1"> = </span><span class="hl-5">getFilePickerBuilder</span><span class="hl-1">(</span><span class="hl-4">&#39;Pick plain text files&#39;</span><span class="hl-1">)</span><br/><span class="hl-1">    .</span><span class="hl-5">addMimeTypeFilter</span><span class="hl-1">(</span><span class="hl-4">&#39;text/plain&#39;</span><span class="hl-1">)</span><br/><span class="hl-1">    .</span><span class="hl-5">addButton</span><span class="hl-1">({</span><br/><span class="hl-1">        </span><span class="hl-0">label:</span><span class="hl-1"> </span><span class="hl-4">&#39;Pick&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-5">callback</span><span class="hl-0">:</span><span class="hl-1"> (</span><span class="hl-0">nodes</span><span class="hl-1">) </span><span class="hl-7">=&gt;</span><span class="hl-1"> </span><span class="hl-0">console</span><span class="hl-1">.</span><span class="hl-5">log</span><span class="hl-1">(</span><span class="hl-4">&#39;Picked&#39;</span><span class="hl-1">, </span><span class="hl-0">nodes</span><span class="hl-1">),</span><br/><span class="hl-1">    })</span><br/><span class="hl-1">    .</span><span class="hl-5">build</span><span class="hl-1">()</span><br/><br/><span class="hl-8">// You get the file nodes by the button callback, but also the pick yields the paths of the picked files</span><br/><span class="hl-7">const</span><span class="hl-1"> </span><span class="hl-2">paths</span><span class="hl-1"> = </span><span class="hl-3">await</span><span class="hl-1"> </span><span class="hl-0">filepicker</span><span class="hl-1">.</span><span class="hl-5">pick</span><span class="hl-1">()</span>
 </code><button type="button">Copy</button></pre>
 
-<h2 id="development" class="tsd-anchor-link">Development<a href="#development" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><h3 id="testing" class="tsd-anchor-link">Testing<a href="#testing" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>For testing all components provide <code>data-testid</code> attributes as selectors, so the tests are independent from code or styling changes.</p>
-<h3 id="test-selectors" class="tsd-anchor-link">Test selectors<a href="#test-selectors" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><table>
+<h2 id="development" class="tsd-anchor-link">Development<a href="#development" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="testing" class="tsd-anchor-link">Testing<a href="#testing" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>For testing all components provide <code>data-testid</code> attributes as selectors, so the tests are independent from code or styling changes.</p>
+<h3 id="test-selectors" class="tsd-anchor-link">Test selectors<a href="#test-selectors" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<table>
 <thead>
 <tr>
 <th><code>data-testid</code></th>
@@ -104,7 +114,8 @@ The <em>FilePickerBuilder</em> is included in the main entry point of this libra
 </tr>
 </tbody>
 </table>
-<h3 id="📤-releasing-a-new-version" class="tsd-anchor-link">📤 Releasing a new version<a href="#📤-releasing-a-new-version" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><ul>
+<h3 id="📤-releasing-a-new-version" class="tsd-anchor-link">📤 Releasing a new version<a href="#📤-releasing-a-new-version" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
 <li>Pull the latest changes from <code>main</code> or <code>stableX</code></li>
 <li>Checkout a new branch with the tag name (e.g <code>v4.0.1</code>): <code>git checkout -b v&lt;version&gt;</code></li>
 <li>Run <code>npm version patch --no-git-tag-version</code> (<code>npm version minor --no-git-tag-version</code> if minor).
