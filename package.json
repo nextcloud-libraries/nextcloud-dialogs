@@ -85,7 +85,7 @@
     "sass": "^1.97.3",
     "stylelint": "^17.3.0",
     "tslib": "^2.8.1",
-    "typedoc": "^0.28.16",
+    "typedoc": "^0.28.17",
     "typedoc-plugin-missing-exports": "^4.1.2",
     "typescript": "^5.9.3",
     "typescript-plugin-css-modules": "^5.2.0",
