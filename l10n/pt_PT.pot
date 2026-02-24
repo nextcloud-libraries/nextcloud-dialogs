@@ -1,4 +1,3 @@
-# 
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Miguel Ferreira, 2024
@@ -6,14 +5,18 @@
 # Manuela Silva <mmsrs@sky.com>, 2025
 # artur25 <arturdiogo1997@hotmail.com>, 2025
 # Luis Jorge Santos Pinho <lj.pinho@gmail.com>, 2025
+# Sara Pestana, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Luis Jorge Santos Pinho <lj.pinho@gmail.com>, 2025\n"
+"Last-Translator: Sara Pestana, 2026\n"
 "Language-Team: Portuguese (Portugal) (https://app.transifex.com/nextcloud/teams/64236/pt_PT/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: pt_PT\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+
+msgid "\"{char}\" is not allowed inside a folder name."
+msgstr "\"{char}\" não é permitido dentro de um nome de pasta."
 
 msgid "\"{char}\" is not allowed inside a name."
 msgstr "\"{char}\" não é permitido dentro de um nome."
@@ -21,17 +24,11 @@ msgstr "\"{char}\" não é permitido dentro de um nome."
 msgid "\"{extension}\" is not an allowed name."
 msgstr "\"{extension}\" não é um nome permitido."
 
-msgid "\"{name}\" is an invalid folder name."
-msgstr "\"{name}\" é um nome de pasta inválido."
-
-msgid "\"{name}\" is not an allowed folder name"
-msgstr "\"{name}\" não é um nome de pasta permitido"
+msgid "\"{segment}\" is a reserved name and not allowed for folder names."
+msgstr "\"{segment}\" é um nome reservado e não é permitido para nomes de pasta."
 
 msgid "\"{segment}\" is a reserved name and not allowed."
 msgstr "\"{segment}\" é um nome reservado e não é permitido."
-
-msgid "\"/\" is not allowed inside a folder name."
-msgstr "\"/\" não é permitido dentro do nome de pasta."
 
 msgid "%n file conflict"
 msgid_plural "%n files conflict"
@@ -114,8 +111,8 @@ msgstr "Os ficheiros e as pastas que modificou recentemente aparecerão aqui."
 msgid "Filter file list"
 msgstr "Filtrar lista de ficheiros"
 
-msgid "Folder name cannot be empty."
-msgstr "O nome da pasta não pode estar vazio."
+msgid "Folder names must not end with \"{extension}\"."
+msgstr "Nomes de pasta não podem terminar em \"{extension}\"."
 
 msgid "Guest identification"
 msgstr "Identificação de convidado"
@@ -129,6 +126,9 @@ msgid ""
 msgstr ""
 "Se você selecionar ambas as versões, um número será adicionado ao nome do "
 "ficheiro recebido."
+
+msgid "Invalid folder name."
+msgstr "Nome de pasta inválido."
 
 msgid "Invalid name."
 msgstr "Nome inválido."
