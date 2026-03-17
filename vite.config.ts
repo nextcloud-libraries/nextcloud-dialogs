@@ -44,6 +44,9 @@ export default createLibConfig({
 			/\.vue(\?|$)/,
 			// and bundle raw data, e.g., raw SVGs
 			/\?raw$/,
+			// @mdi/js is too large (2.8MB) to bundle; rely on consumers to provide it
+			// Only 9 specific icons are used and can be tree-shaken by consumers
+			/^@mdi\/js$/,
 		],
 	},
 	// Inject our translations
