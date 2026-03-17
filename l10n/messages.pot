@@ -47,6 +47,9 @@ msgid_plural "Choose %n files"
 msgstr[0] ""
 msgstr[1] ""
 
+msgid "Close"
+msgstr ""
+
 msgid "Confirm"
 msgstr ""
 
@@ -77,6 +80,9 @@ msgstr ""
 msgid "Enter your name"
 msgstr ""
 
+msgid "Error: {message}"
+msgstr ""
+
 msgid "Existing version"
 msgstr ""
 
@@ -105,6 +111,9 @@ msgid "Home"
 msgstr ""
 
 msgid "If you select both versions, the incoming file will have a number added to its name."
+msgstr ""
+
+msgid "Info: {message}"
 msgstr ""
 
 msgid "Invalid folder name."
@@ -199,10 +208,16 @@ msgstr ""
 msgid "Submit name"
 msgstr ""
 
+msgid "Success: {message}"
+msgstr ""
+
 msgid "Undo"
 msgstr ""
 
 msgid "Upload some content or sync with your devices!"
+msgstr ""
+
+msgid "Warning: {message}"
 msgstr ""
 
 msgid "When an incoming folder is selected, any conflicting files within it will also be overwritten."

@@ -22,9 +22,3 @@ path = ".env.development"
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2025 Nextcloud GmbH and Nextcloud contributors"
 SPDX-License-Identifier = "CC0-1.0"
-
-[[annotations]]
-path = ["styles/close-dark.svg", "styles/close.svg", "styles/loader.svg"]
-precedence = "aggregate"
-SPDX-FileCopyrightText = "2018-2024 Google LLC"
-SPDX-License-Identifier = "Apache-2.0"
