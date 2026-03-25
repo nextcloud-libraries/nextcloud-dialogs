@@ -1,15 +1,17 @@
-# 
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
-# Сашко Тодоров <sasetodorov@gmail.com>, 2025
+# Сашко Тодоров <sasetodorov@gmail.com>, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Сашко Тодоров <sasetodorov@gmail.com>, 2025\n"
+"Last-Translator: Сашко Тодоров <sasetodorov@gmail.com>, 2026\n"
 "Language-Team: Macedonian (https://app.transifex.com/nextcloud/teams/64236/mk/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: mk\n"
 "Plural-Forms: nplurals=2; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : 1;\n"
+
+msgid "\"{char}\" is not allowed inside a folder name."
+msgstr "\"{char}\" не е дозволен во име на папка."
 
 msgid "\"{char}\" is not allowed inside a name."
 msgstr "\"{char}\" не е дозволено во име."
@@ -17,17 +19,11 @@ msgstr "\"{char}\" не е дозволено во име."
 msgid "\"{extension}\" is not an allowed name."
 msgstr "\"{extension}\" не е дозволено име."
 
-msgid "\"{name}\" is an invalid folder name."
-msgstr "\"{name}\" не е валидно име за папка/"
-
-msgid "\"{name}\" is not an allowed folder name"
-msgstr "\"{name}\" не е дозволено име за папка"
+msgid "\"{segment}\" is a reserved name and not allowed for folder names."
+msgstr "\"{segment}\" е резервирано име и не е дозволено за име на папка."
 
 msgid "\"{segment}\" is a reserved name and not allowed."
 msgstr "\"{segment}\" е резервирано име и не е дозволено."
-
-msgid "\"/\" is not allowed inside a folder name."
-msgstr "\"/\" не е дозволена во име на папка."
 
 msgid "%n file conflict"
 msgid_plural "%n files conflict"
@@ -108,8 +104,8 @@ msgstr "Датотеките и папките кој неодамна сте г
 msgid "Filter file list"
 msgstr "Филтрирај листа на датотеки"
 
-msgid "Folder name cannot be empty."
-msgstr "Името на папката неможе да биде празно."
+msgid "Folder names must not end with \"{extension}\"."
+msgstr "Имињата на папките неможе да завршуваат со \"{extension}\"."
 
 msgid "Guest identification"
 msgstr "Гостинска идентификација"
@@ -123,6 +119,9 @@ msgid ""
 msgstr ""
 "Ако ги избереш двете верзии, влезната датотека ќе добие број додаден на "
 "нејзиното име."
+
+msgid "Invalid folder name."
+msgstr "Невалидно име на папка."
 
 msgid "Invalid name."
 msgstr "Невалидно име."
