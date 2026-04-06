@@ -1,41 +1,51 @@
-# 
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Főnyedi Áron <sajtman@gmail.com>, 2023
 # Gyuris Gellért <jobel@ujevangelizacio.hu>, 2024
 # János Schrempf <schrempf.janos@gmail.com>, 2025
+# Balázs Meskó <meskobalazs@mailbox.org>, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: János Schrempf <schrempf.janos@gmail.com>, 2025\n"
+"Last-Translator: Balázs Meskó <meskobalazs@mailbox.org>, 2026\n"
 "Language-Team: Hungarian (Hungary) (https://app.transifex.com/nextcloud/teams/64236/hu_HU/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: hu_HU\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "\"{char}\" is not allowed inside a folder name."
+msgstr "A(z) „{char}” nem engedélyezett egy mappanévben."
+
 msgid "\"{char}\" is not allowed inside a name."
-msgstr "\"{char}\" nem engedélyezett névben."
+msgstr "A(z) „{char}” nem engedélyezett egy névben."
 
 msgid "\"{extension}\" is not an allowed name."
-msgstr "\"{extension}\" nem engedélyezett név."
+msgstr "A(z) „{extension}” nem engedélyezett név."
 
-msgid "\"{name}\" is an invalid folder name."
-msgstr "„{name}” érvénytelen mappanév."
-
-msgid "\"{name}\" is not an allowed folder name"
-msgstr "„{name}” nem engedélyezett mappanév"
+msgid "\"{segment}\" is a reserved name and not allowed for folder names."
+msgstr "A(z) „{segment}” foglalt név, és nem engedélyezett a mappanevekben."
 
 msgid "\"{segment}\" is a reserved name and not allowed."
-msgstr "\"{segment}\" foglalt név és nem engedélyezett."
+msgstr "A(z) „{segment}” foglalt név, és nem engedélyezett."
 
-msgid "\"/\" is not allowed inside a folder name."
-msgstr "„/” jel nem szerepelhet mappa nevében."
+msgid "%n file conflict"
+msgid_plural "%n files conflict"
+msgstr[0] "%n ütköző fájl"
+msgstr[1] "%n ütköző fájl"
+
+msgid "%n file conflict in {dirname}"
+msgid_plural "%n file conflicts in {dirname}"
+msgstr[0] "%n ütköző fájl ebben: {dirname}"
+msgstr[1] "%n ütköző fájl ebben: {dirname}"
 
 msgid "All files"
-msgstr "Minden fájl"
+msgstr "Összes fájl"
 
 msgid "Cancel"
 msgstr "Mégse"
+
+msgid "Cancel the entire operation"
+msgstr "Egész művelet megszakítása"
 
 msgid "Choose"
 msgstr "Kiválasztás"
@@ -48,6 +58,12 @@ msgid_plural "Choose %n files"
 msgstr[0] "%n fájl kiválasztása"
 msgstr[1] "%n fájl kiválasztása"
 
+msgid "Confirm"
+msgstr "Megerősítés"
+
+msgid "Continue"
+msgstr "Folytatás"
+
 msgid "Copy"
 msgstr "Másolás"
 
@@ -55,25 +71,28 @@ msgid "Copy to {target}"
 msgstr "Másolás ide: {target}"
 
 msgid "Could not create the new folder"
-msgstr "Az új mappa létrehozása nem lehetséges"
+msgstr "Nem lehet létrehozni az új mappát"
 
 msgid "Could not load files settings"
-msgstr "Fájlbeállítások betöltése nem lehetséges"
+msgstr "Nem lehet betölteni a fájlok beállításait"
 
 msgid "Could not load files views"
-msgstr "Fájlnézetek betöltése nem lehetséges"
+msgstr "Nem lehet betölteni a fájlok nézeteit"
 
 msgid "Create directory"
 msgstr "Mappa létrehozása"
 
 msgid "Current view selector"
-msgstr "Jelenlegi nézet választó"
+msgstr "Jelenlegi nézet választója"
 
 msgid "Enter your name"
-msgstr "Add meg a neved"
+msgstr "Adja meg a nevét"
+
+msgid "Existing version"
+msgstr "Meglévő verzió"
 
 msgid "Failed to set nickname."
-msgstr "Becenév beállítás sikertelen."
+msgstr "Nem sikerült a becenév beállítása."
 
 msgid "Favorites"
 msgstr "Kedvencek"
@@ -85,40 +104,56 @@ msgid "Files and folders you recently modified will show up here."
 msgstr "A nemrég módosított fájlok és mappák itt jelennek meg."
 
 msgid "Filter file list"
-msgstr "Fájl lista szűrése"
+msgstr "Fájllista szűrése"
 
-msgid "Folder name cannot be empty."
-msgstr "A mappa neve nem lehet üres."
+msgid "Folder names must not end with \"{extension}\"."
+msgstr "A mappanevek nem végződhetnek ezzel: „{extension}”."
 
 msgid "Guest identification"
-msgstr "Vendég azonosítás"
+msgstr "Vendégazonosítás"
 
 msgid "Home"
 msgstr "Kezdőlap"
 
+msgid ""
+"If you select both versions, the incoming file will have a number added to "
+"its name."
+msgstr ""
+"Ha mindkét verziót választja, akkor a bejövő fájl nevéhez egy szám lesz "
+"hozzáfűzve."
+
+msgid "Invalid folder name."
+msgstr "Érvénytelen mappanév."
+
 msgid "Invalid name."
 msgstr "Érvénytelen név."
+
+msgid "Last modified date unknown"
+msgstr "Legutóbbi módosítás ideje ismeretlen"
 
 msgid "Modified"
 msgstr "Módosítva"
 
 msgid "Move"
-msgstr "Mozgatás"
+msgstr "Áthelyezés"
 
 msgid "Move to {target}"
-msgstr "Mozgatás ide: {target}"
+msgstr "Áthelyezés ide: {target}"
 
 msgid "Name"
 msgstr "Név"
 
+msgid "Names may be at most 64 characters long."
+msgstr "A nevek legfeljebb 64 karakter hosszúak lehetnek."
+
 msgid "Names must not be empty."
-msgstr "Nevek nem lehetnek üresek."
+msgstr "A nevek nem lehetnek üresek."
 
 msgid "Names must not end with \"{extension}\"."
-msgstr "Nevek nem végződhetnek \"{extension}\"-re."
+msgstr "A nevek nem végződhetnek ezzel: „{extension}”."
 
 msgid "Names must not start with a dot."
-msgstr "Nevek nem kezdődhetnek ponttal."
+msgstr "A nevek nem kezdődhetnek ponttal."
 
 msgid "New"
 msgstr "Új"
@@ -127,7 +162,10 @@ msgid "New folder"
 msgstr "Új mappa"
 
 msgid "New folder name"
-msgstr "Új mappa név"
+msgstr "Új mappa neve"
+
+msgid "New version"
+msgstr "Új verzió"
 
 msgid "No files in here"
 msgstr "Itt nincsenek fájlok"
@@ -139,22 +177,39 @@ msgid "No matching files"
 msgstr "Nincs ilyen fájl"
 
 msgid "Please enter a name with at least 2 characters."
-msgstr "Kérlek adj meg egy legalább 2 karakteres nevet."
+msgstr "Legalább 2 karakteres nevet adjon meg."
 
 msgid "Recent"
-msgstr "Gyakori"
+msgstr "Legutóbbi"
+
+msgid "Select all checkboxes"
+msgstr "Összes jelölőmező bepipálása"
 
 msgid "Select all entries"
-msgstr "Minden bejegyzés kijelölése"
+msgstr "Összes bejegyzés kijelölése"
+
+msgid "Select all existing files"
+msgstr "Összes meglévő fájl kijelölése"
+
+msgid "Select all new files"
+msgstr "Összes új fájl kijelölése"
 
 msgid "Select entry"
 msgstr "Bejegyzés kijelölése"
 
 msgid "Select the row for {nodename}"
-msgstr "Válassz sort a következőnek: {nodename}"
+msgstr "Válasszon sort a következőnek: {nodename}"
 
 msgid "Size"
 msgstr "Méret"
+
+msgid "Skip %n file"
+msgid_plural "Skip %n files"
+msgstr[0] "%n fájl kihagyása"
+msgstr[1] "%n fájl kihagyása"
+
+msgid "Skip this file"
+msgstr "Fájl kihagyása"
 
 msgid "Submit name"
 msgstr "Név beküldése"
@@ -163,10 +218,37 @@ msgid "Undo"
 msgstr "Visszavonás"
 
 msgid "Upload some content or sync with your devices!"
-msgstr "Tölts fel tartalmat vagy szinkronizálj az eszközeiddel!"
+msgstr "Töltsön fel tartalmat, vagy szinkronizáljon az eszközeivel!"
+
+msgid ""
+"When an incoming folder is selected, any conflicting files within it will "
+"also be overwritten."
+msgstr ""
+"Ha egy bejövő mappa van kijelölve, akkor a benne lévő ütköző fájlok is felül"
+" lesznek írva."
+
+msgid ""
+"When an incoming folder is selected, the content is written into the "
+"existing folder and a recursive conflict resolution is performed."
+msgstr ""
+"Ha egy bejövő mappa van kijelölve, akkor a tartalom a meglévő mappába lesz "
+"írva, és rekurzív ütközéskezelés lesz végezve."
+
+msgid "Which files do you want to keep?"
+msgstr "Mely fájlokat akarja megtartani?"
+
+msgid "You are currently identified as {nickname}."
+msgstr "Jelenleg ekként van azonosítva: {nickname}."
 
 msgid "You are currently not identified."
-msgstr "Jelenleg nem vagy azonosítva."
+msgstr "Jelenleg nincs azonosítva."
 
 msgid "You cannot leave the name empty."
-msgstr "A nevet nem hagyhatod üresen."
+msgstr "A nevet nem hagyhatja üresen."
+
+msgid "You need to choose at least one conflict solution"
+msgstr "Legalább egy ütközéskezelési megoldást kell választania"
+
+msgid "You need to select at least one version of each file to continue."
+msgstr ""
+"A folytatáshoz az összes fájlnak legalább egy verzióját ki kell választania."
