@@ -24,7 +24,7 @@
 </template>
 
 <script setup lang="ts">
-import fileListIconStyles from './FileListIcon.module.scss'
+import fileListIconStyles from './FileListIcon.module.css'
 
 defineProps<{
 	/**
@@ -35,7 +35,7 @@ defineProps<{
 </script>
 
 <style scoped lang="scss">
-@use './FileList';
+@use './FileList.scss';
 
 @keyframes gradient {
 	0% {

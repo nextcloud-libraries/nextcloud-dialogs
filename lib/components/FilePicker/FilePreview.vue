@@ -36,7 +36,7 @@ import IconFolder from 'vue-material-design-icons/Folder.vue'
 import { usePreviewURL } from '../../composables/preview.ts'
 
 // CSS modules
-import fileListIconStylesModule from './FileListIcon.module.scss'
+import fileListIconStylesModule from './FileListIcon.module.css'
 
 const props = defineProps<{
 	/**
