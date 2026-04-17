@@ -1,15 +1,17 @@
-# 
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
-# Café Tango, 2025
+# Café Tango, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Café Tango, 2025\n"
+"Last-Translator: Café Tango, 2026\n"
 "Language-Team: Chinese (Hong Kong) (https://app.transifex.com/nextcloud/teams/64236/zh_HK/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: zh_HK\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "\"{char}\" is not allowed inside a folder name."
+msgstr "資料夾名稱中不允許使用「{char}」。"
 
 msgid "\"{char}\" is not allowed inside a name."
 msgstr "名稱中不能使用 \"{char}\"。"
@@ -17,17 +19,11 @@ msgstr "名稱中不能使用 \"{char}\"。"
 msgid "\"{extension}\" is not an allowed name."
 msgstr "「{extension}」並非允許的名稱。"
 
-msgid "\"{name}\" is an invalid folder name."
-msgstr "「{name}」是無效的資料夾名稱。"
-
-msgid "\"{name}\" is not an allowed folder name"
-msgstr "資料夾名稱「{name}」不符合允許的規範。"
+msgid "\"{segment}\" is a reserved name and not allowed for folder names."
+msgstr "「{segment}」為保留名稱，不能用作資料夾名稱。"
 
 msgid "\"{segment}\" is a reserved name and not allowed."
 msgstr "「{segment}」是一個保留名稱，不能使用。"
-
-msgid "\"/\" is not allowed inside a folder name."
-msgstr "資料夾名稱中不允許使用 \"/\"。"
 
 msgid "%n file conflict"
 msgid_plural "%n files conflict"
@@ -104,8 +100,8 @@ msgstr "您最近修改的檔案與資料夾將會顯示在此處。"
 msgid "Filter file list"
 msgstr "過濾檔案清單"
 
-msgid "Folder name cannot be empty."
-msgstr "資料夾名稱不能為空。"
+msgid "Folder names must not end with \"{extension}\"."
+msgstr "資料夾名稱不得以「{extension}」結尾。"
 
 msgid "Guest identification"
 msgstr "訪客身份識別"
@@ -117,6 +113,9 @@ msgid ""
 "If you select both versions, the incoming file will have a number added to "
 "its name."
 msgstr "如果您選擇兩個版本，傳入的檔案名稱將會附加一個數字。"
+
+msgid "Invalid folder name."
+msgstr "無效的資料夾名稱。"
 
 msgid "Invalid name."
 msgstr "無效的名字。"
