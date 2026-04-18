@@ -208,6 +208,8 @@ watch([navigatedPath], () => {
 	}
 	// Reset selected files
 	selectedFiles.value = []
+	// Reset filter string
+	filterString.value = "";
 })
 
 /**
