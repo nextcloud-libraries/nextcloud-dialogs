@@ -190,7 +190,7 @@ msgid "No matching files"
 msgstr "Нет подходящих файлов"
 
 msgid "Please enter a name with at least 2 characters."
-msgstr "Пожалуйста введите имя длиной не менее 2 символов."
+msgstr "Введите имя длиной не менее 2 символов."
 
 msgid "Recent"
 msgstr "Недавний"
