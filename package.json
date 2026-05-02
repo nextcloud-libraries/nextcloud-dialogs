@@ -83,7 +83,7 @@
     "gettext-parser": "^9.0.2",
     "happy-dom": "^20.9.0",
     "sass": "^1.99.0",
-    "stylelint": "^17.9.0",
+    "stylelint": "^17.9.1",
     "tslib": "^2.8.1",
     "typedoc": "^0.28.19",
     "typedoc-plugin-missing-exports": "^4.1.3",
