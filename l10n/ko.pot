@@ -144,7 +144,7 @@ msgid "Name"
 msgstr "이름"
 
 msgid "Names may be at most 64 characters long."
-msgstr "이름은 아마도 최대 64글자 입니다."
+msgstr "이름은 최대 64글자까지 지정할 수 있습니다."
 
 msgid "Names must not be empty."
 msgstr "이름은 비어 있으면 안 됩니다."
