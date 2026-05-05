@@ -4,7 +4,6 @@
 # Brandon Han, 2024
 # 이상오, 2024
 # Hyeongjin Park, 2025
-# LEE Hwanyong <hwan@ajou.ac.kr>, 2025
 # 보헤민, 2025
 # OHORA YOON, 2026
 # Hyeongjun Son, 2026
@@ -69,7 +68,7 @@ msgid "Copy"
 msgstr "복사"
 
 msgid "Copy to {target}"
-msgstr "{target}으로 복사"
+msgstr "{target}(으)로 복사"
 
 msgid "Could not create the new folder"
 msgstr "새 폴더를 만들 수 없음"
