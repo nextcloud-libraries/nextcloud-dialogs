@@ -222,7 +222,7 @@ msgstr "기기에서 파일을 업로드 또는 동기화하세요!"
 msgid ""
 "When an incoming folder is selected, any conflicting files within it will "
 "also be overwritten."
-msgstr "들어오는 폴더를 선택하면 해당 폴더 내의 충돌하는 파일도 덮어쓰여집니다."
+msgstr "새 폴더를 선택할 경우 해당 폴더 내의 충돌 파일들도 덮어쓰여집니다."
 
 msgid ""
 "When an incoming folder is selected, the content is written into the "
@@ -230,7 +230,7 @@ msgid ""
 msgstr "들어오는 폴더를 선택하면 해당 콘텐츠가 기존 폴더에 기록되고 재귀적 충돌 해결이 수행됩니다."
 
 msgid "Which files do you want to keep?"
-msgstr "어떤 파일을 보관하시겠습니까?"
+msgstr "어떤 파일들을 유지하시겠습니까?"
 
 msgid "You are currently identified as {nickname}."
 msgstr "{nickname}로서 인증 상태 입니다."
