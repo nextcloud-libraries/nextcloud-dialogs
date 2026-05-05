@@ -21,7 +21,7 @@ msgid "\"{char}\" is not allowed inside a folder name."
 msgstr "폴더 이름 안에는 '{char}'을(를) 사용할 수 없습니다."
 
 msgid "\"{char}\" is not allowed inside a name."
-msgstr "\"{char}\"는 이름 내에 사용할 수 없습니다."
+msgstr "문자 '{char}'은(는) 이름에 사용될 수 없습니다."
 
 msgid "\"{extension}\" is not an allowed name."
 msgstr "\"{extension}\"은 허용되는 이름이 아닙니다."
