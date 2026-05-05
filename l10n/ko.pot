@@ -34,7 +34,7 @@ msgstr "'{segment}'은(는) 예약된 이름이므로 사용할 수 없습니다
 
 msgid "%n file conflict"
 msgid_plural "%n files conflict"
-msgstr[0] "%n 파일 충돌"
+msgstr[0] "%n개 파일 충돌"
 
 msgid "%n file conflict in {dirname}"
 msgid_plural "%n file conflicts in {dirname}"
