@@ -103,7 +103,7 @@ msgid "Files and folders you mark as favorite will show up here."
 msgstr "즐겨찾기 한 파일 및 폴더가 이곳에 표시됩니다."
 
 msgid "Files and folders you recently modified will show up here."
-msgstr "최근 수정한 파일 및 폴더가 이곳에 표시됩니다."
+msgstr "최근 수정된 파일 및 폴더가 이곳에 표시됩니다."
 
 msgid "Filter file list"
 msgstr "파일 목록 필터링"
