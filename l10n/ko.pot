@@ -233,7 +233,7 @@ msgid "Which files do you want to keep?"
 msgstr "어떤 파일들을 유지하시겠습니까?"
 
 msgid "You are currently identified as {nickname}."
-msgstr "{nickname}로서 인증 상태 입니다."
+msgstr "{nickname}(으)로 인증된 상태 입니다."
 
 msgid "You are currently not identified."
 msgstr "현재 인증되지 않았습니다."
