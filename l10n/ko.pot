@@ -242,7 +242,7 @@ msgid "You cannot leave the name empty."
 msgstr "이름은 비워 둘 수 없습니다. "
 
 msgid "You need to choose at least one conflict solution"
-msgstr "최소한 하나의 갈등 해결 방안을 선택해야 합니다."
+msgstr "최소한 하나의 충돌 해결 방안을 선택해야 합니다."
 
 msgid "You need to select at least one version of each file to continue."
 msgstr "계속 진행하려면 각 파일의 버전을 하나 이상 선택해야 합니다."
