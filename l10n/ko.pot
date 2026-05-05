@@ -172,7 +172,7 @@ msgid "No files in here"
 msgstr "파일이 없습니다"
 
 msgid "No files matching your filter were found."
-msgstr "선택한 필터에 해당하는 파일이 없습니다."
+msgstr "선택된 필터에 해당하는 파일이 없습니다."
 
 msgid "No matching files"
 msgstr "일치하는 파일 없음"
