@@ -183,16 +183,16 @@ msgid "Recent"
 msgstr "최근"
 
 msgid "Select all checkboxes"
-msgstr "모든 체크박스 선택"
+msgstr "체크박스 모두 선택"
 
 msgid "Select all entries"
 msgstr "모두 선택"
 
 msgid "Select all existing files"
-msgstr "모든 기존 파일 선택"
+msgstr "기존 파일 모두 선택"
 
 msgid "Select all new files"
-msgstr "모든 새 파일 선택"
+msgstr "새 파일 모두 선택"
 
 msgid "Select entry"
 msgstr "항목 선택"
@@ -205,10 +205,10 @@ msgstr "크기"
 
 msgid "Skip %n file"
 msgid_plural "Skip %n files"
-msgstr[0] "%n 파일 건너뜀"
+msgstr[0] "%n개 파일 건너뛰기"
 
 msgid "Skip this file"
-msgstr "이 파일 건너뜀"
+msgstr "현재 파일 건너뛰기"
 
 msgid "Submit name"
 msgstr "이름 제출"
