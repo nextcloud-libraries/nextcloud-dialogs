@@ -57,7 +57,7 @@ msgstr "{file} 선택"
 
 msgid "Choose %n file"
 msgid_plural "Choose %n files"
-msgstr[0] "%n개의 파일 선택"
+msgstr[0] "파일 %n개 선택"
 
 msgid "Confirm"
 msgstr "확인"
