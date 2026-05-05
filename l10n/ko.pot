@@ -129,7 +129,7 @@ msgid "Invalid name."
 msgstr "잘못된 이름입니다. "
 
 msgid "Last modified date unknown"
-msgstr "최근 수정 날짜 알 수 없음"
+msgstr "최근 수정일 알 수 없음"
 
 msgid "Modified"
 msgstr "수정됨"
