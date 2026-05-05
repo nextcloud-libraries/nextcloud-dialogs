@@ -236,7 +236,7 @@ msgid "You are currently identified as {nickname}."
 msgstr "{nickname}(으)로 인증된 상태 입니다."
 
 msgid "You are currently not identified."
-msgstr "현재 인증되지 않았습니다."
+msgstr "현재 인증 정보가 없습니다."
 
 msgid "You cannot leave the name empty."
 msgstr "이름은 비워 둘 수 없습니다. "
