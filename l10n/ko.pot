@@ -86,7 +86,7 @@ msgid "Current view selector"
 msgstr "현재 보기 방식"
 
 msgid "Enter your name"
-msgstr "이름을 입력해주세요"
+msgstr "이름을 입력하세요"
 
 msgid "Existing version"
 msgstr "기존 버전"
