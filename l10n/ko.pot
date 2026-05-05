@@ -189,7 +189,7 @@ msgid "Select all entries"
 msgstr "모두 선택"
 
 msgid "Select all existing files"
-msgstr "모든 기존 파일 선택"
+msgstr "기존 파일 모두 선택"
 
 msgid "Select all new files"
 msgstr "새 파일 모두 선택"
