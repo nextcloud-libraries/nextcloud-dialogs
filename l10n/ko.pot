@@ -18,10 +18,10 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "\"{char}\" is not allowed inside a folder name."
-msgstr "문자 '{char}'은(는) 폴더 이름에 사용될 수 없습니다."
+msgstr "문자 '{char}'은(는) 폴더 이름에 사용할 수 없습니다."
 
 msgid "\"{char}\" is not allowed inside a name."
-msgstr "문자 '{char}'은(는) 이름에 사용될 수 없습니다."
+msgstr "문자 '{char}'은(는) 이름에 사용할 수 없습니다."
 
 msgid "\"{extension}\" is not an allowed name."
 msgstr "\"{extension}\"은 허용되는 이름이 아닙니다."
