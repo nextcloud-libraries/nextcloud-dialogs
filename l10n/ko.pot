@@ -205,7 +205,7 @@ msgstr "크기"
 
 msgid "Skip %n file"
 msgid_plural "Skip %n files"
-msgstr[0] "%n 파일 건너뜀"
+msgstr[0] "%n개 파일 건너뛰기"
 
 msgid "Skip this file"
 msgstr "이 파일 건너뜀"
