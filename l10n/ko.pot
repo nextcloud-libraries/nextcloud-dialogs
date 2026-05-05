@@ -38,7 +38,7 @@ msgstr[0] "%n개 파일 충돌"
 
 msgid "%n file conflict in {dirname}"
 msgid_plural "%n file conflicts in {dirname}"
-msgstr[0] "{dirname} 안의 %n 파일 충돌"
+msgstr[0] "{dirname} 내 %n개 파일 충돌"
 
 msgid "All files"
 msgstr "모든 파일"
