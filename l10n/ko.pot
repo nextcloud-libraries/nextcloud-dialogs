@@ -30,7 +30,7 @@ msgid "\"{segment}\" is a reserved name and not allowed for folder names."
 msgstr "'{segment}'은(는) 예약된 이름이므로 폴더 이름으로 사용할 수 없습니다."
 
 msgid "\"{segment}\" is a reserved name and not allowed."
-msgstr "같은 이름을 가진 \"{segment}\"이 이미 사용 중입니다."
+msgstr "'{segment}'은(는) 예약된 이름이므로 사용할 수 없습니다."
 
 msgid "%n file conflict"
 msgid_plural "%n files conflict"
