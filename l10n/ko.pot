@@ -153,7 +153,7 @@ msgid "Names must not end with \"{extension}\"."
 msgstr "이름은 '{extension}'(으)로 끝날 수 없습니다."
 
 msgid "Names must not start with a dot."
-msgstr "이름은 점으로 시작해서는 안 됩니다."
+msgstr "이름은 마침표로 시작될 수 없습니다."
 
 msgid "New"
 msgstr "새로 만들기"
