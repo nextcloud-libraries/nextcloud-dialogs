@@ -83,7 +83,7 @@ msgid "Create directory"
 msgstr "디렉토리 만들기"
 
 msgid "Current view selector"
-msgstr "현재 뷰 선택자"
+msgstr "현재 보기"
 
 msgid "Enter your name"
 msgstr "이름을 입력하세요 "
