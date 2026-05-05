@@ -110,7 +110,7 @@ msgid "Filter file list"
 msgstr "파일 목록 필터링"
 
 msgid "Folder names must not end with \"{extension}\"."
-msgstr "폴더 이름은 \"{extension}\"로 끝나면 안됩니다."
+msgstr "폴더 이름은 '{extension}'(으)로 끝날 수 없습니다."
 
 msgid "Guest identification"
 msgstr "게스트 확인"
