@@ -178,7 +178,7 @@ msgid "No matching files"
 msgstr "일치하는 파일 없음"
 
 msgid "Please enter a name with at least 2 characters."
-msgstr "최소 2자 이상의 이름을 입력하십시오. "
+msgstr "최소 2 글자 이상의 이름을 입력해주세요."
 
 msgid "Recent"
 msgstr "최근"
