@@ -147,7 +147,7 @@ msgid "Names may be at most 64 characters long."
 msgstr "이름은 최대 64글자까지 지정할 수 있습니다."
 
 msgid "Names must not be empty."
-msgstr "이름은 비어 있으면 안 됩니다."
+msgstr "이름은 비어 있을 수 없습니다."
 
 msgid "Names must not end with \"{extension}\"."
 msgstr "이름은 '{extension}'(으)로 끝날 수 없습니다."
