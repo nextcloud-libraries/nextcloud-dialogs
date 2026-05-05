@@ -123,7 +123,7 @@ msgid ""
 msgstr "두 버전을 모두 선택할 경우 새로 추가될 파일의 이름에 숫자가 붙게 됩니다."
 
 msgid "Invalid folder name."
-msgstr "폴더 이름이 잘못되었습니다."
+msgstr "잘못된 폴더 이름입니다."
 
 msgid "Invalid name."
 msgstr "잘못된 이름입니다. "
