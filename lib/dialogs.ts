@@ -38,7 +38,7 @@ export class Dialog {
 	 *
 	 * @return Promise that resolves when the dialog is answered successfully and rejects on close
 	 */
-	async show() {
+	async show(): Promise<void> {
 		const result = await spawnDialog(
 			GenericDialog,
 			{
@@ -89,7 +89,7 @@ export class DialogBuilder {
 	 *
 	 * @param name The name or headline of the dialog
 	 */
-	setName(name: string) {
+	setName(name: string): this {
 		this.#name = name
 		return this
 	}
@@ -99,7 +99,7 @@ export class DialogBuilder {
 	 *
 	 * @param text Main text of the dialog
 	 */
-	setText(text: string) {
+	setText(text: string): this {
 		this.#text = text
 		return this
 	}
@@ -109,7 +109,7 @@ export class DialogBuilder {
 	 *
 	 * @param severity Severity of the dialog
 	 */
-	setSeverity(severity: IDialogSeverity) {
+	setSeverity(severity: IDialogSeverity): this {
 		this.#severity = severity
 		return this
 	}
@@ -119,7 +119,7 @@ export class DialogBuilder {
 	 *
 	 * @param buttons Either an array of dialog buttons
 	 */
-	setButtons(buttons: IDialogButton[]) {
+	setButtons(buttons: IDialogButton[]): this {
 		if (this.#buttons.length > 0) {
 			logger.warn('[@nextcloud/dialogs] Dialog buttons are already set - this overrides previous buttons.')
 		}
@@ -132,12 +132,12 @@ export class DialogBuilder {
 	 *
 	 * @param button Button to add
 	 */
-	addButton(button: IDialogButton) {
+	addButton(button: IDialogButton): this {
 		this.#buttons.push(button)
 		return this
 	}
 
-	build() {
+	build(): Dialog {
 		return new Dialog(this.#name, this.#text, this.#buttons, this.#severity)
 	}
 }
@@ -156,7 +156,7 @@ export class DialogBuilder {
  *     .build()
  * ```
  */
-export function getDialogBuilder(name: string) {
+export function getDialogBuilder(name: string): DialogBuilder {
 	return new DialogBuilder(name)
 }
 
