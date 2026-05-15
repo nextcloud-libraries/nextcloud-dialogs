@@ -193,6 +193,11 @@ const currentPath = computed({
  */
 const selectedFiles = shallowRef<INode[]>([])
 
+/**
+ * A string used to filter files in current view
+ */
+const filterString = ref('')
+
 const {
 	files,
 	folder: currentFolder,
@@ -208,6 +213,8 @@ watch([navigatedPath], () => {
 	}
 	// Reset selected files
 	selectedFiles.value = []
+	// Reset filter string
+	filterString.value = ''
 })
 
 /**
@@ -256,11 +263,6 @@ async function handleButtonClick(callback: IFilePickerButton['callback'], nodes:
  * Headline to be used on the current view
  */
 const viewHeadline = computed(() => currentView.value === 'favorites' ? t('Favorites') : (currentView.value === 'recent' ? t('Recent') : ''))
-
-/**
- * A string used to filter files in current view
- */
-const filterString = ref('')
 
 const { isSupportedMimeType } = useMimeFilter(toRef(props, 'mimetypeFilter')) // vue 3.3 will allow cleaner syntax of toRef(() => props.mimetypeFilter)
 
