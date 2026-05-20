@@ -43,6 +43,11 @@ const props = defineProps<{
 	 * If set to true no hint about overwriting directory content will be shown
 	 */
 	recursiveUpload?: boolean
+
+	/**
+	 * If set tot true a hint is shown that any folder content will be overwritten
+	 */
+	isOverwriting?: boolean
 }>()
 
 const emit = defineEmits<{
@@ -184,6 +189,9 @@ function onSubmit() {
 				{{ t('If you select both versions, the incoming file will have a number added to its name.') }}<br>
 				<template v-if="recursiveUpload">
 					{{ t('When an incoming folder is selected, the content is written into the existing folder and a recursive conflict resolution is performed.') }}
+				</template>
+				<template v-else-if="isOverwriting">
+					{{ t('When an incoming folder is selected, any files within it will also be overwritten.') }}
 				</template>
 				<template v-else>
 					{{ t('When an incoming folder is selected, any conflicting files within it will also be overwritten.') }}

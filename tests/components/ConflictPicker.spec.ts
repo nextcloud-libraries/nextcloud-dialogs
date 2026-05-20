@@ -6,7 +6,7 @@
 import type { ConflictInput, ConflictResolutionResult } from '../../lib/conflict-picker.ts'
 
 import { File as NcFile } from '@nextcloud/files'
-import { cleanup, fireEvent, getAllByRole, getByRole, render } from '@testing-library/vue'
+import { cleanup, findByText, fireEvent, getAllByRole, getByRole, render } from '@testing-library/vue'
 import { readFile } from 'fs/promises'
 import { join } from 'path'
 import { afterEach, beforeAll, describe, expect, test } from 'vitest'
@@ -73,6 +73,40 @@ describe('ConflictPicker resolving', () => {
 			new File([new Uint8Array(content)], 'image1.jpg', { type: 'image/jpeg' }),
 			new File([new Uint8Array(content)], 'image2.jpg', { type: 'image/jpeg' }),
 		]
+	})
+
+	test('Show override hint', async () => {
+		const component = render(ConflictPicker, {
+			props: {
+				container: getContainer(),
+				dirname: 'Pictures',
+				existing: [old1, old2],
+				incoming: [...images],
+			},
+		})
+
+		const dialog = getByRole(document.body, 'dialog')
+		expect(dialog).toBeInstanceOf(HTMLElement)
+
+		await expect(findByText(dialog, /folder is selected, any conflicting files within it/)).resolves.not.toThrow()
+
+		await component.rerender({
+			container: getContainer(),
+			dirname: 'Pictures',
+			existing: [old1, old2],
+			incoming: [...images],
+			isOverwriting: true,
+		})
+		await expect(findByText(dialog, /folder is selected, any files within it/)).resolves.not.toThrow()
+
+		await component.rerender({
+			container: getContainer(),
+			dirname: 'Pictures',
+			existing: [old1, old2],
+			incoming: [...images],
+			recursiveUpload: true,
+		})
+		await expect(findByText(dialog, /folder is selected, the content is written into the existing folder/)).resolves.not.toThrow()
 	})
 
 	test('Pick all incoming files', async () => {
