@@ -1,13 +1,12 @@
-# 
 # Translators:
 # Markus Eckstein, 2023
 # Ettore Atalan <atalanttore@googlemail.com>, 2024
 # Martin Wilichowski, 2025
-# Mario Siegmann <mario_siegmann@web.de>, 2025
+# Mario Siegmann <mario_siegmann@web.de>, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Mario Siegmann <mario_siegmann@web.de>, 2025\n"
+"Last-Translator: Mario Siegmann <mario_siegmann@web.de>, 2026\n"
 "Language-Team: German (https://app.transifex.com/nextcloud/teams/64236/de/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: de\n"
@@ -229,6 +228,13 @@ msgid ""
 msgstr ""
 "Wenn ein eingehender Ordner ausgewählt wird, werden auch alle darin "
 "enthaltenen Dateien mit Konflikten überschrieben."
+
+msgid ""
+"When an incoming folder is selected, any files within it will also be "
+"overwritten."
+msgstr ""
+"Wenn ein eingehender Ordner ausgewählt wird, werden auch alle darin "
+"enthaltenen Dateien überschrieben."
 
 msgid ""
 "When an incoming folder is selected, the content is written into the "
