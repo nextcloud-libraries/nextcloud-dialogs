@@ -6,6 +6,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v7.4.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v7.3.0...v7.4.0)
+### Added
+* feat(ConflictPicker): allow to set overwrite flag \([\#2432](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2432)\)
+
+### Fixed
+* fix(FilePicker): Round previews in filepicker dialog \([\#2397](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2397)\)
+* fix(FilePicker): reset filter string when navigating \([\#2384](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2384)\)
+
+### Changed
+* Updated translations
+* Updated developer dependencies
+* chore: add explicit types for public API \([\#2426](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2426)\)
+
 ## [v7.3.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v7.2.0...v7.3.0)
 ### Changed
 * Migrated to `@nextcloud/files` v4.0.0 - reducing dependencies on apps targeting Nextcloud 33+ [\#2275](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2275).\
