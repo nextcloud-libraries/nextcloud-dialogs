@@ -141,7 +141,7 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 	 *
 	 * @param container The dialog container
 	 */
-	public setContainer(container: string) {
+	public setContainer(container: string): this {
 		this.container = container
 		return this
 	}
@@ -161,7 +161,7 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 	 *
 	 * @param filter MIME type to allow
 	 */
-	public addMimeTypeFilter(filter: string) {
+	public addMimeTypeFilter(filter: string): this {
 		this.mimeTypeFilter.push(filter)
 		return this
 	}
@@ -171,7 +171,7 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 	 *
 	 * @param filter Array of allowed MIME types
 	 */
-	public setMimeTypeFilter(filter: string[]) {
+	public setMimeTypeFilter(filter: string[]): this {
 		this.mimeTypeFilter = filter
 		return this
 	}
@@ -182,7 +182,7 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 	 *
 	 * @param button The button
 	 */
-	public addButton(button: IFilePickerButton) {
+	public addButton(button: IFilePickerButton): this {
 		if (typeof this.buttons === 'function') {
 			logger.warn('FilePicker buttons were set to factory, now overwritten with button object.')
 			this.buttons = []
@@ -197,7 +197,7 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 	 *
 	 * @param factory The button factory
 	 */
-	public setButtonFactory(factory: IFilePickerButtonFactory) {
+	public setButtonFactory(factory: IFilePickerButtonFactory): this {
 		this.buttons = factory
 		return this
 	}
@@ -208,7 +208,7 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 	 * @param type The legacy filepicker type to emulate
 	 * @deprecated Use `addButton` or `setButtonFactory` instead as with setType you do not know which button was pressed
 	 */
-	public setType(type: FilePickerType) {
+	public setType(type: FilePickerType): this {
 		this.buttons = (nodes, path) => {
 			const buttons: IFilePickerButton[] = []
 			const node = nodes[0]
@@ -254,7 +254,7 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 	 *
 	 * @param allow True to allow picking directories
 	 */
-	public allowDirectories(allow = true) {
+	public allowDirectories(allow = true): this {
 		this.directoriesAllowed = allow
 		return this
 	}
@@ -264,7 +264,7 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 	 *
 	 * @param noMenu True to hide menu
 	 */
-	public setNoMenu(noMenu = true) {
+	public setNoMenu(noMenu = true): this {
 		this.noMenu = noMenu
 		return this
 	}
@@ -274,7 +274,7 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 	 *
 	 * @param path Path to start from picking
 	 */
-	public startAt(path: string) {
+	public startAt(path: string): this {
 		this.path = path
 		return this
 	}
@@ -284,7 +284,7 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 	 *
 	 * @param filter Filter function to apply
 	 */
-	public setFilter(filter: IFilePickerFilter) {
+	public setFilter(filter: IFilePickerFilter): this {
 		this.filter = filter
 		return this
 	}
@@ -294,7 +294,7 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 	 *
 	 * @param canPick Function to decide if a node can be picked
 	 */
-	public setCanPick(canPick: IFilePickerCanPick) {
+	public setCanPick(canPick: IFilePickerCanPick): this {
 		this.canPick = canPick
 		return this
 	}
@@ -302,7 +302,7 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 	/**
 	 * Disable navigation (view selection)
 	 */
-	public disableNavigation() {
+	public disableNavigation(): this {
 		this.disabledNavigation = true
 		return this
 	}
@@ -310,7 +310,7 @@ export class FilePickerBuilder<IsMultiSelect extends boolean> {
 	/**
 	 * Construct the configured FilePicker
 	 */
-	public build() {
+	public build(): FilePicker<IsMultiSelect> {
 		return new FilePicker<IsMultiSelect>(
 			this.title,
 			this.multiSelect as IsMultiSelect,
