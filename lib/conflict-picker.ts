@@ -41,6 +41,12 @@ export interface ConflictPickerOptions {
 	 * You still need to call this function for each directory separately.
 	 */
 	recursive?: boolean
+
+	/**
+	 * When this is set to true a hint is shown that any folder content will be overwritten.
+	 * This is useful if the operation with conflicts is a move that will not perform any "write-into" logic.
+	 */
+	overwriting?: boolean
 }
 
 /**
@@ -84,6 +90,7 @@ export async function openConflictPicker<T extends ConflictInput>(
 		dirname,
 		existing,
 		incoming,
+		isOverwriting: options?.overwriting === true,
 		recursiveUpload: options?.recursive === true,
 	}, {
 		container: options?.container,

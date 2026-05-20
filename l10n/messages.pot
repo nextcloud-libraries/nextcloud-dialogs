@@ -208,6 +208,9 @@ msgstr ""
 msgid "When an incoming folder is selected, any conflicting files within it will also be overwritten."
 msgstr ""
 
+msgid "When an incoming folder is selected, any files within it will also be overwritten."
+msgstr ""
+
 msgid "When an incoming folder is selected, the content is written into the existing folder and a recursive conflict resolution is performed."
 msgstr ""
 
