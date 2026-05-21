@@ -239,6 +239,13 @@ msgstr ""
 "konfliktas, taip pat bus perrašyti."
 
 msgid ""
+"When an incoming folder is selected, any files within it will also be "
+"overwritten."
+msgstr ""
+"Pasirinkus gaunamų laiškų aplanką, visi jame esantys failai taip pat bus "
+"perrašyti."
+
+msgid ""
 "When an incoming folder is selected, the content is written into the "
 "existing folder and a recursive conflict resolution is performed."
 msgstr ""
