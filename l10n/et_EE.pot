@@ -148,7 +148,7 @@ msgid "Names must not end with \"{extension}\"."
 msgstr "Nime lõpus ei tohi olla „{extension}“."
 
 msgid "Names must not start with a dot."
-msgstr "Nime alguses ei tohi olla punkt."
+msgstr "Nime alguses ei tohi olla punkti."
 
 msgid "New"
 msgstr "Uus"
