@@ -89,7 +89,7 @@ msgid "Existing version"
 msgstr "Olemasolev versioon"
 
 msgid "Failed to set nickname."
-msgstr "Hüüdnime ei õnnestunud lisada"
+msgstr "Hüüdnime sisestamine ei õnnestunud."
 
 msgid "Favorites"
 msgstr "Lemmikud"
