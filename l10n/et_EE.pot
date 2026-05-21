@@ -1,11 +1,10 @@
-# 
 # Translators:
 # Mait R, 2023
-# Priit Jõerüüt <transifex@joeruut.com>, 2025
+# Priit Jõerüüt <transifex@joeruut.com>, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Priit Jõerüüt <transifex@joeruut.com>, 2025\n"
+"Last-Translator: Priit Jõerüüt <transifex@joeruut.com>, 2026\n"
 "Language-Team: Estonian (Estonia) (https://app.transifex.com/nextcloud/teams/64236/et_EE/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: et_EE\n"
@@ -69,7 +68,7 @@ msgid "Copy to {target}"
 msgstr "Kopeeri sihtkohta „{target}“"
 
 msgid "Could not create the new folder"
-msgstr "Uut kausta ei saanud luua"
+msgstr "Uue kausta loomine ei õnnestunud"
 
 msgid "Could not load files settings"
 msgstr "Failide seadistusi ei õnnestunud laadida"
@@ -222,6 +221,13 @@ msgid ""
 msgstr ""
 "Kui uute failide kaust on valitud, siis kõik seal leiduvad vastuolus failid "
 "saavad üle kirjutatud."
+
+msgid ""
+"When an incoming folder is selected, any files within it will also be "
+"overwritten."
+msgstr ""
+"Kui uute (saabuvate) failide kaust on valitud, siis kõik seal leiduvad "
+"failid saavad samuti üle kirjutatud."
 
 msgid ""
 "When an incoming folder is selected, the content is written into the "
