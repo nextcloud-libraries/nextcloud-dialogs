@@ -1,12 +1,11 @@
-# 
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Martin H <pilino+transifex@posteo.de>, 2025
-# Magnus Höglund, 2025
+# Magnus Höglund, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Magnus Höglund, 2025\n"
+"Last-Translator: Magnus Höglund, 2026\n"
 "Language-Team: Swedish (https://app.transifex.com/nextcloud/teams/64236/sv/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: sv\n"
@@ -225,6 +224,12 @@ msgid ""
 msgstr ""
 "När en inkommande mapp väljs kommer eventuella konflikterande filer i den "
 "också att skrivas över."
+
+msgid ""
+"When an incoming folder is selected, any files within it will also be "
+"overwritten."
+msgstr ""
+"När en inkommande mapp väljs kommer även filer i den att skrivas över."
 
 msgid ""
 "When an incoming folder is selected, the content is written into the "
