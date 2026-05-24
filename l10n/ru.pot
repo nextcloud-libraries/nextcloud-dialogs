@@ -9,12 +9,12 @@
 # Leonid Fedotov, 2025
 # Maksim Sukharev, 2025
 # Александр, 2026
-# andrey kameneth, 2026
 # ashed <craysy@gmail.com>, 2026
+# Artem Baleevskih <catsemaofficial@gmail.com>, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: ashed <craysy@gmail.com>, 2026\n"
+"Last-Translator: Artem Baleevskih <catsemaofficial@gmail.com>, 2026\n"
 "Language-Team: Russian (https://app.transifex.com/nextcloud/teams/64236/ru/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: ru\n"
@@ -27,13 +27,13 @@ msgid "\"{char}\" is not allowed inside a name."
 msgstr "\"{char}\" не допускается внутри имени."
 
 msgid "\"{extension}\" is not an allowed name."
-msgstr "\"{extension}\" это не допустимое имя."
+msgstr "\"{extension}\" — недопустимое имя."
 
 msgid "\"{segment}\" is a reserved name and not allowed for folder names."
-msgstr "\"{segment}\" это зарезервированное имя и не допустимо для имени папки."
+msgstr "\"{segment}\" — зарезервированное имя, недопустимое для имени папки."
 
 msgid "\"{segment}\" is a reserved name and not allowed."
-msgstr "\"{segment}\" это зарезервированное имя и не допустимо."
+msgstr "\"{segment}\" — зарезервированное и недопустимое имя."
 
 msgid "%n file conflict"
 msgid_plural "%n files conflict"
@@ -56,7 +56,7 @@ msgid "Cancel"
 msgstr "Отмена"
 
 msgid "Cancel the entire operation"
-msgstr "Отмена операции"
+msgstr "Отменить всю операцию"
 
 msgid "Choose"
 msgstr "Выбрать"
@@ -139,7 +139,7 @@ msgid "Invalid folder name."
 msgstr "Недопустимое имя папки."
 
 msgid "Invalid name."
-msgstr "Неверное имя."
+msgstr "Недопустимое имя."
 
 msgid "Last modified date unknown"
 msgstr "Дата последнего изменения неизвестна"
@@ -157,7 +157,7 @@ msgid "Name"
 msgstr "Имя"
 
 msgid "Names may be at most 64 characters long."
-msgstr "Имена не могут быть длинее 64 символов."
+msgstr "Имена не могут быть длиннее 64 символов."
 
 msgid "Names must not be empty."
 msgstr "Имена не могут быть пустыми."
@@ -166,7 +166,7 @@ msgid "Names must not end with \"{extension}\"."
 msgstr "Имена не могут оканчиваться на \"{extension}\"."
 
 msgid "Names must not start with a dot."
-msgstr "Имена должны начинаться с точки."
+msgstr "Имена не должны начинаться с точки."
 
 msgid "New"
 msgstr "Новый"
@@ -241,6 +241,12 @@ msgid ""
 msgstr ""
 "Когда выбрана входящая папка, все конфликтующие файлы в ней также будут "
 "перезаписаны."
+
+msgid ""
+"When an incoming folder is selected, any files within it will also be "
+"overwritten."
+msgstr ""
+"Когда выбрана входящая папка, все файлы в ней также будут перезаписаны."
 
 msgid ""
 "When an incoming folder is selected, the content is written into the "
