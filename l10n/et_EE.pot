@@ -246,7 +246,7 @@ msgid "You are currently not identified."
 msgstr "Sa oled hetkel tuvastamata."
 
 msgid "You cannot leave the name empty."
-msgstr "Sa ei saa jätte nime tühjaks."
+msgstr "Sa ei saa jätta nime tühjaks."
 
 msgid "You need to choose at least one conflict solution"
 msgstr "Sa pead valima vähemalt ühe failikonflikti lahenduse."
