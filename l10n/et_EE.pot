@@ -95,7 +95,7 @@ msgid "Favorites"
 msgstr "Lemmikud"
 
 msgid "Files and folders you mark as favorite will show up here."
-msgstr "Failid ja kaustad, mida märgistad lemmikuks, kuvatakse siin."
+msgstr "Failid ja kaustad, mida märgid lemmikuks, kuvatakse siin."
 
 msgid "Files and folders you recently modified will show up here."
 msgstr "Siin kuvatakse hiljuti muudetud failid ja kaustad."
