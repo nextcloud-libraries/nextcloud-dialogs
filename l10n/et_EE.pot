@@ -163,7 +163,7 @@ msgid "New version"
 msgstr "Uus versioon"
 
 msgid "No files in here"
-msgstr "Siin puuduvad failid"
+msgstr "Siin pole faile"
 
 msgid "No files matching your filter were found."
 msgstr "Sinu filtrile vastavaid faile ei leidunud."
