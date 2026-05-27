@@ -1,17 +1,17 @@
-# 
 # Translators:
 # Rémi LEBLOND, 2023
 # fleopaulD, 2023
 # Loïc Ch., 2024
-# Benoit Pruneau, 2025
+# 208d9eb321757f3a38fdaa69b7b9e31b_3b9055c, 2025
 # Caro Leviia, 2025
 # Jérôme HERBINET, 2025
 # nomoreroses, 2025
 # William Méauzoone, 2025
+# Benoit deClerck <benoit@de-clerck.fr>, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: William Méauzoone, 2025\n"
+"Last-Translator: Benoit deClerck <benoit@de-clerck.fr>, 2026\n"
 "Language-Team: French (https://app.transifex.com/nextcloud/teams/64236/fr/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: fr\n"
@@ -236,6 +236,13 @@ msgid ""
 msgstr ""
 "En sélectionnant un dossier entrant, les fichiers en conflit qu’il contient "
 "seront automatiquement écrasés."
+
+msgid ""
+"When an incoming folder is selected, any files within it will also be "
+"overwritten."
+msgstr ""
+"Suite à la sélection d'un dossier en entrée, tout fichier présent dans ce "
+"dossier sera alors écrasé. "
 
 msgid ""
 "When an incoming folder is selected, the content is written into the "
