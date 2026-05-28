@@ -4,10 +4,11 @@
 # Gyuris Gellért <jobel@ujevangelizacio.hu>, 2024
 # János Schrempf <schrempf.janos@gmail.com>, 2025
 # Balázs Meskó <meskobalazs@mailbox.org>, 2026
+# Márton András Hábele, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Balázs Meskó <meskobalazs@mailbox.org>, 2026\n"
+"Last-Translator: Márton András Hábele, 2026\n"
 "Language-Team: Hungarian (Hungary) (https://app.transifex.com/nextcloud/teams/64236/hu_HU/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: hu_HU\n"
@@ -226,6 +227,12 @@ msgid ""
 msgstr ""
 "Ha egy bejövő mappa van kijelölve, akkor a benne lévő ütköző fájlok is felül"
 " lesznek írva."
+
+msgid ""
+"When an incoming folder is selected, any files within it will also be "
+"overwritten."
+msgstr ""
+"Amikor egy bejövő mappát kiválaszt, a benne lévő fájlok is felülíródnak."
 
 msgid ""
 "When an incoming folder is selected, the content is written into the "
