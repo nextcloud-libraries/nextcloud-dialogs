@@ -1,4 +1,3 @@
-# 
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Claudio Scandella, 2023
@@ -6,10 +5,11 @@
 # Sebastiano Furlan, 2024
 # esseti kappa, 2025
 # Vincenzo Reale <vinx.reale@gmail.com>, 2026
+# Ivan buggato, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Vincenzo Reale <vinx.reale@gmail.com>, 2026\n"
+"Last-Translator: Ivan buggato, 2026\n"
 "Language-Team: Italian (https://app.transifex.com/nextcloud/teams/64236/it/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: it\n"
@@ -236,6 +236,13 @@ msgid ""
 msgstr ""
 "Quando si seleziona una cartella in arrivo, anche tutti i file in conflitto "
 "al suo interno saranno sovrascritti."
+
+msgid ""
+"When an incoming folder is selected, any files within it will also be "
+"overwritten."
+msgstr ""
+"Quando si seleziona una cartella in arrivo, anche i documenti all'interno "
+"verranno sovrascritti."
 
 msgid ""
 "When an incoming folder is selected, the content is written into the "
