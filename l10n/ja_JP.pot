@@ -1,17 +1,17 @@
-# 
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Uchiyama Takuya <uchiyama@j-wmc.com>, 2023
-# takehito K kondo, 2023
+# 7116d5df1b9f3abf16a6e70acb923b11_d03b69d, 2023
 # kojima.imamura, 2024
 # Takafumi AKAMATSU, 2024
 # devi, 2024
 # kshimohata, 2025
 # Nobuhiro Shintaku, 2026
+# Katsuhiro Shimohata, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Nobuhiro Shintaku, 2026\n"
+"Last-Translator: Katsuhiro Shimohata, 2026\n"
 "Language-Team: Japanese (Japan) (https://app.transifex.com/nextcloud/teams/64236/ja_JP/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: ja_JP\n"
@@ -222,6 +222,11 @@ msgid ""
 "When an incoming folder is selected, any conflicting files within it will "
 "also be overwritten."
 msgstr "受信フォルダーを選択すると、そのフォルダー内の競合ファイルも上書きされます。"
+
+msgid ""
+"When an incoming folder is selected, any files within it will also be "
+"overwritten."
+msgstr "受信フォルダを選択すると、その中のファイルも上書きされます。"
 
 msgid ""
 "When an incoming folder is selected, the content is written into the "
