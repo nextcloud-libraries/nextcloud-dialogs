@@ -6,10 +6,11 @@
 # artur25 <arturdiogo1997@hotmail.com>, 2025
 # Luis Jorge Santos Pinho <lj.pinho@gmail.com>, 2025
 # Sara Pestana, 2026
+# cesar vale, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Sara Pestana, 2026\n"
+"Last-Translator: cesar vale, 2026\n"
 "Language-Team: Portuguese (Portugal) (https://app.transifex.com/nextcloud/teams/64236/pt_PT/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: pt_PT\n"
@@ -232,6 +233,13 @@ msgid ""
 msgstr ""
 "Ao selecionar uma pasta de entrada, quaisquer ficheiros conflituantes dentro"
 " da mesma serão também sobrescritos."
+
+msgid ""
+"When an incoming folder is selected, any files within it will also be "
+"overwritten."
+msgstr ""
+"Ao selecionar uma pasta de entrada, todos os ficheiros nela contidos serão "
+"também sobrescritos."
 
 msgid ""
 "When an incoming folder is selected, the content is written into the "
