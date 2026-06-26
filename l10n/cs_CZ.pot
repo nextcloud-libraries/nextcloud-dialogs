@@ -1,11 +1,10 @@
-# 
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
-# Pavel Borecki <pavel.borecki@gmail.com>, 2025
+# Pavel Borecki <pavel.borecki@gmail.com>, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>, 2025\n"
+"Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>, 2026\n"
 "Language-Team: Czech (Czech Republic) (https://app.transifex.com/nextcloud/teams/64236/cs_CZ/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: cs_CZ\n"
@@ -233,6 +232,12 @@ msgid ""
 msgstr ""
 "Pokud je vybrána příchozí složka, budou v ní také přepsány jakékoli "
 "kolidující soubory."
+
+msgid ""
+"When an incoming folder is selected, any files within it will also be "
+"overwritten."
+msgstr ""
+"Když je vybrána příchozí složka, jakékoli soubory v ní budou také přepsány."
 
 msgid ""
 "When an incoming folder is selected, the content is written into the "
