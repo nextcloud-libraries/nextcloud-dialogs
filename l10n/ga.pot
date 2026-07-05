@@ -1,10 +1,9 @@
-# 
 # Translators:
-# Aindriú Mac Giolla Eoin, 2025
+# Aindriú Mac Giolla Eoin, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Aindriú Mac Giolla Eoin, 2025\n"
+"Last-Translator: Aindriú Mac Giolla Eoin, 2026\n"
 "Language-Team: Irish (https://app.transifex.com/nextcloud/teams/64236/ga/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: ga\n"
@@ -238,6 +237,13 @@ msgid ""
 msgstr ""
 "Nuair a roghnaítear fillteán isteach, déanfar aon chomhaid choimhlinteacha "
 "ann a athscríobh freisin."
+
+msgid ""
+"When an incoming folder is selected, any files within it will also be "
+"overwritten."
+msgstr ""
+"Nuair a roghnaítear fillteán isteach, déanfar aon chomhaid laistigh de a "
+"athscríobh freisin."
 
 msgid ""
 "When an incoming folder is selected, the content is written into the "
