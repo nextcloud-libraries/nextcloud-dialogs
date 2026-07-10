@@ -1,4 +1,3 @@
-# 
 # Translators:
 # O St, 2026
 # 
@@ -229,6 +228,13 @@ msgid ""
 "also be overwritten."
 msgstr ""
 "Коли вибрано вхідний каталог, будь-які файли з конфліктами буде також "
+"перезаписано."
+
+msgid ""
+"When an incoming folder is selected, any files within it will also be "
+"overwritten."
+msgstr ""
+"Якщо буде вибрано вхідний каталог, будь-який файл в ньому буде також "
 "перезаписано."
 
 msgid ""
