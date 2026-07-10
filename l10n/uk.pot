@@ -257,7 +257,7 @@ msgid "You cannot leave the name empty."
 msgstr "Потрібно зазначити ім'я."
 
 msgid "You need to choose at least one conflict solution"
-msgstr "Треб вибрати щонайменше одне рішення конфлікту"
+msgstr "Треб вибрати щонайменше одне розв'язання конфлікту"
 
 msgid "You need to select at least one version of each file to continue."
 msgstr "Треба вибрати щонайменше одну версію кожного файлу, щоби продовжити."
