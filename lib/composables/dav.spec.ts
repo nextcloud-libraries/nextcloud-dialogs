@@ -240,4 +240,53 @@ describe('dav composable', () => {
 		await waitRefLoaded(isLoading)
 		expect(abort).toBeCalledTimes(1)
 	})
+
+	it('a superseded (aborted) load does not clear the loading state of the newer load', async () => {
+		// Each getDirectoryContents call stays pending until resolved manually,
+		// and rejects with an AbortError when its signal is aborted — mirroring a
+		// real DAV request that is cancelled on fast navigation.
+		const pending: Array<{ resolve: () => void }> = []
+		const client = {
+			stat: vi.fn((v) => ({ data: { path: v } })),
+			getDirectoryContents: vi.fn((_path, opts) => new Promise((resolve, reject) => {
+				opts.signal?.addEventListener('abort', () => {
+					const error = new Error('aborted')
+					error.name = 'AbortError'
+					reject(error)
+				})
+				pending.push({ resolve: () => resolve({ data: [] }) })
+			})),
+		}
+		nextcloudFiles.getClient.mockImplementationOnce(() => client)
+		nextcloudFiles.resultToNode.mockImplementation((v) => v)
+
+		const view = ref<'files' | 'recent' | 'favorites'>('files')
+		const path = ref('/')
+		const { loadFiles, isLoading } = useDAVFiles(view, path)
+
+		// Load A is in flight
+		loadFiles()
+		await nextTick()
+		expect(pending).toHaveLength(1)
+		expect(isLoading.value).toBe(true)
+
+		// Load B supersedes A: navigating aborts A and starts B loading
+		path.value = '/subdir/'
+		await nextTick()
+		expect(pending).toHaveLength(2)
+
+		// Let A's aborted request reject and run its catch/finally
+		await nextTick()
+		await nextTick()
+
+		// Regression: A's finally must not flip isLoading to false while B is
+		// still loading — otherwise the FilePicker sees isLoading=false with a
+		// null folder and confirms an empty selection ("No nodes selected").
+		expect(isLoading.value).toBe(true)
+
+		// Completing B settles the loading state
+		pending[1].resolve()
+		await waitRefLoaded(isLoading)
+		expect(isLoading.value).toBe(false)
+	})
 })
