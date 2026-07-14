@@ -6,7 +6,6 @@
 export {
 	type ConflictPickerOptions,
 	type ConflictResolutionResult,
-
 	openConflictPicker,
 } from './conflict-picker.ts'
 
@@ -20,7 +19,6 @@ export {
 
 export {
 	type GuestUserPromptOptions,
-
 	showGuestUserPrompt,
 } from './public-auth.ts'
 

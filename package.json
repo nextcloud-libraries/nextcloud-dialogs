@@ -69,7 +69,7 @@
   "devDependencies": {
     "@mdi/svg": "^7.4.47",
     "@nextcloud/browserslist-config": "^3.1.2",
-    "@nextcloud/eslint-config": "^9.0.0-rc.9",
+    "@nextcloud/eslint-config": "^9.0.1",
     "@nextcloud/logger": "^3.0.3",
     "@nextcloud/stylelint-config": "^3.2.2",
     "@nextcloud/vite-config": "^2.5.2",
