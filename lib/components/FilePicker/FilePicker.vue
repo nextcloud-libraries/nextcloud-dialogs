@@ -230,6 +230,8 @@ const dialogButtons = computed(() => {
 	const nodes = selectedFiles.value.length === 0
 		&& props.allowPickDirectory
 		&& currentFolder.value
+		// either no canPickFn is provided or the current folder is pickable
+		&& (!props.canPickFn || props.canPickFn(currentFolder.value))
 		? [currentFolder.value]
 		: selectedFiles.value
 
