@@ -6,6 +6,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v7.4.1](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v7.4.0...v7.4.1)
+### Fixed
+* fix(filepicker): only add current folder if pickable \([\#2512](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2512)\)
+
+### Other Changes
+* Updated translations
+* Bump `@nextcloud/vue` to v9.8.2
+* Bump `p-queue` to v9.3.1
+* Bump `vue` to v3.5.39
+* Updated development dependencies
+
 ## [v7.4.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v7.3.0...v7.4.0)
 ### Added
 * feat(ConflictPicker): allow to set overwrite flag \([\#2432](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2432)\)
