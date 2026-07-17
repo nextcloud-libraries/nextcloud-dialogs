@@ -1,4 +1,3 @@
-# 
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # ac8a127b4e32514af68813db2f21936d_cf77e36, 2025
@@ -230,6 +229,13 @@ msgid ""
 msgstr ""
 "Όταν επιλέγεται ένας φάκελος εισερχομένων, όλα τα αρχεία που βρίσκονται σε "
 "σύγκρουση μέσα σε αυτόν θα αντικατασταθούν επίσης."
+
+msgid ""
+"When an incoming folder is selected, any files within it will also be "
+"overwritten."
+msgstr ""
+"Όταν επιλεγεί ένας φάκελος εισερχομένων, θα αντικατασταθούν επίσης όλα τα "
+"αρχεία που περιέχει."
 
 msgid ""
 "When an incoming folder is selected, the content is written into the "
