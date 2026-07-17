@@ -45,9 +45,9 @@ function getAnnouncementText(data: string | Node, isHTML: boolean): string {
 		if (!isHTML) {
 			return data
 		}
-		const el = document.createElement('div')
-		el.innerHTML = data
-		return getVisibleText(el)
+		// Parse in a standalone document (never attached to the page) so the
+		// markup is never live DOM, not just visually inert.
+		return getVisibleText(new DOMParser().parseFromString(data, 'text/html').body)
 	}
 	return getVisibleText(data)
 }
@@ -257,11 +257,11 @@ export function showMessage(data: string | Node, options?: ToastOptions): ToastH
 		...options,
 	}
 
-	// Strip HTML from plain-text messages to prevent XSS
+	// Strip HTML from plain-text messages to prevent XSS.
+	// Parsed in a standalone document (never attached to the page) so the
+	// markup is never live DOM, not just visually inert.
 	if (typeof data === 'string' && !opts.isHTML) {
-		const el = document.createElement('div')
-		el.innerHTML = data
-		data = el.innerText
+		data = new DOMParser().parseFromString(data, 'text/html').body.innerText
 	}
 
 	// Resolve aria-live level: explicit option > type default > polite

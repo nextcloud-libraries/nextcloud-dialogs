@@ -100,6 +100,20 @@ describe('live regions', () => {
 })
 
 // ---------------------------------------------------------------------------
+// Message display: HTML is stripped by default (XSS prevention)
+// ---------------------------------------------------------------------------
+
+describe('message display', () => {
+	test('tags are stripped from a plain-text (non-isHTML) message', () => {
+		showMessage('<b>Bold</b> and <a href="#">a link</a>')
+
+		const toast = document.querySelector('[role="status"]') as HTMLElement
+		expect(toast.textContent).toBe('Bold and a link')
+		expect(toast.querySelector('b, a')).toBeNull()
+	})
+})
+
+// ---------------------------------------------------------------------------
 // Announcement content
 // ---------------------------------------------------------------------------
 
