@@ -167,6 +167,38 @@ describe('announcement text', () => {
 		// Either no region was created, or it is empty
 		expect(assertiveRegion?.textContent ?? '').toBe('')
 	})
+
+	test('isHTML message announces plain text, tags are not read out', async () => {
+		showMessage('<b>Bold</b> and <a href="#">a link</a>', { isHTML: true })
+		await waitForAnnouncement()
+
+		const region = document.querySelector('[aria-live="polite"]') as HTMLElement
+		expect(region.textContent).toBe('Bold and a link')
+	})
+
+	test('isHTML message skips aria-hidden subtrees in the announcement', async () => {
+		showMessage('Visible <span aria-hidden="true">(decorative)</span> text', { isHTML: true })
+		await waitForAnnouncement()
+
+		const region = document.querySelector('[aria-live="polite"]') as HTMLElement
+		expect(region.textContent).toBe('Visible  text')
+	})
+
+	test('Node message skips aria-hidden subtrees in the announcement', async () => {
+		const node = document.createElement('span')
+		node.append('Uploaded ')
+		const hidden = document.createElement('span')
+		hidden.setAttribute('aria-hidden', 'true')
+		hidden.textContent = '(icon)'
+		node.append(hidden)
+		node.append(' successfully')
+
+		showMessage(node, { type: undefined })
+		await waitForAnnouncement()
+
+		const region = document.querySelector('[aria-live="polite"]') as HTMLElement
+		expect(region.textContent).toBe('Uploaded  successfully')
+	})
 })
 
 // ---------------------------------------------------------------------------
@@ -334,6 +366,18 @@ describe('showUndo', () => {
 		expect(onUndo).toHaveBeenCalledTimes(1)
 		expect(document.querySelector('[role="alert"]')).toBeNull()
 	})
+
+	test('undo toast exposes both an Undo action and a Close button with distinct accessible names', () => {
+		showUndo('Item deleted', vi.fn())
+
+		const undoBtn = Array.from(document.querySelectorAll('button'))
+			.find((btn) => btn.textContent?.trim() === 'Undo')
+		const closeBtn = document.querySelector('button[aria-label="Close"]')
+
+		expect(undoBtn).not.toBeUndefined()
+		expect(closeBtn).not.toBeNull()
+		expect(undoBtn).not.toBe(closeBtn)
+	})
 })
 
 // ---------------------------------------------------------------------------
@@ -369,5 +413,21 @@ describe('navigation-aware positioning', () => {
 		emit('navigation-toggled', { open: false })
 		await nextTick()
 		expect(container.classList.contains('toastContainer_navOpen')).toBe(false)
+	})
+})
+
+// ---------------------------------------------------------------------------
+// Multiple toasts: stacking order
+// ---------------------------------------------------------------------------
+
+describe('multiple toasts', () => {
+	test('toasts are appended to the stack in the order they were shown', () => {
+		showInfo('First')
+		showInfo('Second')
+		showInfo('Third')
+
+		const messages = Array.from(document.querySelectorAll('[role="status"]'))
+			.map((el) => el.textContent?.trim())
+		expect(messages).toEqual(['First', 'Second', 'Third'])
 	})
 })
