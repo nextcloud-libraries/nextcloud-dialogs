@@ -15,16 +15,22 @@ import {
 	ToastAriaLive,
 } from './toast.ts'
 
-/** Wait for the 50 ms setTimeout used in announceToLiveRegion to fire. */
+/**
+ * Wait for the 50 ms setTimeout used in announce() to fire.
+ * We intentionally advance only 100 ms so the 7-second cleanup timers
+ * (polite <li> removal, assertive text clear) do NOT fire, allowing us to
+ * assert on textContent immediately after the announcement.
+ */
 async function waitForAnnouncement() {
-	await vi.runAllTimersAsync()
+	await vi.advanceTimersByTimeAsync(100)
 }
 
 beforeEach(() => {
 	vi.useFakeTimers()
-	// Reset the module-level singleton live region references between tests so
-	// each test gets a fresh DOM state.
+	// Clear the DOM and the window-global singleton so each test
+	// gets a fresh ToastContainer instance (live regions + toast stack).
 	document.body.innerHTML = ''
+	delete (window as typeof window & { __nc_toast_container__?: unknown }).__nc_toast_container__
 })
 
 afterEach(() => {
@@ -57,26 +63,37 @@ describe('live regions', () => {
 		showInfo('Second')
 		await waitForAnnouncement()
 
+		// The polite live region is part of the singleton ToastContainer;
+		// showing many toasts must not create duplicate regions.
 		const regions = document.querySelectorAll('[aria-live="polite"]')
-		const ourRegions = Array.from(regions).filter((el) => (el as HTMLElement).style.cssText.includes('clip'))
+		const ourRegions = Array.from(regions).filter((el) => el.classList.contains('hidden-visually'))
 		expect(ourRegions).toHaveLength(1)
 	})
 
-	test('live region has aria-atomic="true"', async () => {
+	test('polite live region has aria-atomic="false" (items announced individually)', async () => {
 		showInfo('Hello')
 		await waitForAnnouncement()
 
-		const region = document.querySelector('[aria-live="polite"][aria-atomic="true"]')
-		expect(region).not.toBeNull()
+		const region = document.querySelector('[aria-live="polite"]')
+		expect(region?.getAttribute('aria-atomic')).toBe('false')
 	})
 
-	test('live region is visually hidden', async () => {
+	test('assertive live region has aria-atomic="true" (whole text re-read)', async () => {
+		showError('Oops')
+		await waitForAnnouncement()
+
+		const region = document.querySelector('[aria-live="assertive"]')
+		expect(region?.getAttribute('aria-atomic')).toBe('true')
+	})
+
+	test('live regions are visually hidden via CSS class', async () => {
 		showInfo('Hello')
 		await waitForAnnouncement()
 
-		const region = document.querySelector('[aria-live="polite"]') as HTMLElement | null
-		expect(region?.style.cssText).toContain('clip')
-		expect(region?.style.position).toBe('absolute')
+		const polite = document.querySelector('[aria-live="polite"]')
+		const assertive = document.querySelector('[aria-live="assertive"]')
+		expect(polite?.classList.contains('hidden-visually')).toBe(true)
+		expect(assertive?.classList.contains('hidden-visually')).toBe(true)
 	})
 })
 
@@ -193,14 +210,13 @@ describe('toast element role', () => {
 describe('close button', () => {
 	test('close button has aria-label="Close"', () => {
 		showInfo('Something happened')
-		const closeBtn = document.querySelector('.nc-toast__close') as HTMLButtonElement | null
+		const closeBtn = document.querySelector('button[aria-label="Close"]') as HTMLButtonElement | null
 		expect(closeBtn).not.toBeNull()
-		expect(closeBtn?.getAttribute('aria-label')).toBe('Close')
 	})
 
 	test('no close button rendered when close=false', () => {
 		showMessage('No close', { close: false })
-		expect(document.querySelector('.nc-toast__close')).toBeNull()
+		expect(document.querySelector('button[aria-label="Close"]')).toBeNull()
 	})
 })
 
@@ -211,7 +227,7 @@ describe('close button', () => {
 describe('showLoading spinner', () => {
 	test('spinner element has aria-hidden="true"', () => {
 		showLoading('Uploading…')
-		const spinner = document.querySelector('.nc-toast__loader') as HTMLElement | null
+		const spinner = document.querySelector('span[aria-hidden="true"]') as HTMLElement | null
 		expect(spinner).not.toBeNull()
 		expect(spinner?.getAttribute('aria-hidden')).toBe('true')
 	})

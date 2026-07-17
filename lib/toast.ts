@@ -4,62 +4,9 @@
  */
 
 import { createApp } from 'vue'
+import ToastContainer from './components/ToastContainer.vue'
 import ToastNotification from './components/ToastNotification.vue'
 import { t } from './utils/l10n.js'
-
-/**
- * Persistent aria-live regions that exist in the DOM before any toast is shown.
- * Screen readers require the live region to already be present when content is added;
- * injecting an element that already carries aria-live is unreliable (NVDA, JAWS).
- */
-let _politeRegion: HTMLElement | null = null
-let _assertiveRegion: HTMLElement | null = null
-
-const VISUALLY_HIDDEN_STYLE = 'position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0'
-
-/**
- * Get or create a persistent live region element for the given aria-live level.
- * The returned element is visually hidden but will be announced by
- * screen readers when its text content changes.
- *
- * @param level The aria-live level ('polite' or 'assertive') to determine which live region to use
- * @return The live region HTMLElement
- */
-function getOrCreateLiveRegion(level: 'polite' | 'assertive'): HTMLElement {
-	const cached = level === 'assertive' ? _assertiveRegion : _politeRegion
-	if (cached && document.body.contains(cached)) {
-		return cached
-	}
-
-	const region = document.createElement('div')
-	region.setAttribute('aria-live', level)
-	region.setAttribute('aria-atomic', 'true')
-	region.setAttribute('aria-relevant', 'additions text')
-	region.style.cssText = VISUALLY_HIDDEN_STYLE
-	document.body.appendChild(region)
-
-	if (level === 'assertive') {
-		_assertiveRegion = region
-	} else {
-		_politeRegion = region
-	}
-	return region
-}
-
-/**
- * Announce a message to the appropriate live region for screen readers, based on the given aria-live level.
- *
- * @param text The message text to announce
- * @param level The aria-live level ('polite' or 'assertive') to determine which live region to use for the announcement
- */
-function announceToLiveRegion(text: string, level: 'polite' | 'assertive'): void {
-	const region = getOrCreateLiveRegion(level)
-	// Clear first so the same message announced twice is re-read
-	region.textContent = ''
-	setTimeout(() => {
-		region.textContent = text
-	}, 50)
-}
 
 /**
  * Extract visible text from a node, skipping subtrees marked aria-hidden.
@@ -171,32 +118,52 @@ export interface ToastHandle {
 	hideToast(): void
 }
 
-// The container element for toasts. Shared across all toasts to ensure they stack together. Created on demand.
-let _container: HTMLElement | null = null
+/** Window-global key used to share the ToastContainer instance across multiple library bundles. */
+const _CONTAINER_KEY = '__nc_toast_container__'
+
+interface _ToastContainerAPI {
+	announce(text: string, level: 'polite' | 'assertive'): void
+	getContainerEl(): HTMLElement | null
+}
+
+interface _CachedContainer {
+	api: _ToastContainerAPI
+	el: HTMLElement
+}
 
 /**
- * Get the container element for toasts, creating it if it doesn't exist.
- * If a selector is provided, it tries to find an existing element matching
- * the selector and uses it as the container; otherwise, it falls back to
- * a default container appended to the body.
+ * Get (or lazily create) the singleton ToastContainer Vue instance.
+ * The instance is shared via a window-global so that multiple bundles of this
+ * library loaded on the same page all show toasts in the same stack.
  *
- * @param selector Optional CSS selector to find an existing container element
- * @return The container HTMLElement for toasts
+ * If a CSS selector is provided (used in automated tests to attach the
+ * container to a specific element), the singleton cache is bypassed and a new
+ * instance is mounted inside the matching element.
+ *
+ * @param selector Optional CSS selector for the host element (testing only).
+ * @return         The public API exposed by ToastContainer.
  */
-function getContainer(selector?: string): HTMLElement {
+function _getOrCreateContainer(selector?: string): _ToastContainerAPI {
 	if (selector) {
-		const el = document.querySelector<HTMLElement>(selector)
-		if (el) {
-			return el
+		const target = document.querySelector<HTMLElement>(selector)
+		if (target) {
+			const el = document.createElement('div')
+			target.appendChild(el)
+			return createApp(ToastContainer).mount(el) as unknown as _ToastContainerAPI
 		}
 	}
-	if (_container && document.body.contains(_container)) {
-		return _container
+
+	const g = window as typeof window & { [_CONTAINER_KEY]?: _CachedContainer }
+	const cached = g[_CONTAINER_KEY]
+	if (cached && document.body.contains(cached.el)) {
+		return cached.api
 	}
-	_container = document.createElement('div')
-	_container.className = 'nc-toast-container'
-	document.body.appendChild(_container)
-	return _container
+
+	const el = document.createElement('div')
+	document.body.appendChild(el)
+	const api = createApp(ToastContainer).mount(el) as unknown as _ToastContainerAPI
+	g[_CONTAINER_KEY] = { api, el }
+	return api
 }
 
 interface _InternalProps {
@@ -213,12 +180,13 @@ interface _InternalProps {
 }
 
 /**
- * Mount a toast notification component with the given properties, and return a handle to control it.
+ * Add a toast notification via the shared ToastContainer and return a handle.
  *
- * @param internal The internal properties for the toast, including message, type, timeout, callbacks, etc.
+ * @param internal The internal properties for the toast.
  */
 function _mountToast(internal: _InternalProps): ToastHandle {
-	const container = getContainer(internal.selector)
+	const manager = _getOrCreateContainer(internal.selector)
+	const container = manager.getContainerEl() ?? document.body
 
 	// display:contents so the wrapper does not affect the flex layout of the container
 	const wrapper = document.createElement('div')
@@ -230,7 +198,8 @@ function _mountToast(internal: _InternalProps): ToastHandle {
 		isHTML: internal.isHTML,
 		type: internal.type,
 		timeout: internal.timeout,
-		close: internal.close,
+		// noClose is the inverse of the public `close` option
+		noClose: !internal.close,
 		role: internal.role,
 		onClick: internal.onClick,
 		onUndo: internal.onUndo,
@@ -294,7 +263,10 @@ export function showMessage(data: string | Node, options?: ToastOptions): ToastH
 			[ToastType.SUCCESS]: t('Success: {message}', { message: text }),
 		}
 		const announcement = (opts.type && typeTemplates[opts.type]) ?? text
-		announceToLiveRegion(announcement, ariaLive === ToastAriaLive.ASSERTIVE ? 'assertive' : 'polite')
+		_getOrCreateContainer(opts.selector).announce(
+			announcement,
+			ariaLive === ToastAriaLive.ASSERTIVE ? 'assertive' : 'polite',
+		)
 	}
 
 	return _mountToast({
@@ -382,8 +354,12 @@ export function showUndo(text: string, onUndo: (e: MouseEvent) => void, options?
 	// UNDO defaults to assertive; the caller can override via the ariaLive option
 	const ariaLive = options?.ariaLive ?? ToastAriaLive.ASSERTIVE
 
+	const selector = options?.selector
 	if (ariaLive !== ToastAriaLive.OFF) {
-		announceToLiveRegion(text, ariaLive === ToastAriaLive.ASSERTIVE ? 'assertive' : 'polite')
+		_getOrCreateContainer(selector).announce(
+			text,
+			ariaLive === ToastAriaLive.ASSERTIVE ? 'assertive' : 'polite',
+		)
 	}
 
 	return _mountToast({
