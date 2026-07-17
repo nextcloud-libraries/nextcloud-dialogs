@@ -9,50 +9,6 @@ import ToastNotification from './components/ToastNotification.vue'
 import { t } from './utils/l10n.js'
 
 /**
- * Extract visible text from a node, skipping subtrees marked aria-hidden.
- * This prevents decorative elements (e.g. spinner SVGs) from leaking into
- * the live-region announcement.
- *
- * @param node The DOM node to extract text from
- * @return The concatenated visible text content of the node and its children
- */
-function getVisibleText(node: Node): string {
-	// Skip any nodes that are hidden from assistive technologies
-	if (node instanceof Element && node.getAttribute('aria-hidden') === 'true') {
-		return ''
-	}
-
-	// For text nodes, return the text content directly
-	if (node.nodeType === Node.TEXT_NODE) {
-		return node.textContent ?? ''
-	}
-
-	// For element nodes, recursively extract text from child nodes
-	return Array.from(node.childNodes).map(getVisibleText).join('')
-}
-
-/**
- * Derive the plain text to announce in the live region for a given message.
- * HTML strings are parsed so tags don't leak into the announcement and
- * aria-hidden subtrees are skipped, matching the Node message behaviour.
- *
- * @param data The message passed to showMessage: plain text, HTML string, or a DOM Node
- * @param isHTML Whether `data` should be parsed as HTML
- * @return The visible plain-text announcement
- */
-function getAnnouncementText(data: string | Node, isHTML: boolean): string {
-	if (typeof data === 'string') {
-		if (!isHTML) {
-			return data
-		}
-		// Parse in a standalone document (never attached to the page) so the
-		// markup is never live DOM, not just visually inert.
-		return getVisibleText(new DOMParser().parseFromString(data, 'text/html').body)
-	}
-	return getVisibleText(data)
-}
-
-/**
  * Enum of available Toast types
  */
 export enum ToastType {
@@ -236,6 +192,50 @@ function _mountToast(internal: _InternalProps): ToastHandle {
 	return {
 		hideToast: () => vm.hide(),
 	}
+}
+
+/**
+ * Extract visible text from a node, skipping subtrees marked aria-hidden.
+ * This prevents decorative elements (e.g. spinner SVGs) from leaking into
+ * the live-region announcement.
+ *
+ * @param node The DOM node to extract text from
+ * @return The concatenated visible text content of the node and its children
+ */
+function getVisibleText(node: Node): string {
+	// Skip any nodes that are hidden from assistive technologies
+	if (node instanceof Element && node.getAttribute('aria-hidden') === 'true') {
+		return ''
+	}
+
+	// For text nodes, return the text content directly
+	if (node.nodeType === Node.TEXT_NODE) {
+		return node.textContent ?? ''
+	}
+
+	// For element nodes, recursively extract text from child nodes
+	return Array.from(node.childNodes).map(getVisibleText).join('')
+}
+
+/**
+ * Derive the plain text to announce in the live region for a given message.
+ * HTML strings are parsed so tags don't leak into the announcement and
+ * aria-hidden subtrees are skipped, matching the Node message behaviour.
+ *
+ * @param data The message passed to showMessage: plain text, HTML string, or a DOM Node
+ * @param isHTML Whether `data` should be parsed as HTML
+ * @return The visible plain-text announcement
+ */
+function getAnnouncementText(data: string | Node, isHTML: boolean): string {
+	if (typeof data === 'string') {
+		if (!isHTML) {
+			return data
+		}
+		// Parse in a standalone document (never attached to the page) so the
+		// markup is never live DOM, not just visually inert.
+		return getVisibleText(new DOMParser().parseFromString(data, 'text/html').body)
+	}
+	return getVisibleText(data)
 }
 
 /**
