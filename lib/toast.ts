@@ -32,6 +32,27 @@ function getVisibleText(node: Node): string {
 }
 
 /**
+ * Derive the plain text to announce in the live region for a given message.
+ * HTML strings are parsed so tags don't leak into the announcement and
+ * aria-hidden subtrees are skipped, matching the Node message behaviour.
+ *
+ * @param data The message passed to showMessage: plain text, HTML string, or a DOM Node
+ * @param isHTML Whether `data` should be parsed as HTML
+ * @return The visible plain-text announcement
+ */
+function getAnnouncementText(data: string | Node, isHTML: boolean): string {
+	if (typeof data === 'string') {
+		if (!isHTML) {
+			return data
+		}
+		const el = document.createElement('div')
+		el.innerHTML = data
+		return getVisibleText(el)
+	}
+	return getVisibleText(data)
+}
+
+/**
  * Enum of available Toast types
  */
 export enum ToastType {
@@ -255,7 +276,7 @@ export function showMessage(data: string | Node, options?: ToastOptions): ToastH
 	// Prefix with a translated type label so the colour-coded border cue is also
 	// conveyed to screen readers (WCAG 1.4.1).
 	if (ariaLive !== ToastAriaLive.OFF) {
-		const text = typeof data === 'string' ? data : getVisibleText(data as Node)
+		const text = getAnnouncementText(data, opts.isHTML)
 		const typeTemplates: Partial<Record<ToastType, string>> = {
 			[ToastType.ERROR]: t('Error: {message}', { message: text }),
 			[ToastType.WARNING]: t('Warning: {message}', { message: text }),
