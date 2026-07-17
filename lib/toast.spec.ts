@@ -3,7 +3,9 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
+import { emit } from '@nextcloud/event-bus'
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest'
+import { nextTick } from 'vue'
 import {
 	showError,
 	showInfo,
@@ -261,5 +263,111 @@ describe('ariaLive option', () => {
 
 		const assertiveRegion = document.querySelector('[aria-live="assertive"]') as HTMLElement
 		expect(assertiveRegion?.textContent).toContain('Critical info')
+	})
+})
+
+// ---------------------------------------------------------------------------
+// Dismissal: hideToast handle, close button, onRemove, auto-dismiss timeout
+// ---------------------------------------------------------------------------
+
+describe('dismissal', () => {
+	test('hideToast() removes the toast element and calls onRemove', () => {
+		const onRemove = vi.fn()
+		const handle = showMessage('Removable', { onRemove })
+		expect(document.querySelector('[role="status"]')).not.toBeNull()
+
+		handle.hideToast()
+
+		expect(onRemove).toHaveBeenCalledTimes(1)
+		expect(document.querySelector('[role="status"]')).toBeNull()
+	})
+
+	test('clicking the close button removes the toast and calls onRemove', () => {
+		const onRemove = vi.fn()
+		showMessage('Closable', { onRemove })
+
+		const closeBtn = document.querySelector('button[aria-label="Close"]') as HTMLButtonElement
+		closeBtn.click()
+
+		expect(onRemove).toHaveBeenCalledTimes(1)
+		expect(document.querySelector('button[aria-label="Close"]')).toBeNull()
+	})
+
+	test('toast auto-dismisses once its timeout elapses', async () => {
+		showMessage('Temporary', { timeout: 1000 })
+		expect(document.querySelector('[role="status"]')).not.toBeNull()
+
+		await vi.advanceTimersByTimeAsync(1000)
+
+		expect(document.querySelector('[role="status"]')).toBeNull()
+	})
+
+	test('permanent toast (loading) is not auto-dismissed', async () => {
+		showLoading('Uploading…')
+
+		await vi.advanceTimersByTimeAsync(100_000)
+
+		expect(document.querySelector('[role="status"]')).not.toBeNull()
+	})
+})
+
+// ---------------------------------------------------------------------------
+// showUndo behaviour
+// ---------------------------------------------------------------------------
+
+describe('showUndo', () => {
+	test('throws when onUndo is not a function', () => {
+		// @ts-expect-error intentionally passing an invalid callback
+		expect(() => showUndo('Deleted', null)).toThrow('Please provide a valid onUndo method')
+	})
+
+	test('clicking the undo button calls onUndo and dismisses the toast', () => {
+		const onUndo = vi.fn()
+		showUndo('Item deleted', onUndo)
+
+		const undoBtn = Array.from(document.querySelectorAll('button'))
+			.find((btn) => btn.textContent?.trim() === 'Undo') as HTMLButtonElement
+		expect(undoBtn).not.toBeUndefined()
+
+		undoBtn.click()
+
+		expect(onUndo).toHaveBeenCalledTimes(1)
+		expect(document.querySelector('[role="alert"]')).toBeNull()
+	})
+})
+
+// ---------------------------------------------------------------------------
+// selector option: mount into a specific host instead of document.body
+// ---------------------------------------------------------------------------
+
+describe('selector option', () => {
+	test('mounts the toast inside the element matched by the selector', () => {
+		const host = document.createElement('div')
+		host.id = 'custom-toast-host'
+		document.body.appendChild(host)
+
+		showMessage('Scoped', { selector: '#custom-toast-host' })
+
+		expect(host.querySelector('[role="status"]')).not.toBeNull()
+	})
+})
+
+// ---------------------------------------------------------------------------
+// Navigation-aware positioning
+// ---------------------------------------------------------------------------
+
+describe('navigation-aware positioning', () => {
+	test('toast container gets the nav-open modifier while the app navigation is open', async () => {
+		showInfo('Positioned')
+		const container = document.querySelector('[role="status"]')?.parentElement?.parentElement as HTMLElement
+		expect(container.classList.contains('toastContainer_navOpen')).toBe(false)
+
+		emit('navigation-toggled', { open: true })
+		await nextTick()
+		expect(container.classList.contains('toastContainer_navOpen')).toBe(true)
+
+		emit('navigation-toggled', { open: false })
+		await nextTick()
+		expect(container.classList.contains('toastContainer_navOpen')).toBe(false)
 	})
 })
