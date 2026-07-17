@@ -4,23 +4,22 @@
 -->
 <template>
 	<div
-		class="nc-toast"
-		:class="[typeClass, { 'nc-toast--clickable': onClick }]"
+		:class="[$style.toast, typeClass, { [$style.toast_clickable]: onClick }]"
 		:role="role"
 		@click="onClick?.()">
 		<!-- Loading: text + spinner pushed to the right -->
 		<template v-if="isLoading">
-			<span class="nc-toast__message">{{ message }}</span>
-			<span class="nc-toast__loader" aria-hidden="true">
+			<span :class="$style.toastMessage">{{ message }}</span>
+			<span :class="$style.toastLoader" aria-hidden="true">
 				<NcLoadingIcon :size="20" />
 			</span>
 		</template>
 
 		<!-- Undo: text + undo button -->
 		<template v-else-if="isUndo">
-			<span class="nc-toast__message">{{ message }}</span>
+			<span :class="$style.toastMessage">{{ message }}</span>
 			<NcButton
-				class="nc-toast__undo-button"
+				:class="$style.toastUndoButton"
 				variant="tertiary"
 				@click.stop="handleUndoClick">
 				{{ t('Undo') }}
@@ -30,16 +29,16 @@
 		<!-- Default: plain string, HTML string, or arbitrary DOM Node -->
 		<template v-else>
 			<!-- eslint-disable-next-line vue/no-v-html -->
-			<span v-if="isHTML && isStringMessage" class="nc-toast__message" v-html="message" />
-			<span v-else-if="isStringMessage" class="nc-toast__message">{{ message }}</span>
+			<span v-if="isHTML && isStringMessage" :class="$style.toastMessage" v-html="message" />
+			<span v-else-if="isStringMessage" :class="$style.toastMessage">{{ message }}</span>
 			<!-- Node content is appended in onMounted -->
-			<span v-else ref="nodeRef" class="nc-toast__message" />
+			<span v-else ref="nodeRef" :class="$style.toastMessage" />
 		</template>
 
 		<!-- Close button -->
 		<NcButton
-			v-if="close"
-			class="nc-toast__close"
+			v-if="!noClose"
+			:class="$style.toastClose"
 			variant="tertiary"
 			:aria-label="t('Close')"
 			@click.stop="dismiss">
@@ -52,7 +51,7 @@
 
 <script setup lang="ts">
 import { mdiClose } from '@mdi/js'
-import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref, useCssModule } from 'vue'
 import NcButton from '@nextcloud/vue/components/NcButton'
 import NcIconSvgWrapper from '@nextcloud/vue/components/NcIconSvgWrapper'
 import NcLoadingIcon from '@nextcloud/vue/components/NcLoadingIcon'
@@ -68,8 +67,8 @@ const props = withDefaults(defineProps<{
 	type?: ToastType
 	/** Auto-dismiss delay in ms; -1 means permanent */
 	timeout: number
-	/** Show the close button */
-	close?: boolean
+	/** Hide the close button */
+	noClose?: boolean
 	/** ARIA role derived from the aria-live level */
 	role: 'alert' | 'status'
 	/** Optional click handler for the whole toast */
@@ -79,7 +78,7 @@ const props = withDefaults(defineProps<{
 }>(), {
 	isHTML: false,
 	type: undefined,
-	close: true,
+	noClose: false,
 	onClick: undefined,
 	onUndo: undefined,
 })
@@ -93,8 +92,10 @@ const emit = defineEmits<{
 const nodeRef = ref<HTMLElement | null>(null)
 let _timer: ReturnType<typeof setTimeout> | null = null
 
+const style = useCssModule()
+
 // Derived state
-const typeClass = computed(() => props.type ? `nc-toast--${props.type.replace(/^toast-/, '')}` : null)
+const typeClass = computed(() => props.type ? style[`toast_${props.type.replace(/^toast-/, '')}`] : null)
 const isStringMessage = computed(() => typeof props.message === 'string')
 const isLoading = computed(() => props.type === ToastType.LOADING)
 const isUndo = computed(() => props.type === ToastType.UNDO)
@@ -142,23 +143,10 @@ onUnmounted(() => {
 defineExpose({ hide: dismiss })
 </script>
 
-<style lang="scss">
+<style module lang="scss">
 $spacing: 12px;
 
-.nc-toast-container {
-	position: fixed;
-	top: calc(var(--header-height) + 10px);
-	right: 10px;
-	z-index: 10100;
-	display: flex;
-	flex-direction: column;
-	gap: 8px;
-	align-items: flex-end;
-	// Individual toasts manage their own pointer-events
-	pointer-events: none;
-}
-
-@keyframes nc-toast-in {
+@keyframes toast-in {
 	from {
 		opacity: 0;
 		transform: translateY(-6px);
@@ -170,7 +158,7 @@ $spacing: 12px;
 	}
 }
 
-.nc-toast {
+.toast {
 	min-width: 200px;
 	background-color: var(--color-main-background);
 	color: var(--color-main-text);
@@ -181,51 +169,52 @@ $spacing: 12px;
 	align-items: center;
 	min-height: var(--clickable-area-large);
 	pointer-events: auto;
-	animation: nc-toast-in var(--animation-slow) ease-out;
+	animation: toast-in var(--animation-slow) ease-out;
+}
 
-	// Modifiers
+// Modifiers
 
-	&--clickable {
-		cursor: pointer;
-	}
+.toast_clickable {
+	cursor: pointer;
+}
 
-	&--error {
-		border-left: 3px solid var(--color-element-error, var(--color-error));
-	}
+.toast_error {
+	border-left: 3px solid var(--color-element-error, var(--color-error));
+}
 
-	&--info {
-		border-left: 3px solid var(--color-element-info, var(--color-primary));
-	}
+.toast_info {
+	border-left: 3px solid var(--color-element-info, var(--color-primary));
+}
 
-	&--warning {
-		border-left: 3px solid var(--color-element-warning, var(--color-warning));
-	}
+.toast_warning {
+	border-left: 3px solid var(--color-element-warning, var(--color-warning));
+}
 
-	&--success {
-		border-left: 3px solid var(--color-element-success, var(--color-success));
-	}
+.toast_success {
+	border-left: 3px solid var(--color-element-success, var(--color-success));
+}
 
-	&--undo {
-		border-left: 3px solid var(--color-element-success, var(--color-success));
-	}
+.toast_undo {
+	border-left: 3px solid var(--color-element-success, var(--color-success));
+}
 
-	&--loading {
-		border-left: 3px solid var(--color-element-info, var(--color-primary));
-	}
+.toast_loading {
+	border-left: 3px solid var(--color-element-info, var(--color-primary));
+}
 
-	// Elements
-	&__message {
-		flex: 1;
-		padding: $spacing 0;
-	}
+// Elements
 
-	&__loader,
-	&__close,
-	&__undo-button {
-		display: flex;
-		align-items: center;
-		margin-left: $spacing;
-		flex-shrink: 0;
-	}
+.toastMessage {
+	flex: 1;
+	padding: $spacing 0;
+}
+
+.toastLoader,
+.toastClose,
+.toastUndoButton {
+	display: flex;
+	align-items: center;
+	margin-left: $spacing;
+	flex-shrink: 0;
 }
 </style>
