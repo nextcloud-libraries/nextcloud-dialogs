@@ -1,40 +1,40 @@
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
-# Martin H <pilino+transifex@posteo.de>, 2025
-# Magnus Höglund, 2026
+# Magnus Höglund, 2025
+# Jonatan Nyberg, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Magnus Höglund, 2026\n"
+"Last-Translator: Jonatan Nyberg, 2026\n"
 "Language-Team: Swedish (https://app.transifex.com/nextcloud/teams/64236/sv/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "\"{char}\" is not allowed inside a folder name."
-msgstr "\"{char}\" är inte tillåtet i ett mappnamn."
+msgstr "\"{char}\" får inte ingå i ett mappnamn."
 
 msgid "\"{char}\" is not allowed inside a name."
-msgstr "\"{char}\" är inte tillåtet i ett namn."
+msgstr "\"{char}\" får inte ingå i ett namn."
 
 msgid "\"{extension}\" is not an allowed name."
-msgstr "\"{extension}\" är inte ett tillåtet namn."
+msgstr "\"{extension}\" får inte användas som namn."
 
 msgid "\"{segment}\" is a reserved name and not allowed for folder names."
-msgstr "\"{segment}\" är ett reserverat namn och inte tillåtet mappnamn."
+msgstr "\"{segment}\" är ett reserverat namn och får inte användas som mappnamn."
 
 msgid "\"{segment}\" is a reserved name and not allowed."
-msgstr "\"{segment}\" är ett reserverat namn och inte tillåtet."
+msgstr "\"{segment}\" är ett reserverat namn och får inte användas."
 
 msgid "%n file conflict"
 msgid_plural "%n files conflict"
-msgstr[0] "%n fil är i konflikt"
-msgstr[1] "%n filer är i konflikt"
+msgstr[0] "%n filkonflikt"
+msgstr[1] "%n filkonflikter"
 
 msgid "%n file conflict in {dirname}"
 msgid_plural "%n file conflicts in {dirname}"
-msgstr[0] "%n fil är i konflikt i {dirname}"
-msgstr[1] "%n filer är i konflikt i {dirname}"
+msgstr[0] "%n filkonflikt i {dirname}"
+msgstr[1] "%n filkonflikter i {dirname}"
 
 msgid "All files"
 msgstr "Alla filer"
@@ -43,7 +43,7 @@ msgid "Cancel"
 msgstr "Avbryt"
 
 msgid "Cancel the entire operation"
-msgstr "Avbryt hela operationen"
+msgstr "Avbryt hela åtgärden"
 
 msgid "Choose"
 msgstr "Välj"
@@ -69,37 +69,37 @@ msgid "Copy to {target}"
 msgstr "Kopiera till {target}"
 
 msgid "Could not create the new folder"
-msgstr "Kunde inte skapa den nya mappen"
+msgstr "Det gick inte att skapa den nya mappen"
 
 msgid "Could not load files settings"
-msgstr "Kunde inte ladda filinställningar"
+msgstr "Det gick inte att läsa in filinställningarna"
 
 msgid "Could not load files views"
-msgstr "Kunde inte ladda filvyer"
+msgstr "Det gick inte att läsa in filvyerna"
 
 msgid "Create directory"
-msgstr "Skapa katalog"
+msgstr "Skapa mapp"
 
 msgid "Current view selector"
-msgstr "Aktuell vyväljare"
+msgstr "Väljare för aktuell vy"
 
 msgid "Enter your name"
 msgstr "Ange ditt namn"
 
 msgid "Existing version"
-msgstr "Nuvarande version"
+msgstr "Befintlig version"
 
 msgid "Failed to set nickname."
-msgstr "Kunde inte ställa in smeknamn."
+msgstr "Det gick inte att ange smeknamnet."
 
 msgid "Favorites"
 msgstr "Favoriter"
 
 msgid "Files and folders you mark as favorite will show up here."
-msgstr "Filer och mappar som du markerar som favorit kommer att visas här."
+msgstr "Filer och mappar som du markerar som favoriter visas här."
 
 msgid "Files and folders you recently modified will show up here."
-msgstr "Filer och mappar som du nyligen ändrat kommer att visas här."
+msgstr "Filer och mappar som du nyligen har ändrat visas här."
 
 msgid "Filter file list"
 msgstr "Filtrera fillistan"
@@ -117,8 +117,8 @@ msgid ""
 "If you select both versions, the incoming file will have a number added to "
 "its name."
 msgstr ""
-"Om du väljer båda versionerna kommer den inkommande filen att få ett nummer "
-"tillagt i sitt namn."
+"Om du väljer båda versionerna läggs ett nummer till i namnet på den "
+"inkommande filen."
 
 msgid "Invalid folder name."
 msgstr "Ogiltigt mappnamn."
@@ -127,7 +127,7 @@ msgid "Invalid name."
 msgstr "Ogiltigt namn."
 
 msgid "Last modified date unknown"
-msgstr "Senaste ändringsdatum okänt"
+msgstr "Datumet för senaste ändringen är okänt"
 
 msgid "Modified"
 msgstr "Ändrad"
@@ -142,10 +142,10 @@ msgid "Name"
 msgstr "Namn"
 
 msgid "Names may be at most 64 characters long."
-msgstr "Namnen kan vara högst 64 tecken långa."
+msgstr "Namn får vara högst 64 tecken långa."
 
 msgid "Names must not be empty."
-msgstr "Namn får inte vara tomt."
+msgstr "Namn får inte vara tomma."
 
 msgid "Names must not end with \"{extension}\"."
 msgstr "Namn får inte sluta med \"{extension}\"."
@@ -166,7 +166,7 @@ msgid "New version"
 msgstr "Ny version"
 
 msgid "No files in here"
-msgstr "Inga filer här"
+msgstr "Det finns inga filer här"
 
 msgid "No files matching your filter were found."
 msgstr "Inga filer som matchar ditt filter hittades."
@@ -178,13 +178,13 @@ msgid "Please enter a name with at least 2 characters."
 msgstr "Ange ett namn med minst 2 tecken."
 
 msgid "Recent"
-msgstr "Nyligen"
+msgstr "Senaste"
 
 msgid "Select all checkboxes"
 msgstr "Markera alla kryssrutor"
 
 msgid "Select all entries"
-msgstr "Välj alla poster"
+msgstr "Markera alla poster"
 
 msgid "Select all existing files"
 msgstr "Välj alla befintliga filer"
@@ -193,10 +193,10 @@ msgid "Select all new files"
 msgstr "Välj alla nya filer"
 
 msgid "Select entry"
-msgstr "Välj post"
+msgstr "Markera post"
 
 msgid "Select the row for {nodename}"
-msgstr "Välj raden för {nodename}"
+msgstr "Markera raden för {nodename}"
 
 msgid "Size"
 msgstr "Storlek"
@@ -210,48 +210,48 @@ msgid "Skip this file"
 msgstr "Hoppa över den här filen"
 
 msgid "Submit name"
-msgstr "Skicka namn"
+msgstr "Bekräfta namnet"
 
 msgid "Undo"
 msgstr "Ångra"
 
 msgid "Upload some content or sync with your devices!"
-msgstr "Ladda upp lite innehåll eller synkronisera med dina enheter!"
+msgstr "Ladda upp innehåll eller synkronisera med dina enheter!"
 
 msgid ""
 "When an incoming folder is selected, any conflicting files within it will "
 "also be overwritten."
 msgstr ""
-"När en inkommande mapp väljs kommer eventuella konflikterande filer i den "
-"också att skrivas över."
+"När en inkommande mapp väljs kommer även alla filer i den som har konflikter"
+" att skrivas över."
 
 msgid ""
 "When an incoming folder is selected, any files within it will also be "
 "overwritten."
 msgstr ""
-"När en inkommande mapp väljs kommer även filer i den att skrivas över."
+"När en inkommande mapp väljs kommer även alla filer i den att skrivas över."
 
 msgid ""
 "When an incoming folder is selected, the content is written into the "
 "existing folder and a recursive conflict resolution is performed."
 msgstr ""
 "När en inkommande mapp väljs skrivs innehållet in i den befintliga mappen "
-"och en rekursiv konfliktlösning utförs."
+"och konflikterna löses rekursivt."
 
 msgid "Which files do you want to keep?"
 msgstr "Vilka filer vill du behålla?"
 
 msgid "You are currently identified as {nickname}."
-msgstr "Du är för närvarande identifierad som {nickname}."
+msgstr "Du är identifierad som {nickname}."
 
 msgid "You are currently not identified."
-msgstr "Du är för närvarande inte identifierad."
+msgstr "Du är inte identifierad."
 
 msgid "You cannot leave the name empty."
-msgstr "Du kan inte lämna namnet tomt."
+msgstr "Namnet får inte lämnas tomt."
 
 msgid "You need to choose at least one conflict solution"
-msgstr "Du måste välja minst en konfliktlösning"
+msgstr "Du måste välja minst en lösning på konflikten"
 
 msgid "You need to select at least one version of each file to continue."
-msgstr "Du måste välja minst en version av varje fil för att fortsätta."
+msgstr "Du måste välja minst en version av varje fil för att kunna fortsätta."
