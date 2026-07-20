@@ -173,11 +173,11 @@ defineExpose({ announce, getContainerEl })
 	z-index: 10100;
 	display: flex;
 	flex-direction: column;
-	gap: 8px;
+	gap: calc(var(--default-grid-baseline) * 2);
 	align-items: flex-start;
 	// Individual toasts manage their own pointer-events
 	pointer-events: none;
-	padding: 8px;
+	padding: calc(var(--default-grid-baseline) * 2);
 	// Smooth transition when the navigation opens / closes
 	transition: left var(--animation-quick, 100ms) ease;
 }
