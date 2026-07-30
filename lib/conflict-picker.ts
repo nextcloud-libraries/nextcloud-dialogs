@@ -54,7 +54,7 @@ export interface ConflictPickerOptions {
  * Given the current content of the directory and the conflicting new nodes,
  * this will ask the user for resolving the conflicts and return the conflict resolution.
  *
- * @param dirname - The directory name with conflicts (used for the dialog title)
+ * @param dirname - The directory name with conflicts (its name is shown in the description)
  * @param conflicts - The incoming nodes
  * @param content - The current content of the directory (existing nodes)
  * @param options Optional settings for the conflict picker

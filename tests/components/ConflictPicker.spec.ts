@@ -6,7 +6,7 @@
 import type { ConflictInput, ConflictResolutionResult } from '../../lib/conflict-picker.ts'
 
 import { File as NcFile } from '@nextcloud/files'
-import { cleanup, findByText, fireEvent, getAllByRole, getByRole, render } from '@testing-library/vue'
+import { cleanup, findByText, fireEvent, getAllByRole, getByRole, queryAllByRole, render } from '@testing-library/vue'
 import { readFile } from 'fs/promises'
 import { join } from 'path'
 import { afterEach, beforeAll, describe, expect, test } from 'vitest'
@@ -14,7 +14,7 @@ import ConflictPicker from '../../lib/components/ConflictPicker/ConflictPicker.v
 
 afterEach(cleanup)
 
-test('Renders default ConflictPicker', async () => {
+describe('Single file conflict', () => {
 	const oldImage = new NcFile({
 		id: 1,
 		root: '/files/user',
@@ -25,25 +25,83 @@ test('Renders default ConflictPicker', async () => {
 		mtime: new Date('2021-01-01T00:00:00.000Z'),
 	})
 
-	const image = new File([], 'image.jpg')
-	render(ConflictPicker, {
-		props: {
-			container: getContainer(),
-			dirname: 'Pictures',
-			existing: [oldImage],
-			incoming: [image],
-		},
+	test('Renders without checkboxes and with keep both / replace buttons', async () => {
+		const image = new File([], 'image.jpg')
+		render(ConflictPicker, {
+			props: {
+				container: getContainer(),
+				dirname: 'Pictures',
+				existing: [oldImage],
+				incoming: [image],
+			},
+		})
+
+		const dialog = getByRole(document.body, 'dialog', { name: 'Select file to keep' })
+		expect(dialog).toBeInstanceOf(HTMLElement)
+
+		// No checkboxes for a single file
+		expect(queryAllByRole(dialog, 'checkbox')).toHaveLength(0)
+
+		expect(getByRole(dialog, 'button', { name: 'Cancel' })).toBeInstanceOf(HTMLElement)
+		expect(getByRole(dialog, 'button', { name: 'Keep both' })).toBeInstanceOf(HTMLElement)
+		expect(getByRole(dialog, 'button', { name: 'Replace' })).toBeInstanceOf(HTMLElement)
 	})
 
-	const dialog = getByRole(document.body, 'dialog')
-	expect(dialog).toBeInstanceOf(HTMLElement)
-	expect(getByRole(document.body, 'dialog', { name: /1 file conflict in Pictures/ })).toBeInstanceOf(HTMLElement)
+	test('Shows only the folder name, the root is called "All files"', async () => {
+		const image = new File([], 'image.jpg')
+		const props = {
+			container: getContainer(),
+			existing: [oldImage],
+			incoming: [image],
+		}
 
-	expect(getByRole(dialog, 'form')).toBeInstanceOf(HTMLElement)
-	expect(getAllByRole(dialog, 'checkbox')).toHaveLength(4)
+		const component = render(ConflictPicker, { props: { ...props, dirname: '/Photos/Sub folder' } })
+		const dialog = getByRole(document.body, 'dialog')
+		expect(dialog.querySelector('strong')!.textContent).toBe('Sub folder')
 
-	expect(getByRole(dialog, 'checkbox', { name: 'Select all new files' })).toBeInstanceOf(HTMLElement)
-	expect(getByRole(dialog, 'checkbox', { name: 'Select all existing files' })).toBeInstanceOf(HTMLElement)
+		await component.rerender({ ...props, dirname: '/' })
+		expect(dialog.querySelector('strong')!.textContent).toBe('All files')
+	})
+
+	test('Replace keeps only the new file', async () => {
+		const image = new File([], 'image.jpg')
+		const component = render(ConflictPicker, {
+			props: {
+				container: getContainer(),
+				dirname: 'Pictures',
+				existing: [oldImage],
+				incoming: [image],
+			},
+		})
+
+		const dialog = getByRole(document.body, 'dialog')
+		await fireEvent(getByRole(dialog, 'button', { name: 'Replace' }), new MouseEvent('click', { bubbles: true }))
+
+		const [result] = component.emitted('close')[0]! as [ConflictResolutionResult<ConflictInput>]
+		expect(result.selected).toEqual([image])
+		expect(result.renamed).toHaveLength(0)
+		expect(result.skipped).toHaveLength(0)
+	})
+
+	test('Keep both renames the new file', async () => {
+		const image = new File([], 'image.jpg')
+		const component = render(ConflictPicker, {
+			props: {
+				container: getContainer(),
+				dirname: 'Pictures',
+				existing: [oldImage],
+				incoming: [image],
+			},
+		})
+
+		const dialog = getByRole(document.body, 'dialog')
+		await fireEvent(getByRole(dialog, 'button', { name: 'Keep both' }), new MouseEvent('click', { bubbles: true }))
+
+		const [result] = component.emitted('close')[0]! as [ConflictResolutionResult<ConflictInput>]
+		expect(result.renamed).toEqual([image])
+		expect(result.selected).toHaveLength(0)
+		expect(result.skipped).toHaveLength(0)
+	})
 })
 
 describe('ConflictPicker resolving', () => {
@@ -109,7 +167,7 @@ describe('ConflictPicker resolving', () => {
 		await expect(findByText(dialog, /folder is selected, the content is written into the existing folder/)).resolves.not.toThrow()
 	})
 
-	test('Pick all incoming files', async () => {
+	test('New files are preselected so the user can continue right away', async () => {
 		const component = render(ConflictPicker, {
 			props: {
 				container: getContainer(),
@@ -120,34 +178,22 @@ describe('ConflictPicker resolving', () => {
 		})
 
 		const dialog = getByRole(document.body, 'dialog')
-		expect(dialog).toBeInstanceOf(HTMLElement)
 
-		const checkbox: HTMLInputElement = getByRole(dialog, 'checkbox', { name: /Select all new files/ })
-		expect(checkbox.checked).toBe(false)
+		const selectAllNew: HTMLInputElement = getByRole(dialog, 'checkbox', { name: 'New files' })
+		expect(selectAllNew.checked).toBe(true)
 
 		const individualCheckboxes: HTMLInputElement[] = getAllByRole(dialog, 'checkbox', { name: /New version/ })
 		expect(individualCheckboxes).toHaveLength(2)
-		for (const box of individualCheckboxes) {
-			expect(box.checked).toBe(false)
-		}
-
-		await fireEvent(checkbox, new MouseEvent('click', { bubbles: true }))
-		expect(checkbox.checked).toBe(true)
 		for (const box of individualCheckboxes) {
 			expect(box.checked).toBe(true)
 		}
 
 		const submit = getByRole(dialog, 'button', { name: 'Continue' })
-		expect(submit).toBeInstanceOf(HTMLButtonElement)
 		await fireEvent(submit, new MouseEvent('click', { bubbles: true }))
 
-		const events: [ConflictResolutionResult<ConflictInput>][] = component.emitted('close')
-		expect(events).toHaveLength(1)
-		const [result] = events[0]!
-
+		const [result] = component.emitted('close')[0]! as [ConflictResolutionResult<ConflictInput>]
 		expect(result.renamed).toHaveLength(0)
 		expect(result.skipped).toHaveLength(0)
-		expect(result.selected).toHaveLength(2)
 		expect(result.selected).toEqual([...images])
 	})
 
@@ -162,34 +208,20 @@ describe('ConflictPicker resolving', () => {
 		})
 
 		const dialog = getByRole(document.body, 'dialog')
-		expect(dialog).toBeInstanceOf(HTMLElement)
 
-		const checkbox: HTMLInputElement = getByRole(dialog, 'checkbox', { name: /Select all existing files/ })
-		expect(checkbox.checked).toBe(false)
+		const selectAllNew: HTMLInputElement = getByRole(dialog, 'checkbox', { name: 'New files' })
+		const selectAllExisting: HTMLInputElement = getByRole(dialog, 'checkbox', { name: 'Existing files' })
 
-		const individualCheckboxes: HTMLInputElement[] = getAllByRole(dialog, 'checkbox', { name: /Existing version/ })
-		expect(individualCheckboxes).toHaveLength(2)
-		for (const box of individualCheckboxes) {
-			expect(box.checked).toBe(false)
-		}
-
-		await fireEvent(checkbox, new MouseEvent('click', { bubbles: true }))
-		expect(checkbox.checked).toBe(true)
-		for (const box of individualCheckboxes) {
-			expect(box.checked).toBe(true)
-		}
+		// Deselect the (preselected) new files and select the existing ones instead
+		await fireEvent(selectAllNew, new MouseEvent('click', { bubbles: true }))
+		await fireEvent(selectAllExisting, new MouseEvent('click', { bubbles: true }))
 
 		const submit = getByRole(dialog, 'button', { name: 'Continue' })
-		expect(submit).toBeInstanceOf(HTMLButtonElement)
 		await fireEvent(submit, new MouseEvent('click', { bubbles: true }))
 
-		const events: [ConflictResolutionResult<ConflictInput>][] = component.emitted('close')
-		expect(events).toHaveLength(1)
-		const [result] = events[0]!
-
+		const [result] = component.emitted('close')[0]! as [ConflictResolutionResult<ConflictInput>]
 		expect(result.renamed).toHaveLength(0)
 		expect(result.selected).toHaveLength(0)
-		expect(result.skipped).toHaveLength(2)
 		expect(result.skipped).toEqual([...images])
 	})
 
@@ -204,33 +236,17 @@ describe('ConflictPicker resolving', () => {
 		})
 
 		const dialog = getByRole(document.body, 'dialog')
-		expect(dialog).toBeInstanceOf(HTMLElement)
 
-		const checkbox1: HTMLInputElement = getByRole(dialog, 'checkbox', { name: /Select all existing files/ })
-		const checkbox2: HTMLInputElement = getByRole(dialog, 'checkbox', { name: /Select all new files/ })
-		const individualCheckboxes: HTMLInputElement[] = getAllByRole(dialog, 'checkbox', { name: /(Existing|New) version/ })
-		expect(individualCheckboxes).toHaveLength(4)
-		for (const box of individualCheckboxes) {
-			expect(box.checked).toBe(false)
-		}
-
-		await fireEvent(checkbox1, new MouseEvent('click', { bubbles: true }))
-		await fireEvent(checkbox2, new MouseEvent('click', { bubbles: true }))
-		for (const box of individualCheckboxes) {
-			expect(box.checked).toBe(true)
-		}
+		// New files are preselected, additionally select the existing ones
+		const selectAllExisting: HTMLInputElement = getByRole(dialog, 'checkbox', { name: 'Existing files' })
+		await fireEvent(selectAllExisting, new MouseEvent('click', { bubbles: true }))
 
 		const submit = getByRole(dialog, 'button', { name: 'Continue' })
-		expect(submit).toBeInstanceOf(HTMLButtonElement)
 		await fireEvent(submit, new MouseEvent('click', { bubbles: true }))
 
-		const events: [ConflictResolutionResult<ConflictInput>][] = component.emitted('close')
-		expect(events).toHaveLength(1)
-		const [result] = events[0]!
-
+		const [result] = component.emitted('close')[0]! as [ConflictResolutionResult<ConflictInput>]
 		expect(result.selected).toHaveLength(0)
 		expect(result.skipped).toHaveLength(0)
-		expect(result.renamed).toHaveLength(2)
 		expect(result.renamed).toEqual([...images])
 	})
 
@@ -245,28 +261,20 @@ describe('ConflictPicker resolving', () => {
 		})
 
 		const dialog = getByRole(document.body, 'dialog')
-		expect(dialog).toBeInstanceOf(HTMLElement)
 
 		const group1 = getByRole(dialog, 'group', { name: 'image1.jpg' })
-		const group2 = getByRole(dialog, 'group', { name: 'image2.jpg' })
-		const existing: HTMLInputElement = getByRole(group1, 'checkbox', { name: /Existing version/ })
-		const incoming: HTMLInputElement = getByRole(group2, 'checkbox', { name: /New version/ })
-		expect(existing.checked).toBe(false)
-		expect(incoming.checked).toBe(false)
+		const existing1: HTMLInputElement = getByRole(group1, 'checkbox', { name: /Existing version/ })
+		const incoming1: HTMLInputElement = getByRole(group1, 'checkbox', { name: /New version/ })
 
-		await fireEvent(existing, new MouseEvent('click', { bubbles: true }))
-		await fireEvent(incoming, new MouseEvent('click', { bubbles: true }))
-		expect(existing.checked).toBe(true)
-		expect(incoming.checked).toBe(true)
+		// For image1 keep the existing file instead of the (preselected) new one
+		await fireEvent(incoming1, new MouseEvent('click', { bubbles: true }))
+		await fireEvent(existing1, new MouseEvent('click', { bubbles: true }))
+		// image2 keeps its preselected new file
 
 		const submit = getByRole(dialog, 'button', { name: 'Continue' })
-		expect(submit).toBeInstanceOf(HTMLButtonElement)
 		await fireEvent(submit, new MouseEvent('click', { bubbles: true }))
 
-		const events: [ConflictResolutionResult<File>][] = component.emitted('close')
-		expect(events).toHaveLength(1)
-		const [result] = events[0]!
-
+		const [result] = component.emitted('close')[0]! as [ConflictResolutionResult<File>]
 		expect(result.renamed).toHaveLength(0)
 		expect(result.skipped).toHaveLength(1)
 		expect(result.skipped[0]!.name).toBe('image1.jpg')
@@ -285,16 +293,11 @@ describe('ConflictPicker resolving', () => {
 		})
 
 		const dialog = getByRole(document.body, 'dialog')
-		expect(dialog).toBeInstanceOf(HTMLElement)
 
 		const submit = getByRole(dialog, 'button', { name: 'Skip 2 files' })
-		expect(submit).toBeInstanceOf(HTMLButtonElement)
 		await fireEvent(submit, new MouseEvent('click', { bubbles: true }))
 
-		const events: [ConflictResolutionResult<ConflictInput>][] = component.emitted('close')
-		expect(events).toHaveLength(1)
-		const [result] = events[0]!
-
+		const [result] = component.emitted('close')[0]! as [ConflictResolutionResult<ConflictInput>]
 		expect(result.renamed).toHaveLength(0)
 		expect(result.selected).toHaveLength(0)
 		expect(result.skipped).toHaveLength(2)
@@ -312,16 +315,11 @@ describe('ConflictPicker resolving', () => {
 		})
 
 		const dialog = getByRole(document.body, 'dialog')
-		expect(dialog).toBeInstanceOf(HTMLElement)
 
 		const submit = getByRole(dialog, 'button', { name: 'Cancel' })
-		expect(submit).toBeInstanceOf(HTMLButtonElement)
 		await fireEvent(submit, new MouseEvent('click', { bubbles: true }))
 
-		const events: [ConflictResolutionResult<ConflictInput>][] = component.emitted('close')
-		expect(events).toHaveLength(1)
-		const [result] = events[0]!
-
+		const [result] = component.emitted('close')[0]! as [ConflictResolutionResult<ConflictInput> | null]
 		expect(result).toBeNull()
 	})
 
@@ -336,16 +334,11 @@ describe('ConflictPicker resolving', () => {
 		})
 
 		const dialog = getByRole(document.body, 'dialog')
-		expect(dialog).toBeInstanceOf(HTMLElement)
 
 		const submit = getByRole(dialog, 'button', { name: 'Close' })
-		expect(submit).toBeInstanceOf(HTMLButtonElement)
 		await fireEvent(submit, new MouseEvent('click', { bubbles: true }))
 
-		const events: [ConflictResolutionResult<ConflictInput>][] = component.emitted('close')
-		expect(events).toHaveLength(1)
-		const [result] = events[0]!
-
+		const [result] = component.emitted('close')[0]! as [ConflictResolutionResult<ConflictInput> | null]
 		expect(result).toBeNull()
 	})
 })
