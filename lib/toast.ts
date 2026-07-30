@@ -42,6 +42,48 @@ export const TOAST_DEFAULT_TIMEOUT = 7000
 export const TOAST_PERMANENT_TIMEOUT = -1
 
 /**
+ * Shared browser-global key for the configured toast timeout.
+ * Using `window` ensures separately bundled copies of this package share the same value.
+ */
+const GLOBAL_TOAST_TIMEOUT_KEY = '__nextcloud_dialogs_toast_timeout__'
+
+declare global {
+	interface Window {
+		[GLOBAL_TOAST_TIMEOUT_KEY]?: number
+	}
+}
+
+/**
+ * Get the configured toast timeout in milliseconds.
+ * Falls back to {@link TOAST_DEFAULT_TIMEOUT} when unset.
+ */
+export function getToastTimeout(): number {
+	if (typeof window !== 'undefined') {
+		const timeout = window[GLOBAL_TOAST_TIMEOUT_KEY]
+		if (typeof timeout === 'number' && (timeout === TOAST_PERMANENT_TIMEOUT || timeout > 0)) {
+			return timeout
+		}
+	}
+	return TOAST_DEFAULT_TIMEOUT
+}
+
+/**
+ * Set the toast timeout used by ordinary toast helpers.
+ * Stored on `window` so independently bundled copies of `@nextcloud/dialogs` share it.
+ *
+ * @param timeout Timeout in milliseconds, or {@link TOAST_PERMANENT_TIMEOUT} for never dismiss
+ */
+export function setToastTimeout(timeout: number): void {
+	if (typeof window === 'undefined') {
+		return
+	}
+	if (timeout !== TOAST_PERMANENT_TIMEOUT && !(timeout > 0)) {
+		throw new Error('Toast timeout must be a positive number or TOAST_PERMANENT_TIMEOUT')
+	}
+	window[GLOBAL_TOAST_TIMEOUT_KEY] = timeout
+}
+
+/**
  * Type of a toast
  *
  * @see https://apvarun.github.io/toastify-js/
@@ -104,7 +146,7 @@ export interface ToastOptions {
  */
 export function showMessage(data: string | Node, options?: ToastOptions): Toast {
 	options = {
-		timeout: TOAST_DEFAULT_TIMEOUT,
+		timeout: getToastTimeout(),
 		isHTML: false,
 		type: undefined,
 		// An undefined selector defaults to the body element
@@ -113,6 +155,16 @@ export function showMessage(data: string | Node, options?: ToastOptions): Toast 
 		onClick: undefined,
 		close: true,
 		...options,
+	}
+
+	// Accessibility preference overrides ordinary/app-specific timeouts.
+	// Loading and undo toasts keep their forced durations; permanent stays permanent.
+	if (
+		options.type !== ToastType.LOADING
+		&& options.type !== ToastType.UNDO
+		&& options.timeout !== TOAST_PERMANENT_TIMEOUT
+	) {
+		options.timeout = getToastTimeout()
 	}
 
 	if (typeof data === 'string' && !options.isHTML) {
