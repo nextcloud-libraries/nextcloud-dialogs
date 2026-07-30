@@ -23,6 +23,8 @@ export {
 } from './public-auth.ts'
 
 export {
+	getToastTimeout,
+	setToastTimeout,
 	showError,
 	showInfo,
 	showLoading,
