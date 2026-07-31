@@ -1,13 +1,12 @@
 /**
- * SPDX-FileCopyrightText: 2019 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-FileCopyrightText: 2026 Nextcloud GmbH and Nextcloud contributors
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-import Toastify from 'toastify-js'
-import LoaderSvg from '../styles/loader.svg?raw'
+import { createApp } from 'vue'
+import ToastContainer from './components/ToastContainer.vue'
+import ToastNotification from './components/ToastNotification.vue'
 import { t } from './utils/l10n.js'
-
-import '../styles/toast.scss'
 
 /**
  * Enum of available Toast types
@@ -34,19 +33,12 @@ export enum ToastAriaLive {
 	ASSERTIVE = TOAST_ARIA_LIVE_ASSERTIVE,
 }
 
-/** Timeout in ms of a undo toast */
+/** Timeout in ms of an undo toast */
 export const TOAST_UNDO_TIMEOUT = 10000
 /** Default timeout in ms of toasts */
 export const TOAST_DEFAULT_TIMEOUT = 7000
 /** Timeout value to show a toast permanently */
 export const TOAST_PERMANENT_TIMEOUT = -1
-
-/**
- * Type of a toast
- *
- * @see https://apvarun.github.io/toastify-js/
- */
-type Toast = ReturnType<typeof Toastify>
 
 export interface ToastOptions {
 	/**
@@ -91,9 +83,159 @@ export interface ToastOptions {
 	 * See the following docs for an explanation when to use which:
 	 * https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions
 	 *
-	 * By default, errors are announced assertive and other messages "polite".
+	 * By default, errors and undo toasts are announced assertive; others are polite.
 	 */
 	ariaLive?: ToastAriaLive
+}
+
+/**
+ * Handle returned by all show* functions, allowing the toast to be hidden programmatically.
+ */
+export interface ToastHandle {
+	hideToast(): void
+}
+
+/** Window-global key used to share the ToastContainer instance across multiple library bundles. */
+const _CONTAINER_KEY = '__nc_toast_container__'
+
+interface _ToastContainerAPI {
+	announce(text: string, level: 'polite' | 'assertive'): void
+	getContainerEl(): HTMLElement | null
+}
+
+interface _CachedContainer {
+	api: _ToastContainerAPI
+	el: HTMLElement
+}
+
+/**
+ * Get (or lazily create) the singleton ToastContainer Vue instance.
+ * The instance is shared via a window-global so that multiple bundles of this
+ * library loaded on the same page all show toasts in the same stack.
+ *
+ * If a CSS selector is provided (used in automated tests to attach the
+ * container to a specific element), the singleton cache is bypassed and a new
+ * instance is mounted inside the matching element.
+ *
+ * @param selector Optional CSS selector for the host element (testing only).
+ * @return         The public API exposed by ToastContainer.
+ */
+function _getOrCreateContainer(selector?: string): _ToastContainerAPI {
+	if (selector) {
+		const target = document.querySelector<HTMLElement>(selector)
+		if (target) {
+			const el = document.createElement('div')
+			target.appendChild(el)
+			return createApp(ToastContainer).mount(el) as unknown as _ToastContainerAPI
+		}
+	}
+
+	const g = window as typeof window & { [_CONTAINER_KEY]?: _CachedContainer }
+	const cached = g[_CONTAINER_KEY]
+	if (cached && document.body.contains(cached.el)) {
+		return cached.api
+	}
+
+	const el = document.createElement('div')
+	document.body.appendChild(el)
+	const api = createApp(ToastContainer).mount(el) as unknown as _ToastContainerAPI
+	g[_CONTAINER_KEY] = { api, el }
+	return api
+}
+
+interface _InternalProps {
+	message: string | Node
+	isHTML: boolean
+	type: ToastType | undefined
+	timeout: number
+	close: boolean
+	role: 'alert' | 'status'
+	selector: string | undefined
+	onRemove: (() => void) | undefined
+	onClick: (() => void) | undefined
+	onUndo: ((e: MouseEvent) => void) | undefined
+}
+
+/**
+ * Add a toast notification via the shared ToastContainer and return a handle.
+ *
+ * @param internal The internal properties for the toast.
+ */
+function _mountToast(internal: _InternalProps): ToastHandle {
+	const manager = _getOrCreateContainer(internal.selector)
+	const container = manager.getContainerEl() ?? document.body
+
+	// display:contents so the wrapper does not affect the flex layout of the container
+	const wrapper = document.createElement('div')
+	wrapper.style.cssText = 'display:contents'
+	container.appendChild(wrapper)
+
+	const app = createApp(ToastNotification, {
+		message: internal.message,
+		isHTML: internal.isHTML,
+		type: internal.type,
+		timeout: internal.timeout,
+		// noClose is the inverse of the public `close` option
+		noClose: !internal.close,
+		role: internal.role,
+		onClick: internal.onClick,
+		onUndo: internal.onUndo,
+		onDismiss: () => {
+			internal.onRemove?.()
+			app.unmount()
+			wrapper.remove()
+		},
+	})
+
+	const vm = app.mount(wrapper) as unknown as { hide(): void }
+
+	return {
+		hideToast: () => vm.hide(),
+	}
+}
+
+/**
+ * Extract visible text from a node, skipping subtrees marked aria-hidden.
+ * This prevents decorative elements (e.g. spinner SVGs) from leaking into
+ * the live-region announcement.
+ *
+ * @param node The DOM node to extract text from
+ * @return The concatenated visible text content of the node and its children
+ */
+function getVisibleText(node: Node): string {
+	// Skip any nodes that are hidden from assistive technologies
+	if (node instanceof Element && node.getAttribute('aria-hidden') === 'true') {
+		return ''
+	}
+
+	// For text nodes, return the text content directly
+	if (node.nodeType === Node.TEXT_NODE) {
+		return node.textContent ?? ''
+	}
+
+	// For element nodes, recursively extract text from child nodes
+	return Array.from(node.childNodes).map(getVisibleText).join('')
+}
+
+/**
+ * Derive the plain text to announce in the live region for a given message.
+ * HTML strings are parsed so tags don't leak into the announcement and
+ * aria-hidden subtrees are skipped, matching the Node message behaviour.
+ *
+ * @param data The message passed to showMessage: plain text, HTML string, or a DOM Node
+ * @param isHTML Whether `data` should be parsed as HTML
+ * @return The visible plain-text announcement
+ */
+function getAnnouncementText(data: string | Node, isHTML: boolean): string {
+	if (typeof data === 'string') {
+		if (!isHTML) {
+			return data
+		}
+		// Parse in a standalone document (never attached to the page) so the
+		// markup is never live DOM, not just visually inert.
+		return getVisibleText(new DOMParser().parseFromString(data, 'text/html').body)
+	}
+	return getVisibleText(data)
 }
 
 /**
@@ -102,58 +244,64 @@ export interface ToastOptions {
  * @param data Message to be shown in the toast, any HTML is removed by default
  * @param options ToastOptions
  */
-export function showMessage(data: string | Node, options?: ToastOptions): Toast {
-	options = {
+export function showMessage(data: string | Node, options?: ToastOptions): ToastHandle {
+	const opts = {
 		timeout: TOAST_DEFAULT_TIMEOUT,
 		isHTML: false,
-		type: undefined,
-		// An undefined selector defaults to the body element
-		selector: undefined,
-		onRemove: () => { },
-		onClick: undefined,
+		type: undefined as ToastType | undefined,
+		selector: undefined as string | undefined,
+		onRemove: undefined as (() => void) | undefined,
+		onClick: undefined as (() => void) | undefined,
 		close: true,
+		ariaLive: undefined as ToastAriaLive | undefined,
 		...options,
 	}
 
-	if (typeof data === 'string' && !options.isHTML) {
-		// fime mae sure that text is extracted
-		const element = document.createElement('div')
-		element.innerHTML = data
-		data = element.innerText
-	}
-	let classes = options.type ?? ''
-
-	if (typeof options.onClick === 'function') {
-		classes += ' toast-with-click '
+	// Strip HTML from plain-text messages to prevent XSS.
+	// Parsed in a standalone document (never attached to the page) so the
+	// markup is never live DOM, not just visually inert.
+	if (typeof data === 'string' && !opts.isHTML) {
+		data = new DOMParser().parseFromString(data, 'text/html').body.innerText
 	}
 
-	const isNode = data instanceof Node
-
+	// Resolve aria-live level: explicit option > type default > polite
 	let ariaLive: ToastAriaLive = ToastAriaLive.POLITE
-	if (options.ariaLive) {
-		ariaLive = options.ariaLive
-	} else if (options.type === ToastType.ERROR || options.type === ToastType.UNDO) {
+	if (opts.ariaLive) {
+		ariaLive = opts.ariaLive
+	} else if (opts.type === ToastType.ERROR || opts.type === ToastType.UNDO) {
 		ariaLive = ToastAriaLive.ASSERTIVE
 	}
 
-	const toast = Toastify({
-		[!isNode ? 'text' : 'node']: data,
-		duration: options.timeout,
-		callback: options.onRemove,
-		onClick: options.onClick,
-		close: options.close,
-		gravity: 'top',
-		selector: options.selector,
-		position: 'right',
-		backgroundColor: '',
-		className: 'dialogs ' + classes,
-		escapeMarkup: !options.isHTML,
-		ariaLive,
+	// Announce to the persistent live region.
+	// Prefix with a translated type label so the colour-coded border cue is also
+	// conveyed to screen readers (WCAG 1.4.1).
+	if (ariaLive !== ToastAriaLive.OFF) {
+		const text = getAnnouncementText(data, opts.isHTML)
+		const typeTemplates: Partial<Record<ToastType, string>> = {
+			[ToastType.ERROR]: t('Error: {message}', { message: text }),
+			[ToastType.WARNING]: t('Warning: {message}', { message: text }),
+			[ToastType.INFO]: t('Info: {message}', { message: text }),
+			[ToastType.SUCCESS]: t('Success: {message}', { message: text }),
+		}
+		const announcement = (opts.type && typeTemplates[opts.type]) ?? text
+		_getOrCreateContainer(opts.selector).announce(
+			announcement,
+			ariaLive === ToastAriaLive.ASSERTIVE ? 'assertive' : 'polite',
+		)
+	}
+
+	return _mountToast({
+		message: data,
+		isHTML: opts.isHTML,
+		type: opts.type,
+		timeout: opts.timeout,
+		close: opts.close,
+		role: ariaLive === ToastAriaLive.ASSERTIVE ? 'alert' : 'status',
+		selector: opts.selector,
+		onRemove: opts.onRemove,
+		onClick: opts.onClick,
+		onUndo: undefined,
 	})
-
-	toast.showToast()
-
-	return toast
 }
 
 /**
@@ -162,7 +310,7 @@ export function showMessage(data: string | Node, options?: ToastOptions): Toast 
  * @param text Message to be shown in the toast, any HTML is removed by default
  * @param options ToastOptions
  */
-export function showError(text: string, options?: ToastOptions): Toast {
+export function showError(text: string, options?: ToastOptions): ToastHandle {
 	return showMessage(text, { ...options, type: ToastType.ERROR })
 }
 
@@ -172,7 +320,7 @@ export function showError(text: string, options?: ToastOptions): Toast {
  * @param text Message to be shown in the toast, any HTML is removed by default
  * @param options ToastOptions
  */
-export function showWarning(text: string, options?: ToastOptions): Toast {
+export function showWarning(text: string, options?: ToastOptions): ToastHandle {
 	return showMessage(text, { ...options, type: ToastType.WARNING })
 }
 
@@ -182,7 +330,7 @@ export function showWarning(text: string, options?: ToastOptions): Toast {
  * @param text Message to be shown in the toast, any HTML is removed by default
  * @param options ToastOptions
  */
-export function showInfo(text: string, options?: ToastOptions): Toast {
+export function showInfo(text: string, options?: ToastOptions): ToastHandle {
 	return showMessage(text, { ...options, type: ToastType.INFO })
 }
 
@@ -192,30 +340,19 @@ export function showInfo(text: string, options?: ToastOptions): Toast {
  * @param text Message to be shown in the toast, any HTML is removed by default
  * @param options ToastOptions
  */
-export function showSuccess(text: string, options?: ToastOptions): Toast {
+export function showSuccess(text: string, options?: ToastOptions): ToastHandle {
 	return showMessage(text, { ...options, type: ToastType.SUCCESS })
 }
 
 /**
- * Show a toast message with a loading spinner
- * The toast will be shown permanently and needs to be hidden manually by calling hideToast()
+ * Show a toast message with a loading spinner.
+ * The toast is permanent, call hideToast() on the returned handle to remove it.
  *
  * @param text Message to be shown in the toast, any HTML is removed by default
  * @param options ToastOptions
  */
-export function showLoading(text: string, options?: ToastOptions): Toast {
-	// Generate loader svg
-	const loader = document.createElement('span')
-	loader.innerHTML = LoaderSvg
-	loader.classList.add('toast-loader')
-
-	// Generate loader layout
-	const loaderContent = document.createElement('span')
-	loaderContent.classList.add('toast-loader-container')
-	loaderContent.innerText = text
-	loaderContent.appendChild(loader)
-
-	return showMessage(loaderContent, {
+export function showLoading(text: string, options?: ToastOptions): ToastHandle {
+	return showMessage(text, {
 		...options,
 		close: false,
 		timeout: TOAST_PERMANENT_TIMEOUT,
@@ -230,37 +367,32 @@ export function showLoading(text: string, options?: ToastOptions): Toast {
  * @param onUndo Function that is called when the undo button is clicked
  * @param options ToastOptions
  */
-export function showUndo(text: string, onUndo: (e: MouseEvent) => void, options?: ToastOptions): Toast {
-	// onUndo callback is mandatory
+export function showUndo(text: string, onUndo: (e: MouseEvent) => void, options?: ToastOptions): ToastHandle {
 	if (!(onUndo instanceof Function)) {
 		throw new Error('Please provide a valid onUndo method')
 	}
 
-	options = Object.assign(options || {}, {
-		// force 10 seconds of timeout
+	// UNDO defaults to assertive; the caller can override via the ariaLive option
+	const ariaLive = options?.ariaLive ?? ToastAriaLive.ASSERTIVE
+
+	const selector = options?.selector
+	if (ariaLive !== ToastAriaLive.OFF) {
+		_getOrCreateContainer(selector).announce(
+			text,
+			ariaLive === ToastAriaLive.ASSERTIVE ? 'assertive' : 'polite',
+		)
+	}
+
+	return _mountToast({
+		message: text,
+		isHTML: false,
+		type: ToastType.UNDO,
 		timeout: TOAST_UNDO_TIMEOUT,
+		close: options?.close ?? true,
+		role: ariaLive === ToastAriaLive.ASSERTIVE ? 'alert' : 'status',
+		selector: options?.selector,
+		onRemove: options?.onRemove,
+		onClick: options?.onClick,
+		onUndo,
 	})
-
-	// Generate undo layout
-	const undoContent = document.createElement('span')
-	const undoButton = document.createElement('button')
-	undoContent.classList.add('toast-undo-container')
-	undoButton.classList.add('toast-undo-button')
-	undoButton.innerText = t('Undo')
-	undoContent.innerText = text
-	undoContent.appendChild(undoButton)
-
-	const toast = showMessage(undoContent, { ...options, type: ToastType.UNDO })
-
-	undoButton.addEventListener('click', function(event) {
-		event.stopPropagation()
-		onUndo(event)
-
-		// Hide toast
-		if (toast?.hideToast instanceof Function) {
-			toast.hideToast()
-		}
-	})
-
-	return toast
 }
