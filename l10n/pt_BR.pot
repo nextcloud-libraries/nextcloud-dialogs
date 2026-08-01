@@ -61,6 +61,9 @@ msgstr[0] "Escolher %n arquivo"
 msgstr[1] "Escolher %n arquivos"
 msgstr[2] "Escolher %n arquivos"
 
+msgid "Close"
+msgstr "Fechar"
+
 msgid "Confirm"
 msgstr "Confirmar"
 
@@ -90,6 +93,9 @@ msgstr "Seletor de visualização atual"
 
 msgid "Enter your name"
 msgstr "Digite seu nome"
+
+msgid "Error: {message}"
+msgstr "Erro: {message}"
 
 msgid "Existing version"
 msgstr "Versão existente"
@@ -124,6 +130,9 @@ msgid ""
 msgstr ""
 "Se você selecionar ambas as versões, um número será adicionado ao nome do "
 "arquivo recebido."
+
+msgid "Info: {message}"
+msgstr "Info: {message}"
 
 msgid "Invalid folder name."
 msgstr "Nome de pasta inválido."
@@ -218,11 +227,17 @@ msgstr "Ignorar este arquivo"
 msgid "Submit name"
 msgstr "Enviar nome"
 
+msgid "Success: {message}"
+msgstr "Sucesso: {message}"
+
 msgid "Undo"
 msgstr "Desfazer"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Faça upload de algum conteúdo ou sincronize com seus dispositivos!"
+
+msgid "Warning: {message}"
+msgstr "Aviso: {message}"
 
 msgid ""
 "When an incoming folder is selected, any conflicting files within it will "
