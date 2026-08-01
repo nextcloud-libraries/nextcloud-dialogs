@@ -65,6 +65,9 @@ msgstr[2] "Roghnaigh %n comhaid"
 msgstr[3] "Roghnaigh %n comhaid"
 msgstr[4] "Roghnaigh %n comhaid"
 
+msgid "Close"
+msgstr "Dún"
+
 msgid "Confirm"
 msgstr "Deimhnigh"
 
@@ -94,6 +97,9 @@ msgstr "Roghnóir amhairc reatha"
 
 msgid "Enter your name"
 msgstr "Cuir isteach d'ainm"
+
+msgid "Error: {message}"
+msgstr "Earráid: {message}"
 
 msgid "Existing version"
 msgstr "Leagan atá ann cheana féin"
@@ -129,6 +135,9 @@ msgid ""
 msgstr ""
 "Má roghnaíonn tú an dá leagan, cuirfear uimhir le hainm an chomhaid atá ag "
 "teacht isteach."
+
+msgid "Info: {message}"
+msgstr "Eolas: {message}"
 
 msgid "Invalid folder name."
 msgstr "Ainm fillteáin neamhbhailí."
@@ -225,11 +234,17 @@ msgstr "Scipeáil an comhad seo"
 msgid "Submit name"
 msgstr "Cuir isteach ainm"
 
+msgid "Success: {message}"
+msgstr "Rath: {message}"
+
 msgid "Undo"
 msgstr "Cealaigh"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Uaslódáil roinnt ábhair nó sioncronaigh le do ghléasanna!"
+
+msgid "Warning: {message}"
+msgstr "Rabhadh: {message}"
 
 msgid ""
 "When an incoming folder is selected, any conflicting files within it will "
