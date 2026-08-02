@@ -58,6 +58,9 @@ msgid_plural "Choose %n files"
 msgstr[0] "%n Datei auswählen"
 msgstr[1] "%n Dateien auswählen"
 
+msgid "Close"
+msgstr "Schließen"
+
 msgid "Confirm"
 msgstr "Bestätigen"
 
@@ -87,6 +90,9 @@ msgstr "Aktuelle Ansichtsauswahl"
 
 msgid "Enter your name"
 msgstr "Gib deinen Namen ein"
+
+msgid "Error: {message}"
+msgstr "Fehler: {message}"
 
 msgid "Existing version"
 msgstr "Vorhandene Version"
@@ -123,6 +129,9 @@ msgid ""
 msgstr ""
 "Wenn beide Versionen ausgewählt werden, wird dem Namen der eingehenden Datei"
 " eine Nummer hinzugefügt."
+
+msgid "Info: {message}"
+msgstr "Info: {message}"
 
 msgid "Invalid folder name."
 msgstr "Ungültiger Ordnername."
@@ -216,11 +225,17 @@ msgstr "Diese Datei überspringen"
 msgid "Submit name"
 msgstr "Namen senden"
 
+msgid "Success: {message}"
+msgstr "Erfolg: {message}"
+
 msgid "Undo"
 msgstr "Rückgängig machen"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Lade Inhalte hoch oder synchronisiere diese mit deinen Geräten!"
+
+msgid "Warning: {message}"
+msgstr "Warnung: {message}"
 
 msgid ""
 "When an incoming folder is selected, any conflicting files within it will "
