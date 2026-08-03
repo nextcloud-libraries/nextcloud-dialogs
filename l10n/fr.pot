@@ -8,10 +8,11 @@
 # nomoreroses, 2025
 # William Méauzoone, 2025
 # Benoit deClerck <benoit@de-clerck.fr>, 2026
+# MiDwo <dworak.of.sky@gmail.com>, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Benoit deClerck <benoit@de-clerck.fr>, 2026\n"
+"Last-Translator: MiDwo <dworak.of.sky@gmail.com>, 2026\n"
 "Language-Team: French (https://app.transifex.com/nextcloud/teams/64236/fr/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: fr\n"
@@ -67,6 +68,9 @@ msgstr[0] "Choisir %n fichier"
 msgstr[1] "Choisir %n fichiers"
 msgstr[2] "Choisir %n fichiers "
 
+msgid "Close"
+msgstr "Fermer"
+
 msgid "Confirm"
 msgstr "Confirmer"
 
@@ -96,6 +100,9 @@ msgstr "Sélecteur d'affichage actuel"
 
 msgid "Enter your name"
 msgstr "Entrez votre nom"
+
+msgid "Error: {message}"
+msgstr "Erreur: {message}"
 
 msgid "Existing version"
 msgstr "Version actuelle "
@@ -130,6 +137,9 @@ msgid ""
 msgstr ""
 "Si vous conservez les deux versions, le fichier reçu sera renommé avec un "
 "numéro."
+
+msgid "Info: {message}"
+msgstr "Info: {message}"
 
 msgid "Invalid folder name."
 msgstr "Nom de dossier invalide."
@@ -224,11 +234,17 @@ msgstr "Ignorer ce fichier"
 msgid "Submit name"
 msgstr "Envoyer le nom"
 
+msgid "Success: {message}"
+msgstr "Succès: {message}"
+
 msgid "Undo"
 msgstr "Annuler"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Chargez du contenu ou synchronisez avec vos équipements !"
+
+msgid "Warning: {message}"
+msgstr "Avertissement: {message}"
 
 msgid ""
 "When an incoming folder is selected, any conflicting files within it will "
