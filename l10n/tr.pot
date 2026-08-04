@@ -57,6 +57,9 @@ msgid_plural "Choose %n files"
 msgstr[0] "%n dosya seçin"
 msgstr[1] "%n dosya seçin"
 
+msgid "Close"
+msgstr "Kapat"
+
 msgid "Confirm"
 msgstr "Onayla"
 
@@ -86,6 +89,9 @@ msgstr "Geçerli görünüm seçici"
 
 msgid "Enter your name"
 msgstr "Adınızı yazın"
+
+msgid "Error: {message}"
+msgstr "Hata: {message}"
 
 msgid "Existing version"
 msgstr "Var olan sürüm"
@@ -119,6 +125,9 @@ msgid ""
 "If you select both versions, the incoming file will have a number added to "
 "its name."
 msgstr "İki sürümü de seçerseniz, gelen dosyanın adına bir sayı eklenir."
+
+msgid "Info: {message}"
+msgstr "Bilgi: {message}"
 
 msgid "Invalid folder name."
 msgstr "Klasör adı geçersiz."
@@ -212,11 +221,17 @@ msgstr "Bu dosyayı atla"
 msgid "Submit name"
 msgstr "Adı gönder"
 
+msgid "Success: {message}"
+msgstr "Başarı: {message}"
+
 msgid "Undo"
 msgstr "Geri al"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Bazı içerikler yükleyin ya da aygıtlarınızla eşitleyin!"
+
+msgid "Warning: {message}"
+msgstr "Uyarı: {message}"
 
 msgid ""
 "When an incoming folder is selected, any conflicting files within it will "
