@@ -17,17 +17,10 @@ msgstr ""
 msgid "\"{segment}\" is a reserved name and not allowed."
 msgstr ""
 
-msgid "%n file conflict"
-msgid_plural "%n files conflict"
-msgstr[0] ""
-msgstr[1] ""
-
-msgid "%n file conflict in {dirname}"
-msgid_plural "%n file conflicts in {dirname}"
-msgstr[0] ""
-msgstr[1] ""
-
 msgid "All files"
+msgstr ""
+
+msgid "An item with the same name already exists in {dirname}."
 msgstr ""
 
 msgid "Cancel"
@@ -83,6 +76,12 @@ msgstr ""
 msgid "Error: {message}"
 msgstr ""
 
+msgid "Existing files"
+msgstr ""
+
+msgid "Existing files and folders will be deleted if not selected. If both are chosen, they will be renamed."
+msgstr ""
+
 msgid "Existing version"
 msgstr ""
 
@@ -110,9 +109,6 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-msgid "If you select both versions, the incoming file will have a number added to its name."
-msgstr ""
-
 msgid "Info: {message}"
 msgstr ""
 
@@ -120,6 +116,12 @@ msgid "Invalid folder name."
 msgstr ""
 
 msgid "Invalid name."
+msgstr ""
+
+msgid "Items with the same name already exist in {dirname}, select which to keep."
+msgstr ""
+
+msgid "Keep both"
 msgstr ""
 
 msgid "Last modified date unknown"
@@ -152,6 +154,9 @@ msgstr ""
 msgid "New"
 msgstr ""
 
+msgid "New files"
+msgstr ""
+
 msgid "New folder"
 msgstr ""
 
@@ -176,19 +181,22 @@ msgstr ""
 msgid "Recent"
 msgstr ""
 
+msgid "Replace"
+msgstr ""
+
 msgid "Select all checkboxes"
 msgstr ""
 
 msgid "Select all entries"
 msgstr ""
 
-msgid "Select all existing files"
-msgstr ""
-
-msgid "Select all new files"
-msgstr ""
-
 msgid "Select entry"
+msgstr ""
+
+msgid "Select file to keep"
+msgstr ""
+
+msgid "Select files to keep"
 msgstr ""
 
 msgid "Select the row for {nodename}"
@@ -201,9 +209,6 @@ msgid "Skip %n file"
 msgid_plural "Skip %n files"
 msgstr[0] ""
 msgstr[1] ""
-
-msgid "Skip this file"
-msgstr ""
 
 msgid "Submit name"
 msgstr ""
@@ -220,16 +225,13 @@ msgstr ""
 msgid "Warning: {message}"
 msgstr ""
 
-msgid "When an incoming folder is selected, any conflicting files within it will also be overwritten."
+msgid "When a new folder is selected, any conflicting files within it will also be overwritten."
 msgstr ""
 
-msgid "When an incoming folder is selected, any files within it will also be overwritten."
+msgid "When a new folder is selected, any files within it will also be overwritten."
 msgstr ""
 
-msgid "When an incoming folder is selected, the content is written into the existing folder and a recursive conflict resolution is performed."
-msgstr ""
-
-msgid "Which files do you want to keep?"
+msgid "When a new folder is selected, the content is written into the existing folder and a recursive conflict resolution is performed."
 msgstr ""
 
 msgid "You are currently identified as {nickname}."

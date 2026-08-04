@@ -7,12 +7,12 @@
 import type { INode } from '@nextcloud/files'
 import type { ConflictInput } from '../../conflict-picker.ts'
 
-import { mdiFile, mdiFolder } from '@mdi/js'
+import { mdiArrowRight } from '@mdi/js'
 import { FileType } from '@nextcloud/files'
 import { computed, ref, watch } from 'vue'
 import NcCheckboxRadioSwitch from '@nextcloud/vue/components/NcCheckboxRadioSwitch'
-import NcDateTime from '@nextcloud/vue/components/NcDateTime'
 import NcIconSvgWrapper from '@nextcloud/vue/components/NcIconSvgWrapper'
+import ConflictPickerCard from './ConflictPickerCard.vue'
 import { getPreviewURL } from '../../composables/preview.ts'
 import { t } from '../../utils/l10n.ts'
 
@@ -36,6 +36,12 @@ const props = defineProps<{
 	 * The new incoming node
 	 */
 	incoming: ConflictInput
+
+	/**
+	 * Single-file mode: render the two versions without checkboxes.
+	 * The parent then offers "Keep both"/"Replace" buttons instead.
+	 */
+	isSingle?: boolean
 }>()
 
 defineExpose({ validate })
@@ -67,6 +73,12 @@ const isIncomingFolder = computed(() => {
 	}
 	return props.incoming.type === FileType.Folder
 })
+
+// Bold whichever value differs to ease comparison: the newer date and the larger size.
+const incomingNewer = computed(() => !!incomingMTime.value && !!existingMTime.value && incomingMTime.value > existingMTime.value)
+const existingNewer = computed(() => !!incomingMTime.value && !!existingMTime.value && existingMTime.value > incomingMTime.value)
+const incomingLarger = computed(() => incomingSize.value !== undefined && existingSize.value !== undefined && incomingSize.value > existingSize.value)
+const existingLarger = computed(() => incomingSize.value !== undefined && existingSize.value !== undefined && existingSize.value > incomingSize.value)
 
 watch(() => props.existing, async () => {
 	existingMTime.value = getMTime(props.existing)
@@ -179,133 +191,91 @@ function validate() {
 	<fieldset :class="$style.pickerEntry">
 		<legend>{{ existing.displayname }}</legend>
 
-		<!-- Incoming file -->
+		<!-- Existing version (left) -->
 		<NcCheckboxRadioSwitch
-			v-model="incomingSelected"
-			:error="!!validationMessage"
-			:helperText="validationMessage"
-			:required="!conflictResolved">
-			<span :class="$style.pickerEntryItem">
-				<!-- Icon or preview -->
-				<NcIconSvgWrapper
-					v-if="!incomingPreview"
-					:class="[$style.pickerEntryIcon, { [$style.pickerEntryIcon_folder]: isExistingFolder }]"
-					:path="isIncomingFolder ? mdiFolder : mdiFile"
-					:size="48" />
-				<img
-					v-else
-					:class="$style.pickerEntryPreview"
-					:src="incomingPreview"
-					alt=""
-					loading="lazy">
-
-				<!-- Description -->
-				<span :class="$style.pickerEntryDescription">
-					<span>
-						{{ t('New version') }}
-					</span>
-					<NcDateTime
-						v-if="incomingMTime"
-						:timestamp="incomingMTime"
-						:relativeTime="false"
-						:format="{ timeStyle: 'short', dateStyle: 'medium' }" />
-					<span v-else>
-						{{ t('Last modified date unknown') }}
-					</span>
-					<span>
-						{{ incomingSize }}
-					</span>
-				</span>
-			</span>
-		</NcCheckboxRadioSwitch>
-
-		<!-- Existing file -->
-		<NcCheckboxRadioSwitch
+			v-if="!isSingle"
 			v-model="existingSelected"
+			:class="$style.pickerEntryColumn"
 			:error="!!validationMessage"
 			:helperText="validationMessage"
 			:required="!conflictResolved">
-			<span :class="$style.pickerEntryItem">
-				<!-- Icon or preview -->
-				<NcIconSvgWrapper
-					v-if="!existingPreview"
-					:class="[$style.pickerEntryIcon, { [$style.pickerEntryIcon_folder]: isExistingFolder }]"
-					:path="isExistingFolder ? mdiFolder : mdiFile"
-					:size="48" />
-				<img
-					v-else
-					:class="$style.pickerEntryPreview"
-					:src="existingPreview"
-					alt=""
-					loading="lazy">
-
-				<!-- Description -->
-				<span :class="$style.pickerEntryDescription">
-					<span>
-						{{ t('Existing version') }}
-					</span>
-					<NcDateTime
-						v-if="existingMTime"
-						:timestamp="existingMTime"
-						:relativeTime="false"
-						:format="{ timeStyle: 'short', dateStyle: 'medium' }" />
-					<span v-else>
-						{{ t('Last modified date unknown') }}
-					</span>
-					<span>
-						{{ existingSize }}
-					</span>
-				</span>
-			</span>
+			<ConflictPickerCard
+				:preview="existingPreview"
+				:mtime="existingMTime"
+				:size="existingSize"
+				:isFolder="isExistingFolder"
+				:label="t('Existing version')"
+				:boldDate="existingNewer"
+				:boldSize="existingLarger" />
 		</NcCheckboxRadioSwitch>
+		<ConflictPickerCard
+			v-else
+			:class="$style.pickerEntryColumn"
+			:preview="existingPreview"
+			:mtime="existingMTime"
+			:size="existingSize"
+			:isFolder="isExistingFolder"
+			:label="t('Existing version')"
+			:boldDate="existingNewer"
+			:boldSize="existingLarger" />
+
+		<!-- Arrow pointing from the existing to the new version -->
+		<NcIconSvgWrapper
+			:class="$style.pickerEntryArrow"
+			directional
+			:path="mdiArrowRight" />
+
+		<!-- New version (right) -->
+		<NcCheckboxRadioSwitch
+			v-if="!isSingle"
+			v-model="incomingSelected"
+			:class="$style.pickerEntryColumn"
+			:error="!!validationMessage"
+			:helperText="validationMessage"
+			:required="!conflictResolved">
+			<ConflictPickerCard
+				:preview="incomingPreview"
+				:mtime="incomingMTime"
+				:size="incomingSize"
+				:isFolder="isIncomingFolder"
+				:label="t('New version')"
+				:boldDate="incomingNewer"
+				:boldSize="incomingLarger" />
+		</NcCheckboxRadioSwitch>
+		<ConflictPickerCard
+			v-else
+			:class="$style.pickerEntryColumn"
+			:preview="incomingPreview"
+			:mtime="incomingMTime"
+			:size="incomingSize"
+			:isFolder="isIncomingFolder"
+			:label="t('New version')"
+			:boldDate="incomingNewer"
+			:boldSize="incomingLarger" />
 	</fieldset>
 </template>
 
 <style module lang="scss">
-$height: 64px;
-
 .pickerEntry {
+	display: grid;
+	align-items: center;
+	grid-template-columns: 1fr var(--arrow-column) 1fr;
+
 	// last fieldset does not have a border
 	&:not(:last-of-type) {
 		border-bottom: 1px solid var(--color-border);
 	}
-}
 
-.pickerEntryItem {
-	display: flex;
-	align-items: center;
-	height: $height;
-}
-
-.pickerEntryIcon,
-.pickerEntryPreview {
-	height: $height;
-	width: $height;
-	margin: 0 var(--secondary-margin);
-	display: block;
-	flex: 0 0 $height;
-}
-
-.pickerEntryIcon {
-	color: var(--color-text-maxcontrast);
-}
-
-.pickerEntryIcon_folder {
-	color: var(--color-primary-element);
-}
-
-.pickerEntryPreview {
-	overflow: hidden;
-	border-radius: calc(var(--border-radius) * 2);
-	object-fit: cover;
-}
-
-.pickerEntryDescription {
-	display: flex;
-	flex-direction: column;
-
-	span {
-		white-space: nowrap;
+	legend {
+		// span the full row above the two columns
+		grid-column: 1 / -1;
+		// the legend names the file both versions belong to
+		font-weight: bold;
 	}
+}
+
+.pickerEntryArrow {
+	justify-self: center;
+	color: var(--color-text-maxcontrast);
 }
 </style>
