@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
+import { getCapabilities } from '@nextcloud/capabilities'
 import Toastify from 'toastify-js'
 import LoaderSvg from '../styles/loader.svg?raw'
 import { t } from './utils/l10n.js'
@@ -41,46 +42,35 @@ export const TOAST_DEFAULT_TIMEOUT = 7000
 /** Timeout value to show a toast permanently */
 export const TOAST_PERMANENT_TIMEOUT = -1
 
-/**
- * Shared browser-global key for the configured toast timeout.
- * Using `window` ensures separately bundled copies of this package share the same value.
- */
-const GLOBAL_TOAST_TIMEOUT_KEY = '__nextcloud_dialogs_toast_timeout__'
-
-declare global {
-	interface Window {
-		[GLOBAL_TOAST_TIMEOUT_KEY]?: number
+type ThemingCapabilities = {
+	theming?: {
+		toastTimeout?: number
 	}
 }
 
 /**
- * Get the configured toast timeout in milliseconds.
- * Falls back to {@link TOAST_DEFAULT_TIMEOUT} when unset.
+ * Whether a timeout value is valid for ordinary toasts.
+ *
+ * @param timeout Timeout in milliseconds
  */
-export function getToastTimeout(): number {
-	if (typeof window !== 'undefined') {
-		const timeout = window[GLOBAL_TOAST_TIMEOUT_KEY]
-		if (typeof timeout === 'number' && (timeout === TOAST_PERMANENT_TIMEOUT || timeout > 0)) {
+function isValidToastTimeout(timeout: number): boolean {
+	return timeout === TOAST_PERMANENT_TIMEOUT || timeout > 0
+}
+
+/**
+ * Resolve the user-configured toast timeout from theming capabilities.
+ * Falls back to {@link TOAST_DEFAULT_TIMEOUT} when unset or invalid.
+ */
+function getToastTimeout(): number {
+	try {
+		const timeout = (getCapabilities() as ThemingCapabilities)?.theming?.toastTimeout
+		if (typeof timeout === 'number' && isValidToastTimeout(timeout)) {
 			return timeout
 		}
+	} catch {
+		// Capabilities may be unavailable outside the browser (e.g. unit tests).
 	}
 	return TOAST_DEFAULT_TIMEOUT
-}
-
-/**
- * Set the toast timeout used by ordinary toast helpers.
- * Stored on `window` so independently bundled copies of `@nextcloud/dialogs` share it.
- *
- * @param timeout Timeout in milliseconds, or {@link TOAST_PERMANENT_TIMEOUT} for never dismiss
- */
-export function setToastTimeout(timeout: number): void {
-	if (typeof window === 'undefined') {
-		return
-	}
-	if (timeout !== TOAST_PERMANENT_TIMEOUT && !(timeout > 0)) {
-		throw new Error('Toast timeout must be a positive number or TOAST_PERMANENT_TIMEOUT')
-	}
-	window[GLOBAL_TOAST_TIMEOUT_KEY] = timeout
 }
 
 /**
