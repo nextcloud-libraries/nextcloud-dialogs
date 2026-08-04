@@ -28,18 +28,11 @@ msgstr ""
 msgid "\"{segment}\" is a reserved name and not allowed."
 msgstr "\"{segment}\" ist ein reservierter Name und nicht zulässig."
 
-msgid "%n file conflict"
-msgid_plural "%n files conflict"
-msgstr[0] "%n Dateikonflikt"
-msgstr[1] "%n Dateikonflikte"
-
-msgid "%n file conflict in {dirname}"
-msgid_plural "%n file conflicts in {dirname}"
-msgstr[0] "%n Dateikonflikt in {dirname}"
-msgstr[1] "%n Dateikonflikte in {dirname}"
-
 msgid "All files"
 msgstr "Alle Dateien"
+
+msgid "An item with the same name already exists in {dirname}."
+msgstr "Ein Element mit demselben Namen existiert bereits in {dirname}."
 
 msgid "Cancel"
 msgstr "Abbrechen"
@@ -94,6 +87,16 @@ msgstr "Gib deinen Namen ein"
 msgid "Error: {message}"
 msgstr "Fehler: {message}"
 
+msgid "Existing files"
+msgstr "Vorhandene Dateien"
+
+msgid ""
+"Existing files and folders will be deleted if not selected. If both are "
+"chosen, they will be renamed."
+msgstr ""
+"Vorhandene Dateien und Ordner werden gelöscht, wenn sie nicht ausgewählt "
+"werden. Wenn beides ausgewählt wird, werden sie umbenannt."
+
 msgid "Existing version"
 msgstr "Vorhandene Version"
 
@@ -123,13 +126,6 @@ msgstr "Gast-Identifikation"
 msgid "Home"
 msgstr "Home"
 
-msgid ""
-"If you select both versions, the incoming file will have a number added to "
-"its name."
-msgstr ""
-"Wenn beide Versionen ausgewählt werden, wird dem Namen der eingehenden Datei"
-" eine Nummer hinzugefügt."
-
 msgid "Info: {message}"
 msgstr "Info: {message}"
 
@@ -138,6 +134,15 @@ msgstr "Ungültiger Ordnername."
 
 msgid "Invalid name."
 msgstr "Ungültiger Name."
+
+msgid ""
+"Items with the same name already exist in {dirname}, select which to keep."
+msgstr ""
+"Es existieren bereits Elemente mit demselben Namen in {dirname}, wählen Sie "
+"aus, welche behalten werden sollen."
+
+msgid "Keep both"
+msgstr "Beides behalten"
 
 msgid "Last modified date unknown"
 msgstr "Datum der letzten Änderung unbekannt"
@@ -169,6 +174,9 @@ msgstr "Namen dürfen nicht mit einem Punkt beginnen."
 msgid "New"
 msgstr "Neu"
 
+msgid "New files"
+msgstr "Neue Dateien"
+
 msgid "New folder"
 msgstr "Neuer Ordner"
 
@@ -193,20 +201,23 @@ msgstr "Bitte einen Namen mit mindestens zwei Zeichen eingeben."
 msgid "Recent"
 msgstr "Neueste"
 
+msgid "Replace"
+msgstr "Ersetzen"
+
 msgid "Select all checkboxes"
 msgstr "Alle Kontrollkästchen aktivieren"
 
 msgid "Select all entries"
 msgstr "Alle Einträge auswählen"
 
-msgid "Select all existing files"
-msgstr "Alle vorhandenen Dateien auswählen"
-
-msgid "Select all new files"
-msgstr "Alle neuen Dateien auswählen"
-
 msgid "Select entry"
 msgstr "Eintrag auswählen"
+
+msgid "Select file to keep"
+msgstr "Zu behaltende Datei auswählen"
+
+msgid "Select files to keep"
+msgstr "Zu behaltende Dateien auswählen"
 
 msgid "Select the row for {nodename}"
 msgstr "Die Zeile für {nodename} auswählen."
@@ -218,9 +229,6 @@ msgid "Skip %n file"
 msgid_plural "Skip %n files"
 msgstr[0] "%n Datei überspringen"
 msgstr[1] "%n Dateien überspringen"
-
-msgid "Skip this file"
-msgstr "Diese Datei überspringen"
 
 msgid "Submit name"
 msgstr "Namen senden"
@@ -238,28 +246,24 @@ msgid "Warning: {message}"
 msgstr "Warnung: {message}"
 
 msgid ""
-"When an incoming folder is selected, any conflicting files within it will "
-"also be overwritten."
-msgstr ""
-"Wenn ein eingehender Ordner ausgewählt wird, werden auch alle darin "
-"enthaltenen Dateien mit Konflikten überschrieben."
-
-msgid ""
-"When an incoming folder is selected, any files within it will also be "
+"When a new folder is selected, any conflicting files within it will also be "
 "overwritten."
 msgstr ""
-"Wenn ein eingehender Ordner ausgewählt wird, werden auch alle darin "
-"enthaltenen Dateien überschrieben."
+"Wenn ein neuer Ordner ausgewählt wird, werden alle darin enthaltenen, in "
+"Konflikt stehenden Dateien ebenfalls überschrieben."
 
 msgid ""
-"When an incoming folder is selected, the content is written into the "
-"existing folder and a recursive conflict resolution is performed."
+"When a new folder is selected, any files within it will also be overwritten."
 msgstr ""
-"Bei Auswahl eines eingehenden Ordners wird der Inhalt in den vorhandenen "
-"Ordner geschrieben und eine rekursive Konfliktlösung durchgeführt."
+"Wenn ein neuer Ordner ausgewählt wird, werden alle darin enthaltenen Dateien"
+" ebenfalls überschrieben."
 
-msgid "Which files do you want to keep?"
-msgstr "Welche Dateien sollen behalten werden?"
+msgid ""
+"When a new folder is selected, the content is written into the existing "
+"folder and a recursive conflict resolution is performed."
+msgstr ""
+"Wenn ein neuer Ordner ausgewählt wird, wird der Inhalt in den bestehenden "
+"Ordner geschrieben und eine rekursive Konfliktlösung durchgeführt."
 
 msgid "You are currently identified as {nickname}."
 msgstr "Du bist derzeit als {nickname} identifiziert."
