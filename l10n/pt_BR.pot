@@ -28,20 +28,11 @@ msgstr "\"{segment}\" é um nome reservado e não permitido para nomes de pasta.
 msgid "\"{segment}\" is a reserved name and not allowed."
 msgstr "\"{segment}\" é um nome reservado e não permitido."
 
-msgid "%n file conflict"
-msgid_plural "%n files conflict"
-msgstr[0] "%n arquivo conflita"
-msgstr[1] "%n de arquivos conflitam"
-msgstr[2] "%n arquivos conflitam"
-
-msgid "%n file conflict in {dirname}"
-msgid_plural "%n file conflicts in {dirname}"
-msgstr[0] "%n conflito de arquivo em {dirname}"
-msgstr[1] "%n de conflitos de arquivos em {dirname}"
-msgstr[2] "%n conflitos de arquivos em {dirname}"
-
 msgid "All files"
 msgstr "Todos os arquivos"
+
+msgid "An item with the same name already exists in {dirname}."
+msgstr "Já existe um item com o mesmo nome em {dirname}."
 
 msgid "Cancel"
 msgstr "Cancelar"
@@ -97,6 +88,16 @@ msgstr "Digite seu nome"
 msgid "Error: {message}"
 msgstr "Erro: {message}"
 
+msgid "Existing files"
+msgstr "Arquivos existentes"
+
+msgid ""
+"Existing files and folders will be deleted if not selected. If both are "
+"chosen, they will be renamed."
+msgstr ""
+"Os arquivos e pastas existentes serão excluídos se não forem selecionados. "
+"Se ambos forem selecionados, serão renomeados."
+
 msgid "Existing version"
 msgstr "Versão existente"
 
@@ -124,13 +125,6 @@ msgstr "Identificação de convidados"
 msgid "Home"
 msgstr "Início"
 
-msgid ""
-"If you select both versions, the incoming file will have a number added to "
-"its name."
-msgstr ""
-"Se você selecionar ambas as versões, um número será adicionado ao nome do "
-"arquivo recebido."
-
 msgid "Info: {message}"
 msgstr "Info: {message}"
 
@@ -139,6 +133,15 @@ msgstr "Nome de pasta inválido."
 
 msgid "Invalid name."
 msgstr "Nome inválido."
+
+msgid ""
+"Items with the same name already exist in {dirname}, select which to keep."
+msgstr ""
+"Já existem itens com o mesmo nome em {dirname}; selecione qual deles deseja "
+"manter."
+
+msgid "Keep both"
+msgstr "Manter ambos"
 
 msgid "Last modified date unknown"
 msgstr "Data da última modificação desconhecida"
@@ -170,6 +173,9 @@ msgstr "Nomes não podem começar com um ponto."
 msgid "New"
 msgstr "Novo"
 
+msgid "New files"
+msgstr "Novos arquivos"
+
 msgid "New folder"
 msgstr "Nova pasta"
 
@@ -194,20 +200,23 @@ msgstr "Digite um nome com pelo menos 2 caracteres."
 msgid "Recent"
 msgstr "Recente"
 
+msgid "Replace"
+msgstr "Substituir"
+
 msgid "Select all checkboxes"
 msgstr "Selecione todas as caixas de seleção"
 
 msgid "Select all entries"
 msgstr "Selecionar todas as entradas"
 
-msgid "Select all existing files"
-msgstr "Selecione todos os arquivos existentes"
-
-msgid "Select all new files"
-msgstr "Selecione todos os novos arquivos"
-
 msgid "Select entry"
 msgstr "Selecionar entrada"
+
+msgid "Select file to keep"
+msgstr "Selecione o arquivo a ser mantido"
+
+msgid "Select files to keep"
+msgstr "Selecione os arquivos a serem mantidos"
 
 msgid "Select the row for {nodename}"
 msgstr "Selecionar a linha para {nodename}"
@@ -220,9 +229,6 @@ msgid_plural "Skip %n files"
 msgstr[0] "Ignorar %n arquivo"
 msgstr[1] "Ignorar %n de arquivos"
 msgstr[2] "Ignorar %n arquivos"
-
-msgid "Skip this file"
-msgstr "Ignorar este arquivo"
 
 msgid "Submit name"
 msgstr "Enviar nome"
@@ -240,28 +246,24 @@ msgid "Warning: {message}"
 msgstr "Aviso: {message}"
 
 msgid ""
-"When an incoming folder is selected, any conflicting files within it will "
-"also be overwritten."
-msgstr ""
-"Ao selecionar uma pasta de entrada, quaisquer arquivos conflitantes dentro "
-"dela também serão sobrescritos."
-
-msgid ""
-"When an incoming folder is selected, any files within it will also be "
+"When a new folder is selected, any conflicting files within it will also be "
 "overwritten."
 msgstr ""
-"Quando uma pasta de entrada for selecionada, todos os arquivos nela contidos"
-" também serão substituídos."
+"Quando uma nova pasta for selecionada, quaisquer arquivos conflitantes "
+"contidos nela também serão sobrescritos."
 
 msgid ""
-"When an incoming folder is selected, the content is written into the "
-"existing folder and a recursive conflict resolution is performed."
+"When a new folder is selected, any files within it will also be overwritten."
 msgstr ""
-"Quando uma pasta de entrada é selecionada, o conteúdo é gravado na pasta "
-"existente e uma resolução recursiva de conflitos é realizada."
+"Quando uma nova pasta for selecionada, todos os arquivos contidos nela "
+"também serão sobrescritos."
 
-msgid "Which files do you want to keep?"
-msgstr "Quais arquivos você deseja manter?"
+msgid ""
+"When a new folder is selected, the content is written into the existing "
+"folder and a recursive conflict resolution is performed."
+msgstr ""
+"Quando uma nova pasta for selecionada, o conteúdo é gravado na pasta "
+"existente e é realizada uma resolução recursiva de conflitos."
 
 msgid "You are currently identified as {nickname}."
 msgstr "Você está atualmente identificado como {nickname}."
