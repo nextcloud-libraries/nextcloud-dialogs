@@ -175,6 +175,9 @@ msgstr ""
 msgid "No matching files"
 msgstr ""
 
+msgid "Notifications ({hotkey})"
+msgstr ""
+
 msgid "Please enter a name with at least 2 characters."
 msgstr ""
 
