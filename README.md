@@ -68,6 +68,22 @@ showError('This is an error shown without a timeout', { timeout: -1 })
 
 A full list of available options can be found in the [documentation](https://nextcloud-libraries.github.io/nextcloud-dialogs/).
 
+#### Accessibility
+
+Toasts are announced in a screen reader through a live region, assertive for errors and undo
+messages and polite for everything else. The announcement is prefixed with the type of the
+toast, so its meaning does not rely on the colour alone. Use the `ariaLive` option to override
+the level, or set it to `ToastAriaLive.OFF` to keep a toast from being announced at all.
+
+A few behaviours are handled by the library and worth knowing about when writing apps:
+
+- Toasts do not time out while the user hovers or keyboard-focuses the notification stack, so a
+  message cannot disappear while it is being read.
+- Pressing <kbd>F6</kbd> moves the focus to the notification stack, which is otherwise at the
+  very end of the document. <kbd>Esc</kbd> moves it back to where it came from, and closing the
+  focused toast hands the focus back as well.
+- The entrance animation is skipped for users who ask for reduced motion.
+
 ### FilePicker
 To spawn the FilePicker provided by the library you have to use the *FilePickerBuilder*.
 The *FilePickerBuilder* is included in the main entry point of this library, so you can use it like this:

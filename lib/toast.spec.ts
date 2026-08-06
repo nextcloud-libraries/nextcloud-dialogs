@@ -27,6 +27,50 @@ async function waitForAnnouncement() {
 	await vi.advanceTimersByTimeAsync(100)
 }
 
+/** The visual toast stack every toast is mounted into. */
+function getStack(): HTMLElement {
+	return document.querySelector('[data-nc-toast-stack]') as HTMLElement
+}
+
+/**
+ * Let the ToastContainer pick up the current number of toasts.
+ * They are mounted from the outside and counted with a MutationObserver, so
+ * the region attributes only settle after its callback and the next render.
+ */
+async function flushStackObserver() {
+	await vi.advanceTimersByTimeAsync(1)
+	await nextTick()
+}
+
+/**
+ * Move the pointer onto an element of the stack.
+ *
+ * @param target Element the pointer enters
+ */
+function pointerOver(target: Element): void {
+	target.dispatchEvent(new PointerEvent('pointerover', { bubbles: true }))
+}
+
+/**
+ * Move the pointer off an element of the stack.
+ *
+ * @param target Element the pointer leaves
+ * @param to     Element the pointer moves to, `document.body` (outside the stack) by default
+ */
+function pointerOut(target: Element, to: Node = document.body): void {
+	target.dispatchEvent(new PointerEvent('pointerout', { bubbles: true, relatedTarget: to }))
+}
+
+/**
+ * Press a key, by default on the document as the shortcut listener does.
+ *
+ * @param key    The `KeyboardEvent.key` value
+ * @param target Element receiving the event
+ */
+function pressKey(key: string, target: EventTarget = document): void {
+	target.dispatchEvent(new KeyboardEvent('keydown', { key, bubbles: true, cancelable: true }))
+}
+
 beforeEach(() => {
 	vi.useFakeTimers()
 	// Clear the DOM and the window-global singleton so each test
@@ -427,6 +471,239 @@ describe('navigation-aware positioning', () => {
 		emit('navigation-toggled', { open: false })
 		await nextTick()
 		expect(container.classList.contains('toastContainer_navOpen')).toBe(false)
+	})
+})
+
+// ---------------------------------------------------------------------------
+// Auto-dismiss is paused while the user interacts with the stack (WCAG 2.2.1)
+// ---------------------------------------------------------------------------
+
+describe('pausing the auto-dismiss', () => {
+	test('hovering a toast keeps it visible past its timeout', async () => {
+		showMessage('Hovered', { timeout: 1000 })
+		const toast = document.querySelector('[role="status"]') as HTMLElement
+
+		pointerOver(toast)
+		await vi.advanceTimersByTimeAsync(10_000)
+
+		expect(document.querySelector('[role="status"]')).not.toBeNull()
+	})
+
+	test('the countdown resumes once the pointer leaves the stack', async () => {
+		showMessage('Hovered', { timeout: 1000 })
+		const toast = document.querySelector('[role="status"]') as HTMLElement
+
+		pointerOver(toast)
+		await vi.advanceTimersByTimeAsync(10_000)
+		pointerOut(toast)
+
+		await vi.advanceTimersByTimeAsync(1000)
+		expect(document.querySelector('[role="status"]')).toBeNull()
+	})
+
+	test('the time already elapsed is not given back on resume', async () => {
+		showMessage('Hovered', { timeout: 5000 })
+		const toast = document.querySelector('[role="status"]') as HTMLElement
+
+		// 1s of the 5s timeout is used up before pausing
+		await vi.advanceTimersByTimeAsync(1000)
+		pointerOver(toast)
+		await vi.advanceTimersByTimeAsync(60_000)
+		pointerOut(toast)
+
+		// The remaining 4s – and not the full timeout – are left
+		await vi.advanceTimersByTimeAsync(3999)
+		expect(document.querySelector('[role="status"]')).not.toBeNull()
+		await vi.advanceTimersByTimeAsync(1)
+		expect(document.querySelector('[role="status"]')).toBeNull()
+	})
+
+	test('a toast paused past its timeout stays for a moment after resuming', async () => {
+		showMessage('Hovered', { timeout: 1000 })
+		const toast = document.querySelector('[role="status"]') as HTMLElement
+
+		// Only 100 ms would be left, which would be an instant disappearance
+		await vi.advanceTimersByTimeAsync(900)
+		pointerOver(toast)
+		await vi.advanceTimersByTimeAsync(60_000)
+		pointerOut(toast)
+
+		await vi.advanceTimersByTimeAsync(999)
+		expect(document.querySelector('[role="status"]')).not.toBeNull()
+		await vi.advanceTimersByTimeAsync(1)
+		expect(document.querySelector('[role="status"]')).toBeNull()
+	})
+
+	test('moving the pointer inside the stack does not resume the countdown', async () => {
+		showMessage('Hovered', { timeout: 1000 })
+		const toast = document.querySelector('[role="status"]') as HTMLElement
+		const closeBtn = document.querySelector('button[aria-label="Close"]') as HTMLElement
+
+		pointerOver(toast)
+		// From the toast onto its own close button – still inside the stack
+		pointerOut(toast, closeBtn)
+		await vi.advanceTimersByTimeAsync(10_000)
+
+		expect(document.querySelector('[role="status"]')).not.toBeNull()
+	})
+
+	test('hovering one toast pauses the whole stack', async () => {
+		showMessage('First', { timeout: 1000 })
+		showMessage('Second', { timeout: 1000 })
+		const [first] = Array.from(document.querySelectorAll('[role="status"]'))
+
+		// Reading the first toast must not make the second one vanish
+		pointerOver(first)
+		await vi.advanceTimersByTimeAsync(10_000)
+
+		expect(document.querySelectorAll('[role="status"]')).toHaveLength(2)
+	})
+
+	test('a toast added while the stack has focus starts out paused', async () => {
+		showMessage('First', { timeout: 1000 })
+		getStack().focus()
+
+		showMessage('Second', { timeout: 1000 })
+		await vi.advanceTimersByTimeAsync(10_000)
+
+		expect(document.querySelectorAll('[role="status"]')).toHaveLength(2)
+	})
+
+	test('focusing the stack keeps toasts visible past their timeout', async () => {
+		showMessage('Focused', { timeout: 1000 })
+		const closeBtn = document.querySelector('button[aria-label="Close"]') as HTMLElement
+
+		closeBtn.dispatchEvent(new FocusEvent('focusin', { bubbles: true, relatedTarget: document.body }))
+		await vi.advanceTimersByTimeAsync(10_000)
+		expect(document.querySelector('[role="status"]')).not.toBeNull()
+
+		closeBtn.dispatchEvent(new FocusEvent('focusout', { bubbles: true, relatedTarget: document.body }))
+		await vi.advanceTimersByTimeAsync(1000)
+		expect(document.querySelector('[role="status"]')).toBeNull()
+	})
+
+	test('a permanent toast is unaffected by hovering', async () => {
+		showLoading('Uploading…')
+		const toast = document.querySelector('[role="status"]') as HTMLElement
+
+		pointerOver(toast)
+		pointerOut(toast)
+		await vi.advanceTimersByTimeAsync(100_000)
+
+		expect(document.querySelector('[role="status"]')).not.toBeNull()
+	})
+})
+
+// ---------------------------------------------------------------------------
+// Reaching the toasts with the keyboard
+// ---------------------------------------------------------------------------
+
+describe('keyboard access to the stack', () => {
+	test('the stack is a labelled region mentioning the shortcut while toasts are shown', async () => {
+		showInfo('Reachable')
+		await flushStackObserver()
+
+		const stack = getStack()
+		expect(stack.getAttribute('role')).toBe('region')
+		expect(stack.getAttribute('aria-label')).toBe('Notifications (F6)')
+	})
+
+	test('the empty stack exposes no region so pages keep a clean landmark list', async () => {
+		const handle = showInfo('Temporary')
+		await flushStackObserver()
+		expect(getStack().getAttribute('role')).toBe('region')
+
+		handle.hideToast()
+		await flushStackObserver()
+
+		expect(getStack().getAttribute('role')).toBeNull()
+		expect(getStack().getAttribute('aria-label')).toBeNull()
+	})
+
+	test('the shortcut moves the focus into the stack', async () => {
+		showInfo('Reachable')
+		await flushStackObserver()
+
+		pressKey('F6')
+
+		expect(document.activeElement).toBe(getStack())
+	})
+
+	test('the shortcut is ignored while no toast is shown', async () => {
+		// Mount the container without leaving a toast in it
+		showInfo('Gone').hideToast()
+		await flushStackObserver()
+
+		const outside = document.createElement('button')
+		document.body.appendChild(outside)
+		outside.focus()
+
+		pressKey('F6')
+
+		expect(document.activeElement).toBe(outside)
+	})
+
+	test('the shortcut is ignored when pressed with a modifier', async () => {
+		showInfo('Reachable')
+		await flushStackObserver()
+
+		const outside = document.createElement('button')
+		document.body.appendChild(outside)
+		outside.focus()
+
+		document.dispatchEvent(new KeyboardEvent('keydown', { key: 'F6', ctrlKey: true, bubbles: true }))
+
+		expect(document.activeElement).toBe(outside)
+	})
+
+	test('escape hands the focus back to where it came from', async () => {
+		const outside = document.createElement('button')
+		document.body.appendChild(outside)
+		outside.focus()
+
+		showInfo('Reachable')
+		await flushStackObserver()
+		pressKey('F6')
+		expect(document.activeElement).toBe(getStack())
+
+		pressKey('Escape', getStack())
+
+		expect(document.activeElement).toBe(outside)
+	})
+
+	test('dismissing the focused toast hands the focus back instead of dropping it', async () => {
+		const outside = document.createElement('button')
+		document.body.appendChild(outside)
+		outside.focus()
+
+		showInfo('Closable')
+		await flushStackObserver()
+		pressKey('F6')
+
+		const closeBtn = document.querySelector('button[aria-label="Close"]') as HTMLButtonElement
+		closeBtn.focus()
+		closeBtn.click()
+
+		expect(document.querySelector('[role="status"]')).toBeNull()
+		expect(document.activeElement).toBe(outside)
+	})
+
+	test('dismissing a toast keeps the focus in the stack while others remain', async () => {
+		const outside = document.createElement('button')
+		document.body.appendChild(outside)
+		outside.focus()
+
+		showInfo('First')
+		showInfo('Second')
+		await flushStackObserver()
+		pressKey('F6')
+
+		const closeBtn = document.querySelector('button[aria-label="Close"]') as HTMLButtonElement
+		closeBtn.focus()
+		closeBtn.click()
+
+		expect(document.querySelectorAll('[role="status"]')).toHaveLength(1)
+		expect(document.activeElement).toBe(getStack())
 	})
 })
 
