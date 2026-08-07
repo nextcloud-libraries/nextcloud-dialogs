@@ -31,18 +31,11 @@ msgstr ""
 msgid "\"{segment}\" is a reserved name and not allowed."
 msgstr "\"{segment}\" és un mot reservat i no està permès com a nom."
 
-msgid "%n file conflict"
-msgid_plural "%n files conflict"
-msgstr[0] "%n conflicte de fitxers"
-msgstr[1] "%n conflictes de fitxers"
-
-msgid "%n file conflict in {dirname}"
-msgid_plural "%n file conflicts in {dirname}"
-msgstr[0] "%n onflicte de fitxers a {dirname}"
-msgstr[1] "%n conflictes de fitxers a {dirname}"
-
 msgid "All files"
 msgstr "Tots els fitxers"
+
+msgid "An item with the same name already exists in {dirname}."
+msgstr "Un element amb el mateix nom ja existeix a {dirname}"
 
 msgid "Cancel"
 msgstr "Cancel·lar"
@@ -97,6 +90,16 @@ msgstr "Escriviu el vostre nom"
 msgid "Error: {message}"
 msgstr "Error: {message}"
 
+msgid "Existing files"
+msgstr "Fitxers existents"
+
+msgid ""
+"Existing files and folders will be deleted if not selected. If both are "
+"chosen, they will be renamed."
+msgstr ""
+"Els fitxers i carpetes existents s'eliminaran si no se seleccionen. Si tots "
+"dos són escollits, seran reanomenats."
+
 msgid "Existing version"
 msgstr "Versió existent"
 
@@ -125,13 +128,6 @@ msgstr "Identificació com a convidat"
 msgid "Home"
 msgstr "Inici"
 
-msgid ""
-"If you select both versions, the incoming file will have a number added to "
-"its name."
-msgstr ""
-"Si seleccioneu les dues versions, el fitxer entrant tindrà un número afegit "
-"al seu nom."
-
 msgid "Info: {message}"
 msgstr "Informació: {message}"
 
@@ -140,6 +136,15 @@ msgstr "El nom de carpeta no és vàlid."
 
 msgid "Invalid name."
 msgstr "Nom no vàlid."
+
+msgid ""
+"Items with the same name already exist in {dirname}, select which to keep."
+msgstr ""
+"Hi ha elements amb el mateix nom que ja existeixen a {dirname}, selecciona "
+"quins conservar."
+
+msgid "Keep both"
+msgstr "Queda't amb tots dos"
 
 msgid "Last modified date unknown"
 msgstr "Data de l'última modificació desconeguda"
@@ -171,6 +176,9 @@ msgstr "Els noms no poden començar amb un punt."
 msgid "New"
 msgstr "Crea"
 
+msgid "New files"
+msgstr "Fitxers nous"
+
 msgid "New folder"
 msgstr "Carpeta nova"
 
@@ -195,20 +203,23 @@ msgstr "Si us plau, escriu un nom amb 2 caràcters com a mínim."
 msgid "Recent"
 msgstr "Recents"
 
+msgid "Replace"
+msgstr "Substituir"
+
 msgid "Select all checkboxes"
 msgstr "Selecciona totes les caselles de selecció"
 
 msgid "Select all entries"
 msgstr "Selecciona totes les entrades"
 
-msgid "Select all existing files"
-msgstr "Selecciona tots els fitxers existents"
-
-msgid "Select all new files"
-msgstr "Selecciona tots els fitxers nous"
-
 msgid "Select entry"
 msgstr "Selecciona l'entrada"
+
+msgid "Select file to keep"
+msgstr "Selecciona el fitxer a conservar"
+
+msgid "Select files to keep"
+msgstr "Selecciona els fitxers per conservar"
 
 msgid "Select the row for {nodename}"
 msgstr "Selecciona la fila per a {nodename}"
@@ -220,9 +231,6 @@ msgid "Skip %n file"
 msgid_plural "Skip %n files"
 msgstr[0] "Omet %n fitxer"
 msgstr[1] "Omet %n fitxers"
-
-msgid "Skip this file"
-msgstr "Omet aquest fitxer"
 
 msgid "Submit name"
 msgstr "Entreu el nom"
@@ -240,28 +248,24 @@ msgid "Warning: {message}"
 msgstr "Avís: {message}"
 
 msgid ""
-"When an incoming folder is selected, any conflicting files within it will "
-"also be overwritten."
-msgstr ""
-"Quan es selecciona una carpeta entrant, també se sobreescriuran els fitxers "
-"que hi entrin en conflicte."
-
-msgid ""
-"When an incoming folder is selected, any files within it will also be "
+"When a new folder is selected, any conflicting files within it will also be "
 "overwritten."
 msgstr ""
-"Quan se selecciona una carpeta entrant, tots els fitxers que hi hagi també "
-"se sobreescriuran."
+"Quan se selecciona una nova carpeta, qualsevol fitxer en conflicte dins "
+"d'ella també s'escriurà."
 
 msgid ""
-"When an incoming folder is selected, the content is written into the "
-"existing folder and a recursive conflict resolution is performed."
+"When a new folder is selected, any files within it will also be overwritten."
 msgstr ""
-"Quan es selecciona una carpeta entrant, el contingut s'escriu a la carpeta "
-"existent i es realitza una resolució recursiva de conflictes."
+"Quan se selecciona una nova carpeta, qualsevol fitxer que hi hagi dins "
+"d'ella també serà sobreescrit."
 
-msgid "Which files do you want to keep?"
-msgstr "Quins fitxers voleu conservar?"
+msgid ""
+"When a new folder is selected, the content is written into the existing "
+"folder and a recursive conflict resolution is performed."
+msgstr ""
+"Quan se selecciona una nova carpeta, el contingut s'escriu a la carpeta "
+"existent i es realitza una resolució recursiva de conflictes."
 
 msgid "You are currently identified as {nickname}."
 msgstr "Actualment se us mostra com a {nickname}."
