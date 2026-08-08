@@ -26,24 +26,11 @@ msgstr ""
 msgid "\"{segment}\" is a reserved name and not allowed."
 msgstr "Is ainm curtha in áirithe é \"{segment}\" agus ní cheadaítear é."
 
-msgid "%n file conflict"
-msgid_plural "%n files conflict"
-msgstr[0] "%n coimhlint comhaid"
-msgstr[1] "%n coimhlint comhad"
-msgstr[2] "%n coimhlint comhad"
-msgstr[3] "%n coimhlint comhad"
-msgstr[4] "%n coimhlint comhad"
-
-msgid "%n file conflict in {dirname}"
-msgid_plural "%n file conflicts in {dirname}"
-msgstr[0] "%n coimhlint comhaid i {dirname}"
-msgstr[1] "%n coimhlintí comhaid i {dirname}"
-msgstr[2] "%n coimhlintí comhaid i {dirname}"
-msgstr[3] "%n coimhlintí comhaid i {dirname}"
-msgstr[4] "%n coimhlintí comhaid i {dirname}"
-
 msgid "All files"
 msgstr "Gach comhad"
+
+msgid "An item with the same name already exists in {dirname}."
+msgstr "Tá mír leis an ainm céanna ann cheana féin i {dirname}."
 
 msgid "Cancel"
 msgstr "Cealaigh"
@@ -101,6 +88,16 @@ msgstr "Cuir isteach d'ainm"
 msgid "Error: {message}"
 msgstr "Earráid: {message}"
 
+msgid "Existing files"
+msgstr "Comhaid atá ann cheana"
+
+msgid ""
+"Existing files and folders will be deleted if not selected. If both are "
+"chosen, they will be renamed."
+msgstr ""
+"Scriosfar comhaid agus fillteáin atá ann cheana mura roghnaítear iad. Má "
+"roghnaítear an dá cheann, athainmneofar iad."
+
 msgid "Existing version"
 msgstr "Leagan atá ann cheana féin"
 
@@ -129,13 +126,6 @@ msgstr "Aitheantas aoi"
 msgid "Home"
 msgstr "Baile"
 
-msgid ""
-"If you select both versions, the incoming file will have a number added to "
-"its name."
-msgstr ""
-"Má roghnaíonn tú an dá leagan, cuirfear uimhir le hainm an chomhaid atá ag "
-"teacht isteach."
-
 msgid "Info: {message}"
 msgstr "Eolas: {message}"
 
@@ -144,6 +134,15 @@ msgstr "Ainm fillteáin neamhbhailí."
 
 msgid "Invalid name."
 msgstr "Ainm neamhbhailí."
+
+msgid ""
+"Items with the same name already exist in {dirname}, select which to keep."
+msgstr ""
+"Tá míreanna leis an ainm céanna ann cheana féin i {dirname}, roghnaigh cé "
+"acu is mian leat a choinneáil."
+
+msgid "Keep both"
+msgstr "Coinnigh an dá cheann"
 
 msgid "Last modified date unknown"
 msgstr "Dáta an athraithe dheireanaigh anaithnid"
@@ -175,6 +174,9 @@ msgstr "Ní mór ainmneacha a bheith ag tosú le ponc."
 msgid "New"
 msgstr "Nua"
 
+msgid "New files"
+msgstr "Comhaid nua"
+
 msgid "New folder"
 msgstr "Fillteán nua"
 
@@ -199,20 +201,23 @@ msgstr "Cuir isteach ainm ina bhfuil 2 charachtar ar a laghad."
 msgid "Recent"
 msgstr "le déanaí"
 
+msgid "Replace"
+msgstr "Athsholáthair"
+
 msgid "Select all checkboxes"
 msgstr "Roghnaigh na boscaí seiceála go léir"
 
 msgid "Select all entries"
 msgstr "Roghnaigh gach iontráil"
 
-msgid "Select all existing files"
-msgstr "Roghnaigh na comhaid uile atá ann cheana"
-
-msgid "Select all new files"
-msgstr "Roghnaigh gach comhad nua"
-
 msgid "Select entry"
 msgstr "Roghnaigh iontráil"
+
+msgid "Select file to keep"
+msgstr "Roghnaigh comhad le coinneáil"
+
+msgid "Select files to keep"
+msgstr "Roghnaigh comhaid le coinneáil"
 
 msgid "Select the row for {nodename}"
 msgstr "Roghnaigh an ró do {nodename}"
@@ -227,9 +232,6 @@ msgstr[1] "Léim %n comhaid"
 msgstr[2] "Léim %n comhaid"
 msgstr[3] "Léim %n comhaid"
 msgstr[4] "Léim %n comhaid"
-
-msgid "Skip this file"
-msgstr "Scipeáil an comhad seo"
 
 msgid "Submit name"
 msgstr "Cuir isteach ainm"
@@ -247,29 +249,25 @@ msgid "Warning: {message}"
 msgstr "Rabhadh: {message}"
 
 msgid ""
-"When an incoming folder is selected, any conflicting files within it will "
-"also be overwritten."
-msgstr ""
-"Nuair a roghnaítear fillteán isteach, déanfar aon chomhaid choimhlinteacha "
-"ann a athscríobh freisin."
-
-msgid ""
-"When an incoming folder is selected, any files within it will also be "
+"When a new folder is selected, any conflicting files within it will also be "
 "overwritten."
 msgstr ""
-"Nuair a roghnaítear fillteán isteach, déanfar aon chomhaid laistigh de a "
+"Nuair a roghnaítear fillteán nua, déanfar aon chomhaid contrártha ann a "
 "athscríobh freisin."
 
 msgid ""
-"When an incoming folder is selected, the content is written into the "
-"existing folder and a recursive conflict resolution is performed."
+"When a new folder is selected, any files within it will also be overwritten."
 msgstr ""
-"Nuair a roghnaítear fillteán isteach, scríobhtar an t-ábhar isteach sa "
+"Nuair a roghnaítear fillteán nua, déanfar aon chomhaid laistigh de a "
+"athscríobh freisin."
+
+msgid ""
+"When a new folder is selected, the content is written into the existing "
+"folder and a recursive conflict resolution is performed."
+msgstr ""
+"Nuair a roghnaítear fillteán nua, scríobhtar an t-ábhar isteach san "
 "fhillteán atá ann cheana féin agus déantar réiteach coinbhleachta "
 "athchúrsach."
-
-msgid "Which files do you want to keep?"
-msgstr "Cé na comhaid ar mhaith leat a choinneáil?"
 
 msgid "You are currently identified as {nickname}."
 msgstr "Is é {nickname} an ainm atá ort faoi láthair."
