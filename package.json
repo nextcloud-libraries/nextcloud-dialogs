@@ -61,7 +61,7 @@
     "@nextcloud/vue": "^9.9.0",
     "@vueuse/core": "^14.4.0",
     "p-queue": "^9.3.3",
-    "vue": "^3.5.40",
+    "vue": "^3.5.41",
     "webdav": "^5.10.0"
   },
   "devDependencies": {
