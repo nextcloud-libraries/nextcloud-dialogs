@@ -6,11 +6,12 @@
 # Denise Wiesner, 2025
 # Stephan Paternotte <stephan@paternottes.net>, 2025
 # Paul K, 2026
-# stijn jonkers, 2026
+# Stijn Jonkers, 2026
+# Sebastiaan Veld <sebastiaan.veld@virtfields.nl>, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: stijn jonkers, 2026\n"
+"Last-Translator: Sebastiaan Veld <sebastiaan.veld@virtfields.nl>, 2026\n"
 "Language-Team: Dutch (https://app.transifex.com/nextcloud/teams/64236/nl/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: nl\n"
@@ -26,23 +27,16 @@ msgid "\"{extension}\" is not an allowed name."
 msgstr "\"{extension}\" is geen toegestane naam."
 
 msgid "\"{segment}\" is a reserved name and not allowed for folder names."
-msgstr "\"{segment}\" is een gereserveerde naam en niet toegestaan in mapnamen."
+msgstr "\"{segment}\" is een gereserveerde naam en niet toegestaan voor mapnamen."
 
 msgid "\"{segment}\" is a reserved name and not allowed."
 msgstr "\"{segment}\" is een gereserveerde naam en niet toegestaan."
 
-msgid "%n file conflict"
-msgid_plural "%n files conflict"
-msgstr[0] "%n bestanden conflicteren"
-msgstr[1] "%nbestand bestanden conflicteren"
-
-msgid "%n file conflict in {dirname}"
-msgid_plural "%n file conflicts in {dirname}"
-msgstr[0] "%n bestand conflicteerd in {dirname}"
-msgstr[1] "%nbestanden conflicteert in {dirname}"
-
 msgid "All files"
 msgstr "Alle bestanden"
+
+msgid "An item with the same name already exists in {dirname}."
+msgstr "Er bestaat al een item met dezelfde naam in {dirname}."
 
 msgid "Cancel"
 msgstr "Annuleren"
@@ -61,6 +55,9 @@ msgid_plural "Choose %n files"
 msgstr[0] "Kies %n bestand"
 msgstr[1] "Kies %n bestanden"
 
+msgid "Close"
+msgstr "Sluiten"
+
 msgid "Confirm"
 msgstr "Bevestigen"
 
@@ -74,13 +71,13 @@ msgid "Copy to {target}"
 msgstr "Kopiëren naar {target}"
 
 msgid "Could not create the new folder"
-msgstr "Kon de nieuwe map niet maken"
+msgstr "Kon de nieuwe map niet aanmaken"
 
 msgid "Could not load files settings"
-msgstr "Kon de bestandsinstellingen niet laden"
+msgstr "Instellingen voor bestanden konden niet worden geladen"
 
 msgid "Could not load files views"
-msgstr "Kon de bestandsweergaves niet laden"
+msgstr "Weergaven voor bestanden konden niet worden geladen"
 
 msgid "Create directory"
 msgstr "Map aanmaken"
@@ -91,21 +88,35 @@ msgstr "Huidige weergave keuze"
 msgid "Enter your name"
 msgstr "Voer je naam in"
 
+msgid "Error: {message}"
+msgstr "Fout: {message}"
+
+msgid "Existing files"
+msgstr "Bestaande bestanden"
+
+msgid ""
+"Existing files and folders will be deleted if not selected. If both are "
+"chosen, they will be renamed."
+msgstr ""
+"Bestaande bestanden en mappen worden verwijderd als ze niet worden "
+"geselecteerd. Als beide worden geselecteerd, krijgen ze een nieuwe naam."
+
 msgid "Existing version"
 msgstr "Bestaande versie"
 
 msgid "Failed to set nickname."
-msgstr "Kon geen bijnaam instellen."
+msgstr "Instellen bijnaam is mislukt."
 
 msgid "Favorites"
 msgstr "Favorieten"
 
 msgid "Files and folders you mark as favorite will show up here."
-msgstr "Bestanden en mappen die je als favoriet markeert, verschijnen hier."
+msgstr ""
+"Bestanden en mappen die je als favoriet markeert, worden hier weergegeven."
 
 msgid "Files and folders you recently modified will show up here."
 msgstr ""
-"Bestanden en mappen die je recentelijk hebt gewijzigd, verschijnen hier."
+"Bestanden en mappen die je onlangs hebt gewijzigd, worden hier weergegeven."
 
 msgid "Filter file list"
 msgstr "Bestandslijst filteren"
@@ -119,12 +130,8 @@ msgstr "Gastenidentificatie"
 msgid "Home"
 msgstr "Thuis"
 
-msgid ""
-"If you select both versions, the incoming file will have a number added to "
-"its name."
-msgstr ""
-"Als u beide versies selecteert wordt een nummer toegevoegd aan de naam van "
-"het binnenkomende bestand."
+msgid "Info: {message}"
+msgstr "Info: {message}"
 
 msgid "Invalid folder name."
 msgstr "Ongeldige mapnaam."
@@ -132,11 +139,20 @@ msgstr "Ongeldige mapnaam."
 msgid "Invalid name."
 msgstr "Ongeldige naam."
 
+msgid ""
+"Items with the same name already exist in {dirname}, select which to keep."
+msgstr ""
+"Er bestaan al items met dezelfde naam in {dirname},  kies welke je wilt "
+"behouden."
+
+msgid "Keep both"
+msgstr "Beide behouden"
+
 msgid "Last modified date unknown"
-msgstr "Laatste wijzigingsdatum onbekend"
+msgstr "Datum laatste aanpassing onbekend"
 
 msgid "Modified"
-msgstr "Gewijzigd"
+msgstr "Aangepast"
 
 msgid "Move"
 msgstr "Verplaatsen"
@@ -157,10 +173,13 @@ msgid "Names must not end with \"{extension}\"."
 msgstr "Namen mogen niet eindigen met \"{extension}\"."
 
 msgid "Names must not start with a dot."
-msgstr "Namen mogen niet begonnen met een punt."
+msgstr "Namen mogen niet beginnen met een punt."
 
 msgid "New"
 msgstr "Nieuw"
+
+msgid "New files"
+msgstr "Nieuwe bestanden"
 
 msgid "New folder"
 msgstr "Nieuwe map"
@@ -172,7 +191,7 @@ msgid "New version"
 msgstr "Nieuwe versie"
 
 msgid "No files in here"
-msgstr "Geen bestanden hier"
+msgstr "Hier staan geen bestanden"
 
 msgid "No files matching your filter were found."
 msgstr "Geen bestanden gevonden die voldoen aan je filter."
@@ -186,20 +205,23 @@ msgstr "Voer een naam in met minimaal 2 tekens."
 msgid "Recent"
 msgstr "Recent"
 
+msgid "Replace"
+msgstr "Vervangen"
+
 msgid "Select all checkboxes"
 msgstr "Selecteer alle aanvinkopties"
 
 msgid "Select all entries"
-msgstr "Alle invoer selecteren"
-
-msgid "Select all existing files"
-msgstr "Selecteer alle bestaande bestanden"
-
-msgid "Select all new files"
-msgstr "Selecteer alle nieuwe bestanden"
+msgstr "Alle vermeldingen selecteren"
 
 msgid "Select entry"
-msgstr "Invoer selecteren"
+msgstr "Vermelding selecteren"
+
+msgid "Select file to keep"
+msgstr "Selecteer bestand om te behouden"
+
+msgid "Select files to keep"
+msgstr "Selecteer bestanden om te behouden"
 
 msgid "Select the row for {nodename}"
 msgstr "Selecteer de rij voor {nodename}"
@@ -212,11 +234,11 @@ msgid_plural "Skip %n files"
 msgstr[0] "Sla %n bestand over"
 msgstr[1] "Sla %n bestanden over"
 
-msgid "Skip this file"
-msgstr "Sla dit bestand over"
-
 msgid "Submit name"
 msgstr "Naam indienen"
+
+msgid "Success: {message}"
+msgstr "Succesvol: {message}"
 
 msgid "Undo"
 msgstr "Ongedaan maken"
@@ -224,29 +246,28 @@ msgstr "Ongedaan maken"
 msgid "Upload some content or sync with your devices!"
 msgstr "Upload inhoud of synchroniseer met je apparaten!"
 
-msgid ""
-"When an incoming folder is selected, any conflicting files within it will "
-"also be overwritten."
-msgstr ""
-"Als een inkomende map wordt geselecteerd, worden alle conflicterende "
-"bestanden daarin overschreven."
+msgid "Warning: {message}"
+msgstr "Waarschuwing: {message}"
 
 msgid ""
-"When an incoming folder is selected, any files within it will also be "
+"When a new folder is selected, any conflicting files within it will also be "
 "overwritten."
 msgstr ""
-"Wanneer een inkomende folder is geselecteerd, worden bestanden in deze "
-"folder ook overschreven."
+"Wanneer een nieuwe map wordt geselecteerd, worden eventuele conflicterende "
+"bestanden daarin ook overschreven."
 
 msgid ""
-"When an incoming folder is selected, the content is written into the "
-"existing folder and a recursive conflict resolution is performed."
+"When a new folder is selected, any files within it will also be overwritten."
 msgstr ""
-"Als een inkomende map wordt geselecteerd, wordt de inhoud naar de bestaande "
-"map geschreven en wordt een recursieve conflict-oplossing uitgevoerd."
+"Wanneer een nieuwe map wordt geselecteerd, worden alle bestanden daarin ook "
+"overschreven."
 
-msgid "Which files do you want to keep?"
-msgstr "Welke bestanden wilt u bewaren?"
+msgid ""
+"When a new folder is selected, the content is written into the existing "
+"folder and a recursive conflict resolution is performed."
+msgstr ""
+"Wanneer een nieuwe map wordt geselecteerd, wordt de inhoud naar de bestaande"
+" map gekopieerd en wordt er een recursieve conflictoplossing uitgevoerd."
 
 msgid "You are currently identified as {nickname}."
 msgstr "Je wordt momenteel geïdentificeerd als {nickname}."
