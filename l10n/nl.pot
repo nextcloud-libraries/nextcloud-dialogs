@@ -279,7 +279,7 @@ msgid "You cannot leave the name empty."
 msgstr "Je kunt de naam niet leeg laten."
 
 msgid "You need to choose at least one conflict solution"
-msgstr "U moet in elk geval een conflictoplossing kiezen"
+msgstr "Je moet ten minste één manier kiezen om het conflict op te lossen"
 
 msgid "You need to select at least one version of each file to continue."
 msgstr "U moet minstens een versie van elk bestand kiezen om door te gaan. "
