@@ -282,4 +282,5 @@ msgid "You need to choose at least one conflict solution"
 msgstr "Je moet ten minste één manier kiezen om het conflict op te lossen"
 
 msgid "You need to select at least one version of each file to continue."
-msgstr "U moet minstens een versie van elk bestand kiezen om door te gaan. "
+msgstr ""
+"Je moet ten minste één versie van elk bestand selecteren om door te gaan."
