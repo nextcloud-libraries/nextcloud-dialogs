@@ -14,8 +14,17 @@ import {
 	showSuccess,
 	showUndo,
 	showWarning,
+	TOAST_DEFAULT_TIMEOUT,
+	TOAST_PERMANENT_TIMEOUT,
 	ToastAriaLive,
+	ToastType,
 } from './toast.ts'
+
+const getCapabilities = vi.hoisted(() => vi.fn())
+
+vi.mock('@nextcloud/capabilities', () => ({
+	getCapabilities,
+}))
 
 /**
  * Wait for the 50 ms setTimeout used in announce() to fire.
@@ -443,5 +452,93 @@ describe('multiple toasts', () => {
 		const messages = Array.from(document.querySelectorAll('[role="status"]'))
 			.map((el) => el.textContent?.trim())
 		expect(messages).toEqual(['First', 'Second', 'Third'])
+	})
+})
+
+describe('timeout resolution', () => {
+	beforeEach(() => {
+		getCapabilities.mockReset()
+	})
+
+	test('uses default timeout when capabilities are missing', async () => {
+		getCapabilities.mockReturnValue(undefined)
+		showMessage('hello')
+
+		await vi.advanceTimersByTimeAsync(TOAST_DEFAULT_TIMEOUT - 1)
+		expect(document.querySelector('[role="status"]')).not.toBeNull()
+
+		await vi.advanceTimersByTimeAsync(1)
+		expect(document.querySelector('[role="status"]')).toBeNull()
+	})
+
+	test('uses default timeout when capabilities access throws', async () => {
+		getCapabilities.mockImplementation(() => {
+			throw new Error('window is not defined')
+		})
+		showMessage('hello')
+
+		await vi.advanceTimersByTimeAsync(TOAST_DEFAULT_TIMEOUT - 1)
+		expect(document.querySelector('[role="status"]')).not.toBeNull()
+
+		await vi.advanceTimersByTimeAsync(1)
+		expect(document.querySelector('[role="status"]')).toBeNull()
+	})
+
+	test('uses toastTimeout from theming capabilities', async () => {
+		getCapabilities.mockReturnValue({
+			theming: {
+				toastTimeout: 15_000,
+			},
+		})
+		showMessage('hello')
+
+		await vi.advanceTimersByTimeAsync(14_999)
+		expect(document.querySelector('[role="status"]')).not.toBeNull()
+
+		await vi.advanceTimersByTimeAsync(1)
+		expect(document.querySelector('[role="status"]')).toBeNull()
+	})
+
+	test('allows permanent timeout from capabilities', async () => {
+		getCapabilities.mockReturnValue({
+			theming: {
+				toastTimeout: TOAST_PERMANENT_TIMEOUT,
+			},
+		})
+		showMessage('hello')
+
+		await vi.advanceTimersByTimeAsync(60_000)
+		expect(document.querySelector('[role="status"]')).not.toBeNull()
+	})
+
+	test('falls back for invalid capability values', async () => {
+		getCapabilities.mockReturnValue({
+			theming: {
+				toastTimeout: 0,
+			},
+		})
+		showMessage('hello')
+
+		await vi.advanceTimersByTimeAsync(TOAST_DEFAULT_TIMEOUT - 1)
+		expect(document.querySelector('[role="status"]')).not.toBeNull()
+
+		await vi.advanceTimersByTimeAsync(1)
+		expect(document.querySelector('[role="status"]')).toBeNull()
+	})
+
+	test('does not override loading toast duration', async () => {
+		getCapabilities.mockReturnValue({
+			theming: {
+				toastTimeout: 30_000,
+			},
+		})
+
+		showMessage('loading', {
+			type: ToastType.LOADING,
+			timeout: TOAST_PERMANENT_TIMEOUT,
+		})
+
+		await vi.advanceTimersByTimeAsync(60_000)
+		expect(document.querySelector('[role="status"]')).not.toBeNull()
 	})
 })
