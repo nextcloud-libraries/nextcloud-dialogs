@@ -66,7 +66,7 @@ function getToastTimeout(): number {
 		if (typeof timeout === 'number' && isValidToastTimeout(timeout)) {
 			return timeout
 		}
-	} catch (_error) {
+	} catch {
 		// Catch any exception from capability access and fallback to default timeout.
 	}
 	return TOAST_DEFAULT_TIMEOUT
