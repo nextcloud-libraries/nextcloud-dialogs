@@ -7,6 +7,11 @@
 All notable changes to this project will be documented in this file.
 
 ## [v7.5.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v7.4.1...v7.5.0)
+### Notes
+This version include some reworked - and accessible - toast notifications.
+Those new toast messages will be displayed on the bottom start of the page,
+this is by design and not a bug.
+
 ### Added
 * feat: toast timeout configuration [\#2539](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2539) \([kristian-zendato](https://github.com/kristian-zendato)\)
 * feat: accessible toast and drop toastify [\#2324](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2324) \([skjnldsv](https://github.com/skjnldsv)\)
