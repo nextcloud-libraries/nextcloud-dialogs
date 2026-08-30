@@ -2,10 +2,11 @@
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Magnus Höglund, 2025
 # Jonatan Nyberg, 2026
+# Daniel Nylander <po@danielnylander.se>, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Jonatan Nyberg, 2026\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>, 2026\n"
 "Language-Team: Swedish (https://app.transifex.com/nextcloud/teams/64236/sv/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: sv\n"
@@ -26,18 +27,11 @@ msgstr "\"{segment}\" är ett reserverat namn och får inte användas som mappna
 msgid "\"{segment}\" is a reserved name and not allowed."
 msgstr "\"{segment}\" är ett reserverat namn och får inte användas."
 
-msgid "%n file conflict"
-msgid_plural "%n files conflict"
-msgstr[0] "%n filkonflikt"
-msgstr[1] "%n filkonflikter"
-
-msgid "%n file conflict in {dirname}"
-msgid_plural "%n file conflicts in {dirname}"
-msgstr[0] "%n filkonflikt i {dirname}"
-msgstr[1] "%n filkonflikter i {dirname}"
-
 msgid "All files"
 msgstr "Alla filer"
+
+msgid "An item with the same name already exists in {dirname}."
+msgstr "Ett objekt med samma namn finns redan i {dirname}."
 
 msgid "Cancel"
 msgstr "Avbryt"
@@ -55,6 +49,9 @@ msgid "Choose %n file"
 msgid_plural "Choose %n files"
 msgstr[0] "Välj %n fil"
 msgstr[1] "Välj %n filer"
+
+msgid "Close"
+msgstr "Stäng"
 
 msgid "Confirm"
 msgstr "Bekräfta"
@@ -86,6 +83,19 @@ msgstr "Väljare för aktuell vy"
 msgid "Enter your name"
 msgstr "Ange ditt namn"
 
+msgid "Error: {message}"
+msgstr "Fel: {message}"
+
+msgid "Existing files"
+msgstr "Befintliga filer"
+
+msgid ""
+"Existing files and folders will be deleted if not selected. If both are "
+"chosen, they will be renamed."
+msgstr ""
+"Befintliga filer och mappar tas bort om de inte väljs. Om båda väljs byts "
+"deras namn."
+
 msgid "Existing version"
 msgstr "Befintlig version"
 
@@ -113,18 +123,22 @@ msgstr "Gästidentifiering"
 msgid "Home"
 msgstr "Hem"
 
-msgid ""
-"If you select both versions, the incoming file will have a number added to "
-"its name."
-msgstr ""
-"Om du väljer båda versionerna läggs ett nummer till i namnet på den "
-"inkommande filen."
+msgid "Info: {message}"
+msgstr "Information: {message}"
 
 msgid "Invalid folder name."
 msgstr "Ogiltigt mappnamn."
 
 msgid "Invalid name."
 msgstr "Ogiltigt namn."
+
+msgid ""
+"Items with the same name already exist in {dirname}, select which to keep."
+msgstr ""
+"Objekt med samma namn finns redan i {dirname}. Välj vilka som ska behållas."
+
+msgid "Keep both"
+msgstr "Behåll båda"
 
 msgid "Last modified date unknown"
 msgstr "Datumet för senaste ändringen är okänt"
@@ -156,6 +170,9 @@ msgstr "Namn får inte börja med en punkt."
 msgid "New"
 msgstr "Ny"
 
+msgid "New files"
+msgstr "Nya filer"
+
 msgid "New folder"
 msgstr "Ny mapp"
 
@@ -180,20 +197,23 @@ msgstr "Ange ett namn med minst 2 tecken."
 msgid "Recent"
 msgstr "Senaste"
 
+msgid "Replace"
+msgstr "Ersätt"
+
 msgid "Select all checkboxes"
 msgstr "Markera alla kryssrutor"
 
 msgid "Select all entries"
 msgstr "Markera alla poster"
 
-msgid "Select all existing files"
-msgstr "Välj alla befintliga filer"
-
-msgid "Select all new files"
-msgstr "Välj alla nya filer"
-
 msgid "Select entry"
 msgstr "Markera post"
+
+msgid "Select file to keep"
+msgstr "Välj fil att behålla"
+
+msgid "Select files to keep"
+msgstr "Välj filer att behålla"
 
 msgid "Select the row for {nodename}"
 msgstr "Markera raden för {nodename}"
@@ -206,11 +226,11 @@ msgid_plural "Skip %n files"
 msgstr[0] "Hoppa över %n fil"
 msgstr[1] "Hoppa över %n filer"
 
-msgid "Skip this file"
-msgstr "Hoppa över den här filen"
-
 msgid "Submit name"
 msgstr "Bekräfta namnet"
+
+msgid "Success: {message}"
+msgstr "Klart: {message}"
 
 msgid "Undo"
 msgstr "Ångra"
@@ -218,28 +238,24 @@ msgstr "Ångra"
 msgid "Upload some content or sync with your devices!"
 msgstr "Ladda upp innehåll eller synkronisera med dina enheter!"
 
-msgid ""
-"When an incoming folder is selected, any conflicting files within it will "
-"also be overwritten."
-msgstr ""
-"När en inkommande mapp väljs kommer även alla filer i den som har konflikter"
-" att skrivas över."
+msgid "Warning: {message}"
+msgstr "Varning: {message}"
 
 msgid ""
-"When an incoming folder is selected, any files within it will also be "
+"When a new folder is selected, any conflicting files within it will also be "
 "overwritten."
-msgstr ""
-"När en inkommande mapp väljs kommer även alla filer i den att skrivas över."
+msgstr "När en ny mapp väljs skrivs även filer med namnkonflikter i den över."
 
 msgid ""
-"When an incoming folder is selected, the content is written into the "
-"existing folder and a recursive conflict resolution is performed."
-msgstr ""
-"När en inkommande mapp väljs skrivs innehållet in i den befintliga mappen "
-"och konflikterna löses rekursivt."
+"When a new folder is selected, any files within it will also be overwritten."
+msgstr "När en ny mapp väljs skrivs även filerna i den över."
 
-msgid "Which files do you want to keep?"
-msgstr "Vilka filer vill du behålla?"
+msgid ""
+"When a new folder is selected, the content is written into the existing "
+"folder and a recursive conflict resolution is performed."
+msgstr ""
+"När en ny mapp väljs skrivs dess innehåll till den befintliga mappen och "
+"konflikter löses rekursivt."
 
 msgid "You are currently identified as {nickname}."
 msgstr "Du är identifierad som {nickname}."
