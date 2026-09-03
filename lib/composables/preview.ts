@@ -11,11 +11,41 @@ import { generateUrl } from '@nextcloud/router'
 import { ref, toValue, watchEffect } from 'vue'
 import { preloadImage } from '../utils/imagePreload.ts'
 
+/**
+ * CSS custom property controlling FilePicker thumbnail size.
+ * Override on `:root` (e.g. via instance theming) to change size without a public API.
+ */
+const FILE_PICKER_PREVIEW_SIZE_VAR = '--file-picker-preview-size'
+
+/** Default FilePicker thumbnail size in pixels when the CSS variable is unset. */
+const FILE_PICKER_PREVIEW_SIZE_DEFAULT = 32
+
+/**
+ * Resolve the FilePicker preview size from `:root` CSS (or the default).
+ * Used only for preview *request* resolution so fetched images match display size.
+ */
+function getFilePickerPreviewSize(): number {
+	if (typeof window === 'undefined' || typeof getComputedStyle === 'undefined') {
+		return FILE_PICKER_PREVIEW_SIZE_DEFAULT
+	}
+
+	const raw = getComputedStyle(document.documentElement)
+		.getPropertyValue(FILE_PICKER_PREVIEW_SIZE_VAR)
+		.trim()
+	const parsed = Number.parseFloat(raw)
+	if (Number.isFinite(parsed) && parsed > 0) {
+		return Math.round(parsed)
+	}
+
+	return FILE_PICKER_PREVIEW_SIZE_DEFAULT
+}
+
 interface PreviewOptions {
 	/**
-	 * Size of the previews in px
+	 * Size of the previews in px.
+	 * When omitted, uses `--file-picker-preview-size` from CSS (default 32).
 	 *
-	 * @default 32
+	 * @default value of `--file-picker-preview-size` or 32
 	 */
 	size?: number
 	/**
@@ -39,7 +69,13 @@ interface PreviewOptions {
  * @param options Preview options
  */
 export function getPreviewURL(node: INode, options: PreviewOptions = {}) {
-	options = { size: 32, cropPreview: false, mimeFallback: true, ...options }
+	options = {
+		cropPreview: false,
+		mimeFallback: true,
+		...options,
+		// Keep request resolution in sync with CSS display size (avoids blurry upscales)
+		size: options.size ?? getFilePickerPreviewSize(),
+	}
 
 	try {
 		const previewUrl = node.attributes?.previewUrl
