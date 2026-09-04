@@ -1,27 +1,41 @@
-# 
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
-# Sveinn í Felli <sv1@fellsnet.is>, 2025
+# Sveinn í Felli <sv1@fellsnet.is>, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>, 2025\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>, 2026\n"
 "Language-Team: Icelandic (https://app.transifex.com/nextcloud/teams/64236/is/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: is\n"
 "Plural-Forms: nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);\n"
 
-msgid "\"{name}\" is an invalid folder name."
-msgstr "\"{name}\" er ógilt möppuheiti."
+msgid "\"{char}\" is not allowed inside a folder name."
+msgstr "\"{char}\" er er ekki leyfilegt innan í möppuheiti."
 
-msgid "\"{name}\" is not an allowed folder name"
-msgstr "\"{name}\" er ekki leyfilegt möppuheiti"
+msgid "\"{char}\" is not allowed inside a name."
+msgstr "\"{char}\" er er ekki leyfilegt innan í nafni."
 
-msgid "\"/\" is not allowed inside a folder name."
-msgstr "\"/\" er er ekki leyfilegt innan í skráarheiti."
+msgid "\"{extension}\" is not an allowed name."
+msgstr "\"{extension}\" er ekki leyfilegt nafn."
+
+msgid "\"{segment}\" is a reserved name and not allowed for folder names."
+msgstr "\"{segment}\" er frátekið nafn og er ekki leyfilegt sem möppuheiti."
+
+msgid "\"{segment}\" is a reserved name and not allowed."
+msgstr "\"{segment}\" er frátekið nafn og er ekki leyfilegt."
 
 msgid "All files"
 msgstr "Allar skrár"
+
+msgid "An item with the same name already exists in {dirname}."
+msgstr "Atriði með sama heiti eru þegar til staðar í {dirname}."
+
+msgid "Cancel"
+msgstr "Hætta við"
+
+msgid "Cancel the entire operation"
+msgstr "Hætta við alla aðgerðina"
 
 msgid "Choose"
 msgstr "Veldu"
@@ -33,6 +47,15 @@ msgid "Choose %n file"
 msgid_plural "Choose %n files"
 msgstr[0] "Veldu %n skrá"
 msgstr[1] "Veldu %n skrár"
+
+msgid "Close"
+msgstr "Loka"
+
+msgid "Confirm"
+msgstr "Staðfesta"
+
+msgid "Continue"
+msgstr "Halda áfram"
 
 msgid "Copy"
 msgstr "Afrita"
@@ -55,6 +78,28 @@ msgstr "Búa til möppu"
 msgid "Current view selector"
 msgstr "Núverandi val sýnar"
 
+msgid "Enter your name"
+msgstr "Settu inn nafnið þitt"
+
+msgid "Error: {message}"
+msgstr "Villa: {message}"
+
+msgid "Existing files"
+msgstr "Fyrirliggjandi skrár"
+
+msgid ""
+"Existing files and folders will be deleted if not selected. If both are "
+"chosen, they will be renamed."
+msgstr ""
+"Fyrirliggjandi skrám og möppum verður eytt ef þær eru ekki valdar. Ef báðar "
+"eru valdar verða þær endurnefndar."
+
+msgid "Existing version"
+msgstr "Fyrirliggjandi útgáfa"
+
+msgid "Failed to set nickname."
+msgstr "Mistókst að setja gælunafn."
+
 msgid "Favorites"
 msgstr "Eftirlæti"
 
@@ -67,11 +112,35 @@ msgstr "Skrár og möppur sem þú breyttir nýlega birtast hér."
 msgid "Filter file list"
 msgstr "Sía skráalista"
 
-msgid "Folder name cannot be empty."
-msgstr "Möppuheiti má ekki vera tómt."
+msgid "Folder names must not end with \"{extension}\"."
+msgstr "Möppuheiti mega ekki enda á \"{extension}\"."
+
+msgid "Guest identification"
+msgstr "Auðkenning gests"
 
 msgid "Home"
 msgstr "Heim"
+
+msgid "Info: {message}"
+msgstr "Upplýsingar: {message}"
+
+msgid "Invalid folder name."
+msgstr "Ógilt möppuheiti."
+
+msgid "Invalid name."
+msgstr "Ógilt nafn."
+
+msgid ""
+"Items with the same name already exist in {dirname}, select which to keep."
+msgstr ""
+"Atriði með sama heiti eru þegar til staðar í {dirname}, veldu hverjum þeirra"
+" þú vilt halda."
+
+msgid "Keep both"
+msgstr "Halda báðum"
+
+msgid "Last modified date unknown"
+msgstr "Síðasta breytingadagsetning óþekkt"
 
 msgid "Modified"
 msgstr "Breytt"
@@ -85,14 +154,32 @@ msgstr "Færa í {target}"
 msgid "Name"
 msgstr "Heiti"
 
+msgid "Names may be at most 64 characters long."
+msgstr "Nöfn geta mest verið 64 stafa löng."
+
+msgid "Names must not be empty."
+msgstr "Nafn má ekki vera tómt."
+
+msgid "Names must not end with \"{extension}\"."
+msgstr "Nöfn mega ekki enda á \"{extension}\"."
+
+msgid "Names must not start with a dot."
+msgstr "Nöfn mega ekki byrja á punkti."
+
 msgid "New"
 msgstr "Nýtt"
+
+msgid "New files"
+msgstr "Nýjar skrár"
 
 msgid "New folder"
 msgstr "Ný mappa"
 
 msgid "New folder name"
 msgstr "Heiti nýrrar möppu"
+
+msgid "New version"
+msgstr "Ný útgáfa"
 
 msgid "No files in here"
 msgstr "Engar skrár hér"
@@ -103,8 +190,17 @@ msgstr "Engar skrár fundust sem passa við síuna."
 msgid "No matching files"
 msgstr "Engar samsvarandi skrár"
 
+msgid "Please enter a name with at least 2 characters."
+msgstr "Settu inn nafn með a.m.k. 2 stöfum."
+
 msgid "Recent"
 msgstr "Nýlegt"
+
+msgid "Replace"
+msgstr "Skipta út"
+
+msgid "Select all checkboxes"
+msgstr "Velja alla gátreiti"
 
 msgid "Select all entries"
 msgstr "Velja allar færslur"
@@ -112,14 +208,70 @@ msgstr "Velja allar færslur"
 msgid "Select entry"
 msgstr "Velja færslu"
 
+msgid "Select file to keep"
+msgstr "Veldu skrá til að halda"
+
+msgid "Select files to keep"
+msgstr "Veldu skrár til að halda"
+
 msgid "Select the row for {nodename}"
 msgstr "Veldu röðina fyrir {nodename}"
 
 msgid "Size"
 msgstr "Stærð"
 
+msgid "Skip %n file"
+msgid_plural "Skip %n files"
+msgstr[0] "Sleppa %n skrá"
+msgstr[1] "Sleppa %n skrám"
+
+msgid "Submit name"
+msgstr "Senda inn nafn"
+
+msgid "Success: {message}"
+msgstr "Tókst: {message}"
+
 msgid "Undo"
 msgstr "Afturkalla"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "Sendu inn eitthvað efni eða samstilltu við tækin þín!"
+
+msgid "Warning: {message}"
+msgstr "Aðvörun: {message}"
+
+msgid ""
+"When a new folder is selected, any conflicting files within it will also be "
+"overwritten."
+msgstr ""
+"Þegar ný mappa er valin, verður einnig skrifað yfir allar skrár í henni sem "
+"valda árekstrum."
+
+msgid ""
+"When a new folder is selected, any files within it will also be overwritten."
+msgstr ""
+"Þegar ný mappa er valin, verður einnig skrifað yfir allar skrár í henni."
+
+msgid ""
+"When a new folder is selected, the content is written into the existing "
+"folder and a recursive conflict resolution is performed."
+msgstr ""
+"Þegar valin er ný mappa, verður efnið skrifað inn í fyrirliggjandi möppu og "
+"farið í að leysa úr árekstrum."
+
+msgid "You are currently identified as {nickname}."
+msgstr "Þú ert núna auðkennd/ur sem {nickname}."
+
+msgid "You are currently not identified."
+msgstr "Þú ert ekki auðkennd/ur í augnablikinu."
+
+msgid "You cannot leave the name empty."
+msgstr "Þú mátt ekki skilja nafnið eftir autt."
+
+msgid "You need to choose at least one conflict solution"
+msgstr "Þú þarft að velja að minnsta kosti eina lausn á árekstum."
+
+msgid "You need to select at least one version of each file to continue."
+msgstr ""
+"Þú þarft að velja að minnsta kosti eina útgáfu á hverri skrá til að halda "
+"áfram."
