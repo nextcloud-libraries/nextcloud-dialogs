@@ -273,5 +273,5 @@ msgstr "Þú þarft að velja að minnsta kosti eina lausn á árekstum."
 
 msgid "You need to select at least one version of each file to continue."
 msgstr ""
-"Þú þarft að velja að minnsta kosti eina útgáfu á hverri skrá til að halda "
+"Þú þarft að velja að minnsta kosti eina útgáfu af hverri skrá til að halda "
 "áfram."
