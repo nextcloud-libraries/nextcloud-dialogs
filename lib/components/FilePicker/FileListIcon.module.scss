@@ -5,28 +5,46 @@
 /**
  * Icon styling of the file list row preview or fallback icon
  * (leading icon on the name row and header)
+ *
+ * Thumbnail size can be overridden instance-wide via CSS:
+ *   :root { --file-picker-preview-size: 64px; }
  */
 .file-picker__file-icon {
 	position: relative;
-	width: 32px;
-	height: 32px;
-	min-width: 32px;
-	min-height: 32px;
+	width: var(--file-picker-preview-size, 32px);
+	height: var(--file-picker-preview-size, 32px);
+	min-width: var(--file-picker-preview-size, 32px);
+	min-height: var(--file-picker-preview-size, 32px);
 	background-repeat: no-repeat;
 	background-size: contain;
 	border-radius: var(--border-radius-small);
 	// for the fallback
 	display: flex;
 	justify-content: center;
+
+	:global(.material-design-icon),
+	:global(.material-design-icon svg) {
+		width: var(--file-picker-preview-size, 32px);
+		height: var(--file-picker-preview-size, 32px);
+	}
+
+	.file-picker__file-icon-overlay {
+		color: var(--color-primary-element-text);
+		position: absolute;
+		// Center overlay on folder icon with slight offset to match material design folder glyph
+		// ((preview - overlay) / 2) + 2px where overlay is half the preview size
+		inset-block-start: calc(var(--file-picker-preview-size, 32px) * 0.25 + 2px);
+
+		// Overlay is half the preview size (beats NcIconSvgWrapper scoped svg rules)
+		&:global(.icon-vue) :global(svg) {
+			width: calc(var(--file-picker-preview-size, 32px) / 2);
+			height: calc(var(--file-picker-preview-size, 32px) / 2);
+			max-width: calc(var(--file-picker-preview-size, 32px) / 2);
+			max-height: calc(var(--file-picker-preview-size, 32px) / 2);
+		}
+	}
 }
 
 .file-picker__file-icon--primary {
 	color: var(--color-primary-element);
-}
-
-.file-picker__file-icon-overlay {
-	color: var(--color-primary-element-text);
-	position: absolute;
-	// 32px icon size - 16px overlay size + 2px padding to align with folder icon
-	inset-block-start: 10px;
 }

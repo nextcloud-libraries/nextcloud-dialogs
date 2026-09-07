@@ -90,8 +90,10 @@ describe('preview composable', () => {
 		it('supports options', () => {
 			const previewNode = new File(createData('text.txt', 'text/plain'))
 
-			expect(getPreviewURL(previewNode, { size: 16 })?.searchParams.get('x')).toBe('16')
-			expect(getPreviewURL(previewNode, { size: 16 })?.searchParams.get('y')).toBe('16')
+			// Request sizes are snapped to backend-pregenerated 64 / 256
+			expect(getPreviewURL(previewNode, { size: 16 })?.searchParams.get('x')).toBe('64')
+			expect(getPreviewURL(previewNode, { size: 16 })?.searchParams.get('y')).toBe('64')
+			expect(getPreviewURL(previewNode, { size: 65 })?.searchParams.get('x')).toBe('256')
 
 			expect(getPreviewURL(previewNode, { mimeFallback: false })?.searchParams.get('mimeFallback')).toBe('false')
 		})

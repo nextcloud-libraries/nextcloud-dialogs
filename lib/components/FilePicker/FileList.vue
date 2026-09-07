@@ -258,8 +258,8 @@ const fileContainer = ref<HTMLDivElement>()
 <style scoped lang="scss">
 .file-picker {
 	&__header-preview {
-		width: 22px; // 32px - 16px padding of button + 6px padding in file list rows
-		height: 32px;
+		width: var(--file-picker-preview-size, 32px);
+		height: var(--file-picker-preview-size, 32px);
 		flex: 0 0 auto; // do not shrink or grow
 	}
 
@@ -308,7 +308,7 @@ const fileContainer = ref<HTMLDivElement>()
 				flex-direction: row-reverse;
 			}
 			:deep(.button-vue) {
-				padding-inline: 16px 4px;
+				padding-inline: 4px;
 			}
 		}
 		th.row-size :deep(.button-vue__wrapper) {
