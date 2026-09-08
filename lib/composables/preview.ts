@@ -13,9 +13,10 @@ import { preloadImage } from '../utils/imagePreload.ts'
 
 interface PreviewOptions {
 	/**
-	 * Size of the previews in px
+	 * Size of the previews in px.
+	 * Snapped to backend-pregenerated sizes (64 or 256); display size is controlled via CSS.
 	 *
-	 * @default 32
+	 * @default from `--file-picker-preview-size` (≤64 → 64, >64 → 256)
 	 */
 	size?: number
 	/**
@@ -39,7 +40,13 @@ interface PreviewOptions {
  * @param options Preview options
  */
 export function getPreviewURL(node: INode, options: PreviewOptions = {}) {
-	options = { size: 32, cropPreview: false, mimeFallback: true, ...options }
+	options = {
+		cropPreview: false,
+		mimeFallback: true,
+		...options,
+		// Only request pregenerated sizes so large folders do not flood the preview generator
+		size: toPregeneratedPreviewSize(options.size ?? getFilePickerPreviewRequestSize()),
+	}
 
 	try {
 		const previewUrl = node.attributes?.previewUrl
@@ -92,4 +99,52 @@ export function usePreviewURL(node: MaybeRef<INode>, options?: MaybeRef<PreviewO
 		previewURL,
 		previewLoaded,
 	}
+}
+
+/**
+ * CSS custom property controlling FilePicker thumbnail *display* size.
+ * Override on `:root` (e.g. via instance theming) to change size without a public API.
+ */
+const FILE_PICKER_PREVIEW_SIZE_VAR = '--file-picker-preview-size'
+
+/** Backend-pregenerated preview sizes (cheap to serve). */
+const PREGENERATED_PREVIEW_SIZE_SMALL = 64
+const PREGENERATED_PREVIEW_SIZE_LARGE = 256
+
+/**
+ * Cached snapped preview *request* size (64 or 256).
+ * CSS is read once — display size does not change at runtime.
+ */
+let previewRequestSize: number | undefined
+
+/**
+ * Map a display size to a backend-pregenerated request size.
+ * size ≤ 64 → 64, size > 64 → 256 (avoids generating arbitrary preview sizes).
+ *
+ * @param size - Desired display or request size in px
+ */
+function toPregeneratedPreviewSize(size: number): number {
+	return size <= PREGENERATED_PREVIEW_SIZE_SMALL
+		? PREGENERATED_PREVIEW_SIZE_SMALL
+		: PREGENERATED_PREVIEW_SIZE_LARGE
+}
+
+/**
+ * Resolve the preview request size from CSS display size (once), snapped to 64 or 256.
+ */
+function getFilePickerPreviewRequestSize(): number {
+	if (previewRequestSize !== undefined) {
+		return previewRequestSize
+	}
+
+	const raw = getComputedStyle(document.documentElement)
+		.getPropertyValue(FILE_PICKER_PREVIEW_SIZE_VAR)
+		.trim()
+	const parsed = Number.parseFloat(raw)
+	const displaySize = Number.isFinite(parsed) && parsed > 0
+		? Math.round(parsed)
+		: PREGENERATED_PREVIEW_SIZE_SMALL
+
+	previewRequestSize = toPregeneratedPreviewSize(displaySize)
+	return previewRequestSize
 }
