@@ -148,10 +148,10 @@ function getContainerEl(): HTMLElement | null {
 onMounted(() => {
 	// Seed the initial state from the DOM in case the navigation-toggled event
 	// was already fired before this component was mounted.
-	// NcAppNavigation adds `app-navigation--close` when the sidebar is closed.
+	// NcAppNavigation adds `app-navigation--closed` when the sidebar is closed.
 	const navEl = document.querySelector('.app-navigation')
 	if (navEl) {
-		navOpen.value = !navEl.classList.contains('app-navigation--close')
+		navOpen.value = !navEl.classList.contains('app-navigation--closed')
 	}
 
 	subscribe('navigation-toggled', handleNavigationToggle)
