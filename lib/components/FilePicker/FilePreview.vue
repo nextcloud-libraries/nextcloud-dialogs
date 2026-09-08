@@ -6,7 +6,7 @@
 	<div :style="previewLoaded ? { backgroundImage: `url(${previewURL})`} : undefined"
 		:class="fileListIconStyles['file-picker__file-icon']">
 		<template v-if="!previewLoaded">
-			<IconFile v-if="isFile" :size="32" />
+			<IconFile v-if="isFile" />
 			<template v-else>
 				<NcIconSvgWrapper v-if="folderDecorationIcon"
 					:class="fileListIconStyles['file-picker__file-icon-overlay']"
