@@ -1,5 +1,6 @@
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# Ludvík Hobza, 2026
 # Pavel Borecki <pavel.borecki@gmail.com>, 2026
 # 
 msgid ""
@@ -26,22 +27,11 @@ msgstr ""
 msgid "\"{segment}\" is a reserved name and not allowed."
 msgstr "„{segment}“ je vyhrazeným názvem a není možné ho použít."
 
-msgid "%n file conflict"
-msgid_plural "%n files conflict"
-msgstr[0] "%n kolize souboru"
-msgstr[1] "%n kolize souborů"
-msgstr[2] "%n kolizí souborů"
-msgstr[3] "%n kolize souborů"
-
-msgid "%n file conflict in {dirname}"
-msgid_plural "%n file conflicts in {dirname}"
-msgstr[0] "%n kolize souborů v {dirname}"
-msgstr[1] "%n kolize souborů v {dirname}"
-msgstr[2] "%n kolizí souborů v {dirname}"
-msgstr[3] "%n kolize souborů v {dirname}"
-
 msgid "All files"
 msgstr "Veškeré soubory"
+
+msgid "An item with the same name already exists in {dirname}."
+msgstr "Stejně nazvaná položka už existuje v {dirname}."
 
 msgid "Cancel"
 msgstr "Storno"
@@ -61,6 +51,9 @@ msgstr[0] "Zvolte %n soubor"
 msgstr[1] "Zvolte %n soubory"
 msgstr[2] "Zvolte %n souborů"
 msgstr[3] "Zvolte %n soubory"
+
+msgid "Close"
+msgstr "Zavřít"
 
 msgid "Confirm"
 msgstr "Potvrdit"
@@ -92,6 +85,19 @@ msgstr "Výběr stávajícího zobrazení"
 msgid "Enter your name"
 msgstr "Zadejte své jméno"
 
+msgid "Error: {message}"
+msgstr "Chyba: {message}"
+
+msgid "Existing files"
+msgstr "Existující soubory"
+
+msgid ""
+"Existing files and folders will be deleted if not selected. If both are "
+"chosen, they will be renamed."
+msgstr ""
+"Pokud nevybrány, existující soubory a složky budou smazány. Pokud jsou "
+"zvoleny obojí, budou přejmenovány."
+
 msgid "Existing version"
 msgstr "Existující verze"
 
@@ -119,17 +125,22 @@ msgstr "Identifikace hosta"
 msgid "Home"
 msgstr "Domů"
 
-msgid ""
-"If you select both versions, the incoming file will have a number added to "
-"its name."
-msgstr ""
-"Pokud vyberete obě verze, pak k názvu příchozího souboru bude přidáno číslo."
+msgid "Info: {message}"
+msgstr "Info: {message}"
 
 msgid "Invalid folder name."
 msgstr "Neplatný název složky."
 
 msgid "Invalid name."
 msgstr "Neplatný název."
+
+msgid ""
+"Items with the same name already exist in {dirname}, select which to keep."
+msgstr ""
+"Stejně nazvané položku už v {dirname} existují – vyberte, které ponechat."
+
+msgid "Keep both"
+msgstr "Zachovat oba"
 
 msgid "Last modified date unknown"
 msgstr "Datum poslední změny neznámé"
@@ -161,6 +172,9 @@ msgstr "Názvy nemohou začínat tečkou."
 msgid "New"
 msgstr "Nové"
 
+msgid "New files"
+msgstr "Nové soubory"
+
 msgid "New folder"
 msgstr "Nová složka"
 
@@ -185,20 +199,23 @@ msgstr "Zadejte jméno dlouhé alespoň 2 znaky."
 msgid "Recent"
 msgstr "Nedávné"
 
+msgid "Replace"
+msgstr "Nahradit"
+
 msgid "Select all checkboxes"
 msgstr "Vybrat všechny zaškrtávací kolonky"
 
 msgid "Select all entries"
 msgstr "Vybrat všechny položky"
 
-msgid "Select all existing files"
-msgstr "Vybrat všechny existující soubory"
-
-msgid "Select all new files"
-msgstr "Vybrat všechny nové soubory"
-
 msgid "Select entry"
 msgstr "Vybrat položku"
+
+msgid "Select file to keep"
+msgstr "Vyberte soubor, který ponechat"
+
+msgid "Select files to keep"
+msgstr "Vyberte soubory, které ponechat"
 
 msgid "Select the row for {nodename}"
 msgstr "Vybrat řádek pro {nodename}"
@@ -213,11 +230,11 @@ msgstr[1] "Přeskočit %n soubory"
 msgstr[2] "Přeskočit %n souborů"
 msgstr[3] "Přeskočit %n soubory"
 
-msgid "Skip this file"
-msgstr "Přeskočit tento soubor"
-
 msgid "Submit name"
 msgstr "Odeslat jméno"
+
+msgid "Success: {message}"
+msgstr "Úspěch: {message}"
 
 msgid "Undo"
 msgstr "Zpět"
@@ -226,28 +243,27 @@ msgid "Upload some content or sync with your devices!"
 msgstr ""
 "Nahrajte sem nějaký obsah nebo proveďte synchronizaci se svými zařízeními!"
 
-msgid ""
-"When an incoming folder is selected, any conflicting files within it will "
-"also be overwritten."
-msgstr ""
-"Pokud je vybrána příchozí složka, budou v ní také přepsány jakékoli "
-"kolidující soubory."
+msgid "Warning: {message}"
+msgstr "Varování: {message}"
 
 msgid ""
-"When an incoming folder is selected, any files within it will also be "
+"When a new folder is selected, any conflicting files within it will also be "
 "overwritten."
 msgstr ""
-"Když je vybrána příchozí složka, jakékoli soubory v ní budou také přepsány."
+"Pokud je vybrána nová složka, jakékoli kolidující soubory v ní budou také "
+"přepsány."
 
 msgid ""
-"When an incoming folder is selected, the content is written into the "
-"existing folder and a recursive conflict resolution is performed."
+"When a new folder is selected, any files within it will also be overwritten."
 msgstr ""
-"Pokud je vybrána příchozí složka, je obsah zapsán do existující složky a je "
-"provedeno rekurzivní vyřešení kolizí."
+"Pokud je vybrána nová složka, jakékoli soubory v ní budou také přepsány."
 
-msgid "Which files do you want to keep?"
-msgstr "Které soubory chcete ponechat?"
+msgid ""
+"When a new folder is selected, the content is written into the existing "
+"folder and a recursive conflict resolution is performed."
+msgstr ""
+"Pokud je vybrána nová složka, je obsah zapsán do existující složky a je "
+"provedeno rekurzivní vyřešení kolizí."
 
 msgid "You are currently identified as {nickname}."
 msgstr "V tuto chvíli jste identifikováni jako {nickname}."
