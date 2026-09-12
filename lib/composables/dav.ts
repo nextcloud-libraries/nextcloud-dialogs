@@ -66,24 +66,27 @@ export function useDAVFiles(
 	 * Force reload files using the DAV client
 	 */
 	async function loadDAVFiles() {
-		if (abortController) {
-			abortController.abort()
-			abortController = undefined
-		}
-
-		abortController = new AbortController()
+		abortController?.abort()
+		const request = new AbortController()
+		abortController = request
 		isLoading.value = true
+		folder.value = null
+		files.value = []
 		try {
+			let nextFiles: INode[]
+			let nextFolder: IFolder | null = null
 			if (currentView.value === 'favorites') {
-				files.value = await getFavoriteNodes({ client, path: currentPath.value, signal: abortController.signal })
-				folder.value = null
+				nextFiles = await getFavoriteNodes({ client, path: currentPath.value, signal: request.signal })
 			} else if (currentView.value === 'recent') {
-				files.value = await getRecentNodes({ client, signal: abortController.signal })
-				folder.value = null
+				nextFiles = await getRecentNodes({ client, signal: request.signal })
 			} else {
-				const content = await getNodes({ client, path: currentPath.value, signal: abortController.signal })
-				folder.value = content.folder
-				files.value = content.contents
+				const content = await getNodes({ client, path: currentPath.value, signal: request.signal })
+				nextFolder = content.folder
+				nextFiles = content.contents
+			}
+			if (abortController === request) {
+				folder.value = nextFolder
+				files.value = nextFiles
 			}
 		} catch (error) {
 			if (error instanceof Error && error.name === 'AbortError') {
@@ -92,8 +95,10 @@ export function useDAVFiles(
 			}
 			throw error
 		} finally {
-			abortController = undefined
-			isLoading.value = false
+			if (abortController === request) {
+				abortController = undefined
+				isLoading.value = false
+			}
 		}
 	}
 
