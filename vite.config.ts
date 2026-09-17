@@ -1,39 +1,15 @@
-/**
+/*!
  * SPDX-FileCopyrightText: 2023-2024 Nextcloud GmbH and Nextcloud contributors
  * SPDX-License-Identifier: CC0-1.0
  */
+
 import { createLibConfig } from '@nextcloud/vite-config'
-import { readdirSync, readFileSync } from 'fs'
-import { po as poParser } from 'gettext-parser'
-
-const translations = readdirSync('./l10n')
-	.filter((name: string) => name !== 'messages.pot' && name.endsWith('.pot'))
-	.map((file: string) => {
-		const path = './l10n/' + file
-		const language = file.slice(0, -'.pot'.length)
-
-		const po = readFileSync(path)
-		const json = poParser.parse(po)
-		// compress the translations
-		const translations = Object.entries(json.translations[''])
-			.filter(([key]) => key)
-			.map(([, value]) => value)
-
-		return {
-			language,
-			translations,
-		}
-	})
-	.filter(({ translations }) => translations.length > 1)
+import { translations } from './build/translations.ts'
 
 export default createLibConfig({
 	index: 'lib/index.ts',
 }, {
-	config: {
-		build: {
-			cssCodeSplit: false,
-		},
-	},
+	inlineCSS: true,
 	libraryFormats: ['es'],
 	// Packages that should be externalized or bundled
 	nodeExternalsOptions: {
@@ -50,5 +26,8 @@ export default createLibConfig({
 	// Inject our translations
 	replace: {
 		__TRANSLATIONS__: JSON.stringify(translations),
+	},
+	DtsPluginOptions: {
+		parallel: false, // does not work with Vue
 	},
 })
