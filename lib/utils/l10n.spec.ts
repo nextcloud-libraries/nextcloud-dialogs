@@ -13,3 +13,10 @@ test('translation compressing and decompressing is working', async () => {
 	const { t } = await import('./l10n.ts')
 	expect(t('Names must not be empty.')).toMatchInlineSnapshot('"Namen dürfen nicht leer sein."')
 })
+
+// if a language is not available, it should fall back to the base language (e.g. ja-JP -> ja)
+test('properly falls back to base language', async () => {
+	setLanguage('ja')
+	const { t } = await import('./l10n.ts')
+	expect(t('Names must not be empty.')).toMatchInlineSnapshot('"名前は空にできません。"')
+})
