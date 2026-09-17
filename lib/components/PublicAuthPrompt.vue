@@ -38,7 +38,7 @@
 import { defineComponent } from 'vue'
 import { getBuilder } from '@nextcloud/browser-storage'
 import { setGuestNickname } from '@nextcloud/auth'
-import { showError } from '@nextcloud/dialogs'
+import { showError } from '../toast.ts'
 
 import NcDialog from '@nextcloud/vue/components/NcDialog'
 import NcNoteCard from '@nextcloud/vue/components/NcNoteCard'
