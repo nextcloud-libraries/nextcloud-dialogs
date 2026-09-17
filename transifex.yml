@@ -7,3 +7,13 @@ git:
       source_language: en
       source_file: l10n/messages.pot
       translation_files_expression: l10n/<lang>.pot
+settings: 
+  language_mapping:
+    fi_FI: fi
+    hu_HU: hu
+    nb_NO: nb
+    sk_SK: sk
+    th_TH: th
+    ja_JP: ja
+    bg_BG: bg
+    cs_CZ: cs
