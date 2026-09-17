@@ -67,7 +67,7 @@
 						:key="file.fileid || file.path"
 						:allowPickDirectory="allowPickDirectory"
 						:showCheckbox="multiselect"
-						:canPick="(multiselect || selectedFiles.length === 0 || selectedFiles.includes(file)) && (canPick === undefined || canPick(file))"
+						:canPick="canPick === undefined || canPick(file)"
 						:selected="selectedFiles.includes(file)"
 						:node="file"
 						:cropImagePreviews="cropImagePreviews"
