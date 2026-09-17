@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 tr.file-picker__row {
-	height: var(--row-height, 50px);
+	// 18px vertical padding around the preview (50px at the default 32px icon size)
+	height: var(--row-height, calc(var(--file-picker-preview-size, 32px) + 18px));
 
 	td {
 		cursor: pointer;
