@@ -68,20 +68,20 @@ export function useDAVFiles(
 	async function loadDAVFiles() {
 		if (abortController) {
 			abortController.abort()
-			abortController = undefined
 		}
 
-		abortController = new AbortController()
+		const thisAbortController = new AbortController()
+		abortController = thisAbortController
 		isLoading.value = true
 		try {
 			if (currentView.value === 'favorites') {
-				files.value = await getFavoriteNodes({ client, path: currentPath.value, signal: abortController.signal })
+				files.value = await getFavoriteNodes({ client, path: currentPath.value, signal: thisAbortController.signal })
 				folder.value = null
 			} else if (currentView.value === 'recent') {
-				files.value = await getRecentNodes({ client, signal: abortController.signal })
+				files.value = await getRecentNodes({ client, signal: thisAbortController.signal })
 				folder.value = null
 			} else {
-				const content = await getNodes({ client, path: currentPath.value, signal: abortController.signal })
+				const content = await getNodes({ client, path: currentPath.value, signal: thisAbortController.signal })
 				folder.value = content.folder
 				files.value = content.contents
 			}
@@ -92,8 +92,16 @@ export function useDAVFiles(
 			}
 			throw error
 		} finally {
-			abortController = undefined
-			isLoading.value = false
+			// Only clear the shared loading state if this invocation is still the
+			// current load. When a newer loadDAVFiles() has already aborted and
+			// superseded this one, resetting here would flip `isLoading` to false
+			// (and drop the newer abort controller) while the newer load is still
+			// in flight and `folder` is still null — which lets the FilePicker
+			// confirm with an empty selection and throw "No nodes selected".
+			if (abortController === thisAbortController) {
+				abortController = undefined
+				isLoading.value = false
+			}
 		}
 	}
 
