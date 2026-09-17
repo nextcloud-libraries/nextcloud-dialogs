@@ -133,6 +133,121 @@ describe('FilePicker FileList', () => {
 		expect(selectAll.attributes('modelvalue')).toBe('true')
 	})
 
+	describe('node selection', () => {
+		it('selects a node on click', async () => {
+			const nodes = [...exampleNodes]
+			const wrapper = mount(FileList, {
+				props: {
+					currentView: 'files',
+					multiselect: false,
+					allowPickDirectory: false,
+					loading: false,
+					files: nodes,
+					selectedFiles: [],
+					path: '/',
+				},
+			})
+
+			await nextTick()
+
+			await wrapper.find('[data-filename="a-file.txt"]').trigger('click')
+
+			expect(wrapper.emitted('update:selectedFiles')).toEqual([[[nodes[0]]]])
+		})
+
+		it('replaces the selection if multiselect is `false`', async () => {
+			const nodes = [...exampleNodes]
+			const wrapper = mount(FileList, {
+				props: {
+					currentView: 'files',
+					multiselect: false,
+					allowPickDirectory: false,
+					loading: false,
+					files: nodes,
+					// "a-file.txt" is already selected
+					selectedFiles: [nodes[0]!],
+					path: '/',
+				},
+			})
+
+			await nextTick()
+
+			// the other file is still pickable
+			expect(wrapper.find('[data-filename="b-file.txt"]').classes()).not.toContain('file-picker__row--not-pickable')
+
+			await wrapper.find('[data-filename="b-file.txt"]').trigger('click')
+
+			// selecting it replaces the previous selection
+			expect(wrapper.emitted('update:selectedFiles')).toEqual([[[nodes[3]]]])
+		})
+
+		it('unselects a selected node on click if multiselect is `false`', async () => {
+			const nodes = [...exampleNodes]
+			const wrapper = mount(FileList, {
+				props: {
+					currentView: 'files',
+					multiselect: false,
+					allowPickDirectory: false,
+					loading: false,
+					files: nodes,
+					selectedFiles: [nodes[0]!],
+					path: '/',
+				},
+			})
+
+			await nextTick()
+
+			await wrapper.find('[data-filename="a-file.txt"]').trigger('click')
+
+			expect(wrapper.emitted('update:selectedFiles')).toEqual([[[]]])
+		})
+
+		it('adds to the selection if multiselect is `true`', async () => {
+			const nodes = [...exampleNodes]
+			const wrapper = mount(FileList, {
+				props: {
+					currentView: 'files',
+					multiselect: true,
+					allowPickDirectory: false,
+					loading: false,
+					files: nodes,
+					selectedFiles: [nodes[0]!],
+					path: '/',
+				},
+			})
+
+			await nextTick()
+
+			await wrapper.find('[data-filename="b-file.txt"]').trigger('click')
+
+			expect(wrapper.emitted('update:selectedFiles')).toEqual([[[nodes[0], nodes[3]]]])
+		})
+
+		it('does not select nodes rejected by `canPick`', async () => {
+			const nodes = [...exampleNodes]
+			const wrapper = mount(FileList, {
+				props: {
+					currentView: 'files',
+					multiselect: false,
+					allowPickDirectory: false,
+					loading: false,
+					files: nodes,
+					selectedFiles: [],
+					path: '/',
+					canPick: (node) => node.basename !== 'b-file.txt',
+				},
+			})
+
+			await nextTick()
+
+			expect(wrapper.find('[data-filename="b-file.txt"]').classes()).toContain('file-picker__row--not-pickable')
+
+			await wrapper.find('[data-filename="b-file.txt"]').trigger('click')
+
+			expect(wrapper.emitted('update:selectedFiles')).toBeUndefined()
+		})
+	})
+
 	describe('file list sorting', () => {
 		it('is sorted initially by name', async () => {
 			const nodes = [...exampleNodes]
