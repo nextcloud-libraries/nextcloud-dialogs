@@ -1,0 +1,271 @@
+# Translators:
+# John Molakvoæ <skjnldsv@protonmail.com>, 2023
+# Uchiyama Takuya <uchiyama@j-wmc.com>, 2023
+# 7116d5df1b9f3abf16a6e70acb923b11_d03b69d, 2023
+# kojima.imamura, 2024
+# Takafumi AKAMATSU, 2024
+# devi, 2024
+# kshimohata, 2025
+# Nobuhiro Shintaku, 2026
+# Katsuhiro Shimohata, 2026
+# 
+msgid ""
+msgstr ""
+"Last-Translator: Katsuhiro Shimohata, 2026\n"
+"Language-Team: Japanese (Japan) (https://app.transifex.com/nextcloud/teams/64236/ja_JP/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: ja_JP\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "\"{char}\" is not allowed inside a folder name."
+msgstr "フォルダー名に \"{char}\" を使用することはできません。"
+
+msgid "\"{char}\" is not allowed inside a name."
+msgstr "名前に \"{char}\" を使用することはできません。"
+
+msgid "\"{extension}\" is not an allowed name."
+msgstr "\"{extension}\" は許可された名前ではありません。"
+
+msgid "\"{segment}\" is a reserved name and not allowed for folder names."
+msgstr "\"{segment}\" は予約名のため、使用できません。"
+
+msgid "\"{segment}\" is a reserved name and not allowed."
+msgstr "\"{segment}\" は予約名のため、使用できません。"
+
+msgid "All files"
+msgstr "すべてのファイル"
+
+msgid "An item with the same name already exists in {dirname}."
+msgstr "{dirname}には、同じ名前のアイテムがすでに存在します。"
+
+msgid "Cancel"
+msgstr "キャンセル"
+
+msgid "Cancel the entire operation"
+msgstr "すべての操作をキャンセル"
+
+msgid "Choose"
+msgstr "選択"
+
+msgid "Choose {file}"
+msgstr "{file} を選択"
+
+msgid "Choose %n file"
+msgid_plural "Choose %n files"
+msgstr[0] "%n 個のファイルを選択"
+
+msgid "Close"
+msgstr "閉じる"
+
+msgid "Confirm"
+msgstr "確認"
+
+msgid "Continue"
+msgstr "続行"
+
+msgid "Copy"
+msgstr "コピー"
+
+msgid "Copy to {target}"
+msgstr "{target} にコピー"
+
+msgid "Could not create the new folder"
+msgstr "新しいフォルダーを作成できませんでした"
+
+msgid "Could not load files settings"
+msgstr "ファイル設定を読み込めませんでした"
+
+msgid "Could not load files views"
+msgstr "ファイルビューを読み込めませんでした"
+
+msgid "Create directory"
+msgstr "ディレクトリを作成"
+
+msgid "Current view selector"
+msgstr "現在のビュー選択"
+
+msgid "Enter your name"
+msgstr "名前を入力してください"
+
+msgid "Error: {message}"
+msgstr "エラー：{message}"
+
+msgid "Existing files"
+msgstr "現行ファイル"
+
+msgid ""
+"Existing files and folders will be deleted if not selected. If both are "
+"chosen, they will be renamed."
+msgstr "既存のファイルとフォルダは、選択されていない場合、削除されます。両方を選択した場合は、名前が変更されます。"
+
+msgid "Existing version"
+msgstr "現行バージョン"
+
+msgid "Failed to set nickname."
+msgstr "ニックネームの設定に失敗しました。"
+
+msgid "Favorites"
+msgstr "お気に入り"
+
+msgid "Files and folders you mark as favorite will show up here."
+msgstr "お気に入りとしてマークしたファイルとフォルダーがここに表示されます。"
+
+msgid "Files and folders you recently modified will show up here."
+msgstr "最近変更したファイルとフォルダーがここに表示されます。"
+
+msgid "Filter file list"
+msgstr "ファイルのリストをフィルター"
+
+msgid "Folder names must not end with \"{extension}\"."
+msgstr "フォルダー名の末尾に \"{extension}\" を使用できません。"
+
+msgid "Guest identification"
+msgstr "ゲスト識別"
+
+msgid "Home"
+msgstr "ホーム"
+
+msgid "Info: {message}"
+msgstr "情報：{message}"
+
+msgid "Invalid folder name."
+msgstr "フォルダー名が無効です。"
+
+msgid "Invalid name."
+msgstr "無効な名前です。"
+
+msgid ""
+"Items with the same name already exist in {dirname}, select which to keep."
+msgstr "{dirname} に同じ名前の項目がすでに存在します。どちらを残すか選択してください。"
+
+msgid "Keep both"
+msgstr "両方とも残す"
+
+msgid "Last modified date unknown"
+msgstr "最終更新日不明"
+
+msgid "Modified"
+msgstr "変更済み"
+
+msgid "Move"
+msgstr "移動"
+
+msgid "Move to {target}"
+msgstr "{target} に移動"
+
+msgid "Name"
+msgstr "名前"
+
+msgid "Names may be at most 64 characters long."
+msgstr "名前は最大64文字です。"
+
+msgid "Names must not be empty."
+msgstr "名前は空にできません。"
+
+msgid "Names must not end with \"{extension}\"."
+msgstr "名前の末尾に \"{extension}\" を使用できません。"
+
+msgid "Names must not start with a dot."
+msgstr "ドットで始まる名前は使用できません。"
+
+msgid "New"
+msgstr "新規作成"
+
+msgid "New files"
+msgstr "新しいファイル"
+
+msgid "New folder"
+msgstr "新しいフォルダー"
+
+msgid "New folder name"
+msgstr "新しいフォルダーの名前"
+
+msgid "New version"
+msgstr "新バージョン"
+
+msgid "No files in here"
+msgstr "ファイルがありません"
+
+msgid "No files matching your filter were found."
+msgstr "フィルターに一致するファイルは見つかりませんでした。"
+
+msgid "No matching files"
+msgstr "一致するファイルはありません"
+
+msgid "Please enter a name with at least 2 characters."
+msgstr "名前は2文字以上を入力してください。"
+
+msgid "Recent"
+msgstr "最近"
+
+msgid "Replace"
+msgstr "入れ替える"
+
+msgid "Select all checkboxes"
+msgstr "すべてのチェックボックスを選択"
+
+msgid "Select all entries"
+msgstr "すべてのエントリを選択"
+
+msgid "Select entry"
+msgstr "エントリを選択"
+
+msgid "Select file to keep"
+msgstr "残すファイルを選択してください"
+
+msgid "Select files to keep"
+msgstr "残すファイルを選択してください"
+
+msgid "Select the row for {nodename}"
+msgstr "{nodename} の行を選択"
+
+msgid "Size"
+msgstr "サイズ"
+
+msgid "Skip %n file"
+msgid_plural "Skip %n files"
+msgstr[0] "%n 個のファイルをスキップ"
+
+msgid "Submit name"
+msgstr "名前を送信する"
+
+msgid "Success: {message}"
+msgstr "成功：{message}"
+
+msgid "Undo"
+msgstr "元に戻す"
+
+msgid "Upload some content or sync with your devices!"
+msgstr "コンテンツをアップロードするか、デバイスと同期してください！"
+
+msgid "Warning: {message}"
+msgstr "警告：{message}"
+
+msgid ""
+"When a new folder is selected, any conflicting files within it will also be "
+"overwritten."
+msgstr "新しいフォルダーが選択されると、そのフォルダー内にある競合するファイルもすべて上書きされます。"
+
+msgid ""
+"When a new folder is selected, any files within it will also be overwritten."
+msgstr "新しいフォルダーを選択すると、そのフォルダー内のファイルもすべて上書きされます。"
+
+msgid ""
+"When a new folder is selected, the content is written into the existing "
+"folder and a recursive conflict resolution is performed."
+msgstr "新しいフォルダーが選択されると、その内容が既存のフォルダーに書き込まれ、再帰的な競合解決が行われます。"
+
+msgid "You are currently identified as {nickname}."
+msgstr "現在、{nickname}として識別されています。"
+
+msgid "You are currently not identified."
+msgstr "現在あなたは識別されていません。"
+
+msgid "You cannot leave the name empty."
+msgstr "名前を空にすることはできません。"
+
+msgid "You need to choose at least one conflict solution"
+msgstr "少なくとも1つの競合ソリューションを選択する必要があります"
+
+msgid "You need to select at least one version of each file to continue."
+msgstr "続行するには、各ファイルのバージョンを少なくとも1つ選択する必要があります。"
