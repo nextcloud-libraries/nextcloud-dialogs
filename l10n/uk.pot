@@ -159,7 +159,7 @@ msgid "Names may be at most 64 characters long."
 msgstr "Імена мають мати довжину не більше 64 символів."
 
 msgid "Names must not be empty."
-msgstr "Ім'я не може бути порожнє."
+msgstr "Назва не може бути порожня."
 
 msgid "Names must not end with \"{extension}\"."
 msgstr "Назва не може закінчуватися на \"{extension}\"."
