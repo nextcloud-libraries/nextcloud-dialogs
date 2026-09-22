@@ -1,9 +1,10 @@
 # Translators:
 # O St, 2026
+# Alexander Seidarbit, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: O St, 2026\n"
+"Last-Translator: Alexander Seidarbit, 2026\n"
 "Language-Team: Ukrainian (https://app.transifex.com/nextcloud/teams/64236/uk/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: uk\n"
@@ -99,7 +100,7 @@ msgid "Existing version"
 msgstr "Наявна версія"
 
 msgid "Failed to set nickname."
-msgstr "Не вдалося встановити псевдо."
+msgstr "Не вдалося налаштувати нік-ім'я."
 
 msgid "Favorites"
 msgstr "Із зірочкою"
