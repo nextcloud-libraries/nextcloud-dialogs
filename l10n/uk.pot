@@ -162,10 +162,10 @@ msgid "Names must not be empty."
 msgstr "Ім'я не може бути порожнє."
 
 msgid "Names must not end with \"{extension}\"."
-msgstr "Ім'я не може закінчуватися на \"{extension}\"."
+msgstr "Назва не може закінчуватися на \"{extension}\"."
 
 msgid "Names must not start with a dot."
-msgstr "Ім'я не може починатися з крапки."
+msgstr "Назви не можуть починатися з крапки."
 
 msgid "New"
 msgstr "Новий"
