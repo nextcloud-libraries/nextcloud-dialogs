@@ -267,7 +267,7 @@ msgid "You are currently not identified."
 msgstr "Вас не ідентифіковано."
 
 msgid "You cannot leave the name empty."
-msgstr "Потрібно зазначити ім'я."
+msgstr "Ви не можете залишити ім'я порожнім."
 
 msgid "You need to choose at least one conflict solution"
 msgstr "Треб вибрати щонайменше одне розв'язання конфлікту"
