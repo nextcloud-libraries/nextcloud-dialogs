@@ -29,7 +29,7 @@ msgid "All files"
 msgstr "Всі файли"
 
 msgid "An item with the same name already exists in {dirname}."
-msgstr "Об'єкт з таким ім'ям присутній у {dirname}."
+msgstr "Об'єкт з таким же самим ім'ям присутній у {dirname}."
 
 msgid "Cancel"
 msgstr "Скасувати"
