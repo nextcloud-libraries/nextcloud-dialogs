@@ -115,7 +115,7 @@ msgid "Filter file list"
 msgstr "Фільтрувати список файлів"
 
 msgid "Folder names must not end with \"{extension}\"."
-msgstr "Ім'я каталогу не може закінчуватися на \"{extension}\"."
+msgstr "Назви каталогу не можуть закінчуватися на \"{extension}\"."
 
 msgid "Guest identification"
 msgstr "Ім'я для гостя"
