@@ -141,7 +141,7 @@ msgid "Keep both"
 msgstr "Зберегти обидва"
 
 msgid "Last modified date unknown"
-msgstr "Дата останньої зміни невідома"
+msgstr "Дата останньої модифікації невідома"
 
 msgid "Modified"
 msgstr "Змінено"
