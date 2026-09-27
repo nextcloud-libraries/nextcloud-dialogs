@@ -1,12 +1,12 @@
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
-# Café Tango, 2023
 # Rasmus Terkelsen, 2025
-# Andi Chandler <andi@gowling.com>, 2026
+# Andi Chandler <andi@gowling.com>, 2025
+# Café Tango, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Andi Chandler <andi@gowling.com>, 2026\n"
+"Last-Translator: Café Tango, 2026\n"
 "Language-Team: English (United Kingdom) (https://app.transifex.com/nextcloud/teams/64236/en_GB/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: en_GB\n"
@@ -27,18 +27,11 @@ msgstr "\"{segment}\" is a reserved name and cannot be used for folder names."
 msgid "\"{segment}\" is a reserved name and not allowed."
 msgstr "\"{segment}\" is a reserved name and not allowed."
 
-msgid "%n file conflict"
-msgid_plural "%n files conflict"
-msgstr[0] "%n file conflict"
-msgstr[1] "%n files conflict"
-
-msgid "%n file conflict in {dirname}"
-msgid_plural "%n file conflicts in {dirname}"
-msgstr[0] "%n file conflict in {dirname}"
-msgstr[1] "%n file conflicts in {dirname}"
-
 msgid "All files"
 msgstr "All files"
+
+msgid "An item with the same name already exists in {dirname}."
+msgstr "An item with the same name already exists in {dirname}."
 
 msgid "Cancel"
 msgstr "Cancel"
@@ -56,6 +49,9 @@ msgid "Choose %n file"
 msgid_plural "Choose %n files"
 msgstr[0] "Choose %n file"
 msgstr[1] "Choose %n files"
+
+msgid "Close"
+msgstr "Close"
 
 msgid "Confirm"
 msgstr "Confirm"
@@ -87,6 +83,19 @@ msgstr "Current view selector"
 msgid "Enter your name"
 msgstr "Enter your name"
 
+msgid "Error: {message}"
+msgstr "Error: {message}"
+
+msgid "Existing files"
+msgstr "Existing files"
+
+msgid ""
+"Existing files and folders will be deleted if not selected. If both are "
+"chosen, they will be renamed."
+msgstr ""
+"Existing files and folders will be deleted if not selected. If both are "
+"chosen, they will be renamed."
+
 msgid "Existing version"
 msgstr "Existing version"
 
@@ -114,18 +123,22 @@ msgstr "Guest identification"
 msgid "Home"
 msgstr "Home"
 
-msgid ""
-"If you select both versions, the incoming file will have a number added to "
-"its name."
-msgstr ""
-"If you select both versions, the incoming file will have a number added to "
-"its name."
+msgid "Info: {message}"
+msgstr "Info: {message}"
 
 msgid "Invalid folder name."
 msgstr "Invalid folder name."
 
 msgid "Invalid name."
 msgstr "Invalid name."
+
+msgid ""
+"Items with the same name already exist in {dirname}, select which to keep."
+msgstr ""
+"Items with the same name already exist in {dirname}, select which to keep."
+
+msgid "Keep both"
+msgstr "Keep both"
 
 msgid "Last modified date unknown"
 msgstr "Last modified date unknown"
@@ -157,6 +170,9 @@ msgstr "Names must not start with a dot."
 msgid "New"
 msgstr "New"
 
+msgid "New files"
+msgstr "New files"
+
 msgid "New folder"
 msgstr "New folder"
 
@@ -181,20 +197,23 @@ msgstr "Please enter a name with at least 2 characters."
 msgid "Recent"
 msgstr "Recent"
 
+msgid "Replace"
+msgstr "Replace"
+
 msgid "Select all checkboxes"
 msgstr "Select all checkboxes"
 
 msgid "Select all entries"
 msgstr "Select all entries"
 
-msgid "Select all existing files"
-msgstr "Select all existing files"
-
-msgid "Select all new files"
-msgstr "Select all new files"
-
 msgid "Select entry"
 msgstr "Select entry"
+
+msgid "Select file to keep"
+msgstr "Select file to keep"
+
+msgid "Select files to keep"
+msgstr "Select files to keep"
 
 msgid "Select the row for {nodename}"
 msgstr "Select the row for {nodename}"
@@ -207,11 +226,11 @@ msgid_plural "Skip %n files"
 msgstr[0] "Skip %n file"
 msgstr[1] "Skip %n files"
 
-msgid "Skip this file"
-msgstr "Skip this file"
-
 msgid "Submit name"
 msgstr "Submit name"
+
+msgid "Success: {message}"
+msgstr "Success: {message}"
 
 msgid "Undo"
 msgstr "Undo"
@@ -219,29 +238,27 @@ msgstr "Undo"
 msgid "Upload some content or sync with your devices!"
 msgstr "Upload some content or sync with your devices!"
 
-msgid ""
-"When an incoming folder is selected, any conflicting files within it will "
-"also be overwritten."
-msgstr ""
-"When an incoming folder is selected, any conflicting files within it will "
-"also be overwritten."
+msgid "Warning: {message}"
+msgstr "Warning: {message}"
 
 msgid ""
-"When an incoming folder is selected, any files within it will also be "
+"When a new folder is selected, any conflicting files within it will also be "
 "overwritten."
 msgstr ""
-"When an incoming folder is selected, any files within it will also be "
+"When a new folder is selected, any conflicting files within it will also be "
 "overwritten."
 
 msgid ""
-"When an incoming folder is selected, the content is written into the "
-"existing folder and a recursive conflict resolution is performed."
+"When a new folder is selected, any files within it will also be overwritten."
 msgstr ""
-"When an incoming folder is selected, the content is written into the "
-"existing folder and a recursive conflict resolution is performed."
+"When a new folder is selected, any files within it will also be overwritten."
 
-msgid "Which files do you want to keep?"
-msgstr "Which files do you want to keep?"
+msgid ""
+"When a new folder is selected, the content is written into the existing "
+"folder and a recursive conflict resolution is performed."
+msgstr ""
+"When a new folder is selected, the content is written into the existing "
+"folder and a recursive conflict resolution is performed."
 
 msgid "You are currently identified as {nickname}."
 msgstr "You are currently identified as {nickname}."
