@@ -25,16 +25,11 @@ msgstr "「{segment}」為保留名稱，不能用作資料夾名稱。"
 msgid "\"{segment}\" is a reserved name and not allowed."
 msgstr "「{segment}」是一個保留名稱，不能使用。"
 
-msgid "%n file conflict"
-msgid_plural "%n files conflict"
-msgstr[0] "%n 檔案衝突"
-
-msgid "%n file conflict in {dirname}"
-msgid_plural "%n file conflicts in {dirname}"
-msgstr[0] "{dirname} 中有 %n 個檔案衝突"
-
 msgid "All files"
 msgstr "所有檔案"
+
+msgid "An item with the same name already exists in {dirname}."
+msgstr "{dirname} 中已有同名項目。"
 
 msgid "Cancel"
 msgstr "取消"
@@ -51,6 +46,9 @@ msgstr "選擇 {file}"
 msgid "Choose %n file"
 msgid_plural "Choose %n files"
 msgstr[0] "選擇 %n 個檔案"
+
+msgid "Close"
+msgstr "關閉"
 
 msgid "Confirm"
 msgstr "確認"
@@ -82,6 +80,17 @@ msgstr "目前視圖選擇器"
 msgid "Enter your name"
 msgstr "輸入您的名字"
 
+msgid "Error: {message}"
+msgstr "錯誤：{message}"
+
+msgid "Existing files"
+msgstr "現有檔案"
+
+msgid ""
+"Existing files and folders will be deleted if not selected. If both are "
+"chosen, they will be renamed."
+msgstr "如未選取，現有檔案及資料夾將被刪除。如兩者均被選取，則會重新命名。"
+
 msgid "Existing version"
 msgstr "現有的版本"
 
@@ -109,16 +118,21 @@ msgstr "訪客身份識別"
 msgid "Home"
 msgstr "首頁"
 
-msgid ""
-"If you select both versions, the incoming file will have a number added to "
-"its name."
-msgstr "如果您選擇兩個版本，傳入的檔案名稱將會附加一個數字。"
+msgid "Info: {message}"
+msgstr "資訊：{message}"
 
 msgid "Invalid folder name."
 msgstr "無效的資料夾名稱。"
 
 msgid "Invalid name."
 msgstr "無效的名字。"
+
+msgid ""
+"Items with the same name already exist in {dirname}, select which to keep."
+msgstr "{dirname} 中已有同名項目，請選擇要保留的項目。"
+
+msgid "Keep both"
+msgstr "兩者皆保留"
 
 msgid "Last modified date unknown"
 msgstr "最後的修改日期不詳"
@@ -150,6 +164,9 @@ msgstr "名稱不得以點開頭。"
 msgid "New"
 msgstr "新"
 
+msgid "New files"
+msgstr "新檔案"
+
 msgid "New folder"
 msgstr "新資料夾"
 
@@ -174,20 +191,23 @@ msgstr "請輸入至少 2 個字符的名稱。"
 msgid "Recent"
 msgstr "最近"
 
+msgid "Replace"
+msgstr "取代"
+
 msgid "Select all checkboxes"
 msgstr "選擇所有復選框"
 
 msgid "Select all entries"
 msgstr "選擇所有項目"
 
-msgid "Select all existing files"
-msgstr "選擇所有現有的檔案"
-
-msgid "Select all new files"
-msgstr "選擇所有新檔案"
-
 msgid "Select entry"
 msgstr "選擇項目"
+
+msgid "Select file to keep"
+msgstr "選擇要保留的檔案"
+
+msgid "Select files to keep"
+msgstr "選擇要保留的檔案"
 
 msgid "Select the row for {nodename}"
 msgstr "選擇 {nodename} 的列"
@@ -199,11 +219,11 @@ msgid "Skip %n file"
 msgid_plural "Skip %n files"
 msgstr[0] "跳過 %n 個檔案"
 
-msgid "Skip this file"
-msgstr "跳過此檔案"
-
 msgid "Submit name"
 msgstr "遞交名字"
+
+msgid "Success: {message}"
+msgstr "成功：{message}"
 
 msgid "Undo"
 msgstr "還原"
@@ -211,18 +231,22 @@ msgstr "還原"
 msgid "Upload some content or sync with your devices!"
 msgstr "上傳一些內容或與您的裝置同步！"
 
-msgid ""
-"When an incoming folder is selected, any conflicting files within it will "
-"also be overwritten."
-msgstr "選取傳入資料夾時，其中任何衝突的檔案也將被覆蓋。"
+msgid "Warning: {message}"
+msgstr "警告：{message}"
 
 msgid ""
-"When an incoming folder is selected, the content is written into the "
-"existing folder and a recursive conflict resolution is performed."
-msgstr "當選取傳入資料夾時，內容將寫入現有資料夾，並執行遞歸衝突解決。"
+"When a new folder is selected, any conflicting files within it will also be "
+"overwritten."
+msgstr "選取新資料夾時，其中任何有衝突的檔案亦會被覆寫。"
 
-msgid "Which files do you want to keep?"
-msgstr "你想保留哪些檔案？"
+msgid ""
+"When a new folder is selected, any files within it will also be overwritten."
+msgstr "選取新資料夾時，其中的所有檔案亦會被覆寫。"
+
+msgid ""
+"When a new folder is selected, the content is written into the existing "
+"folder and a recursive conflict resolution is performed."
+msgstr "選取新資料夾時，其內容會寫入現有資料夾，並以遞迴方式處理衝突。"
 
 msgid "You are currently identified as {nickname}."
 msgstr "您目前被識別為 {nickname}。"
