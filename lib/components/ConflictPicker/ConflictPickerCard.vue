@@ -93,7 +93,7 @@ const showPreview = computed(() => !!props.preview && !previewFailed.value)
 	</span>
 </template>
 
-<style module lang="scss">
+<style module scoped lang="scss">
 $height: 64px;
 
 .card {
