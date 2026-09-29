@@ -331,7 +331,7 @@ function onSubmit() {
 	</NcDialog>
 </template>
 
-<style module lang="scss">
+<style module scoped lang="scss">
 .picker {
 	--margin: 36px;
 	--secondary-margin: 18px;
