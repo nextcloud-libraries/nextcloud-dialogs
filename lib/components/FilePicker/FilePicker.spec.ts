@@ -96,4 +96,18 @@ describe('FilePicker', () => {
 		// The unpickable folder must not be passed as a selected node
 		expect(nodes).toEqual([])
 	})
+
+	it('disables confirmation when the loaded folder does not match the displayed path', () => {
+		const wrapper = shallowMount(FilePicker, {
+			props: {
+				name: 'Test picker',
+				path: '/Destination',
+				allowPickDirectory: true,
+				buttons: [{ label: 'Pick', callback: () => {} }],
+			},
+		})
+
+		const buttons = wrapper.getComponent({ name: 'NcDialog' }).props('buttons') as Array<{ disabled: boolean }>
+		expect(buttons[0]!.disabled).toBe(true)
+	})
 })

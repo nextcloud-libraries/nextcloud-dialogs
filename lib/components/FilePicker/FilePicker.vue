@@ -241,7 +241,9 @@ const dialogButtons = computed(() => {
 
 	return buttons.map((button) => ({
 		...button,
-		disabled: button.disabled || isLoading.value,
+		disabled: button.disabled || isLoading.value
+			|| (props.allowPickDirectory && currentView.value === 'files'
+				&& (!currentFolder.value || currentFolder.value.path !== currentPath.value)),
 		callback: () => {
 			// lock default close handling
 			isHandlingCallback = true
