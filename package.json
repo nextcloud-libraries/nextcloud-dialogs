@@ -71,7 +71,7 @@
     "p-queue": "^9.3.3",
     "toastify-js": "^1.12.0",
     "vue-frag": "^1.4.3",
-    "webdav": "^5.10.0"
+    "webdav": "^5.11.0"
   },
   "devDependencies": {
     "@mdi/svg": "^7.4.47",
