@@ -1,6 +1,7 @@
 {
   "extends": "@vue/tsconfig/tsconfig.dom.json",
   "compilerOptions": {
+    "allowImportingTsExtensions": true,
     "allowSyntheticDefaultImports": true,
     "declaration": true,
     "esModuleInterop": true,
