@@ -48,6 +48,13 @@ import { showMessage, showInfo, showSuccess, showWarning, showError } from '@nex
 import '@nextcloud/dialogs/style.css'
 ```
 
+If your app only needs toasts, you can import them from the `@nextcloud/dialogs/toast` entry point instead.
+(Note: Webpack issue - bundler might include other components source, e.g. the FilePicker, in the app):
+
+```js
+import { showError } from '@nextcloud/dialogs/toast'
+```
+
 If you using `@nextcloud/dialogs >= 4.0` you don't need any svg or scss loader in you projects anymore.
 
 There are different toast styles available, that are exposed in separate functions:

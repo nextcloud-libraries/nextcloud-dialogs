@@ -17,6 +17,10 @@
       "types": "./dist/index.d.mts",
       "import": "./dist/index.mjs"
     },
+    "./toast": {
+      "types": "./dist/toast.d.mts",
+      "import": "./dist/toast.mjs"
+    },
     "./style.css": {
       "import": "./dist/style.css"
     }

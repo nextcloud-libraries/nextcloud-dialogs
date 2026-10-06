@@ -8,6 +8,7 @@ import { translations } from './build/translations.ts'
 
 export default createLibConfig({
 	index: 'lib/index.ts',
+	toast: 'lib/toast.ts',
 }, {
 	inlineCSS: true,
 	libraryFormats: ['es'],
