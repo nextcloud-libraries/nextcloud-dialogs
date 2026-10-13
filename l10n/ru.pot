@@ -9,7 +9,6 @@
 # Александр, 2026
 # ashed <craysy@gmail.com>, 2026
 # Artem Baleevskih <catsemaofficial@gmail.com>, 2026
-# den bazik, 2026
 # NGC206, 2026
 # Alex <kekcuha@gmail.com>, 2026
 # 
@@ -253,27 +252,24 @@ msgid "Upload some content or sync with your devices!"
 msgstr "Загрузите файлы или синхронизируйте их со своими устройствами!"
 
 msgid "Warning: {message}"
-msgstr "Предупреждение:{message}"
+msgstr "Предупреждение: {message}"
 
 msgid ""
 "When a new folder is selected, any conflicting files within it will also be "
 "overwritten."
 msgstr ""
-"При выборе новой папки все конфликтующие файлы в ней также будут "
-"перезаписаны."
+"Если выбрать новую папку, конфликтующие файлы в ней тоже будут перезаписаны."
 
 msgid ""
 "When a new folder is selected, any files within it will also be overwritten."
-msgstr ""
-"При выборе новой папки все файлы, находящиеся внутри неё файлы, также будут "
-"перезаписаны"
+msgstr "Если выбрать новую папку, все файлы в ней тоже будут перезаписаны."
 
 msgid ""
 "When a new folder is selected, the content is written into the existing "
 "folder and a recursive conflict resolution is performed."
 msgstr ""
-"При выборе новой папки содержимое записывается в существующую папку, и "
-"выполняется рекурсивное разрешение конфликтов."
+"Если выбрать новую папку, её содержимое будет записано в существующую, а "
+"конфликты будут разрешены рекурсивно."
 
 msgid "You are currently identified as {nickname}."
 msgstr "Вы идентифицированы как {nickname}."
