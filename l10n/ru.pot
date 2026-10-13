@@ -120,22 +120,22 @@ msgid "Files and folders you mark as favorite will show up here."
 msgstr "Здесь появятся файлы и папки, добавленные в избранное."
 
 msgid "Files and folders you recently modified will show up here."
-msgstr "Здесь будут отображаться файлы и папки, которые вы недавно изменили."
+msgstr "Здесь появятся недавно изменённые вами файлы и папки."
 
 msgid "Filter file list"
 msgstr "Фильтровать список файлов"
 
 msgid "Folder names must not end with \"{extension}\"."
-msgstr "Имена папок не могут оканчиваться на \"{extension}\"."
+msgstr "Имена папок не могут оканчиваться на «{extension}»."
 
 msgid "Guest identification"
-msgstr "Гостевая идентификация"
+msgstr "Идентификация гостя"
 
 msgid "Home"
 msgstr "Домой"
 
 msgid "Info: {message}"
-msgstr "Информация:{message}"
+msgstr "Информация: {message}"
 
 msgid "Invalid folder name."
 msgstr "Недопустимое имя папки."
@@ -146,7 +146,7 @@ msgstr "Недопустимое имя."
 msgid ""
 "Items with the same name already exist in {dirname}, select which to keep."
 msgstr ""
-"Объект с таким именем уже существует в {dirname}, выберите, какой из них "
+"Объекты с такими же именами уже существуют в {dirname}. Выберите, какие "
 "сохранить."
 
 msgid "Keep both"
@@ -156,7 +156,7 @@ msgid "Last modified date unknown"
 msgstr "Дата последнего изменения неизвестна"
 
 msgid "Modified"
-msgstr "Изменен"
+msgstr "Изменён"
 
 msgid "Move"
 msgstr "Переместить"
@@ -174,7 +174,7 @@ msgid "Names must not be empty."
 msgstr "Имена не могут быть пустыми."
 
 msgid "Names must not end with \"{extension}\"."
-msgstr "Имена не могут оканчиваться на \"{extension}\"."
+msgstr "Имена не могут оканчиваться на «{extension}»."
 
 msgid "Names must not start with a dot."
 msgstr "Имена не должны начинаться с точки."
@@ -198,7 +198,7 @@ msgid "No files in here"
 msgstr "Здесь нет файлов"
 
 msgid "No files matching your filter were found."
-msgstr "Файлы, соответствующие вашему фильтру, не найдены."
+msgstr "По заданному фильтру файлы не найдены."
 
 msgid "No matching files"
 msgstr "Нет подходящих файлов"
@@ -207,7 +207,7 @@ msgid "Please enter a name with at least 2 characters."
 msgstr "Введите имя длиной не менее 2 символов."
 
 msgid "Recent"
-msgstr "Недавний"
+msgstr "Недавние"
 
 msgid "Replace"
 msgstr "Заменить"
@@ -222,10 +222,10 @@ msgid "Select entry"
 msgstr "Выбрать запись"
 
 msgid "Select file to keep"
-msgstr "Выберите какой из файлов сохранить"
+msgstr "Выберите, какой из файлов сохранить"
 
 msgid "Select files to keep"
-msgstr "Выберите какие из файлов сохранить"
+msgstr "Выберите, какие файлы сохранить"
 
 msgid "Select the row for {nodename}"
 msgstr "Выбрать строку для «{nodename}»"
@@ -244,13 +244,13 @@ msgid "Submit name"
 msgstr "Отправить имя"
 
 msgid "Success: {message}"
-msgstr "Успешно:{message}"
+msgstr "Успешно: {message}"
 
 msgid "Undo"
 msgstr "Отменить"
 
 msgid "Upload some content or sync with your devices!"
-msgstr "Загрузите контент или синхронизируйте его со своими устройствами!"
+msgstr "Загрузите файлы или синхронизируйте их со своими устройствами!"
 
 msgid "Warning: {message}"
 msgstr "Предупреждение:{message}"
