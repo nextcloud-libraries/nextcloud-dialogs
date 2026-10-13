@@ -275,13 +275,13 @@ msgid "You are currently identified as {nickname}."
 msgstr "Вы идентифицированы как {nickname}."
 
 msgid "You are currently not identified."
-msgstr "В данный момент вы не идентифицированы."
+msgstr "Сейчас вы не идентифицированы."
 
 msgid "You cannot leave the name empty."
-msgstr "Вы не можете оставить имя пустым."
+msgstr "Имя не может быть пустым."
 
 msgid "You need to choose at least one conflict solution"
-msgstr "Вам нужно выбрать хотя бы одно решение конфликта"
+msgstr "Выберите хотя бы один способ разрешения конфликта"
 
 msgid "You need to select at least one version of each file to continue."
-msgstr "Для продолжения вам нужно выбрать хотя бы одну версию каждого файла."
+msgstr "Чтобы продолжить, выберите хотя бы одну версию каждого файла."
