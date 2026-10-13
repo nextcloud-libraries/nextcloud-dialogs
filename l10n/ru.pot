@@ -179,7 +179,7 @@ msgid "Names must not start with a dot."
 msgstr "Имена не должны начинаться с точки."
 
 msgid "New"
-msgstr "Новый"
+msgstr "Создать"
 
 msgid "New files"
 msgstr "Новые файлы"
