@@ -1,9 +1,7 @@
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Max Smith <sevinfolds@gmail.com>, 2023
-# Alex <kekcuha@gmail.com>, 2024
 # R4SAS, 2024
-# Влад, 2024
 # Alexey Rusakov, 2024
 # Igor Orlov, 2025
 # Leonid Fedotov, 2025
@@ -11,46 +9,37 @@
 # Александр, 2026
 # ashed <craysy@gmail.com>, 2026
 # Artem Baleevskih <catsemaofficial@gmail.com>, 2026
+# NGC206, 2026
+# Alex <kekcuha@gmail.com>, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Artem Baleevskih <catsemaofficial@gmail.com>, 2026\n"
+"Last-Translator: Alex <kekcuha@gmail.com>, 2026\n"
 "Language-Team: Russian (https://app.transifex.com/nextcloud/teams/64236/ru/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: ru\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 msgid "\"{char}\" is not allowed inside a folder name."
-msgstr "\"{char}\" не допускается в названии папки."
+msgstr "Символ «{char}» недопустим в имени папки."
 
 msgid "\"{char}\" is not allowed inside a name."
-msgstr "\"{char}\" не допускается внутри имени."
+msgstr "Символ «{char}» недопустим в имени."
 
 msgid "\"{extension}\" is not an allowed name."
-msgstr "\"{extension}\" — недопустимое имя."
+msgstr "«{extension}» — недопустимое имя."
 
 msgid "\"{segment}\" is a reserved name and not allowed for folder names."
-msgstr "\"{segment}\" — зарезервированное имя, недопустимое для имени папки."
+msgstr "Имя «{segment}» зарезервировано и недопустимо для папок."
 
 msgid "\"{segment}\" is a reserved name and not allowed."
-msgstr "\"{segment}\" — зарезервированное и недопустимое имя."
-
-msgid "%n file conflict"
-msgid_plural "%n files conflict"
-msgstr[0] "%n конфликт файла"
-msgstr[1] "%n конфликта файлов"
-msgstr[2] "%n конфликтов файлов"
-msgstr[3] "%n конфликтов файлов"
-
-msgid "%n file conflict in {dirname}"
-msgid_plural "%n file conflicts in {dirname}"
-msgstr[0] "%n конфликт файлов в {dirname}"
-msgstr[1] "%n конфликта файлов в {dirname}"
-msgstr[2] "%n конфликтов файлов в {dirname}"
-msgstr[3] "%n конфликтов файлов в {dirname}"
+msgstr "Имя «{segment}» зарезервировано и недопустимо."
 
 msgid "All files"
 msgstr "Все файлы"
+
+msgid "An item with the same name already exists in {dirname}."
+msgstr "Объект с таким именем уже существует в {dirname}."
 
 msgid "Cancel"
 msgstr "Отмена"
@@ -71,6 +60,9 @@ msgstr[1] "Выбрать %n файла"
 msgstr[2] "Выбрать %n файлов"
 msgstr[3] "Выбрать %n файлов"
 
+msgid "Close"
+msgstr "Закрыть"
+
 msgid "Confirm"
 msgstr "Подтвердить"
 
@@ -87,10 +79,10 @@ msgid "Could not create the new folder"
 msgstr "Не удалось создать новую папку"
 
 msgid "Could not load files settings"
-msgstr "Не удалось загрузить настройки файлов"
+msgstr "Не удалось загрузить параметры файлов"
 
 msgid "Could not load files views"
-msgstr "Не удалось загрузить конфигурацию просмотра файлов"
+msgstr "Не удалось загрузить разделы файлов"
 
 msgid "Create directory"
 msgstr "Создать папку"
@@ -99,41 +91,50 @@ msgid "Current view selector"
 msgstr "Переключатель текущего вида"
 
 msgid "Enter your name"
-msgstr "Введите ваше имя"
+msgstr "Введите своё имя"
+
+msgid "Error: {message}"
+msgstr "Ошибка: {message}"
+
+msgid "Existing files"
+msgstr "Существующие файлы"
+
+msgid ""
+"Existing files and folders will be deleted if not selected. If both are "
+"chosen, they will be renamed."
+msgstr ""
+"Невыбранные существующие файлы и папки будут удалены. Если выбрать обе "
+"версии, они будут переименованы."
 
 msgid "Existing version"
 msgstr "Текущая версия"
 
 msgid "Failed to set nickname."
-msgstr "Не удалось задать никнейм."
+msgstr "Не удалось задать имя."
 
 msgid "Favorites"
 msgstr "Избранное"
 
 msgid "Files and folders you mark as favorite will show up here."
-msgstr ""
-"Здесь будут отображаться файлы и папки, которые вы пометили как избранные."
+msgstr "Здесь появятся файлы и папки, добавленные в избранное."
 
 msgid "Files and folders you recently modified will show up here."
-msgstr "Здесь будут отображаться файлы и папки, которые вы недавно изменили."
+msgstr "Здесь появятся недавно изменённые вами файлы и папки."
 
 msgid "Filter file list"
 msgstr "Фильтровать список файлов"
 
 msgid "Folder names must not end with \"{extension}\"."
-msgstr "Имена папок не могут оканчиваться на \"{extension}\"."
+msgstr "Имена папок не могут оканчиваться на «{extension}»."
 
 msgid "Guest identification"
-msgstr "Гостевая идентификация"
+msgstr "Идентификация гостя"
 
 msgid "Home"
 msgstr "Домой"
 
-msgid ""
-"If you select both versions, the incoming file will have a number added to "
-"its name."
-msgstr ""
-"Если вы выберете обе версии, к имени входящего файла будет добавлен номер."
+msgid "Info: {message}"
+msgstr "Информация: {message}"
 
 msgid "Invalid folder name."
 msgstr "Недопустимое имя папки."
@@ -141,11 +142,20 @@ msgstr "Недопустимое имя папки."
 msgid "Invalid name."
 msgstr "Недопустимое имя."
 
+msgid ""
+"Items with the same name already exist in {dirname}, select which to keep."
+msgstr ""
+"Объекты с такими же именами уже существуют в {dirname}. Выберите, какие "
+"сохранить."
+
+msgid "Keep both"
+msgstr "Сохранить оба"
+
 msgid "Last modified date unknown"
 msgstr "Дата последнего изменения неизвестна"
 
 msgid "Modified"
-msgstr "Изменен"
+msgstr "Изменён"
 
 msgid "Move"
 msgstr "Переместить"
@@ -163,13 +173,16 @@ msgid "Names must not be empty."
 msgstr "Имена не могут быть пустыми."
 
 msgid "Names must not end with \"{extension}\"."
-msgstr "Имена не могут оканчиваться на \"{extension}\"."
+msgstr "Имена не могут оканчиваться на «{extension}»."
 
 msgid "Names must not start with a dot."
 msgstr "Имена не должны начинаться с точки."
 
 msgid "New"
 msgstr "Новый"
+
+msgid "New files"
+msgstr "Новые файлы"
 
 msgid "New folder"
 msgstr "Новая папка"
@@ -184,7 +197,7 @@ msgid "No files in here"
 msgstr "Здесь нет файлов"
 
 msgid "No files matching your filter were found."
-msgstr "Файлы, соответствующие вашему фильтру, не найдены."
+msgstr "По заданному фильтру файлы не найдены."
 
 msgid "No matching files"
 msgstr "Нет подходящих файлов"
@@ -193,7 +206,10 @@ msgid "Please enter a name with at least 2 characters."
 msgstr "Введите имя длиной не менее 2 символов."
 
 msgid "Recent"
-msgstr "Недавний"
+msgstr "Недавние"
+
+msgid "Replace"
+msgstr "Заменить"
 
 msgid "Select all checkboxes"
 msgstr "Выбрать все флажки"
@@ -201,14 +217,14 @@ msgstr "Выбрать все флажки"
 msgid "Select all entries"
 msgstr "Выбрать все записи"
 
-msgid "Select all existing files"
-msgstr "Выбрать все существующие файлы"
-
-msgid "Select all new files"
-msgstr "Выбрать все новые файлы"
-
 msgid "Select entry"
 msgstr "Выбрать запись"
+
+msgid "Select file to keep"
+msgstr "Выберите, какой из файлов сохранить"
+
+msgid "Select files to keep"
+msgstr "Выберите, какие файлы сохранить"
 
 msgid "Select the row for {nodename}"
 msgstr "Выбрать строку для «{nodename}»"
@@ -223,52 +239,49 @@ msgstr[1] "Пропустить %n файла"
 msgstr[2] "Пропустить %n файлов"
 msgstr[3] "Пропустить %n файлов"
 
-msgid "Skip this file"
-msgstr "Пропустить файл"
-
 msgid "Submit name"
 msgstr "Отправить имя"
+
+msgid "Success: {message}"
+msgstr "Успешно: {message}"
 
 msgid "Undo"
 msgstr "Отменить"
 
 msgid "Upload some content or sync with your devices!"
-msgstr "Загрузите контент или синхронизируйте его со своими устройствами!"
+msgstr "Загрузите файлы или синхронизируйте их со своими устройствами!"
+
+msgid "Warning: {message}"
+msgstr "Предупреждение: {message}"
 
 msgid ""
-"When an incoming folder is selected, any conflicting files within it will "
-"also be overwritten."
-msgstr ""
-"Когда выбрана входящая папка, все конфликтующие файлы в ней также будут "
-"перезаписаны."
-
-msgid ""
-"When an incoming folder is selected, any files within it will also be "
+"When a new folder is selected, any conflicting files within it will also be "
 "overwritten."
 msgstr ""
-"Когда выбрана входящая папка, все файлы в ней также будут перезаписаны."
+"Если выбрать новую папку, конфликтующие файлы в ней тоже будут перезаписаны."
 
 msgid ""
-"When an incoming folder is selected, the content is written into the "
-"existing folder and a recursive conflict resolution is performed."
-msgstr ""
-"Когда выбрана входящая папка, содержимое записывается в существующую папку и"
-" выполняется рекурсивное разрешение конфликтов."
+"When a new folder is selected, any files within it will also be overwritten."
+msgstr "Если выбрать новую папку, все файлы в ней тоже будут перезаписаны."
 
-msgid "Which files do you want to keep?"
-msgstr "Какие файлы вы хотите сохранить?"
+msgid ""
+"When a new folder is selected, the content is written into the existing "
+"folder and a recursive conflict resolution is performed."
+msgstr ""
+"Если выбрать новую папку, её содержимое будет записано в существующую, а "
+"конфликты будут разрешены рекурсивно."
 
 msgid "You are currently identified as {nickname}."
 msgstr "Вы идентифицированы как {nickname}."
 
 msgid "You are currently not identified."
-msgstr "В данный момент вы не идентифицированы."
+msgstr "Сейчас вы не идентифицированы."
 
 msgid "You cannot leave the name empty."
-msgstr "Вы не можете оставить имя пустым."
+msgstr "Имя не может быть пустым."
 
 msgid "You need to choose at least one conflict solution"
-msgstr "Вам нужно выбрать хотя бы одно решение конфликта"
+msgstr "Выберите хотя бы один способ разрешения конфликта"
 
 msgid "You need to select at least one version of each file to continue."
-msgstr "Для продолжения вам нужно выбрать хотя бы одну версию каждого файла."
+msgstr "Чтобы продолжить, выберите хотя бы одну версию каждого файла."
