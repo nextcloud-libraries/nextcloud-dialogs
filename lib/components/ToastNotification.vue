@@ -7,7 +7,7 @@
 		:class="[$style.toast, typeClass, { [$style.toast_clickable]: onClick }]"
 		:role="role"
 		@click="onClick?.()">
-		<!-- Loading: text + spinner pushed to the right -->
+		<!-- Loading: text + spinner pushed to the inline end -->
 		<template v-if="isLoading">
 			<span :class="$style.toastMessage">{{ message }}</span>
 			<span :class="$style.toastLoader" aria-hidden="true">
@@ -63,7 +63,7 @@ const props = withDefaults(defineProps<{
 	message: string | Node
 	/** Allow raw HTML in the message (only when message is a string) */
 	isHTML?: boolean
-	/** Visual type variant (controls left-border colour and element icons) */
+	/** Visual type variant (controls inline-start border colour and element icons) */
 	type?: ToastType
 	/** Auto-dismiss delay in ms; -1 means permanent */
 	timeout: number
@@ -179,27 +179,27 @@ $spacing: 12px;
 }
 
 .toast_error {
-	border-left: 3px solid var(--color-element-error, var(--color-error));
+	border-inline-start: 3px solid var(--color-element-error, var(--color-error));
 }
 
 .toast_info {
-	border-left: 3px solid var(--color-element-info, var(--color-primary));
+	border-inline-start: 3px solid var(--color-element-info, var(--color-primary));
 }
 
 .toast_warning {
-	border-left: 3px solid var(--color-element-warning, var(--color-warning));
+	border-inline-start: 3px solid var(--color-element-warning, var(--color-warning));
 }
 
 .toast_success {
-	border-left: 3px solid var(--color-element-success, var(--color-success));
+	border-inline-start: 3px solid var(--color-element-success, var(--color-success));
 }
 
 .toast_undo {
-	border-left: 3px solid var(--color-element-success, var(--color-success));
+	border-inline-start: 3px solid var(--color-element-success, var(--color-success));
 }
 
 .toast_loading {
-	border-left: 3px solid var(--color-element-info, var(--color-primary));
+	border-inline-start: 3px solid var(--color-element-info, var(--color-primary));
 }
 
 // Elements
@@ -214,7 +214,7 @@ $spacing: 12px;
 .toastUndoButton {
 	display: flex;
 	align-items: center;
-	margin-left: $spacing;
+	margin-inline-start: $spacing;
 	flex-shrink: 0;
 }
 </style>

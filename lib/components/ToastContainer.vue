@@ -168,8 +168,8 @@ defineExpose({ announce, getContainerEl })
 .toastContainer {
 	position: fixed;
 	// Default: no navigation sidebar
-	left: var(--body-container-margin);
-	bottom: var(--body-container-margin);
+	inset-inline-start: var(--body-container-margin);
+	inset-block-end: var(--body-container-margin);
 	z-index: 10100;
 	display: flex;
 	flex-direction: column;
@@ -179,11 +179,11 @@ defineExpose({ announce, getContainerEl })
 	pointer-events: none;
 	padding: calc(var(--default-grid-baseline) * 2);
 	// Smooth transition when the navigation opens / closes
-	transition: left var(--animation-quick, 100ms) ease;
+	transition: inset-inline-start var(--animation-quick, 100ms) ease;
 }
 
-// When the app navigation is visible, shift right to avoid overlap
+// When the app navigation is visible, shift to the inline end to avoid overlap
 .toastContainer_navOpen {
-	left: calc(var(--navigation-width) + var(--body-container-margin));
+	inset-inline-start: calc(var(--navigation-width) + var(--body-container-margin));
 }
 </style>
