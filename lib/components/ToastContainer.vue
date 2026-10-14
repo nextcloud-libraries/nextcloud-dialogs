@@ -165,11 +165,17 @@ defineExpose({ announce, getContainerEl })
 </script>
 
 <style module lang="scss">
+/**
+ * Toast position can be adjusted by apps via CSS:
+ *   :root {
+ *     --toast-offset-block-end: 80px; // added to the default distance to the bottom
+ *   }
+ */
 .toastContainer {
 	position: fixed;
 	// Default: no navigation sidebar
 	inset-inline-start: var(--body-container-margin);
-	inset-block-end: var(--body-container-margin);
+	inset-block-end: calc(var(--body-container-margin) + var(--toast-offset-block-end, 0px));
 	z-index: 10100;
 	display: flex;
 	flex-direction: column;
