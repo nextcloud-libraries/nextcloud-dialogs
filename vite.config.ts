@@ -10,7 +10,11 @@ export default createLibConfig({
 	index: 'lib/index.ts',
 	toast: 'lib/toast.ts',
 }, {
-	inlineCSS: true,
+	config: {
+		build: {
+			cssCodeSplit: false,
+		},
+	},
 	libraryFormats: ['es'],
 	// Packages that should be externalized or bundled
 	nodeExternalsOptions: {
