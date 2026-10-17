@@ -130,8 +130,7 @@ $height: 64px;
 	flex-direction: column;
 	min-width: 0;
 
-	span,
-	:deep(time) {
+	span, time {
 		white-space: nowrap;
 	}
 }

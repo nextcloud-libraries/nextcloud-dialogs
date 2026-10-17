@@ -398,7 +398,7 @@ function onSubmit() {
 			margin-top: 0;
 		}
 
-		:deep(label) {
+		label {
 			font-weight: bold;
 		}
 	}
