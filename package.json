@@ -62,7 +62,7 @@
     "@nextcloud/sharing": "^0.4.0",
     "@nextcloud/vue": "^9.13.1",
     "@vueuse/core": "^15.0.0",
-    "p-queue": "^9.3.3",
+    "p-queue": "^10.0.0",
     "vue": "^3.5.44",
     "webdav": "^5.11.0"
   },
