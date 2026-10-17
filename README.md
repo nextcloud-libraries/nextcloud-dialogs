@@ -34,18 +34,13 @@ If your app also already uses `@nextcloud/vue` version 9.x and Vue 3 then the bu
 ## Usage
 
 ### General
-The styles for the components (Toasts and FilePicker) are provided in the `style.css` file.
-So make sure that the  `@nextcloud/dialogs/style.css` file is included in your app to make sure that the toasts or FilePicker have a proper styling applied.
-
-```js
-import '@nextcloud/dialogs/style.css'
-```
+The styles for the components (Toasts and FilePicker) are imported automatically by the package entry points.
+Your bundler has to support importing CSS files from JavaScript (e.g. Vite, or Webpack with `css-loader`).
 
 ### Toasts
 
 ```js
 import { showMessage, showInfo, showSuccess, showWarning, showError } from '@nextcloud/dialogs'
-import '@nextcloud/dialogs/style.css'
 ```
 
 If your app only needs toasts, you can import them from the `@nextcloud/dialogs/toast` entry point instead.
