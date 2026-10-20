@@ -33,15 +33,19 @@
 						{{ t('New') }}
 					</NcButton>
 				</template>
-				<form class="file-picker__new-folder" role="dialog" @submit.prevent="onSubmit">
-					<IconFolder class="file-picker__new-folder-icon" :size="20" />
+				<form
+					class="file-picker__new-folder"
+					role="dialog"
+					:aria-label="t('Create directory')"
+					@submit.prevent="onSubmit"
+					@keydown.esc="popoverShown = false">
+					<IconFolder :size="20" />
 					<label class="file-picker__new-folder-label" :for="inputId">{{ t('New folder') }}</label>
 					<NcTextField
 						:id="inputId"
 						ref="nameInput"
 						v-model="newNodeName"
 						class="file-picker__new-folder-input"
-						:label="t('New folder')"
 						labelOutside
 						:placeholder="t('New folder name')"
 						showTrailingButton
@@ -138,6 +142,9 @@ function onSubmit() {
 		popoverShown.value = false
 		emit('createNode', name)
 		newNodeName.value = ''
+	} else {
+		// show the native validation message, e.g. when submitted via the trailing button
+		nameInput.value?.$el?.querySelector('input')?.reportValidity()
 	}
 }
 
@@ -159,7 +166,7 @@ const pathElements = computed(() => path.value.split('/')
 		flex-grow: 0 !important;
 	}
 
-	// spacing matches the previously used NcActions with NcActionInput
+	// mimic the NcActionInput layout inside an NcActions menu (icon column, label row, input row) for consistency with other menus
 	&__new-folder {
 		display: grid;
 		grid-template-columns: var(--default-clickable-area) 1fr;
@@ -170,21 +177,13 @@ const pathElements = computed(() => path.value.split('/')
 		padding-bottom: calc(var(--default-grid-baseline) + (var(--default-clickable-area) - 16px) / 2);
 	}
 
-	// the icon shares the first row with the label, so it is vertically centered on it
-	&__new-folder-icon {
-		grid-column: 1;
-		grid-row: 1;
-	}
-
 	&__new-folder-label {
-		grid-column: 2;
-		grid-row: 1;
 		padding: var(--default-grid-baseline) 0;
 	}
 
+	// the icon and the label fill the first row, so the input goes to the second row
 	&__new-folder-input {
 		grid-column: 2;
-		grid-row: 2;
 	}
 }
 </style>
