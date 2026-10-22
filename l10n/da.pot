@@ -3,10 +3,11 @@
 # Ryan Skov <rs@escapecloud.net>, 2025
 # Rasmus Terkelsen, 2025
 # Martin Bonde <Martin@maboni.dk>, 2026
+# Christian Koerner, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Martin Bonde <Martin@maboni.dk>, 2026\n"
+"Last-Translator: Christian Koerner, 2026\n"
 "Language-Team: Danish (https://app.transifex.com/nextcloud/teams/64236/da/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: da\n"
@@ -106,7 +107,7 @@ msgid "Favorites"
 msgstr "Favoritter"
 
 msgid "Files and folders you mark as favorite will show up here."
-msgstr "Filer og mapper, du markerer som foretrukne, vises her."
+msgstr "Filer og mapper, du markerer som favoritter, vises her."
 
 msgid "Files and folders you recently modified will show up here."
 msgstr "Filer og mapper, du for nylig har ændret, vises her."
@@ -127,7 +128,7 @@ msgid "Info: {message}"
 msgstr "Info: {message}"
 
 msgid "Invalid folder name."
-msgstr "Invalid folder name."
+msgstr "Ugyldigt mappenavn."
 
 msgid "Invalid name."
 msgstr "Ugyldigt navn."
@@ -237,7 +238,7 @@ msgid "Undo"
 msgstr "Fortryd"
 
 msgid "Upload some content or sync with your devices!"
-msgstr "Upload noget indhold eller synkroniser med dine enheder!"
+msgstr "Overfør noget indhold, eller synkroniser med dine enheder!"
 
 msgid "Warning: {message}"
 msgstr "Advarsel: {message}"
