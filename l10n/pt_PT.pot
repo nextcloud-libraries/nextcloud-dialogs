@@ -252,7 +252,7 @@ msgid ""
 "When a new folder is selected, any conflicting files within it will also be "
 "overwritten."
 msgstr ""
-"Quando for selecionada uma nova pasta, quaisquer ficheiros em conflito que "
+"Quando é selecionada uma nova pasta, quaisquer ficheiros em conflito que "
 "nela se encontrem serão também substituídos."
 
 msgid ""
