@@ -2,15 +2,15 @@
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Miguel Ferreira, 2024
 # Claudio Almeida, 2025
-# Manuela Silva <mmsrs@sky.com>, 2025
+# Manuela Silva, 2025
 # artur25 <arturdiogo1997@hotmail.com>, 2025
 # Luis Jorge Santos Pinho <lj.pinho@gmail.com>, 2025
 # Sara Pestana, 2026
-# cesar vale, 2026
+# Luis Filipe Teixeira <lufilte@gmail.com>, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: cesar vale, 2026\n"
+"Last-Translator: Luis Filipe Teixeira <lufilte@gmail.com>, 2026\n"
 "Language-Team: Portuguese (Portugal) (https://app.transifex.com/nextcloud/teams/64236/pt_PT/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: pt_PT\n"
@@ -31,20 +31,11 @@ msgstr "\"{segment}\" é um nome reservado e não é permitido para nomes de pas
 msgid "\"{segment}\" is a reserved name and not allowed."
 msgstr "\"{segment}\" é um nome reservado e não é permitido."
 
-msgid "%n file conflict"
-msgid_plural "%n files conflict"
-msgstr[0] "%n ficheiro em conflito"
-msgstr[1] "%n ficheiros em conflito"
-msgstr[2] "%n ficheiros em conflito"
-
-msgid "%n file conflict in {dirname}"
-msgid_plural "%n file conflicts in {dirname}"
-msgstr[0] "%n ficheiro em conflito em {dirname}"
-msgstr[1] "%n ficheiros em conflito em {dirname}"
-msgstr[2] "%n ficheiros em conflito em {dirname}"
-
 msgid "All files"
 msgstr "Todos os ficheiros"
+
+msgid "An item with the same name already exists in {dirname}."
+msgstr "Já existe um elemento com o mesmo nome em {dirname}."
 
 msgid "Cancel"
 msgstr "Cancelar"
@@ -63,6 +54,9 @@ msgid_plural "Choose %n files"
 msgstr[0] "Escolha %n ficheiro"
 msgstr[1] "Escolha %n ficheiros"
 msgstr[2] "Escolha %n ficheiros"
+
+msgid "Close"
+msgstr "Fechar"
 
 msgid "Confirm"
 msgstr "Confirmar"
@@ -94,6 +88,19 @@ msgstr "Seletor de visualização atual"
 msgid "Enter your name"
 msgstr "Introduza o seu nome"
 
+msgid "Error: {message}"
+msgstr "Erro: {message}"
+
+msgid "Existing files"
+msgstr "Ficheiros existentes"
+
+msgid ""
+"Existing files and folders will be deleted if not selected. If both are "
+"chosen, they will be renamed."
+msgstr ""
+"Os ficheiros e pastas existentes serão eliminados se não forem selecionados."
+" Se forem ambos selecionados, serão renomeados."
+
 msgid "Existing version"
 msgstr "Versão existente"
 
@@ -121,18 +128,23 @@ msgstr "Identificação de convidado"
 msgid "Home"
 msgstr "Início"
 
-msgid ""
-"If you select both versions, the incoming file will have a number added to "
-"its name."
-msgstr ""
-"Se você selecionar ambas as versões, um número será adicionado ao nome do "
-"ficheiro recebido."
+msgid "Info: {message}"
+msgstr "Informação:{message}"
 
 msgid "Invalid folder name."
 msgstr "Nome de pasta inválido."
 
 msgid "Invalid name."
 msgstr "Nome inválido."
+
+msgid ""
+"Items with the same name already exist in {dirname}, select which to keep."
+msgstr ""
+"Já existem itens com o mesmo nome em {dirname}, selecione qual deseja "
+"manter."
+
+msgid "Keep both"
+msgstr "Manter ambos"
 
 msgid "Last modified date unknown"
 msgstr "Data da última modificação desconhecida"
@@ -164,6 +176,9 @@ msgstr "Os nomes não podem começar por um ponto."
 msgid "New"
 msgstr "Novo"
 
+msgid "New files"
+msgstr "Novos ficheiros"
+
 msgid "New folder"
 msgstr "Nova pasta"
 
@@ -188,20 +203,23 @@ msgstr "Introduza um nome com, pelo menos, 2 caracteres."
 msgid "Recent"
 msgstr "Recentes"
 
+msgid "Replace"
+msgstr "Substituir"
+
 msgid "Select all checkboxes"
 msgstr "Selecione todas as caixas de seleção"
 
 msgid "Select all entries"
 msgstr "Selecionar todas as entradas"
 
-msgid "Select all existing files"
-msgstr "Selecione todos os ficheiros existentes"
-
-msgid "Select all new files"
-msgstr "Selecione todos os novos ficheiros"
-
 msgid "Select entry"
 msgstr "Selecionar entrada"
+
+msgid "Select file to keep"
+msgstr "Selecione o ficheiro a manter"
+
+msgid "Select files to keep"
+msgstr "Selecione os ficheiros a manter"
 
 msgid "Select the row for {nodename}"
 msgstr "Selecione a linha para {nodename}"
@@ -215,11 +233,11 @@ msgstr[0] "Ignorar %n ficheiro"
 msgstr[1] "Ignorar %n ficheiros"
 msgstr[2] "Ignorar %n ficheiros"
 
-msgid "Skip this file"
-msgstr "Ignorar este ficheiro"
-
 msgid "Submit name"
 msgstr "Submeter nome"
+
+msgid "Success: {message}"
+msgstr "Sucesso: {message}"
 
 msgid "Undo"
 msgstr "Anular"
@@ -227,29 +245,28 @@ msgstr "Anular"
 msgid "Upload some content or sync with your devices!"
 msgstr "Envie algum conteúdo ou sincronize com os seus dispositivos!"
 
-msgid ""
-"When an incoming folder is selected, any conflicting files within it will "
-"also be overwritten."
-msgstr ""
-"Ao selecionar uma pasta de entrada, quaisquer ficheiros conflituantes dentro"
-" da mesma serão também sobrescritos."
+msgid "Warning: {message}"
+msgstr "Aviso: {message}"
 
 msgid ""
-"When an incoming folder is selected, any files within it will also be "
+"When a new folder is selected, any conflicting files within it will also be "
 "overwritten."
 msgstr ""
-"Ao selecionar uma pasta de entrada, todos os ficheiros nela contidos serão "
-"também sobrescritos."
+"Quando for selecionada uma nova pasta, quaisquer ficheiros em conflito que "
+"nela se encontrem serão também substituídos."
 
 msgid ""
-"When an incoming folder is selected, the content is written into the "
-"existing folder and a recursive conflict resolution is performed."
+"When a new folder is selected, any files within it will also be overwritten."
 msgstr ""
-"Quando uma pasta de entrada é selecionada, o conteúdo é gravado na pasta "
-"existente e é realizada uma resolução recursiva de conflitos."
+"Quando é selecionada uma nova pasta, todos os ficheiros que nela se "
+"encontrarem serão também substituídos."
 
-msgid "Which files do you want to keep?"
-msgstr "Quais os ficheiros que deseja manter?"
+msgid ""
+"When a new folder is selected, the content is written into the existing "
+"folder and a recursive conflict resolution is performed."
+msgstr ""
+"Quando é selecionada uma nova pasta, o conteúdo é gravado para a pasta "
+"existente e é realizada uma resolução recursiva de conflito."
 
 msgid "You are currently identified as {nickname}."
 msgstr "Atualmente está identificado como {nickname}."
