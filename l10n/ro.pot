@@ -1,29 +1,42 @@
-# 
 # Translators:
-# John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # Daniel MD <dmihaidumitru@gmail.com>, 2023
-# George Varga, 2024
-# Cosmin Humeniuc <cosmin@hume.ro>, 2025
+# Georgeuhm, 2024
+# Ștefan Chelban, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Cosmin Humeniuc <cosmin@hume.ro>, 2025\n"
+"Last-Translator: Ștefan Chelban, 2026\n"
 "Language-Team: Romanian (https://app.transifex.com/nextcloud/teams/64236/ro/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: ro\n"
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
-msgid "\"{name}\" is an invalid folder name."
-msgstr "\"{name}\" este un nume de director invalid."
+msgid "\"{char}\" is not allowed inside a folder name."
+msgstr "„{char}” nu este permis în numele unui dosar."
 
-msgid "\"{name}\" is not an allowed folder name"
-msgstr "\"{name}\" nu este un nume de director permis"
+msgid "\"{char}\" is not allowed inside a name."
+msgstr "„{char}” nu este permis într-un nume."
 
-msgid "\"/\" is not allowed inside a folder name."
-msgstr "\"/\" nu este permis în numele unui director."
+msgid "\"{extension}\" is not an allowed name."
+msgstr "„{extension}” nu este un nume permis."
+
+msgid "\"{segment}\" is a reserved name and not allowed for folder names."
+msgstr "„{segment}” este un nume rezervat și nu este permis ca nume de dosar."
+
+msgid "\"{segment}\" is a reserved name and not allowed."
+msgstr "„{segment}” este un nume rezervat și nu este permis."
 
 msgid "All files"
 msgstr "Toate fișierele"
+
+msgid "An item with the same name already exists in {dirname}."
+msgstr "În {dirname} există deja un element cu același nume."
+
+msgid "Cancel"
+msgstr "Anulează"
+
+msgid "Cancel the entire operation"
+msgstr "Anulează toată operațiunea"
 
 msgid "Choose"
 msgstr "Alege"
@@ -35,7 +48,16 @@ msgid "Choose %n file"
 msgid_plural "Choose %n files"
 msgstr[0] "Alege %n fișier"
 msgstr[1] "Alege %n fișiere"
-msgstr[2] "Alege %n fișiere"
+msgstr[2] "Alege %n de fișiere"
+
+msgid "Close"
+msgstr "Închide"
+
+msgid "Confirm"
+msgstr "Confirmă"
+
+msgid "Continue"
+msgstr "Continuă"
 
 msgid "Copy"
 msgstr "Copiază"
@@ -44,7 +66,7 @@ msgid "Copy to {target}"
 msgstr "Copiază în {target}"
 
 msgid "Could not create the new folder"
-msgstr "Nu s-a putut crea noul director"
+msgstr "Dosarul nou nu a putut fi creat"
 
 msgid "Could not load files settings"
 msgstr "Nu s-au putut încărca setările fișierelor"
@@ -53,29 +75,75 @@ msgid "Could not load files views"
 msgstr "Nu s-au putut încărca vizualizările fișierelor"
 
 msgid "Create directory"
-msgstr "Creează director"
+msgstr "Creează un dosar"
 
 msgid "Current view selector"
-msgstr "Selectorul curent al vizualizării"
+msgstr "Selectorul vizualizării curente"
+
+msgid "Enter your name"
+msgstr "Introdu-ți numele"
+
+msgid "Error: {message}"
+msgstr "Eroare: {message}"
+
+msgid "Existing files"
+msgstr "Fișiere existente"
+
+msgid ""
+"Existing files and folders will be deleted if not selected. If both are "
+"chosen, they will be renamed."
+msgstr ""
+"Fișierele și dosarele existente care nu sunt selectate vor fi șterse. Dacă "
+"le alegi pe amândouă, vor fi redenumite."
+
+msgid "Existing version"
+msgstr "Versiunea existentă"
+
+msgid "Failed to set nickname."
+msgstr "Pseudonimul nu a putut fi setat."
 
 msgid "Favorites"
 msgstr "Favorite"
 
 msgid "Files and folders you mark as favorite will show up here."
-msgstr "Fișiere și directoare pe care le marcați ca favorite vor apărea aici."
+msgstr ""
+"Fișierele și dosarele pe care le marchezi ca favorite vor apărea aici."
 
 msgid "Files and folders you recently modified will show up here."
-msgstr ""
-"Fișiere și directoare pe care le-ați modificat recent vor apărea aici."
+msgstr "Fișierele și dosarele pe care le-ai modificat recent vor apărea aici."
 
 msgid "Filter file list"
 msgstr "Filtrează lista de fișiere"
 
-msgid "Folder name cannot be empty."
-msgstr "Numele de director nu poate fi necompletat."
+msgid "Folder names must not end with \"{extension}\"."
+msgstr "Numele dosarelor nu trebuie să se termine cu „{extension}”."
+
+msgid "Guest identification"
+msgstr "Identificare invitat"
 
 msgid "Home"
 msgstr "Acasă"
+
+msgid "Info: {message}"
+msgstr "Informație: {message}"
+
+msgid "Invalid folder name."
+msgstr "Nume de dosar nevalid."
+
+msgid "Invalid name."
+msgstr "Nume nevalid."
+
+msgid ""
+"Items with the same name already exist in {dirname}, select which to keep."
+msgstr ""
+"În {dirname} există deja elemente cu același nume. Selectează-le pe cele pe "
+"care vrei să le păstrezi."
+
+msgid "Keep both"
+msgstr "Păstrează-le pe amândouă"
+
+msgid "Last modified date unknown"
+msgstr "Data ultimei modificări este necunoscută"
 
 msgid "Modified"
 msgstr "Modificat"
@@ -84,31 +152,58 @@ msgid "Move"
 msgstr "Mută"
 
 msgid "Move to {target}"
-msgstr "Mută către {target}"
+msgstr "Mută în {target}"
 
 msgid "Name"
 msgstr "Nume"
 
+msgid "Names may be at most 64 characters long."
+msgstr "Numele pot avea cel mult 64 de caractere."
+
+msgid "Names must not be empty."
+msgstr "Numele nu pot fi goale."
+
+msgid "Names must not end with \"{extension}\"."
+msgstr "Numele nu trebuie să se termine cu „{extension}”."
+
+msgid "Names must not start with a dot."
+msgstr "Numele nu trebuie să înceapă cu punct."
+
 msgid "New"
 msgstr "Nou"
 
+msgid "New files"
+msgstr "Fișiere noi"
+
 msgid "New folder"
-msgstr "Director nou"
+msgstr "Dosar nou"
 
 msgid "New folder name"
-msgstr "Numele noului director"
+msgstr "Numele dosarului nou"
+
+msgid "New version"
+msgstr "Versiunea nouă"
 
 msgid "No files in here"
 msgstr "Nu există fișiere"
 
 msgid "No files matching your filter were found."
-msgstr "Nu există fișiere potrivite pentru filtrul selectat"
+msgstr "Nu s-au găsit fișiere care să corespundă filtrului."
 
 msgid "No matching files"
 msgstr "Nu există fișiere potrivite"
 
+msgid "Please enter a name with at least 2 characters."
+msgstr "Introdu un nume de cel puțin 2 caractere."
+
 msgid "Recent"
 msgstr "Recente"
+
+msgid "Replace"
+msgstr "Înlocuiește"
+
+msgid "Select all checkboxes"
+msgstr "Bifează toate casetele"
 
 msgid "Select all entries"
 msgstr "Selectează toate înregistrările"
@@ -116,14 +211,70 @@ msgstr "Selectează toate înregistrările"
 msgid "Select entry"
 msgstr "Selectează înregistrarea"
 
+msgid "Select file to keep"
+msgstr "Selectează fișierul de păstrat"
+
+msgid "Select files to keep"
+msgstr "Selectează fișierele de păstrat"
+
 msgid "Select the row for {nodename}"
 msgstr "Selectează rândul pentru {nodename}"
 
 msgid "Size"
 msgstr "Mărime"
 
+msgid "Skip %n file"
+msgid_plural "Skip %n files"
+msgstr[0] "Sari peste %n fișier"
+msgstr[1] "Sari peste %n fișiere"
+msgstr[2] "Sari peste %n de fișiere"
+
+msgid "Submit name"
+msgstr "Trimite numele"
+
+msgid "Success: {message}"
+msgstr "Succes: {message}"
+
 msgid "Undo"
-msgstr "Anulează"
+msgstr "Anulează acțiunea"
 
 msgid "Upload some content or sync with your devices!"
-msgstr "Încărcați conținut sau sincronizați cu dispozitivele dumneavoastră!"
+msgstr "Încarcă ceva conținut sau sincronizează cu dispozitivele tale!"
+
+msgid "Warning: {message}"
+msgstr "Atenție: {message}"
+
+msgid ""
+"When a new folder is selected, any conflicting files within it will also be "
+"overwritten."
+msgstr ""
+"Dacă selectezi dosarul nou, fișierele din el aflate în conflict vor fi și "
+"ele suprascrise."
+
+msgid ""
+"When a new folder is selected, any files within it will also be overwritten."
+msgstr ""
+"Dacă selectezi dosarul nou, toate fișierele din el vor fi și ele "
+"suprascrise."
+
+msgid ""
+"When a new folder is selected, the content is written into the existing "
+"folder and a recursive conflict resolution is performed."
+msgstr ""
+"Dacă selectezi dosarul nou, conținutul lui este scris în dosarul existent, "
+"iar conflictele sunt rezolvate recursiv."
+
+msgid "You are currently identified as {nickname}."
+msgstr "În prezent ești identificat ca {nickname}."
+
+msgid "You are currently not identified."
+msgstr "În prezent nu ești identificat."
+
+msgid "You cannot leave the name empty."
+msgstr "Numele nu poate rămâne gol."
+
+msgid "You need to choose at least one conflict solution"
+msgstr "Alege cel puțin o soluție pentru conflict"
+
+msgid "You need to select at least one version of each file to continue."
+msgstr "Pentru a continua, selectează cel puțin o versiune a fiecărui fișier."
