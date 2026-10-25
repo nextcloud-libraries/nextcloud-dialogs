@@ -245,7 +245,7 @@ const dialogButtons = computed(() => {
 		callback: () => {
 			// lock default close handling
 			isHandlingCallback = true
-			handleButtonClick(button.callback, nodes)
+			return handleButtonClick(button.callback, nodes)
 		},
 	} satisfies IDialogButton))
 })
@@ -255,10 +255,13 @@ const dialogButtons = computed(() => {
  * @param nodes - Currently selected nodes
  */
 async function handleButtonClick(callback: IFilePickerButton['callback'], nodes: INode[]) {
-	await callback(nodes)
-	emit('close', nodes)
+	const ret = await callback(nodes)
+	if (ret !== false) {
+		emit('close', nodes)
+	}
 	// Unlock close
 	isHandlingCallback = false
+	return ret
 }
 
 /**
