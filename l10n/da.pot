@@ -14,19 +14,19 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "\"{char}\" is not allowed inside a folder name."
-msgstr "\"{char}\"er ikke tilladt inde i et mappenavn."
+msgstr "\"{char}\" er ikke tilladt i et mappenavn."
 
 msgid "\"{char}\" is not allowed inside a name."
 msgstr "\"{char}\" er ikke tilladt i et navn."
 
 msgid "\"{extension}\" is not an allowed name."
-msgstr "\"{extension}\" er ikke tilladt i et navn."
+msgstr "\"{extension}\" er ikke et tilladt navn."
 
 msgid "\"{segment}\" is a reserved name and not allowed for folder names."
-msgstr "\"{segment}\"er et reserveret navn og ikke tilladt for mappenavne."
+msgstr "\"{segment}\" er et reserveret navn og er ikke tilladt som mappenavn."
 
 msgid "\"{segment}\" is a reserved name and not allowed."
-msgstr "\"{segment}\" er et reserveret navn og er derfor ikke tilladt."
+msgstr "\"{segment}\" er et reserveret navn og er ikke tilladt."
 
 msgid "All files"
 msgstr "Alle filer"
@@ -35,10 +35,10 @@ msgid "An item with the same name already exists in {dirname}."
 msgstr "Et element med samme navn findes allerede i {dirname}."
 
 msgid "Cancel"
-msgstr "Fortryd"
+msgstr "Annuller"
 
 msgid "Cancel the entire operation"
-msgstr "Annullér hele operationen"
+msgstr "Annuller hele handlingen"
 
 msgid "Choose"
 msgstr "Vælg"
@@ -61,25 +61,25 @@ msgid "Continue"
 msgstr "Fortsæt"
 
 msgid "Copy"
-msgstr "Kopier"
+msgstr "Kopiér"
 
 msgid "Copy to {target}"
-msgstr "Kopier til {target}"
+msgstr "Kopiér til {target}"
 
 msgid "Could not create the new folder"
-msgstr "Kunne ikke oprette den nye mappe"
+msgstr "Den nye mappe kunne ikke oprettes"
 
 msgid "Could not load files settings"
 msgstr "Filindstillingerne kunne ikke indlæses"
 
 msgid "Could not load files views"
-msgstr "Kunne ikke indlæse filvisninger"
+msgstr "Filvisningerne kunne ikke indlæses"
 
 msgid "Create directory"
 msgstr "Opret mappe"
 
 msgid "Current view selector"
-msgstr "Aktuel visningsvælger"
+msgstr "Vælger for aktuel visning"
 
 msgid "Enter your name"
 msgstr "Indtast dit navn"
@@ -94,14 +94,14 @@ msgid ""
 "Existing files and folders will be deleted if not selected. If both are "
 "chosen, they will be renamed."
 msgstr ""
-"Eksisterende filer og mapper vil blive slettet, hvis ikke valgt. Hvis begge "
-"er valgt, vil de blive omdøbt."
+"Eksisterende filer og mapper slettes, hvis de ikke er valgt. Hvis begge er "
+"valgt, bliver de omdøbt."
 
 msgid "Existing version"
 msgstr "Eksisterende version"
 
 msgid "Failed to set nickname."
-msgstr "Forsøg på at gemme kaldenavn mislykkedes."
+msgstr "Kaldenavnet kunne ikke gemmes."
 
 msgid "Favorites"
 msgstr "Favoritter"
@@ -113,7 +113,7 @@ msgid "Files and folders you recently modified will show up here."
 msgstr "Filer og mapper, du for nylig har ændret, vises her."
 
 msgid "Filter file list"
-msgstr "Filtrer fil liste"
+msgstr "Filtrer fillisten"
 
 msgid "Folder names must not end with \"{extension}\"."
 msgstr "Mappenavne må ikke ende med \"{extension}\"."
@@ -136,14 +136,14 @@ msgstr "Ugyldigt navn."
 msgid ""
 "Items with the same name already exist in {dirname}, select which to keep."
 msgstr ""
-"Elementer med samme navn findes allerede i {dirname}, vælg hvilken du skal "
-"beholde."
+"Der findes allerede elementer med samme navn i {dirname}. Vælg, hvilke der "
+"skal beholdes."
 
 msgid "Keep both"
 msgstr "Behold begge dele"
 
 msgid "Last modified date unknown"
-msgstr "Senest ændret dato ukendt"
+msgstr "Dato for seneste ændring er ukendt"
 
 msgid "Modified"
 msgstr "Ændret"
@@ -161,13 +161,13 @@ msgid "Names may be at most 64 characters long."
 msgstr "Navne kan højst være 64 tegn lange."
 
 msgid "Names must not be empty."
-msgstr "Navne kan ikke være tomt."
+msgstr "Navne må ikke være tomme."
 
 msgid "Names must not end with \"{extension}\"."
 msgstr "Navne må ikke ende på \"{extension}\"."
 
 msgid "Names must not start with a dot."
-msgstr "Navne skal starte med et punktum."
+msgstr "Navne må ikke starte med et punktum."
 
 msgid "New"
 msgstr "Ny"
@@ -179,13 +179,13 @@ msgid "New folder"
 msgstr "Ny mappe"
 
 msgid "New folder name"
-msgstr "Ny mappe navn"
+msgstr "Navn på ny mappe"
 
 msgid "New version"
 msgstr "Ny version"
 
 msgid "No files in here"
-msgstr "Ingen filer here"
+msgstr "Ingen filer her"
 
 msgid "No files matching your filter were found."
 msgstr "Der blev ikke fundet nogen filer, der matcher dit filter."
@@ -212,16 +212,16 @@ msgid "Select entry"
 msgstr "Vælg post"
 
 msgid "Select file to keep"
-msgstr "Vælg fil at beholde"
+msgstr "Vælg den fil, der skal beholdes"
 
 msgid "Select files to keep"
-msgstr "Vælg filer der skal opbevares"
+msgstr "Vælg de filer, der skal beholdes"
 
 msgid "Select the row for {nodename}"
-msgstr "Vælg rækken for {nodenavn}"
+msgstr "Vælg rækken for {nodename}"
 
 msgid "Size"
-msgstr "Størelse"
+msgstr "Størrelse"
 
 msgid "Skip %n file"
 msgid_plural "Skip %n files"
@@ -229,7 +229,7 @@ msgstr[0] "Spring %n fil over"
 msgstr[1] "Spring %n filer over"
 
 msgid "Submit name"
-msgstr "Indsend navn"
+msgstr "Send navn"
 
 msgid "Success: {message}"
 msgstr "Succes: {message}"
@@ -247,20 +247,19 @@ msgid ""
 "When a new folder is selected, any conflicting files within it will also be "
 "overwritten."
 msgstr ""
-"Når en ny mappe er valgt, vil eventuelle modstridende filer i det også blive"
-" overskrevet."
+"Når en ny mappe vælges, bliver eventuelle filer i den, der er i konflikt, "
+"også overskrevet."
 
 msgid ""
 "When a new folder is selected, any files within it will also be overwritten."
-msgstr ""
-"Når en ny mappe er valgt, vil alle filer i den også blive overskrevet."
+msgstr "Når en ny mappe vælges, bliver alle filer i den også overskrevet."
 
 msgid ""
 "When a new folder is selected, the content is written into the existing "
 "folder and a recursive conflict resolution is performed."
 msgstr ""
-"Når en ny mappe er valgt, er indholdet skrevet ind i den eksisterende mappe "
-"og en rekursiv konfliktløsning udføres."
+"Når en ny mappe vælges, skrives indholdet ind i den eksisterende mappe, og "
+"konflikterne løses rekursivt."
 
 msgid "You are currently identified as {nickname}."
 msgstr "Du er i øjeblikket identificeret som {nickname}."
@@ -269,7 +268,7 @@ msgid "You are currently not identified."
 msgstr "Du er ikke identificeret."
 
 msgid "You cannot leave the name empty."
-msgstr "Du kan ikke efterlade navnet tomt."
+msgstr "Navnet må ikke være tomt."
 
 msgid "You need to choose at least one conflict solution"
 msgstr "Du skal vælge mindst én konfliktløsning"
