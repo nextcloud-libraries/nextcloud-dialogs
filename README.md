@@ -73,24 +73,7 @@ There are several options that can be passed in as a second parameter, like the 
 showError('This is an error shown without a timeout', { timeout: -1 })
 ```
 
-Ordinary toasts (success, error, warning, info, and bare messages) use the user-configured toast timeout
-from the theming capabilities (`theming.toastTimeout`) when available, and fall back to
-`TOAST_DEFAULT_TIMEOUT` (7 seconds) otherwise.
-
-Loading toasts stay permanent until hidden manually, and undo toasts keep their fixed undo duration.
-
 A full list of available options can be found in the [documentation](https://nextcloud-libraries.github.io/nextcloud-dialogs/).
-
-#### Toast position
-
-Toasts are displayed in the bottom start corner of the page and are shifted by the width of the app navigation when it is open.
-Apps can adjust the toasts position with a CSS variable, the value is added to the default distance to the bottom (default: `0px`):
-
-```css
-:root {
-	--toast-offset-block-end: 80px;
-}
-```
 
 ### FilePicker
 To spawn the FilePicker provided by the library you have to use the *FilePickerBuilder*.
