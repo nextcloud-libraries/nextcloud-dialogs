@@ -16,26 +16,23 @@ npm i -S @nextcloud/dialogs
 
 ### Version compatibility
 
-| `@nextcloud/dialogs` | maintained | `@nextcloud/vue` dependency |   Nextcloud server version |
-|----------------------|------------|-----------------------------|----------------------------|
-|                 7.x  |         ✅ |                9.x (Vue 3)¹ | Nextcloud 31 and newer     |
-|                 6.x  |         ✅ |                        8.x  | Nextcloud 29, 30, 31, 32   |
-|                 5.x  |         ❌ |                        8.x  | Nextcloud 28, 29, 30       |
-|                 4.2+ |         ❌ |                       7.12² | Nextcloud 25, 26, 27, 27.1 |
-|                 4.1  |         ❌ |                       *any* | *any up to Nextcloud 30*   |
+| `@nextcloud/dialogs` | maintained |   Nextcloud server version |
+|----------------------|------------|----------------------------|
+|                 8.x  |         ✅ | Nextcloud 35 and newer     |
+|                 7.x  |         ✅ | Nextcloud 31, 32, 33, 34   |
+|                 6.x  |         ❌ | Nextcloud 29, 30, 31, 32   |
+|                 5.x  |         ❌ | Nextcloud 28, 29, 30       |
+|                 4.2+ |         ❌ | Nextcloud 25, 26, 27, 27.1 |
+|                 4.1  |         ❌ | *any up to Nextcloud 30*   |
 
-¹: In version 7.x the `@nextcloud/vue` dependency is moved to `dependencies` so you can also use this library
-with an old version of `@nextcloud/vue` in your app dependencies if your app still uses Vue 2.
-Note that this might increase the bundled app size. 
-If your app also already uses `@nextcloud/vue` version 9.x and Vue 3 then the bundle size will not increase.
-
-²: Since version 4.2 this package provides a Vue.js based file picker, so this package depends on `@nextcloud/vue`.
+Versions v4.2 to including the v6 series included a peer dependency on `@nextcloud/vue` and thus needed a specific version of this dependency.
+Starting with the v7 series this peer dependency has become a regular dependency so that this library can be used with or without any specific dependency of the host application to `@nextcloud/vue`.
 
 ## Usage
 
-### General
-The styles for the components (Toasts and FilePicker) are imported automatically by the package entry points.
-Your bundler has to support importing CSS files from JavaScript (e.g. Vite, or Webpack with `css-loader`).
+> [!IMPORTANT]
+> The styles for the components (Toasts and FilePicker) are imported automatically by the package entry points.
+> Your bundler has to support importing CSS files from JavaScript (e.g. Vite, or Webpack with `css-loader`).
 
 ### Toasts
 
@@ -49,8 +46,6 @@ If your app only needs toasts, you can import them from the `@nextcloud/dialogs/
 ```js
 import { showError } from '@nextcloud/dialogs/toast'
 ```
-
-If you using `@nextcloud/dialogs >= 4.0` you don't need any svg or scss loader in you projects anymore.
 
 There are different toast styles available, that are exposed in separate functions:
 

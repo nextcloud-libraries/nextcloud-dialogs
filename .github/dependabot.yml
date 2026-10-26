@@ -23,7 +23,7 @@ updates:
         - "vitest"
         - "@vitest/*"
 - package-ecosystem: npm
-  target-branch: 'stable6'
+  target-branch: 'stable7'
   directory: "/"
   schedule:
     interval: weekly
@@ -32,6 +32,10 @@ updates:
     timezone: Europe/Paris
   open-pull-requests-limit: 10
   versioning-strategy: increase
+  ignore:
+    # no major updates on stable branches
+    - dependency-name: "*"
+      update-types: ["version-update:semver-major"]
   groups:
     vite:
       patterns:
