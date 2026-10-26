@@ -6,7 +6,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [v6.4.2](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.4.1...v6.4.2)
+## [v6.4.3](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.4.2...v6.4.3)
 ### Notes
 This is officially the last version of the v6 series, it is moved now to life-support and will only get critical security updates if needed.
 Please update to either v7 or v8 of this library.
