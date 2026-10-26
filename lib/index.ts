@@ -41,7 +41,6 @@ export {
 } from './toast.js'
 
 export type {
-	ToastHandle,
 	ToastOptions,
 } from './toast.js'
 
