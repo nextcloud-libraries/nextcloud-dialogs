@@ -6,7 +6,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [v8.0.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v7.5.0...v8.0.0) (unreleased)
+## [v8.0.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v7.6.0...v8.0.0)
 
 ### Breaking
 
@@ -15,6 +15,28 @@ All notable changes to this project will be documented in this file.
 ```diff
 - import '@nextcloud/dialogs/style.css'
 ```
+* The reworked - and accessible - toast notifications from v7.5.0 (reverted in v7.6.0) are back.
+  Toasts no longer use `toastify-js`, the toast functions return a `ToastHandle` instead of a Toastify `Toast`.
+* Those new toast messages will be displayed on the bottom start of the page, this is by design and not a bug.
+  Apps can adjust the toasts position with a CSS variable, the value is added to the default distance to the bottom (default: `0px`):
+```css
+:root {
+	--toast-offset-block-end: 80px;
+}
+```
+
+### Added
+* feat: accessible toast and drop toastify [\#2324](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2324) \([skjnldsv](https://github.com/skjnldsv)\)
+* feat: toast timeout configuration [\#2539](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2539) \([kristian-zendato](https://github.com/kristian-zendato)\)
+* feat(toast): add support for RTL and custom offset [\#2673](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2673) \([Antreesy](https://github.com/Antreesy)\)
+
+### Fixed
+* fix(toast): position when closed [\#2600](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2600) \([pulsejet](https://github.com/pulsejet)\)
+* fix(dav): keep the latest FilePicker destination [\#2611](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2611) \([Daddyoftwins1](https://github.com/Daddyoftwins1)\)
+
+### Changed
+* Updated `p-queue` to version 10.0.0
+* Updated development dependencies
 
 ## [v7.6.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v7.5.0...v7.6.0)
 ### Notes
