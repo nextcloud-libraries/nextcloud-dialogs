@@ -7,6 +7,20 @@
 All notable changes to this project will be documented in this file.
 
 ## [v6.4.2](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.4.1...v6.4.2)
+### Notes
+This is officially the last version of the v6 series, it is moved now to life-support and will only get critical security updates if needed.
+Please update to either v7 or v8 of this library.
+
+### 🐛 Fixed bugs
+* fix(filepicker): only add current folder if pickable [\#2513](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2513)
+* fix(filepicker): allow select other files if already selected [\#2618](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2618)
+
+### Other Changes
+* feat: cutomize file picker icon size [\#2601](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2601)
+* chore: revert breaking dependency changes [\#2515](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2515) \([susnux](https://github.com/susnux)\)
+
+
+## [v6.4.2](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v6.4.1...v6.4.2)
 ### 🐛 Fixed bugs
 * fix(filepicker): use `@nextcloud/files` for name validation [\#2161](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2161)
 * fix(filepicker): use proper folder icons [\#2181](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2181)
