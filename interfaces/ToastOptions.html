@@ -12,7 +12,7 @@
 <h1>Interface ToastOptions</h1></div>
 <div class="tsd-signature"><span class="tsd-signature-keyword">interface</span> <span class="tsd-kind-interface">ToastOptions</span> <span class="tsd-signature-symbol">{</span><br/>    <a class="tsd-kind-property" href="#arialive">ariaLive</a><span class="tsd-signature-symbol">?:</span> <a href="../enums/ToastAriaLive.html" class="tsd-signature-type tsd-kind-enum">ToastAriaLive</a><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#close">close</a><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#ishtml">isHTML</a><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#onclick">onClick</a><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-symbol">()</span> <span class="tsd-signature-symbol">=&gt;</span> <span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#onremove">onRemove</a><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-symbol">()</span> <span class="tsd-signature-symbol">=&gt;</span> <span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#selector">selector</a><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#timeout">timeout</a><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#type">type</a><span class="tsd-signature-symbol">?:</span> <a href="../enums/ToastType.html" class="tsd-signature-type tsd-kind-enum">ToastType</a><span class="tsd-signature-symbol">;</span><br/><span class="tsd-signature-symbol">}</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in dist/toast.d.mts:37</li></ul></aside>
+<li>Defined in dist/toast.d.mts:34</li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-accordion" open><summary class="tsd-accordion-summary tsd-index-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
@@ -38,17 +38,17 @@
 <div class="tsd-comment tsd-typography"><p>Whether the messages should be announced to screen readers.
 See the following docs for an explanation when to use which:
 <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions">https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions</a></p>
-<p>By default, errors are announced assertive and other messages &quot;polite&quot;.</p>
+<p>By default, errors and undo toasts are announced assertive; others are polite.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in dist/toast.d.mts:75</li></ul></aside></section>
+<li>Defined in dist/toast.d.mts:72</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="close"><code class="tsd-tag">Optional</code><span>close</span><a href="#close" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">close</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div>
 <div class="tsd-comment tsd-typography"><p>Make the toast closable</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in dist/toast.d.mts:63</li></ul></aside></section>
+<li>Defined in dist/toast.d.mts:60</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="ishtml"><code class="tsd-tag">Optional</code><span>is<wbr/>HTML</span><a href="#ishtml" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">isHTML</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div>
@@ -56,47 +56,47 @@ See the following docs for an explanation when to use which:
 </div>
 <div class="tsd-comment tsd-typography">
 <div class="tsd-tag-default">
-<h4 class="tsd-anchor-link" id="default">Default<a href="#default" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-7">false</span>
+<h4 class="tsd-anchor-link" id="default">Default<a href="#default" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-9">false</span>
 </code><button type="button">Copy</button></pre>
 
 </div></div><aside class="tsd-sources">
 <ul>
-<li>Defined in dist/toast.d.mts:47</li></ul></aside></section>
+<li>Defined in dist/toast.d.mts:44</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="onclick"><code class="tsd-tag">Optional</code><span>on<wbr/>Click</span><a href="#onclick" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">onClick</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-symbol">()</span> <span class="tsd-signature-symbol">=&gt;</span> <span class="tsd-signature-type">void</span></div>
 <div class="tsd-comment tsd-typography"><p>Provide a function that is called when the toast is clicked</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in dist/toast.d.mts:59</li></ul></aside></section>
+<li>Defined in dist/toast.d.mts:56</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="onremove"><code class="tsd-tag">Optional</code><span>on<wbr/>Remove</span><a href="#onremove" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">onRemove</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-symbol">()</span> <span class="tsd-signature-symbol">=&gt;</span> <span class="tsd-signature-type">void</span></div>
 <div class="tsd-comment tsd-typography"><p>Provide a function that is called after the toast is removed</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in dist/toast.d.mts:55</li></ul></aside></section>
+<li>Defined in dist/toast.d.mts:52</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="selector"><code class="tsd-tag">Optional</code><span>selector</span><a href="#selector" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">selector</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>Specify the element to attach the toast element to (for testing)</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in dist/toast.d.mts:67</li></ul></aside></section>
+<li>Defined in dist/toast.d.mts:64</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="timeout"><code class="tsd-tag">Optional</code><span>timeout</span><a href="#timeout" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">timeout</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">number</span></div>
 <div class="tsd-comment tsd-typography"><p>Defines the timeout in milliseconds after which the toast is closed. Set to -1 to have a persistent toast.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in dist/toast.d.mts:41</li></ul></aside></section>
+<li>Defined in dist/toast.d.mts:38</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="type"><code class="tsd-tag">Optional</code><span>type</span><a href="#type" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">type</span><span class="tsd-signature-symbol">?:</span> <a href="../enums/ToastType.html" class="tsd-signature-type tsd-kind-enum">ToastType</a></div>
 <div class="tsd-comment tsd-typography"><p>Set a type of {ToastType} to style the modal</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in dist/toast.d.mts:51</li></ul></aside></section></section></details></div>
+<li>Defined in dist/toast.d.mts:48</li></ul></aside></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
