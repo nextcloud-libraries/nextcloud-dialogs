@@ -165,17 +165,11 @@ defineExpose({ announce, getContainerEl })
 </script>
 
 <style module lang="scss">
-/**
- * Toast position can be adjusted by apps via CSS:
- *   :root {
- *     --toast-offset-block-end: 80px; // added to the default distance to the bottom
- *   }
- */
 .toastContainer {
 	position: fixed;
 	// Default: no navigation sidebar
-	inset-inline-start: var(--body-container-margin);
-	inset-block-end: calc(var(--body-container-margin) + var(--toast-offset-block-end, 0px));
+	left: var(--body-container-margin);
+	bottom: var(--body-container-margin);
 	z-index: 10100;
 	display: flex;
 	flex-direction: column;
@@ -185,11 +179,11 @@ defineExpose({ announce, getContainerEl })
 	pointer-events: none;
 	padding: calc(var(--default-grid-baseline) * 2);
 	// Smooth transition when the navigation opens / closes
-	transition: inset-inline-start var(--animation-quick, 100ms) ease;
+	transition: left var(--animation-quick, 100ms) ease;
 }
 
-// When the app navigation is visible, shift to the inline end to avoid overlap
+// When the app navigation is visible, shift right to avoid overlap
 .toastContainer_navOpen {
-	inset-inline-start: calc(var(--navigation-width) + var(--body-container-margin));
+	left: calc(var(--navigation-width) + var(--body-container-margin));
 }
 </style>

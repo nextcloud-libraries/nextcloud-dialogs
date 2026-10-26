@@ -81,17 +81,6 @@ Loading toasts stay permanent until hidden manually, and undo toasts keep their 
 
 A full list of available options can be found in the [documentation](https://nextcloud-libraries.github.io/nextcloud-dialogs/).
 
-#### Toast position
-
-Toasts are displayed in the bottom start corner of the page and are shifted by the width of the app navigation when it is open.
-Apps can adjust the toasts position with a CSS variable, the value is added to the default distance to the bottom (default: `0px`):
-
-```css
-:root {
-	--toast-offset-block-end: 80px;
-}
-```
-
 ### FilePicker
 To spawn the FilePicker provided by the library you have to use the *FilePickerBuilder*.
 The *FilePickerBuilder* is included in the main entry point of this library, so you can use it like this:
