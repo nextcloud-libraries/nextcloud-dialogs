@@ -21,40 +21,52 @@
 				@click="path = dir.path" />
 		</template>
 		<template v-if="showMenu" #actions>
-			<NcActions
-				v-model:open="actionsOpen"
-				:aria-label="t('Create directory')"
-				:forceMenu="true"
-				:forceName="true"
-				:menuName="t('New')"
-				variant="secondary"
-				@close="newNodeName = ''">
-				<template #icon>
-					<IconPlus :size="20" />
+			<NcPopover
+				v-model:shown="popoverShown"
+				popupRole="dialog"
+				@afterHide="newNodeName = ''">
+				<template #trigger>
+					<NcButton :aria-label="t('Create directory')" variant="secondary">
+						<template #icon>
+							<IconPlus :size="20" />
+						</template>
+						{{ t('New') }}
+					</NcButton>
 				</template>
-				<NcActionInput
-					ref="nameInput"
-					v-model="newNodeName"
-					:label="t('New folder')"
-					:placeholder="t('New folder name')"
-					@submit="onSubmit"
-					@update:modelValue="validateInput">
-					<template #icon>
-						<IconFolder :size="20" />
-					</template>
-				</NcActionInput>
-			</NcActions>
+				<form
+					class="file-picker__new-folder"
+					role="dialog"
+					:aria-label="t('Create directory')"
+					@submit.prevent="onSubmit"
+					@keydown.esc="popoverShown = false">
+					<IconFolder :size="20" />
+					<label class="file-picker__new-folder-label" :for="inputId">{{ t('New folder') }}</label>
+					<NcTextField
+						:id="inputId"
+						ref="nameInput"
+						v-model="newNodeName"
+						class="file-picker__new-folder-input"
+						labelOutside
+						:placeholder="t('New folder name')"
+						showTrailingButton
+						trailingButtonIcon="arrowEnd"
+						:trailingButtonLabel="t('Create directory')"
+						@trailingButtonClick="onSubmit"
+						@update:modelValue="validateInput" />
+				</form>
+			</NcPopover>
 		</template>
 	</NcBreadcrumbs>
 </template>
 
 <script setup lang="ts">
 import { InvalidFilenameError, InvalidFilenameErrorReason, validateFilename } from '@nextcloud/files'
-import { computed, ref, useTemplateRef } from 'vue'
-import NcActionInput from '@nextcloud/vue/components/NcActionInput'
-import NcActions from '@nextcloud/vue/components/NcActions'
+import { computed, ref, useId, useTemplateRef } from 'vue'
 import NcBreadcrumb from '@nextcloud/vue/components/NcBreadcrumb'
 import NcBreadcrumbs from '@nextcloud/vue/components/NcBreadcrumbs'
+import NcButton from '@nextcloud/vue/components/NcButton'
+import NcPopover from '@nextcloud/vue/components/NcPopover'
+import NcTextField from '@nextcloud/vue/components/NcTextField'
 import IconFolder from 'vue-material-design-icons/Folder.vue'
 import IconHome from 'vue-material-design-icons/Home.vue'
 import IconPlus from 'vue-material-design-icons/Plus.vue'
@@ -75,12 +87,14 @@ const emit = defineEmits<{
 	createNode: [name: string]
 }>()
 
-const actionsOpen = ref(false)
+const popoverShown = ref(false)
 
 /**
  * Input on the "new node" menu
  */
 const newNodeName = ref('')
+
+const inputId = useId()
 
 const nameInput = useTemplateRef('nameInput')
 
@@ -125,9 +139,12 @@ function onSubmit() {
 	const name = newNodeName.value.trim()
 
 	if (validateInput()) {
-		actionsOpen.value = false
+		popoverShown.value = false
 		emit('createNode', name)
 		newNodeName.value = ''
+	} else {
+		// show the native validation message, e.g. when submitted via the trailing button
+		nameInput.value?.$el?.querySelector('input')?.reportValidity()
 	}
 }
 
@@ -147,6 +164,26 @@ const pathElements = computed(() => path.value.split('/')
 	&__breadcrumbs {
 		// ensure the breadcrumbs have a static height
 		flex-grow: 0 !important;
+	}
+
+	// mimic the NcActionInput layout inside an NcActions menu (icon column, label row, input row) for consistency with other menus
+	&__new-folder {
+		display: grid;
+		grid-template-columns: var(--default-clickable-area) 1fr;
+		align-items: center;
+		padding: calc(2 * var(--default-grid-baseline));
+		padding-inline-start: var(--default-grid-baseline);
+		padding-inline-end: calc(var(--default-grid-baseline) + (var(--default-clickable-area) - 16px) / 2);
+		padding-bottom: calc(var(--default-grid-baseline) + (var(--default-clickable-area) - 16px) / 2);
+	}
+
+	&__new-folder-label {
+		padding: var(--default-grid-baseline) 0;
+	}
+
+	// the icon and the label fill the first row, so the input goes to the second row
+	&__new-folder-input {
+		grid-column: 2;
 	}
 }
 </style>
