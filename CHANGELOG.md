@@ -6,7 +6,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [v8.0.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v7.5.0...v8.0.0) (unreleased)
+## [v8.0.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v7.6.0...v8.0.0)
 
 ### Breaking
 
@@ -15,6 +15,57 @@ All notable changes to this project will be documented in this file.
 ```diff
 - import '@nextcloud/dialogs/style.css'
 ```
+* The reworked - and accessible - toast notifications from v7.5.0 (reverted in v7.6.0) are back.
+  Toasts no longer use `toastify-js`, the toast functions return a `ToastHandle` instead of a Toastify `Toast`.
+* Those new toast messages will be displayed on the bottom start of the page, this is by design and not a bug.
+  Apps can adjust the toasts position with a CSS variable, the value is added to the default distance to the bottom (default: `0px`):
+```css
+:root {
+	--toast-offset-block-end: 80px;
+}
+```
+
+### Added
+* feat: accessible toast and drop toastify [\#2324](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2324) \([skjnldsv](https://github.com/skjnldsv)\)
+* feat: toast timeout configuration [\#2539](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2539) \([kristian-zendato](https://github.com/kristian-zendato)\)
+* feat(toast): add support for RTL and custom offset [\#2673](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2673) \([Antreesy](https://github.com/Antreesy)\)
+
+### Fixed
+* fix(toast): position when closed [\#2600](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2600) \([pulsejet](https://github.com/pulsejet)\)
+* fix(dav): keep the latest FilePicker destination [\#2611](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2611) \([Daddyoftwins1](https://github.com/Daddyoftwins1)\)
+
+### Changed
+* Updated `p-queue` to version 10.0.0
+* Updated development dependencies
+
+## [v7.6.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v7.5.0...v7.6.0)
+### Notes
+The reworked toast notifications from v7.5.0 were considered a breaking change and are moved to v8.
+This version restores the previous `toastify-js` based toasts and removes the toast timeout configuration.
+
+If your app only needs toasts, you can import them from the `@nextcloud/dialogs/toast` entry point instead.
+(Note: Webpack issue - bundler might include other components source, e.g. the FilePicker, in the app)
+
+```js
+import { showError } from '@nextcloud/dialogs/toast'
+```
+
+### Added
+* feat: customize file picker icon size [\#2580](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2580) \([kristian-zendato](https://github.com/kristian-zendato)\)
+* feat(build): introduce separate endpoint for toast.js [\#2661](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2661) \([Antreesy](https://github.com/Antreesy)\)
+
+### Fixed
+* fix(dav): Prevent race condition in `useDAVFiles` [\#2511](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2511) \([DerDreschner](https://github.com/DerDreschner)\)
+* fix(filepicker): allow select other files if already selected [\#2617](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2617) \([susnux](https://github.com/susnux)\)
+* fix: properly name languages matching server [\#2620](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2620) \([susnux](https://github.com/susnux)\)
+* fix(ConflictPicker): scoped styles are needed for :deep to work [\#2649](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2649) \([rotdrop](https://github.com/rotdrop)\)
+* fix(build): restore `@nextcloud/dialogs/style.css` output [\#2672](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2672) \([Antreesy](https://github.com/Antreesy)\)
+
+### Changed
+* revert: accessible toast and toast timeout configuration [\#2712](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2712) \([Antreesy](https://github.com/Antreesy)\)
+* perf(FilePicker): replace NcActionInput with NcPopover and NcTextField [\#2690](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2690) \([Antreesy](https://github.com/Antreesy)\)
+* Updated translations
+* Updated development dependencies
 
 ## [v7.5.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v7.4.1...v7.5.0)
 ### Notes
