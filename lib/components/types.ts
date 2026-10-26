@@ -16,7 +16,7 @@ export interface IDialogButton {
 	label: string
 
 	/** Callback on button click */
-	callback: () => void
+	callback: () => unknown | false
 
 	/**
 	 * Optional Icon for the button
@@ -41,7 +41,8 @@ export interface IDialogButton {
 
 /**
  * Interface to define buttons of the FilePicker component
- * The buttons are based on the Dialog buttons but the callback gets the array of selected nodes
+ * The buttons are based on the Dialog buttons but the callback gets the array of selected nodes.
+ * As the Dialog buttons, the return value is ignored until it is "false". In that case, the modal is not closed
  */
 export interface IFilePickerButton extends Omit<IDialogButton, 'callback'> {
 	/**
@@ -49,7 +50,7 @@ export interface IFilePickerButton extends Omit<IDialogButton, 'callback'> {
 	 *
 	 * @param nodes Array of `@nextcloud/files` Nodes that were selected
 	 */
-	callback: (nodes: INode[]) => void | Promise<void>
+	callback: (nodes: INode[]) => false | void | Promise<false | void>
 }
 
 export type IFilePickerButtonFactory = (selectedNodes: INode[], currentPath: string, currentView: string) => IFilePickerButton[]
