@@ -6,15 +6,44 @@
 
 All notable changes to this project will be documented in this file.
 
-## [v7.5.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v7.4.1...v7.5.0)
+## [v7.6.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v7.5.0...v7.6.0)
 ### Notes
-This version include some reworked - and accessible - toast notifications.
-Those new toast messages will be displayed on the bottom start of the page,
-this is by design and not a bug.
+The reworked toast notifications from v7.5.0 were considered a breaking change and are moved to v8.
+This version restores the previous `toastify-js` based toasts and removes the toast timeout configuration.
+
+If your app only needs toasts, you can import them from the `@nextcloud/dialogs/toast` entry point instead.
+(Note: Webpack issue - bundler might include other components source, e.g. the FilePicker, in the app)
+
+```js
+import { showError } from '@nextcloud/dialogs/toast'
+```
 
 ### Added
-* feat: toast timeout configuration [\#2539](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2539) \([kristian-zendato](https://github.com/kristian-zendato)\)
-* feat: accessible toast and drop toastify [\#2324](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2324) \([skjnldsv](https://github.com/skjnldsv)\)
+* feat: customize file picker icon size [\#2580](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2580) \([kristian-zendato](https://github.com/kristian-zendato)\)
+* feat(build): introduce separate endpoint for toast.js [\#2661](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2661) \([Antreesy](https://github.com/Antreesy)\)
+
+### Fixed
+* fix(dav): Prevent race condition in `useDAVFiles` [\#2511](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2511) \([DerDreschner](https://github.com/DerDreschner)\)
+* fix(filepicker): allow select other files if already selected [\#2617](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2617) \([susnux](https://github.com/susnux)\)
+* fix: properly name languages matching server [\#2620](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2620) \([susnux](https://github.com/susnux)\)
+* fix(ConflictPicker): scoped styles are needed for :deep to work [\#2649](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2649) \([rotdrop](https://github.com/rotdrop)\)
+* fix(build): restore `@nextcloud/dialogs/style.css` output [\#2672](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2672) \([Antreesy](https://github.com/Antreesy)\)
+
+### Changed
+* revert: accessible toast and toast timeout configuration [\#2712](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2712) \([Antreesy](https://github.com/Antreesy)\)
+* perf(FilePicker): replace NcActionInput with NcPopover and NcTextField [\#2690](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2690) \([Antreesy](https://github.com/Antreesy)\)
+* Updated translations
+* Updated development dependencies
+
+## [v7.5.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v7.4.1...v7.5.0)
+### Notes
+[REVERTED] ~~This version include some reworked - and accessible - toast notifications.~~
+~~Those new toast messages will be displayed on the bottom start of the page,~~
+~~this is by design and not a bug.~~
+
+### Added
+~~* feat: toast timeout configuration [\#2539](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2539) \([kristian-zendato](https://github.com/kristian-zendato)\)~~
+~~* feat: accessible toast and drop toastify [\#2324](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2324) \([skjnldsv](https://github.com/skjnldsv)\)~~
 ### Fixed
 * Simplify the file conflict dialog [\#2540](https://github.com/nextcloud-libraries/nextcloud-dialogs/pull/2540) \([jancborchardt](https://github.com/jancborchardt)\)
 
