@@ -6,6 +6,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v8.0.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v7.5.0...v8.0.0) (unreleased)
+
+### Breaking
+
+* The styles are now imported automatically by the package entry points, so the `@nextcloud/dialogs/style.css` export was removed.
+  Remove the import from your app:
+```diff
+- import '@nextcloud/dialogs/style.css'
+```
+
 ## [v7.5.0](https://github.com/nextcloud-libraries/nextcloud-dialogs/compare/v7.4.1...v7.5.0)
 ### Notes
 This version include some reworked - and accessible - toast notifications.
