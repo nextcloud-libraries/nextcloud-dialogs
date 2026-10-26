@@ -73,17 +73,23 @@ export function useDAVFiles(
 		const thisAbortController = new AbortController()
 		abortController = thisAbortController
 		isLoading.value = true
+		folder.value = null
+		files.value = []
 		try {
+			let nextFiles: INode[]
+			let nextFolder: IFolder | null = null
 			if (currentView.value === 'favorites') {
-				files.value = await getFavoriteNodes({ client, path: currentPath.value, signal: thisAbortController.signal })
-				folder.value = null
+				nextFiles = await getFavoriteNodes({ client, path: currentPath.value, signal: thisAbortController.signal })
 			} else if (currentView.value === 'recent') {
-				files.value = await getRecentNodes({ client, signal: thisAbortController.signal })
-				folder.value = null
+				nextFiles = await getRecentNodes({ client, signal: thisAbortController.signal })
 			} else {
 				const content = await getNodes({ client, path: currentPath.value, signal: thisAbortController.signal })
-				folder.value = content.folder
-				files.value = content.contents
+				nextFolder = content.folder
+				nextFiles = content.contents
+			}
+			if (abortController === thisAbortController) {
+				folder.value = nextFolder
+				files.value = nextFiles
 			}
 		} catch (error) {
 			if (error instanceof Error && error.name === 'AbortError') {
