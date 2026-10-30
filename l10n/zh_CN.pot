@@ -1,30 +1,45 @@
-# 
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # ken, 2023
-# Eric, 2023
 # Phonebook3599, 2024
-# Gloryandel, 2024
+# DWXXX, 2026
+# gloryandel, 2026
+# Swakin Wang, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: Gloryandel, 2024\n"
+"Last-Translator: Swakin Wang, 2026\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/nextcloud/teams/64236/zh_CN/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-msgid "\"{name}\" is an invalid folder name."
-msgstr "“{name}” 是无效的文件夹名称。"
+msgid "\"{char}\" is not allowed inside a folder name."
+msgstr "\"{char}\" 不允许在文件夹的名称内。"
 
-msgid "\"{name}\" is not an allowed folder name"
-msgstr "“{name}” 不是允许的文件夹名称"
+msgid "\"{char}\" is not allowed inside a name."
+msgstr "\"{char}\" 不允许在名称中显示。"
 
-msgid "\"/\" is not allowed inside a folder name."
-msgstr "文件夹名称中不允许包含 “/”。"
+msgid "\"{extension}\" is not an allowed name."
+msgstr "\"{extension}\" 不允许为名称。"
+
+msgid "\"{segment}\" is a reserved name and not allowed for folder names."
+msgstr "\"{segment}\"是保留名称，不能用作文件夹名称。"
+
+msgid "\"{segment}\" is a reserved name and not allowed."
+msgstr "\"{segment}\" 是一个保留名且不允许使用。"
 
 msgid "All files"
 msgstr "所有文件"
+
+msgid "An item with the same name already exists in {dirname}."
+msgstr "{dirname} 中已有同名项。"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Cancel the entire operation"
+msgstr "取消所有操作"
 
 msgid "Choose"
 msgstr "选择"
@@ -35,6 +50,15 @@ msgstr "选择 {file}"
 msgid "Choose %n file"
 msgid_plural "Choose %n files"
 msgstr[0] "选择 %n 个文件"
+
+msgid "Close"
+msgstr "关闭"
+
+msgid "Confirm"
+msgstr "确认"
+
+msgid "Continue"
+msgstr "继续"
 
 msgid "Copy"
 msgstr "复制"
@@ -57,6 +81,26 @@ msgstr "创建目录"
 msgid "Current view selector"
 msgstr "当前视图选择器"
 
+msgid "Enter your name"
+msgstr "输入你的名称"
+
+msgid "Error: {message}"
+msgstr "错误：{message}"
+
+msgid "Existing files"
+msgstr "已存在文件"
+
+msgid ""
+"Existing files and folders will be deleted if not selected. If both are "
+"chosen, they will be renamed."
+msgstr "如果不选择，现有文件和文件夹将被删除。如果两个都选，则会重命名。"
+
+msgid "Existing version"
+msgstr "已存在版本"
+
+msgid "Failed to set nickname."
+msgstr "设置昵称失败。"
+
 msgid "Favorites"
 msgstr "最爱"
 
@@ -69,11 +113,33 @@ msgstr "您最近修改的文件与文件夹会显示在这里"
 msgid "Filter file list"
 msgstr "过滤文件列表"
 
-msgid "Folder name cannot be empty."
-msgstr "文件夹名称不能为空。"
+msgid "Folder names must not end with \"{extension}\"."
+msgstr "文件夹名称不能以  \"{extension}\" 为结尾。"
+
+msgid "Guest identification"
+msgstr "访客认证"
 
 msgid "Home"
 msgstr "主目录"
+
+msgid "Info: {message}"
+msgstr "消息：{message}"
+
+msgid "Invalid folder name."
+msgstr "无效的文件夹名称。"
+
+msgid "Invalid name."
+msgstr "无效的名称。"
+
+msgid ""
+"Items with the same name already exist in {dirname}, select which to keep."
+msgstr "{dirname} 中已有同名项，请选择要保留的项。"
+
+msgid "Keep both"
+msgstr "两个都保留"
+
+msgid "Last modified date unknown"
+msgstr "最后编辑日期未知"
 
 msgid "Modified"
 msgstr "已修改"
@@ -87,14 +153,32 @@ msgstr "移动至 {target}"
 msgid "Name"
 msgstr "名称"
 
+msgid "Names may be at most 64 characters long."
+msgstr "名称最长可用64个字符。"
+
+msgid "Names must not be empty."
+msgstr "名称不能为空。"
+
+msgid "Names must not end with \"{extension}\"."
+msgstr "名称不能以 \"{extension}\" 结尾。"
+
+msgid "Names must not start with a dot."
+msgstr "名称无法以点为起始。"
+
 msgid "New"
 msgstr "新建"
+
+msgid "New files"
+msgstr "新文件"
 
 msgid "New folder"
 msgstr "新文件夹"
 
 msgid "New folder name"
 msgstr "新文件夹名称"
+
+msgid "New version"
+msgstr "新版本"
 
 msgid "No files in here"
 msgstr "此处无文件"
@@ -105,8 +189,17 @@ msgstr "找不到符合您过滤条件的文件"
 msgid "No matching files"
 msgstr "无符合的文件"
 
+msgid "Please enter a name with at least 2 characters."
+msgstr "请输入一个名称，至少有2个字符。"
+
 msgid "Recent"
 msgstr "最近"
+
+msgid "Replace"
+msgstr "替换"
+
+msgid "Select all checkboxes"
+msgstr "选择所有选择框"
 
 msgid "Select all entries"
 msgstr "选择所有条目"
@@ -114,14 +207,62 @@ msgstr "选择所有条目"
 msgid "Select entry"
 msgstr "选择条目"
 
+msgid "Select file to keep"
+msgstr "选择要保留的文件"
+
+msgid "Select files to keep"
+msgstr "选择要保留的文件"
+
 msgid "Select the row for {nodename}"
 msgstr "选择 {nodename} 的列"
 
 msgid "Size"
 msgstr "大小"
 
+msgid "Skip %n file"
+msgid_plural "Skip %n files"
+msgstr[0] "跳过 %n 文件"
+
+msgid "Submit name"
+msgstr "提交名称"
+
+msgid "Success: {message}"
+msgstr "成功：{message}"
+
 msgid "Undo"
 msgstr " 撤消"
 
 msgid "Upload some content or sync with your devices!"
 msgstr "上传一些项目或与您的设备同步！"
+
+msgid "Warning: {message}"
+msgstr "警告：{message}"
+
+msgid ""
+"When a new folder is selected, any conflicting files within it will also be "
+"overwritten."
+msgstr "选择新文件夹时，其中任何重复的文件都会被覆盖"
+
+msgid ""
+"When a new folder is selected, any files within it will also be overwritten."
+msgstr "选择新文件夹时，其中所有的文件都会被覆盖"
+
+msgid ""
+"When a new folder is selected, the content is written into the existing "
+"folder and a recursive conflict resolution is performed."
+msgstr "选择新文件夹时，内容会写入现有文件夹，并递归地处理冲突。"
+
+msgid "You are currently identified as {nickname}."
+msgstr "你当前被识别为 {nickname}。"
+
+msgid "You are currently not identified."
+msgstr "你当前尚未被识别。"
+
+msgid "You cannot leave the name empty."
+msgstr "名称不能为空。"
+
+msgid "You need to choose at least one conflict solution"
+msgstr "你需要选择至少一种冲突解决方案。"
+
+msgid "You need to select at least one version of each file to continue."
+msgstr "你需要至少选择每个文件的一个版本才能继续。"
