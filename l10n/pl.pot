@@ -257,7 +257,7 @@ msgid ""
 "When a new folder is selected, any conflicting files within it will also be "
 "overwritten."
 msgstr ""
-"Po wybraniu nowego folderu wszystkie znajdujące się w nim pliki powodujące "
+"Po wybraniu nowego katalogu wszystkie znajdujące się w nim pliki powodujące "
 "konflikt również zostaną nadpisane."
 
 msgid ""
