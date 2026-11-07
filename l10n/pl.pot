@@ -1,4 +1,3 @@
-# 
 # Translators:
 # John Molakvoæ <skjnldsv@protonmail.com>, 2023
 # JUJER wtf, 2023
@@ -6,10 +5,11 @@
 # Valdnet, 2024
 # Piotr Strebski <strebski@gmail.com>, 2024
 # pe-v-tec, 2026
+# Bartosz Keller, 2026
 # 
 msgid ""
 msgstr ""
-"Last-Translator: pe-v-tec, 2026\n"
+"Last-Translator: Bartosz Keller, 2026\n"
 "Language-Team: Polish (https://app.transifex.com/nextcloud/teams/64236/pl/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: pl\n"
@@ -32,22 +32,11 @@ msgstr ""
 msgid "\"{segment}\" is a reserved name and not allowed."
 msgstr "\"{segment}\" jest zastrzeżoną nazwą i nie jest dozwolone."
 
-msgid "%n file conflict"
-msgid_plural "%n files conflict"
-msgstr[0] "Konflikt pliku"
-msgstr[1] "Konflikt %n plików"
-msgstr[2] "Konflikt %n plików"
-msgstr[3] "Konflikt %n plików"
-
-msgid "%n file conflict in {dirname}"
-msgid_plural "%n file conflicts in {dirname}"
-msgstr[0] "%n konfliktów pliku w {dirname}"
-msgstr[1] "%n konfliktów plików w {dirname}"
-msgstr[2] "%n konfliktów plików w {dirname}"
-msgstr[3] "%n konfliktów plików w {dirname}"
-
 msgid "All files"
 msgstr "Wszystkie pliki"
+
+msgid "An item with the same name already exists in {dirname}."
+msgstr "Plik o tej samej nazwie już istnieje w {dirname}."
 
 msgid "Cancel"
 msgstr "Anuluj"
@@ -67,6 +56,9 @@ msgstr[0] "Wybierz %n plik"
 msgstr[1] "Wybierz %n pliki"
 msgstr[2] "Wybierz %n plików"
 msgstr[3] "Wybierz %n plików"
+
+msgid "Close"
+msgstr "Zamknij"
 
 msgid "Confirm"
 msgstr "Potwierdź"
@@ -98,6 +90,19 @@ msgstr "Bieżący selektor widoku"
 msgid "Enter your name"
 msgstr "Wprowadź nazwę"
 
+msgid "Error: {message}"
+msgstr "Błąd: {message}"
+
+msgid "Existing files"
+msgstr "Istniejące pliki"
+
+msgid ""
+"Existing files and folders will be deleted if not selected. If both are "
+"chosen, they will be renamed."
+msgstr ""
+"Istniejące pliki i katalogi zostaną usunięte, jeśli nie zostaną zaznaczone. "
+"Jeśli wybrano oba, zostaną im nadane nowe nazwy."
+
 msgid "Existing version"
 msgstr "Istniejąca wersja"
 
@@ -127,18 +132,23 @@ msgstr "Identyfikacja gościa"
 msgid "Home"
 msgstr "Strona główna"
 
-msgid ""
-"If you select both versions, the incoming file will have a number added to "
-"its name."
-msgstr ""
-"Jeśli wybierzesz obie wersje, do nazwy przychodzącego pliku zostanie dodany "
-"numer."
+msgid "Info: {message}"
+msgstr "Informacja: {message}"
 
 msgid "Invalid folder name."
 msgstr "Nieprawidłowa nazwa folderu."
 
 msgid "Invalid name."
 msgstr "Nieprawidłowa nazwa."
+
+msgid ""
+"Items with the same name already exist in {dirname}, select which to keep."
+msgstr ""
+"Pliki o tej samej nazwie już istnieją w {dirname}. Wybierz, które chcesz "
+"zachować."
+
+msgid "Keep both"
+msgstr "Zachowaj oba"
 
 msgid "Last modified date unknown"
 msgstr "Data ostatniej modyfikacji nieznana"
@@ -170,6 +180,9 @@ msgstr "Nazwy nie mogą zaczynać się od kropki."
 msgid "New"
 msgstr "Nowy"
 
+msgid "New files"
+msgstr "Nowe pliki"
+
 msgid "New folder"
 msgstr "Nowy folder"
 
@@ -194,20 +207,23 @@ msgstr "Wprowadź nazwę zawierającą minimum 2 znaki."
 msgid "Recent"
 msgstr "Ostatni"
 
+msgid "Replace"
+msgstr "Zamień"
+
 msgid "Select all checkboxes"
 msgstr "Zaznacz wszystkie pola wyboru"
 
 msgid "Select all entries"
 msgstr "Wybierz wszystkie wpisy"
 
-msgid "Select all existing files"
-msgstr "Zaznacz wszystkie istniejące pliki"
-
-msgid "Select all new files"
-msgstr "Zaznacz wszystkie nowe pliki"
-
 msgid "Select entry"
 msgstr "Wybierz wpis"
+
+msgid "Select file to keep"
+msgstr "Wybierz plik, który chcesz zachować"
+
+msgid "Select files to keep"
+msgstr "Wybierz pliki, które chcesz zachować"
 
 msgid "Select the row for {nodename}"
 msgstr "Wybierz wiersz dla {nodename}"
@@ -222,11 +238,11 @@ msgstr[1] "Pomiń %n plików"
 msgstr[2] "Pomiń %n plików"
 msgstr[3] "Pomiń %n plików"
 
-msgid "Skip this file"
-msgstr "Pomiń ten plik"
-
 msgid "Submit name"
 msgstr "Zatwierdź nazwę"
+
+msgid "Success: {message}"
+msgstr "Sukces: {message}"
 
 msgid "Undo"
 msgstr "Cofnij"
@@ -234,23 +250,28 @@ msgstr "Cofnij"
 msgid "Upload some content or sync with your devices!"
 msgstr "Wyślij zawartość lub zsynchronizuj ze swoimi urządzeniami!"
 
-msgid ""
-"When an incoming folder is selected, any conflicting files within it will "
-"also be overwritten."
-msgstr ""
-"Po wybraniu przychodzącego folderu wszystkie konfliktujące pliki w jego "
-"obrębie również zostaną nadpisane."
+msgid "Warning: {message}"
+msgstr "Ostrzeżenie: {message}"
 
 msgid ""
-"When an incoming folder is selected, the content is written into the "
-"existing folder and a recursive conflict resolution is performed."
+"When a new folder is selected, any conflicting files within it will also be "
+"overwritten."
 msgstr ""
-"Po wybraniu przychodzącego folderu jego zawartość zostanie zapisana w "
-"istniejącym folderze i zostanie przeprowadzone rekursywne rozwiązywanie "
-"konfliktów."
+"Po wybraniu nowego folderu wszystkie znajdujące się w nim pliki powodujące "
+"konflikt również zostaną nadpisane."
 
-msgid "Which files do you want to keep?"
-msgstr "Które pliki chcesz zachować?"
+msgid ""
+"When a new folder is selected, any files within it will also be overwritten."
+msgstr ""
+"Po wybraniu nowego katalogu wszystkie znajdujące się w nim pliki również "
+"zostaną nadpisane."
+
+msgid ""
+"When a new folder is selected, the content is written into the existing "
+"folder and a recursive conflict resolution is performed."
+msgstr ""
+"Po wybraniu nowego katalogu jego zawartość trafi do istniejącego katalogu, a"
+" konflikty zostaną rozwiązane rekurencyjnie."
 
 msgid "You are currently identified as {nickname}."
 msgstr "Obecnie jesteś zidentyfikowany jako {nickname}."
