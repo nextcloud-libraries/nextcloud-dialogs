@@ -96,7 +96,7 @@
     "vite": "^8.3.5",
     "vitest": "^5.0.0",
     "vue-material-design-icons": "^5.4.0",
-    "vue-tsc": "^3.3.13"
+    "vue-tsc": "^3.3.14"
   },
   "engines": {
     "node": "^22.18 || ^24 || >=26"
