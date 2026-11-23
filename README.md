@@ -57,15 +57,8 @@ showWarning('Warning')
 showError('Error')
 ```
 
-There are several options that can be passed in as a second parameter, like the timeout of a toast:
-
-```
-showError('This is an error shown without a timeout', { timeout: -1 })
-```
-
-Ordinary toasts (success, error, warning, info, and bare messages) use the user-configured toast timeout
-from the theming capabilities (`theming.toastTimeout`) when available, and fall back to
-`TOAST_DEFAULT_TIMEOUT` (7 seconds) otherwise.
+Error and warning toasts stay until they are closed. Success, info, and plain messages disappear after
+`TOAST_DEFAULT_TIMEOUT` (7 seconds).
 
 Loading toasts stay permanent until hidden manually, and undo toasts keep their fixed undo duration.
 

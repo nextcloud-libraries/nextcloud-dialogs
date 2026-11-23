@@ -3,7 +3,6 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-import { getCapabilities } from '@nextcloud/capabilities'
 import { createApp } from 'vue'
 import ToastContainer from './components/ToastContainer.vue'
 import ToastNotification from './components/ToastNotification.vue'
@@ -41,33 +40,16 @@ export const TOAST_DEFAULT_TIMEOUT = 7000
 /** Timeout value to show a toast permanently */
 export const TOAST_PERMANENT_TIMEOUT = -1
 
-type ThemingCapabilities = {
-	theming?: {
-		toastTimeout?: number
-	}
-}
-
 /**
- * Whether a timeout value is valid for ordinary toasts.
+ * Default auto-dismiss delay for a toast type.
+ * Errors and warnings stay until dismissed, so important messages are not on a timer.
+ * Other toasts use {@link TOAST_DEFAULT_TIMEOUT}.
  *
- * @param timeout Timeout in milliseconds
+ * @param type Toast type, if any
  */
-function isValidToastTimeout(timeout: number): boolean {
-	return timeout === TOAST_PERMANENT_TIMEOUT || timeout > 0
-}
-
-/**
- * Resolve the user-configured toast timeout from theming capabilities.
- * Falls back to {@link TOAST_DEFAULT_TIMEOUT} when unset or invalid.
- */
-function getToastTimeout(): number {
-	try {
-		const timeout = (getCapabilities() as ThemingCapabilities | undefined)?.theming?.toastTimeout
-		if (typeof timeout === 'number' && isValidToastTimeout(timeout)) {
-			return timeout
-		}
-	} catch {
-		// Catch any exception from capability access and fallback to default timeout.
+function getToastTimeout(type?: ToastType): number {
+	if (type === ToastType.ERROR || type === ToastType.WARNING) {
+		return TOAST_PERMANENT_TIMEOUT
 	}
 	return TOAST_DEFAULT_TIMEOUT
 }
@@ -278,7 +260,7 @@ function getAnnouncementText(data: string | Node, isHTML: boolean): string {
  */
 export function showMessage(data: string | Node, options?: ToastOptions): ToastHandle {
 	const opts = {
-		timeout: getToastTimeout(),
+		timeout: getToastTimeout(options?.type),
 		isHTML: false,
 		type: undefined as ToastType | undefined,
 		selector: undefined as string | undefined,
